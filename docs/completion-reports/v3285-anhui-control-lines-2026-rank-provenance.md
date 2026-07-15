@@ -34,11 +34,13 @@ node scripts/test-current-release.mjs
 
 ## 部署
 
-- GitHub 数据与模型提交：待部署。
-- Pages 部署：待部署。
-- 公网全分片验证：待部署。
+- GitHub 数据与模型提交：[`6f10ee0c`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/commit/6f10ee0c0c9976c07ec23dadd866bbfbdeff7d1f)。
+- Pages 部署：[`29456026792`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29456026792)，成功。
+- 公网全分片验证：[`29456216179`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29456216179)，成功。
 - 公网地址：<https://liuguanghui0226.github.io/gaokao-zhiyuan-site/>
-- 官方证据包：待发布。
+- 官方证据包：[`evidence-v3.285`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.285)，SHA-256 `391b13f829b67bb00a71fbb8069d856ea88e5e408899d2584766090402f93701`。
+
+公网验证重新读取页面入口、gzip 核心索引和全部 31 个省级分片，并额外断言安徽来源记录 52 条、普通/特殊路径 4/48 条、本科边界 451/490、专科边界 200/200、40 条艺术专业分以及 976 条位次记录均指向正式来源页。
 
 ## 全国覆盖与保留缺口
 

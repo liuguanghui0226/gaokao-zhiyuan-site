@@ -1,11 +1,11 @@
 change_id: "2026-07-16-v3285-anhui-control-lines-2026-rank-provenance"
 title: "安徽2026控制线、艺术双门槛与位次来源修复"
 phase: deliver
-status: ready_for_deploy
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "双来源图片、艺术文化与专业双门槛、位次来源、运行分片和GitHub Pages需同步验证。"
-last_updated: "2026-07-16T09:00:00+08:00"
+last_updated: "2026-07-16T09:45:00+08:00"
 
 surfaces_touched:
   - surface: information
