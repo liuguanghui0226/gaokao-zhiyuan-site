@@ -1,0 +1,50 @@
+{
+  "dataset": "official-guangdong-control-lines-2026-v3284-runtime",
+  "generatedAt": "2026-07-16T02:20:00.000Z",
+  "sourceId": "official-guangdong-control-lines-2026",
+  "importFile": "data/admissions/official-guangdong-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.283-hunan-control-lines2026-and-boundary-routing-846556records",
+    "recordCount": 846556,
+    "guangdongRecords": 17595,
+    "rankConversions": 8816,
+    "rankRowsMissingSourceUrl": 8816,
+    "coreSha256": "172c13c2c7d023cb98f6a94c14650cffc1aa5d7939bc2b5b07b82ce17093ad46",
+    "guangdongSha256": "63bf2fb6f3be00930a72c6f1f01a70218983920a10c4aba66cd05f60e2cdcb2b"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.284-guangdong-control-lines2026-and-rank-provenance-846605records",
+    "recordCount": 846605,
+    "guangdongRecords": 17644,
+    "rankConversions": 8816,
+    "rankSourceUrlRecords": 8816,
+    "sourceRecords": 49,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "sports": 3,
+      "art": 18,
+      "special": 2,
+      "local-special": 2,
+      "military": 3,
+      "fire-rescue": 2,
+      "teacher-special": 4,
+      "health-special": 5,
+      "minority-class": 2,
+      "preparatory": 4
+    },
+    "coreBytes": 15157466,
+    "coreSha256": "260b625a092def93aca94a011318170b1f2a27032ddec63bc98915fd74cb87ca",
+    "guangdongBytes": 22391348,
+    "guangdongSha256": "4f2855a5ce46569604bc69878b57e8846d8c5c9325cba32530798022264d226e",
+    "manifestBytes": 5511,
+    "manifestSha256": "7372ec004e6c18bf5ba06dd5df951f0f55f9b6327d65a23952d35d933031c2c5",
+    "rankPhysicsPdf": {
+      "previousSha256": "650e82f720d9901de5568d90f19617123ba1ba203e85824f3a2fd88d182fc1f6",
+      "currentSha256": "9bde2c4aaddf28cf3c294e2fdde3fa76981ae2ec4c6df39185d34d6d31044f9f",
+      "canonicalRowsCompared": 1200,
+      "canonicalMismatch": 0
+    }
+  }
+}

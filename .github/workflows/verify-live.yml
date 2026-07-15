@@ -44,14 +44,14 @@ jobs:
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
-          jq -e '.recordCount == 846556' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 846605' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.283-hunan-control-lines2026-and-boundary-routing-846556records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.284-guangdong-control-lines2026-and-rank-provenance-846605records"' >/dev/null
 
           shard_count=0
           while IFS= read -r file; do
@@ -88,6 +88,18 @@ jobs:
             | jq -e '[.records[] | select(.sourceId == "official-hunan-control-lines-2026" and .controlLineRouteKind == "ordinary-bachelor") | .minScore] | sort == [400, 446]' >/dev/null
           gzip -dc "$work/hunan.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-hunan-control-lines-2026" and .controlLineRouteKind == "ordinary-vocational") | .minScore] | sort == [200, 200]' >/dev/null
+          gzip -dc "$work/guangdong.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-guangdong-control-lines-2026")] | length == 49' >/dev/null
+          gzip -dc "$work/guangdong.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-guangdong-control-lines-2026" and .formalScoreScope == "control-line-only")] | length == 4' >/dev/null
+          gzip -dc "$work/guangdong.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-guangdong-control-lines-2026" and .formalScoreScope == "special-path-only")] | length == 45' >/dev/null
+          gzip -dc "$work/guangdong.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-guangdong-control-lines-2026" and .controlLineRouteKind == "ordinary-bachelor") | .minScore] | sort == [425, 440]' >/dev/null
+          gzip -dc "$work/guangdong.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-guangdong-control-lines-2026" and .controlLineRouteKind == "ordinary-vocational") | .minScore] | sort == [200, 200]' >/dev/null
+          gzip -dc "$work/guangdong.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2026 and (.sourceId == "official-guangdong-rank-2026" or .sourceId == "official-guangdong-special-rank-2026") and .sourceUrl == "https://eea.gd.gov.cn/ptgk/content/post_4916165.html")] | length == 8816' >/dev/null
           printf 'verified_url=%s\n' "$base"
           printf 'release_path=%s\n' "$release_path"
           printf 'province_shards=%s\n' "$shard_count"

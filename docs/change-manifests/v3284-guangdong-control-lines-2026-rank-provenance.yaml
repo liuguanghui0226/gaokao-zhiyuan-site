@@ -1,0 +1,80 @@
+change_id: "2026-07-16-v3284-guangdong-control-lines-2026-rank-provenance"
+title: "广东2026控制线与位次来源修复"
+phase: deliver
+status: ready_for_deploy
+execution_mode: full
+resume_mode: full
+resume_reason: "官方控制线、位次来源修订、运行分片、普通路径算法和GitHub Pages需同步验证。"
+last_updated: "2026-07-16T08:00:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "广东省教育考试院公开页解析为49条2026控制线，并复核8816条位次换算来源。"
+  - surface: user
+    role: consumer
+    notes: "历史和物理普通本专科边界分流，专科线以下统一降级。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、广东gzip分片、Pages部署与公网31省验证保持同一模型版本。"
+
+sot_map:
+  - info_name: "广东省2026年普通高校招生录取最低分数线"
+    pattern: 4
+    source: "https://eea.gd.gov.cn/ptgk/content/post_4915151.html"
+    consumers:
+      - name: "data/admissions/official-guangdong-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/guangdong.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node读取官方HTML和固定表格字段，定向重写gzip核心、清单与广东分片。"
+    desync_risk: high
+  - info_name: "广东省2026年普通高考一分一段统计表"
+    pattern: 4
+    source: "https://eea.gd.gov.cn/ptgk/content/post_4916165.html"
+    consumers:
+      - name: "site/data/release-v3.275/guangdong.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "8816条位次记录补齐来源页；物理PDF换版重解析1200条普通记录并执行逐字段零差异断言。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "保留v3.283 gzip产物哈希；来源、数量或逐字段断言失败不覆盖运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.283前端和分片，但保留官方镜像、结构化导入和来源换版审计。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: "source-import"
+    scope: "官方HTML、49条控制线、普通与特殊路径计数"
+    verification_command: "node scripts/import-official-guangdong-control-lines-2026.mjs --use-cache"
+  - id: "runtime-patch"
+    scope: "核心索引、广东分片、8816条位次来源、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-guangdong-control-lines-2026-v3284.mjs"
+  - id: "boundary-safety"
+    scope: "历史199/200/439/440、物理199/200/424/425与特殊路径隔离"
+    verification_command: "node scripts/test-official-guangdong-control-lines-v3284.mjs"
+  - id: "national-regression"
+    scope: "31省分片、全国分段场景、2026普通控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校投档线、专业录取最低分或录取概率证据。"
+  - "文化分、专业分和专业资格要求不得与普通类总分混算。"
+  - "当前2026普通批控制线只覆盖11省，仍有20省待补。"
+  - "同一官方附件URL可能继续换版，需保留字节数、SHA-256和重解析差异审计。"
+
+next_action: "部署v3.284并完成公网31省验证，随后从缺失20省中继续补齐2026官方普通批控制线。"

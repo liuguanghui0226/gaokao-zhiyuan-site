@@ -257,6 +257,29 @@ assert.equal(hunanBelow.confidence, "C");
 assert.ok(hunanBelow.total <= 42);
 assert.ok(hunanBelow.warnings.some((warning) => /高职专科录取控制分数线200分/.test(warning)));
 
+api.setProvinceData(readGzipJson(path.join(releaseDir, `${manifest.shards["广东"].file}.gz`)));
+const guangdongHistory199 = profileFor("广东", "历史/文科", 199);
+const guangdongHistory200 = profileFor("广东", "历史/文科", 200);
+const guangdongHistory439 = profileFor("广东", "历史/文科", 439);
+const guangdongHistory440 = profileFor("广东", "历史/文科", 440);
+const guangdongPhysics424 = profileFor("广东", "物理/理科", 424);
+const guangdongPhysics425 = profileFor("广东", "物理/理科", 425);
+assert.equal(api.ordinaryBachelorControlLine(guangdongHistory440)?.score, 440);
+assert.equal(api.ordinaryBachelorControlLine(guangdongPhysics425)?.score, 425);
+assert.equal(api.ordinaryVocationalControlLine(guangdongHistory200)?.score, 200);
+assert.equal(api.isVocationalProfile(guangdongHistory439), true);
+assert.equal(api.isVocationalProfile(guangdongHistory440), false);
+assert.equal(api.isVocationalProfile(guangdongPhysics424), true);
+assert.equal(api.isVocationalProfile(guangdongPhysics425), false);
+const guangdongBelow = api.scoreCandidate(
+  api.CANDIDATE_POOLS.find((candidate) => candidate.id === "vocational-dual"),
+  guangdongHistory199,
+  api.classifyProfileBand(guangdongHistory199),
+);
+assert.equal(guangdongBelow.confidence, "C");
+assert.ok(guangdongBelow.total <= 42);
+assert.ok(guangdongBelow.warnings.some((warning) => /高职专科录取最低分数线200分/.test(warning)));
+
 const hainanHighRow = rows.find((row) => row.province === "海南");
 assert.ok(hainanHighRow && hainanHighRow.scoreScale === 900);
 assert.equal(scenarioCount, 155);

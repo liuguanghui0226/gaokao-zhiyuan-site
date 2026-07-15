@@ -26,13 +26,13 @@ assert.deepEqual(imported.diagnostics.breakdown, { ordinary: 4, special: 2, thre
 assert.equal(sourceRecords.length, 30);
 assert.equal(new Set(sourceRecords.map((record) => record.id)).size, 30);
 assert.ok(sourceRecords.every((record) => record.dataType === "control-line" && record.year === 2026 && record.province === "江西"));
-assert.equal(core.modelVersion, "local-deterministic-v3.283-hunan-control-lines2026-and-boundary-routing-846556records");
+assert.equal(core.modelVersion, "local-deterministic-v3.284-guangdong-control-lines2026-and-rank-provenance-846605records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
-assert.equal(core.admissionScoreLayer.structuredRecords, 846556);
-assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 910);
+assert.equal(core.admissionScoreLayer.structuredRecords, 846605);
+assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 959);
 assert.equal(core.admissionScoreLayer.sourceNotes.filter((note) => note.id === "official-jiangxi-control-lines-2026").length, 1);
 assert.equal(manifest.modelVersion, core.modelVersion);
-assert.equal(manifest.recordCount, 846556);
+assert.equal(manifest.recordCount, 846605);
 assert.equal(manifest.shards["江西"].records, 12798);
 assert.equal(runtimeManifest.after.sourceRecords, 30);
 
