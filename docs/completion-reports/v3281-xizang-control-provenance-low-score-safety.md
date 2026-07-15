@@ -28,7 +28,12 @@ node scripts/test-current-release.mjs
 
 ## 部署
 
-GitHub Pages 部署和公网验证将在本提交推送后写回本报告。
+- GitHub 提交：`bd570d851ba3045aec921c159938b0aec9f4055a`
+- Pages 部署：[`29444426579`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29444426579)，成功。
+- 公网全分片验证：[`29444565672`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29444565672)，成功。
+- 公网地址：<https://liuguanghui0226.github.io/gaokao-zhiyuan-site/>
+
+公网验证读取页面入口、gzip 核心索引和全部 31 个省级分片，并额外断言西藏来源记录 22 条、普通路由 12 条、特殊路径 10 条及 v3.281 模型版本。
 
 ## 保留缺口
 
