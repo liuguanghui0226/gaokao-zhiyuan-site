@@ -981,6 +981,7 @@ function dedupePlanOptions(options) {
 }
 
 let ordinaryBachelorControlLineCache = { records: null, key: "", value: null };
+let ordinaryVocationalControlLineCache = { records: null, key: "", value: null };
 
 function ordinaryBachelorControlLine(profile) {
   const records = admissionRecords();
@@ -1019,6 +1020,47 @@ function ordinaryBachelorControlLine(profile) {
   const selected = thresholds.sort((left, right) => right.score - left.score)[0];
   const value = { score: selected.score, year: latestYear, record: selected.record };
   ordinaryBachelorControlLineCache = { records, key, value };
+  return value;
+}
+
+function ordinaryVocationalControlLine(profile) {
+  const records = admissionRecords();
+  const selectedCategory = normalizeText(profile?.candidateCategory);
+  const key = `${normalizeProvince(profile?.province)}|${normalizeSubject(profile?.subject)}|${selectedCategory}`;
+  if (ordinaryVocationalControlLineCache.records === records && ordinaryVocationalControlLineCache.key === key) {
+    return ordinaryVocationalControlLineCache.value;
+  }
+  const rows = records.filter((record) => {
+    if (!isControlLineRecord(record) || !provinceMatchesRecord(record, profile) || !subjectMatchesRecord(record, profile)) return false;
+    const text = normalizeText(`${record.batch || ""} ${record.majorName || ""} ${(record.schoolTags || []).join(" ")}`);
+    const ordinaryVocationalLine = /专科|高职|二段线/.test(text) && !/本科/.test(text) &&
+      !/艺术|艺体|体育|戏曲|军|警|资格|专业统考|职教|对口|部队|特殊类型/.test(text);
+    if (!ordinaryVocationalLine) return false;
+    const recordCategory = normalizeText(record.candidateCategory || record.candidateClass || record.majorGroup);
+    return !selectedCategory || !recordCategory || recordCategory.includes(selectedCategory) || selectedCategory.includes(recordCategory);
+  });
+  if (!rows.length) {
+    ordinaryVocationalControlLineCache = { records, key, value: null };
+    return null;
+  }
+  const latestYear = rows.reduce((latest, record) => Math.max(latest, Number(record.year) || 0), 0);
+  const latestRows = rows.filter((record) => Number(record.year) === latestYear);
+  const thresholdsByCategory = new Map();
+  for (const record of latestRows) {
+    const score = Number(record.minScore) || 0;
+    if (!score) continue;
+    const category = normalizeText(record.candidateCategory || record.candidateClass || record.majorGroup) || "ordinary";
+    const current = thresholdsByCategory.get(category);
+    if (!current || score < current.score) thresholdsByCategory.set(category, { score, record });
+  }
+  const thresholds = [...thresholdsByCategory.values()];
+  if (!thresholds.length) {
+    ordinaryVocationalControlLineCache = { records, key, value: null };
+    return null;
+  }
+  const selected = thresholds.sort((left, right) => right.score - left.score)[0];
+  const value = { score: selected.score, year: latestYear, record: selected.record };
+  ordinaryVocationalControlLineCache = { records, key, value };
   return value;
 }
 
@@ -1620,6 +1662,11 @@ function scoreCandidate(candidate, profile, band) {
   const interestWords = parseList(profile.interest);
   const vocationalMode = isVocationalProfile(profile);
   const bachelorLine = ordinaryBachelorControlLine(profile);
+  const vocationalLine = ordinaryVocationalControlLine(profile);
+  const profileScore = Number(profile.score);
+  const belowVocationalLine = Boolean(
+    vocationalLine && Number.isFinite(profileScore) && profileScore > 0 && profileScore < vocationalLine.score
+  );
   const candidateText = normalizeText([
     candidate.title,
     candidate.stance,
@@ -1682,6 +1729,7 @@ function scoreCandidate(candidate, profile, band) {
   if (candidate.highCost && profile.budget !== "不敏感") riskPenalty += profile.budget === "高度敏感" ? 18 : 8;
   if (missingInputs.includes("位次")) riskPenalty += 8;
   if (missingInputs.includes("省份")) riskPenalty += 8;
+  if (belowVocationalLine) riskPenalty += 18;
   if (vocationalMode && !["vocational-dual", "regional-safe"].includes(candidate.id)) riskPenalty += 18;
   if (scoreStatus.available && !profileRecords.length) riskPenalty += 10;
   if (bestAdmission && bestAdmission.fit.score < 62) riskPenalty += 16;
@@ -1710,6 +1758,7 @@ function scoreCandidate(candidate, profile, band) {
   if (vocationalMode && !["vocational-dual", "regional-safe"].includes(candidate.id)) {
     displayTotal = Math.min(displayTotal, 48);
   }
+  if (belowVocationalLine) displayTotal = Math.min(displayTotal, 42);
   if (bestAdmission && bestAdmission.fit.score < 62) {
     displayTotal = Math.min(displayTotal, 68);
   } else if (bestAdmission && bestAdmission.fit.score < 76) {
@@ -1736,12 +1785,18 @@ function scoreCandidate(candidate, profile, band) {
       ? "本地证据可用，但存在关键输入缺口或风险项，适合作为候选继续核验。"
       : "缺少结构化院校/专业录取分，当前只能作为候选核验清单，不能判断录取概率。";
   }
+  if (belowVocationalLine) {
+    confidence = "C";
+    confidenceReason = "当前分数低于本省同科类普通高职专科最低控制线，只能做升学路径探索，不能把院校清单解释为可录取结果。";
+  }
 
   const reasons = [
     `孩子画像为${profile.childType}，当前策略为${profile.strategy}，模型按公开权重给出排序。`,
     `分数/位次进入${band.label}：${band.strategy}`,
     vocationalMode
-      ? bachelorLine
+      ? belowVocationalLine
+        ? `当前${profile.score}分低于${vocationalLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}普通高职专科最低控制线${vocationalLine.score}分；普通批录取资格尚未达到，只能核验高职单招、技能培养、复读再规划及后续征集政策。`
+        : bachelorLine
         ? `当前${profile.score}分低于${bachelorLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}普通本科最低控制线${bachelorLine.score}分，系统优先比较高职专科、双高专业群、专升本和就业路径。`
         : "当前分数进入专科/技能段，系统会优先比较高职专科、双高专业群、专升本和就业路径。"
       : "",
@@ -1762,6 +1817,7 @@ function scoreCandidate(candidate, profile, band) {
   ].filter(Boolean);
 
   const warnings = [
+    ...(belowVocationalLine ? [`当前分数低于${vocationalLine.year}年普通高职专科最低控制线${vocationalLine.score}分；下列院校和专业只能作为路径调研，不得视为普通批可录取名单。`] : []),
     ...(profile.rankEstimateText ? [`${profile.rankEstimateText}正式填报前必须回省考试院原表复核。`] : []),
     ...freshness.warnings,
     ...(vocationalMode && !["vocational-dual", "regional-safe"].includes(candidate.id) ? ["当前分数段不宜只按本科平台逻辑排序，应同步核验高职专科和专升本路径。"] : []),

@@ -1,0 +1,233 @@
+{
+  "dataset": "official-xizang-control-lines-2026-government-verification",
+  "generatedAt": "2026-07-15T19:06:18.200Z",
+  "scope": {
+    "province": "西藏",
+    "year": 2026,
+    "sourceKind": "official-control-line-provenance-repair"
+  },
+  "notes": [
+    "逐行核验现有 official-xizang-control-lines-2026 的22条记录，不新增重复控制线。",
+    "自治区政府公开页正文明确说明分数线由西藏自治区教育考试院公布。",
+    "普通控制线用于本专科资格路由；艺体和部队生源保持 special-path-only。",
+    "控制线不是院校投档线、专业录取分、一分一段或录取概率证据。"
+  ],
+  "sourcePatch": {
+    "id": "official-xizang-control-lines-2026",
+    "title": "西藏自治区2026年普通高等学校招生录取最低控制分数线",
+    "publisher": "西藏自治区教育考试院",
+    "url": "http://zsks.edu.xizang.gov.cn/71/73/7866.html",
+    "publishedAt": "2026-06-25 12:06",
+    "quality": "official-xizang-control-line-image-and-government-html-verified",
+    "usage": "西藏自治区教育考试院官方图片页导入22条控制线，并由西藏自治区人民政府2026-06-26公开HTML逐行复核；普通本科/专科线用于资格路由，艺体和部队生源保持特殊路径隔离。",
+    "mirrorUrl": "https://www.xizang.gov.cn/xwzx_406/bmkx/202606/t20260626_547152.html",
+    "mirrorTitle": "西藏自治区2026年普通高考分数线出炉",
+    "mirrorPublisher": "西藏自治区人民政府（页面来源：西藏商报）",
+    "mirrorPublishedAt": "2026-06-26",
+    "mirrorHtmlSha256": "44f9d2c2145b5155a352bbeafe5dd35e7eeb101915a5549344a8258b2a5bbb5b",
+    "mirrorTextSha256": "20c21b7101dbe487de672ae04e2dba54bb7f7abdddece31e93fe9f25899dc2b3",
+    "mac2tMirrorRelativePath": "gaokao-official-mirror/xizang/2026/control-lines/xizang-government-2026-control-lines.html",
+    "caution": "控制线只作批次资格边界；西藏仍缺公开可计算一分一段和省级全量普通/高职投档录取表。"
+  },
+  "diagnostics": {
+    "expectedRecordCount": 22,
+    "breakdown": {
+      "ordinary": 12,
+      "artSports": 8,
+      "military": 2
+    },
+    "ordinaryBoundaries": {
+      "history": {
+        "A": {
+          "bachelor": 294,
+          "vocational": 237
+        },
+        "B": {
+          "bachelor": 304,
+          "vocational": 237
+        }
+      },
+      "physics": {
+        "A": {
+          "bachelor": 260,
+          "vocational": 195
+        },
+        "B": {
+          "bachelor": 300,
+          "vocational": 195
+        }
+      }
+    },
+    "textAssertions": [
+      "6月25日，西藏自治区教育考试院公布西藏自治区2026年普通高等学校招生录取最低控制分数线",
+      "本科一批：A类考生330分，B类考生400分",
+      "本科二批：A类考生294分，B类考生304分",
+      "专科批：A类考生237分，B类考生237分",
+      "本科一批：A类考生300分，B类考生400分",
+      "本科二批：A类考生260分，B类考生300分",
+      "专科批：A类考生195分，B类考生195分",
+      "本科：A类考生221分，B类考生228分",
+      "专科：A类考生166分，B类考生166分",
+      "本科：A类考生195分，B类考生225分",
+      "专科：A类考生137分，B类考生137分",
+      "本科：292分",
+      "本科：269分"
+    ]
+  },
+  "verificationRows": [
+    {
+      "route": "ordinary",
+      "subjectType": "历史类",
+      "batch": "本科一批",
+      "candidateClass": "A类考生",
+      "minScore": 330
+    },
+    {
+      "route": "ordinary",
+      "subjectType": "历史类",
+      "batch": "本科一批",
+      "candidateClass": "B类考生",
+      "minScore": 400
+    },
+    {
+      "route": "ordinary",
+      "subjectType": "历史类",
+      "batch": "本科二批",
+      "candidateClass": "A类考生",
+      "minScore": 294
+    },
+    {
+      "route": "ordinary",
+      "subjectType": "历史类",
+      "batch": "本科二批",
+      "candidateClass": "B类考生",
+      "minScore": 304
+    },
+    {
+      "route": "ordinary",
+      "subjectType": "历史类",
+      "batch": "专科批",
+      "candidateClass": "A类考生",
+      "minScore": 237
+    },
+    {
+      "route": "ordinary",
+      "subjectType": "历史类",
+      "batch": "专科批",
+      "candidateClass": "B类考生",
+      "minScore": 237
+    },
+    {
+      "route": "ordinary",
+      "subjectType": "物理类",
+      "batch": "本科一批",
+      "candidateClass": "A类考生",
+      "minScore": 300
+    },
+    {
+      "route": "ordinary",
+      "subjectType": "物理类",
+      "batch": "本科一批",
+      "candidateClass": "B类考生",
+      "minScore": 400
+    },
+    {
+      "route": "ordinary",
+      "subjectType": "物理类",
+      "batch": "本科二批",
+      "candidateClass": "A类考生",
+      "minScore": 260
+    },
+    {
+      "route": "ordinary",
+      "subjectType": "物理类",
+      "batch": "本科二批",
+      "candidateClass": "B类考生",
+      "minScore": 300
+    },
+    {
+      "route": "ordinary",
+      "subjectType": "物理类",
+      "batch": "专科批",
+      "candidateClass": "A类考生",
+      "minScore": 195
+    },
+    {
+      "route": "ordinary",
+      "subjectType": "物理类",
+      "batch": "专科批",
+      "candidateClass": "B类考生",
+      "minScore": 195
+    },
+    {
+      "route": "art-sports",
+      "subjectType": "历史类",
+      "batch": "本科",
+      "candidateClass": "A类考生",
+      "minScore": 221
+    },
+    {
+      "route": "art-sports",
+      "subjectType": "历史类",
+      "batch": "本科",
+      "candidateClass": "B类考生",
+      "minScore": 228
+    },
+    {
+      "route": "art-sports",
+      "subjectType": "历史类",
+      "batch": "专科",
+      "candidateClass": "A类考生",
+      "minScore": 166
+    },
+    {
+      "route": "art-sports",
+      "subjectType": "历史类",
+      "batch": "专科",
+      "candidateClass": "B类考生",
+      "minScore": 166
+    },
+    {
+      "route": "art-sports",
+      "subjectType": "物理类",
+      "batch": "本科",
+      "candidateClass": "A类考生",
+      "minScore": 195
+    },
+    {
+      "route": "art-sports",
+      "subjectType": "物理类",
+      "batch": "本科",
+      "candidateClass": "B类考生",
+      "minScore": 225
+    },
+    {
+      "route": "art-sports",
+      "subjectType": "物理类",
+      "batch": "专科",
+      "candidateClass": "A类考生",
+      "minScore": 137
+    },
+    {
+      "route": "art-sports",
+      "subjectType": "物理类",
+      "batch": "专科",
+      "candidateClass": "B类考生",
+      "minScore": 137
+    },
+    {
+      "route": "military",
+      "subjectType": "历史类",
+      "batch": "本科",
+      "candidateClass": "部队生源",
+      "minScore": 292
+    },
+    {
+      "route": "military",
+      "subjectType": "物理类",
+      "batch": "本科",
+      "candidateClass": "部队生源",
+      "minScore": 269
+    }
+  ]
+}

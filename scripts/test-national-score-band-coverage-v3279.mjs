@@ -37,6 +37,7 @@ globalThis.__gaokaoNationalCoverageTest = {
   isVocationalAdmissionRecord,
   isVocationalProfile,
   ordinaryBachelorControlLine,
+  ordinaryVocationalControlLine,
   scoreCandidate,
   scoreScaleForProvince,
   setProvinceData(payload) {
@@ -201,6 +202,14 @@ assert.equal(api.ordinaryBachelorControlLine(jilinBelow)?.score, 321);
 assert.equal(api.isVocationalProfile(jilinBelow), true);
 assert.equal(api.isVocationalProfile(jilinAbove), false);
 assert.equal(api.isVocationalProfile({ ...jilinAbove, score: "650", rankUsage: "vocational" }), true, "explicit vocational score-table usage must control the education path");
+
+api.setProvinceData(readGzipJson(path.join(releaseDir, `${manifest.shards["西藏"].file}.gz`)));
+const xizangPhysicsB = profileFor("西藏", "物理/理科", 195);
+xizangPhysicsB.candidateCategory = "B类考生";
+assert.equal(api.ordinaryBachelorControlLine(xizangPhysicsB)?.score, 300);
+assert.equal(api.ordinaryVocationalControlLine(xizangPhysicsB)?.score, 195);
+assert.equal(api.isVocationalProfile({ ...xizangPhysicsB, score: "299" }), true);
+assert.equal(api.isVocationalProfile({ ...xizangPhysicsB, score: "300" }), false);
 
 const hainanHighRow = rows.find((row) => row.province === "海南");
 assert.ok(hainanHighRow && hainanHighRow.scoreScale === 900);

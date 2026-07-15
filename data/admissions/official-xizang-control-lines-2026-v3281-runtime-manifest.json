@@ -1,0 +1,32 @@
+{
+  "dataset": "official-xizang-control-lines-2026-v3281-runtime",
+  "generatedAt": "2026-07-15T19:04:34.304Z",
+  "sourceId": "official-xizang-control-lines-2026",
+  "verificationFile": "data/admissions/official-xizang-control-lines-2026-government-verification.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.280-jiangxi-control-lines2026-846462records",
+    "recordCount": 846462,
+    "xizangRecords": 28315,
+    "coreSha256": "e5e74fdd28cde7ef59e6af2ea7e253e30fae53c12903ad9b38fa77e6dd1a40f6",
+    "xizangSha256": "b7afd12886d79e946f950a7c9faaba92e85a91df6119ef5c630ef5797ebe7965"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.281-xizang-control-provenance-and-low-score-safety-846462records",
+    "recordCount": 846462,
+    "xizangRecords": 28315,
+    "verifiedRecords": 22,
+    "routeCounts": {
+      "ordinary": 12,
+      "art-sports": 8,
+      "military": 2
+    },
+    "sourceMirrorUrl": "https://www.xizang.gov.cn/xwzx_406/bmkx/202606/t20260626_547152.html",
+    "coreBytes": 15150881,
+    "coreSha256": "5070573622d34dca99860dc377eed91db5ab78ea3e3cb9fa36a4887a75ceb98d",
+    "xizangBytes": 27915526,
+    "xizangSha256": "409cffbaa734b8102e6bf696be31e778255184a913ce53c5c0abd6af399945ea",
+    "manifestBytes": 5510,
+    "manifestSha256": "c416d1c78e1d085d90d943b357d8bcfd2ca68faa753101ecba7874b0fb656e25"
+  }
+}

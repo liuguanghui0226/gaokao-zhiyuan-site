@@ -51,7 +51,7 @@ jobs:
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.280-jiangxi-control-lines2026-846462records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.281-xizang-control-provenance-and-low-score-safety-846462records"' >/dev/null
 
           shard_count=0
           while IFS= read -r file; do
@@ -66,6 +66,12 @@ jobs:
             | jq -e '[.records[] | select(.sourceId == "official-jiangxi-control-lines-2026")] | length == 30' >/dev/null
           gzip -dc "$work/jiangxi.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-jiangxi-control-lines-2026" and .majorGroup == "普通类" and .controlLineSection == "本科") | .minScore] | sort == [412, 479]' >/dev/null
+          gzip -dc "$work/xizang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-xizang-control-lines-2026")] | length == 22' >/dev/null
+          gzip -dc "$work/xizang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-xizang-control-lines-2026" and .formalScoreScope == "control-line-only")] | length == 12' >/dev/null
+          gzip -dc "$work/xizang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-xizang-control-lines-2026" and .formalScoreScope == "special-path-only")] | length == 10' >/dev/null
           printf 'verified_url=%s\n' "$base"
           printf 'release_path=%s\n' "$release_path"
           printf 'province_shards=%s\n' "$shard_count"
