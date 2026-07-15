@@ -1,0 +1,26 @@
+{
+  "dataset": "official-jiangxi-control-lines-2026-v3280-runtime",
+  "generatedAt": "2026-07-15T18:29:31.241Z",
+  "sourceId": "official-jiangxi-control-lines-2026",
+  "importFile": "data/admissions/official-jiangxi-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.275-hnu2024-846432records",
+    "recordCount": 846432,
+    "jiangxiRecords": 12768,
+    "coreSha256": "c306f37cd87af75107503201766fe9037101b0d89135279a6c37f8abc873f4f7",
+    "jiangxiSha256": "24deae458a757f46f0526b11a26cf09f33879a72e0d77c8295b01003c6a48318"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.280-jiangxi-control-lines2026-846462records",
+    "recordCount": 846462,
+    "jiangxiRecords": 12798,
+    "sourceRecords": 30,
+    "coreBytes": 15149972,
+    "coreSha256": "e5e74fdd28cde7ef59e6af2ea7e253e30fae53c12903ad9b38fa77e6dd1a40f6",
+    "jiangxiBytes": 13665565,
+    "jiangxiSha256": "ed01c16fc2ad5ef20a4bb5a7ef77c0de390a0b6e657fece3a29d63f12ab4d3d5",
+    "manifestBytes": 5489,
+    "manifestSha256": "517afb69b8161df1deffbfbe0a4fe41e5c445774d14eee37a844aebe056980ad"
+  }
+}

@@ -1,0 +1,1174 @@
+{
+  "dataset": "official-jiangxi-control-lines-2026-import",
+  "generatedAt": "2026-07-15T18:29:31.241Z",
+  "scope": {
+    "province": "江西",
+    "year": 2026,
+    "sourceKind": "official-control-lines"
+  },
+  "notes": [
+    "由 scripts/import-official-jiangxi-control-lines-2026.mjs 从公开官方转载页自动生成。",
+    "普通历史/物理本科与高职线用于普通考生本专科资格路由；特殊类型、三校生、艺体记录保持路径隔离。",
+    "控制线不是院校或专业组投档线，不生成录取概率。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "official-jiangxi-control-lines-2026",
+      "title": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "publisher": "江西省教育厅（阳光高考转载）",
+      "publishedAt": "2026年06月25日",
+      "url": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847174.html",
+      "quality": "official-jiangxi-government-chsi-republication-html-verified",
+      "usage": "抽取江西2026普通类、特殊类型、三校生类、艺术类和体育类控制线30条；普通本科线用于本专科资格路由，其余路径隔离。",
+      "parsedRecords": 30,
+      "pageHtmlSha256": "47bd6d31095994a9f9b3f77944901ee9e5be09640bd7b4ea124b96dcc4e62765",
+      "articleHtmlSha256": "7ad7c479f58d6ccfb906948306afdc067e798d91b981556557b101c3fd45eab2",
+      "articleTextSha256": "c44f8a70e4e6f8506b758e03d70a3f00d682ad74ba96903536f09836027641a0"
+    }
+  ],
+  "diagnostics": {
+    "recordCount": 30,
+    "textAssertions": [
+      "普通类历史科目组本科分数线479分，高职（专科）分数线220分",
+      "普通类物理科目组本科分数线412分，高职（专科）分数线200分",
+      "普通类历史科目组：535分、普通类物理科目组：505分",
+      "三校生类本科分数线448分，高职（专科）分数线220分",
+      "音乐表演类（声乐）本科文化线309分，专业线150分；高职（专科）文化线140分，专业线150分",
+      "舞蹈类本科文化线309分，专业线217分；高职（专科）文化线140分，专业线135分",
+      "播音与主持类本科文化线412分，专业线150分；高职（专科）文化线200分，专业线150分",
+      "书法类本科文化线309分，专业线241分；高职（专科）文化线140分，专业线180分",
+      "体育类本科文化线288分，专业线89分；高职（专科）文化线140分，专业线60分"
+    ],
+    "breakdown": {
+      "ordinary": 4,
+      "special": 2,
+      "threeSchool": 2,
+      "art": 20,
+      "sports": 2
+    },
+    "ordinaryBoundaries": {
+      "historyBachelor": 479,
+      "historyVocational": 220,
+      "physicsBachelor": 412,
+      "physicsVocational": 200
+    }
+  },
+  "records": [
+    {
+      "id": "2026-634b1ce27010edea",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "历史类",
+      "batch": "普通类本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "普通类",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "普通类历史类本科最低控制线",
+      "majorCode": "",
+      "majorGroup": "普通类",
+      "disciplineCodes": [],
+      "minScore": 479,
+      "cultureScoreLine": 479,
+      "rankUsage": "",
+      "rankUsageLabel": "",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "普通类本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "control-line-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-8a02d3b9b69bbda6",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "历史类",
+      "batch": "普通类高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "普通类",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "普通类历史类高职（专科）最低控制线",
+      "majorCode": "",
+      "majorGroup": "普通类",
+      "disciplineCodes": [],
+      "minScore": 220,
+      "cultureScoreLine": 220,
+      "rankUsage": "",
+      "rankUsageLabel": "",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "普通类高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "control-line-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-a1a10e51d4d87aa2",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "物理类",
+      "batch": "普通类本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "普通类",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "普通类物理类本科最低控制线",
+      "majorCode": "",
+      "majorGroup": "普通类",
+      "disciplineCodes": [],
+      "minScore": 412,
+      "cultureScoreLine": 412,
+      "rankUsage": "",
+      "rankUsageLabel": "",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "普通类本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "control-line-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-d895e0d11e01bc40",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "物理类",
+      "batch": "普通类高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "普通类",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "普通类物理类高职（专科）最低控制线",
+      "majorCode": "",
+      "majorGroup": "普通类",
+      "disciplineCodes": [],
+      "minScore": 200,
+      "cultureScoreLine": 200,
+      "rankUsage": "",
+      "rankUsageLabel": "",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "普通类高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "control-line-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-6a37dcaa2f71ad93",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "历史类",
+      "batch": "特殊类型招生参考分数线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "特殊类型",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "特殊类型历史类本科最低控制线",
+      "majorCode": "",
+      "majorGroup": "特殊类型",
+      "disciplineCodes": [],
+      "minScore": 535,
+      "cultureScoreLine": 535,
+      "rankUsage": "special",
+      "rankUsageLabel": "特殊类型",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "特殊类型招生参考分数线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-14f56d77e10d7065",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "物理类",
+      "batch": "特殊类型招生参考分数线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "特殊类型",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "特殊类型物理类本科最低控制线",
+      "majorCode": "",
+      "majorGroup": "特殊类型",
+      "disciplineCodes": [],
+      "minScore": 505,
+      "cultureScoreLine": 505,
+      "rankUsage": "special",
+      "rankUsageLabel": "特殊类型",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "特殊类型招生参考分数线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-4bda6c17f6653a01",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "三校生类",
+      "batch": "三校生类（职教）本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "三校生类（职教）",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "三校生类（职教）三校生类本科最低控制线",
+      "majorCode": "",
+      "majorGroup": "三校生类（职教）",
+      "disciplineCodes": [],
+      "minScore": 448,
+      "cultureScoreLine": 448,
+      "rankUsage": "jiangxi-three-school",
+      "rankUsageLabel": "江西三校生类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "三校生类（职教）本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-fcedc9c0e61daccb",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "三校生类",
+      "batch": "三校生类（职教）高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "三校生类（职教）",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "三校生类（职教）三校生类高职（专科）最低控制线",
+      "majorCode": "",
+      "majorGroup": "三校生类（职教）",
+      "disciplineCodes": [],
+      "minScore": 220,
+      "cultureScoreLine": 220,
+      "rankUsage": "jiangxi-three-school",
+      "rankUsageLabel": "江西三校生类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "三校生类（职教）高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-18d781a79aac126b",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "音乐表演类（声乐）本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "音乐表演类（声乐）",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "音乐表演类（声乐）艺术类本科文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "音乐表演类（声乐）",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 309,
+      "cultureScoreLine": 309,
+      "professionalScoreLine": 150,
+      "rankUsage": "art",
+      "rankUsageLabel": "音乐表演类（声乐）",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "音乐表演类（声乐）本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-852f8e775053d6bf",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "音乐表演类（声乐）高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "音乐表演类（声乐）",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "音乐表演类（声乐）艺术类高职（专科）文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "音乐表演类（声乐）",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 140,
+      "cultureScoreLine": 140,
+      "professionalScoreLine": 150,
+      "rankUsage": "art",
+      "rankUsageLabel": "音乐表演类（声乐）",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "音乐表演类（声乐）高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-08f229a91a3fcb87",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "音乐表演类（器乐）本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "音乐表演类（器乐）",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "音乐表演类（器乐）艺术类本科文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "音乐表演类（器乐）",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 309,
+      "cultureScoreLine": 309,
+      "professionalScoreLine": 150,
+      "rankUsage": "art",
+      "rankUsageLabel": "音乐表演类（器乐）",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "音乐表演类（器乐）本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-b8bfb82cbf11d811",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "音乐表演类（器乐）高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "音乐表演类（器乐）",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "音乐表演类（器乐）艺术类高职（专科）文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "音乐表演类（器乐）",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 140,
+      "cultureScoreLine": 140,
+      "professionalScoreLine": 150,
+      "rankUsage": "art",
+      "rankUsageLabel": "音乐表演类（器乐）",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "音乐表演类（器乐）高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-0ea97950e8b8e9d5",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "音乐教育类本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "音乐教育类",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "音乐教育类艺术类本科文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "音乐教育类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 309,
+      "cultureScoreLine": 309,
+      "professionalScoreLine": 150,
+      "rankUsage": "art",
+      "rankUsageLabel": "音乐教育类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "音乐教育类本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-2a0b0aae6bb31664",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "音乐教育类高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "音乐教育类",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "音乐教育类艺术类高职（专科）文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "音乐教育类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 140,
+      "cultureScoreLine": 140,
+      "professionalScoreLine": 150,
+      "rankUsage": "art",
+      "rankUsageLabel": "音乐教育类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "音乐教育类高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-c84bef9323c0af3a",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "舞蹈类本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "舞蹈类",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "舞蹈类艺术类本科文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "舞蹈类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 309,
+      "cultureScoreLine": 309,
+      "professionalScoreLine": 217,
+      "rankUsage": "art",
+      "rankUsageLabel": "舞蹈类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "舞蹈类本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-ab6eeebf6e6ed486",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "舞蹈类高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "舞蹈类",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "舞蹈类艺术类高职（专科）文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "舞蹈类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 140,
+      "cultureScoreLine": 140,
+      "professionalScoreLine": 135,
+      "rankUsage": "art",
+      "rankUsageLabel": "舞蹈类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "舞蹈类高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-c649f4cb09097fd5",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "戏剧影视表演类本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "戏剧影视表演类",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "戏剧影视表演类艺术类本科文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "戏剧影视表演类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 309,
+      "cultureScoreLine": 309,
+      "professionalScoreLine": 135,
+      "rankUsage": "art",
+      "rankUsageLabel": "戏剧影视表演类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "戏剧影视表演类本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-c74b0d51ecd5baee",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "戏剧影视表演类高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "戏剧影视表演类",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "戏剧影视表演类艺术类高职（专科）文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "戏剧影视表演类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 140,
+      "cultureScoreLine": 140,
+      "professionalScoreLine": 135,
+      "rankUsage": "art",
+      "rankUsageLabel": "戏剧影视表演类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "戏剧影视表演类高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-703ad14c4c51ede9",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "服装表演类本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "服装表演类",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "服装表演类艺术类本科文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "服装表演类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 309,
+      "cultureScoreLine": 309,
+      "professionalScoreLine": 135,
+      "rankUsage": "art",
+      "rankUsageLabel": "服装表演类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "服装表演类本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-68db2f60239bd5b3",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "服装表演类高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "服装表演类",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "服装表演类艺术类高职（专科）文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "服装表演类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 140,
+      "cultureScoreLine": 140,
+      "professionalScoreLine": 135,
+      "rankUsage": "art",
+      "rankUsageLabel": "服装表演类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "服装表演类高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-2fe9e535cc812236",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "戏剧影视导演类本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "戏剧影视导演类",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "戏剧影视导演类艺术类本科文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "戏剧影视导演类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 309,
+      "cultureScoreLine": 309,
+      "professionalScoreLine": 135,
+      "rankUsage": "art",
+      "rankUsageLabel": "戏剧影视导演类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "戏剧影视导演类本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-53710b186c452e7c",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "戏剧影视导演类高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "戏剧影视导演类",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "戏剧影视导演类艺术类高职（专科）文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "戏剧影视导演类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 140,
+      "cultureScoreLine": 140,
+      "professionalScoreLine": 135,
+      "rankUsage": "art",
+      "rankUsageLabel": "戏剧影视导演类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "戏剧影视导演类高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-e3fa4cdf94b6a5f6",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "播音与主持类本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "播音与主持类",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "播音与主持类艺术类本科文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "播音与主持类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 412,
+      "cultureScoreLine": 412,
+      "professionalScoreLine": 150,
+      "rankUsage": "art",
+      "rankUsageLabel": "播音与主持类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "播音与主持类本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-698dd1a9702a9d34",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "播音与主持类高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "播音与主持类",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "播音与主持类艺术类高职（专科）文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "播音与主持类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 200,
+      "cultureScoreLine": 200,
+      "professionalScoreLine": 150,
+      "rankUsage": "art",
+      "rankUsageLabel": "播音与主持类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "播音与主持类高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-d2044a15cab7cc4b",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "美术与设计类本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "美术与设计类",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "美术与设计类艺术类本科文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "美术与设计类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 309,
+      "cultureScoreLine": 309,
+      "professionalScoreLine": 180,
+      "rankUsage": "art",
+      "rankUsageLabel": "美术与设计类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "美术与设计类本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-6dac2ed3b3f5d9f4",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "美术与设计类高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "美术与设计类",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "美术与设计类艺术类高职（专科）文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "美术与设计类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 140,
+      "cultureScoreLine": 140,
+      "professionalScoreLine": 180,
+      "rankUsage": "art",
+      "rankUsageLabel": "美术与设计类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "美术与设计类高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-265cdfa27541de95",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "书法类本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "书法类",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "书法类艺术类本科文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "书法类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 309,
+      "cultureScoreLine": 309,
+      "professionalScoreLine": 241,
+      "rankUsage": "art",
+      "rankUsageLabel": "书法类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "书法类本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-559475271cdeec98",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "艺术类",
+      "batch": "书法类高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "书法类",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "书法类艺术类高职（专科）文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "书法类",
+      "disciplineCodes": [
+        "13"
+      ],
+      "minScore": 140,
+      "cultureScoreLine": 140,
+      "professionalScoreLine": 180,
+      "rankUsage": "art",
+      "rankUsageLabel": "书法类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "书法类高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-b64d6e13ab9338c7",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "体育类",
+      "batch": "体育类本科控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "体育类",
+        "本科"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "体育类体育类本科文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "体育类",
+      "disciplineCodes": [
+        "04"
+      ],
+      "minScore": 288,
+      "cultureScoreLine": 288,
+      "professionalScoreLine": 89,
+      "rankUsage": "sports",
+      "rankUsageLabel": "体育类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "体育类本科控制线",
+      "controlLineSection": "本科",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    },
+    {
+      "id": "2026-eddf2c0a4bac746e",
+      "province": "江西",
+      "year": 2026,
+      "subjectType": "体育类",
+      "batch": "体育类高职（专科）控制线",
+      "schoolName": "江西省2026年普通高校招生各类各批次录取控制分数线揭晓",
+      "schoolTags": [
+        "批次控制线",
+        "体育类",
+        "高职（专科）"
+      ],
+      "city": "江西",
+      "dataType": "control-line",
+      "majorName": "体育类体育类高职（专科）文化及专业控制线",
+      "majorCode": "",
+      "majorGroup": "体育类",
+      "disciplineCodes": [
+        "04"
+      ],
+      "minScore": 140,
+      "cultureScoreLine": 140,
+      "professionalScoreLine": 60,
+      "rankUsage": "sports",
+      "rankUsageLabel": "体育类",
+      "rankRangeText": "",
+      "sourceId": "official-jiangxi-control-lines-2026",
+      "sourceQuality": "official-jiangxi-government-chsi-republication-html-verified",
+      "controlLineKind": "体育类高职（专科）控制线",
+      "controlLineSection": "高职（专科）",
+      "formalScoreScope": "special-path-only",
+      "cautions": [
+        "这是江西省教育厅发布、阳光高考转载的2026年各类各批次录取控制分数线，只用于批次/类别资格边界。",
+        "控制线不是院校投档线、专业组最低投档分、专业录取最低分或录取概率证据。",
+        "艺术和体育记录须同时达到对应文化线、专业线，并继续核对当年招生章程和综合成绩规则。",
+        "江西省综合管理平台内的2024-2025专业组投档分/位次需要考生本人登录，本公开导入不绕过登录抓取个人或受限数据。"
+      ]
+    }
+  ]
+}

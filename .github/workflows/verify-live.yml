@@ -44,14 +44,14 @@ jobs:
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
-          jq -e '.recordCount == 846432' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 846462' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.275-hnu2024-846432records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.280-jiangxi-control-lines2026-846462records"' >/dev/null
 
           shard_count=0
           while IFS= read -r file; do
@@ -62,6 +62,10 @@ jobs:
           done < <(jq -r '.shards[].file' "$work/manifest.json")
 
           test "$shard_count" -eq 31
+          gzip -dc "$work/jiangxi.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-jiangxi-control-lines-2026")] | length == 30' >/dev/null
+          gzip -dc "$work/jiangxi.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-jiangxi-control-lines-2026" and .majorGroup == "普通类" and .controlLineSection == "本科") | .minScore] | sort == [412, 479]' >/dev/null
           printf 'verified_url=%s\n' "$base"
           printf 'release_path=%s\n' "$release_path"
           printf 'province_shards=%s\n' "$shard_count"

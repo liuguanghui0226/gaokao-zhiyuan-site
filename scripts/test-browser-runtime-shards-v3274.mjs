@@ -45,22 +45,23 @@ const imported = JSON.parse(fs.readFileSync(importFile, "utf8"));
 const szuImported = JSON.parse(fs.readFileSync(szuImportFile, "utf8"));
 const hnuImported = JSON.parse(fs.readFileSync(hnuImportFile, "utf8"));
 
-assert.equal(core.modelVersion, "local-deterministic-v3.275-hnu2024-846432records");
+assert.equal(core.modelVersion, "local-deterministic-v3.280-jiangxi-control-lines2026-846462records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.records.length, 0);
 assert.equal(core.admissionScoreLayer.rankConversions.length, 0);
-assert.equal(core.admissionScoreLayer.structuredRecords, 846432);
+assert.equal(core.admissionScoreLayer.structuredRecords, 846462);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
 assert.equal(core.admissionScoreLayer.admissionPlanRecords, 71877);
 assert.equal(core.admissionScoreLayer.admissionPlanCount, 358294, "vacancy snapshots must not inflate annual plan count");
 assert.equal(core.admissionScoreLayer.vacancyPlanRecords, 2187);
 assert.equal(core.admissionScoreLayer.vacancyPlanSnapshotCount, 6099);
 assert.equal(core.admissionScoreLayer.ordinaryVocationalVacancyRecords, 926);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5086);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5087);
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-vacancy-plans-2025-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-admission-schedule-2026-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-szu-national-2024-2025-school-admission"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-hnu-national-2024-major-admission"));
+assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-jiangxi-control-lines-2026"));
 assert.deepEqual(core.admissionScoreLayer.coverage.formalScoreMissingProvinces, ["西藏"]);
 assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 116656);
 assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedSources, 137);
@@ -68,7 +69,7 @@ assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 66);
 
 assert.equal(manifest.modelVersion, core.modelVersion);
 assert.equal(manifest.provinceCount, 31);
-assert.equal(manifest.recordCount, 846432);
+assert.equal(manifest.recordCount, 846462);
 assert.equal(manifest.rankConversionCount, 116656);
 assert.equal(manifest.unknownRecords, 0);
 assert.equal(manifest.unknownRankConversions, 0);
@@ -107,7 +108,17 @@ assert.ok(vacancyRecords.every((record) => !Object.hasOwn(record, "minRank") && 
 assert.ok(vacancyRecords.every((record) => record.sourceAttachment));
 
 const jiangxiEntry = manifest.shards["江西"];
+assert.equal(jiangxiEntry.records, 12798);
 const jiangxi = runtimeJson(runtimeDataFile(`provinces/${jiangxiEntry.file}`));
+const jiangxiControlLines = jiangxi.records.filter((record) => record.sourceId === "official-jiangxi-control-lines-2026");
+assert.equal(jiangxiControlLines.length, 30);
+assert.deepEqual(
+  jiangxiControlLines
+    .filter((record) => record.majorGroup === "普通类" && record.controlLineSection === "本科")
+    .map((record) => record.minScore)
+    .sort((left, right) => left - right),
+  [412, 479],
+);
 const hnuJiangxi = jiangxi.records.filter((record) => record.sourceId === "official-hnu-national-2024-major-admission");
 assert.equal(hnuJiangxi.length, 37);
 const hnuJiangxiCs = hnuJiangxi.find((record) => record.majorName === "计算机科学与技术" && record.admissionType === "普通类");
