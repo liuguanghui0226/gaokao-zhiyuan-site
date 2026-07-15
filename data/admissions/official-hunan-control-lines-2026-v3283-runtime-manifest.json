@@ -1,0 +1,36 @@
+{
+  "dataset": "official-hunan-control-lines-2026-v3283-runtime",
+  "generatedAt": "2026-07-15T20:40:23.042Z",
+  "sourceId": "official-hunan-control-lines-2026",
+  "importFile": "data/admissions/official-hunan-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.282-zhejiang-control-lines2026-and-segment-routing-846519records",
+    "recordCount": 846519,
+    "hunanRecords": 31877,
+    "rankConversions": 1137,
+    "coreSha256": "61454a9410ea27bf44e964856d325ed6650b399f88e02edb2e39294bd1eb18d9",
+    "hunanSha256": "10980bc1a99377bbe50e4ed3efb8a71eaa72e90a02f282ea88ca2054393b3a85"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.283-hunan-control-lines2026-and-boundary-routing-846556records",
+    "recordCount": 846556,
+    "hunanRecords": 31914,
+    "rankConversions": 1137,
+    "sourceRecords": 37,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "sports": 4,
+      "art": 9,
+      "counterpart": 18
+    },
+    "coreBytes": 15155018,
+    "coreSha256": "172c13c2c7d023cb98f6a94c14650cffc1aa5d7939bc2b5b07b82ce17093ad46",
+    "hunanBytes": 29682571,
+    "hunanSha256": "09daaded4890a6bd57d22ce9e7e83e94a37bde43a23582ae02e94a96fb7f0f01",
+    "manifestBytes": 5508,
+    "manifestSha256": "17b4679e9ffabc7d0a9f97f3145ea94959e30e883147c063ed4606c808f80fbb"
+  }
+}

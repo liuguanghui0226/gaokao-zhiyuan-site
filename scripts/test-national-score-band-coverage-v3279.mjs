@@ -234,6 +234,29 @@ assert.equal(api.classifyProfileBand(zhejiang266).label, "普通类第二段");
 assert.equal(api.classifyProfileBand(zhejiang493).label, "普通类第二段");
 assert.equal(api.classifyProfileBand(zhejiang494).label, "普通类第一段");
 
+api.setProvinceData(readGzipJson(path.join(releaseDir, `${manifest.shards["湖南"].file}.gz`)));
+const hunanHistory199 = profileFor("湖南", "历史/文科", 199);
+const hunanHistory200 = profileFor("湖南", "历史/文科", 200);
+const hunanHistory445 = profileFor("湖南", "历史/文科", 445);
+const hunanHistory446 = profileFor("湖南", "历史/文科", 446);
+const hunanPhysics399 = profileFor("湖南", "物理/理科", 399);
+const hunanPhysics400 = profileFor("湖南", "物理/理科", 400);
+assert.equal(api.ordinaryBachelorControlLine(hunanHistory446)?.score, 446);
+assert.equal(api.ordinaryBachelorControlLine(hunanPhysics400)?.score, 400);
+assert.equal(api.ordinaryVocationalControlLine(hunanHistory200)?.score, 200);
+assert.equal(api.isVocationalProfile(hunanHistory445), true);
+assert.equal(api.isVocationalProfile(hunanHistory446), false);
+assert.equal(api.isVocationalProfile(hunanPhysics399), true);
+assert.equal(api.isVocationalProfile(hunanPhysics400), false);
+const hunanBelow = api.scoreCandidate(
+  api.CANDIDATE_POOLS.find((candidate) => candidate.id === "vocational-dual"),
+  hunanHistory199,
+  api.classifyProfileBand(hunanHistory199),
+);
+assert.equal(hunanBelow.confidence, "C");
+assert.ok(hunanBelow.total <= 42);
+assert.ok(hunanBelow.warnings.some((warning) => /高职专科录取控制分数线200分/.test(warning)));
+
 const hainanHighRow = rows.find((row) => row.province === "海南");
 assert.ok(hainanHighRow && hainanHighRow.scoreScale === 900);
 assert.equal(scenarioCount, 155);

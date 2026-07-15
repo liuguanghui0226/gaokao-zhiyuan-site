@@ -1,0 +1,71 @@
+change_id: "2026-07-16-v3283-hunan-control-lines-2026-boundary-routing"
+title: "湖南2026控制线与全分数段边界"
+phase: deliver
+status: verified-local
+execution_mode: full
+resume_mode: full
+resume_reason: "官方图片OCR、结构化导入、湖南运行分片、普通路径算法和GitHub Pages需同步验证。"
+last_updated: "2026-07-16T05:05:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "湖南省教育考试院公开页三张原图解析为37条2026录取控制线。"
+  - surface: user
+    role: consumer
+    notes: "普通历史/物理本专科边界分流，专科线以下统一降级。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、湖南gzip分片、Pages部署与公网31省验证保持同一模型版本。"
+
+sot_map:
+  - info_name: "湖南省2026年普通高校招生录取控制分数线"
+    pattern: 4
+    source: "https://jyt.hunan.gov.cn/jyt/sjyt/hnsjyksy/web/ksyzkzx/202606/t20260625_34011553.html"
+    consumers:
+      - name: "data/admissions/official-hunan-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/hunan.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node下载官方HTML和三张图片，Vision OCR与固定字段断言交叉验证，再定向重写gzip核心、清单与湖南分片。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "保留v3.282 gzip产物哈希；来源、OCR或数量断言失败不覆盖运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.282前端和分片，但保留官方原图镜像与结构化导入审计。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: "source-import"
+    scope: "官方HTML、三张原图、OCR、37条控制线和六类路由计数"
+    verification_command: "node scripts/import-official-hunan-control-lines-2026.mjs --use-cache"
+  - id: "runtime-patch"
+    scope: "核心索引、湖南分片、来源说明、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-hunan-control-lines-2026-v3283.mjs"
+  - id: "boundary-safety"
+    scope: "199/200、399/400、445/446临界分与特殊路径结构化隔离"
+    verification_command: "node scripts/test-official-hunan-control-lines-v3283.mjs"
+  - id: "national-regression"
+    scope: "31省分片、全国分段场景、既有省份控制线和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校投档线、专业录取最低分或录取概率证据。"
+  - "艺术、体育和职高对口的文化分与专业分不得和普通类总分混算。"
+  - "生源不足降分政策不能在普通推荐中自动套用。"
+  - "全国其他省份2026控制线和最新正式投档录取表仍需逐省补齐。"
+
+next_action: "部署v3.283到GitHub Pages并执行公网31省验证。"

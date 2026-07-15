@@ -19,6 +19,7 @@ const tests = [
   "test-official-jiangxi-control-lines-v3280.mjs",
   "test-official-xizang-control-lines-v3281.mjs",
   "test-official-zhejiang-control-lines-v3282.mjs",
+  "test-official-hunan-control-lines-v3283.mjs",
 ];
 
 const results = tests.map((test) => {
