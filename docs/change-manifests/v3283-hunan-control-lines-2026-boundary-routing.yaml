@@ -1,11 +1,11 @@
 change_id: "2026-07-16-v3283-hunan-control-lines-2026-boundary-routing"
 title: "湖南2026控制线与全分数段边界"
 phase: deliver
-status: verified-local
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "官方图片OCR、结构化导入、湖南运行分片、普通路径算法和GitHub Pages需同步验证。"
-last_updated: "2026-07-16T05:05:00+08:00"
+last_updated: "2026-07-16T05:20:00+08:00"
 
 surfaces_touched:
   - surface: information
@@ -68,4 +68,4 @@ residual_risks:
   - "生源不足降分政策不能在普通推荐中自动套用。"
   - "全国其他省份2026控制线和最新正式投档录取表仍需逐省补齐。"
 
-next_action: "部署v3.283到GitHub Pages并执行公网31省验证。"
+next_action: "继续逐省补齐2026官方控制线和最新正式投档录取表，保持普通、艺体、职高对口及特殊路径分别建模。"
