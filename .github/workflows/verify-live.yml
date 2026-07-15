@@ -39,19 +39,21 @@ jobs:
           fetch "${base}assets/app.js" "$work/app.js"
           grep -q "buildApplicationPlan" "$work/app.js"
           grep -q "electiveRequirement" "$work/app.js"
+          grep -q "vocationalScoreInput" "$work/app.js"
+          grep -q "controlLineScoreComparison" "$work/app.js"
 
           fetch "${base}data/${release_path}/manifest.json.gz" "$work/manifest.json.gz"
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
-          jq -e '.recordCount == 846657' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 846666' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.285-anhui-control-lines2026-and-rank-provenance-846657records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.286-beijing-control-lines2026-and-score-basis-846666records"' >/dev/null
 
           shard_count=0
           while IFS= read -r file; do
@@ -114,6 +116,18 @@ jobs:
             | jq -e '[.records[] | select(.sourceId == "official-anhui-control-lines-2026" and (.professionalMinScore | type) == "number")] | length == 40' >/dev/null
           gzip -dc "$work/anhui.json.gz" \
             | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-anhui-rank-2026" and .sourceUrl == "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847718.html")] | length == 976' >/dev/null
+          gzip -dc "$work/beijing.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-beijing-control-lines-2026")] | length == 9' >/dev/null
+          gzip -dc "$work/beijing.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-beijing-control-lines-2026" and .formalScoreScope == "control-line-only")] | length == 2' >/dev/null
+          gzip -dc "$work/beijing.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-beijing-control-lines-2026" and .formalScoreScope == "special-path-only")] | length == 7' >/dev/null
+          gzip -dc "$work/beijing.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-beijing-control-lines-2026" and .controlLineRouteKind == "ordinary-bachelor" and .minScore == 429 and .scoreBasis == "gaokao-total")] | length == 1' >/dev/null
+          gzip -dc "$work/beijing.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-beijing-control-lines-2026" and .controlLineRouteKind == "ordinary-vocational" and .minScore == 120 and .scoreBasis == "chinese-math-foreign-450")] | length == 1' >/dev/null
+          gzip -dc "$work/beijing.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-beijing-rank-2026" and .sourceUrl == "https://www.bjeea.cn/html/gkgz/tzgg/2026/0624/88238.html")] | length == 341' >/dev/null
           printf 'verified_url=%s\n' "$base"
           printf 'release_path=%s\n' "$release_path"
           printf 'province_shards=%s\n' "$shard_count"

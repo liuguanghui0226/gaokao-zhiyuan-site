@@ -1,0 +1,80 @@
+change_id: "2026-07-16-v3286-beijing-control-lines-2026-score-basis"
+title: "北京2026控制线、专科三科分口径与位次来源修复"
+phase: deliver
+status: local_verified
+execution_mode: full
+resume_mode: full
+resume_reason: "控制线分数口径、位次来源、前端输入、模型降级、运行分片和GitHub Pages需同步验证。"
+last_updated: "2026-07-16T15:40:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "北京教育考试院页面锁定9条2026控制线，并复核341条位次记录的10页PDF证据。"
+  - surface: user
+    role: consumer
+    notes: "北京专科语数外三科总分独立输入；缺失口径时不生成可执行清单。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、北京gzip分片、Pages部署与公网31省验证保持同一模型版本。"
+
+sot_map:
+  - info_name: "北京市2026年普通高等学校招生录取最低控制分数线"
+    pattern: 4
+    source: "https://www.bjeea.cn/html/gkgz/tzgg/2026/0624/88239.html"
+    consumers:
+      - name: "data/admissions/official-beijing-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/beijing.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node校验正式页面固定字节数与SHA-256，再定向重写gzip核心、清单与北京分片。"
+    desync_risk: high
+  - info_name: "北京市2026年高考考生分数分布"
+    pattern: 4
+    source: "https://www.bjeea.cn/html/gkgz/tzgg/2026/0624/88238.html"
+    consumers:
+      - name: "site/data/release-v3.275/beijing.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "复核10页PDF字节数和哈希，为341条既有位次记录补齐正式来源URL，不修改位次数值。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "保留v3.285产物哈希；来源、数量、分数口径或位次值守恒断言失败不覆盖运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.285前端和分片，但保留官方镜像、结构化导入和分数口径审计。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: "source-import"
+    scope: "控制线页、位次页、10页PDF和9条控制线"
+    verification_command: "node scripts/import-official-beijing-control-lines-2026.mjs --use-cache"
+  - id: "runtime-patch"
+    scope: "核心索引、北京分片、341条位次来源和SHA-256"
+    verification_command: "node scripts/apply-official-beijing-control-lines-2026-v3286.mjs"
+  - id: "score-basis-safety"
+    scope: "总分119/200、本科428/429、三科分119/120、缺失口径和特殊路径隔离"
+    verification_command: "node scripts/test-official-beijing-control-lines-v3286.mjs"
+  - id: "national-regression"
+    scope: "31省分片、155个全国分段场景、2026普通控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校投档线、专业录取最低分或录取概率证据。"
+  - "北京普通专科120分使用语数外三科总分，不得与六科总分直接比较。"
+  - "当前2026普通批控制线覆盖13省，仍有18省待补。"
+  - "正式页面或附件换版时需重新校验字节数、SHA-256和位次字段守恒。"
+
+next_action: "部署v3.286并完成公网31省验证，随后从缺失18省中继续补齐2026官方普通批控制线。"

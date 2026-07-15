@@ -1,0 +1,50 @@
+{
+  "dataset": "official-beijing-control-lines-2026-v3286-runtime",
+  "generatedAt": "2026-07-16T07:20:00.000Z",
+  "sourceId": "official-beijing-control-lines-2026",
+  "importFile": "data/admissions/official-beijing-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.285-anhui-control-lines2026-and-rank-provenance-846657records",
+    "recordCount": 846657,
+    "beijingRecords": 6481,
+    "rankConversions": 688,
+    "rankRowsMissingSourceUrl": 341,
+    "coreSha256": "5c0906591de74b2ffa8a05239eaeb88b01bcf62282118f617c7cbc3caa390701",
+    "beijingSha256": "5f6dd9953651b3e770d971ef49af80e5a57f0ec2f8fd5e6507b6a135b4861a6a"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.286-beijing-control-lines2026-and-score-basis-846666records",
+    "recordCount": 846666,
+    "beijingRecords": 6490,
+    "rankConversions": 688,
+    "rankSourceUrlRecords": 341,
+    "rankValueChanges": 0,
+    "rankEvidence": {
+      "pageHtmlBytes": 12943,
+      "pageHtmlSha256": "b140391d70126bf52e82b5d1818443edafd144017555293f49be174e9fc2c009",
+      "pdfBytes": 134541,
+      "pdfSha256": "39f1e77097c56cbd7e1cd2971793e6231ba2ca9230811ba502a830153c4556a8"
+    },
+    "sourceRecords": 9,
+    "routeCounts": {
+      "ordinary-bachelor": 1,
+      "special": 1,
+      "art": 3,
+      "sports": 1,
+      "ordinary-vocational": 1,
+      "single-exam": 1,
+      "single-exam-art": 1
+    },
+    "scoreBasisCounts": {
+      "gaokao-total": 5,
+      "chinese-math-foreign-450": 4
+    },
+    "coreBytes": 15161239,
+    "coreSha256": "53c578b971a205d3d6ed6612aaddccf4d1b522029020252f78514928c17719dc",
+    "beijingBytes": 6589690,
+    "beijingSha256": "956624bea8a924a4ee3f78af8696959b60804bd44559b3776e4ef71702ea4266",
+    "manifestBytes": 5505,
+    "manifestSha256": "e2cd25106ac5eb3f28fa1ab2605ecbd634aec606dca21ce1f830730ff13e1bda"
+  }
+}

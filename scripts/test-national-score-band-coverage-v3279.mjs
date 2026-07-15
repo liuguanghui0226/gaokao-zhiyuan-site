@@ -37,6 +37,8 @@ globalThis.__gaokaoNationalCoverageTest = {
   isVocationalAdmissionRecord,
   isVocationalProfile,
   ordinaryBachelorControlLine,
+  controlLineScoreComparison,
+  ordinaryVocationalQualificationStatus,
   ordinarySegmentStatus,
   ordinaryVocationalControlLine,
   scoreCandidate,
@@ -89,6 +91,7 @@ function profileFor(province, subject, score) {
   return {
     childType: "均衡探索型",
     score: String(score),
+    vocationalScore: "",
     rank: "",
     rankInput: "",
     province,
@@ -302,6 +305,33 @@ const anhuiBelow = api.scoreCandidate(
 assert.equal(anhuiBelow.confidence, "C");
 assert.ok(anhuiBelow.total <= 42);
 assert.ok(anhuiBelow.warnings.some((warning) => /高职（专科）文化课录取控制分数线200分/.test(warning)));
+
+api.setProvinceData(readGzipJson(path.join(releaseDir, `${manifest.shards["北京"].file}.gz`)));
+const beijing119 = profileFor("北京", "综合", 119);
+const beijing200Unknown = profileFor("北京", "综合", 200);
+const beijingThree119 = { ...profileFor("北京", "综合", 200), vocationalScore: "119" };
+const beijingThree120 = { ...profileFor("北京", "综合", 200), vocationalScore: "120" };
+const beijing428 = { ...profileFor("北京", "综合", 428), vocationalScore: "120" };
+const beijing429 = profileFor("北京", "综合", 429);
+assert.equal(api.ordinaryBachelorControlLine(beijing429)?.score, 429);
+assert.equal(api.ordinaryVocationalControlLine(beijingThree120)?.score, 120);
+assert.equal(api.ordinaryVocationalControlLine(beijingThree120)?.record.scoreBasis, "chinese-math-foreign-450");
+assert.equal(api.controlLineScoreComparison(api.ordinaryVocationalControlLine(beijing119), beijing119).inferredUpperBound, true);
+assert.equal(api.ordinaryVocationalQualificationStatus(beijing119).below, true);
+assert.equal(api.ordinaryVocationalQualificationStatus(beijing200Unknown).unknown, true);
+assert.equal(api.ordinaryVocationalQualificationStatus(beijingThree119).below, true);
+assert.equal(api.ordinaryVocationalQualificationStatus(beijingThree120).below, false);
+assert.equal(api.isVocationalProfile(beijing428), true);
+assert.equal(api.isVocationalProfile(beijing429), false);
+const beijingUnknown = api.scoreCandidate(
+  api.CANDIDATE_POOLS.find((candidate) => candidate.id === "vocational-dual"),
+  beijing200Unknown,
+  api.classifyProfileBand(beijing200Unknown),
+);
+assert.equal(beijingUnknown.confidence, "C");
+assert.ok(beijingUnknown.total <= 55);
+assert.ok(beijingUnknown.schoolOptions.every((option) => !option.record));
+assert.ok(beijingUnknown.warnings.some((warning) => /请补充该分数/.test(warning)));
 
 const hainanHighRow = rows.find((row) => row.province === "海南");
 assert.ok(hainanHighRow && hainanHighRow.scoreScale === 900);

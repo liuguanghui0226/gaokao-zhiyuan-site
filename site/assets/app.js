@@ -51,6 +51,7 @@ const PROVINCE_SCORE_SCALES = {
 const DEFAULT_PROFILE = {
   childType: "均衡探索型",
   score: "593",
+  vocationalScore: "",
   rank: "17798",
   province: "江西",
   candidateCategory: "",
@@ -1082,8 +1083,82 @@ function ordinaryVocationalControlLine(profile) {
 
 function isBelowOrdinaryVocationalLine(profile) {
   const line = ordinaryVocationalControlLine(profile);
-  const score = Number(profile?.score);
-  return Boolean(line && Number.isFinite(score) && score > 0 && score < line.score);
+  const comparison = controlLineScoreComparison(line, profile);
+  return comparison.status === "comparable" && comparison.below;
+}
+
+function controlLineScoreComparison(line, profile) {
+  if (!line) {
+    return {
+      status: "unavailable",
+      below: false,
+      score: null,
+      label: "高考总分",
+      basis: "gaokao-total",
+      inferredUpperBound: false,
+    };
+  }
+  const basis = String(line.record?.scoreBasis || "gaokao-total");
+  if (basis === "chinese-math-foreign-450") {
+    const rawVocationalScore = String(profile?.vocationalScore ?? "").trim();
+    const vocationalScore = Number(rawVocationalScore);
+    if (rawVocationalScore && Number.isFinite(vocationalScore) && vocationalScore >= 0) {
+      return {
+        status: "comparable",
+        below: vocationalScore < line.score,
+        score: vocationalScore,
+        label: "语数外三科总分",
+        basis,
+        inferredUpperBound: false,
+      };
+    }
+    const totalScore = Number(profile?.score);
+    if (Number.isFinite(totalScore) && totalScore > 0 && totalScore < line.score) {
+      return {
+        status: "comparable",
+        below: true,
+        score: totalScore,
+        label: "高考总分（可推定语数外三科总分不高于此分）",
+        basis,
+        inferredUpperBound: true,
+      };
+    }
+    return {
+      status: "missing",
+      below: false,
+      score: null,
+      label: "语数外三科总分",
+      basis,
+      inferredUpperBound: false,
+    };
+  }
+  const rawScore = String(profile?.score ?? "").trim();
+  const score = Number(rawScore);
+  const comparable = Boolean(rawScore) && Number.isFinite(score) && score > 0;
+  return {
+    status: comparable ? "comparable" : "missing",
+    below: comparable && score < line.score,
+    score: comparable ? score : null,
+    label: "高考总分",
+    basis,
+    inferredUpperBound: false,
+  };
+}
+
+function ordinaryVocationalQualificationStatus(profile) {
+  const line = ordinaryVocationalControlLine(profile);
+  const comparison = controlLineScoreComparison(line, profile);
+  const relevant = Boolean(line && (
+    isVocationalProfile(profile) ||
+    line.record?.controlLineRouteKind === "segment"
+  ));
+  return {
+    line,
+    comparison,
+    relevant,
+    below: relevant && comparison.status === "comparable" && comparison.below,
+    unknown: relevant && comparison.status === "missing",
+  };
 }
 
 function ordinarySegmentStatus(profile) {
@@ -1289,6 +1364,7 @@ function profileFromForm() {
   const profile = {
     childType: $("#childType").value,
     score: $("#scoreInput").value.trim(),
+    vocationalScore: $("#vocationalScoreInput")?.value.trim() || "",
     rank: $("#rankInput").value.trim(),
     rankInput: $("#rankInput").value.trim(),
     province: $("#provinceInput").value.trim(),
@@ -1680,7 +1756,9 @@ function buildSchoolOptions(candidate, profile, band) {
   const scoreStatus = admissionScoreStatus();
   const profileRecordCount = profileAdmissionRecords(profile).length;
   const provinceReadiness = provinceReadinessForProfile(profile);
-  const belowVocationalLine = isBelowOrdinaryVocationalLine(profile);
+  const vocationalQualification = ordinaryVocationalQualificationStatus(profile);
+  const belowVocationalLine = vocationalQualification.below;
+  const vocationalQualificationUnknown = vocationalQualification.unknown;
   const cityPrefs = parseList(profile.cities);
   const interestWords = parseList(profile.interest);
   const vocationalMode = isVocationalProfile(profile);
@@ -1697,13 +1775,15 @@ function buildSchoolOptions(candidate, profile, band) {
     if (profile.budget !== "不敏感" && /高成本|港澳|中外/.test(text)) score -= 16;
     return { ...school, optionScore: score };
   }).sort((a, b) => b.optionScore - a.optionScore);
-  const roles = belowVocationalLine
+  const roles = belowVocationalLine || vocationalQualificationUnknown
     ? ["路径调研", "路径调研", "路径调研"]
     : nonVocationalLowScoreCandidate
     ? ["暂不推荐", "暂不推荐", "暂不推荐"]
     : scoreStatus.available ? ["首选", "稳妥", "备选"] : ["首选核验", "稳妥核验", "备选核验"];
   const genericScoreStatus = belowVocationalLine
     ? "低于普通高职专科控制线，仅保留为升学路径和专业认知调研"
+    : vocationalQualificationUnknown
+    ? "专科控制线使用另一成绩口径，补充分数前仅作资格与路径调研"
     : nonVocationalLowScoreCandidate
     ? "300分以下不使用本科专业分作为录取依据，仅保留为远期认知"
     : scoreStatus.available
@@ -1716,7 +1796,7 @@ function buildSchoolOptions(candidate, profile, band) {
     role: roles[index] || "备选核验",
     scoreStatus: genericScoreStatus,
   }));
-  if (belowVocationalLine) return genericOptions;
+  if (belowVocationalLine || vocationalQualificationUnknown) return genericOptions;
   const admissionOptions = buildAdmissionOptions(candidate, profile);
   const planOptions = buildPlanOptions(candidate, profile, band);
   const shouldSurfacePlans = planOptions.length && (
@@ -1734,11 +1814,14 @@ function scoreCandidate(candidate, profile, band) {
   const profileRecords = profileAdmissionRecords(profile);
   const provinceReadiness = provinceReadinessForProfile(profile);
   const freshness = admissionDataFreshness(profile);
-  const belowVocationalLine = isBelowOrdinaryVocationalLine(profile);
+  const vocationalQualification = ordinaryVocationalQualificationStatus(profile);
+  const belowVocationalLine = vocationalQualification.below;
+  const vocationalQualificationUnknown = vocationalQualification.unknown;
+  const vocationalLineComparison = vocationalQualification.comparison;
   const candidateAdmissionRecords = profileRecords
     .filter((record) => recordEligibleForCandidate(record, candidate, profile))
     .filter((record) => candidateMatchesAdmissionRecord(candidate, record, profile));
-  const bestAdmission = belowVocationalLine ? null : candidateAdmissionRecords
+  const bestAdmission = belowVocationalLine || vocationalQualificationUnknown ? null : candidateAdmissionRecords
     .map((record) => ({ record, fit: admissionFit(record, profile), interest: majorInterestScore(record, profile) }))
     .sort((a, b) => (b.fit.score + b.interest) - (a.fit.score + a.interest))[0];
   const limitedAdmission = bestAdmission && isLimitedAdmissionRecord(bestAdmission.record);
@@ -1750,7 +1833,7 @@ function scoreCandidate(candidate, profile, band) {
   const interestWords = parseList(profile.interest);
   const vocationalMode = isVocationalProfile(profile);
   const bachelorLine = ordinaryBachelorControlLine(profile);
-  const vocationalLine = ordinaryVocationalControlLine(profile);
+  const vocationalLine = vocationalQualification.line;
   const segmentStatus = ordinarySegmentStatus(profile);
   const bachelorLineLabel = controlLineDisplayLabel(bachelorLine, "普通本科最低控制线");
   const lowerLineLabel = controlLineDisplayLabel(vocationalLine, "普通高职专科最低控制线");
@@ -1766,6 +1849,7 @@ function scoreCandidate(candidate, profile, band) {
   if (!profile.province) missingInputs.push("省份");
   if (!profile.subject || profile.subject === "不确定") missingInputs.push("科类/选科");
   if (!profile.rank) missingInputs.push("位次");
+  if (vocationalQualificationUnknown) missingInputs.push("北京专科语数外三科总分");
 
   const redLineText = normalizeText(redLines.join(" "));
   const redLineConflict = redLines.some((item) => candidateText.includes(normalizeText(item))) ||
@@ -1818,6 +1902,7 @@ function scoreCandidate(candidate, profile, band) {
   if (missingInputs.includes("位次")) riskPenalty += 8;
   if (missingInputs.includes("省份")) riskPenalty += 8;
   if (belowVocationalLine) riskPenalty += 18;
+  if (vocationalQualificationUnknown) riskPenalty += 14;
   if (vocationalMode && !["vocational-dual", "regional-safe"].includes(candidate.id)) riskPenalty += 18;
   if (scoreStatus.available && !profileRecords.length) riskPenalty += 10;
   if (bestAdmission && bestAdmission.fit.score < 62) riskPenalty += 16;
@@ -1847,6 +1932,7 @@ function scoreCandidate(candidate, profile, band) {
     displayTotal = Math.min(displayTotal, 48);
   }
   if (belowVocationalLine) displayTotal = Math.min(displayTotal, 42);
+  if (vocationalQualificationUnknown) displayTotal = Math.min(displayTotal, 55);
   if (bestAdmission && bestAdmission.fit.score < 62) {
     displayTotal = Math.min(displayTotal, 68);
   } else if (bestAdmission && bestAdmission.fit.score < 76) {
@@ -1876,13 +1962,18 @@ function scoreCandidate(candidate, profile, band) {
   if (belowVocationalLine) {
     confidence = "C";
     confidenceReason = `当前分数低于本省同科类${lowerLineLabel}，只能做升学路径探索，不能把院校清单解释为可录取结果。`;
+  } else if (vocationalQualificationUnknown) {
+    confidence = "C";
+    confidenceReason = `本省普通专科线使用${vocationalLineComparison.label}，当前未提供该口径分数，不能确认普通专科批资格。`;
   }
 
   const reasons = [
     `孩子画像为${profile.childType}，当前策略为${profile.strategy}，模型按公开权重给出排序。`,
     `分数/位次进入${band.label}：${band.strategy}`,
     belowVocationalLine
-      ? `当前${profile.score}分低于${vocationalLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}${lowerLineLabel}${vocationalLine.score}分；${segmentedLowerLine ? "当前普通类分段资格尚未达到" : "普通批录取资格尚未达到"}，只能核验高职单招、技能培养、复读再规划及后续征集政策。`
+      ? `当前${vocationalLineComparison.label}${vocationalLineComparison.score}分低于${vocationalLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}${lowerLineLabel}${vocationalLine.score}分；${segmentedLowerLine ? "当前普通类分段资格尚未达到" : "普通批录取资格尚未达到"}，只能核验高职单招、技能培养、复读再规划及后续征集政策。`
+      : vocationalQualificationUnknown
+        ? `${vocationalLine.year}年${profile.province || "本省"}${lowerLineLabel}${vocationalLine.score}分按${vocationalLineComparison.label}判断；当前只填写了高考总分，尚不能判断普通专科批资格。`
       : segmentStatus?.band === "second"
         ? `当前${profile.score}分处于${segmentStatus.year}年${profile.province || "本省"}普通类第二段（${segmentStatus.secondLine.score}-${segmentStatus.firstLine.score - 1}分）；第二段仍可能包含剩余本科与高职专科计划，不能按“只能读专科”处理。`
         : segmentStatus?.band === "first"
@@ -1903,6 +1994,8 @@ function scoreCandidate(candidate, profile, band) {
     scoreStatus.available
       ? belowVocationalLine
         ? "当前分数低于普通高职专科控制线，模型不使用历史院校投档命中生成可执行建议。"
+        : vocationalQualificationUnknown
+        ? "当前缺少与普通专科控制线同口径的分数，模型不使用历史院校投档命中生成可执行建议。"
         : bestAdmission
         ? `命中结构化录取数据：${bestAdmission.record.schoolName}${bestAdmission.record.majorName ? `-${bestAdmission.record.majorName}` : ""}，${bestAdmission.fit.zone}。`
         : "本方向暂未命中当前省份/科类的结构化录取记录，仍需导入更多院校/专业分。"
@@ -1913,7 +2006,8 @@ function scoreCandidate(candidate, profile, band) {
   ].filter(Boolean);
 
   const warnings = [
-    ...(belowVocationalLine ? [`当前分数低于${vocationalLine.year}年${lowerLineLabel}${vocationalLine.score}分；下列院校和专业只能作为路径调研，不得视为普通批可录取名单。`] : []),
+    ...(belowVocationalLine ? [`当前${vocationalLineComparison.label}低于${vocationalLine.year}年${lowerLineLabel}${vocationalLine.score}分；下列院校和专业只能作为路径调研，不得视为普通批可录取名单。`] : []),
+    ...(vocationalQualificationUnknown ? [`${profile.province || "本省"}普通专科线按${vocationalLineComparison.label}判断；请补充该分数后再生成可执行院校专业清单。`] : []),
     ...(profile.rankEstimateText ? [`${profile.rankEstimateText}正式填报前必须回省考试院原表复核。`] : []),
     ...freshness.warnings,
     ...(vocationalMode && !["vocational-dual", "regional-safe"].includes(candidate.id) ? ["当前分数段不宜只按本科平台逻辑排序，应同步核验高职专科和专升本路径。"] : []),
@@ -2288,6 +2382,7 @@ function renderRecommendForm(profile) {
   const rankFieldValue = profile && Object.prototype.hasOwnProperty.call(profile, "rankInput")
     ? profile.rankInput
     : getProfileValue(profile, "rank");
+  const showBeijingVocationalScore = normalizeProvince(getProfileValue(profile, "province")) === "北京";
   return `<form id="recommendForm" class="recommend-form">
     <label>
       <span>孩子类型</span>
@@ -2298,6 +2393,10 @@ function renderRecommendForm(profile) {
     <label>
       <span>分数</span>
       <input id="scoreInput" type="number" min="0" max="1000" value="${esc(getProfileValue(profile, "score"))}" />
+    </label>
+    <label id="beijingVocationalScoreField" ${showBeijingVocationalScore ? "" : "hidden"}>
+      <span>专科语数外三科总分</span>
+      <input id="vocationalScoreInput" type="number" min="0" max="450" value="${esc(getProfileValue(profile, "vocationalScore"))}" placeholder="北京专科线使用" />
     </label>
     <label>
       <span>位次</span>
@@ -2466,11 +2565,18 @@ function renderRecommendationResults() {
     </article>`;
   }).join("");
 
-  const belowVocationalLine = isBelowOrdinaryVocationalLine(rec.profile);
-  const vocationalLine = belowVocationalLine ? ordinaryVocationalControlLine(rec.profile) : null;
+  const vocationalQualification = ordinaryVocationalQualificationStatus(rec.profile);
+  const belowVocationalLine = vocationalQualification.below;
+  const vocationalQualificationUnknown = vocationalQualification.unknown;
+  const vocationalLine = vocationalQualification.line;
+  const vocationalLineComparison = vocationalQualification.comparison;
   const belowLinePanel = belowVocationalLine ? `<section class="band admission-hit-panel">
     <h3>普通批资格线以下，仅作路径调研</h3>
-    <p>当前${esc(rec.profile.score)}分低于${esc(String(vocationalLine.year))}年${esc(rec.profile.province || "本省")}${esc(rec.profile.subject || "普通类")}${esc(controlLineDisplayLabel(vocationalLine, "普通高职专科最低控制线"))}${esc(String(vocationalLine.score))}分。本页不生成可执行院校专业清单，也不展示低于控制线的历史投档命中；仅保留高职单招、技能培养、复读再规划、专业认知和后续征集政策调研。</p>
+    <p>当前${esc(vocationalLineComparison.label)}${esc(String(vocationalLineComparison.score))}分低于${esc(String(vocationalLine.year))}年${esc(rec.profile.province || "本省")}${esc(rec.profile.subject || "普通类")}${esc(controlLineDisplayLabel(vocationalLine, "普通高职专科最低控制线"))}${esc(String(vocationalLine.score))}分。本页不生成可执行院校专业清单，也不展示低于控制线的历史投档命中；仅保留高职单招、技能培养、复读再规划、专业认知和后续征集政策调研。</p>
+  </section>` : "";
+  const unknownQualificationPanel = vocationalQualificationUnknown ? `<section class="band admission-hit-panel">
+    <h3>专科资格分数口径待补充</h3>
+    <p>${esc(rec.profile.province || "本省")}${esc(controlLineDisplayLabel(vocationalLine, "普通高职专科最低控制线"))}${esc(String(vocationalLine.score))}分按${esc(vocationalLineComparison.label)}判断。当前高考总分仍用于位次估算，但不能替代这一资格分数；补充后再生成可执行院校专业清单。</p>
   </section>` : "";
 
   return `<section class="recommend-results">
@@ -2483,8 +2589,8 @@ function renderRecommendationResults() {
       <div class="model-pill">${esc(policy.version || "local-deterministic-v1")}</div>
     </div>
     ${renderDataFreshnessPanel(rec.profile)}
-    ${belowVocationalLine ? belowLinePanel : renderAdmissionHitPanel(rec.profile)}
-    ${belowVocationalLine ? "" : renderApplicationPlan(rec.results)}
+    ${belowVocationalLine ? belowLinePanel : vocationalQualificationUnknown ? unknownQualificationPanel : renderAdmissionHitPanel(rec.profile)}
+    ${belowVocationalLine || vocationalQualificationUnknown ? "" : renderApplicationPlan(rec.results)}
     <div class="grid-2">${resultCards}</div>
     <section class="band">
       <h3>官方复核清单</h3>
@@ -2643,6 +2749,13 @@ function bindRecommendEvents() {
         submit.disabled = false;
         submit.textContent = originalLabel;
       }
+    }
+  });
+  const provinceInput = $("#provinceInput");
+  const beijingVocationalScoreField = $("#beijingVocationalScoreField");
+  provinceInput?.addEventListener("input", () => {
+    if (beijingVocationalScoreField) {
+      beijingVocationalScoreField.hidden = normalizeProvince(provinceInput.value) !== "北京";
     }
   });
   $("#resetRecommend").addEventListener("click", () => {
