@@ -34,11 +34,13 @@ node scripts/test-current-release.mjs
 
 ## 部署
 
-- GitHub 数据与模型提交：待部署。
-- Pages 部署：待部署。
-- 公网全分片验证：待部署。
+- GitHub 数据与模型提交：[`f8da4719`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/commit/f8da4719f7c236a59db2633d8655ff3a62b8e923)。
+- Pages 部署：[`29454220941`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29454220941)，成功。
+- 公网全分片验证：[`29454448927`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29454448927)，成功。
 - 公网地址：<https://liuguanghui0226.github.io/gaokao-zhiyuan-site/>
-- 官方证据包：待发布。
+- 官方证据包：[`evidence-v3.284`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.284)，SHA-256 `b15189ce855785a8c3731a2edf1155bf9f08cabdc83519945ac65d02e42f6805`。
+
+公网验证重新读取页面入口、gzip 核心索引和全部 31 个省级分片，并额外断言广东来源记录 49 条、普通/特殊路径 4/45 条、本科边界 425/440、专科边界 200/200，以及 8816 条位次记录均指向考试院官方来源页。
 
 ## 全国覆盖与保留缺口
 
