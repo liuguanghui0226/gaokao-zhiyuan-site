@@ -1,0 +1,281 @@
+{
+  "dataset": "official-tianjin-control-lines-2026-import",
+  "generatedAt": "2026-07-16T08:00:00.000Z",
+  "sourceNotes": [
+    {
+      "id": "official-tianjin-control-lines-2026",
+      "province": "天津",
+      "title": "天津市2026年普通高考录取控制分数线",
+      "publisher": "天津教育招生考试院 / 阳光高考",
+      "publishedAt": "2026-06-24",
+      "url": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845896.html",
+      "relatedUrls": [
+        "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845918.html"
+      ],
+      "quality": "official-content-mirror-tianjin-control-line-html-verified",
+      "usage": "抽取天津2026普通本科线、特殊类型资格参考线及艺考类、体育类本科文化课控制线6条；仅普通本科458分参与普通资格路由。",
+      "parsedRecords": 6,
+      "ordinaryVocationalStatus": "pending-official-release",
+      "ordinaryVocationalPending": true,
+      "ordinaryVocationalCheckedAt": "2026-07-16",
+      "undergraduatePageBytes": 55901,
+      "undergraduatePageSha256": "dccf00c366229eb359e6837abf57efe053b618e25cea197a71815337cde1bb87",
+      "artSportsPageBytes": 49152,
+      "artSportsPageSha256": "1f4b7fabbfd0bb5dfe4cf23ef1dbe1f6ee93735100ddce679ca4569e5f1c75af",
+      "rankPageBytes": 44159,
+      "rankPageSha256": "6237d13873da2c099969bdc3bfeb16e56d194ae906a6f04d94304c56777f4905",
+      "rankPdfBytes": 622036,
+      "rankPdfSha256": "768a8cf5bc3c07d1a1d390c5040394192314c6845e4383cfdba2e01d4b9dec1d",
+      "evidenceBoundary": "control-line-only; ordinary-bachelor=1; special-path-only=5; 2026 ordinary vocational line pending official release; not filing or admission score"
+    }
+  ],
+  "records": [
+    {
+      "id": "2026-tianjin-control-dd1be9d96536cd3f64",
+      "province": "天津",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "普通本科录取控制分数线",
+      "schoolName": "天津市2026年普通高考录取控制分数线",
+      "schoolTags": [
+        "天津官方控制线",
+        "普通类",
+        "普通类",
+        "本科"
+      ],
+      "city": "天津",
+      "dataType": "control-line",
+      "majorName": "普通本科录取控制分数线",
+      "majorGroup": "普通类",
+      "minScore": 458,
+      "cultureScoreLine": 458,
+      "scoreDimension": "culture-score",
+      "scoreBasis": "gaokao-total",
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-tianjin-control-lines-2026",
+      "sourceQuality": "official-content-mirror-tianjin-control-line-html-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845896.html",
+      "formalScoreScope": "control-line-only",
+      "controlLineRouteKind": "ordinary-bachelor",
+      "controlLineKind": "普通本科录取控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是天津2026年普通本科录取控制分数线，只用于判断普通本科批资格边界。",
+        "截至本次核验日，天津2026年普通高职（专科）录取控制分数线尚未在同批官方公告中发布；本科线以下不能据此认定已达到专科资格线。",
+        "控制线不是院校专业组投档线、专业录取最低分或最低位次，不能单独生成录取概率。"
+      ],
+      "sourceFile": "data/admissions/raw/official-tianjin-control-lines-2026/undergraduate-control-lines-chsi.html",
+      "sourcePublishedAt": "2026-06-24"
+    },
+    {
+      "id": "2026-tianjin-control-8322989fd2a81abe60",
+      "province": "天津",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "特殊类型资格考生最低录取控制参考线",
+      "schoolName": "天津市2026年普通高考录取控制分数线",
+      "schoolTags": [
+        "天津官方控制线",
+        "特殊路径",
+        "特殊类型招生",
+        "本科"
+      ],
+      "city": "天津",
+      "dataType": "control-line",
+      "majorName": "特殊类型资格考生最低录取控制参考线",
+      "majorGroup": "特殊类型招生",
+      "minScore": 547,
+      "cultureScoreLine": 547,
+      "scoreDimension": "culture-score",
+      "scoreBasis": "gaokao-total",
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-tianjin-control-lines-2026",
+      "sourceQuality": "official-content-mirror-tianjin-control-line-html-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845896.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "special",
+      "controlLineKind": "特殊类型资格考生最低录取控制参考线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是天津2026年特殊类型、艺考类或体育类本科文化课控制线，不适用于普通类考生直接推荐。",
+        "艺考类和体育类还须满足对应专业考试合格、专业成绩及院校章程要求。",
+        "文化课分与专业综合分属于不同维度，不得相加或互相替代。"
+      ],
+      "sourceFile": "data/admissions/raw/official-tianjin-control-lines-2026/undergraduate-control-lines-chsi.html",
+      "sourcePublishedAt": "2026-06-24"
+    },
+    {
+      "id": "2026-tianjin-control-efdd8420fe0aac6890",
+      "province": "天津",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "艺考类（不含舞蹈类、戏曲类）本科文化课录取控制分数线",
+      "schoolName": "天津市2026年普通高考录取控制分数线",
+      "schoolTags": [
+        "天津官方控制线",
+        "特殊路径",
+        "艺考类（不含舞蹈类、戏曲类）",
+        "本科"
+      ],
+      "city": "天津",
+      "dataType": "control-line",
+      "majorName": "艺考类（不含舞蹈类、戏曲类）本科文化课录取控制分数线",
+      "majorGroup": "艺考类（不含舞蹈类、戏曲类）",
+      "minScore": 343,
+      "cultureScoreLine": 343,
+      "scoreDimension": "culture-score",
+      "scoreBasis": "gaokao-total",
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-tianjin-control-lines-2026",
+      "sourceQuality": "official-content-mirror-tianjin-control-line-html-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845918.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "艺考类（不含舞蹈类、戏曲类）本科文化课录取控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是天津2026年特殊类型、艺考类或体育类本科文化课控制线，不适用于普通类考生直接推荐。",
+        "艺考类和体育类还须满足对应专业考试合格、专业成绩及院校章程要求。",
+        "文化课分与专业综合分属于不同维度，不得相加或互相替代。"
+      ],
+      "sourceFile": "data/admissions/raw/official-tianjin-control-lines-2026/art-sports-control-lines-chsi.html",
+      "sourcePublishedAt": "2026-06-24"
+    },
+    {
+      "id": "2026-tianjin-control-df1f0bddcaf9f40604",
+      "province": "天津",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "艺考类（舞蹈类）本科文化课录取控制分数线",
+      "schoolName": "天津市2026年普通高考录取控制分数线",
+      "schoolTags": [
+        "天津官方控制线",
+        "特殊路径",
+        "艺考类（舞蹈类）",
+        "本科"
+      ],
+      "city": "天津",
+      "dataType": "control-line",
+      "majorName": "艺考类（舞蹈类）本科文化课录取控制分数线",
+      "majorGroup": "艺考类（舞蹈类）",
+      "minScore": 297,
+      "cultureScoreLine": 297,
+      "scoreDimension": "culture-score",
+      "scoreBasis": "gaokao-total",
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-tianjin-control-lines-2026",
+      "sourceQuality": "official-content-mirror-tianjin-control-line-html-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845918.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "艺考类（舞蹈类）本科文化课录取控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是天津2026年特殊类型、艺考类或体育类本科文化课控制线，不适用于普通类考生直接推荐。",
+        "艺考类和体育类还须满足对应专业考试合格、专业成绩及院校章程要求。",
+        "文化课分与专业综合分属于不同维度，不得相加或互相替代。"
+      ],
+      "sourceFile": "data/admissions/raw/official-tianjin-control-lines-2026/art-sports-control-lines-chsi.html",
+      "sourcePublishedAt": "2026-06-24"
+    },
+    {
+      "id": "2026-tianjin-control-2a4a4f568c8a6deabb",
+      "province": "天津",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "艺考类（戏曲类）本科文化课录取控制分数线",
+      "schoolName": "天津市2026年普通高考录取控制分数线",
+      "schoolTags": [
+        "天津官方控制线",
+        "特殊路径",
+        "艺考类（戏曲类）",
+        "本科"
+      ],
+      "city": "天津",
+      "dataType": "control-line",
+      "majorName": "艺考类（戏曲类）本科文化课录取控制分数线",
+      "majorGroup": "艺考类（戏曲类）",
+      "minScore": 229,
+      "cultureScoreLine": 229,
+      "scoreDimension": "culture-score",
+      "scoreBasis": "gaokao-total",
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-tianjin-control-lines-2026",
+      "sourceQuality": "official-content-mirror-tianjin-control-line-html-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845918.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "艺考类（戏曲类）本科文化课录取控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是天津2026年特殊类型、艺考类或体育类本科文化课控制线，不适用于普通类考生直接推荐。",
+        "艺考类和体育类还须满足对应专业考试合格、专业成绩及院校章程要求。",
+        "文化课分与专业综合分属于不同维度，不得相加或互相替代。"
+      ],
+      "sourceFile": "data/admissions/raw/official-tianjin-control-lines-2026/art-sports-control-lines-chsi.html",
+      "sourcePublishedAt": "2026-06-24"
+    },
+    {
+      "id": "2026-tianjin-control-e5f2def5c3343c1e1e",
+      "province": "天津",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "体育类本科文化课录取控制分数线",
+      "schoolName": "天津市2026年普通高考录取控制分数线",
+      "schoolTags": [
+        "天津官方控制线",
+        "特殊路径",
+        "体育类",
+        "本科"
+      ],
+      "city": "天津",
+      "dataType": "control-line",
+      "majorName": "体育类本科文化课录取控制分数线",
+      "majorGroup": "体育类",
+      "minScore": 407,
+      "cultureScoreLine": 407,
+      "scoreDimension": "culture-score",
+      "scoreBasis": "gaokao-total",
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-tianjin-control-lines-2026",
+      "sourceQuality": "official-content-mirror-tianjin-control-line-html-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845918.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "sports",
+      "controlLineKind": "体育类本科文化课录取控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是天津2026年特殊类型、艺考类或体育类本科文化课控制线，不适用于普通类考生直接推荐。",
+        "艺考类和体育类还须满足对应专业考试合格、专业成绩及院校章程要求。",
+        "文化课分与专业综合分属于不同维度，不得相加或互相替代。"
+      ],
+      "sourceFile": "data/admissions/raw/official-tianjin-control-lines-2026/art-sports-control-lines-chsi.html",
+      "sourcePublishedAt": "2026-06-24"
+    }
+  ],
+  "diagnostics": {
+    "recordCount": 6,
+    "ordinaryRecords": 1,
+    "specialPathRecords": 5,
+    "routeCounts": {
+      "ordinary-bachelor": 1,
+      "special": 1,
+      "art": 3,
+      "sports": 1
+    },
+    "ordinaryBoundaries": {
+      "bachelor": 458,
+      "vocational": null
+    },
+    "ordinaryVocationalStatus": "pending-official-release",
+    "scoreBasisCounts": {
+      "gaokao-total": 6
+    }
+  }
+}

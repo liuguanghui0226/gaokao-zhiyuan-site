@@ -333,6 +333,24 @@ assert.ok(beijingUnknown.total <= 55);
 assert.ok(beijingUnknown.schoolOptions.every((option) => !option.record));
 assert.ok(beijingUnknown.warnings.some((warning) => /请补充该分数/.test(warning)));
 
+api.setProvinceData(readGzipJson(path.join(releaseDir, `${manifest.shards["天津"].file}.gz`)));
+const tianjin457 = profileFor("天津", "综合", 457);
+const tianjin458 = profileFor("天津", "综合", 458);
+assert.equal(api.ordinaryBachelorControlLine(tianjin458)?.score, 458);
+assert.equal(api.ordinaryVocationalControlLine(tianjin457), null, "天津2026专科线尚未发布，不得由往年线补造");
+assert.equal(api.isVocationalProfile(tianjin457), true);
+assert.equal(api.isVocationalProfile(tianjin458), false);
+assert.equal(api.ordinaryVocationalQualificationStatus(tianjin457).pending, true);
+const tianjinPending = api.scoreCandidate(
+  api.CANDIDATE_POOLS.find((candidate) => candidate.id === "vocational-dual"),
+  tianjin457,
+  api.classifyProfileBand(tianjin457),
+);
+assert.equal(tianjinPending.confidence, "C");
+assert.ok(tianjinPending.total <= 55);
+assert.ok(tianjinPending.schoolOptions.every((option) => !option.record));
+assert.ok(tianjinPending.warnings.some((warning) => /2026年普通高职专科控制线尚待官方发布/.test(warning)));
+
 const hainanHighRow = rows.find((row) => row.province === "海南");
 assert.ok(hainanHighRow && hainanHighRow.scoreScale === 900);
 assert.equal(scenarioCount, 155);
