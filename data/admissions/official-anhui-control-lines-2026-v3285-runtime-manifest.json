@@ -1,0 +1,43 @@
+{
+  "dataset": "official-anhui-control-lines-2026-v3285-runtime",
+  "generatedAt": "2026-07-16T00:30:00.000Z",
+  "sourceId": "official-anhui-control-lines-2026",
+  "importFile": "data/admissions/official-anhui-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.284-guangdong-control-lines2026-and-rank-provenance-846605records",
+    "recordCount": 846605,
+    "anhuiRecords": 15333,
+    "rankConversions": 976,
+    "rankRowsMissingSourceUrl": 976,
+    "coreSha256": "260b625a092def93aca94a011318170b1f2a27032ddec63bc98915fd74cb87ca",
+    "anhuiSha256": "978e3960087fafe318231effabf011230a8e6fefc3ab448bf3832832bd2096d4"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.285-anhui-control-lines2026-and-rank-provenance-846657records",
+    "recordCount": 846657,
+    "anhuiRecords": 15385,
+    "rankConversions": 976,
+    "rankSourceUrlRecords": 976,
+    "rankEvidence": {
+      "pageHtmlBytes": 45088,
+      "pageHtmlSha256": "277b7b3c9f9dca0a3f38f1eab83bba4a9696e2bb34474f553a34f95ecfd5828b",
+      "pdfBytes": 96606,
+      "pdfSha256": "a11a2b14f739a39dac0a3589b8bb862512b6e36ad995a0922b82a90c630a2b0f"
+    },
+    "sourceRecords": 52,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "sports": 4,
+      "art": 42
+    },
+    "coreBytes": 15159465,
+    "coreSha256": "5c0906591de74b2ffa8a05239eaeb88b01bcf62282118f617c7cbc3caa390701",
+    "anhuiBytes": 16395064,
+    "anhuiSha256": "bdd87c883c3b65e600d07a59a0eb08d36f681df0841196bff712913f9b1f257f",
+    "manifestBytes": 5507,
+    "manifestSha256": "6cd45465dc103d942f7f99e57c43e9d5b907a93b58f974e9b7761f6b3344f59b"
+  }
+}

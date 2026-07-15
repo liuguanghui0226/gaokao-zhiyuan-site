@@ -45,18 +45,18 @@ const imported = JSON.parse(fs.readFileSync(importFile, "utf8"));
 const szuImported = JSON.parse(fs.readFileSync(szuImportFile, "utf8"));
 const hnuImported = JSON.parse(fs.readFileSync(hnuImportFile, "utf8"));
 
-assert.equal(core.modelVersion, "local-deterministic-v3.284-guangdong-control-lines2026-and-rank-provenance-846605records");
+assert.equal(core.modelVersion, "local-deterministic-v3.285-anhui-control-lines2026-and-rank-provenance-846657records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.records.length, 0);
 assert.equal(core.admissionScoreLayer.rankConversions.length, 0);
-assert.equal(core.admissionScoreLayer.structuredRecords, 846605);
+assert.equal(core.admissionScoreLayer.structuredRecords, 846657);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
 assert.equal(core.admissionScoreLayer.admissionPlanRecords, 71877);
 assert.equal(core.admissionScoreLayer.admissionPlanCount, 358294, "vacancy snapshots must not inflate annual plan count");
 assert.equal(core.admissionScoreLayer.vacancyPlanRecords, 2187);
 assert.equal(core.admissionScoreLayer.vacancyPlanSnapshotCount, 6099);
 assert.equal(core.admissionScoreLayer.ordinaryVocationalVacancyRecords, 926);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5090);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5091);
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-vacancy-plans-2025-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-admission-schedule-2026-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-szu-national-2024-2025-school-admission"));
@@ -71,6 +71,9 @@ assert.equal(hunanControlSource.pageHtmlSha256, "cf4e18a47cd675d8921f0e78c3a035d
 const guangdongControlSource = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "official-guangdong-control-lines-2026");
 assert.equal(guangdongControlSource.quality, "official-guangdong-control-line-html-verified");
 assert.equal(guangdongControlSource.pageHtmlSha256, "fba7a579d36918cda0bede7be5d0ebac92320629cb8d12f8f9cedba3b8353052");
+const anhuiControlSource = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "official-anhui-control-lines-2026");
+assert.equal(anhuiControlSource.quality, "official-anhui-control-line-chsi-and-government-image-verified");
+assert.equal(anhuiControlSource.imageSha256, "9761df950662518da62273f02405988502f0c39c01a3d69ab24ae58be65fd04b");
 const xizangControlSource = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "official-xizang-control-lines-2026");
 assert.equal(xizangControlSource.mirrorUrl, "https://www.xizang.gov.cn/xwzx_406/bmkx/202606/t20260626_547152.html");
 assert.equal(xizangControlSource.quality, "official-xizang-control-line-image-and-government-html-verified");
@@ -81,7 +84,7 @@ assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 66);
 
 assert.equal(manifest.modelVersion, core.modelVersion);
 assert.equal(manifest.provinceCount, 31);
-assert.equal(manifest.recordCount, 846605);
+assert.equal(manifest.recordCount, 846657);
 assert.equal(manifest.rankConversionCount, 116656);
 assert.equal(manifest.unknownRecords, 0);
 assert.equal(manifest.unknownRankConversions, 0);
@@ -123,6 +126,27 @@ assert.ok(vacancyRecords.every((record) => record.planOnly === true && record.pl
 assert.ok(vacancyRecords.every((record) => !Object.hasOwn(record, "minScore")));
 assert.ok(vacancyRecords.every((record) => !Object.hasOwn(record, "minRank") && !Object.hasOwn(record, "minRankEnd")));
 assert.ok(vacancyRecords.every((record) => record.sourceAttachment));
+
+const anhuiEntry = manifest.shards["安徽"];
+assert.equal(anhuiEntry.records, 15385);
+assert.equal(anhuiEntry.rankConversions, 976);
+const anhui = runtimeJson(runtimeDataFile(`provinces/${anhuiEntry.file}`));
+const anhuiControlLines = anhui.records.filter((record) => record.sourceId === "official-anhui-control-lines-2026");
+assert.equal(anhuiControlLines.length, 52);
+assert.equal(anhuiControlLines.filter((record) => record.formalScoreScope === "control-line-only").length, 4);
+assert.equal(anhuiControlLines.filter((record) => record.formalScoreScope === "special-path-only").length, 48);
+assert.equal(anhuiControlLines.filter((record) => Number.isFinite(record.professionalMinScore)).length, 40);
+assert.deepEqual(
+  anhuiControlLines.filter((record) => record.controlLineRouteKind === "ordinary-bachelor").map((record) => record.minScore).sort((left, right) => left - right),
+  [451, 490],
+);
+assert.deepEqual(
+  anhuiControlLines.filter((record) => record.controlLineRouteKind === "ordinary-vocational").map((record) => record.minScore).sort((left, right) => left - right),
+  [200, 200],
+);
+const anhuiRankRows = anhui.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-anhui-rank-2026");
+assert.equal(anhuiRankRows.length, 976);
+assert.ok(anhuiRankRows.every((record) => record.sourceUrl === "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847718.html"));
 
 const jiangxiEntry = manifest.shards["江西"];
 assert.equal(jiangxiEntry.records, 12798);

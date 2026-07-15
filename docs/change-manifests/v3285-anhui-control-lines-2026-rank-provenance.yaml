@@ -1,0 +1,80 @@
+change_id: "2026-07-16-v3285-anhui-control-lines-2026-rank-provenance"
+title: "安徽2026控制线、艺术双门槛与位次来源修复"
+phase: deliver
+status: ready_for_deploy
+execution_mode: full
+resume_mode: full
+resume_reason: "双来源图片、艺术文化与专业双门槛、位次来源、运行分片和GitHub Pages需同步验证。"
+last_updated: "2026-07-16T09:00:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "教育部阳光高考转载页和安徽政府信息公开页交叉锁定52条2026控制线。"
+  - surface: user
+    role: consumer
+    notes: "普通历史/物理本专科边界分流，艺术文化和专业门槛分列。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、安徽gzip分片、Pages部署与公网31省验证保持同一模型版本。"
+
+sot_map:
+  - info_name: "安徽省2026年普通高校招生文化课和艺术统考专业课录取控制分数线"
+    pattern: 4
+    source: "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847624.html"
+    consumers:
+      - name: "data/admissions/official-anhui-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/anhui.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node校验两处正式公开页面和图片的固定字节数与SHA-256，再定向重写gzip核心、清单与安徽分片。"
+    desync_risk: high
+  - info_name: "安徽省2026年普通高等学校招生统一考试考生成绩分档表"
+    pattern: 4
+    source: "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847718.html"
+    consumers:
+      - name: "site/data/release-v3.275/anhui.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "复核6页PDF字节数和哈希，并为976条既有位次记录补齐正式来源URL。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "保留v3.284产物哈希；来源、数量或双门槛断言失败不覆盖运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.284前端和分片，但保留官方镜像、结构化导入和位次来源审计。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: "source-import"
+    scope: "双页面、双图片、52条控制线和文化/专业双门槛"
+    verification_command: "node scripts/import-official-anhui-control-lines-2026.mjs --use-cache"
+  - id: "runtime-patch"
+    scope: "核心索引、安徽分片、976条位次来源和SHA-256"
+    verification_command: "node scripts/apply-official-anhui-control-lines-2026-v3285.mjs"
+  - id: "boundary-safety"
+    scope: "历史199/200/489/490、物理199/200/450/451与特殊路径隔离"
+    verification_command: "node scripts/test-official-anhui-control-lines-v3285.mjs"
+  - id: "national-regression"
+    scope: "31省分片、全国分段场景、2026普通控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校投档线、专业录取最低分或录取概率证据。"
+  - "艺术文化课分和专业统考分不得相加或跨维度比较。"
+  - "当前2026普通批控制线覆盖12省，仍有19省待补。"
+  - "正式转载附件可能换版，需保留字节数、SHA-256和重解析审计。"
+
+next_action: "部署v3.285并完成公网31省验证，随后从缺失19省中继续补齐2026官方普通批控制线。"
