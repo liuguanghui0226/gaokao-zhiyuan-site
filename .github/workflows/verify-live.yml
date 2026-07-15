@@ -1,0 +1,67 @@
+name: Verify live nationwide site
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify published UI and all province shards
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          base="https://liuguanghui0226.github.io/gaokao-zhiyuan-site/"
+          work="$(mktemp -d)"
+          trap 'rm -rf "$work"' EXIT
+
+          fetch() {
+            curl --fail --silent --show-error --location \
+              --retry 12 --retry-all-errors --retry-delay 5 \
+              "$1" -o "$2"
+          }
+
+          fetch "$base" "$work/index.html"
+          grep -q "全国高考志愿智能推荐" "$work/index.html"
+          grep -q "__GAOKAO_RUNTIME_RELEASE_BASE__" "$work/index.html"
+
+          release_path="$(node -e '
+            const html = require("node:fs").readFileSync(process.argv[1], "utf8");
+            const match = html.match(/__GAOKAO_RUNTIME_RELEASE_BASE__\s*=\s*"\.\/data\/([^"]+)/);
+            if (!match) process.exit(1);
+            process.stdout.write(match[1]);
+          ' "$work/index.html")"
+
+          fetch "${base}assets/app.js" "$work/app.js"
+          grep -q "buildApplicationPlan" "$work/app.js"
+          grep -q "electiveRequirement" "$work/app.js"
+
+          fetch "${base}data/${release_path}/manifest.json.gz" "$work/manifest.json.gz"
+          gzip -t "$work/manifest.json.gz"
+          gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
+          jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 846432' "$work/manifest.json" >/dev/null
+          jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
+          jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
+
+          fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
+          gzip -t "$work/knowledge-core.json.gz"
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '.modelVersion == "local-deterministic-v3.275-hnu2024-846432records"' >/dev/null
+
+          shard_count=0
+          while IFS= read -r file; do
+            output="$work/${file}.gz"
+            fetch "${base}data/${release_path}/${file}.gz" "$output"
+            gzip -t "$output"
+            shard_count=$((shard_count + 1))
+          done < <(jq -r '.shards[].file' "$work/manifest.json")
+
+          test "$shard_count" -eq 31
+          printf 'verified_url=%s\n' "$base"
+          printf 'release_path=%s\n' "$release_path"
+          printf 'province_shards=%s\n' "$shard_count"
