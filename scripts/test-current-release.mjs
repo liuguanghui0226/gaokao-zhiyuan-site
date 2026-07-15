@@ -15,6 +15,7 @@ const tests = [
   "test-application-plan-v3277.mjs",
   "test-elective-requirement-v3278.mjs",
   "test-browser-runtime-shards-v3274.mjs",
+  "test-national-score-band-coverage-v3279.mjs",
 ];
 
 const results = tests.map((test) => {

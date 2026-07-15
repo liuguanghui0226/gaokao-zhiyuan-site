@@ -43,6 +43,11 @@ const ALL_PROVINCES = [
   "海南", "重庆", "四川", "贵州", "云南", "西藏", "陕西", "甘肃", "青海", "宁夏", "新疆",
 ];
 
+const PROVINCE_SCORE_SCALES = {
+  上海: 660,
+  海南: 900,
+};
+
 const DEFAULT_PROFILE = {
   childType: "均衡探索型",
   score: "593",
@@ -489,22 +494,52 @@ function findEvidence(keywords, limit = 7) {
     .slice(0, limit);
 }
 
-function classifyScoreBand(score, rank) {
+function scoreScaleForProvince(province) {
+  return PROVINCE_SCORE_SCALES[normalizeProvince(province)] || 750;
+}
+
+function scoreOnStandardScale(score, province) {
+  const numericScore = Number(score) || 0;
+  if (!numericScore) return 0;
+  return numericScore * 750 / scoreScaleForProvince(province);
+}
+
+function classifyScoreBand(score, rank, province = "") {
   const numericScore = Number(score) || 0;
   const numericRank = Number(rank) || 0;
-  if (numericScore > 0 && numericScore < 300) {
-    return { id: "foundation", label: "专科/技能段", order: 1, strategy: "优先看公办高职、双高专业群、专升本通道、区域产业和家庭可执行性。" };
-  }
-  if ((numericRank > 0 && numericRank <= 5000) || numericScore >= 650) {
+  const comparableScore = scoreOnStandardScale(numericScore, province);
+  if (numericRank > 0 && numericRank <= 5000) {
     return { id: "elite", label: "高位段", order: 4, strategy: "优先看高平台、强学科和上限机会，同时保留稳妥专业兜底。" };
   }
-  if ((numericRank > 0 && numericRank <= 20000) || numericScore >= 600) {
+  if (numericRank > 0 && numericRank <= 20000) {
     return { id: "upper", label: "上位段", order: 3, strategy: "适合在高平台、强区域城市和专业质量之间做平衡。" };
   }
-  if ((numericRank > 0 && numericRank <= 60000) || numericScore >= 540) {
+  if (numericRank > 0 && numericRank <= 60000) {
+    return { id: "middle", label: "中位段", order: 2, strategy: "优先看专业适配、城市资源、稳妥录取边界和可接受调剂。" };
+  }
+  if (numericRank > 0) {
+    return { id: "foundation", label: "基础段", order: 1, strategy: "本科兜底、高职双高、专升本和技能就业路径要同步比较。" };
+  }
+  if (comparableScore > 0 && comparableScore < 300) {
+    return { id: "foundation", label: "专科/技能段", order: 1, strategy: "优先看公办高职、双高专业群、专升本通道、区域产业和家庭可执行性。" };
+  }
+  if (comparableScore >= 650) {
+    return { id: "elite", label: "高位段", order: 4, strategy: "优先看高平台、强学科和上限机会，同时保留稳妥专业兜底。" };
+  }
+  if (comparableScore >= 600) {
+    return { id: "upper", label: "上位段", order: 3, strategy: "适合在高平台、强区域城市和专业质量之间做平衡。" };
+  }
+  if (comparableScore >= 540) {
     return { id: "middle", label: "中位段", order: 2, strategy: "优先看专业适配、城市资源、稳妥录取边界和可接受调剂。" };
   }
   return { id: "foundation", label: "基础段", order: 1, strategy: "本科兜底、高职双高、专升本和技能就业路径要同步比较。" };
+}
+
+function classifyProfileBand(profile) {
+  if (isVocationalProfile(profile)) {
+    return { id: "foundation", label: "专科/技能段", order: 1, strategy: "优先看公办高职、双高专业群、专升本通道、区域产业和家庭可执行性。" };
+  }
+  return classifyScoreBand(profile.score, profile.rank, profile.province);
 }
 
 function bandFit(candidate, band) {
@@ -580,9 +615,9 @@ function isVocationalAdmissionRecord(record) {
   return /专科|高职|对口/.test(levelText);
 }
 
-function recordMatchesProfileEducationPath(record, profile) {
+function recordMatchesProfileEducationPath(record, profile, vocationalProfile = isVocationalProfile(profile)) {
   const vocationalRecord = isVocationalAdmissionRecord(record);
-  return isVocationalProfile(profile) ? vocationalRecord : !vocationalRecord;
+  return vocationalProfile ? vocationalRecord : !vocationalRecord;
 }
 
 function normalizeSubject(value) {
@@ -621,32 +656,64 @@ function recordMatchesCandidateCategory(record, profile) {
   return Boolean(selected) && (required.includes(selected) || selected.includes(required));
 }
 
+let profileAdmissionRecordsCache = { records: null, key: "", value: [] };
+let profilePlanRecordsCache = { records: null, key: "", value: [] };
+
+function profileRecordFilterKey(profile) {
+  return [
+    profile?.province,
+    profile?.subject,
+    profile?.candidateCategory,
+    profile?.score,
+    profile?.rankUsage,
+    profile?.rankLevelUsage,
+    profile?.electives,
+    profile?.redLines,
+  ].join("|");
+}
+
 function profileAdmissionRecords(profile) {
-  return admissionRecords().filter((record) =>
+  const records = admissionRecords();
+  const key = profileRecordFilterKey(profile);
+  if (profileAdmissionRecordsCache.records === records && profileAdmissionRecordsCache.key === key) {
+    return profileAdmissionRecordsCache.value;
+  }
+  const vocationalProfile = isVocationalProfile(profile);
+  const value = records.filter((record) =>
     !isControlLineRecord(record) &&
     !isPlanRecord(record) &&
     !isSpecialPathRecord(record) &&
-    recordMatchesProfileEducationPath(record, profile) &&
+    recordMatchesProfileEducationPath(record, profile, vocationalProfile) &&
     !recordConflictsWithRedLines(record, profile) &&
     electiveRequirementAllowsProfile(record, profile) &&
     provinceMatchesRecord(record, profile) &&
     subjectMatchesRecord(record, profile) &&
     recordMatchesCandidateCategory(record, profile)
   );
+  profileAdmissionRecordsCache = { records, key, value };
+  return value;
 }
 
 function profilePlanRecords(profile) {
-  return admissionRecords().filter((record) =>
+  const records = admissionRecords();
+  const key = profileRecordFilterKey(profile);
+  if (profilePlanRecordsCache.records === records && profilePlanRecordsCache.key === key) {
+    return profilePlanRecordsCache.value;
+  }
+  const vocationalProfile = isVocationalProfile(profile);
+  const value = records.filter((record) =>
     isPlanRecord(record) &&
     !isSpecialPathRecord(record) &&
     !planRestrictedEligibilityReason(record) &&
-    recordMatchesProfileEducationPath(record, profile) &&
+    recordMatchesProfileEducationPath(record, profile, vocationalProfile) &&
     !recordConflictsWithRedLines(record, profile) &&
     electiveRequirementAllowsProfile(record, profile) &&
     provinceMatchesRecord(record, profile) &&
     subjectMatchesRecord(record, profile) &&
     recordMatchesCandidateCategory(record, profile)
   );
+  profilePlanRecordsCache = { records, key, value };
+  return value;
 }
 
 function provinceReadinessForProfile(profile) {
@@ -658,8 +725,9 @@ function provinceReadinessForProfile(profile) {
 }
 
 function latestRecordYear(records) {
-  const years = records.map((record) => Number(record.year) || 0).filter(Boolean);
-  return years.length ? Math.max(...years) : null;
+  let latest = 0;
+  for (const record of records) latest = Math.max(latest, Number(record.year) || 0);
+  return latest || null;
 }
 
 function currentChinaDate() {
@@ -699,9 +767,17 @@ function scheduleStageForDate(schedule, today) {
     : null;
 }
 
+let admissionDataFreshnessCache = { records: null, ranks: null, key: "", value: null };
+
 function admissionDataFreshness(profile, today = currentChinaDate()) {
+  const allRecords = admissionRecords();
+  const allRanks = rankConversionRecords();
+  const cacheKey = `${profileRecordFilterKey(profile)}|${today}`;
+  if (admissionDataFreshnessCache.records === allRecords && admissionDataFreshnessCache.ranks === allRanks && admissionDataFreshnessCache.key === cacheKey) {
+    return admissionDataFreshnessCache.value;
+  }
   const province = normalizeProvince(profile.province);
-  const scopedRecords = admissionRecords().filter((record) =>
+  const scopedRecords = allRecords.filter((record) =>
     provinceMatchesRecord(record, profile) && subjectMatchesRecord(record, profile)
   );
   const planRecords = scopedRecords.filter((record) => isPlanRecord(record) && !isSpecialPathRecord(record));
@@ -713,7 +789,7 @@ function admissionDataFreshness(profile, today = currentChinaDate()) {
   const categoryRestrictedAdmissions = ordinaryAdmissions.filter((record) =>
     record.candidateCategory && !recordMatchesCandidateCategory(record, profile)
   );
-  const scopedRanks = rankConversionRecords().filter((record) =>
+  const scopedRanks = allRanks.filter((record) =>
     provinceMatchesRecord(record, profile) && subjectMatchesRecord(record, profile)
   );
   const vacancyRecords = planRecords.filter(isVacancyPlanRecord);
@@ -746,7 +822,7 @@ function admissionDataFreshness(profile, today = currentChinaDate()) {
   if (latestVacancyYear) {
     warnings.push(`${latestVacancyYear}年征集志愿仅是各轮剩余计划快照，可用于识别历史补录机会，不能推断下一年一定征集或计算录取概率。`);
   }
-  return {
+  const value = {
     province,
     latestPlanYear,
     ordinaryPlanCount: ordinaryPlanRecords.length,
@@ -759,6 +835,8 @@ function admissionDataFreshness(profile, today = currentChinaDate()) {
     scheduleStage,
     warnings,
   };
+  admissionDataFreshnessCache = { records: allRecords, ranks: allRanks, key: cacheKey, value };
+  return value;
 }
 
 let admissionTrendIndexCache = null;
@@ -902,9 +980,56 @@ function dedupePlanOptions(options) {
   return [...map.values()];
 }
 
+let ordinaryBachelorControlLineCache = { records: null, key: "", value: null };
+
+function ordinaryBachelorControlLine(profile) {
+  const records = admissionRecords();
+  const selectedCategory = normalizeText(profile?.candidateCategory);
+  const key = `${normalizeProvince(profile?.province)}|${normalizeSubject(profile?.subject)}|${selectedCategory}`;
+  if (ordinaryBachelorControlLineCache.records === records && ordinaryBachelorControlLineCache.key === key) {
+    return ordinaryBachelorControlLineCache.value;
+  }
+  const rows = records.filter((record) => {
+    if (!isControlLineRecord(record) || !provinceMatchesRecord(record, profile) || !subjectMatchesRecord(record, profile)) return false;
+    const text = normalizeText(`${record.batch || ""} ${record.majorName || ""} ${(record.schoolTags || []).join(" ")}`);
+    const ordinaryBachelorLine = (/本科/.test(text) || /普通类一段线/.test(text)) && !/艺术|艺体|体育|戏曲|军|警|资格|专业统考|职教|对口|部队|特殊类型/.test(text);
+    if (!ordinaryBachelorLine || /专科|高职|二段线/.test(text)) return false;
+    const recordCategory = normalizeText(record.candidateCategory || record.candidateClass || record.majorGroup);
+    return !selectedCategory || !recordCategory || recordCategory.includes(selectedCategory) || selectedCategory.includes(recordCategory);
+  });
+  if (!rows.length) {
+    ordinaryBachelorControlLineCache = { records, key, value: null };
+    return null;
+  }
+  const latestYear = rows.reduce((latest, record) => Math.max(latest, Number(record.year) || 0), 0);
+  const latestRows = rows.filter((record) => Number(record.year) === latestYear);
+  const thresholdsByCategory = new Map();
+  for (const record of latestRows) {
+    const score = Number(record.minScore) || 0;
+    if (!score) continue;
+    const category = normalizeText(record.candidateCategory || record.candidateClass || record.majorGroup) || "ordinary";
+    const current = thresholdsByCategory.get(category);
+    if (!current || score < current.score) thresholdsByCategory.set(category, { score, record });
+  }
+  const thresholds = [...thresholdsByCategory.values()];
+  if (!thresholds.length) {
+    ordinaryBachelorControlLineCache = { records, key, value: null };
+    return null;
+  }
+  const selected = thresholds.sort((left, right) => right.score - left.score)[0];
+  const value = { score: selected.score, year: latestYear, record: selected.record };
+  ordinaryBachelorControlLineCache = { records, key, value };
+  return value;
+}
+
 function isVocationalProfile(profile) {
+  const rankUsageText = normalizeText(`${profile?.rankUsage || ""} ${profile?.rankLevelUsage || ""}`);
+  if (/vocational|专科|高职/.test(rankUsageText)) return true;
   const score = Number(profile.score) || 0;
-  return score > 0 && score < 300;
+  if (!score) return false;
+  const bachelorLine = ordinaryBachelorControlLine(profile);
+  if (bachelorLine) return score < bachelorLine.score;
+  return scoreOnStandardScale(score, profile.province) < 300;
 }
 
 function candidatePoolsForProfile(profile) {
@@ -981,7 +1106,7 @@ function estimateRankFromScore(profile) {
       Number.isFinite(Number(record.rankEnd))
     );
   if (!pool.length) return null;
-  const latestYear = Math.max(...pool.map((record) => Number(record.year) || 0));
+  const latestYear = pool.reduce((latest, record) => Math.max(latest, Number(record.year) || 0), 0);
   const latestPoolRaw = pool.filter((record) => Number(record.year) === latestYear);
   const preferredRankUsage = preferredRankUsageForProfile(profile);
   const latestPool = latestPoolRaw.filter((record) => recordMatchesRankUsage(record, preferredRankUsage, profile.rankCategory || "", profile.rankLevelUsage || ""));
@@ -1494,6 +1619,7 @@ function scoreCandidate(candidate, profile, band) {
   const cityPrefs = parseList(profile.cities);
   const interestWords = parseList(profile.interest);
   const vocationalMode = isVocationalProfile(profile);
+  const bachelorLine = ordinaryBachelorControlLine(profile);
   const candidateText = normalizeText([
     candidate.title,
     candidate.stance,
@@ -1615,7 +1741,9 @@ function scoreCandidate(candidate, profile, band) {
     `孩子画像为${profile.childType}，当前策略为${profile.strategy}，模型按公开权重给出排序。`,
     `分数/位次进入${band.label}：${band.strategy}`,
     vocationalMode
-      ? "当前分数进入专科/技能段，系统会优先比较高职专科、双高专业群、专升本和就业路径。"
+      ? bachelorLine
+        ? `当前${profile.score}分低于${bachelorLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}普通本科最低控制线${bachelorLine.score}分，系统优先比较高职专科、双高专业群、专升本和就业路径。`
+        : "当前分数进入专科/技能段，系统会优先比较高职专科、双高专业群、专升本和就业路径。"
       : "",
     candidate.profiles.includes(profile.childType)
       ? `该院校池适合${profile.childType}，与孩子画像匹配。`
@@ -1832,7 +1960,7 @@ async function loadProvinceData(provinceValue) {
 async function runRecommendation() {
   await loadProvinceData($("#provinceInput").value.trim());
   const profile = profileFromForm();
-  const band = classifyScoreBand(profile.score, profile.rank);
+  const band = classifyProfileBand(profile);
   const results = candidatePoolsForProfile(profile)
     .map((candidate) => scoreCandidate(candidate, profile, band))
     .sort((a, b) => b.total - a.total || b.evidence.length - a.evidence.length)
@@ -2017,7 +2145,7 @@ function renderRecommendForm(profile) {
     </label>
     <label>
       <span>分数</span>
-      <input id="scoreInput" type="number" min="0" max="750" value="${esc(getProfileValue(profile, "score"))}" />
+      <input id="scoreInput" type="number" min="0" max="1000" value="${esc(getProfileValue(profile, "score"))}" />
     </label>
     <label>
       <span>位次</span>
