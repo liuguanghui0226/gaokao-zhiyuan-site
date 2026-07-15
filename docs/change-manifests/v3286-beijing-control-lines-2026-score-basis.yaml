@@ -1,11 +1,11 @@
 change_id: "2026-07-16-v3286-beijing-control-lines-2026-score-basis"
 title: "北京2026控制线、专科三科分口径与位次来源修复"
 phase: deliver
-status: local_verified
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "控制线分数口径、位次来源、前端输入、模型降级、运行分片和GitHub Pages需同步验证。"
-last_updated: "2026-07-16T15:40:00+08:00"
+last_updated: "2026-07-16T16:18:00+08:00"
 
 surfaces_touched:
   - surface: information
@@ -77,4 +77,4 @@ residual_risks:
   - "当前2026普通批控制线覆盖13省，仍有18省待补。"
   - "正式页面或附件换版时需重新校验字节数、SHA-256和位次字段守恒。"
 
-next_action: "部署v3.286并完成公网31省验证，随后从缺失18省中继续补齐2026官方普通批控制线。"
+next_action: "从缺失18省中继续补齐2026官方普通批控制线；保持不同分数口径、普通路径与特殊路径分层。"
