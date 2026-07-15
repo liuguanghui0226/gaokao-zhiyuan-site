@@ -30,10 +30,12 @@ node scripts/test-current-release.mjs
 
 ## 部署
 
-- GitHub 提交：待提交。
-- Pages 部署：待发布。
-- 公网全分片验证：待发布。
+- GitHub 数据与模型提交：`16638fb5aedb6af9e5f73d36e386074108f64205`。
+- Pages 部署：[`29448089471`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29448089471)，成功。
+- 公网全分片验证：[`29448298058`](https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29448298058)，成功。
 - 公网地址：<https://liuguanghui0226.github.io/gaokao-zhiyuan-site/>
+
+公网验证重新读取页面入口、gzip 核心索引和全部 31 个省级分片，并额外断言浙江来源记录 57 条、普通分段分数为 266/494、特殊路径 55 条及 v3.282 模型版本。
 
 ## 保留缺口
 

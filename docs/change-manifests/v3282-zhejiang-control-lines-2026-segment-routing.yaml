@@ -1,11 +1,11 @@
 change_id: "2026-07-16-v3282-zhejiang-control-lines-2026-segment-routing"
 title: "浙江2026各类别分数线与普通类分段路由"
 phase: deliver
-status: in_progress
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "官方HTML、结构化导入、浙江运行分片、分段推荐算法和GitHub Pages需同步验证。"
-last_updated: "2026-07-16T04:09:15+08:00"
+last_updated: "2026-07-16T04:27:07+08:00"
 
 surfaces_touched:
   - surface: information
