@@ -22,6 +22,12 @@ node scripts/serve.mjs
 http://127.0.0.1:4177/
 ```
 
+当前版本回归测试：
+
+```bash
+node scripts/test-current-release.mjs
+```
+
 ## 产物
 
 - `site/`：本地网页

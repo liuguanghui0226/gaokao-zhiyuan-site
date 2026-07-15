@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
+import zlib from "node:zlib";
 import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
@@ -26,8 +27,11 @@ const context = vm.createContext({ console });
 vm.runInContext(instrumented, context, { filename: appFile });
 const api = context.__gaokaoTest;
 
-const shardFile = path.join(projectRoot, "site/data/provinces/xizang.json");
-const shard = JSON.parse(fs.readFileSync(shardFile, "utf8"));
+const siteIndex = fs.readFileSync(path.join(projectRoot, "site/index.html"), "utf8");
+const releaseMatch = siteIndex.match(/__GAOKAO_RUNTIME_RELEASE_BASE__\s*=\s*["']\.\/data\/([^"']+)/);
+assert.ok(releaseMatch, "site/index.html must declare the active runtime release");
+const shardFile = path.join(projectRoot, "site/data", releaseMatch[1], "xizang.json.gz");
+const shard = JSON.parse(zlib.gunzipSync(fs.readFileSync(shardFile)).toString("utf8"));
 const officialPlans = shard.records.filter((record) => record.sourceId === "official-xizang-admission-plan-2026");
 assert.equal(officialPlans.length, 7300, "the v3.273 safety test must exercise the full existing official plan source");
 
