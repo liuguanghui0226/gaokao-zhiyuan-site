@@ -44,14 +44,14 @@ jobs:
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
-          jq -e '.recordCount == 846462' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 846519' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.281-xizang-control-provenance-and-low-score-safety-846462records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.282-zhejiang-control-lines2026-and-segment-routing-846519records"' >/dev/null
 
           shard_count=0
           while IFS= read -r file; do
@@ -72,6 +72,12 @@ jobs:
             | jq -e '[.records[] | select(.sourceId == "official-xizang-control-lines-2026" and .formalScoreScope == "control-line-only")] | length == 12' >/dev/null
           gzip -dc "$work/xizang.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-xizang-control-lines-2026" and .formalScoreScope == "special-path-only")] | length == 10' >/dev/null
+          gzip -dc "$work/zhejiang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-zhejiang-control-lines-2026")] | length == 57' >/dev/null
+          gzip -dc "$work/zhejiang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-zhejiang-control-lines-2026" and .controlLineRouteKind == "segment") | .minScore] | sort == [266, 494]' >/dev/null
+          gzip -dc "$work/zhejiang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-zhejiang-control-lines-2026" and .formalScoreScope == "special-path-only")] | length == 55' >/dev/null
           printf 'verified_url=%s\n' "$base"
           printf 'release_path=%s\n' "$release_path"
           printf 'province_shards=%s\n' "$shard_count"

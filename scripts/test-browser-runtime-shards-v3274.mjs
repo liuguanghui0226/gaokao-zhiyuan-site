@@ -45,23 +45,26 @@ const imported = JSON.parse(fs.readFileSync(importFile, "utf8"));
 const szuImported = JSON.parse(fs.readFileSync(szuImportFile, "utf8"));
 const hnuImported = JSON.parse(fs.readFileSync(hnuImportFile, "utf8"));
 
-assert.equal(core.modelVersion, "local-deterministic-v3.281-xizang-control-provenance-and-low-score-safety-846462records");
+assert.equal(core.modelVersion, "local-deterministic-v3.282-zhejiang-control-lines2026-and-segment-routing-846519records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.records.length, 0);
 assert.equal(core.admissionScoreLayer.rankConversions.length, 0);
-assert.equal(core.admissionScoreLayer.structuredRecords, 846462);
+assert.equal(core.admissionScoreLayer.structuredRecords, 846519);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
 assert.equal(core.admissionScoreLayer.admissionPlanRecords, 71877);
 assert.equal(core.admissionScoreLayer.admissionPlanCount, 358294, "vacancy snapshots must not inflate annual plan count");
 assert.equal(core.admissionScoreLayer.vacancyPlanRecords, 2187);
 assert.equal(core.admissionScoreLayer.vacancyPlanSnapshotCount, 6099);
 assert.equal(core.admissionScoreLayer.ordinaryVocationalVacancyRecords, 926);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5087);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5088);
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-vacancy-plans-2025-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-admission-schedule-2026-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-szu-national-2024-2025-school-admission"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-hnu-national-2024-major-admission"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-jiangxi-control-lines-2026"));
+const zhejiangControlSource = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "official-zhejiang-control-lines-2026");
+assert.equal(zhejiangControlSource.quality, "official-zhejiang-control-line-html-verified");
+assert.equal(zhejiangControlSource.pageHtmlSha256, "ecbb3531e9dfed98bb6ae4e31a18d5e9979fe789e04bdad39f7bf6648a5a0550");
 const xizangControlSource = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "official-xizang-control-lines-2026");
 assert.equal(xizangControlSource.mirrorUrl, "https://www.xizang.gov.cn/xwzx_406/bmkx/202606/t20260626_547152.html");
 assert.equal(xizangControlSource.quality, "official-xizang-control-line-image-and-government-html-verified");
@@ -72,7 +75,7 @@ assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 66);
 
 assert.equal(manifest.modelVersion, core.modelVersion);
 assert.equal(manifest.provinceCount, 31);
-assert.equal(manifest.recordCount, 846462);
+assert.equal(manifest.recordCount, 846519);
 assert.equal(manifest.rankConversionCount, 116656);
 assert.equal(manifest.unknownRecords, 0);
 assert.equal(manifest.unknownRankConversions, 0);
@@ -138,6 +141,22 @@ assert.equal(hnuJiangxiCs.formalScoreScope, "school-official-only");
 const hnuJiangxiSpecial = hnuJiangxi.filter((record) => record.formalScoreScope === "special-path-only");
 assert.ok(hnuJiangxiSpecial.length > 0);
 assert.ok(hnuJiangxiSpecial.every((record) => /专项|艺术/.test(record.admissionType)));
+
+const zhejiangEntry = manifest.shards["浙江"];
+assert.equal(zhejiangEntry.records, 110946);
+assert.equal(zhejiangEntry.rankConversions, 428);
+const zhejiang = runtimeJson(runtimeDataFile(`provinces/${zhejiangEntry.file}`));
+const zhejiangControlLines = zhejiang.records.filter((record) => record.sourceId === "official-zhejiang-control-lines-2026");
+assert.equal(zhejiangControlLines.length, 57);
+assert.equal(zhejiangControlLines.filter((record) => record.formalScoreScope === "control-line-only").length, 2);
+assert.equal(zhejiangControlLines.filter((record) => record.formalScoreScope === "special-path-only").length, 55);
+assert.deepEqual(
+  zhejiangControlLines
+    .filter((record) => record.controlLineRouteKind === "segment")
+    .map((record) => record.minScore)
+    .sort((left, right) => left - right),
+  [266, 494],
+);
 
 const vacancyById = new Map(vacancyRecords.map((record) => [record.id, record]));
 for (const importedRecord of imported.records) {

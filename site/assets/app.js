@@ -536,6 +536,16 @@ function classifyScoreBand(score, rank, province = "") {
 }
 
 function classifyProfileBand(profile) {
+  const segmentStatus = ordinarySegmentStatus(profile);
+  if (segmentStatus?.band === "first") {
+    return { id: "foundation", label: "普通类第一段", order: 1, strategy: "第一段是考生分段边界，不是本科保证线；继续按位次、当年计划和具体院校专业投档线排序。" };
+  }
+  if (segmentStatus?.band === "second") {
+    return { id: "foundation", label: "普通类第二段", order: 1, strategy: "同步比较第二段剩余本科计划、高职专科、专业层次、城市和专升本路径。" };
+  }
+  if (segmentStatus?.band === "below-second") {
+    return { id: "foundation", label: "普通类第二段线以下", order: 1, strategy: "只作征求志愿扩围、高职单招、技能培养和复读再规划等路径调研。" };
+  }
   if (isVocationalProfile(profile)) {
     return { id: "foundation", label: "专科/技能段", order: 1, strategy: "优先看公办高职、双高专业群、专升本通道、区域产业和家庭可执行性。" };
   }
@@ -616,6 +626,8 @@ function isVocationalAdmissionRecord(record) {
 }
 
 function recordMatchesProfileEducationPath(record, profile, vocationalProfile = isVocationalProfile(profile)) {
+  const segmentStatus = ordinarySegmentStatus(profile);
+  if (["second", "below-second"].includes(segmentStatus?.band)) return true;
   const vocationalRecord = isVocationalAdmissionRecord(record);
   return vocationalProfile ? vocationalRecord : !vocationalRecord;
 }
@@ -982,6 +994,7 @@ function dedupePlanOptions(options) {
 
 let ordinaryBachelorControlLineCache = { records: null, key: "", value: null };
 let ordinaryVocationalControlLineCache = { records: null, key: "", value: null };
+let ordinarySegmentStatusCache = { records: null, key: "", value: null };
 
 function ordinaryBachelorControlLine(profile) {
   const records = admissionRecords();
@@ -992,6 +1005,7 @@ function ordinaryBachelorControlLine(profile) {
   }
   const rows = records.filter((record) => {
     if (!isControlLineRecord(record) || !provinceMatchesRecord(record, profile) || !subjectMatchesRecord(record, profile)) return false;
+    if (record.controlLineRouteKind === "segment") return false;
     const text = normalizeText(`${record.batch || ""} ${record.majorName || ""} ${(record.schoolTags || []).join(" ")}`);
     const ordinaryBachelorLine = (/本科/.test(text) || /普通类一段线/.test(text)) && !/艺术|艺体|体育|戏曲|军|警|资格|专业统考|职教|对口|部队|特殊类型/.test(text);
     if (!ordinaryBachelorLine || /专科|高职|二段线/.test(text)) return false;
@@ -1064,18 +1078,67 @@ function ordinaryVocationalControlLine(profile) {
   return value;
 }
 
+function ordinarySegmentStatus(profile) {
+  const records = admissionRecords();
+  const score = Number(profile?.score);
+  const key = `${normalizeProvince(profile?.province)}|${normalizeSubject(profile?.subject)}|${Number.isFinite(score) ? score : ""}`;
+  if (ordinarySegmentStatusCache.records === records && ordinarySegmentStatusCache.key === key) {
+    return ordinarySegmentStatusCache.value;
+  }
+  const rows = records.filter((record) =>
+    isControlLineRecord(record) &&
+    record.controlLineRouteKind === "segment" &&
+    record.formalScoreScope === "control-line-only" &&
+    provinceMatchesRecord(record, profile) &&
+    subjectMatchesRecord(record, profile)
+  );
+  if (!rows.length) {
+    ordinarySegmentStatusCache = { records, key, value: null };
+    return null;
+  }
+  const latestYear = rows.reduce((latest, record) => Math.max(latest, Number(record.year) || 0), 0);
+  const latestRows = rows.filter((record) => Number(record.year) === latestYear);
+  const firstRecord = latestRows.find((record) => /第一段|一段线/.test(`${record.controlLineSection || ""} ${record.batch || ""}`));
+  const secondRecord = latestRows.find((record) => /第二段|二段线/.test(`${record.controlLineSection || ""} ${record.batch || ""}`));
+  const firstScore = Number(firstRecord?.minScore);
+  const secondScore = Number(secondRecord?.minScore);
+  if (!Number.isFinite(firstScore) || !Number.isFinite(secondScore) || firstScore <= secondScore) {
+    ordinarySegmentStatusCache = { records, key, value: null };
+    return null;
+  }
+  const band = Number.isFinite(score) && score > 0
+    ? score >= firstScore ? "first" : score >= secondScore ? "second" : "below-second"
+    : "unknown";
+  const value = {
+    year: latestYear,
+    band,
+    firstLine: { score: firstScore, year: latestYear, record: firstRecord },
+    secondLine: { score: secondScore, year: latestYear, record: secondRecord },
+  };
+  ordinarySegmentStatusCache = { records, key, value };
+  return value;
+}
+
+function controlLineDisplayLabel(line, fallback) {
+  const kind = String(line?.record?.controlLineKind || "").trim();
+  return /线|段/.test(kind) ? kind : fallback;
+}
+
 function isVocationalProfile(profile) {
   const rankUsageText = normalizeText(`${profile?.rankUsage || ""} ${profile?.rankLevelUsage || ""}`);
   if (/vocational|专科|高职/.test(rankUsageText)) return true;
   const score = Number(profile.score) || 0;
   if (!score) return false;
+  if (ordinarySegmentStatus(profile)) return false;
   const bachelorLine = ordinaryBachelorControlLine(profile);
   if (bachelorLine) return score < bachelorLine.score;
   return scoreOnStandardScale(score, profile.province) < 300;
 }
 
 function candidatePoolsForProfile(profile) {
-  return CANDIDATE_POOLS.filter((candidate) => isVocationalProfile(profile) || candidate.id !== "vocational-dual");
+  const segmentStatus = ordinarySegmentStatus(profile);
+  const includeVocational = isVocationalProfile(profile) || ["second", "below-second"].includes(segmentStatus?.band);
+  return CANDIDATE_POOLS.filter((candidate) => includeVocational || candidate.id !== "vocational-dual");
 }
 
 function scoreRangeForRecord(record) {
@@ -1112,6 +1175,12 @@ function rankScoreText(record, requestedScore, covered) {
 
 function recordEligibleForCandidate(record, candidate, profile) {
   const vocationalRecord = record.dataType === "vocational-admission";
+  const segmentStatus = ordinarySegmentStatus(profile);
+  if (["second", "below-second"].includes(segmentStatus?.band)) {
+    return vocationalRecord
+      ? ["vocational-dual", "regional-safe"].includes(candidate.id)
+      : candidate.id !== "vocational-dual";
+  }
   if (isVocationalProfile(profile)) {
     return vocationalRecord && ["vocational-dual", "regional-safe"].includes(candidate.id);
   }
@@ -1319,6 +1388,10 @@ function isVocationalPlanRecord(record) {
 
 function planRecordMatchesBand(record, candidate, profile, band) {
   const vocationalPlan = isVocationalPlanRecord(record);
+  const segmentStatus = ordinarySegmentStatus(profile);
+  if (["second", "below-second"].includes(segmentStatus?.band)) {
+    return vocationalPlan ? ["vocational-dual", "regional-safe"].includes(candidate.id) : candidate.id !== "vocational-dual";
+  }
   if (!isVocationalProfile(profile) && vocationalPlan) return false;
   if (candidate.id === "vocational-dual") return vocationalPlan;
   if (isVocationalProfile(profile)) return vocationalPlan || candidate.id === "regional-safe";
@@ -1663,6 +1736,10 @@ function scoreCandidate(candidate, profile, band) {
   const vocationalMode = isVocationalProfile(profile);
   const bachelorLine = ordinaryBachelorControlLine(profile);
   const vocationalLine = ordinaryVocationalControlLine(profile);
+  const segmentStatus = ordinarySegmentStatus(profile);
+  const bachelorLineLabel = controlLineDisplayLabel(bachelorLine, "普通本科最低控制线");
+  const lowerLineLabel = controlLineDisplayLabel(vocationalLine, "普通高职专科最低控制线");
+  const segmentedLowerLine = vocationalLine?.record?.controlLineRouteKind === "segment";
   const profileScore = Number(profile.score);
   const belowVocationalLine = Boolean(
     vocationalLine && Number.isFinite(profileScore) && profileScore > 0 && profileScore < vocationalLine.score
@@ -1787,19 +1864,23 @@ function scoreCandidate(candidate, profile, band) {
   }
   if (belowVocationalLine) {
     confidence = "C";
-    confidenceReason = "当前分数低于本省同科类普通高职专科最低控制线，只能做升学路径探索，不能把院校清单解释为可录取结果。";
+    confidenceReason = `当前分数低于本省同科类${lowerLineLabel}，只能做升学路径探索，不能把院校清单解释为可录取结果。`;
   }
 
   const reasons = [
     `孩子画像为${profile.childType}，当前策略为${profile.strategy}，模型按公开权重给出排序。`,
     `分数/位次进入${band.label}：${band.strategy}`,
-    vocationalMode
-      ? belowVocationalLine
-        ? `当前${profile.score}分低于${vocationalLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}普通高职专科最低控制线${vocationalLine.score}分；普通批录取资格尚未达到，只能核验高职单招、技能培养、复读再规划及后续征集政策。`
-        : bachelorLine
-        ? `当前${profile.score}分低于${bachelorLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}普通本科最低控制线${bachelorLine.score}分，系统优先比较高职专科、双高专业群、专升本和就业路径。`
-        : "当前分数进入专科/技能段，系统会优先比较高职专科、双高专业群、专升本和就业路径。"
-      : "",
+    belowVocationalLine
+      ? `当前${profile.score}分低于${vocationalLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}${lowerLineLabel}${vocationalLine.score}分；${segmentedLowerLine ? "当前普通类分段资格尚未达到" : "普通批录取资格尚未达到"}，只能核验高职单招、技能培养、复读再规划及后续征集政策。`
+      : segmentStatus?.band === "second"
+        ? `当前${profile.score}分处于${segmentStatus.year}年${profile.province || "本省"}普通类第二段（${segmentStatus.secondLine.score}-${segmentStatus.firstLine.score - 1}分）；第二段仍可能包含剩余本科与高职专科计划，不能按“只能读专科”处理。`
+        : segmentStatus?.band === "first"
+          ? `当前分数已达到${segmentStatus.year}年${profile.province || "本省"}普通类第一段线${segmentStatus.firstLine.score}分；分段线不是具体院校专业投档线，仍须结合位次和当年计划。`
+          : vocationalMode
+            ? bachelorLine
+              ? `当前${profile.score}分低于${bachelorLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}${bachelorLineLabel}${bachelorLine.score}分，系统优先比较高职专科、双高专业群、专升本和就业路径。`
+              : "当前分数进入专科/技能段，系统会优先比较高职专科、双高专业群、专升本和就业路径。"
+            : "",
     candidate.profiles.includes(profile.childType)
       ? `该院校池适合${profile.childType}，与孩子画像匹配。`
       : `该院校池不是画像最强匹配项，但可作为对照方案。`,
@@ -1817,7 +1898,7 @@ function scoreCandidate(candidate, profile, band) {
   ].filter(Boolean);
 
   const warnings = [
-    ...(belowVocationalLine ? [`当前分数低于${vocationalLine.year}年普通高职专科最低控制线${vocationalLine.score}分；下列院校和专业只能作为路径调研，不得视为普通批可录取名单。`] : []),
+    ...(belowVocationalLine ? [`当前分数低于${vocationalLine.year}年${lowerLineLabel}${vocationalLine.score}分；下列院校和专业只能作为路径调研，不得视为普通批可录取名单。`] : []),
     ...(profile.rankEstimateText ? [`${profile.rankEstimateText}正式填报前必须回省考试院原表复核。`] : []),
     ...freshness.warnings,
     ...(vocationalMode && !["vocational-dual", "regional-safe"].includes(candidate.id) ? ["当前分数段不宜只按本科平台逻辑排序，应同步核验高职专科和专升本路径。"] : []),

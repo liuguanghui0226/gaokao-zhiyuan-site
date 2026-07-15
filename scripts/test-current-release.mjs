@@ -18,6 +18,7 @@ const tests = [
   "test-national-score-band-coverage-v3279.mjs",
   "test-official-jiangxi-control-lines-v3280.mjs",
   "test-official-xizang-control-lines-v3281.mjs",
+  "test-official-zhejiang-control-lines-v3282.mjs",
 ];
 
 const results = tests.map((test) => {

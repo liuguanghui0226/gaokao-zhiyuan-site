@@ -37,6 +37,7 @@ globalThis.__gaokaoNationalCoverageTest = {
   isVocationalAdmissionRecord,
   isVocationalProfile,
   ordinaryBachelorControlLine,
+  ordinarySegmentStatus,
   ordinaryVocationalControlLine,
   scoreCandidate,
   scoreScaleForProvince,
@@ -147,9 +148,10 @@ for (const [province, entry] of Object.entries(manifest.shards)) {
     }
 
     const vocational = api.isVocationalProfile(profile);
+    const segmentStatus = api.ordinarySegmentStatus(profile);
     const band = api.classifyProfileBand(profile);
     const candidatePools = api.candidatePoolsForProfile(profile);
-    if (!vocational) {
+    if (!vocational && !["second", "below-second"].includes(segmentStatus?.band)) {
       assert.ok(candidatePools.every((candidate) => candidate.id !== "vocational-dual"), `${province} ${score}分 leaked the vocational candidate pool`);
     }
     provinceRow.scenarios += 1;
@@ -177,7 +179,7 @@ for (const [province, entry] of Object.entries(manifest.shards)) {
     }
     if (vocational) {
       assert.ok(results.filter((result) => !["vocational-dual", "regional-safe"].includes(result.id)).every((result) => result.total <= 48), `${province} ${score}分 leaked a high-scoring undergraduate-only pool`);
-    } else {
+    } else if (!["second", "below-second"].includes(segmentStatus?.band)) {
       assert.ok(results.every((result) => result.schoolOptions.every((option) => !isVocationalRecord(option.record))), `${province} ${score}分 leaked a vocational admission/plan record`);
     }
 
@@ -210,6 +212,27 @@ assert.equal(api.ordinaryBachelorControlLine(xizangPhysicsB)?.score, 300);
 assert.equal(api.ordinaryVocationalControlLine(xizangPhysicsB)?.score, 195);
 assert.equal(api.isVocationalProfile({ ...xizangPhysicsB, score: "299" }), true);
 assert.equal(api.isVocationalProfile({ ...xizangPhysicsB, score: "300" }), false);
+
+api.setProvinceData(readGzipJson(path.join(releaseDir, `${manifest.shards["浙江"].file}.gz`)));
+const zhejiang265 = profileFor("浙江", "综合", 265);
+const zhejiang266 = profileFor("浙江", "综合", 266);
+const zhejiang493 = profileFor("浙江", "综合", 493);
+const zhejiang494 = profileFor("浙江", "综合", 494);
+assert.equal(api.ordinaryBachelorControlLine(zhejiang494), null, "浙江第一段不得冒充本科控制线");
+assert.equal(api.ordinaryVocationalControlLine(zhejiang266)?.score, 266, "浙江第二段只可作为最低分段边界");
+assert.equal(api.ordinarySegmentStatus(zhejiang265)?.band, "below-second");
+assert.equal(api.ordinarySegmentStatus(zhejiang266)?.band, "second");
+assert.equal(api.ordinarySegmentStatus(zhejiang493)?.band, "second");
+assert.equal(api.ordinarySegmentStatus(zhejiang494)?.band, "first");
+assert.equal(api.isVocationalProfile(zhejiang265), false, "分段制线以下不得直接等同专科考生");
+assert.ok(api.candidatePoolsForProfile(zhejiang265).some((candidate) => candidate.id === "vocational-dual"));
+assert.ok(api.candidatePoolsForProfile(zhejiang266).some((candidate) => candidate.id === "vocational-dual"));
+assert.ok(api.candidatePoolsForProfile(zhejiang493).some((candidate) => candidate.id === "vocational-dual"));
+assert.ok(api.candidatePoolsForProfile(zhejiang494).every((candidate) => candidate.id !== "vocational-dual"));
+assert.equal(api.classifyProfileBand(zhejiang265).label, "普通类第二段线以下");
+assert.equal(api.classifyProfileBand(zhejiang266).label, "普通类第二段");
+assert.equal(api.classifyProfileBand(zhejiang493).label, "普通类第二段");
+assert.equal(api.classifyProfileBand(zhejiang494).label, "普通类第一段");
 
 const hainanHighRow = rows.find((row) => row.province === "海南");
 assert.ok(hainanHighRow && hainanHighRow.scoreScale === 900);

@@ -1,0 +1,71 @@
+change_id: "2026-07-16-v3282-zhejiang-control-lines-2026-segment-routing"
+title: "浙江2026各类别分数线与普通类分段路由"
+phase: deliver
+status: in_progress
+execution_mode: full
+resume_mode: full
+resume_reason: "官方HTML、结构化导入、浙江运行分片、分段推荐算法和GitHub Pages需同步验证。"
+last_updated: "2026-07-16T04:09:15+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "浙江省教育考试院公开HTML五张表解析为57条2026各类别分数线。"
+  - surface: user
+    role: consumer
+    notes: "普通类第一段、第二段按考生分段独立路由，不冒充本科或专科线。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、浙江gzip分片、Pages部署与公网31省验证保持同一模型版本。"
+
+sot_map:
+  - info_name: "2026年浙江省普通高校招生各类别分数线"
+    pattern: 4
+    source: "https://www.zjzs.net/art/2026/6/25/art_45_12449.html"
+    consumers:
+      - name: "data/admissions/official-zhejiang-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/zhejiang.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node结构化解析五张HTML表并断言57条行级字段，再定向重写gzip核心、清单与浙江分片。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "保留v3.281 gzip产物哈希；解析或数量断言失败不覆盖运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.281前端和分片，但保留官方HTML镜像与结构化导入审计。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: "source-import"
+    scope: "官方HTML五张表、57条控制线、页面哈希和六类路由计数"
+    verification_command: "node scripts/import-official-zhejiang-control-lines-2026.mjs"
+  - id: "runtime-patch"
+    scope: "核心索引、浙江分片、来源说明、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-zhejiang-control-lines-2026-v3282.mjs"
+  - id: "segment-safety"
+    scope: "265/266/493/494临界分、第一段/第二段语义和线以下封顶42/C"
+    verification_command: "node scripts/test-official-zhejiang-control-lines-v3282.mjs"
+  - id: "national-regression"
+    scope: "31省分片、155分段场景、31个真实推荐探针和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "普通类第一段、第二段是考生分段，不是本科或专科学历层次保证线。"
+  - "控制线不是院校投档线、专业录取最低分或录取概率证据。"
+  - "艺体综合分和单独考试招生成绩口径不得与普通类总分或位次混算。"
+  - "西藏仍缺可计算一分一段和省级全量普通/高职投档录取表。"
+
+next_action: "继续逐省补齐2026官方控制线与最新投档录取表，并保持分段制、本专科制和特殊路径制分别建模。"
