@@ -2,7 +2,7 @@
 
 | 变更 | 阶段 | 进入条件 | 退出条件 | 验证 | 状态 | 记录 |
 |---|---|---|---|---|---|---|
-| v3.280 江西2026官方控制线与本专科路由 | Phase 4 Implement | 江西2026一分一段已接入，但普通本科/高职控制线尚未进入线上分片 | 30条公开官方控制线合入江西分片；历史479/220、物理412/200用于普通路径；特殊类型、三校生和艺体隔离 | `node scripts/test-current-release.mjs` + GitHub Pages公网 verifier | 进行中 | 来源为江西省教育厅发布、阳光高考转载页；控制线不是投档线或录取概率证据 |
+| v3.280 江西2026官方控制线与本专科路由 | Phase 7 Deliver | 江西2026一分一段已接入，但普通本科/高职控制线尚未进入线上分片 | 30条公开官方控制线合入江西分片；历史479/220、物理412/200用于普通路径；特殊类型、三校生和艺体隔离 | `node scripts/test-current-release.mjs` + Pages `29441800675` + 公网验证 `29441933525` | 通过 | 来源为江西省教育厅发布、阳光高考转载页；控制线不是投档线或录取概率证据 |
 | v3.278 再选科目资格筛选 | Phase 7 Deliver | 新高考专业记录已有再选科目字段，但模型未用该字段过滤 | 明确不符合选科的院校专业和计划记录被排除；含糊表述保留待核验 | `node scripts/test-elective-requirement-v3278.mjs && node scripts/test-browser-runtime-shards-v3274.mjs` | 通过 | 选科判断只在公告表述可明确解析时自动执行，最终以当年招生目录为准 |
 | v3.277 可执行院校专业清单 | Phase 7 Deliver | 方向排序已能给候选池，但真实院校专业与计划线索混在各方向卡片中 | 已命中的院校专业跨方向去重并按优先/稳妥/冲刺分层；计划和征集快照隔离 | `node scripts/test-application-plan-v3277.mjs && node scripts/test-browser-runtime-shards-v3274.mjs` | 通过 | 清单是核验优先级，不是投档承诺；无结构化记录的泛候选不进入清单 |
 | v3.276 录取边界年份校准与压缩发布回归 | Phase 7 Deliver | 浏览器运行已改为 GitHub Release gzip 分片，推荐器仍可能把多年录取边界等价看待 | 录取边界按年份降权，历史命中不能获得 A 级可信度；回归可直接校验当前 gzip 核心和 31 省分片 | `node scripts/test-admission-recency-v3276.mjs && node scripts/test-browser-runtime-shards-v3274.mjs` | 通过 | 数据年份不会被误写成当年预测；当年计划、专业组和位次核验仍不可省略 |
