@@ -1,11 +1,11 @@
 change_id: "2026-07-16-v3290-hebei-control-lines-2026-rank-provenance"
 title: "河北2026控制线与位次来源闭合"
-phase: review
-status: in_progress
+phase: deliver
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "官方图片控制线、位次来源修订、运行分片、普通路径算法和GitHub Pages需同步验证。"
-last_updated: "2026-07-16T15:30:00+08:00"
+last_updated: "2026-07-16T16:24:54+08:00"
 
 surfaces_touched:
   - surface: information
@@ -77,4 +77,4 @@ residual_risks:
   - "当前2026普通批控制线只覆盖17省，仍有14省待补。"
   - "官方图片若换版，需重新核验字节数、SHA-256和逐项结构化结果。"
 
-next_action: "完成桌面/手机浏览器验收，镜像证据并部署v3.290，随后从缺失14省中继续补齐2026官方普通批控制线。"
+next_action: "从缺失14省中继续补齐2026官方普通批控制线，保持官方来源、特殊路径隔离、浏览器回归和Pages公网验证。"
