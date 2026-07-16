@@ -69,6 +69,7 @@ const RAW_PROVENANCE_PACKS = [
   "data/admissions/raw/gk100-xinjiang-rank-2026",
 ];
 const IMPORT_SCRIPTS = [
+  "scripts/mirror-runtime-to-mac2t.mjs",
   "scripts/build-official-guangxi-control-lines-2026-v3295.mjs",
   "scripts/apply-official-guangxi-control-lines-2026-v3295.mjs",
   "scripts/test-official-guangxi-control-lines-v3295.mjs",
