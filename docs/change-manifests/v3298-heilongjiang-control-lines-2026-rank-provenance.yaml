@@ -1,11 +1,11 @@
 change_id: "2026-07-17-v3298-heilongjiang-control-lines-2026-rank-provenance"
 title: "黑龙江2026控制线、艺体双门槛与位次XLS来源闭合"
 phase: deliver
-status: testing
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "黑龙江已有1071条2026普通类一分段记录，但控制线未进入运行层且位次行未关联科类正式XLS。"
-last_updated: "2026-07-17T00:30:00+08:00"
+last_updated: "2026-07-17T01:16:59+08:00"
 
 surfaces_touched:
   - surface: information
@@ -77,4 +77,4 @@ residual_risks:
   - "历史664分为官方XLS省略的零人数档，不生成假位次行。"
   - "当前2026普通批通用控制线覆盖25省，仍有6省待补；海南、上海和天津专科线继续保持待发布。"
 
-next_action: "完成v3.298 Pages、公网、mac_2T与Release证据闭环，再从江苏开始继续补齐缺失6省；始终区分普通控制线、特殊路径、位次表和院校/专业录取分。"
+next_action: "从江苏开始继续补齐缺失6省；始终区分普通控制线、特殊路径、位次表和院校/专业录取分。"

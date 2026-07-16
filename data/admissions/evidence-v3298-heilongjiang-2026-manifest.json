@@ -1,0 +1,157 @@
+{
+  "dataset": "evidence-v3298-heilongjiang-2026",
+  "generatedAt": "2026-07-16T17:16:59.000Z",
+  "modelVersion": "local-deterministic-v3.298-heilongjiang-control-lines2026-and-rank-provenance-847051records",
+  "dataCommit": {
+    "local": "b3d42a9fb99137ddfa3474e8096f151a74829118",
+    "remote": "80e82d47ba14cbdf443949300d450a623a5804db",
+    "tree": "1753be74872686cdc8b96e934baf7eabfe69145d"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29518334074,
+    "liveVerificationRun": 29518665958,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.298",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.298",
+    "baseDataReleaseTag": "data-v3.275",
+    "baseDataReleaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 847051,
+    "rankConversions": 116656,
+    "sourceNotes": 5104,
+    "controlLineRecords": 1405,
+    "provinceCount": 31,
+    "heilongjiangRecords": 15413,
+    "heilongjiangRankConversions2026": 1071,
+    "heilongjiangRankConversionsBySubject": {
+      "history": 520,
+      "physics": 551
+    },
+    "heilongjiangControlLines": {
+      "all": 18,
+      "ordinary": 4,
+      "specialPath": 14,
+      "specialType": 2,
+      "sports": 4,
+      "art": 8,
+      "cultureProfessionalRecords": 9,
+      "professionalQualificationWithoutNumericThreshold": 3
+    },
+    "officialControlCoverage": {
+      "covered": 25,
+      "missing": 6,
+      "missingProvinces": [
+        "江苏",
+        "辽宁",
+        "宁夏",
+        "青海",
+        "山西",
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "海南",
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "sourceEvidence": {
+    "controlUrl": "https://www.hlj.gov.cn/hlj/c108427/202606/c00_31953024.shtml",
+    "controlQuality": "official-heilongjiang-government-control-lines-html",
+    "rankPageUrl": "https://jyt.hlj.gov.cn/jyt/c110476/202606/c00_31952462.shtml",
+    "rankSourceQuality": "official-heilongjiang-rank-conversion-xls",
+    "directOfficialRedownloadStatus": "success",
+    "rankRowsFullCrossChecked": 1071,
+    "rankRowsLinked": 1071,
+    "rankValueChanges": 0,
+    "historyFinalCumulative": 44608,
+    "physicsFinalCumulative": 109811,
+    "historyZeroPersonScoreOmitted": 664
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 29,
+      "failed": 0
+    },
+    "heilongjiangBoundaryScores": [
+      149,
+      150,
+      339,
+      340,
+      384,
+      385,
+      464,
+      466,
+      600,
+      664,
+      670,
+      700,
+      750,
+      751
+    ],
+    "belowVocationalMaxModelScore": 42,
+    "belowVocationalApplicationPlanRows": 0,
+    "belowVocationalNamedInstitutions": 0,
+    "rankValueChanges": 0,
+    "numericProfessionalThresholdsInvented": 0,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "liveAppVersion": "3.298.0",
+    "interactiveBrowserStatus": "not-used-current-turn-enterprise-network-policy-retained",
+    "browserBoundary": "GitHub Actions live readback and direct HTTPS byte readback are successful independent checks; no browser-policy workaround or screenshot claim was used."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.298-heilongjiang-control-lines2026-and-rank-provenance-847051records",
+    "gzipRuntimeFiles": 33,
+    "gzipRuntimeMissing": 0,
+    "gzipRuntimeHashMismatches": 0,
+    "keyFilesCompared": 20,
+    "keyFilesMissing": 0,
+    "keyFileHashMismatches": 0,
+    "staleDecompressedMasterFiles": 0,
+    "appleDoubleFiles": 0,
+    "doubleJsonFiles": 0
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.298-heilongjiang-2026.tar.gz",
+    "files": 17,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 3010142,
+    "sha256": "368923b32aeefb5d4f1b878e1f44f3e98667ffc9885e0f64bd0b165852e7bd3f",
+    "githubDigestMatched": true,
+    "redownloadSha256Verified": true,
+    "redownloadByteMatched": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "428a1f27009c7977d71ece470580f6e51b8046a168a81c9ce2504d4f900028cf",
+    "provinceManifestJson": "462c7c8ced0c24b91357f9c997926fd1abb3df9d80a2de0ec2b186f17719a8b2",
+    "heilongjiangJson": "336e8aef5a7197e47039eba4ba4ccfcfbcdae6fce34098fc9adaeedb8527c7b3",
+    "knowledgeCoreGzip": "ef62e0b793960cbca08584489f38cbe7d0f0672d77b0c229829837448c0fbaf0",
+    "provinceManifestGzip": "32b7c5584477d5186301e5cde8a6b82df4c0ef1e064e3d853bdcbef0f67a4bf6",
+    "heilongjiangGzip": "db042d73dd26e2d400c4c291932c36e9530b023d9427ab8b7d66ff8919a2eb84",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "siteIndex": "89e337242db1cb4393376cdaefab5e3c919806be32b0514296d73a978f08f9e4",
+    "importJson": "6a18b08a9d5aee7875c6e4fbfea10e4d81e3d788e1fa66b83bcbadab3d739c44",
+    "runtimeManifestJson": "0f1b9f707d8f47f8fa48b83afa82f829eddd921a5c1233202ff2d4515bf9f78f",
+    "coverageAuditJson": "79cfab07efb03a4559c7f63d75a0177b9765c552083c9cee17d28e67698b97f5",
+    "officialControlPage": "26ff5c8469380e854a5346b4b0ec262823daee4a30051872fa08af376b921159",
+    "officialRankPage": "e2b079cd87480dee32e8f5e285179eb6b384b7bcc6e26889ed1b4cd730b220d2",
+    "officialHistoryXls": "e7beb16f3d3a925ad2fbe6fcc83d35bce16a216bda394e22e37052bbb2f00bcd",
+    "officialPhysicsXls": "9e70a27172d6c1a4ebe1b57386d14feaa13e71b5bab03c6a798aaadda53007e0"
+  },
+  "boundaries": [
+    "The 385/340-point lines are Heilongjiang's 2026 ordinary undergraduate controls and both ordinary vocational controls are 150; none is an institution-group, institution or major admission score.",
+    "Special-type, art and sports records remain special-path-only and never replace the ordinary routes.",
+    "The nine undergraduate art/sports rows store culture and professional thresholds separately; the three vocational art/sports rows retain qualification text without inventing a professional score.",
+    "The 1071 Heilongjiang 2026 rank rows match the two official XLS workbooks row by row; this round changes no score, same-score count, cumulative count or rank value.",
+    "History score 664 is a zero-person score omitted by the official workbook and remains absent instead of receiving an invented row.",
+    "At 149 the model reports research paths only, names no institution and creates no executable application plan; 150 enters vocational qualification, while 385 history or 340 physics enters undergraduate routing.",
+    "Scores above 750 and below 150 remain outside the official rank tables and are not assigned invented ranks.",
+    "GitHub Pages deployment, live 31-province readback, direct HTTPS byte hashes, mac_2T mirror hashes and Release redownload are reported as separate evidence layers."
+  ]
+}
