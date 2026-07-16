@@ -1,11 +1,11 @@
 change_id: "2026-07-17-v3299-jiangsu-control-lines-2026-rank-provenance"
 title: "江苏2026第一阶段控制线、专科待发布与位次图片来源闭合"
-phase: review
-status: in_progress
+phase: deliver
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "江苏已有408条2026第一阶段普通类位次，但控制线未进入运行层且位次行未关联科类正式图片。"
-last_updated: "2026-07-17T01:45:00+08:00"
+last_updated: "2026-07-17T02:22:04+08:00"
 
 surfaces_touched:
   - surface: information
@@ -78,4 +78,4 @@ residual_risks:
   - "本轮没有重新逐行OCR两张全图，保留此前Vision校验和12处连续性纠正，并明确库存/连续性复核边界。"
   - "当前2026普通批通用控制线覆盖26省，仍有辽宁、宁夏、青海、山西、云南5省待补。"
 
-next_action: "完成v3.299 Pages、公网、mac_2T和Release闭环，再从辽宁继续补齐剩余5省。"
+next_action: "从辽宁继续补齐剩余5省；始终区分普通控制线、特殊路径、位次表和院校/专业录取分。"

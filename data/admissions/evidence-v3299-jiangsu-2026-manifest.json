@@ -1,0 +1,165 @@
+{
+  "dataset": "evidence-v3299-jiangsu-2026",
+  "generatedAt": "2026-07-16T18:22:04.000Z",
+  "modelVersion": "local-deterministic-v3.299-jiangsu-first-stage-control-lines2026-pending-vocational-and-rank-provenance-847079records",
+  "dataCommit": {
+    "local": "4ca9ae3f936682b2b147122ab17a719175dadf2c",
+    "remote": "998d7b19e6063956bac0edede9db3a8357dbfa3c",
+    "tree": "c4ebbe88ff968fbb2c229b61819efc1278aaeb85"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29522751732,
+    "liveVerificationRun": 29523026159,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.299",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.299",
+    "baseDataReleaseTag": "data-v3.275",
+    "baseDataReleaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 847079,
+    "rankConversions": 116656,
+    "sourceNotes": 5105,
+    "controlLineRecords": 1433,
+    "provinceCount": 31,
+    "jiangsuRecords": 26338,
+    "jiangsuRankConversions2026": 408,
+    "jiangsuRankConversionsBySubject": {
+      "history": 174,
+      "physics": 234
+    },
+    "jiangsuControlLines": {
+      "all": 28,
+      "ordinary": 2,
+      "specialPath": 26,
+      "specialType": 2,
+      "sports": 2,
+      "artProvincialExam": 18,
+      "artSchoolExam": 2,
+      "operaJointExam": 2,
+      "cultureProfessionalRecords": 20,
+      "professionalQualificationWithoutNumericThreshold": 4
+    },
+    "officialControlCoverage": {
+      "covered": 26,
+      "missing": 5,
+      "missingProvinces": [
+        "辽宁",
+        "宁夏",
+        "青海",
+        "山西",
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "海南",
+        "江苏",
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "sourceEvidence": {
+    "controlUrl": "https://www.jseea.cn/webfile/index/index_zkxx/2026-06-24/7475450259783553024.html",
+    "controlImageUrl": "https://www.jseea.cn/webfile/upload/2026/06-24/14-41-220832-2001256129.jpg",
+    "controlQuality": "official-jiangsu-first-stage-control-line-image-manually-verified",
+    "rankPageUrl": "https://www.jseea.cn/webfile/index/index_zkxx/2026-06-24/7475494421979467776.html",
+    "rankSourceQuality": "official-jiangsu-rank-conversion-image-vision-validated",
+    "directOfficialRedownloadStatus": "success",
+    "rankRowsInventoryChecked": 408,
+    "rankRowsContinuityChecked": 408,
+    "priorVisionCorrectionsRetained": 12,
+    "freshFullImageRowOcrThisRound": false,
+    "rankRowsLinked": 408,
+    "rankValueChanges": 0,
+    "historyFinalCumulative": 54036,
+    "physicsFinalCumulative": 217438,
+    "ordinaryVocationalStatus": "pending-official-release",
+    "ordinaryVocationalFilingSchedule": "2026-07-27 through 2026-07-28 17:00 Asia/Shanghai"
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 30,
+      "failed": 0
+    },
+    "jiangsuBoundaryScores": [
+      455,
+      456,
+      483,
+      484,
+      513,
+      532,
+      600,
+      657,
+      689,
+      750,
+      751
+    ],
+    "pendingVocationalMaxModelScore": 55,
+    "pendingVocationalApplicationPlanRows": 0,
+    "pendingVocationalNamedInstitutions": 0,
+    "rankValueChanges": 0,
+    "numericProfessionalThresholdsInvented": 0,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "liveAppVersion": "3.299.0",
+    "interactiveBrowserStatus": "not-used-current-turn-enterprise-network-policy-retained",
+    "browserBoundary": "GitHub Actions live readback and direct HTTPS byte readback are successful independent checks; no browser-policy workaround or screenshot claim was used."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.299-jiangsu-first-stage-control-lines2026-pending-vocational-and-rank-provenance-847079records",
+    "gzipRuntimeFiles": 33,
+    "gzipRuntimeMissing": 0,
+    "gzipRuntimeHashMismatches": 0,
+    "gzipRuntimeOnlyTimestampDifferences": 33,
+    "keyFilesCompared": 16,
+    "keyFilesMissing": 0,
+    "keyFileHashMismatches": 0,
+    "staleDecompressedMasterFiles": 0,
+    "appleDoubleFiles": 0,
+    "doubleJsonFiles": 0
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.299-jiangsu-2026.tar.gz",
+    "files": 19,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 7979298,
+    "sha256": "f929bd059ddeb168b1a212ab30e64fdded6ff0b8d519c75fe2e669d99604ebb8",
+    "githubDigestMatched": true,
+    "redownloadSha256Verified": true,
+    "redownloadByteMatched": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "79e971adabbe2979cd75c26a513b8f6e2c07018bd2fbfe8396ffff74fbbd4207",
+    "provinceManifestJson": "8c5c4192b92fff2676d68e7d4f3eec6367c9d6d007c3f551057e10a596bc329f",
+    "jiangsuJson": "c390268db5ff2f4ba83d410708a59a3be7623b1cf79c784b8bd8853dc7166340",
+    "knowledgeCoreGzip": "2cc445fdd894610a9fb747895cded982c4f367ccc3ef84681ad3829d162bab6f",
+    "provinceManifestGzip": "285e942f073760654f9d209ff887a361b295f05b080be9e301e31c6d918acc1a",
+    "jiangsuGzip": "0814b0686d3f6dc811a35cc165f0ac78ad9708b4b242049f2d03aebd4c024f37",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "siteIndex": "81249c5dae85a717aaafee80de336303ceb009d9d9a8363c2105c0bd8c766b00",
+    "verifyWorkflow": "5f988ca71c997f4f3fc9433d4d68358fe5fdd3ac3d56776270dcd1ce8f720660",
+    "importJson": "7fc60019a44ddc568f6b915d55d5b481f5beea84a2f1ba5d1ceab637f2d43cc9",
+    "runtimeManifestJson": "680260d8f556fe300e0eec00dc78a5db4e29e8466161f11211e20eaac0e1495d",
+    "coverageAuditJson": "09eea7aed1908f84fa00562b277d1edbb92ad688daaa86fd10844835115ecb81",
+    "officialControlPage": "d08db6c1748e2b762a93c3f035831e26280efd2cd6daad4a5dc934b3b2745ce5",
+    "officialControlImage": "f4815a19ec6452887aa8007bb57c88f16ace5382ed4a25ab754ca1a3d81837b5",
+    "officialRankPage": "c0f44e2f60e32bc63e662b08ea136d9fba8c8015800e934ab0212dba54878441",
+    "officialHistoryImage": "c90751acf88c8cc0129f7cb11c0e48736832a39688bdbf98a49245313b2de46b",
+    "officialPhysicsImage": "90b38029cd2e345c28400f1cfa9ebaf66030bec6e32b6a06070713fa5af56c96",
+    "officialReminderPage": "0b2b70579bddad875ef43016e5f8c66ca50ecf20c778946956ab901a2c52ee95"
+  },
+  "boundaries": [
+    "The 484 history and 456 physics lines are Jiangsu's 2026 ordinary undergraduate controls; neither is an institution-group, institution or major admission score.",
+    "The 2026 ordinary vocational line remains pending before second-stage filing; the 2025 value of 220 is not reused.",
+    "Special-type, art and sports records remain special-path-only and never replace the ordinary routes.",
+    "The 20 provincial-exam art/sports rows store culture and professional thresholds separately; the four school-exam or joint-exam rows retain qualification text without inventing a professional score.",
+    "The 408 Jiangsu 2026 rank rows retain the prior Vision validation and 12 continuity corrections; this round rehashes official images and verifies runtime inventory, endpoints, rank widths, continuity and control checkpoints without claiming fresh full-image row OCR.",
+    "At 483 history or 455 physics the model reports research paths only, names no institution and creates no executable application plan; 484 history or 456 physics enters undergraduate routing.",
+    "Scores below the first-stage tables and above 750 are not assigned invented ranks.",
+    "GitHub Pages deployment, live 31-province readback, direct HTTPS byte hashes, mac_2T mirror hashes and Release redownload are reported as separate evidence layers."
+  ]
+}
