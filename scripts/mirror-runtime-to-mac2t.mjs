@@ -14,6 +14,7 @@ const COPY_PROVENANCE = process.env.GAOKAO_MIRROR_PROVENANCE === "1" || COPY_FUL
 const COPY_SITE_ASSETS = process.env.GAOKAO_MIRROR_SITE_ASSETS === "1";
 const COPY_TOP_DATA = process.env.GAOKAO_MIRROR_TOP_DATA === "1";
 const RAW_PROVENANCE_PACKS = [
+  "data/admissions/raw/heilongjiang-2026",
   "data/admissions/raw/hainan-2026",
   "data/admissions/raw/guizhou-2026",
   "data/admissions/raw/guangxi-2026",
@@ -73,6 +74,10 @@ const RAW_PROVENANCE_PACKS = [
 ];
 const IMPORT_SCRIPTS = [
   "scripts/mirror-runtime-to-mac2t.mjs",
+  "scripts/build-official-heilongjiang-control-lines-2026-v3298.mjs",
+  "scripts/apply-official-heilongjiang-control-lines-2026-v3298.mjs",
+  "scripts/test-official-heilongjiang-control-lines-v3298.mjs",
+  "scripts/audit-official-control-line-coverage-v3298.mjs",
   "scripts/build-official-hainan-control-lines-2026-v3297.mjs",
   "scripts/apply-official-hainan-control-lines-2026-v3297.mjs",
   "scripts/test-official-hainan-control-lines-v3297.mjs",
@@ -181,6 +186,10 @@ const IMPORT_SCRIPTS = [
   "scripts/vision-table-row-ocr.swift",
 ];
 const TARGETED_ADMISSION_IMPORTS = [
+  "data/admissions/evidence-v3298-heilongjiang-2026-manifest.json",
+  "data/admissions/official-heilongjiang-control-lines-2026-import.json",
+  "data/admissions/official-heilongjiang-control-lines-2026-v3298-runtime-manifest.json",
+  "data/admissions/official-control-line-coverage-2026-v3298.json",
   "data/admissions/evidence-v3297-hainan-2026-manifest.json",
   "data/admissions/official-hainan-control-lines-2026-import.json",
   "data/admissions/official-hainan-control-lines-2026-v3297-runtime-manifest.json",
@@ -462,6 +471,10 @@ function main() {
   if (fs.existsSync(path.join(PROJECT_ROOT, "docs/changes/v3.297-hainan-control-lines-2026.md"))) {
     copy("docs/changes/v3.297-hainan-control-lines-2026.md");
     copy("docs/change-manifests/v3297-hainan-control-lines-2026-rank-provenance.yaml");
+  }
+  if (fs.existsSync(path.join(PROJECT_ROOT, "docs/changes/v3.298-heilongjiang-control-lines-2026.md"))) {
+    copy("docs/changes/v3.298-heilongjiang-control-lines-2026.md");
+    copy("docs/change-manifests/v3298-heilongjiang-control-lines-2026-rank-provenance.yaml");
   }
   copy("docs/changes/v3271-beijing-rank-conversion-2025.md");
   copy("docs/change-manifests/v3271-beijing-rank-conversion-2025.yaml");

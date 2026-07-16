@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.297-hainan-control-lines2026-and-rank-provenance-847033records";
+const modelVersion = "local-deterministic-v3.298-heilongjiang-control-lines2026-and-rank-provenance-847051records";
 
 function readGzipJson(file) {
   return JSON.parse(zlib.gunzipSync(fs.readFileSync(file)).toString("utf8"));
@@ -48,11 +48,11 @@ assert.ok(records.filter((record) => record.controlLineRouteKind !== "ordinary-b
 
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
-assert.equal(core.admissionScoreLayer.structuredRecords, 847033);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5103);
-assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1387);
+assert.equal(core.admissionScoreLayer.structuredRecords, 847051);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5104);
+assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1405);
 assert.equal(manifest.modelVersion, modelVersion);
-assert.equal(manifest.recordCount, 847033);
+assert.equal(manifest.recordCount, 847051);
 assert.equal(manifest.shards["湖南"].records, 31914);
 assert.equal(manifest.shards["湖南"].rankConversions, 1137);
 assert.equal(hunan.rankConversions.length, 1137);
