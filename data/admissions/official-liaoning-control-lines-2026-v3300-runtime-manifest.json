@@ -1,0 +1,43 @@
+{
+  "dataset": "official-liaoning-control-lines-2026-v3300-runtime",
+  "generatedAt": "2026-07-16T18:45:00.000Z",
+  "sourceId": "official-liaoning-control-lines-2026",
+  "importFile": "data/admissions/official-liaoning-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.299-jiangsu-first-stage-control-lines2026-pending-vocational-and-rank-provenance-847079records",
+    "recordCount": 847079,
+    "liaoningRecords": 33795,
+    "rankConversions": 1076,
+    "rankRowsMissingSourceUrl": 1076,
+    "coreSha256": "79e971adabbe2979cd75c26a513b8f6e2c07018bd2fbfe8396ffff74fbbd4207",
+    "liaoningSha256": "c5abe91593fcc3aa439b0818e5b2b9183845ad7128cfb9dd459db312dda3782b"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.300-liaoning-control-lines2026-and-rank-provenance-847095records",
+    "recordCount": 847095,
+    "liaoningRecords": 33811,
+    "rankConversions": 1076,
+    "rankRowsLinked": 1076,
+    "rankRowsInventoryChecked": 1076,
+    "rankRowsContinuityChecked": 1076,
+    "officialZeroPersonScoreGapsRetained": 4,
+    "rankValueChanges": 0,
+    "sourceRecords": 16,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "sports": 2,
+      "art": 8
+    },
+    "professionalQualificationRecords": 10,
+    "professionalNumericRecords": 0,
+    "coreBytes": 15228691,
+    "coreSha256": "ec25ab49ac72c22b79cfc99db7f2300464bc9578d732d6043b1ccb8acb7cf1fe",
+    "liaoningBytes": 32061302,
+    "liaoningSha256": "5aaecdd6adbcae1dbb69f9be698fc827b26ad74120ac604757a7b403267696f4",
+    "manifestBytes": 5510,
+    "manifestSha256": "9671a4c8c56766f07bf4d64d6e35e74fb514b096ba89690c3ba289ac12fa7ebf"
+  }
+}

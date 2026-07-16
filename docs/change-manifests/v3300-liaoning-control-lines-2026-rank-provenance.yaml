@@ -1,0 +1,80 @@
+change_id: "2026-07-17-v3300-liaoning-control-lines-2026-rank-provenance"
+title: "辽宁2026文化控制线与位次PDF来源闭合"
+phase: review
+status: in_progress
+execution_mode: full
+resume_mode: full
+resume_reason: "辽宁已有1076条2026普通类位次，但文化控制线未进入运行层且位次行未关联科类正式PDF。"
+last_updated: "2026-07-17T02:45:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "省教育厅与阳光高考控制线正文、教育厅位次索引锁定证据；16条边界按普通、特殊和艺体路径分层。"
+  - surface: user
+    role: consumer
+    notes: "历史149/150/441/442、物理149/150/343/344、正式表内位次和顶端区间用于推荐降级、资格切换与自动估位。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、辽宁gzip分片、mac_2T镜像、GitHub Pages和Release证据须保持同一模型版本。"
+
+sot_map:
+  - info_name: "辽宁省2026年普通高等学校招生文化课录取控制分数线"
+    pattern: 4
+    source: "https://jyt.ln.gov.cn/jyt/jyzx/jyyw/2026063013492555300/index.shtml"
+    consumers:
+      - name: "data/admissions/official-liaoning-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/liaoning.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node锁定省教育厅正式转载页和阳光高考转载页字节、哈希与正文，定向重写gzip核心、清单与辽宁分片。"
+    desync_risk: high
+  - info_name: "辽宁省2026年普通高校招生考试成绩统计表"
+    pattern: 4
+    source: "https://jyt.ln.gov.cn/jyt/jyzx/jyyw/2026063014014729932/index.shtml"
+    consumers:
+      - name: "site/data/release-v3.275/liaoning.json.gz"
+        kind: runtime
+        sync_lag: retained
+    sync_mechanism: "省教育厅正式转载索引确认历史/物理PDF身份；复核1076条运行位次库存、端点、宽度、连续性和边界，保留原值并补科类PDF URL。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "来源、数量、艺体文化线、专业分不补造或位次零改动断言失败时不发布v3.300运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.299 gzip产物，保留辽宁证据和导入文件用于修复。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: source-import
+    scope: "省教育厅/阳光高考控制线正文、教育厅位次索引和16条边界"
+    verification_command: "node scripts/build-official-liaoning-control-lines-2026-v3300.mjs"
+  - id: runtime-patch
+    scope: "核心索引、辽宁分片、1076条位次URL修复、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-liaoning-control-lines-2026-v3300.mjs"
+  - id: boundary-safety
+    scope: "两科专科/本科线、表内位次、零人数缺口、顶端区间、751越界和特殊路径隔离"
+    verification_command: "node scripts/test-official-liaoning-control-lines-v3300.mjs"
+  - id: national-regression
+    scope: "31省分片、2026通用控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校或专业投档线、录取最低分或录取概率证据。"
+  - "体育和艺术本源只公开文化线，专业考试要求须另核，不得补造专业分。"
+  - "辽宁招生考试之窗和两份PDF本轮直连超时；不宣称重新下载原站字节或重新逐行解析PDF。"
+  - "当前2026普通批通用控制线覆盖27省，仍有宁夏、青海、山西、云南4省待补。"
+
+next_action: "完成v3.300 Pages、公网、mac_2T和Release闭环，再从宁夏继续补齐剩余4省。"

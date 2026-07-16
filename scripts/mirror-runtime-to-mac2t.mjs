@@ -14,6 +14,7 @@ const COPY_PROVENANCE = process.env.GAOKAO_MIRROR_PROVENANCE === "1" || COPY_FUL
 const COPY_SITE_ASSETS = process.env.GAOKAO_MIRROR_SITE_ASSETS === "1";
 const COPY_TOP_DATA = process.env.GAOKAO_MIRROR_TOP_DATA === "1";
 const RAW_PROVENANCE_PACKS = [
+  "data/admissions/raw/liaoning-2026",
   "data/admissions/raw/jiangsu-2026",
   "data/admissions/raw/heilongjiang-2026",
   "data/admissions/raw/hainan-2026",
@@ -75,6 +76,10 @@ const RAW_PROVENANCE_PACKS = [
 ];
 const IMPORT_SCRIPTS = [
   "scripts/mirror-runtime-to-mac2t.mjs",
+  "scripts/build-official-liaoning-control-lines-2026-v3300.mjs",
+  "scripts/apply-official-liaoning-control-lines-2026-v3300.mjs",
+  "scripts/test-official-liaoning-control-lines-v3300.mjs",
+  "scripts/audit-official-control-line-coverage-v3300.mjs",
   "scripts/build-official-jiangsu-control-lines-2026-v3299.mjs",
   "scripts/apply-official-jiangsu-control-lines-2026-v3299.mjs",
   "scripts/test-official-jiangsu-control-lines-v3299.mjs",
@@ -191,6 +196,10 @@ const IMPORT_SCRIPTS = [
   "scripts/vision-table-row-ocr.swift",
 ];
 const TARGETED_ADMISSION_IMPORTS = [
+  "data/admissions/evidence-v3300-liaoning-2026-manifest.json",
+  "data/admissions/official-liaoning-control-lines-2026-import.json",
+  "data/admissions/official-liaoning-control-lines-2026-v3300-runtime-manifest.json",
+  "data/admissions/official-control-line-coverage-2026-v3300.json",
   "data/admissions/evidence-v3299-jiangsu-2026-manifest.json",
   "data/admissions/official-jiangsu-control-lines-2026-import.json",
   "data/admissions/official-jiangsu-control-lines-2026-v3299-runtime-manifest.json",
@@ -488,6 +497,10 @@ function main() {
   if (fs.existsSync(path.join(PROJECT_ROOT, "docs/changes/v3.299-jiangsu-control-lines-2026.md"))) {
     copy("docs/changes/v3.299-jiangsu-control-lines-2026.md");
     copy("docs/change-manifests/v3299-jiangsu-control-lines-2026-rank-provenance.yaml");
+  }
+  if (fs.existsSync(path.join(PROJECT_ROOT, "docs/changes/v3.300-liaoning-control-lines-2026.md"))) {
+    copy("docs/changes/v3.300-liaoning-control-lines-2026.md");
+    copy("docs/change-manifests/v3300-liaoning-control-lines-2026-rank-provenance.yaml");
   }
   copy("docs/changes/v3271-beijing-rank-conversion-2025.md");
   copy("docs/change-manifests/v3271-beijing-rank-conversion-2025.yaml");
