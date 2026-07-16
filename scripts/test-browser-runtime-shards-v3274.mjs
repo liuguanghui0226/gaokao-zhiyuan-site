@@ -47,19 +47,19 @@ const hnuImported = JSON.parse(fs.readFileSync(hnuImportFile, "utf8"));
 
 assert.match(fs.readFileSync(appFile, "utf8"), /const DEFAULT_PROFILE = \{[\s\S]*?rank: "",/, "Default example must leave rank blank so province/score changes trigger current rank estimation");
 
-assert.equal(core.modelVersion, "local-deterministic-v3.289-fujian-control-lines2026-and-rank-provenance-846768records");
+assert.equal(core.modelVersion, "local-deterministic-v3.290-hebei-control-lines2026-and-rank-provenance-846822records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.records.length, 0);
 assert.equal(core.admissionScoreLayer.rankConversions.length, 0);
-assert.equal(core.admissionScoreLayer.structuredRecords, 846768);
+assert.equal(core.admissionScoreLayer.structuredRecords, 846822);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
 assert.equal(core.admissionScoreLayer.admissionPlanRecords, 71877);
 assert.equal(core.admissionScoreLayer.admissionPlanCount, 358294, "vacancy snapshots must not inflate annual plan count");
 assert.equal(core.admissionScoreLayer.vacancyPlanRecords, 2187);
 assert.equal(core.admissionScoreLayer.vacancyPlanSnapshotCount, 6099);
 assert.equal(core.admissionScoreLayer.ordinaryVocationalVacancyRecords, 926);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5095);
-assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1122);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5096);
+assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1176);
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-vacancy-plans-2025-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-admission-schedule-2026-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-szu-national-2024-2025-school-admission"));
@@ -106,7 +106,7 @@ assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 66);
 
 assert.equal(manifest.modelVersion, core.modelVersion);
 assert.equal(manifest.provinceCount, 31);
-assert.equal(manifest.recordCount, 846768);
+assert.equal(manifest.recordCount, 846822);
 assert.equal(manifest.rankConversionCount, 116656);
 assert.equal(manifest.unknownRecords, 0);
 assert.equal(manifest.unknownRankConversions, 0);
@@ -190,6 +190,30 @@ assert.deepEqual(
 );
 assert.equal(fujian.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-fujian-rank-2026" && record.subjectType === "历史类" && record.sourceUrl === "https://www.eeafj.cn/gkptgkgsgg/20260625/14698.html").length, 455);
 assert.equal(fujian.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-fujian-rank-2026" && record.subjectType === "物理类" && record.sourceUrl === "https://www.eeafj.cn/gkptgkgsgg/20260625/14699.html").length, 472);
+const hebeiEntry = manifest.shards["河北"];
+assert.equal(hebeiEntry.records, 68517);
+assert.equal(hebeiEntry.rankConversions, 1094);
+const hebei = runtimeJson(runtimeDataFile(`provinces/${hebeiEntry.file}`));
+const hebeiControlLines = hebei.records.filter((record) => record.sourceId === "official-hebei-control-lines-2026");
+assert.equal(hebeiControlLines.length, 54);
+assert.equal(hebeiControlLines.filter((record) => record.formalScoreScope === "control-line-only").length, 4);
+assert.equal(hebeiControlLines.filter((record) => record.formalScoreScope === "special-path-only").length, 50);
+assert.equal(hebeiControlLines.filter((record) => Number.isFinite(record.professionalMinScore)).length, 28);
+assert.deepEqual(
+  hebeiControlLines
+    .filter((record) => record.controlLineRouteKind === "ordinary-bachelor")
+    .map((record) => [record.subjectType, record.minScore])
+    .sort((left, right) => left[0].localeCompare(right[0], "zh-CN")),
+  [["历史类", 485], ["物理类", 443]].sort((left, right) => left[0].localeCompare(right[0], "zh-CN")),
+);
+assert.deepEqual(
+  hebeiControlLines
+    .filter((record) => record.controlLineRouteKind === "ordinary-vocational")
+    .map((record) => [record.subjectType, record.minScore])
+    .sort((left, right) => left[0].localeCompare(right[0], "zh-CN")),
+  [["历史类", 200], ["物理类", 200]].sort((left, right) => left[0].localeCompare(right[0], "zh-CN")),
+);
+assert.equal(hebei.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-hebei-rank-2026" && record.sourceUrl === "https://www.hebeea.edu.cn/c/2026-06-24/493215.html").length, 1094);
 const xizangEntry = manifest.shards["西藏"];
 assert.equal(xizangEntry.records, 28315);
 assert.equal(xizangEntry.rankConversions, 0);

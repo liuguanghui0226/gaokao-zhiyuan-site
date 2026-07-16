@@ -1,0 +1,57 @@
+{
+  "dataset": "official-hebei-control-lines-2026-v3290-runtime",
+  "generatedAt": "2026-07-16T07:30:00.000Z",
+  "sourceId": "official-hebei-control-lines-2026",
+  "importFile": "data/admissions/official-hebei-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.289-fujian-control-lines2026-and-rank-provenance-846768records",
+    "recordCount": 846768,
+    "hebeiRecords": 68463,
+    "rankConversions": 1094,
+    "rankRowsMissingSourceUrl": 1094,
+    "coreSha256": "5f9127e1835d6c20e4f1402d9c7f159f457c118dd71e806b3cd83a3bb820d621",
+    "hebeiSha256": "b3f37bf1aa2899872333ce5e5cccca43ab33fe77f721d6706199866e613fed90"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.290-hebei-control-lines2026-and-rank-provenance-846822records",
+    "recordCount": 846822,
+    "hebeiRecords": 68517,
+    "rankConversions": 1094,
+    "rankSourceUrlRecords": 1094,
+    "rankValueChanges": 0,
+    "rankEvidence": {
+      "controlPage": {
+        "bytes": 21530,
+        "sha256": "89137895e8126fa5d8845f7b11a9aa8e3e477e501b61eb107e16b1732fdf4591"
+      },
+      "controlImage": {
+        "bytes": 497717,
+        "sha256": "cd4adbc26dc402f2db0f24724e7e03da2dd436302e0886e68a22ec3872a5eb42"
+      },
+      "rankPage": {
+        "bytes": 29272,
+        "sha256": "67045aa3c9dcb2a6e7917c39b502ab267def279bc1296f06567871e6aed95bbe"
+      },
+      "rankPdf": {
+        "bytes": 6084765,
+        "sha256": "fcd70c8356b95dc787b92c1c1f7c97183fc5a1532dadf492714e3d5edae7cf16"
+      }
+    },
+    "sourceRecords": 54,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "art": 24,
+      "sports": 4,
+      "counterpart": 20
+    },
+    "coreBytes": 15175566,
+    "coreSha256": "b91e0c4965afe1cebc33c4b68dbe734baeff12629e58c5ada2d00f15387e5296",
+    "hebeiBytes": 66644037,
+    "hebeiSha256": "036aff95486c54022eb325a613524dcfd423009a2e6fcd87f43f3694591441dc",
+    "manifestBytes": 5507,
+    "manifestSha256": "d26574f574470441934f76412a013eca42b5f7fb79e1c55b579aa9cba3cef951"
+  }
+}
