@@ -14,6 +14,7 @@ const COPY_PROVENANCE = process.env.GAOKAO_MIRROR_PROVENANCE === "1" || COPY_FUL
 const COPY_SITE_ASSETS = process.env.GAOKAO_MIRROR_SITE_ASSETS === "1";
 const COPY_TOP_DATA = process.env.GAOKAO_MIRROR_TOP_DATA === "1";
 const RAW_PROVENANCE_PACKS = [
+  "data/admissions/raw/yunnan-2026",
   "data/admissions/raw/shanxi-2026",
   "data/admissions/raw/qinghai-2026",
   "data/admissions/raw/ningxia-2026",
@@ -79,6 +80,10 @@ const RAW_PROVENANCE_PACKS = [
 ];
 const IMPORT_SCRIPTS = [
   "scripts/mirror-runtime-to-mac2t.mjs",
+  "scripts/build-official-yunnan-control-lines-2026-v3304.mjs",
+  "scripts/apply-official-yunnan-control-lines-2026-v3304.mjs",
+  "scripts/test-official-yunnan-control-lines-v3304.mjs",
+  "scripts/audit-official-control-line-coverage-v3304.mjs",
   "scripts/build-official-shanxi-control-lines-2026-v3303.mjs",
   "scripts/apply-official-shanxi-control-lines-2026-v3303.mjs",
   "scripts/test-official-shanxi-control-lines-v3303.mjs",
@@ -211,6 +216,10 @@ const IMPORT_SCRIPTS = [
   "scripts/vision-table-row-ocr.swift",
 ];
 const TARGETED_ADMISSION_IMPORTS = [
+  "data/admissions/evidence-v3304-yunnan-2026-manifest.json",
+  "data/admissions/official-yunnan-control-lines-2026-import.json",
+  "data/admissions/official-yunnan-control-lines-2026-v3304-runtime-manifest.json",
+  "data/admissions/official-control-line-coverage-2026-v3304.json",
   "data/admissions/evidence-v3303-shanxi-2026-manifest.json",
   "data/admissions/official-shanxi-control-lines-2026-import.json",
   "data/admissions/official-shanxi-control-lines-2026-v3303-runtime-manifest.json",
@@ -540,6 +549,10 @@ function main() {
   if (fs.existsSync(path.join(PROJECT_ROOT, "docs/changes/v3.303-shanxi-control-lines-2026.md"))) {
     copy("docs/changes/v3.303-shanxi-control-lines-2026.md");
     copy("docs/change-manifests/v3303-shanxi-control-lines-2026-rank-provenance.yaml");
+  }
+  if (fs.existsSync(path.join(PROJECT_ROOT, "docs/changes/v3.304-yunnan-control-lines-2026.md"))) {
+    copy("docs/changes/v3.304-yunnan-control-lines-2026.md");
+    copy("docs/change-manifests/v3304-yunnan-control-lines-2026-rank-provenance.yaml");
   }
   copy("docs/changes/v3271-beijing-rank-conversion-2025.md");
   copy("docs/change-manifests/v3271-beijing-rank-conversion-2025.yaml");

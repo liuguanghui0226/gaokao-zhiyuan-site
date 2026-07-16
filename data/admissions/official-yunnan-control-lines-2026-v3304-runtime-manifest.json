@@ -1,0 +1,45 @@
+{
+  "dataset": "official-yunnan-control-lines-2026-v3304-runtime",
+  "generatedAt": "2026-07-16T22:25:00.000Z",
+  "sourceId": "official-yunnan-control-lines-2026",
+  "importFile": "data/admissions/official-yunnan-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.303-shanxi-control-lines2026-pending-vocational-and-rank-provenance-847184records",
+    "recordCount": 847184,
+    "yunnanRecords": 15406,
+    "rankConversions": 1966,
+    "rankRowsMissingSourceUrl": 986,
+    "topBucketRangesPresent": 2,
+    "coreSha256": "ece02eb59e099df17015e01c84f033da5de4761d94f13a2dceded8b499ee7826",
+    "yunnanSha256": "dbce4173a5938bc48aa1ea7c84f7da8824bf4678821c2384d5144b2a48656d5d"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.304-yunnan-control-lines2026-art-thresholds-and-rank-image-provenance-847238records",
+    "recordCount": 847238,
+    "yunnanRecords": 15460,
+    "rankConversions": 1966,
+    "rankRowsLinked": 986,
+    "rankRowsInventoryChecked": 986,
+    "rankRowsContinuityChecked": 986,
+    "retainedOcrCorrections": 32,
+    "topBucketRangeRepairs": 0,
+    "rankValueChanges": 0,
+    "sourceRecords": 54,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "art": 44,
+      "sports": 4
+    },
+    "professionalNumericRecords": 44,
+    "professionalQualificationRecords": 4,
+    "coreBytes": 15253863,
+    "coreSha256": "8d761632c7f023740953e55ad2c9cde969f687625716b43a0c63b9bd571d3931",
+    "yunnanBytes": 16255320,
+    "yunnanSha256": "b9e46ed9ea35b8944268852dcb246e06f8ad9a403def06dd93f8a262b26b8778",
+    "manifestBytes": 5529,
+    "manifestSha256": "a2db62df6860dcb23f4e7c35ab311df93887d73a21487e3fe168ca071ff7f583"
+  }
+}

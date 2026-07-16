@@ -28,7 +28,7 @@ jobs:
           fetch "$base" "$work/index.html"
           grep -q "全国高考志愿智能推荐" "$work/index.html"
           grep -q "__GAOKAO_RUNTIME_RELEASE_BASE__" "$work/index.html"
-          grep -q 'app.js?v=3.303.0' "$work/index.html"
+          grep -q 'app.js?v=3.304.0' "$work/index.html"
 
           release_path="$(node -e '
             const html = require("node:fs").readFileSync(process.argv[1], "utf8");
@@ -51,14 +51,14 @@ jobs:
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
-          jq -e '.recordCount == 847184' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 847238' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.303-shanxi-control-lines2026-pending-vocational-and-rank-provenance-847184records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.304-yunnan-control-lines2026-art-thresholds-and-rank-image-provenance-847238records"' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-tianjin-control-lines-2026" and .ordinaryVocationalStatus == "pending-official-release")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
@@ -101,6 +101,10 @@ jobs:
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-shanxi-control-lines-2026" and .quality == "official-chsi-mirror-shanxi-admission-committee-control-lines-html-verified" and .parsedRecords == 32 and .ordinaryVocationalStatus == "pending-official-release" and .directChsiMirrorRetrievalStatus == "success" and .directOfficialRetrievalStatus == "blocked-current-session-tls-and-http-403" and .evidence.chsiControlPage.sha256 == "659f252c7a34bf61e136e5a34d56e5b461908301b231b96241d3869ef9467146" and .evidence.chsiRankIndex.sha256 == "74aafbc65e16a577cd351cd3bcd0b54b4c6b24b578715f2a283974a8bffdaf60" and .evidence.eolRankCorroboration.sha256 == "c55404ade9fb2db37ffdb39518a1f6b16c17057b9b3850bd10d358b987e4dbe0")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-shanxi-rank-2026" and .provenanceRevision.rankRowsLinked == 555 and .provenanceRevision.rowsFullCorroborationCrossChecked == 555 and .provenanceRevision.rowsContinuityChecked == 555 and .provenanceRevision.topBucketRangeRepairs == 0 and .provenanceRevision.valueChanges == 0 and .provenanceRevision.directOfficialPageRedownloadStatus == "blocked-current-session-tls-and-http-403" and .provenanceRevision.chsiOfficialLinkIndexRetrievalStatus == "success" and .provenanceRevision.corroborationMirrorRetrievalStatus == "success" and .provenanceRevision.officialFiles."历史类".sha256 == "75c48ef3422b33a91b68c1127990dcab15ace8ba687ada3cca8119ee15220412" and .provenanceRevision.officialFiles."物理类".sha256 == "4e38e5e71ed970a25ec8826a111a268587ea1dacb8075c9ccadef852f3268daf")] | length == 1' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-yunnan-control-lines-2026" and .quality == "official-chsi-mirror-yunnan-exam-authority-control-line-images-verified" and .parsedRecords == 54 and .directChsiMirrorRetrievalStatus == "success" and .directOriginalRankPageRetrievalStatus == "blocked-current-session-tls" and .evidence.controlImage.sha256 == "3a8c9c72b0af918d8edafab3eac6b85bfe93d5513c7b9d11109b5b4ce48fb2e6" and .evidence.artProfessionalImage.sha256 == "25b74f136750c48215999a47c0e8d62259abb3dd499cdca3f091247673eb4f4d" and .evidence.rankImage.sha256 == "2ab0fadc3af4f1d68ad15a14c5bf2a0514c5364723c12c2c32ff4224d7dc797a")] | length == 1' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-yunnan-rank-2026" and .provenanceRevision.rankRowsLinked == 986 and .provenanceRevision.rowsInventoryChecked == 986 and .provenanceRevision.rowsContinuityChecked == 986 and .provenanceRevision.retainedOcrCorrections == 32 and .provenanceRevision.topBucketRangeRepairs == 0 and .provenanceRevision.valueChanges == 0 and .provenanceRevision.directChsiMirrorImageRedownloadStatus == "success-byte-identical-to-stored-official-image" and .provenanceRevision.directOriginalPageRedownloadStatus == "blocked-current-session-tls" and .provenanceRevision.officialImage.sha256 == "2ab0fadc3af4f1d68ad15a14c5bf2a0514c5364723c12c2c32ff4224d7dc797a")] | length == 1' >/dev/null
 
           shard_count=0
           while IFS= read -r file; do
@@ -393,6 +397,24 @@ jobs:
             | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-shanxi-rank-2026" and .subjectType == "物理类" and .sourceUrl == "http://www.sxkszx.cn/news/2026625/n2816127213.html")] | length == 295' >/dev/null
           gzip -dc "$work/shanxi.json.gz" \
             | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-shanxi-rank-2026" and .scoreRange.max == 750)] | length == 2' >/dev/null
+          gzip -dc "$work/yunnan.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-yunnan-control-lines-2026")] | length == 54' >/dev/null
+          gzip -dc "$work/yunnan.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-yunnan-control-lines-2026" and .formalScoreScope == "control-line-only")] | length == 4' >/dev/null
+          gzip -dc "$work/yunnan.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-yunnan-control-lines-2026" and .formalScoreScope == "special-path-only")] | length == 50' >/dev/null
+          gzip -dc "$work/yunnan.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-yunnan-control-lines-2026" and .controlLineRouteKind == "ordinary-bachelor") | [.subjectType, .minScore]] | sort == [["历史类", 465], ["物理类", 435]]' >/dev/null
+          gzip -dc "$work/yunnan.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-yunnan-control-lines-2026" and .controlLineRouteKind == "ordinary-vocational") | [.subjectType, .minScore]] | sort == [["历史类", 180], ["物理类", 180]]' >/dev/null
+          gzip -dc "$work/yunnan.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-yunnan-control-lines-2026" and (.professionalMinScore | type) == "number")] | length == 44' >/dev/null
+          gzip -dc "$work/yunnan.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-yunnan-control-lines-2026" and (.professionalQualification | type) == "string" and (.professionalMinScore | type) != "number")] | length == 4' >/dev/null
+          gzip -dc "$work/yunnan.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-yunnan-rank-2026" and .sourceUrl == "https://t2.chei.com.cn/news/img/2293847809.png")] | length == 986' >/dev/null
+          gzip -dc "$work/yunnan.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-yunnan-rank-2026" and .scoreRange.max == 750)] | length == 2' >/dev/null
           gzip -dc "$work/inner-mongolia.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-neimenggu-control-lines-2026")] | length == 74' >/dev/null
           gzip -dc "$work/inner-mongolia.json.gz" \

@@ -1,0 +1,102 @@
+change_id: "2026-07-17-v3304-yunnan-control-lines-2026-rank-provenance"
+title: "云南2026控制线、艺术双门槛与位次长图来源闭合"
+phase: review
+status: in_progress
+execution_mode: full
+resume_mode: full
+resume_reason: "云南已有986条2026普通类位次，但控制线未进入运行层且位次行未关联当前阳光高考镜像图。"
+last_updated: "2026-07-17T07:00:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "云南省招生考试院控制线和位次图锁定证据；54条边界按普通、特殊和艺体双门槛分层。"
+  - surface: user
+    role: consumer
+    notes: "179/180、434/435、464/465、正式表内位次和顶端区间用于推荐降级、资格切换与自动估位。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、云南gzip分片、GitHub Pages和Release证据须保持同一模型版本；mac_2T未挂载时不声明镜像完成。"
+
+sot_map:
+  - info_name: "云南省2026年普通高校招生录取最低控制分数线"
+    pattern: 4
+    source: "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847730.html"
+    consumers:
+      - name: "data/admissions/official-yunnan-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/yunnan.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node锁定阳光高考转载HTML与图片字节和哈希，定向重写gzip核心、清单与云南分片。"
+    desync_risk: high
+  - info_name: "云南省2026年艺术类专业统考录取最低控制分数线"
+    pattern: 4
+    source: "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847735.html"
+    consumers:
+      - name: "data/admissions/official-yunnan-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+    sync_mechanism: "按官方图片保存11类专业本科/专科数值专业线，与文化线保持独立字段。"
+    desync_risk: high
+  - info_name: "云南2026年高考成绩分数段统计表"
+    pattern: 4
+    source: "https://gaokao.chsi.com.cn/gkxx/ss/202606/20260626/2293847808.html"
+    consumers:
+      - name: "site/data/release-v3.275/yunnan.json.gz"
+        kind: runtime
+        sync_lag: retained
+    sync_mechanism: "当前阳光高考长图与库存官方图逐字节同一；复核986条数量、分数和名次连续性，保留32处既有OCR校正并补镜像图URL。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "来源、数量、艺体双门槛、图同一性或位次连续性断言失败时不发布v3.304运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.303 gzip产物，保留云南证据和导入文件用于修复。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署；外接盘未挂载时跳过镜像而不重连。"
+
+task_slices:
+  - id: source-import
+    scope: "阳光高考控制页、艺术专业线图、位次长图和54条边界"
+    verification_command: "node scripts/build-official-yunnan-control-lines-2026-v3304.mjs"
+  - id: runtime-patch
+    scope: "核心索引、云南分片、986条位次URL修复、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-yunnan-control-lines-2026-v3304.mjs"
+  - id: boundary-safety
+    scope: "两科本专科线、表内位次、顶端区间、751越界和特殊路径隔离"
+    verification_command: "node scripts/test-official-yunnan-control-lines-v3304.mjs"
+  - id: national-regression
+    scope: "31省分片、2026通用控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+delivery_evidence:
+  local_data_commit: null
+  remote_data_commit: null
+  data_tree: null
+  pages_run: null
+  live_verification_run: null
+  release_tag: "evidence-v3.304"
+  release_asset: "evidence-v3.304-yunnan-2026.tar.gz"
+  release_asset_sha256: null
+  live_hashes_match_local: false
+  mirror_status: "unavailable-volume-unmounted"
+
+residual_risks:
+  - "控制线不是院校专业组、院校或专业投档线、录取最低分或录取概率证据。"
+  - "艺术须同时达到文化与专业数值门槛，不同分数维度不得相加。"
+  - "云南体育官方图未给数值专业线，只能保留合格要求。"
+  - "海南、江苏、山西、上海、天津的2026普通专科线仍待官方发布，不能以往年线补造。"
+  - "mac_2T当前未挂载，最终证据与运行镜像须明确标记未同步。"
+
+next_action: "完成35项全国回归、Pages与公网读回后发布证据包，再继续复核5省尚待发布的普通专科线。"

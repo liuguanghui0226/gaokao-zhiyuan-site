@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.303-shanxi-control-lines2026-pending-vocational-and-rank-provenance-847184records";
+const modelVersion = "local-deterministic-v3.304-yunnan-control-lines2026-art-thresholds-and-rank-image-provenance-847238records";
 const sourceId = "official-jiangsu-control-lines-2026";
 const rankSourceId = "official-jiangsu-rank-2026";
 const historyRankUrl = "https://www.jseea.cn/webfile/upload/2026/06-24/18-24-3205871556923388.jpg";
@@ -47,13 +47,13 @@ assert.equal(records.filter((record) => record.formalScoreScope === "special-pat
 
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
-assert.equal(core.browserRuntime.fullMasterRecords, 847184);
-assert.equal(core.admissionScoreLayer.structuredRecords, 847184);
+assert.equal(core.browserRuntime.fullMasterRecords, 847238);
+assert.equal(core.admissionScoreLayer.structuredRecords, 847238);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5109);
-assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1538);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5110);
+assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
-assert.equal(manifest.recordCount, 847184);
+assert.equal(manifest.recordCount, 847238);
 assert.equal(manifest.shards["江苏"].records, 26338);
 assert.equal(manifest.shards["江苏"].rankConversions, 408);
 assert.equal(runtimeManifest.after.sourceRecords, 28);
