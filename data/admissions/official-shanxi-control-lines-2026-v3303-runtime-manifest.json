@@ -1,0 +1,46 @@
+{
+  "dataset": "official-shanxi-control-lines-2026-v3303-runtime",
+  "generatedAt": "2026-07-16T21:10:00.000Z",
+  "sourceId": "official-shanxi-control-lines-2026",
+  "importFile": "data/admissions/official-shanxi-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.302-qinghai-control-lines2026-language-thresholds-and-rank-provenance-847152records",
+    "recordCount": 847152,
+    "shanxiRecords": 19912,
+    "rankConversions": 1070,
+    "rankRowsMissingSourceUrl": 555,
+    "topBucketRangesPresent": 2,
+    "coreSha256": "1faec91c8314f91b88658f431321857b31fcd56a1998be957503336be671f9b5",
+    "shanxiSha256": "e0112f75dcd88202cbe4a1dce6f22b2cb882c8dd0e46bd355c90293c69c79ff3"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.303-shanxi-control-lines2026-pending-vocational-and-rank-provenance-847184records",
+    "recordCount": 847184,
+    "shanxiRecords": 19944,
+    "rankConversions": 1070,
+    "rankRowsLinked": 555,
+    "rankRowsFullCorroborationCrossChecked": 555,
+    "rankRowsContinuityChecked": 555,
+    "topBucketRangeRepairs": 0,
+    "rankValueChanges": 0,
+    "sourceRecords": 32,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "special": 2,
+      "art-school-exam": 2,
+      "art-opera": 2,
+      "art": 22,
+      "sports": 2
+    },
+    "professionalNumericRecords": 26,
+    "professionalQualificationRecords": 2,
+    "ordinaryVocationalStatus": "pending-official-release",
+    "coreBytes": 15247569,
+    "coreSha256": "ece02eb59e099df17015e01c84f033da5de4761d94f13a2dceded8b499ee7826",
+    "shanxiBytes": 19717407,
+    "shanxiSha256": "b7145466f2a95ca2e584164bac6415094e0fcb83d793a9d42da057e00a2305f6",
+    "manifestBytes": 5527,
+    "manifestSha256": "8d15e2def18704ca1a190b9123b46b4ef45cadb1131eea78ae3f581ee4a15d12"
+  }
+}

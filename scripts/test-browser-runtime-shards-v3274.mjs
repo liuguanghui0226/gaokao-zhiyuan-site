@@ -47,19 +47,19 @@ const hnuImported = JSON.parse(fs.readFileSync(hnuImportFile, "utf8"));
 
 assert.match(fs.readFileSync(appFile, "utf8"), /const DEFAULT_PROFILE = \{[\s\S]*?rank: "",/, "Default example must leave rank blank so province/score changes trigger current rank estimation");
 
-assert.equal(core.modelVersion, "local-deterministic-v3.302-qinghai-control-lines2026-language-thresholds-and-rank-provenance-847152records");
+assert.equal(core.modelVersion, "local-deterministic-v3.303-shanxi-control-lines2026-pending-vocational-and-rank-provenance-847184records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.records.length, 0);
 assert.equal(core.admissionScoreLayer.rankConversions.length, 0);
-assert.equal(core.admissionScoreLayer.structuredRecords, 847152);
+assert.equal(core.admissionScoreLayer.structuredRecords, 847184);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
 assert.equal(core.admissionScoreLayer.admissionPlanRecords, 71877);
 assert.equal(core.admissionScoreLayer.admissionPlanCount, 358294, "vacancy snapshots must not inflate annual plan count");
 assert.equal(core.admissionScoreLayer.vacancyPlanRecords, 2187);
 assert.equal(core.admissionScoreLayer.vacancyPlanSnapshotCount, 6099);
 assert.equal(core.admissionScoreLayer.ordinaryVocationalVacancyRecords, 926);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5108);
-assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1506);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5109);
+assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1538);
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-vacancy-plans-2025-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-admission-schedule-2026-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-szu-national-2024-2025-school-admission"));
@@ -111,7 +111,7 @@ assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 66);
 
 assert.equal(manifest.modelVersion, core.modelVersion);
 assert.equal(manifest.provinceCount, 31);
-assert.equal(manifest.recordCount, 847152);
+assert.equal(manifest.recordCount, 847184);
 assert.equal(manifest.rankConversionCount, 116656);
 assert.equal(manifest.unknownRecords, 0);
 assert.equal(manifest.unknownRankConversions, 0);
