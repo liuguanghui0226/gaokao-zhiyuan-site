@@ -1,0 +1,161 @@
+{
+  "dataset": "evidence-v3305-pending-vocational-2026",
+  "generatedAt": "2026-07-16T23:52:03Z",
+  "modelVersion": "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records",
+  "dataCommit": {
+    "local": "a9eb93245e6d8b79628998a9ffed1a7525fd937a",
+    "remote": "7e29b4c8e960ec4f75407fab6d227cc761813e54",
+    "tree": "891181951d624d35fbb163a332de66f097f029ac"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29542797663,
+    "liveVerificationRun": 29542975060,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.305",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.305",
+    "baseDataReleaseTag": "data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 847238,
+    "rankConversions": 116656,
+    "sourceNotes": 5110,
+    "controlLineRecords": 1592,
+    "provinceCount": 31,
+    "officialControlCoverage": {
+      "covered": 31,
+      "missing": 0,
+      "missingProvinces": [],
+      "pendingOrdinaryVocational": [
+        "上海",
+        "天津",
+        "江苏",
+        "海南",
+        "山西"
+      ],
+      "exactPublicationDateProvinces": [
+        "上海"
+      ],
+      "publicationDateUnannouncedProvinces": [
+        "天津",
+        "江苏",
+        "海南",
+        "山西"
+      ],
+      "inventedOrdinaryVocationalLines": 0
+    }
+  },
+  "pendingReviews": {
+    "checkedAt": "2026-07-17",
+    "上海": {
+      "expectedPublicationAt": "2026-07-29",
+      "fact": "上海市教育考试院明确7月29日晚公布专科各批次录取控制分数线。",
+      "sourceUrl": "https://www.shmeea.edu.cn/page/08000/20260609/20321.html"
+    },
+    "江苏": {
+      "expectedPublicationAt": null,
+      "fact": "江苏省教育考试院明确7月27日至28日填报专科院校专业组志愿，未明确控制线发布日期。",
+      "sourceUrl": "https://www.jseea.cn/webfile/index/index_zkxx/2026-06-10/7470370318775750656.html"
+    },
+    "天津": {
+      "expectedPublicationAt": null,
+      "fact": "天津公开7月26日9:00至7月28日17:00高职专科志愿窗口，未明确控制线发布日期；普通高职以语数外三科为主要依据。",
+      "sourceUrl": "https://www.tj.gov.cn/zmhd/hygqx/202606/t20260618_7319903.html"
+    },
+    "山西": {
+      "expectedPublicationAt": null,
+      "fact": "山西公开专科提前批、普通批填报和录取窗口，未明确普通专科控制线发布日期。",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260623/2293841404.html"
+    },
+    "海南": {
+      "expectedPublicationAt": null,
+      "fact": "海南实施办法明确专科批先报志愿再划线，普通类原则上按专科计划总数100%的相应位次划线。",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202605/20260529/2293505726-11.html"
+    }
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 36,
+      "failed": 0
+    },
+    "browserViewports": [
+      {
+        "width": 1440,
+        "height": 1000,
+        "provincePanelsChecked": 5,
+        "javascriptErrors": 0,
+        "horizontalOverflowPixels": 0
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "provincePanelsChecked": 5,
+        "javascriptErrors": 0,
+        "horizontalOverflowPixels": 0
+      }
+    ],
+    "browserAssertions": {
+      "pendingHeading": 10,
+      "noExecutableListWarning": 10,
+      "noHistoricalSubstitutionWarning": 10,
+      "publicationDateBoundary": 10,
+      "officialSourceLink": 10
+    },
+    "liveProvinceShardsVerified": 31,
+    "directLiveFilesByteMatched": 10,
+    "liveHttpStatus": 200,
+    "liveAppVersion": "3.305.0"
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "attempted": false,
+    "status": "unavailable-volume-unmounted",
+    "modelVersionClaimed": null,
+    "filesCompared": 0,
+    "filesCopied": 0,
+    "reason": "The external volume was not mounted. It was not remounted or reconnected without explicit user authorization. The active runtime and evidence are on internal APFS and GitHub."
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.305-pending-vocational-2026.tar.gz",
+    "files": 20,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 2611771,
+    "sha256": "db90009e3776ab4385e0086558b9b6d4a95db87d459550b105366486400105dc",
+    "githubDigestMatched": true,
+    "redownloadSha256Verified": true,
+    "redownloadByteMatched": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "ca00a6ed8cb553d0d6be52dd96988dc3f0853f2afb838db8d203aa029075ac9b",
+    "provinceManifestJson": "9ae0f72f845d32866b4e542ebb943d39f07907450d8a38d4cf87e1566501e2d2",
+    "knowledgeCoreGzip": "850600bc78d595cf0de2e1b392ce0d52d7a50e64095732cea72175e76f2623fc",
+    "provinceManifestGzip": "625438d8c814774e635dbb747a32510bcd8efcc10c8ec8d5537989b53659ad31",
+    "appJs": "62998367ec7d9743c8b06828682927c33cd84db8265920a177d2b1265a7a2357",
+    "stylesCss": "5859443a34de98bad4df5db4e40caf1c6a11bf4bf7a41d40211ebea070c28136",
+    "siteIndex": "aea404f9792491e263daa0d926cee6e0d1e8b656f0c729cea6892c42355b5fdb",
+    "verifyWorkflow": "efb56d46e20be3a7de616f6e1be7a5f7319dc9fa09a6a00999c729141ad5a87e",
+    "auditJson": "53dea6d7f43a45ffcfbfc51bee4b6047ebd9f754ffc95dd594441ab6ca92cfe4",
+    "runtimeManifestJson": "3db560519b08731c810d42d6cde3083cd6360e54eda96d360664e423945e310e",
+    "coverageAuditJson": "8c181224eb9d702e278f32ede5a21fc264a16a3af99886c3317fdc9f8f4f4cd7",
+    "desktopPanelScreenshot": "a524afc6c49fb40667238c0591186eebf3db46e76019e6bc8637943cee5e32eb",
+    "mobilePanelScreenshot": "2565812269a8db03b9bb11af80a4b3108c5ba3973e44a5b134514f519d451fcc",
+    "shanghaiSchedule": "966666374eaefdba5bb3efd97373df43d3b54f6a1c1dce58ba45d396be253beb",
+    "jiangsuSchedule": "0b2b70579bddad875ef43016e5f8c66ca50ecf20c778946956ab901a2c52ee95",
+    "tianjinSchedule": "052b84beeea870e2834dd4f0ea578c94944f18ee655e4a13a990f5e0a37e8e98",
+    "shanxiFillingSchedule": "e3a517d0cfc976159c945047c580a8efc3e455078d8c3e949b40198ecbc76cc1",
+    "shanxiAdmissionSchedule": "ec2ea818a9625a2c7561ce8f6d2f7a6edb59d9f2a347f9dc43ca4290256598a5",
+    "hainanFilingRule": "9bb3075f7bf7e1acbfcf346253ea755dc76cc3218b983f468b11316f9f78fdd7",
+    "hainanAdmissionSchedule": "369e936b323f23023f241d8f65208046997c6079c3081fb3ac9271a9880fe0e2"
+  },
+  "boundaries": [
+    "Only Shanghai has an official 2026 ordinary-vocational control-line publication date in this audit. The other four publication dates remain null.",
+    "A filling window, admission window or line-drawing rule is not a control-line value and is not converted into one.",
+    "No historical ordinary-vocational line, vocational classified-exam line or prior-year institution filing score is substituted for a missing 2026 province-level ordinary line.",
+    "Until the ordinary-vocational line is published, the recommender provides pathway and major research only and creates no executable institution-major list for the pending route.",
+    "Tianjin ordinary vocational qualification uses the Chinese, mathematics and foreign-language three-subject score basis after the official line is published; the six-subject total is not treated as interchangeable.",
+    "GitHub Pages deployment, live 31-province verification, direct HTTPS byte comparison, browser rendering and Release redownload are separate evidence layers.",
+    "The mac_2T external volume was unmounted, so no runtime mirror synchronization is claimed for v3.305."
+  ]
+}

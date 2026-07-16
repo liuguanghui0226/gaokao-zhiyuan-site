@@ -32,9 +32,10 @@ were migrated from the earlier account on 2026-07-16 and verified by size and
 SHA-256 before the temporary transfer files were removed. Current incremental
 runtime changes remain in the repository's compressed core and 31 province
 shards, with a separate `evidence-v<version>` release for each verified wave.
-The current incremental evidence release is `evidence-v3.298`; its Heilongjiang
-2026 archive contains 17 immutable files, is 3,010,142 bytes, and has SHA-256
-`368923b32aeefb5d4f1b878e1f44f3e98667ffc9885e0f64bd0b165852e7bd3f`.
+The current incremental evidence release is `evidence-v3.305`; its five-province
+2026 pending vocational-control audit contains 20 immutable files, is 2,611,771
+bytes, and has SHA-256
+`db90009e3776ab4385e0086558b9b6d4a95db87d459550b105366486400105dc`.
 The asset was downloaded again from GitHub after upload and matched byte for byte.
 
 `scripts/serve.mjs` defaults to the internal APFS site root. Set
