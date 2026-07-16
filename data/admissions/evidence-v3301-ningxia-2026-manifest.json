@@ -1,0 +1,167 @@
+{
+  "dataset": "evidence-v3301-ningxia-2026",
+  "generatedAt": "2026-07-16T20:15:23Z",
+  "modelVersion": "local-deterministic-v3.301-ningxia-control-lines2026-dual-thresholds-and-rank-provenance-847133records",
+  "dataCommit": {
+    "local": "5af2fca457f56e7833fd246e67a783698fd3af46",
+    "remote": "9410bebf927bc5e00df34e0d8e53359322739ffd",
+    "tree": "502e6e742644e89b49491228cc5e65c7784c8d3c"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29530568802,
+    "liveVerificationRun": 29530877198,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.301",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.301",
+    "baseDataReleaseTag": "data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 847133,
+    "rankConversions": 116656,
+    "sourceNotes": 5107,
+    "controlLineRecords": 1487,
+    "provinceCount": 31,
+    "ningxiaRecords": 9014,
+    "ningxiaRankConversions2026": 960,
+    "ningxiaRankConversionsBySubject": {
+      "history": 469,
+      "physics": 491
+    },
+    "ningxiaControlLines": {
+      "all": 38,
+      "ordinary": 4,
+      "specialPath": 34,
+      "ordinaryBachelor": 2,
+      "ordinaryVocational": 2,
+      "specialType": 2,
+      "sports": 4,
+      "art": 28,
+      "numericProfessionalThresholds": 32
+    },
+    "officialControlCoverage": {
+      "covered": 28,
+      "missing": 3,
+      "missingProvinces": [
+        "青海",
+        "山西",
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "海南",
+        "江苏",
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "sourceEvidence": {
+    "controlUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847132.html",
+    "rankIndexUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847211.html",
+    "historyPdfUrl": "https://t2.chei.com.cn/news/getfile/2293847237-2293847211-6e97879425ea63e133cf22df41989fef.pdf",
+    "physicsPdfUrl": "https://t2.chei.com.cn/news/getfile/2293847236-2293847211-cfba6e5fc57b5d9f67885f0b8626fe9a.pdf",
+    "directMirrorRetrievalStatus": "success",
+    "freshFullPdfRowParseThisRound": true,
+    "rankRowsFullCrossChecked": 960,
+    "rankRowsContinuityChecked": 960,
+    "officialZeroPersonGapEventsRetained": 12,
+    "officialZeroPersonScoresRetained": 20,
+    "rankRowsLinked": 960,
+    "rankValueChanges": 0,
+    "historyFinalCumulative": 19622,
+    "physicsFinalCumulativeAt154": 44247,
+    "physicsRankAtVocational150": null
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 32,
+      "failed": 0
+    },
+    "ningxiaBoundaryScores": [
+      149,
+      150,
+      154,
+      359,
+      360,
+      392,
+      393,
+      437,
+      474,
+      600,
+      624,
+      658,
+      659,
+      751
+    ],
+    "belowVocationalMaxModelScore": 42,
+    "belowVocationalApplicationPlanRows": 0,
+    "belowVocationalNamedInstitutions": 0,
+    "physicsRankUnavailableAt150": true,
+    "rankValueChanges": 0,
+    "numericProfessionalThresholds": 32,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "liveAppVersion": "3.301.0",
+    "interactiveBrowserStatus": "not-used-current-turn-enterprise-network-policy-retained",
+    "browserBoundary": "GitHub Actions live readback and direct HTTPS byte readback are separate successful checks; no browser-policy workaround or screenshot claim was used."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.301-ningxia-control-lines2026-dual-thresholds-and-rank-provenance-847133records",
+    "gzipRuntimeFiles": 33,
+    "gzipRuntimeMissing": 0,
+    "gzipRuntimeHashMismatches": 0,
+    "gzipRuntimeOnlyTimestampDifferences": 33,
+    "keyFilesCompared": 21,
+    "keyFilesMissing": 0,
+    "keyFileHashMismatches": 0,
+    "staleDecompressedMasterFiles": 0,
+    "appleDoubleFiles": 0,
+    "doubleJsonFiles": 0
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.301-ningxia-2026.tar.gz",
+    "files": 22,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 3324186,
+    "sha256": "3d73303fe8a1d9da73363f52b2bd1282143606f1eb7f6374b2503de6ff233739",
+    "githubDigestMatched": true,
+    "redownloadSha256Verified": true,
+    "redownloadByteMatched": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "7866fb137855527d24a5371a15007cfbfffaf90e4f28d605104412e71e1f8abe",
+    "provinceManifestJson": "c04ed93afaf844112a2e7ec8524dbc8c9da93872d8b4058705fcc4927bc39c1c",
+    "ningxiaJson": "6a0313b5823272acbe6c18e1bf36ff1225f9e9ac53618e76fd5a7a1360a9efa8",
+    "knowledgeCoreGzip": "f70b79d92817300ace847a49892476161ce7ba4fb629d1390409b2da4832494d",
+    "provinceManifestGzip": "3b3b2aab31edfde7f95e1b166e9371ca805610069816c61b95ec40b8115b28fe",
+    "ningxiaGzip": "aeef3ac74fa9e474d6abec250bb14d08cf85109974edf5ef5ddc34a686e90974",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "siteIndex": "bfd2ac787df3d118d8a7a18004cef0c818c569c0fb1777183f06380535473e84",
+    "verifyWorkflow": "17595eddd8ed4b9d2f5a5e5a6cefbc26eeddc4e55a0562fe51d58e3671570d11",
+    "importJson": "55ec48ada161f90769884bc59bd2f72bbf222a4a58acf4903bd7c36e3c93c432",
+    "runtimeManifestJson": "1304ffe998e06af0f2cc2f083f1ff5bc202953d6526e30a10bf783d8c6778c1f",
+    "coverageAuditJson": "086da5c1378896c2b14807ce7f40910e08373c006d35dc75f7d12c60b0d96b58",
+    "controlPage": "223f1de3edf360047a1ea636884d345c776be02e8a8191e11d7b300ba16db13a",
+    "ordinaryImage": "4bb7ef514872495f4baf218f500ed3a9d498b4f98df81dddc19e785921cef724",
+    "sportsImage": "29dbbf62d165ba229e16cdb247b2bc6ead831d7eca20afccb9992f2242eeb3a9",
+    "artImage": "2b0144c9945d9caacd94ea311212c4e944e5908b32f9fc6fced10c050b92fe14",
+    "rankIndex": "78ee2d541240b840a46227b348516c397810a664c62a48975449fa369a626a6d",
+    "historyPdf": "3c9ed5ff44c9841026873e4a405c951d2fa8b4207cc972d1362902ca5862f507",
+    "historyText": "7bdf679654807071e3bca453c6bf2b4409899b759e453c823beba5e5b2716007",
+    "physicsPdf": "19f9bd652b516435f4ded2ab92699881b987737b3c29a3ce8c891c69fcefa6b2",
+    "physicsText": "ae2c74d0f35566e2af6aad7cb8dae74de3aa52ed93f623498a3a01deb739b2b5"
+  },
+  "boundaries": [
+    "The 393 history and 360 physics lines are Ningxia's 2026 ordinary undergraduate controls; the two 150 lines are ordinary vocational controls. None is an institution-group, institution or major admission score.",
+    "Special-type, sports and art records remain special-path-only and never replace the ordinary routes.",
+    "The 32 sports and art rows store culture and professional thresholds separately; the two score dimensions are not added or substituted.",
+    "The 960 Ningxia 2026 rank rows were cross-checked against a fresh full extraction of the two subject PDFs with zero value differences, then linked to the current PDF URLs.",
+    "The physics rank table ends at 154, so a physics score of 150 has vocational eligibility but no published ordinary-rank estimate; scores 150 through 153 are not extrapolated.",
+    "At 149 the model reports research paths only, names no institution and creates no executable application plan; 150 enters vocational routing, while 393 history or 360 physics enters undergraduate routing.",
+    "Scores above each published rank-table maximum, above 750 and official zero-person score gaps are not assigned invented ranks.",
+    "GitHub Pages deployment, live 31-province readback, direct HTTPS byte hashes, mac_2T mirror hashes and Release redownload are reported as separate evidence layers."
+  ]
+}
