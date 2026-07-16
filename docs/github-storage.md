@@ -32,6 +32,9 @@ were migrated from the earlier account on 2026-07-16 and verified by size and
 SHA-256 before the temporary transfer files were removed. Current incremental
 runtime changes remain in the repository's compressed core and 31 province
 shards, with a separate `evidence-v<version>` release for each verified wave.
+The current incremental evidence release is `evidence-v3.294`; its Gansu 2026
+archive contains 32 files, is 3,251,698 bytes, and has SHA-256
+`b0f1a2b4fddd6472709d5d6f1921ef9347df33263cdb42cc1fb4851d5dda00a7`.
 
 `scripts/serve.mjs` defaults to the internal APFS site root. Set
 `GAOKAO_MIRROR_SITE_ROOT` only for an explicitly approved mirror read; this

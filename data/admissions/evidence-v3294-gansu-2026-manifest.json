@@ -1,0 +1,136 @@
+{
+  "dataset": "evidence-v3294-gansu-2026",
+  "generatedAt": "2026-07-16T12:57:00.000Z",
+  "modelVersion": "local-deterministic-v3.294-gansu-control-lines2026-and-third-party-rank-boundary-cross-check-846940records",
+  "dataCommit": {
+    "local": "1c32080cd4c1bab64f67b5e2a8475764d6881b98",
+    "remote": "720eff03bcbf19d619999a9a17141af80273d47e",
+    "tree": "e208b8612768f8ef3717430cd3302b48e50c99a9"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29499509317,
+    "liveVerificationRun": 29499841662,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.294",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.294",
+    "baseDataReleaseTag": "data-v3.275",
+    "baseDataReleaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 846940,
+    "rankConversions": 116656,
+    "sourceNotes": 5100,
+    "controlLineRecords": 1294,
+    "provinceCount": 31,
+    "gansuRecords": 13294,
+    "gansuRankConversionsAllYears": 2679,
+    "gansuRankConversions2026": 1343,
+    "gansuRankSourceQuality": "third-party-gk100-gansu-rank-conversion-image-tesseract-grid-validated",
+    "gansuControlLines": {
+      "all": 53,
+      "ordinary": 4,
+      "specialPath": 49,
+      "cultureProfessional": 28,
+      "secondaryVocational": 16
+    },
+    "officialControlCoverage": {
+      "covered": 21,
+      "missing": 10,
+      "missingProvinces": [
+        "广西",
+        "贵州",
+        "海南",
+        "黑龙江",
+        "江苏",
+        "辽宁",
+        "宁夏",
+        "青海",
+        "山西",
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 25,
+      "failed": 0
+    },
+    "gansuBoundaryScores": [
+      159,
+      160,
+      179,
+      180,
+      366,
+      367,
+      404,
+      405,
+      477,
+      508,
+      600,
+      660,
+      681,
+      700,
+      750,
+      751
+    ],
+    "officialControlRankCheckpoints": 6,
+    "belowVocationalMaxScore": 42,
+    "belowVocationalApplicationPlanRows": 0,
+    "belowVocationalNamedInstitutions": 0,
+    "rankValueChanges": 0,
+    "rankSourceQualityChanges": 0,
+    "officialRankPageFound": false,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "interactiveBrowserStatus": "blocked-by-enterprise-network-policy",
+    "interactiveBrowserScreenshots": 0,
+    "browserBoundary": "The in-app browser policy blocked both localhost and github.io; no browser-policy workaround was used. GitHub Actions live readback and direct HTTPS HTTP readback remain separate successful checks."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.294-gansu-control-lines2026-and-third-party-rank-boundary-cross-check-846940records",
+    "provinceShards": 31,
+    "staleMasterFiles": 0,
+    "keyFilesCompared": 20,
+    "keyFileHashMismatches": 0,
+    "appleDoubleRemoved": 62
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.294-gansu-2026.tar.gz",
+    "files": 32,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 3251698,
+    "sha256": "b0f1a2b4fddd6472709d5d6f1921ef9347df33263cdb42cc1fb4851d5dda00a7",
+    "redownloadSha256Verified": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "83d89f79381404cbe4ae484a8243029c939fde264270f39bdc66121f6035b481",
+    "provinceManifestJson": "e3fdbcb42243b4b395f3efe8fdeeafd406186810864681138ec894502d442cb7",
+    "gansuJson": "10fda291cba1c9a2b8b074859a25c21b2ac6160fb59b30dc7fadaa40f98fbe35",
+    "knowledgeCoreGzip": "682072ee6ea97900fd99b32c1345b3014b7621d0fe6a7cc63ed02fd5bb7b8359",
+    "provinceManifestGzip": "f2a666cc531cfb7cbfd54433d2a1dc549b419e3a2b1213e04175a435fdd38526",
+    "gansuGzip": "7d1f653829cd2c0c589b6a9f38b417ae0e105045fa1a0681a5458377762030c6",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "siteIndex": "c7f239d1fdf28425b3796db7bb27073bceb2ca6d19d598ee59af57c94ab51b05",
+    "controlPage": "7307b7d293849ac589fe09aed5b6a5bd5f9cd65a9b5e92455ab312cc136d01ed",
+    "ordinaryImage": "41e7dedbd2a5ecd9bf2678f38781f9119d1b133b52c1c67c26cee2340546cbec",
+    "artSportsBachelorImage": "964136c81ae377d11cf4dd51379d98ceff4ffbb320c1eabdb6c8d7e54642aafc",
+    "artSportsVocationalImage": "2064f2f6d09a4b7a5f5a3c2a1efaaab50b98b47521c908c15bf613c708506626",
+    "secondaryVocationalImage": "1c6532ba16f77be4063f90f490c2318a3848a0a4706cc3d561d52501f22436c9",
+    "importJson": "c8b100d4f848d01bc481d0d110066dde124bb51f72f423915dfdcee9edbb83d7"
+  },
+  "boundaries": [
+    "The 405/367-point lines are Gansu 2026 ordinary undergraduate controls; the ordinary vocational controls differ by subject at 160 history and 180 physics. None is an institution-group, institution or major admission score.",
+    "Special qualification, art, sports, school-exam, opera and secondary-vocational records remain special-path-only; 28 art/sports rows preserve both culture and professional thresholds.",
+    "The 1343 Gansu 2026 rank rows retain their third-party image-mirror quality and every score/rank/source field; the official control page only cross-checks six boundary scores and is not represented as an official rank table.",
+    "At 159 history or 179 physics the model returns research paths only, names no institution and creates no executable application plan; 160 history or 180 physics enters vocational qualification, while 405 history or 367 physics enters undergraduate routing.",
+    "GitHub Pages deployment, live 31-province readback, mac_2T mirror hashes and browser-policy availability are reported as separate evidence layers."
+  ]
+}

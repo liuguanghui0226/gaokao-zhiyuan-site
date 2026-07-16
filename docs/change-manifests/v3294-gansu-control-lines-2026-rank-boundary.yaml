@@ -1,11 +1,11 @@
 change_id: "2026-07-16-v3294-gansu-control-lines-2026-rank-boundary"
 title: "甘肃2026控制线与第三方位次边界核验"
-phase: implement
-status: verified-local
+phase: deliver
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "甘肃已有1343条2026第三方图片位次记录，但普通本专科控制线未进入运行层，且考试院未见直接一分一段页面。"
-last_updated: "2026-07-16T20:42:00+08:00"
+last_updated: "2026-07-16T20:58:00+08:00"
 
 surfaces_touched:
   - surface: information
@@ -77,4 +77,4 @@ residual_risks:
   - "1343条甘肃2026位次来自第三方图片镜像；考试院直接一分一段页未找到，不得升级为官方来源。"
   - "当前2026普通批通用控制线覆盖21省，仍有10省待补；上海和天津专科线继续保持待发布。"
 
-next_action: "完成Pages、mac_2T镜像与公网验收后发布证据包，再从缺失10省中继续补齐2026官方普通批控制线。"
+next_action: "从缺失10省中继续补齐2026官方普通批控制线；如后续找到甘肃考试院直接一分一段页，再单独升级位次来源并逐行零差异复核。"
