@@ -1,0 +1,58 @@
+{
+  "dataset": "official-neimenggu-control-lines-2026-v3288-runtime",
+  "generatedAt": "2026-07-16T00:30:00.000Z",
+  "sourceId": "official-neimenggu-control-lines-2026",
+  "importFile": "data/admissions/official-neimenggu-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.287-tianjin-control-lines2026-pending-vocational-and-rank-provenance-846672records",
+    "recordCount": 846672,
+    "innerMongoliaRecords": 15259,
+    "rankConversions": 974,
+    "rankRowsMissingSourceUrl": 974,
+    "coreSha256": "dbb59f7572a19e1b627c7f34265382272dbbaa3ff0532e4f13ae2d0462d82f7e",
+    "innerMongoliaSha256": "fe44843beb1416034e46da53c2d206d3a40bbd61381a56055dd61ff0fa026ef0"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.288-neimenggu-control-lines2026-and-rank-provenance-846746records",
+    "recordCount": 846746,
+    "innerMongoliaRecords": 15333,
+    "rankConversions": 974,
+    "rankSourceUrlRecords": 974,
+    "rankValueChanges": 0,
+    "rankEvidence": {
+      "controlPage": {
+        "bytes": 31525,
+        "sha256": "46a797ff4eb016f8db7cadc7410491a12934c1fd04a35b244577157210eec8c8"
+      },
+      "rankIndex": {
+        "bytes": 18163,
+        "sha256": "b2b9a34d2556d1f89fb2160bcc05818b540c034cc0ae5fea2bffe1ce614c27c2"
+      },
+      "rankHistory": {
+        "bytes": 76594,
+        "sha256": "9479d472ed9c58b94a1071b8f0174c0c56612f2e4b369185dc996c2f2b820ac1"
+      },
+      "rankPhysics": {
+        "bytes": 80888,
+        "sha256": "fe27c70886ba49833956c58c23a1f9c4003ad3d7fd3baeac2d761244781e1954"
+      }
+    },
+    "sourceRecords": 74,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "art": 20,
+      "sports": 2,
+      "special-category": 16,
+      "counterpart": 30
+    },
+    "coreBytes": 15166173,
+    "coreSha256": "f384a9cb1bb16027b36a846c6dae604724e7c0d025bb26d6013a99b547e5caee",
+    "innerMongoliaBytes": 16508892,
+    "innerMongoliaSha256": "6bbda1d70f1f6ec463aebe072275e5a4585ffc97b2cb4957bbdcc976068155d6",
+    "manifestBytes": 5511,
+    "manifestSha256": "4815cdd0f55cf1233667374b9e4fedc171760f03b55ec4e9b05f39a170598c45"
+  }
+}

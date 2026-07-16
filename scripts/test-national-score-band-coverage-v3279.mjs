@@ -351,6 +351,30 @@ assert.ok(tianjinPending.total <= 55);
 assert.ok(tianjinPending.schoolOptions.every((option) => !option.record));
 assert.ok(tianjinPending.warnings.some((warning) => /2026年普通高职专科控制线尚待官方发布/.test(warning)));
 
+api.setProvinceData(readGzipJson(path.join(releaseDir, `${manifest.shards["内蒙古"].file}.gz`)));
+const neimengguPhysics159 = profileFor("内蒙古", "物理类", 159);
+const neimengguPhysics160 = profileFor("内蒙古", "物理类", 160);
+const neimengguPhysics362 = profileFor("内蒙古", "物理类", 362);
+const neimengguPhysics363 = profileFor("内蒙古", "物理类", 363);
+const neimengguHistory402 = profileFor("内蒙古", "历史类", 402);
+const neimengguHistory403 = profileFor("内蒙古", "历史类", 403);
+assert.equal(api.ordinaryBachelorControlLine(neimengguPhysics363)?.score, 363);
+assert.equal(api.ordinaryBachelorControlLine(neimengguHistory403)?.score, 403);
+assert.equal(api.ordinaryVocationalControlLine(neimengguPhysics160)?.score, 160);
+assert.equal(api.isVocationalProfile(neimengguPhysics362), true);
+assert.equal(api.isVocationalProfile(neimengguPhysics363), false);
+assert.equal(api.isVocationalProfile(neimengguHistory402), true);
+assert.equal(api.isVocationalProfile(neimengguHistory403), false);
+const neimengguBelow = api.scoreCandidate(
+  api.CANDIDATE_POOLS.find((candidate) => candidate.id === "vocational-dual"),
+  neimengguPhysics159,
+  api.classifyProfileBand(neimengguPhysics159),
+);
+assert.equal(neimengguBelow.confidence, "C");
+assert.ok(neimengguBelow.total <= 42);
+assert.ok(neimengguBelow.schoolOptions.every((option) => !option.record));
+assert.ok(neimengguBelow.warnings.some((warning) => /普通类录取控制分数线160分/.test(warning)));
+
 const hainanHighRow = rows.find((row) => row.province === "海南");
 assert.ok(hainanHighRow && hainanHighRow.scoreScale === 900);
 assert.equal(scenarioCount, 155);

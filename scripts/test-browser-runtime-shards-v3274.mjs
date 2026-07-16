@@ -45,18 +45,19 @@ const imported = JSON.parse(fs.readFileSync(importFile, "utf8"));
 const szuImported = JSON.parse(fs.readFileSync(szuImportFile, "utf8"));
 const hnuImported = JSON.parse(fs.readFileSync(hnuImportFile, "utf8"));
 
-assert.equal(core.modelVersion, "local-deterministic-v3.287-tianjin-control-lines2026-pending-vocational-and-rank-provenance-846672records");
+assert.equal(core.modelVersion, "local-deterministic-v3.288-neimenggu-control-lines2026-and-rank-provenance-846746records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.records.length, 0);
 assert.equal(core.admissionScoreLayer.rankConversions.length, 0);
-assert.equal(core.admissionScoreLayer.structuredRecords, 846672);
+assert.equal(core.admissionScoreLayer.structuredRecords, 846746);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
 assert.equal(core.admissionScoreLayer.admissionPlanRecords, 71877);
 assert.equal(core.admissionScoreLayer.admissionPlanCount, 358294, "vacancy snapshots must not inflate annual plan count");
 assert.equal(core.admissionScoreLayer.vacancyPlanRecords, 2187);
 assert.equal(core.admissionScoreLayer.vacancyPlanSnapshotCount, 6099);
 assert.equal(core.admissionScoreLayer.ordinaryVocationalVacancyRecords, 926);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5093);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5094);
+assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1100);
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-vacancy-plans-2025-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-admission-schedule-2026-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-szu-national-2024-2025-school-admission"));
@@ -81,6 +82,12 @@ const tianjinControlSource = core.admissionScoreLayer.sourceNotes.find((note) =>
 assert.equal(tianjinControlSource.quality, "official-content-mirror-tianjin-control-line-html-verified");
 assert.equal(tianjinControlSource.ordinaryVocationalStatus, "pending-official-release");
 assert.equal(tianjinControlSource.ordinaryVocationalPending, true);
+const neimengguControlSource = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "official-neimenggu-control-lines-2026");
+assert.equal(neimengguControlSource.quality, "official-neimenggu-control-line-html-verified");
+assert.equal(neimengguControlSource.parsedRecords, 74);
+assert.equal(neimengguControlSource.controlPageSha256, "46a797ff4eb016f8db7cadc7410491a12934c1fd04a35b244577157210eec8c8");
+assert.equal(neimengguControlSource.rankHistorySha256, "9479d472ed9c58b94a1071b8f0174c0c56612f2e4b369185dc996c2f2b820ac1");
+assert.equal(neimengguControlSource.rankPhysicsSha256, "fe27c70886ba49833956c58c23a1f9c4003ad3d7fd3baeac2d761244781e1954");
 const xizangControlSource = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "official-xizang-control-lines-2026");
 assert.equal(xizangControlSource.mirrorUrl, "https://www.xizang.gov.cn/xwzx_406/bmkx/202606/t20260626_547152.html");
 assert.equal(xizangControlSource.quality, "official-xizang-control-line-image-and-government-html-verified");
@@ -91,7 +98,7 @@ assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 66);
 
 assert.equal(manifest.modelVersion, core.modelVersion);
 assert.equal(manifest.provinceCount, 31);
-assert.equal(manifest.recordCount, 846672);
+assert.equal(manifest.recordCount, 846746);
 assert.equal(manifest.rankConversionCount, 116656);
 assert.equal(manifest.unknownRecords, 0);
 assert.equal(manifest.unknownRankConversions, 0);
@@ -125,6 +132,31 @@ assert.equal(tianjinControlLines.filter((record) => record.formalScoreScope === 
 assert.equal(tianjinControlLines.find((record) => record.controlLineRouteKind === "ordinary-bachelor")?.minScore, 458);
 assert.equal(tianjinControlLines.find((record) => record.controlLineRouteKind === "ordinary-vocational"), undefined);
 assert.equal(tianjin.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-tianjin-rank-2026" && record.sourceUrl === "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845980.html").length, 381);
+const neimengguEntry = manifest.shards["内蒙古"];
+assert.equal(neimengguEntry.records, 15333);
+assert.equal(neimengguEntry.rankConversions, 974);
+const neimenggu = runtimeJson(runtimeDataFile(`provinces/${neimengguEntry.file}`));
+const neimengguControlLines = neimenggu.records.filter((record) => record.sourceId === "official-neimenggu-control-lines-2026");
+assert.equal(neimengguControlLines.length, 74);
+assert.equal(neimengguControlLines.filter((record) => record.formalScoreScope === "control-line-only").length, 4);
+assert.equal(neimengguControlLines.filter((record) => record.formalScoreScope === "special-path-only").length, 70);
+assert.equal(neimengguControlLines.filter((record) => Number.isFinite(record.professionalMinScore)).length, 36);
+assert.deepEqual(
+  neimengguControlLines
+    .filter((record) => record.controlLineRouteKind === "ordinary-bachelor")
+    .map((record) => [record.subjectType, record.minScore])
+    .sort((left, right) => left[0].localeCompare(right[0], "zh-CN")),
+  [["历史类", 403], ["物理类", 363]].sort((left, right) => left[0].localeCompare(right[0], "zh-CN")),
+);
+assert.deepEqual(
+  neimengguControlLines
+    .filter((record) => record.controlLineRouteKind === "ordinary-vocational")
+    .map((record) => [record.subjectType, record.minScore])
+    .sort((left, right) => left[0].localeCompare(right[0], "zh-CN")),
+  [["历史类", 160], ["物理类", 160]].sort((left, right) => left[0].localeCompare(right[0], "zh-CN")),
+);
+assert.equal(neimenggu.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-neimenggu-rank-2026" && record.subjectType === "历史类" && record.sourceUrl === "https://www.nm.zsks.cn/fzlm/26gktj/202606/t20260624_46464.html").length, 471);
+assert.equal(neimenggu.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-neimenggu-rank-2026" && record.subjectType === "物理类" && record.sourceUrl === "https://www.nm.zsks.cn/fzlm/26gktj/202606/t20260624_46462.html").length, 503);
 const xizangEntry = manifest.shards["西藏"];
 assert.equal(xizangEntry.records, 28315);
 assert.equal(xizangEntry.rankConversions, 0);
