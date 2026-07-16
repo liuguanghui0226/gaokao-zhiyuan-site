@@ -1,0 +1,163 @@
+{
+  "dataset": "evidence-v3300-liaoning-2026",
+  "generatedAt": "2026-07-16T19:22:56Z",
+  "modelVersion": "local-deterministic-v3.300-liaoning-control-lines2026-and-rank-provenance-847095records",
+  "dataCommit": {
+    "local": "c40149fab4a9c4a63de8d11bfb9629646e2dda3a",
+    "remote": "0ef3aaa172ce6c89bf038131a6590ce1dd82c0ee",
+    "tree": "be59f53100a962aa1f035dd185b7e1341a2f2d4c"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29527025219,
+    "liveVerificationRun": 29527311741,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.300",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.300",
+    "baseDataReleaseTag": "data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 847095,
+    "rankConversions": 116656,
+    "sourceNotes": 5106,
+    "controlLineRecords": 1449,
+    "provinceCount": 31,
+    "liaoningRecords": 33811,
+    "liaoningRankConversions2026": 1076,
+    "liaoningRankConversionsBySubject": {
+      "history": 518,
+      "physics": 558
+    },
+    "liaoningControlLines": {
+      "all": 16,
+      "ordinary": 4,
+      "specialPath": 12,
+      "ordinaryBachelor": 2,
+      "ordinaryVocational": 2,
+      "specialType": 2,
+      "sports": 2,
+      "art": 8,
+      "numericProfessionalThresholds": 0,
+      "professionalQualificationWithoutNumericThreshold": 10
+    },
+    "officialControlCoverage": {
+      "covered": 27,
+      "missing": 4,
+      "missingProvinces": [
+        "宁夏",
+        "青海",
+        "山西",
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "海南",
+        "江苏",
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "sourceEvidence": {
+    "governmentControlUrl": "https://jyt.ln.gov.cn/jyt/jyzx/jyyw/2026063013492555300/index.shtml",
+    "chsiControlUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293845433.html",
+    "governmentRankIndexUrl": "https://jyt.ln.gov.cn/jyt/jyzx/jyyw/2026063014014729932/index.shtml",
+    "chsiRankIndexUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847495.html",
+    "historyPdfUrl": "https://www.lnzsks.com/lnzkbfiles/2026/lns2026gkcjtjb0624clhptlw02.pdf",
+    "physicsPdfUrl": "https://www.lnzsks.com/lnzkbfiles/2026/lns2026gkcjtjb0624clhptll01.pdf",
+    "directOriginalRetrievalStatus": "timed-out-current-session",
+    "freshFullPdfRowParseThisRound": false,
+    "rankRowsInventoryChecked": 1076,
+    "rankRowsContinuityChecked": 1076,
+    "officialZeroPersonScoreGapsRetained": 4,
+    "rankRowsLinked": 1076,
+    "rankValueChanges": 0,
+    "historyFinalCumulative": 52453,
+    "physicsFinalCumulative": 141691
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 31,
+      "failed": 0
+    },
+    "liaoningBoundaryScores": [
+      149,
+      150,
+      343,
+      344,
+      441,
+      442,
+      507,
+      508,
+      526,
+      527,
+      600,
+      672,
+      708,
+      750,
+      751
+    ],
+    "belowVocationalMaxModelScore": 42,
+    "belowVocationalApplicationPlanRows": 0,
+    "belowVocationalNamedInstitutions": 0,
+    "rankValueChanges": 0,
+    "numericProfessionalThresholdsInvented": 0,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "liveAppVersion": "3.300.0",
+    "interactiveBrowserStatus": "not-used-current-turn-enterprise-network-policy-retained",
+    "browserBoundary": "GitHub Actions live readback and direct HTTPS byte readback are separate successful checks; no browser-policy workaround or screenshot claim was used."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.300-liaoning-control-lines2026-and-rank-provenance-847095records",
+    "gzipRuntimeFiles": 33,
+    "gzipRuntimeMissing": 0,
+    "gzipRuntimeHashMismatches": 0,
+    "gzipRuntimeOnlyTimestampDifferences": 33,
+    "keyFilesCompared": 16,
+    "keyFilesMissing": 0,
+    "keyFileHashMismatches": 0,
+    "staleDecompressedMasterFiles": 0,
+    "appleDoubleFiles": 0,
+    "doubleJsonFiles": 0
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.300-liaoning-2026.tar.gz",
+    "files": 17,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 3714450,
+    "sha256": "fd90ef26bddbf1f65e262c0edbc35ede3e6d28c6192dfa28c86f028d9bef47bf",
+    "githubDigestMatched": true,
+    "redownloadSha256Verified": true,
+    "redownloadByteMatched": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "ec25ab49ac72c22b79cfc99db7f2300464bc9578d732d6043b1ccb8acb7cf1fe",
+    "provinceManifestJson": "9671a4c8c56766f07bf4d64d6e35e74fb514b096ba89690c3ba289ac12fa7ebf",
+    "liaoningJson": "5aaecdd6adbcae1dbb69f9be698fc827b26ad74120ac604757a7b403267696f4",
+    "knowledgeCoreGzip": "d5ad8a74129f34ea124e4b7c1818a096de41e8fa1fb010cccd60a00d8bc2dde9",
+    "provinceManifestGzip": "30a65691ada9380fe36639e95a5b8178dbf69b8c08e71f726784a0d8992cac0e",
+    "liaoningGzip": "6fdfd97f443b8d49090d22a78c57f31a4d841df7bbcab77a1b721096da94553f",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "siteIndex": "192cfe63665a0577599d50220f2b6484435b9e2365239bd82f9ac2dbfefdd0cd",
+    "verifyWorkflow": "9e2c754b0b384c06a7ab6592402af0d60efb5702b423a891fa489d9bebafe0bd",
+    "importJson": "9bd1c0ed908169c1cea38c89e8b3bf8cdf940a8b2b7ed8cbd7e03aca30b96156",
+    "runtimeManifestJson": "e70a7640626ed1f9a227697ab9cb50af8656027e7f0df71d1b8381a98acd1f81",
+    "coverageAuditJson": "85aa477c419d4e9b4e58399cd717f8b85b4164671b7f964707723dad436a4476",
+    "governmentControlPage": "78342d9274cee339f8fc25252f9de9bb745c93d8a96565553c360df1ce9cfd45",
+    "governmentRankIndex": "3dcb7f67183aa319696596cb99dead220bbb58187a10a1303eed278ab932cac4",
+    "chsiControlPage": "80c539ebaef02e2c09bc177910179bc8d72fa7cfe8b393237d8e6d27e1ba570d",
+    "chsiRankIndex": "01a89ee35cf85f4f35a8ea60e58757e40bc40853c050d2927c708bed6a79420e"
+  },
+  "boundaries": [
+    "The 442 history and 344 physics lines are Liaoning's 2026 ordinary undergraduate controls; the two 150 lines are ordinary vocational controls. None is an institution, institution-group or major admission score.",
+    "Special-type, sports and art records remain special-path-only and never replace the ordinary routes.",
+    "The ten sports and art rows retain professional qualification text without inventing a numeric professional threshold.",
+    "The 1076 Liaoning 2026 rank rows retain prior values; this round links official subject PDF identities and verifies runtime inventory, endpoints, widths, continuity and control checkpoints without claiming a fresh full-PDF row parse.",
+    "At 149 the model reports research paths only, names no institution and creates no executable application plan; 150 enters vocational routing, while 442 history or 344 physics enters undergraduate routing.",
+    "Scores below 150, above 750 and official zero-person score gaps are not assigned invented ranks.",
+    "GitHub Pages deployment, live 31-province readback, direct HTTPS byte hashes, mac_2T mirror hashes and Release redownload are reported as separate evidence layers."
+  ]
+}

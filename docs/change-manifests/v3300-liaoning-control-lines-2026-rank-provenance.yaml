@@ -1,11 +1,11 @@
 change_id: "2026-07-17-v3300-liaoning-control-lines-2026-rank-provenance"
 title: "辽宁2026文化控制线与位次PDF来源闭合"
-phase: review
-status: in_progress
+phase: deliver
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "辽宁已有1076条2026普通类位次，但文化控制线未进入运行层且位次行未关联科类正式PDF。"
-last_updated: "2026-07-17T02:45:00+08:00"
+last_updated: "2026-07-17T03:22:56+08:00"
 
 surfaces_touched:
   - surface: information
@@ -71,10 +71,23 @@ task_slices:
     scope: "31省分片、2026通用控制线覆盖审计和Pages公网校验"
     verification_command: "node scripts/test-current-release.mjs"
 
+delivery_evidence:
+  local_data_commit: "c40149fab4a9c4a63de8d11bfb9629646e2dda3a"
+  remote_data_commit: "0ef3aaa172ce6c89bf038131a6590ce1dd82c0ee"
+  data_tree: "be59f53100a962aa1f035dd185b7e1341a2f2d4c"
+  pages_run: 29527025219
+  live_verification_run: 29527311741
+  release_tag: "evidence-v3.300"
+  release_asset: "evidence-v3.300-liaoning-2026.tar.gz"
+  release_asset_sha256: "fd90ef26bddbf1f65e262c0edbc35ede3e6d28c6192dfa28c86f028d9bef47bf"
+  live_hashes_match_local: true
+  mirror_key_files_match: 16
+  mirror_apple_double_files: 0
+
 residual_risks:
   - "控制线不是院校或专业投档线、录取最低分或录取概率证据。"
   - "体育和艺术本源只公开文化线，专业考试要求须另核，不得补造专业分。"
   - "辽宁招生考试之窗和两份PDF本轮直连超时；不宣称重新下载原站字节或重新逐行解析PDF。"
   - "当前2026普通批通用控制线覆盖27省，仍有宁夏、青海、山西、云南4省待补。"
 
-next_action: "完成v3.300 Pages、公网、mac_2T和Release闭环，再从宁夏继续补齐剩余4省。"
+next_action: "从宁夏继续补齐剩余4省，保持控制线、位次、院校专业录取分和特殊路径证据分层。"
