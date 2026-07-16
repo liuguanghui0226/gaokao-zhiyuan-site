@@ -1,0 +1,80 @@
+change_id: "2026-07-16-v3293-chongqing-control-lines-2026-rank-provenance"
+title: "重庆2026控制线、艺体双门槛与位次来源闭合"
+phase: implement
+status: in_progress
+execution_mode: full
+resume_mode: full
+resume_reason: "重庆已有988条2026一分一段记录，但普通本专科控制线未进入运行层，位次行也缺逐科类正式来源URL。"
+last_updated: "2026-07-16T19:30:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "重庆市教委控制线正文和市政府位次摘要锁定字节与SHA-256；28条边界按普通、特招、艺术、体育分层。"
+  - surface: user
+    role: consumer
+    notes: "179/180、本科临界分和180-750位次覆盖用于推荐降级、资格切换与自动估位。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、重庆gzip分片、mac_2T镜像、GitHub Pages和Release证据保持同一模型版本。"
+
+sot_map:
+  - info_name: "重庆市2026年普通高校招生录取最低控制分数线"
+    pattern: 4
+    source: "https://jw.cq.gov.cn/zwxx_209/gggs/202606/t20260624_15774338.html"
+    consumers:
+      - name: "data/admissions/official-chongqing-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/chongqing.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node锁定官方正文哈希，定向重写gzip核心、清单与重庆分片。"
+    desync_risk: high
+  - info_name: "重庆市2026年全国普通高校招生各类考生分数段表"
+    pattern: 4
+    source: "https://www.cqksy.cn/uploadFile/infopub/2026/ptgk/yfd/fdb.htm"
+    consumers:
+      - name: "site/data/release-v3.275/chongqing.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "保留历史/物理页既有哈希清单；988条位次逐条补科类URL，数值零改动，并用市政府摘要交叉核验关键累计人数。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "来源、数量、位次连续性或逐字段断言失败时不发布v3.293运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.292 gzip产物，保留重庆官方证据和导入文件用于修复。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: "source-import"
+    scope: "控制线正文、市政府摘要、28条边界和22条艺体双门槛"
+    verification_command: "node scripts/build-official-chongqing-control-lines-2026-v3293.mjs"
+  - id: "runtime-patch"
+    scope: "核心索引、重庆分片、988条位次来源、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-chongqing-control-lines-2026-v3293.mjs"
+  - id: "boundary-safety"
+    scope: "179/180、本科线、600分、顶端区间、751越界和特殊路径隔离"
+    verification_command: "node scripts/test-official-chongqing-control-lines-v3293.mjs"
+  - id: "national-regression"
+    scope: "31省分片、2026通用控制线覆盖审计、桌面/手机和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校专业组投档线、专业录取最低分或录取概率证据。"
+  - "艺术和体育须同时核对文化与专业分、综合成绩算法和招生章程。"
+  - "本轮未重新下载考试院历史/物理一分一段页，保留既有哈希清单，并由市政府公开摘要交叉核验关键累计人数。"
+  - "当前2026普通批通用控制线覆盖20省，仍有11省待补；上海和天津专科线继续保持待发布。"
+
+next_action: "完成Pages与公网桌面/手机验收后发布证据包，再从缺失11省中继续补齐2026官方普通批控制线。"

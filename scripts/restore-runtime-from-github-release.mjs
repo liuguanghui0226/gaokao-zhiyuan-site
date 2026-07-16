@@ -6,7 +6,7 @@ import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
-const repo = process.env.GAOKAO_GITHUB_REPO || "lghui12138/gaokao-zhiyuan";
+const repo = process.env.GAOKAO_GITHUB_REPO || "liuguanghui0226/gaokao-zhiyuan-site";
 const tag = process.env.GAOKAO_DATA_RELEASE || "data-v3.275";
 const asset = process.env.GAOKAO_KNOWLEDGE_ASSET || "knowledge-v3.275.json.gz";
 const releaseVersion = tag.replace(/^data-/, "");

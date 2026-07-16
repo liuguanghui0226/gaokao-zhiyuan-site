@@ -50,14 +50,14 @@ jobs:
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
-          jq -e '.recordCount == 846859' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 846887' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.292-shanghai-control-lines2026-pending-vocational-and-rank-provenance-846859records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.293-chongqing-control-lines2026-and-rank-provenance-846887records"' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-tianjin-control-lines-2026" and .ordinaryVocationalStatus == "pending-official-release")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
@@ -158,6 +158,22 @@ jobs:
             | jq -e '[.records[] | select(.sourceId == "official-shanghai-control-lines-2026" and .controlLineRouteKind == "ordinary-vocational")] | length == 0' >/dev/null
           gzip -dc "$work/shanghai.json.gz" \
             | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-shanghai-rank-2026" and .sourceUrl == "https://www.shmeea.edu.cn/page/02200/20260623/20375.html")] | length == 214' >/dev/null
+          gzip -dc "$work/chongqing.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-chongqing-control-lines-2026")] | length == 28' >/dev/null
+          gzip -dc "$work/chongqing.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-chongqing-control-lines-2026" and .formalScoreScope == "control-line-only")] | length == 4' >/dev/null
+          gzip -dc "$work/chongqing.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-chongqing-control-lines-2026" and .formalScoreScope == "special-path-only")] | length == 24' >/dev/null
+          gzip -dc "$work/chongqing.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-chongqing-control-lines-2026" and (.professionalMinScore | type) == "number")] | length == 22' >/dev/null
+          gzip -dc "$work/chongqing.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-chongqing-control-lines-2026" and .controlLineRouteKind == "ordinary-bachelor") | [.subjectType, .minScore]] | sort == [["历史类", 415], ["物理类", 406]]' >/dev/null
+          gzip -dc "$work/chongqing.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-chongqing-control-lines-2026" and .controlLineRouteKind == "ordinary-vocational") | [.subjectType, .minScore]] | sort == [["历史类", 180], ["物理类", 180]]' >/dev/null
+          gzip -dc "$work/chongqing.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-chongqing-rank-2026" and .subjectType == "历史类" and .sourceUrl == "https://www.cqksy.cn/uploadFile/infopub/2026/ptgk/yfd/wk.htm")] | length == 484' >/dev/null
+          gzip -dc "$work/chongqing.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-chongqing-rank-2026" and .subjectType == "物理类" and .sourceUrl == "https://www.cqksy.cn/uploadFile/infopub/2026/ptgk/yfd/lk.htm")] | length == 504' >/dev/null
           gzip -dc "$work/inner-mongolia.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-neimenggu-control-lines-2026")] | length == 74' >/dev/null
           gzip -dc "$work/inner-mongolia.json.gz" \

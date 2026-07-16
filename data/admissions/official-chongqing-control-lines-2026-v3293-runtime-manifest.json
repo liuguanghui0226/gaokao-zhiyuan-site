@@ -1,0 +1,39 @@
+{
+  "dataset": "official-chongqing-control-lines-2026-v3293-runtime",
+  "generatedAt": "2026-07-16T11:30:00.000Z",
+  "sourceId": "official-chongqing-control-lines-2026",
+  "importFile": "data/admissions/official-chongqing-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.292-shanghai-control-lines2026-pending-vocational-and-rank-provenance-846859records",
+    "recordCount": 846859,
+    "chongqingRecords": 61850,
+    "rankConversions": 988,
+    "rankRowsMissingSourceUrl": 988,
+    "coreSha256": "2fb71e03175a26036768b2b1c3d5dac36504fdf7a61dbf341ba257542f4869ff",
+    "chongqingSha256": "f09c8f2b8fb683ae926be5065120987fd9ceabd74cb38e282e6c8d2ae129cc69"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.293-chongqing-control-lines2026-and-rank-provenance-846887records",
+    "recordCount": 846887,
+    "chongqingRecords": 61878,
+    "rankConversions": 988,
+    "rankSourceUrlRecords": 988,
+    "rankValueChanges": 0,
+    "sourceRecords": 28,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "art": 20,
+      "sports": 2
+    },
+    "cultureProfessionalRecords": 22,
+    "coreBytes": 15187317,
+    "coreSha256": "44ca79116ea97dae14d52079629063e15fced56d0df961d20217f71d798b5ca2",
+    "chongqingBytes": 65342037,
+    "chongqingSha256": "77ff6f0e65b31ed76451903f7c6d0d157bd9c640a027bfdd4615ef3649b74b75",
+    "manifestBytes": 5511,
+    "manifestSha256": "c7d141bed60783897eb736ef0fcd34e238e86e10dfb8ea4cb8e46353754a69b3"
+  }
+}
