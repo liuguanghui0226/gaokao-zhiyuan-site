@@ -26,6 +26,13 @@ browser shards. `--verify path/to/asset.gz` performs the same check without
 changing the local runtime. The release is the immutable data layer; it does
 not turn a school-official source into a province-level formal admission table.
 
+The default release repository is
+`liuguanghui0226/gaokao-zhiyuan-site`. The immutable `data-v3.275` base assets
+were migrated from the earlier account on 2026-07-16 and verified by size and
+SHA-256 before the temporary transfer files were removed. Current incremental
+runtime changes remain in the repository's compressed core and 31 province
+shards, with a separate `evidence-v<version>` release for each verified wave.
+
 `scripts/serve.mjs` defaults to the internal APFS site root. Set
 `GAOKAO_MIRROR_SITE_ROOT` only for an explicitly approved mirror read; this
 keeps ordinary local previews off the external drive.

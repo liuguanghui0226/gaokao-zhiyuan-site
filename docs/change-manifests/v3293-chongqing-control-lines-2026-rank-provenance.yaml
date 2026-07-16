@@ -1,11 +1,11 @@
 change_id: "2026-07-16-v3293-chongqing-control-lines-2026-rank-provenance"
 title: "重庆2026控制线、艺体双门槛与位次来源闭合"
-phase: implement
-status: in_progress
+phase: deliver
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "重庆已有988条2026一分一段记录，但普通本专科控制线未进入运行层，位次行也缺逐科类正式来源URL。"
-last_updated: "2026-07-16T19:30:00+08:00"
+last_updated: "2026-07-16T19:42:00+08:00"
 
 surfaces_touched:
   - surface: information
@@ -77,4 +77,4 @@ residual_risks:
   - "本轮未重新下载考试院历史/物理一分一段页，保留既有哈希清单，并由市政府公开摘要交叉核验关键累计人数。"
   - "当前2026普通批通用控制线覆盖20省，仍有11省待补；上海和天津专科线继续保持待发布。"
 
-next_action: "完成Pages与公网桌面/手机验收后发布证据包，再从缺失11省中继续补齐2026官方普通批控制线。"
+next_action: "从缺失11省中继续补齐2026官方普通批控制线；交互式浏览器网络策略允许github.io后补做桌面/手机截图验收。"

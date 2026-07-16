@@ -1,0 +1,145 @@
+{
+  "dataset": "evidence-v3293-chongqing-2026",
+  "generatedAt": "2026-07-16T11:36:00.000Z",
+  "modelVersion": "local-deterministic-v3.293-chongqing-control-lines2026-and-rank-provenance-846887records",
+  "dataCommit": {
+    "local": "8d5e6277bf393200797a21890f5757c5feaefcf6",
+    "remote": "6af443f30a4bafc6c8c1e0772ca935342ea4fc4e",
+    "tree": "5f68cec2349935874b5a63922b7d1a867ccd1256"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29494296599,
+    "liveVerificationRun": 29494843343,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.293",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.293",
+    "baseDataReleaseTag": "data-v3.275",
+    "baseDataReleaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 846887,
+    "rankConversions": 116656,
+    "sourceNotes": 5099,
+    "controlLineRecords": 1241,
+    "provinceCount": 31,
+    "chongqingRecords": 61878,
+    "chongqingRankConversions": 988,
+    "chongqingControlLines": {
+      "all": 28,
+      "ordinary": 4,
+      "specialPath": 24,
+      "cultureProfessional": 22
+    },
+    "officialControlCoverage": {
+      "covered": 20,
+      "missing": 11,
+      "missingProvinces": [
+        "甘肃",
+        "广西",
+        "贵州",
+        "海南",
+        "黑龙江",
+        "江苏",
+        "辽宁",
+        "宁夏",
+        "青海",
+        "山西",
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 24,
+      "failed": 0
+    },
+    "chongqingBoundaryScores": [
+      179,
+      180,
+      405,
+      406,
+      414,
+      415,
+      496,
+      510,
+      600,
+      663,
+      684,
+      700,
+      750,
+      751
+    ],
+    "belowVocationalMaxScore": 42,
+    "belowVocationalApplicationPlanRows": 0,
+    "belowVocationalNamedInstitutions": 0,
+    "rankValueChanges": 0,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "interactiveBrowserStatus": "blocked-by-enterprise-network-policy",
+    "interactiveBrowserScreenshots": 0,
+    "browserBoundary": "The in-app browser policy blocked both localhost and github.io; no browser-policy workaround was used. GitHub Actions live readback and direct HTTPS HTTP readback remain separate successful checks."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.293-chongqing-control-lines2026-and-rank-provenance-846887records",
+    "provinceShards": 31,
+    "staleMasterFiles": 0,
+    "keyFileHashMismatches": 0
+  },
+  "baseDataReleaseMigration": {
+    "sourceRepository": "lghui12138/gaokao-zhiyuan",
+    "targetRepository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "targetTag": "data-v3.275",
+    "assets": [
+      {
+        "name": "knowledge-v3.275.json.gz",
+        "bytes": 63524974,
+        "sha256": "f842db898597f40dbe94043ea0b9f712c5ed5afa9003171c99e9224d7fa72dfb"
+      },
+      {
+        "name": "official-provenance-v3.275.tar.gz",
+        "bytes": 101146916,
+        "sha256": "e68d23b9cc6054de63d27e7c7b6263a00746087ea9c7aedb9fa68d5647945b07"
+      },
+      {
+        "name": "runtime-release-manifest-v3.275.json",
+        "bytes": 5969,
+        "sha256": "2326f6a623bb2d5f8904a8443cad7346b2bd12be8d4bdb24252a3e54598ef2d2"
+      }
+    ],
+    "localTransferFilesRetained": 0
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.293-chongqing-2026.tar.gz",
+    "files": 24,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 5174132,
+    "sha256": "40010426f105245e05aac645aaeac5df19d1d5df8de9932119f695d21e5ddd93"
+  },
+  "sha256": {
+    "knowledgeCoreJson": "44ca79116ea97dae14d52079629063e15fced56d0df961d20217f71d798b5ca2",
+    "provinceManifestJson": "c7d141bed60783897eb736ef0fcd34e238e86e10dfb8ea4cb8e46353754a69b3",
+    "chongqingJson": "77ff6f0e65b31ed76451903f7c6d0d157bd9c640a027bfdd4615ef3649b74b75",
+    "knowledgeCoreGzip": "a869b743f61034820235ca9df929a583fed6671ea2f3b7a306baf166c5bed3ea",
+    "provinceManifestGzip": "bb5c4bba30310b9a34106fb0e05c0191f8b2c1d9309be073a42df8b6d200fe7b",
+    "chongqingGzip": "54e637464aa2c01abf0bfaab4831d894db0a88151061b6b33d5f23f1bf5ea740",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "controlPage": "a6c014a0c36243197ebbf45bac7d5d5a60ad193b2eed558168852727a729db2a",
+    "governmentSummary": "4929eb5b7407407fd20d5e11d820c2d70ccc25f9b1fb6e7645e08b20099a8104",
+    "importJson": "193ec87883aff50e8d6e16f44e006d39f5b1e48f2211b969ed34b841eeba2268"
+  },
+  "boundaries": [
+    "The 415/406-point lines are Chongqing 2026 ordinary undergraduate control lines and the 180-point lines are ordinary vocational controls; none is an institution-group, institution or major admission score.",
+    "Special qualification, art and sports records remain special-path-only; 22 art/sports rows preserve both culture and professional thresholds.",
+    "The 988 Chongqing 2026 rank rows retain all score and rank values; only subject-specific official URLs and a government-summary cross-check were added.",
+    "At 179 the model returns research paths only, names no institution and creates no executable application plan; 180 enters vocational qualification, while 415 history or 406 physics enters undergraduate routing.",
+    "GitHub Pages deployment, live 31-province readback, mac_2T mirror hashes and browser-policy availability are reported as separate evidence layers."
+  ]
+}
