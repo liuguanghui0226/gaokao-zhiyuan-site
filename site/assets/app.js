@@ -52,7 +52,7 @@ const DEFAULT_PROFILE = {
   childType: "均衡探索型",
   score: "593",
   vocationalScore: "",
-  rank: "17798",
+  rank: "",
   province: "江西",
   candidateCategory: "",
   subject: "物理/理科",

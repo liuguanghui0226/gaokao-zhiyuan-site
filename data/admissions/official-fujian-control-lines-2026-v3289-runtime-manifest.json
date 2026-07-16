@@ -1,0 +1,90 @@
+{
+  "dataset": "official-fujian-control-lines-2026-v3289-runtime",
+  "generatedAt": "2026-07-16T00:45:00.000Z",
+  "sourceId": "official-fujian-control-lines-2026",
+  "importFile": "data/admissions/official-fujian-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.288-neimenggu-control-lines2026-and-rank-provenance-846746records",
+    "recordCount": 846746,
+    "fujianRecords": 21494,
+    "rankConversions": 927,
+    "rankRowsMissingSourceUrl": 927,
+    "coreSha256": "f384a9cb1bb16027b36a846c6dae604724e7c0d025bb26d6013a99b547e5caee",
+    "fujianSha256": "c6f41d0c7f90109df80995d4b610ea71ce0792ab8fd0c0a406948b5be0b84f23"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.289-fujian-control-lines2026-and-rank-provenance-846768records",
+    "recordCount": 846768,
+    "fujianRecords": 21516,
+    "rankConversions": 927,
+    "rankSourceUrlRecords": 927,
+    "rankValueChanges": 0,
+    "rankEvidence": {
+      "controlPage": {
+        "bytes": 16211,
+        "sha256": "c2acd98f9bd57a7031fb3e28de51849d5f2427b5535108abc418e22c71391a3b"
+      },
+      "controlImage": {
+        "bytes": 1297816,
+        "sha256": "3e02438605e2703d2a86be08eec2fddfa797e2b313c8795a2082e9418245e645"
+      },
+      "rankHistoryPage": {
+        "bytes": 16105,
+        "sha256": "87831249b32f866217c490fde278319be38e2b4e400a9a20b000b12d7000e7e5"
+      },
+      "rankPhysicsPage": {
+        "bytes": 16107,
+        "sha256": "340b729d2a28e7e9eb648b0989869a56dd7c9170c7c64321fd0bdf1b35507107"
+      },
+      "rankImages": [
+        {
+          "bytes": 941643,
+          "sha256": "cd3171a0d1a20d917bd07ec76128f719ab20caccfcaceb604ad3810e8a8681e9"
+        },
+        {
+          "bytes": 1027070,
+          "sha256": "b5d097cf46da309e4e531a136f1f64927e7d7a28b73c59ebe0341f48f9085a89"
+        },
+        {
+          "bytes": 1014994,
+          "sha256": "2b04287960e3a18a8f132a0aa306ab127ce9f6016b4a9304697a4a149464258c"
+        },
+        {
+          "bytes": 907839,
+          "sha256": "ab7ad78fa4d94fa8843c38b9f0741633c444a8e55a0af985476ca6744c14564e"
+        },
+        {
+          "bytes": 973201,
+          "sha256": "7d1a23683ef5f3358f0dc56db5ab9259df14652b8513481af9d19b5176cc2e25"
+        },
+        {
+          "bytes": 1013594,
+          "sha256": "b5ad7c44e2c3ea41c5bbd73e0b43e643fbb89f6200a6cfce019fd070974ee632"
+        },
+        {
+          "bytes": 1006062,
+          "sha256": "f3bd3bdd42c2d24cd92b330f32ecbf090826019a7cb8a90271d948b31c17afa0"
+        },
+        {
+          "bytes": 993690,
+          "sha256": "75e3778bc018329a92f8e34a530bc4d10ec7ce1ae68ec436beef2218cc92594a"
+        }
+      ]
+    },
+    "sourceRecords": 22,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "art": 12,
+      "sports": 4
+    },
+    "coreBytes": 15172174,
+    "coreSha256": "5f9127e1835d6c20e4f1402d9c7f159f457c118dd71e806b3cd83a3bb820d621",
+    "fujianBytes": 21336318,
+    "fujianSha256": "6e8dd428b604e880400197d427d75f036d045391a885a9fe7b19c244aed4558e",
+    "manifestBytes": 5508,
+    "manifestSha256": "20d5168a47cfb836f31941adddc88511d4088bbba7262b905ce59ec0a72b7707"
+  }
+}

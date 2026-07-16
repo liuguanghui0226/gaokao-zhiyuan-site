@@ -375,6 +375,30 @@ assert.ok(neimengguBelow.total <= 42);
 assert.ok(neimengguBelow.schoolOptions.every((option) => !option.record));
 assert.ok(neimengguBelow.warnings.some((warning) => /普通类录取控制分数线160分/.test(warning)));
 
+api.setProvinceData(readGzipJson(path.join(releaseDir, `${manifest.shards["福建"].file}.gz`)));
+const fujianPhysics234 = profileFor("福建", "物理类", 234);
+const fujianPhysics235 = profileFor("福建", "物理类", 235);
+const fujianPhysics445 = profileFor("福建", "物理类", 445);
+const fujianPhysics446 = profileFor("福建", "物理类", 446);
+const fujianHistory457 = profileFor("福建", "历史类", 457);
+const fujianHistory458 = profileFor("福建", "历史类", 458);
+assert.equal(api.ordinaryBachelorControlLine(fujianPhysics446)?.score, 446);
+assert.equal(api.ordinaryBachelorControlLine(fujianHistory458)?.score, 458);
+assert.equal(api.ordinaryVocationalControlLine(fujianPhysics235)?.score, 235);
+assert.equal(api.isVocationalProfile(fujianPhysics445), true);
+assert.equal(api.isVocationalProfile(fujianPhysics446), false);
+assert.equal(api.isVocationalProfile(fujianHistory457), true);
+assert.equal(api.isVocationalProfile(fujianHistory458), false);
+const fujianBelow = api.scoreCandidate(
+  api.CANDIDATE_POOLS.find((candidate) => candidate.id === "vocational-dual"),
+  fujianPhysics234,
+  api.classifyProfileBand(fujianPhysics234),
+);
+assert.equal(fujianBelow.confidence, "C");
+assert.ok(fujianBelow.total <= 42);
+assert.ok(fujianBelow.schoolOptions.every((option) => !option.record));
+assert.ok(fujianBelow.warnings.some((warning) => /普通类录取控制分数线235分/.test(warning)));
+
 const hainanHighRow = rows.find((row) => row.province === "海南");
 assert.ok(hainanHighRow && hainanHighRow.scoreScale === 900);
 assert.equal(scenarioCount, 155);
