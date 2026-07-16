@@ -1,0 +1,80 @@
+change_id: "2026-07-16-v3296-guizhou-control-lines-2026-rank-provenance"
+title: "贵州2026控制线、艺体资格条件与位次PDF来源闭合"
+phase: deliver
+status: testing
+execution_mode: full
+resume_mode: full
+resume_reason: "贵州已有1201条2026官方普通类一分一段记录，但控制线未进入运行层，且位次行未逐条关联对应科类正式PDF。"
+last_updated: "2026-07-16T22:35:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "阳光高考正式转载、铜仁政府原图、中新网正文和两份哈希相同位次PDF锁定证据；29条边界按普通与特殊路径分层。"
+  - surface: user
+    role: consumer
+    notes: "历史199/200/438/439、物理199/200/392/393和表内位次覆盖用于推荐降级、资格切换与自动估位。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、贵州gzip分片、mac_2T镜像、GitHub Pages和Release证据须保持同一模型版本。"
+
+sot_map:
+  - info_name: "贵州省2026年高考录取控制分数线"
+    pattern: 4
+    source: "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847640.html"
+    consumers:
+      - name: "data/admissions/official-guizhou-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/guizhou.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node锁定正式转载页、政府原图、新闻网正文和PDF镜像哈希，定向重写gzip核心、清单与贵州分片；来源等级保持official-content-mirror。"
+    desync_risk: high
+  - info_name: "贵州省2026年高考普通类分数段统计表"
+    pattern: 4
+    source: "https://zsksy.guizhou.gov.cn/zlxz/202606/t20260625_90556851.html"
+    consumers:
+      - name: "site/data/release-v3.275/guizhou.json.gz"
+        kind: runtime
+        sync_lag: retained
+    sync_mechanism: "保留1201条官方PDF位次数值和既有来源清单，只补历史/物理对应正式PDF URL，并核验6个控制线边界累计位次。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "来源、数量、量纲、专业分不补造、位次零改动或来源URL断言失败时不发布v3.296运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.295 gzip产物，保留贵州证据和导入文件用于修复。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: source-import
+    scope: "控制线转载、政府原图、新闻网正文、两份PDF和29条边界"
+    verification_command: "node scripts/build-official-guizhou-control-lines-2026-v3296.mjs"
+  - id: runtime-patch
+    scope: "核心索引、贵州分片、1201条位次URL修复、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-guizhou-control-lines-2026-v3296.mjs"
+  - id: boundary-safety
+    scope: "两科专科/本科线、表内位次、高端缺口、751越界和特殊路径隔离"
+    verification_command: "node scripts/test-official-guizhou-control-lines-v3296.mjs"
+  - id: national-regression
+    scope: "31省分片、2026通用控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校专业组投档线、专业录取最低分或录取概率证据。"
+  - "艺术体育还须核对专业合格线、综合成绩算法和招生章程；本源没有专业数值，不得补造。"
+  - "贵州考试院原站在当前网络环境中TLS连接失败；控制线是正式转载与政府原图交叉核验的official-content-mirror，不得写成当前会话直接下载。"
+  - "当前2026普通批通用控制线覆盖23省，仍有8省待补；上海和天津专科线继续保持待发布。"
+
+next_action: "完成Pages、公网、mac_2T和Release证据后关闭v3.296发布；随后从缺失8省继续补齐2026官方普通批控制线。"

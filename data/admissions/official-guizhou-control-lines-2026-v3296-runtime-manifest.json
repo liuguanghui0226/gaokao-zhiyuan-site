@@ -1,0 +1,40 @@
+{
+  "dataset": "official-guizhou-control-lines-2026-v3296-runtime",
+  "generatedAt": "2026-07-16T15:30:00.000Z",
+  "sourceId": "official-guizhou-control-lines-2026",
+  "importFile": "data/admissions/official-guizhou-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.295-guangxi-control-lines2026-and-rank-provenance-846990records",
+    "recordCount": 846990,
+    "guizhouRecords": 56876,
+    "rankConversions": 3636,
+    "rankRowsMissingSourceUrl": 1201,
+    "coreSha256": "418462b13b869bbb8127a6f2f967763a37cbc4615d319337db48bbf0b08deaa7",
+    "guizhouSha256": "69bfc9095f76445d07952885fc716fb6b559186dd2baf5fadfd8a164bc30d104"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.296-guizhou-control-lines2026-and-rank-provenance-847019records",
+    "recordCount": 847019,
+    "guizhouRecords": 56905,
+    "rankConversions": 3636,
+    "rankRowsLinked": 1201,
+    "rankValueChanges": 0,
+    "sourceRecords": 29,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "art": 18,
+      "sports": 4,
+      "minority-language-oral": 1
+    },
+    "artSportsCultureRecords": 22,
+    "coreBytes": 15202476,
+    "coreSha256": "f396691672f76513ace01d03f52368d5919350a011d195eabfd3f2f7c745e246",
+    "guizhouBytes": 69731768,
+    "guizhouSha256": "cee99b040f3749d3cfe0f0cc1d02bfd5c941e8a8464b6b386b82e18bf77238a5",
+    "manifestBytes": 5509,
+    "manifestSha256": "cb0f1626d7453970d874617b50f04cae480ef86aa42b57ab2c93b1df340c2a4f"
+  }
+}

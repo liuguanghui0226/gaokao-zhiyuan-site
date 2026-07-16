@@ -13,6 +13,7 @@ const COPY_PROVENANCE = process.env.GAOKAO_MIRROR_PROVENANCE === "1" || COPY_FUL
 const COPY_SITE_ASSETS = process.env.GAOKAO_MIRROR_SITE_ASSETS === "1";
 const COPY_TOP_DATA = process.env.GAOKAO_MIRROR_TOP_DATA === "1";
 const RAW_PROVENANCE_PACKS = [
+  "data/admissions/raw/guizhou-2026",
   "data/admissions/raw/guangxi-2026",
   "data/admissions/raw/gansu-2026",
   "data/admissions/raw/chongqing-2026",
@@ -70,6 +71,10 @@ const RAW_PROVENANCE_PACKS = [
 ];
 const IMPORT_SCRIPTS = [
   "scripts/mirror-runtime-to-mac2t.mjs",
+  "scripts/build-official-guizhou-control-lines-2026-v3296.mjs",
+  "scripts/apply-official-guizhou-control-lines-2026-v3296.mjs",
+  "scripts/test-official-guizhou-control-lines-v3296.mjs",
+  "scripts/audit-official-control-line-coverage-v3296.mjs",
   "scripts/build-official-guangxi-control-lines-2026-v3295.mjs",
   "scripts/apply-official-guangxi-control-lines-2026-v3295.mjs",
   "scripts/test-official-guangxi-control-lines-v3295.mjs",
@@ -170,6 +175,10 @@ const IMPORT_SCRIPTS = [
   "scripts/vision-table-row-ocr.swift",
 ];
 const TARGETED_ADMISSION_IMPORTS = [
+  "data/admissions/evidence-v3296-guizhou-2026-manifest.json",
+  "data/admissions/official-guizhou-control-lines-2026-import.json",
+  "data/admissions/official-guizhou-control-lines-2026-v3296-runtime-manifest.json",
+  "data/admissions/official-control-line-coverage-2026-v3296.json",
   "data/admissions/evidence-v3295-guangxi-2026-manifest.json",
   "data/admissions/official-guangxi-control-lines-2026-import.json",
   "data/admissions/official-guangxi-control-lines-2026-v3295-runtime-manifest.json",
@@ -397,6 +406,10 @@ function main() {
   if (fs.existsSync(path.join(PROJECT_ROOT, "docs/changes/v3.295-guangxi-control-lines-2026.md"))) {
     copy("docs/changes/v3.295-guangxi-control-lines-2026.md");
     copy("docs/change-manifests/v3295-guangxi-control-lines-2026-rank-provenance.yaml");
+  }
+  if (fs.existsSync(path.join(PROJECT_ROOT, "docs/changes/v3.296-guizhou-control-lines-2026.md"))) {
+    copy("docs/changes/v3.296-guizhou-control-lines-2026.md");
+    copy("docs/change-manifests/v3296-guizhou-control-lines-2026-rank-provenance.yaml");
   }
   copy("docs/changes/v3271-beijing-rank-conversion-2025.md");
   copy("docs/change-manifests/v3271-beijing-rank-conversion-2025.yaml");
