@@ -1,0 +1,179 @@
+{
+  "dataset": "evidence-v3302-qinghai-2026",
+  "generatedAt": "2026-07-16T20:58:27Z",
+  "modelVersion": "local-deterministic-v3.302-qinghai-control-lines2026-language-thresholds-and-rank-provenance-847152records",
+  "dataCommit": {
+    "local": "2828f733746e0e1219118efd85648dee52d6a558",
+    "remote": "6e1f7be19e436ae89151b7362224f9f2108236d3",
+    "tree": "7a1d4af959cc366cdb7a3710a2ac4c16b57099ed"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29533724417,
+    "liveVerificationRun": 29533929249,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.302",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.302",
+    "baseDataReleaseTag": "data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 847152,
+    "rankConversions": 116656,
+    "sourceNotes": 5108,
+    "controlLineRecords": 1506,
+    "provinceCount": 31,
+    "qinghaiRecords": 5025,
+    "qinghaiRankConversionsAllYears": 2432,
+    "qinghaiRankConversions2026": 957,
+    "qinghaiRankConversionsBySubject": {
+      "history": 468,
+      "physics": 489
+    },
+    "qinghaiControlLines": {
+      "all": 19,
+      "ordinary": 4,
+      "specialPath": 15,
+      "ordinaryBachelor": 2,
+      "ordinaryVocational": 2,
+      "specialType": 2,
+      "minorityLanguage": 5,
+      "sports": 4,
+      "art": 4,
+      "numericProfessionalThresholds": 5,
+      "professionalQualificationOnly": 8
+    },
+    "officialControlCoverage": {
+      "covered": 29,
+      "missing": 2,
+      "missingProvinces": [
+        "山西",
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "海南",
+        "江苏",
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "sourceEvidence": {
+    "controlUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847208.html",
+    "controlImageUrl": "https://t4.chei.com.cn/news/img/2293847209.png",
+    "rankIndexUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847238.html",
+    "rankPdfUrl": "https://t2.chei.com.cn/news/getfile/2293847239-2293847238-8f4911ad66a2a5465806d4e60d7dd2d9.pdf",
+    "directMirrorRetrievalStatus": "success",
+    "freshFullPdfRowParseThisRound": true,
+    "rankRowsFullCrossChecked": 957,
+    "rankRowsContinuityChecked": 957,
+    "officialZeroPersonGapEventsRetained": 46,
+    "officialZeroPersonScoresRetained": 336,
+    "rankRowsLinked": 957,
+    "rankValueChanges": 0,
+    "topBucketRangeRepairs": 2,
+    "historyFinalCumulative": 15374,
+    "physicsFinalCumulative": 31560,
+    "historyRankAtVocational150": null,
+    "physicsRankAtVocational150": null
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 33,
+      "failed": 0
+    },
+    "qinghaiBoundaryScores": [
+      149,
+      150,
+      343,
+      344,
+      375,
+      376,
+      417,
+      427,
+      600,
+      625,
+      676,
+      700,
+      750,
+      751
+    ],
+    "belowVocationalMaxModelScore": 42,
+    "belowVocationalApplicationPlanRows": 0,
+    "belowVocationalNamedInstitutions": 0,
+    "historyRankAt150": {
+      "exact": false,
+      "nearestScore": 149,
+      "rank": 15069
+    },
+    "physicsRankAt150": {
+      "exact": false,
+      "nearestScore": 155,
+      "rank": 31461
+    },
+    "rankValueChanges": 0,
+    "numericProfessionalThresholds": 5,
+    "qualificationOnlyProfessionalRequirements": 8,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "liveAppVersion": "3.302.0",
+    "interactiveBrowserStatus": "not-used-current-turn-enterprise-network-policy-retained",
+    "browserBoundary": "GitHub Actions live readback and direct HTTPS byte readback are separate successful checks; no browser-policy workaround or screenshot claim was used."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.302-qinghai-control-lines2026-language-thresholds-and-rank-provenance-847152records",
+    "gzipRuntimeFiles": 33,
+    "gzipRuntimeMissing": 0,
+    "gzipRuntimeHashMismatches": 0,
+    "gzipRuntimeOnlyTimestampDifferences": 33,
+    "keyFilesCompared": 19,
+    "keyFilesMissing": 0,
+    "keyFileHashMismatches": 0,
+    "staleDecompressedMasterFiles": 0,
+    "appleDoubleFiles": 0,
+    "doubleJsonFiles": 0
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.302-qinghai-2026.tar.gz",
+    "files": 19,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 3078694,
+    "sha256": "eaa90696ce9c57751e3bd36014ba8a54598990df1e4eff7059ea2f6b1d83a468",
+    "githubDigestMatched": true,
+    "redownloadSha256Verified": true,
+    "redownloadByteMatched": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "1faec91c8314f91b88658f431321857b31fcd56a1998be957503336be671f9b5",
+    "provinceManifestJson": "e681153347c121ed36e41b482cbc34dbcf3f71da6993c50a67d5384a07b7cc68",
+    "qinghaiJson": "d5cdf34e15489cba06d1940b6cc9648fea32da7c3355f0ce569d3e1e68ca37a7",
+    "knowledgeCoreGzip": "82fccc6cac9c17fa6924fe891d7b8c630fa932b01cbff3374051d3396eb8dada",
+    "provinceManifestGzip": "5ec35a1b99bd8f2964ce8f7c614a93c29f04295ead7eae81c4b3de482088e1b7",
+    "qinghaiGzip": "491f41b9eb0c88927fe096da1a373388476d60c9015e05801543794e9c27340b",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "siteIndex": "a59a43518f6707f0568df198c4af912c6e6fb7d99912d8dafe31b2e007bb25bd",
+    "verifyWorkflow": "e8cc07eeaf8e23ead8af2c333ae9f5c7291d20d925965b6eb9217d494ad0bf88",
+    "importJson": "aa988daa38c835d26015ea90e464c9b2964dcbca25e3184c14d695d4c0766e60",
+    "runtimeManifestJson": "ceea71fbe13507be40614fff01d71fd749ad997a06f44943c5b5ff20f2c214fb",
+    "coverageAuditJson": "627eb1d94f4371f98a7970522371df7feaa576a87bb2f449107ff0632e664e49",
+    "controlPage": "1fe2e61d55d76ce3ea73c4ea0608aa6357fe95a062cdf3b557c07921b34a4e5f",
+    "controlImage": "340c17fe0151884b8d588629944edc286a85008355b862353bf639c680f7ce5b",
+    "rankIndex": "e6449bb8e6bdd46d540080f7ee4bb9a1df707eb9d12e68d2e35263d0cc3bf012",
+    "rankPdf": "4aae2d39d60ace58a794c2f47aa93b93a5b1077e074b4f66255d7f37f01585e8",
+    "rankLayoutText": "0abca4d134bd3cd94b3c671a998ccc07bbe1e0abe5d591b2b28d936deaccf35f",
+    "rankRawText": "d8afc8e073b38d54267fb5e50e698cefb3e135f7bbf75c8ba762d069417a5fb2"
+  },
+  "boundaries": [
+    "The 376 history and 344 physics lines are Qinghai's 2026 ordinary undergraduate controls; the two 150 lines are ordinary vocational controls. None is an institution-group, institution or major admission score.",
+    "Special-type, minority-language, sports and art records remain special-path-only and never replace the ordinary routes.",
+    "The five minority-language rows store culture and minority-language subject thresholds separately; both dimensions must qualify.",
+    "The eight sports and art rows retain a professional qualification requirement but no invented numeric professional threshold.",
+    "The 957 Qinghai 2026 rank rows were cross-checked against a fresh full extraction of the 22-page PDF with zero value differences, then linked to the current PDF URL.",
+    "The history and physics rank tables omit score 150 as an official zero-person row. The recommender may use the nearest published row only with exact=false and must not present it as an exact rank.",
+    "The two published top buckets cover scores through 750 after scoreRange metadata repair without changing rank values; score 751 remains outside the table.",
+    "At 149 the model reports research paths only, names no institution and creates no executable application plan; 150 enters vocational routing, while 376 history or 344 physics enters undergraduate routing.",
+    "GitHub Pages deployment, live 31-province readback, direct HTTPS byte hashes, mac_2T mirror hashes and Release redownload are reported as separate evidence layers."
+  ]
+}
