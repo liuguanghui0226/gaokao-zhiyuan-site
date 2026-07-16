@@ -32,9 +32,9 @@ were migrated from the earlier account on 2026-07-16 and verified by size and
 SHA-256 before the temporary transfer files were removed. Current incremental
 runtime changes remain in the repository's compressed core and 31 province
 shards, with a separate `evidence-v<version>` release for each verified wave.
-The current incremental evidence release is `evidence-v3.296`; its Guizhou 2026
-archive contains 22 files, is 6,479,872 bytes, and has SHA-256
-`979e6857cce41953824a53231917a5681fbedbacd3351fdda7ab9c98f50079ea`.
+The current incremental evidence release is `evidence-v3.297`; its Hainan 2026
+archive contains 22 files, is 4,272,200 bytes, and has SHA-256
+`dee646bc3a758d0765720c2683cb6ebe25bc6cfe9c968ce5e43660806b212ae7`.
 The asset was downloaded again from GitHub after upload and matched byte for byte.
 
 `scripts/serve.mjs` defaults to the internal APFS site root. Set

@@ -1,0 +1,161 @@
+{
+  "dataset": "evidence-v3297-hainan-2026",
+  "generatedAt": "2026-07-16T15:59:57.000Z",
+  "modelVersion": "local-deterministic-v3.297-hainan-control-lines2026-and-rank-provenance-847033records",
+  "dataCommit": {
+    "local": "413418ab0edf2b31396ef6e1fa51ffcc76581396",
+    "remote": "b3ff5968e11d64e15b2200524cf380119b5bb478",
+    "tree": "94c6f1a4c184cdc34ea4ca5861acc6f0a874a8f8"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29512670015,
+    "liveVerificationRun": 29513059042,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.297",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.297",
+    "baseDataReleaseTag": "data-v3.275",
+    "baseDataReleaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 847033,
+    "rankConversions": 116656,
+    "sourceNotes": 5103,
+    "controlLineRecords": 1387,
+    "provinceCount": 31,
+    "hainanRecords": 10690,
+    "hainanAllRankConversions": 547,
+    "hainanRankConversions2026": 547,
+    "hainanControlLines": {
+      "all": 14,
+      "ordinary": 1,
+      "specialPath": 13,
+      "ordinaryBachelor": 1,
+      "nationalSpecial": 1,
+      "specialType": 1,
+      "sports": 1,
+      "art": 10,
+      "artProfessionalQualificationRecords": 10,
+      "numericProfessionalThresholds": 1
+    },
+    "scoreMaximum": 900,
+    "ordinaryVocationalStatus": "pending-official-release",
+    "officialControlCoverage": {
+      "covered": 24,
+      "missing": 7,
+      "missingProvinces": [
+        "黑龙江",
+        "江苏",
+        "辽宁",
+        "宁夏",
+        "青海",
+        "山西",
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "海南",
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "sourceEvidence": {
+    "controlRepublishUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+    "originalOfficialUrl": "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202606/t20260625_4099246.html",
+    "quality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+    "directOfficialRetrievalStatus": "blocked-current-session-tls",
+    "rankOfficialPageUrl": "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202606/t20260625_4099593.html",
+    "rankOfficialPdfUrl": "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202606/P020260625627884748040.pdf",
+    "rankMirrorPageUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202607/20260701/2293870259.html",
+    "rankMirrorPdfSha256": "9ee71c71ebd8c6a1641b2465fd5eff21707a9fd42306d04b219ea2aa8bca062c",
+    "rankRowsFullCrossChecked": 547,
+    "rankRowsLinked": 547,
+    "rankValueChanges": 0,
+    "rankFinalCumulative": 70398
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 28,
+      "failed": 0
+    },
+    "hainanBoundaryScores": [
+      253,
+      254,
+      383,
+      407,
+      421,
+      478,
+      479,
+      568,
+      600,
+      800,
+      900,
+      901
+    ],
+    "belowPublishedBachelorPendingVocationalMaxModelScore": 55,
+    "pendingVocationalApplicationPlanRows": 0,
+    "pendingVocationalNamedInstitutions": 0,
+    "rankValueChanges": 0,
+    "numericArtProfessionalThresholdsInvented": 0,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "liveAppVersion": "3.297.0",
+    "interactiveBrowserStatus": "not-used-current-turn-enterprise-network-policy-retained",
+    "browserBoundary": "GitHub Actions live readback and direct HTTPS byte readback are successful independent checks; no browser-policy workaround or screenshot claim was used."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.297-hainan-control-lines2026-and-rank-provenance-847033records",
+    "gzipRuntimeFiles": 33,
+    "gzipRuntimeMissing": 0,
+    "gzipRuntimeHashMismatches": 0,
+    "keyFilesCompared": 23,
+    "keyFilesMissing": 0,
+    "keyFileHashMismatches": 0,
+    "staleDecompressedMasterFiles": 0,
+    "appleDoubleFiles": 0,
+    "doubleJsonFiles": 0
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.297-hainan-2026.tar.gz",
+    "files": 22,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 4272200,
+    "sha256": "dee646bc3a758d0765720c2683cb6ebe25bc6cfe9c968ce5e43660806b212ae7",
+    "githubDigestMatched": true,
+    "redownloadSha256Verified": true,
+    "redownloadByteMatched": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "aa860d08db5ecfd68b065462c66941d1ee1eaf0098daa006c6ad221060a13113",
+    "provinceManifestJson": "4ebcd0214a5322ae26e67bbb9c5ee9890c10b75173a986cbf77961ca16e07bc5",
+    "hainanJson": "a162e737155390280882d2f3bae6b75f9e81e62b6c6cfa56640649dc95a5482b",
+    "knowledgeCoreGzip": "06d6d5b6bd20b2091593e70e09a9fed91078c89722f9f6db6f3c8334239e43bc",
+    "provinceManifestGzip": "b78b9fc97ea91282d00ff7bfbc5244da082c49117ed8594cf70ed9fca2602405",
+    "hainanGzip": "99a14f27d50f22e0bf3686d9f329831fe3f00ebfe37c1e2eeba0b049b7e2b96a",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "siteIndex": "83bb1546ebf21b925c11438f2581f646976c8992b186a7b98d8935c14adacd34",
+    "importJson": "05c4d45ae02883d804da22d894bf219fb059ffcfbe5470d283c3253f7c085743",
+    "runtimeManifestJson": "f79c7162174ca12a0eb3e8656860a2a83c25d2ff7920c6a2cb3649a0c2ffb1e3",
+    "coverageAuditJson": "f1ed619a2fdec7e964bc363efa1dbffe26a98a820afe86babb84f99e19842e9f",
+    "chsiControlPage": "35463062b661b401f9d5934c6fac8d8bdf6d038c7cda6f57105b59a7794abd0f",
+    "chsiControlImage": "55be6fdf1034569e3961b5d7ec1573ae5b7a79a96280825977ad2be6c20db5eb",
+    "chinaNewsControlPage": "be3b4bc872626e8b21da02fd332956b8788fb47c668cf1a3d9b27e65544315ba",
+    "chsiImplementationRules": "9bb3075f7bf7e1acbfcf346253ea755dc76cc3218b983f468b11316f9f78fdd7",
+    "chsiRankIndex": "f3538a212e755891d4b8d94f1f572ba91dc89ef914027cd7c48fcb899a2fa318",
+    "chsiRankOrdinaryPdf": "9ee71c71ebd8c6a1641b2465fd5eff21707a9fd42306d04b219ea2aa8bca062c",
+    "hainanDailyControlCrossCheck": "d0ee7079e98b012292896bb04aa75a18ceac12e0826b93beac35c5898196b5f7"
+  },
+  "boundaries": [
+    "The 479-point line is Hainan's 2026 ordinary undergraduate control; it is not an institution-group, institution or major admission score.",
+    "The ordinary vocational line is published after applications and remains pending; prior-year lines and vocational classification-exam thresholds are not substitutes.",
+    "Hainan uses a 900-point ordinary score scale; scores below 254 or above 900 remain outside this official rank table instead of receiving invented ranks.",
+    "National special, special-type, art and sports records remain special-path-only and never replace the ordinary undergraduate route.",
+    "The sports culture threshold 421 and professional threshold 75 are separate fields; the 10 art rows retain professional qualification text but no invented numeric professional score.",
+    "The 547 Hainan 2026 rank rows match the republished 20-page PDF row by row; this round changes no score, same-score count, cumulative count or rank value.",
+    "At 478 the model reports research paths only, names no institution and creates no executable application plan; 479 enters ordinary undergraduate qualification routing.",
+    "GitHub Pages deployment, live 31-province readback, direct HTTPS byte hashes, mac_2T mirror hashes and Release redownload are reported as separate evidence layers."
+  ]
+}
