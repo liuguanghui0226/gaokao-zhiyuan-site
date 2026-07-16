@@ -1,0 +1,283 @@
+{
+  "dataset": "official-shanghai-control-lines-2026-import",
+  "generatedAt": "2026-07-16T10:30:00.000Z",
+  "scope": {
+    "province": "上海",
+    "year": 2026,
+    "sourceKind": "official-control-lines"
+  },
+  "notes": [
+    "上海2026普通本科线403分进入通用本科资格路由；特殊类型、艺术和体育4条保持特殊路径隔离。",
+    "2026专科控制线按上海市教育考试院日程于7月29日晚发布，当前不使用往年线补造，不生成专科资格结论或录取概率。",
+    "既有214条上海2026本科线上位次记录来自同日4页PDF，本轮只补齐页面/PDF证据和运行来源链接，不改分数、人数或累计位次。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "official-shanghai-control-lines-2026",
+      "province": "上海",
+      "title": "上海市2026年普通高校招生本科阶段录取控制分数线确定",
+      "publisher": "上海市教育考试院",
+      "publishedAt": "2026-06-23",
+      "url": "https://www.shmeea.edu.cn/page/08000/20260623/20379.html",
+      "relatedUrls": [
+        "https://www.shmeea.edu.cn/page/02200/20260623/20375.html",
+        "https://www.shmeea.edu.cn/page/08000/20260609/20321.html"
+      ],
+      "attachmentUrls": [
+        "https://www.shmeea.edu.cn/download/20260623/2/0.pdf"
+      ],
+      "quality": "official-shanghai-control-line-html-verified",
+      "usage": "抽取上海2026普通本科、特殊类型、艺术类和体育类本科文化控制线5条；仅普通本科403分参与普通资格路由，专科控制线保持待官方发布。",
+      "parsedRecords": 5,
+      "scoreMaximum": 660,
+      "ordinaryVocationalStatus": "pending-official-release",
+      "ordinaryVocationalPending": true,
+      "ordinaryVocationalCheckedAt": "2026-07-16",
+      "ordinaryVocationalExpectedPublicationAt": "2026-07-29",
+      "ordinaryVocationalScheduleUrl": "https://www.shmeea.edu.cn/page/08000/20260609/20321.html",
+      "controlPageBytes": 10296,
+      "controlPageSha256": "7ec1b138300d46710ea88f21b088b9f10438ad8d94d63caf4ad7cc2c616e28a5",
+      "rankPageBytes": 14881,
+      "rankPageSha256": "3faa761df90d0bec7f99627cc1e32cd9df54dc683358d894af9b3cc135a4fa02",
+      "rankPdfBytes": 114010,
+      "rankPdfSha256": "057f58483e7c54f519982d45a91d27f6994a753543d2a4fb73aa7b49474320e1",
+      "rankPdfPages": 4,
+      "schedulePageBytes": 57658,
+      "schedulePageSha256": "966666374eaefdba5bb3efd97373df43d3b54f6a1c1dce58ba45d396be253beb",
+      "rankEvidence": {
+        "sourceId": "official-shanghai-rank-2026",
+        "url": "https://www.shmeea.edu.cn/page/02200/20260623/20375.html",
+        "attachmentUrl": "https://www.shmeea.edu.cn/download/20260623/2/0.pdf",
+        "records": 214,
+        "scoreRange": {
+          "min": 403,
+          "max": 616
+        },
+        "rankRange": {
+          "min": 1,
+          "max": 51853
+        },
+        "topScoreRange": {
+          "min": 616,
+          "max": 660
+        }
+      },
+      "evidenceBoundary": "control-line-only=1; special-path-only=4; ordinary-vocational=pending official release on 2026-07-29; rank table covers 403-660 only; not institution-group, institution or major admission score"
+    }
+  ],
+  "records": [
+    {
+      "id": "2026-shanghai-control-a95d60bf3713778e1b",
+      "province": "上海",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科录取控制分数线",
+      "schoolName": "上海市2026年普通高校招生本科阶段录取控制分数线",
+      "schoolTags": [
+        "上海官方控制线",
+        "普通类",
+        "普通类",
+        "本科"
+      ],
+      "city": "上海",
+      "dataType": "control-line",
+      "majorName": "本科录取控制分数线",
+      "majorGroup": "普通类",
+      "minScore": 403,
+      "cultureScoreLine": 403,
+      "scoreDimension": "total-score",
+      "scoreBasis": "gaokao-total",
+      "scoreMaximum": 660,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-shanghai-control-lines-2026",
+      "sourceQuality": "official-shanghai-control-line-html-verified",
+      "sourceUrl": "https://www.shmeea.edu.cn/page/08000/20260623/20379.html",
+      "formalScoreScope": "control-line-only",
+      "controlLineRouteKind": "ordinary-bachelor",
+      "controlLineKind": "本科录取控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是上海2026年普通本科录取控制分数线，只用于判断普通本科阶段资格边界。",
+        "上海2026年专科各批次录取控制分数线按官方日程于7月29日晚公布；403分以下当前只能作专科路径调研，不能认定已达到2026专科资格线。",
+        "控制线不是院校专业组投档线、院校录取线、专业录取最低分或最低位次，不能单独生成录取概率。"
+      ],
+      "sourceFile": "data/admissions/raw/shanghai-2026/control-lines.html",
+      "sourcePublishedAt": "2026-06-23"
+    },
+    {
+      "id": "2026-shanghai-control-6ddca553b8a9cd8a8d",
+      "province": "上海",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "特殊类型招生控制分数线",
+      "schoolName": "上海市2026年普通高校招生本科阶段录取控制分数线",
+      "schoolTags": [
+        "上海官方控制线",
+        "特殊路径",
+        "特殊类型招生",
+        "本科"
+      ],
+      "city": "上海",
+      "dataType": "control-line",
+      "majorName": "特殊类型招生控制分数线",
+      "majorGroup": "特殊类型招生",
+      "minScore": 504,
+      "cultureScoreLine": 504,
+      "scoreDimension": "culture-score",
+      "scoreBasis": "gaokao-total",
+      "scoreMaximum": 660,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-shanghai-control-lines-2026",
+      "sourceQuality": "official-shanghai-control-line-html-verified",
+      "sourceUrl": "https://www.shmeea.edu.cn/page/08000/20260623/20379.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "special",
+      "controlLineKind": "特殊类型招生控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是上海2026年特殊类型、艺术类或体育类本科文化控制线，不适用于普通类考生直接推荐。",
+        "艺术类和体育类还须满足对应专业考试、专业成绩、院校专业组要求及招生章程。",
+        "本页只公布文化控制分数线，不含专业统考合格线或具体院校专业组投档线。"
+      ],
+      "sourceFile": "data/admissions/raw/shanghai-2026/control-lines.html",
+      "sourcePublishedAt": "2026-06-23"
+    },
+    {
+      "id": "2026-shanghai-control-10e3eb05e87f5c57c6",
+      "province": "上海",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "体育类本科文化控制分数线",
+      "schoolName": "上海市2026年普通高校招生本科阶段录取控制分数线",
+      "schoolTags": [
+        "上海官方控制线",
+        "特殊路径",
+        "体育类",
+        "本科"
+      ],
+      "city": "上海",
+      "dataType": "control-line",
+      "majorName": "体育类本科文化控制分数线",
+      "majorGroup": "体育类",
+      "minScore": 282,
+      "cultureScoreLine": 282,
+      "scoreDimension": "culture-score",
+      "scoreBasis": "gaokao-total",
+      "scoreMaximum": 660,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-shanghai-control-lines-2026",
+      "sourceQuality": "official-shanghai-control-line-html-verified",
+      "sourceUrl": "https://www.shmeea.edu.cn/page/08000/20260623/20379.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "sports",
+      "controlLineKind": "体育类本科文化控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是上海2026年特殊类型、艺术类或体育类本科文化控制线，不适用于普通类考生直接推荐。",
+        "艺术类和体育类还须满足对应专业考试、专业成绩、院校专业组要求及招生章程。",
+        "本页只公布文化控制分数线，不含专业统考合格线或具体院校专业组投档线。"
+      ],
+      "sourceFile": "data/admissions/raw/shanghai-2026/control-lines.html",
+      "sourcePublishedAt": "2026-06-23"
+    },
+    {
+      "id": "2026-shanghai-control-b81a733d24bc80054c",
+      "province": "上海",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "艺术类本科文化控制分数线（舞蹈类、戏曲类除外）",
+      "schoolName": "上海市2026年普通高校招生本科阶段录取控制分数线",
+      "schoolTags": [
+        "上海官方控制线",
+        "特殊路径",
+        "艺术类（舞蹈类、戏曲类除外）",
+        "本科"
+      ],
+      "city": "上海",
+      "dataType": "control-line",
+      "majorName": "艺术类本科文化控制分数线（舞蹈类、戏曲类除外）",
+      "majorGroup": "艺术类（舞蹈类、戏曲类除外）",
+      "minScore": 302,
+      "cultureScoreLine": 302,
+      "scoreDimension": "culture-score",
+      "scoreBasis": "gaokao-total",
+      "scoreMaximum": 660,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-shanghai-control-lines-2026",
+      "sourceQuality": "official-shanghai-control-line-html-verified",
+      "sourceUrl": "https://www.shmeea.edu.cn/page/08000/20260623/20379.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "艺术类本科文化控制分数线（舞蹈类、戏曲类除外）",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是上海2026年特殊类型、艺术类或体育类本科文化控制线，不适用于普通类考生直接推荐。",
+        "艺术类和体育类还须满足对应专业考试、专业成绩、院校专业组要求及招生章程。",
+        "本页只公布文化控制分数线，不含专业统考合格线或具体院校专业组投档线。"
+      ],
+      "sourceFile": "data/admissions/raw/shanghai-2026/control-lines.html",
+      "sourcePublishedAt": "2026-06-23"
+    },
+    {
+      "id": "2026-shanghai-control-b1430d07f9f95d5b4a",
+      "province": "上海",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "舞蹈类、戏曲类本科文化控制分数线",
+      "schoolName": "上海市2026年普通高校招生本科阶段录取控制分数线",
+      "schoolTags": [
+        "上海官方控制线",
+        "特殊路径",
+        "舞蹈类、戏曲类",
+        "本科"
+      ],
+      "city": "上海",
+      "dataType": "control-line",
+      "majorName": "舞蹈类、戏曲类本科文化控制分数线",
+      "majorGroup": "舞蹈类、戏曲类",
+      "minScore": 220,
+      "cultureScoreLine": 220,
+      "scoreDimension": "culture-score",
+      "scoreBasis": "gaokao-total",
+      "scoreMaximum": 660,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-shanghai-control-lines-2026",
+      "sourceQuality": "official-shanghai-control-line-html-verified",
+      "sourceUrl": "https://www.shmeea.edu.cn/page/08000/20260623/20379.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "舞蹈类、戏曲类本科文化控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是上海2026年特殊类型、艺术类或体育类本科文化控制线，不适用于普通类考生直接推荐。",
+        "艺术类和体育类还须满足对应专业考试、专业成绩、院校专业组要求及招生章程。",
+        "本页只公布文化控制分数线，不含专业统考合格线或具体院校专业组投档线。"
+      ],
+      "sourceFile": "data/admissions/raw/shanghai-2026/control-lines.html",
+      "sourcePublishedAt": "2026-06-23"
+    }
+  ],
+  "diagnostics": {
+    "recordCount": 5,
+    "ordinaryRecords": 1,
+    "specialPathRecords": 4,
+    "routeCounts": {
+      "ordinary-bachelor": 1,
+      "special": 1,
+      "sports": 1,
+      "art": 2
+    },
+    "ordinaryBoundaries": {
+      "bachelor": 403,
+      "vocational": null
+    },
+    "ordinaryVocationalStatus": "pending-official-release",
+    "scoreMaximum": 660,
+    "rankRecords": 214
+  }
+}

@@ -1889,7 +1889,33 @@ function buildSchoolOptions(candidate, profile, band) {
       { name: "职业技能与就业衔接", tags: ["技能训练", "升学衔接"], focus: "核验正规办学资质、技能证书含金量、继续升学通道和真实就业去向。", role: "路径调研", scoreStatus: genericScoreStatus },
     ];
   }
-  if (vocationalQualificationUnknown || vocationalLinePending) return genericOptions;
+  if (vocationalQualificationUnknown || vocationalLinePending) {
+    return [
+      {
+        name: vocationalLinePending ? "2026普通高职专科资格线跟踪" : "专科资格成绩口径补充",
+        tags: ["资格边界", vocationalLinePending ? "等待官方发布" : "补充成绩"],
+        focus: vocationalLinePending
+          ? "等待本省考试院发布2026普通高职专科控制线后重新计算，不把往年投档结果当作今年资格。"
+          : "补充与专科控制线一致的成绩口径后重新计算，不用不可比总分判断今年资格。",
+        role: "路径调研",
+        scoreStatus: genericScoreStatus,
+      },
+      {
+        name: "双高专业群与职业本科路径调研",
+        tags: ["职业教育", "专业群", "升学衔接"],
+        focus: "先按专业群、培养能力、区域产业和升学通道建立方向池；控制线或可比分数补齐前不列具体可报院校。",
+        role: "路径调研",
+        scoreStatus: genericScoreStatus,
+      },
+      {
+        name: "专升本与就业衔接核验",
+        tags: ["专升本", "技能培养", "就业去向"],
+        focus: "核验正规办学资质、专升本政策、实训条件和真实就业去向，待资格边界明确后再落到院校专业。",
+        role: "路径调研",
+        scoreStatus: genericScoreStatus,
+      },
+    ];
+  }
   const admissionOptions = buildAdmissionOptions(candidate, profile);
   if (limitedOnly) {
     if (admissionOptions.length) return admissionOptions;

@@ -13,6 +13,7 @@ const COPY_PROVENANCE = process.env.GAOKAO_MIRROR_PROVENANCE === "1" || COPY_FUL
 const COPY_SITE_ASSETS = process.env.GAOKAO_MIRROR_SITE_ASSETS === "1";
 const COPY_TOP_DATA = process.env.GAOKAO_MIRROR_TOP_DATA === "1";
 const RAW_PROVENANCE_PACKS = [
+  "data/admissions/raw/shanghai-2026",
   "tmp/official-hubei-control-lines-2026",
   "tmp/official-hubei-rank-2026",
   "data/admissions/raw/official-xizang-vacancy-plans-2025-v3272",
@@ -65,6 +66,10 @@ const RAW_PROVENANCE_PACKS = [
   "data/admissions/raw/gk100-xinjiang-rank-2026",
 ];
 const IMPORT_SCRIPTS = [
+  "scripts/build-official-shanghai-control-lines-2026-v3292.mjs",
+  "scripts/apply-official-shanghai-control-lines-2026-v3292.mjs",
+  "scripts/test-official-shanghai-control-lines-v3292.mjs",
+  "scripts/audit-official-control-line-coverage-v3292.mjs",
   "scripts/build-official-hubei-control-lines-2026-v3291.mjs",
   "scripts/apply-official-hubei-control-lines-2026-v3291.mjs",
   "scripts/test-official-hubei-control-lines-v3291.mjs",
@@ -149,6 +154,9 @@ const IMPORT_SCRIPTS = [
   "scripts/vision-table-row-ocr.swift",
 ];
 const TARGETED_ADMISSION_IMPORTS = [
+  "data/admissions/official-shanghai-control-lines-2026-import.json",
+  "data/admissions/official-shanghai-control-lines-2026-v3292-runtime-manifest.json",
+  "data/admissions/official-control-line-coverage-2026-v3292.json",
   "data/admissions/official-hubei-control-lines-2026-import.json",
   "data/admissions/official-hubei-control-lines-2026-v3291-runtime-manifest.json",
   "data/admissions/official-control-line-coverage-2026-v3291.json",

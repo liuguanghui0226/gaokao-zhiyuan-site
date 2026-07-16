@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.291-hubei-control-lines2026-limited-school-routing-and-rank-provenance-846854records";
+const modelVersion = "local-deterministic-v3.292-shanghai-control-lines2026-pending-vocational-and-rank-provenance-846859records";
 const sourceId = "official-tianjin-control-lines-2026";
 const rankSourceUrl = "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845980.html";
 
@@ -40,12 +40,12 @@ assert.equal(records.filter((record) => record.formalScoreScope === "special-pat
 
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
-assert.equal(core.admissionScoreLayer.structuredRecords, 846854);
+assert.equal(core.admissionScoreLayer.structuredRecords, 846859);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5097);
-assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1208);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5098);
+assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1213);
 assert.equal(manifest.modelVersion, modelVersion);
-assert.equal(manifest.recordCount, 846854);
+assert.equal(manifest.recordCount, 846859);
 assert.equal(manifest.shards["天津"].records, 9656);
 assert.equal(manifest.shards["天津"].rankConversions, 381);
 assert.equal(runtimeManifest.after.sourceRecords, 6);
@@ -139,6 +139,7 @@ const pendingResult = api.scoreCandidate(vocationalCandidate, below, api.classif
 assert.equal(pendingResult.confidence, "C");
 assert.ok(pendingResult.total <= 55);
 assert.ok(pendingResult.schoolOptions.every((option) => !option.record && option.role === "路径调研"));
+assert.ok(pendingResult.schoolOptions.every((option) => !/大学|学院/.test(option.name)), "Pending vocational cards must not name a specific institution");
 assert.equal(api.buildApplicationPlan([pendingResult]).length, 0);
 assert.ok(pendingResult.reasons.some((reason) => /普通高职专科控制线尚待官方发布/.test(reason)));
 assert.ok(pendingResult.warnings.some((warning) => /当前结果只作路径调研/.test(warning)));

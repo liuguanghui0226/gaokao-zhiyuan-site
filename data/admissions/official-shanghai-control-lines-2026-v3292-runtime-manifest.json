@@ -1,0 +1,39 @@
+{
+  "dataset": "official-shanghai-control-lines-2026-v3292-runtime",
+  "generatedAt": "2026-07-16T10:30:00.000Z",
+  "sourceId": "official-shanghai-control-lines-2026",
+  "importFile": "data/admissions/official-shanghai-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.291-hubei-control-lines2026-limited-school-routing-and-rank-provenance-846854records",
+    "recordCount": 846854,
+    "shanghaiRecords": 5981,
+    "rankConversions": 214,
+    "rankRowsMissingSourceUrl": 214,
+    "coreSha256": "2f238ab2eacd5ec9a2cc55c50e03781f68151ab2517256e392c11cd40681abec",
+    "shanghaiSha256": "0a30a8835eb244682ab1f3a9cf78b1bedf6735bd51a994a336a3d081dcdd30f2"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.292-shanghai-control-lines2026-pending-vocational-and-rank-provenance-846859records",
+    "recordCount": 846859,
+    "shanghaiRecords": 5986,
+    "rankConversions": 214,
+    "rankSourceUrlRecords": 214,
+    "rankValueChanges": 0,
+    "sourceRecords": 5,
+    "routeCounts": {
+      "ordinary-bachelor": 1,
+      "special": 1,
+      "sports": 1,
+      "art": 2
+    },
+    "ordinaryVocationalStatus": "pending-official-release",
+    "ordinaryVocationalExpectedPublicationAt": "2026-07-29",
+    "coreBytes": 15184156,
+    "coreSha256": "2fb71e03175a26036768b2b1c3d5dac36504fdf7a61dbf341ba257542f4869ff",
+    "shanghaiBytes": 5629752,
+    "shanghaiSha256": "1eb32f10f46564010a87ed1e17259fb8ff36adec084d552d784c64cb46c70709",
+    "manifestBytes": 5529,
+    "manifestSha256": "608017a73af59343e70a39f34c601de576c10604ce39b338d68ef8bc38ed8377"
+  }
+}
