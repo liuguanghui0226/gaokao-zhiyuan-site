@@ -1,0 +1,83 @@
+{
+  "dataset": "evidence-v3291-hubei-2026",
+  "generatedAt": "2026-07-16T10:08:00.000Z",
+  "modelVersion": "local-deterministic-v3.291-hubei-control-lines2026-limited-school-routing-and-rank-provenance-846854records",
+  "dataCommit": {
+    "local": "c58aa923f25b1ceb22632d14b2f82f49e7014058",
+    "remote": "b07a8ebc6f42c08d268123ae9943f6083c9709db",
+    "tree": "df72a816cb7ea82a794961a26a1f5c21439e9814"
+  },
+  "liveVerificationCommit": {
+    "local": "2fde49fa16a28d991b46eafa05ad736b0ad4e35c",
+    "remote": "060e693f0a133cd88c334e1b24ab8ef428058f90",
+    "tree": "c08676a7e45a1a1979e18d96afb8d26e110cae3d"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29488811082,
+    "liveVerificationRun": 29489357791,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success"
+  },
+  "runtime": {
+    "structuredRecords": 846854,
+    "rankConversions": 116656,
+    "sourceNotes": 5097,
+    "controlLineRecords": 1208,
+    "provinceCount": 31,
+    "hubeiRecords": 15139,
+    "hubeiRankConversions": 1079,
+    "hubeiControlLines": {
+      "all": 32,
+      "ordinary": 4,
+      "limitedSchool": 2,
+      "specialPath": 26
+    },
+    "officialControlCoverage": {
+      "covered": 18,
+      "missing": 13,
+      "pendingOrdinaryVocational": [
+        "天津"
+      ]
+    }
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 22,
+      "failed": 0
+    },
+    "nationalScenarios": 155,
+    "rankEstimatedScenarios": 135,
+    "rankMissingScenarios": 20,
+    "hubeiBoundaryScores": [
+      149,
+      150,
+      199,
+      200,
+      434,
+      435,
+      442,
+      443
+    ],
+    "desktopViewport": "1440x1000",
+    "mobileViewport": "390x844",
+    "horizontalOverflow": 0
+  },
+  "sha256": {
+    "knowledgeCoreJson": "2f238ab2eacd5ec9a2cc55c50e03781f68151ab2517256e392c11cd40681abec",
+    "provinceManifestJson": "07edd4b56f774362b1d782043d8415e8854c37067a3f335f9094eaf378a657fc",
+    "hubeiJson": "391825f64bb8abee4c86b155290ac1c5dc3f274a2f33e8461375cc0001d43622",
+    "appJs": "2eeae39664ca4c65709849739f6f13115baccced14bdaf6dafd2b04f3a8b7565",
+    "controlPage": "d73d50d6f389f114351ce9a2a5169dfcc06d9069cf3824a3679bb75eae727424",
+    "controlImage": "d1fc254b8816fa5b6d1f4c307d489ad042444968698f5be922ee3c95ac80ea44",
+    "rankPage": "4726baed16eae15246014bd32c30acdb771ffdac469ef4753a2640c7d44cd70f",
+    "importJson": "8dc3a63ae4d10ba4b9805e71b4523b981b84bde523508e69374de8fa8bf121d2"
+  },
+  "boundaries": [
+    "The 150-point line is limited to Hubei independent/private institutions and Hubei-operated vocational institutions outside Wuhan; it is not a general vocational line.",
+    "The 150-199 recommendation list uses 2025 official historical filing groups only and is not a 2026 admission probability or promise.",
+    "Control lines do not replace institution-group, institution or major filing/admission scores.",
+    "The live browser full hidden-DOM snapshot timed out; local desktop/mobile interaction, live byte-for-byte readback and the live 31-province workflow remain separate evidence layers."
+  ]
+}

@@ -1,0 +1,80 @@
+change_id: "2026-07-16-v3291-hubei-control-lines-2026-limited-school-routing"
+title: "湖北2026控制线、限定院校路由与位次来源闭合"
+phase: deliver
+status: complete
+execution_mode: full
+resume_mode: full
+resume_reason: "湖北150分限定院校线与200分通用专科线必须分层，官方图片、位次来源、推荐算法、mac_2T镜像和GitHub Pages需同步验证。"
+last_updated: "2026-07-16T18:08:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "湖北省教育考试院控制线正文与原图结构化为32条2026控制线，并锁定普通类位次正文和10张原图。"
+  - surface: user
+    role: consumer
+    notes: "149分以下只作路径调研；150-199分只显示限定院校历史组；200分恢复普通专科；435/443分切换本科路径。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、湖北gzip分片、mac_2T轻量镜像、Pages部署和公网31省验证保持同一模型版本。"
+
+sot_map:
+  - info_name: "湖北省2026年普通高校招生录取控制分数线"
+    pattern: 4
+    source: "https://www.hbea.edu.cn/html/2026-06/15961.html"
+    consumers:
+      - name: "data/admissions/official-hubei-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/hubei.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node锁定官方正文和原图哈希，定向重写gzip核心、清单与湖北分片。"
+    desync_risk: high
+  - info_name: "湖北省2026年普通高考总分一分一段统计表-普通类"
+    pattern: 4
+    source: "https://www.hbea.edu.cn/html/2026-06/15962.html"
+    consumers:
+      - name: "site/data/release-v3.275/hubei.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "1079条位次记录补齐正式来源页；正文与10张原图锁定字节及SHA-256，位次值零改动。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "保留v3.290 gzip产物哈希；来源、数量或逐字段断言失败不覆盖运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.290推荐器，同时保留湖北官方镜像、结构化导入和来源审计。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过22项完整回归的main提交部署。"
+
+task_slices:
+  - id: "source-import"
+    scope: "官方正文、控制线原图、10张位次原图、32条控制线和三层路由计数"
+    verification_command: "node scripts/build-official-hubei-control-lines-2026-v3291.mjs"
+  - id: "runtime-patch"
+    scope: "核心索引、湖北分片、1079条位次来源、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-hubei-control-lines-2026-v3291.mjs"
+  - id: "boundary-safety"
+    scope: "物理/历史149、150、199、200与434/435、442/443；限定院校和特殊路径隔离"
+    verification_command: "node scripts/test-official-hubei-control-lines-v3291.mjs"
+  - id: "national-regression"
+    scope: "31省分片、155个全国分数场景、2026通用控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "150分限定线只适用于湖北省独立学院和民办高校、湖北省办在武汉市以外的高职院校，必须按2026招生计划逐校核验。"
+  - "当前限定院校清单引用2025官方历史投档组，只作范围核验，不是2026录取概率或录取承诺。"
+  - "控制线不是院校专业组投档线、专业录取最低分或录取概率证据。"
+  - "当前2026普通批通用控制线覆盖18省，仍有13省待补；天津专科线继续保持待发布。"
+
+next_action: "从缺失13省中继续补齐2026官方普通批控制线，保持官方来源、限定/特殊路径隔离、浏览器回归和Pages公网验证。"
