@@ -1,0 +1,43 @@
+{
+  "dataset": "official-ningxia-control-lines-2026-v3301-runtime",
+  "generatedAt": "2026-07-16T19:45:00.000Z",
+  "sourceId": "official-ningxia-control-lines-2026",
+  "importFile": "data/admissions/official-ningxia-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.300-liaoning-control-lines2026-and-rank-provenance-847095records",
+    "recordCount": 847095,
+    "ningxiaRecords": 8976,
+    "rankConversions": 960,
+    "rankRowsMissingSourceUrl": 960,
+    "coreSha256": "ec25ab49ac72c22b79cfc99db7f2300464bc9578d732d6043b1ccb8acb7cf1fe",
+    "ningxiaSha256": "ae95912fc0be89cd7afcffbf92bc055743a961c192a48a0526942732d2ca7eb9"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.301-ningxia-control-lines2026-dual-thresholds-and-rank-provenance-847133records",
+    "recordCount": 847133,
+    "ningxiaRecords": 9014,
+    "rankConversions": 960,
+    "rankRowsLinked": 960,
+    "rankRowsFullCrossChecked": 960,
+    "rankRowsContinuityChecked": 960,
+    "officialZeroPersonGapEventsRetained": 12,
+    "officialZeroPersonScoresRetained": 20,
+    "rankValueChanges": 0,
+    "sourceRecords": 38,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "sports": 4,
+      "art": 28
+    },
+    "professionalNumericRecords": 32,
+    "coreBytes": 15235246,
+    "coreSha256": "7866fb137855527d24a5371a15007cfbfffaf90e4f28d605104412e71e1f8abe",
+    "ningxiaBytes": 9802225,
+    "ningxiaSha256": "6a0313b5823272acbe6c18e1bf36ff1225f9e9ac53618e76fd5a7a1360a9efa8",
+    "manifestBytes": 5525,
+    "manifestSha256": "c04ed93afaf844112a2e7ec8524dbc8c9da93872d8b4058705fcc4927bc39c1c"
+  }
+}

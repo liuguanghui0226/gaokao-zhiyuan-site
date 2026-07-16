@@ -37,7 +37,8 @@ const tests = [
   "test-official-heilongjiang-control-lines-v3298.mjs",
   "test-official-jiangsu-control-lines-v3299.mjs",
   "test-official-liaoning-control-lines-v3300.mjs",
-  "audit-official-control-line-coverage-v3300.mjs",
+  "test-official-ningxia-control-lines-v3301.mjs",
+  "audit-official-control-line-coverage-v3301.mjs",
 ];
 
 const results = tests.map((test) => {

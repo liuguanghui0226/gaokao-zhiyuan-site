@@ -1,0 +1,80 @@
+change_id: "2026-07-17-v3301-ningxia-control-lines-2026-rank-provenance"
+title: "宁夏2026控制线、艺体双门槛与位次PDF逐行闭合"
+phase: review
+status: in_progress
+execution_mode: full
+resume_mode: full
+resume_reason: "宁夏已有960条2026普通类位次，但控制线未进入运行层且位次行未关联科类正式PDF。"
+last_updated: "2026-07-17T03:45:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "宁夏教育厅控制线图片和宁夏教育考试院位次PDF锁定证据；38条边界按普通、特殊和艺体双门槛分层。"
+  - surface: user
+    role: consumer
+    notes: "历史149/150/392/393、物理149/150/154/359/360、正式表内位次和物理150无位次用于推荐降级、资格切换与自动估位。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、宁夏gzip分片、mac_2T镜像、GitHub Pages和Release证据须保持同一模型版本。"
+
+sot_map:
+  - info_name: "宁夏回族自治区2026年普通高校招生录取控制分数线"
+    pattern: 4
+    source: "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847132.html"
+    consumers:
+      - name: "data/admissions/official-ningxia-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/ningxia.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node锁定阳光高考转载页、三张宁夏教育厅图片字节和哈希，定向重写gzip核心、清单与宁夏分片。"
+    desync_risk: high
+  - info_name: "宁夏2026年普通高考考生成绩一分段统计表"
+    pattern: 4
+    source: "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847211.html"
+    consumers:
+      - name: "site/data/release-v3.275/ningxia.json.gz"
+        kind: runtime
+        sync_lag: retained
+    sync_mechanism: "重新下载历史/物理PDF并全表抽取，960条运行位次逐行零差异后补科类PDF URL；物理150-153不补造。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "来源、数量、艺体双门槛或位次逐行零改动断言失败时不发布v3.301运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.300 gzip产物，保留宁夏证据和导入文件用于修复。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: source-import
+    scope: "阳光高考控制页、宁夏教育厅三图、位次索引、两份PDF和38条边界"
+    verification_command: "node scripts/build-official-ningxia-control-lines-2026-v3301.mjs"
+  - id: runtime-patch
+    scope: "核心索引、宁夏分片、960条位次URL修复、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-ningxia-control-lines-2026-v3301.mjs"
+  - id: boundary-safety
+    scope: "两科专科/本科线、物理150无位次、表内位次、零人数缺口、顶端边界、751越界和特殊路径隔离"
+    verification_command: "node scripts/test-official-ningxia-control-lines-v3301.mjs"
+  - id: national-regression
+    scope: "31省分片、2026通用控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校专业组、院校或专业投档线、录取最低分或录取概率证据。"
+  - "体育和艺术须同时达到文化和专业门槛，不同分数维度不得相加。"
+  - "物理普通类一分段表最低154分，150-153分必须保持位次不可用。"
+  - "当前2026普通批通用控制线覆盖28省，仍有青海、山西、云南3省待补。"
+
+next_action: "完成v3.301 Pages、公网、mac_2T和Release闭环，再从青海继续补齐剩余3省。"
