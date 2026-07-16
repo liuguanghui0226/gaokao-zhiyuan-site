@@ -1,0 +1,47 @@
+{
+  "dataset": "official-qinghai-control-lines-2026-v3302-runtime",
+  "generatedAt": "2026-07-16T20:35:00.000Z",
+  "sourceId": "official-qinghai-control-lines-2026",
+  "importFile": "data/admissions/official-qinghai-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.301-ningxia-control-lines2026-dual-thresholds-and-rank-provenance-847133records",
+    "recordCount": 847133,
+    "qinghaiRecords": 5006,
+    "rankConversions": 2432,
+    "rankRowsMissingSourceUrl": 957,
+    "topBucketRangesMissing": 2,
+    "coreSha256": "7866fb137855527d24a5371a15007cfbfffaf90e4f28d605104412e71e1f8abe",
+    "qinghaiSha256": "0616126b20fff1bfcc25a12f6f9f624c6f8f4aefaf201c5dbd5b210f429b7021"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.302-qinghai-control-lines2026-language-thresholds-and-rank-provenance-847152records",
+    "recordCount": 847152,
+    "qinghaiRecords": 5025,
+    "rankConversions": 2432,
+    "rankRowsLinked": 957,
+    "rankRowsFullCrossChecked": 957,
+    "rankRowsContinuityChecked": 957,
+    "officialZeroPersonGapEventsRetained": 46,
+    "officialZeroPersonScoresRetained": 336,
+    "topBucketRangeRepairs": 2,
+    "rankValueChanges": 0,
+    "sourceRecords": 19,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "minority-language": 5,
+      "sports": 4,
+      "art": 4
+    },
+    "professionalNumericRecords": 5,
+    "professionalQualificationRecords": 8,
+    "coreBytes": 15241191,
+    "coreSha256": "1faec91c8314f91b88658f431321857b31fcd56a1998be957503336be671f9b5",
+    "qinghaiBytes": 6182086,
+    "qinghaiSha256": "d5cdf34e15489cba06d1940b6cc9648fea32da7c3355f0ce569d3e1e68ca37a7",
+    "manifestBytes": 5529,
+    "manifestSha256": "e681153347c121ed36e41b482cbc34dbcf3f71da6993c50a67d5384a07b7cc68"
+  }
+}
