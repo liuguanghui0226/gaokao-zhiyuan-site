@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.293-chongqing-control-lines2026-and-rank-provenance-846887records";
+const modelVersion = "local-deterministic-v3.294-gansu-control-lines2026-and-third-party-rank-boundary-cross-check-846940records";
 
 function readGzipJson(file) {
   return JSON.parse(zlib.gunzipSync(fs.readFileSync(file)).toString("utf8"));
@@ -30,9 +30,9 @@ assert.deepEqual(runtimeManifest.after.routeCounts, { ordinary: 12, "art-sports"
 assert.equal(records.length, 22);
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
-assert.equal(core.admissionScoreLayer.structuredRecords, 846887);
+assert.equal(core.admissionScoreLayer.structuredRecords, 846940);
 assert.equal(manifest.modelVersion, modelVersion);
-assert.equal(manifest.recordCount, 846887);
+assert.equal(manifest.recordCount, 846940);
 assert.equal(manifest.shards["西藏"].records, 28315);
 assert.equal(sourceNote.quality, "official-xizang-control-line-image-and-government-html-verified");
 assert.equal(sourceNote.mirrorUrl, "https://www.xizang.gov.cn/xwzx_406/bmkx/202606/t20260626_547152.html");

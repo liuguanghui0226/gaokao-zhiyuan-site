@@ -1,0 +1,80 @@
+change_id: "2026-07-16-v3294-gansu-control-lines-2026-rank-boundary"
+title: "甘肃2026控制线与第三方位次边界核验"
+phase: implement
+status: verified-local
+execution_mode: full
+resume_mode: full
+resume_reason: "甘肃已有1343条2026第三方图片位次记录，但普通本专科控制线未进入运行层，且考试院未见直接一分一段页面。"
+last_updated: "2026-07-16T20:42:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "甘肃省教育考试院直接页面和四张原图锁定字节与SHA-256；53条边界按普通、特殊类型、艺体、艺术校考/戏曲和中职升学分层。"
+  - surface: user
+    role: consumer
+    notes: "历史159/160/404/405、物理179/180/366/367和0-750位次覆盖用于推荐降级、资格切换与自动估位。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、甘肃gzip分片、mac_2T镜像、GitHub Pages和Release证据须保持同一模型版本。"
+
+sot_map:
+  - info_name: "甘肃省2026年普通高校招生录取最低控制分数线"
+    pattern: 4
+    source: "https://www.ganseea.cn/shouyegonggao/1904.html"
+    consumers:
+      - name: "data/admissions/official-gansu-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/gansu.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node锁定官方正文及四张原图哈希，定向重写gzip核心、清单与甘肃分片。"
+    desync_risk: high
+  - info_name: "甘肃2026年普通类位次第三方图片镜像"
+    pattern: 4
+    source: "https://www.gk100.com/read_33990869.htm"
+    consumers:
+      - name: "site/data/release-v3.275/gansu.json.gz"
+        kind: runtime
+        sync_lag: retained
+    sync_mechanism: "保留1343条第三方图片OCR位次及来源等级，只用考试院正式控制线核验6个边界分数，数值与来源字段零改动。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "来源、数量、双门槛、位次零改动或来源等级断言失败时不发布v3.294运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.293 gzip产物，保留甘肃官方证据和导入文件用于修复。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: "source-import"
+    scope: "考试院正文、四张原图、53条边界和28条艺体双门槛"
+    verification_command: "node scripts/build-official-gansu-control-lines-2026-v3294.mjs"
+  - id: "runtime-patch"
+    scope: "核心索引、甘肃分片、第三方位次来源保留、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-gansu-control-lines-2026-v3294.mjs"
+  - id: "boundary-safety"
+    scope: "两科专科/本科线、600分、顶端区间、751越界、零人数行和特殊路径隔离"
+    verification_command: "node scripts/test-official-gansu-control-lines-v3294.mjs"
+  - id: "national-regression"
+    scope: "31省分片、2026通用控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校专业组投档线、专业录取最低分或录取概率证据。"
+  - "艺术体育须同时核对文化与专业分、综合成绩算法和招生章程；中职升学使用独立考试口径。"
+  - "1343条甘肃2026位次来自第三方图片镜像；考试院直接一分一段页未找到，不得升级为官方来源。"
+  - "当前2026普通批通用控制线覆盖21省，仍有10省待补；上海和天津专科线继续保持待发布。"
+
+next_action: "完成Pages、mac_2T镜像与公网验收后发布证据包，再从缺失10省中继续补齐2026官方普通批控制线。"

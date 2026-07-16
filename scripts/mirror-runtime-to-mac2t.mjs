@@ -13,6 +13,7 @@ const COPY_PROVENANCE = process.env.GAOKAO_MIRROR_PROVENANCE === "1" || COPY_FUL
 const COPY_SITE_ASSETS = process.env.GAOKAO_MIRROR_SITE_ASSETS === "1";
 const COPY_TOP_DATA = process.env.GAOKAO_MIRROR_TOP_DATA === "1";
 const RAW_PROVENANCE_PACKS = [
+  "data/admissions/raw/gansu-2026",
   "data/admissions/raw/chongqing-2026",
   "data/admissions/raw/shanghai-2026",
   "tmp/official-hubei-control-lines-2026",
@@ -67,6 +68,10 @@ const RAW_PROVENANCE_PACKS = [
   "data/admissions/raw/gk100-xinjiang-rank-2026",
 ];
 const IMPORT_SCRIPTS = [
+  "scripts/build-official-gansu-control-lines-2026-v3294.mjs",
+  "scripts/apply-official-gansu-control-lines-2026-v3294.mjs",
+  "scripts/test-official-gansu-control-lines-v3294.mjs",
+  "scripts/audit-official-control-line-coverage-v3294.mjs",
   "scripts/build-official-chongqing-control-lines-2026-v3293.mjs",
   "scripts/apply-official-chongqing-control-lines-2026-v3293.mjs",
   "scripts/test-official-chongqing-control-lines-v3293.mjs",
@@ -159,6 +164,10 @@ const IMPORT_SCRIPTS = [
   "scripts/vision-table-row-ocr.swift",
 ];
 const TARGETED_ADMISSION_IMPORTS = [
+  "data/admissions/evidence-v3294-gansu-2026-manifest.json",
+  "data/admissions/official-gansu-control-lines-2026-import.json",
+  "data/admissions/official-gansu-control-lines-2026-v3294-runtime-manifest.json",
+  "data/admissions/official-control-line-coverage-2026-v3294.json",
   "data/admissions/evidence-v3293-chongqing-2026-manifest.json",
   "data/admissions/official-chongqing-control-lines-2026-import.json",
   "data/admissions/official-chongqing-control-lines-2026-v3293-runtime-manifest.json",
@@ -369,6 +378,10 @@ function main() {
   if (fs.existsSync(path.join(PROJECT_ROOT, "docs/changes/v3.293-chongqing-control-lines-2026.md"))) {
     copy("docs/changes/v3.293-chongqing-control-lines-2026.md");
     copy("docs/change-manifests/v3293-chongqing-control-lines-2026-rank-provenance.yaml");
+  }
+  if (fs.existsSync(path.join(PROJECT_ROOT, "docs/changes/v3.294-gansu-control-lines-2026.md"))) {
+    copy("docs/changes/v3.294-gansu-control-lines-2026.md");
+    copy("docs/change-manifests/v3294-gansu-control-lines-2026-rank-boundary.yaml");
   }
   copy("docs/changes/v3271-beijing-rank-conversion-2025.md");
   copy("docs/change-manifests/v3271-beijing-rank-conversion-2025.yaml");

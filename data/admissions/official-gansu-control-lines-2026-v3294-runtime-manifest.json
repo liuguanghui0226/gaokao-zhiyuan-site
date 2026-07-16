@@ -1,0 +1,43 @@
+{
+  "dataset": "official-gansu-control-lines-2026-v3294-runtime",
+  "generatedAt": "2026-07-16T13:45:00.000Z",
+  "sourceId": "official-gansu-control-lines-2026",
+  "importFile": "data/admissions/official-gansu-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.293-chongqing-control-lines2026-and-rank-provenance-846887records",
+    "recordCount": 846887,
+    "gansuRecords": 13241,
+    "rankConversions": 2679,
+    "rankSourceQuality": "third-party-gk100-gansu-rank-conversion-image-tesseract-grid-validated",
+    "coreSha256": "44ca79116ea97dae14d52079629063e15fced56d0df961d20217f71d798b5ca2",
+    "gansuSha256": "5f4311ebbf7d1045dc45aca16bb93882739647015b334069a8722b7eb7d09d28"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.294-gansu-control-lines2026-and-third-party-rank-boundary-cross-check-846940records",
+    "recordCount": 846940,
+    "gansuRecords": 13294,
+    "rankConversions": 2679,
+    "rankRowsCrossChecked": 1343,
+    "rankValueChanges": 0,
+    "rankSourceQuality": "third-party-gk100-gansu-rank-conversion-image-tesseract-grid-validated",
+    "sourceRecords": 53,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "art": 22,
+      "sports": 6,
+      "art-school-exam": 2,
+      "opera-interprovincial": 1,
+      "secondary-vocational": 16
+    },
+    "cultureProfessionalRecords": 28,
+    "coreBytes": 15191223,
+    "coreSha256": "83d89f79381404cbe4ae484a8243029c939fde264270f39bdc66121f6035b481",
+    "gansuBytes": 13582364,
+    "gansuSha256": "10fda291cba1c9a2b8b074859a25c21b2ac6160fb59b30dc7fadaa40f98fbe35",
+    "manifestBytes": 5529,
+    "manifestSha256": "e3fdbcb42243b4b395f3efe8fdeeafd406186810864681138ec894502d442cb7"
+  }
+}
