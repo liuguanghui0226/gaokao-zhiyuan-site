@@ -108,7 +108,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, HOST, () => {
-  const data = runtimeDataFile();
+  const data = runtimeDataFile("/data/knowledge-core.json");
   console.log(JSON.stringify({
     ok: true,
     url: `http://${HOST}:${PORT}/`,

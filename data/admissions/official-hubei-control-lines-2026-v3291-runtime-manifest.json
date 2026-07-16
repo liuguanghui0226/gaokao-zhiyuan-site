@@ -1,0 +1,101 @@
+{
+  "dataset": "official-hubei-control-lines-2026-v3291-runtime",
+  "generatedAt": "2026-07-16T09:00:00.000Z",
+  "sourceId": "official-hubei-control-lines-2026",
+  "importFile": "data/admissions/official-hubei-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.290-hebei-control-lines2026-and-rank-provenance-846822records",
+    "recordCount": 846822,
+    "hubeiRecords": 15107,
+    "rankConversions": 1079,
+    "rankRowsMissingSourceUrl": 1079,
+    "coreSha256": "b91e0c4965afe1cebc33c4b68dbe734baeff12629e58c5ada2d00f15387e5296",
+    "hubeiSha256": "3d24721f3ad040d3de7e0ffbb982a9ec7a20f78e61b8c78a70412dbca9723b7e"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.291-hubei-control-lines2026-limited-school-routing-and-rank-provenance-846854records",
+    "recordCount": 846854,
+    "hubeiRecords": 15139,
+    "rankConversions": 1079,
+    "rankSourceUrlRecords": 1079,
+    "rankValueChanges": 0,
+    "rankEvidence": {
+      "sourceId": "official-hubei-rank-2026",
+      "url": "https://www.hbea.edu.cn/html/2026-06/15962.html",
+      "pageBytes": 12045,
+      "pageSha256": "4726baed16eae15246014bd32c30acdb771ffdac469ef4753a2640c7d44cd70f",
+      "imageCount": 10,
+      "imageBytes": 7030400,
+      "images": [
+        {
+          "file": "rank-1.png",
+          "bytes": 720929,
+          "sha256": "63da2aa4625a03a79ad545859ad751bcc713575fe7a220d9d84ff99b3d5c0852"
+        },
+        {
+          "file": "rank-2.png",
+          "bytes": 798905,
+          "sha256": "c432b26e9a343cd1e02cf1621210fb24dc614ff376780fdf174ead057f1cf150"
+        },
+        {
+          "file": "rank-3.png",
+          "bytes": 817468,
+          "sha256": "ccb76e0cb1c8cac2d9ab5da369bcc6f6708f446dfd04dd4549247a9e327b00ef"
+        },
+        {
+          "file": "rank-4.png",
+          "bytes": 818340,
+          "sha256": "f49151376869451c7c770db0586206b00eb3549e472a9697310f0a1ce1d8cde4"
+        },
+        {
+          "file": "rank-5.png",
+          "bytes": 469644,
+          "sha256": "5aeace7d8c79f73bfafebed01031e98286dcdb32ced59aa88c75715316cb4bf1"
+        },
+        {
+          "file": "rank-6.png",
+          "bytes": 678925,
+          "sha256": "1ab68a60b209d41c959857256525bdbe2a2a5d56dfddd11adbc652d126f7e8f0"
+        },
+        {
+          "file": "rank-7.png",
+          "bytes": 782958,
+          "sha256": "047fe79b935097d6c7cbb0aecd5650df0deea85ccc8f10bac25e6f5901073241"
+        },
+        {
+          "file": "rank-8.png",
+          "bytes": 793621,
+          "sha256": "f1bb2e445f9892f4d2508f4d2729bb29ae2cd9aa941314b07b44d4d1479c372f"
+        },
+        {
+          "file": "rank-9.png",
+          "bytes": 795272,
+          "sha256": "5b30acc4930f902d7ee0284063f17a54d4af6b4c4cf483c9e3c364fa00df35be"
+        },
+        {
+          "file": "rank-10.png",
+          "bytes": 354338,
+          "sha256": "196be259e933c6131849f2ffb623321c56cfb14d3cece7deffbdca79170c4a15"
+        }
+      ],
+      "records": 1079
+    },
+    "sourceRecords": 32,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "ordinary-vocational-limited-school": 2,
+      "special": 2,
+      "art": 11,
+      "sports": 2,
+      "skill-gaokao": 11
+    },
+    "coreBytes": 15180855,
+    "coreSha256": "2f238ab2eacd5ec9a2cc55c50e03781f68151ab2517256e392c11cd40681abec",
+    "hubeiBytes": 16397035,
+    "hubeiSha256": "391825f64bb8abee4c86b155290ac1c5dc3f274a2f33e8461375cc0001d43622",
+    "manifestBytes": 5530,
+    "manifestSha256": "07edd4b56f774362b1d782043d8415e8854c37067a3f335f9094eaf378a657fc"
+  }
+}

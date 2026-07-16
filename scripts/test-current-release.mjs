@@ -27,7 +27,8 @@ const tests = [
   "test-official-neimenggu-control-lines-v3288.mjs",
   "test-official-fujian-control-lines-v3289.mjs",
   "test-official-hebei-control-lines-v3290.mjs",
-  "audit-official-control-line-coverage-v3290.mjs",
+  "test-official-hubei-control-lines-v3291.mjs",
+  "audit-official-control-line-coverage-v3291.mjs",
 ];
 
 const results = tests.map((test) => {

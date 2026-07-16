@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.290-hebei-control-lines2026-and-rank-provenance-846822records";
+const modelVersion = "local-deterministic-v3.291-hubei-control-lines2026-limited-school-routing-and-rank-provenance-846854records";
 
 function readGzipJson(file) {
   return JSON.parse(zlib.gunzipSync(fs.readFileSync(file)).toString("utf8"));
@@ -44,12 +44,12 @@ assert.ok(records.filter((record) => record.controlLineRouteKind !== "segment").
 
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
-assert.equal(core.admissionScoreLayer.structuredRecords, 846822);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5096);
-assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1176);
+assert.equal(core.admissionScoreLayer.structuredRecords, 846854);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5097);
+assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1208);
 assert.deepEqual(core.admissionScoreLayer.coverage.formalScoreMissingProvinces, ["西藏"]);
 assert.equal(manifest.modelVersion, modelVersion);
-assert.equal(manifest.recordCount, 846822);
+assert.equal(manifest.recordCount, 846854);
 assert.equal(manifest.shards["浙江"].records, 110946);
 assert.equal(zhejiang.rankConversions.length, 428);
 assert.equal(runtimeManifest.after.sourceRecords, 57);

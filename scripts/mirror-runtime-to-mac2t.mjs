@@ -13,6 +13,8 @@ const COPY_PROVENANCE = process.env.GAOKAO_MIRROR_PROVENANCE === "1" || COPY_FUL
 const COPY_SITE_ASSETS = process.env.GAOKAO_MIRROR_SITE_ASSETS === "1";
 const COPY_TOP_DATA = process.env.GAOKAO_MIRROR_TOP_DATA === "1";
 const RAW_PROVENANCE_PACKS = [
+  "tmp/official-hubei-control-lines-2026",
+  "tmp/official-hubei-rank-2026",
   "data/admissions/raw/official-xizang-vacancy-plans-2025-v3272",
   "data/admissions/raw/official-beijing-rank-conversion-2025-v3271",
   "data/admissions/raw/official-xizang-three-gorges-plan-correction-2026-v3270",
@@ -63,6 +65,10 @@ const RAW_PROVENANCE_PACKS = [
   "data/admissions/raw/gk100-xinjiang-rank-2026",
 ];
 const IMPORT_SCRIPTS = [
+  "scripts/build-official-hubei-control-lines-2026-v3291.mjs",
+  "scripts/apply-official-hubei-control-lines-2026-v3291.mjs",
+  "scripts/test-official-hubei-control-lines-v3291.mjs",
+  "scripts/audit-official-control-line-coverage-v3291.mjs",
   "scripts/build.mjs",
   "scripts/build-browser-runtime-shards.mjs",
   "scripts/admission-payload-records.mjs",
@@ -143,6 +149,9 @@ const IMPORT_SCRIPTS = [
   "scripts/vision-table-row-ocr.swift",
 ];
 const TARGETED_ADMISSION_IMPORTS = [
+  "data/admissions/official-hubei-control-lines-2026-import.json",
+  "data/admissions/official-hubei-control-lines-2026-v3291-runtime-manifest.json",
+  "data/admissions/official-control-line-coverage-2026-v3291.json",
   "data/admissions/official-xizang-vacancy-plans-2025-v3272-runtime-manifest.json",
   "data/admissions/official-xizang-vacancy-plans-2025-v3272-import.json",
   "data/admissions/official-beijing-rank-conversion-2025-v3271-runtime-manifest.json",
@@ -228,6 +237,17 @@ function removeAppleDouble(root) {
   return removed;
 }
 
+function removeStaleDoubleJson(root) {
+  if (!fs.existsSync(root)) return 0;
+  let removed = 0;
+  for (const entry of fs.readdirSync(root, { withFileTypes: true })) {
+    if (!entry.isFile() || !entry.name.endsWith(".json.json")) continue;
+    fs.rmSync(path.join(root, entry.name), { force: true });
+    removed += 1;
+  }
+  return removed;
+}
+
 function readKnowledgeSummary(file) {
   const query = [
     "{",
@@ -262,7 +282,11 @@ function main() {
   }
   fs.mkdirSync(mirrorRoot, { recursive: true });
 
-  const knowledge = readKnowledgeSummary(path.join(PROJECT_ROOT, "site", "data", "knowledge.json"));
+  const fullKnowledgeFile = path.join(PROJECT_ROOT, "site", "data", "knowledge.json");
+  const browserCoreFile = path.join(PROJECT_ROOT, "site", "data", "knowledge-core.json");
+  const summaryFile = fs.existsSync(fullKnowledgeFile) ? fullKnowledgeFile : browserCoreFile;
+  if (!fs.existsSync(summaryFile)) throw new Error("Neither site/data/knowledge.json nor site/data/knowledge-core.json is available for mirror summary.");
+  const knowledge = readKnowledgeSummary(summaryFile);
   const copied = [];
   const copy = (relative, options = {}) => {
     const didCopy = copyFile(path.join(PROJECT_ROOT, relative), path.join(mirrorRoot, relative), options);
@@ -270,10 +294,18 @@ function main() {
   };
 
   copy("site/index.html");
-  copy("site/data/knowledge.json");
+  if (fs.existsSync(fullKnowledgeFile)) copy("site/data/knowledge.json");
+  else {
+    const staleMirrorMaster = path.join(mirrorRoot, "site/data/knowledge.json");
+    if (fs.existsSync(staleMirrorMaster)) fs.rmSync(staleMirrorMaster, { force: true });
+    copied.push("site/data/knowledge.json absent and stale mirror removed; browser runtime uses the lighter core plus 31 province shards");
+  }
   copy("site/data/knowledge-core.json");
-  copyDir(path.join(PROJECT_ROOT, "site/data/provinces"), path.join(mirrorRoot, "site/data/provinces"));
+  const mirrorProvinceDir = path.join(mirrorRoot, "site/data/provinces");
+  copyDir(path.join(PROJECT_ROOT, "site/data/provinces"), mirrorProvinceDir);
+  const removedStaleDoubleJson = removeStaleDoubleJson(mirrorProvinceDir);
   copied.push("site/data/provinces/ (31 province browser shards and manifest)");
+  copied.push(`stale duplicate shard cleanup: removed ${removedStaleDoubleJson} *.json.json files`);
   if (COPY_SITE_ASSETS) {
     copyDir(path.join(PROJECT_ROOT, "site", "assets"), path.join(mirrorRoot, "site", "assets"));
     copied.push("site/assets/");
@@ -359,7 +391,7 @@ function main() {
       : COPY_PROVENANCE
         ? "Copies site knowledge JSON, docs, targeted provenance import JSONs, and explicitly whitelisted raw provenance packs/import scripts only. Site assets and top-level data/knowledge.json are opt-in because scripts/serve.mjs reads assets from the internal APFS site/ directory and runtime HTTP data from site/data/knowledge.json. Full data/admissions copying is disabled by default because external ExFAT/fskit writes can stall; set GAOKAO_MIRROR_FULL_ADMISSIONS=1 for a controlled full copy."
         : "Copies site knowledge JSON and docs only. Site assets and top-level data/knowledge.json are opt-in because scripts/serve.mjs reads assets from the internal APFS site/ directory and runtime HTTP data from site/data/knowledge.json. data/admissions provenance copying is skipped by default because external ExFAT/fskit writes can stall; set GAOKAO_MIRROR_PROVENANCE=1 for targeted provenance copy or GAOKAO_MIRROR_FULL_ADMISSIONS=1 for a controlled full copy.",
-    siteData: "site/data/knowledge.json",
+    siteData: fs.existsSync(fullKnowledgeFile) ? "site/data/knowledge.json" : "site/data/knowledge-core.json + site/data/provinces/",
     browserCore: "site/data/knowledge-core.json",
     browserProvinceShards: "site/data/provinces/",
     admissionData: COPY_FULL_ADMISSIONS ? "data/admissions/ (full copy)" : COPY_PROVENANCE ? "data/admissions/ (targeted provenance copy)" : "skipped by default",
@@ -369,6 +401,7 @@ function main() {
     coverage: knowledge.coverage || {},
     copied,
     removedAppleDouble,
+    removedStaleDoubleJson,
   };
   fs.writeFileSync(path.join(mirrorRoot, "mirror-manifest.json"), JSON.stringify(manifest, null, 2), "utf8");
   const postManifestAppleDouble = removeAppleDouble(mirrorRoot);
@@ -381,6 +414,7 @@ function main() {
     provinces: manifest.coverage.provinces?.length || 0,
     schools: manifest.coverage.schools?.length || 0,
     removedAppleDouble: removedAppleDouble + postManifestAppleDouble,
+    removedStaleDoubleJson,
     postManifestAppleDouble,
   }, null, 2));
 }

@@ -995,6 +995,7 @@ function dedupePlanOptions(options) {
 
 let ordinaryBachelorControlLineCache = { records: null, key: "", value: null };
 let ordinaryVocationalControlLineCache = { records: null, key: "", value: null };
+let limitedOrdinaryVocationalControlLineCache = { records: null, key: "", value: null };
 let ordinarySegmentStatusCache = { records: null, key: "", value: null };
 
 function ordinaryBachelorControlLine(profile) {
@@ -1007,6 +1008,7 @@ function ordinaryBachelorControlLine(profile) {
   const rows = records.filter((record) => {
     if (!isControlLineRecord(record) || !provinceMatchesRecord(record, profile) || !subjectMatchesRecord(record, profile)) return false;
     if (isSpecialPathRecord(record)) return false;
+    if (record.controlLineRouteKind === "ordinary-vocational-limited-school") return false;
     if (record.controlLineRouteKind === "segment") return false;
     const text = normalizeText(`${record.batch || ""} ${record.majorName || ""} ${(record.schoolTags || []).join(" ")}`);
     const ordinaryBachelorLine = (/本科/.test(text) || /普通类一段线/.test(text)) && !/艺术|艺体|体育|戏曲|军|警|资格|专业统考|职教|对口|部队|特殊类型/.test(text);
@@ -1049,6 +1051,7 @@ function ordinaryVocationalControlLine(profile) {
   const rows = records.filter((record) => {
     if (!isControlLineRecord(record) || !provinceMatchesRecord(record, profile) || !subjectMatchesRecord(record, profile)) return false;
     if (isSpecialPathRecord(record)) return false;
+    if (record.controlLineRouteKind === "ordinary-vocational-limited-school") return false;
     const text = normalizeText(`${record.batch || ""} ${record.majorName || ""} ${(record.schoolTags || []).join(" ")}`);
     const ordinaryVocationalLine = /专科|高职|二段线/.test(text) && !/本科/.test(text) &&
       !/艺术|艺体|体育|戏曲|军|警|资格|专业统考|职教|对口|部队|特殊类型/.test(text);
@@ -1081,10 +1084,38 @@ function ordinaryVocationalControlLine(profile) {
   return value;
 }
 
+function limitedOrdinaryVocationalControlLine(profile) {
+  const records = admissionRecords();
+  const selectedCategory = normalizeText(profile?.candidateCategory);
+  const key = `${normalizeProvince(profile?.province)}|${normalizeSubject(profile?.subject)}|${selectedCategory}`;
+  if (limitedOrdinaryVocationalControlLineCache.records === records && limitedOrdinaryVocationalControlLineCache.key === key) {
+    return limitedOrdinaryVocationalControlLineCache.value;
+  }
+  const rows = records.filter((record) => {
+    if (!isControlLineRecord(record) || !provinceMatchesRecord(record, profile) || !subjectMatchesRecord(record, profile)) return false;
+    if (record.formalScoreScope !== "limited-school-control-line-only") return false;
+    if (record.controlLineRouteKind !== "ordinary-vocational-limited-school") return false;
+    const recordCategory = normalizeText(record.candidateCategory || record.candidateClass || record.majorGroup);
+    return !selectedCategory || !recordCategory || recordCategory.includes(selectedCategory) || selectedCategory.includes(recordCategory);
+  });
+  if (!rows.length) {
+    limitedOrdinaryVocationalControlLineCache = { records, key, value: null };
+    return null;
+  }
+  const latestYear = rows.reduce((latest, record) => Math.max(latest, Number(record.year) || 0), 0);
+  const latestRows = rows.filter((record) => Number(record.year) === latestYear && Number(record.minScore) > 0);
+  if (!latestRows.length) {
+    limitedOrdinaryVocationalControlLineCache = { records, key, value: null };
+    return null;
+  }
+  const selected = latestRows.sort((left, right) => Number(right.minScore) - Number(left.minScore))[0];
+  const value = { score: Number(selected.minScore), year: latestYear, record: selected };
+  limitedOrdinaryVocationalControlLineCache = { records, key, value };
+  return value;
+}
+
 function isBelowOrdinaryVocationalLine(profile) {
-  const line = ordinaryVocationalControlLine(profile);
-  const comparison = controlLineScoreComparison(line, profile);
-  return comparison.status === "comparable" && comparison.below;
+  return ordinaryVocationalQualificationStatus(profile).below;
 }
 
 function pendingOrdinaryVocationalControlSource(profile) {
@@ -1158,16 +1189,24 @@ function controlLineScoreComparison(line, profile) {
 function ordinaryVocationalQualificationStatus(profile) {
   const line = ordinaryVocationalControlLine(profile);
   const comparison = controlLineScoreComparison(line, profile);
+  const limitedLine = limitedOrdinaryVocationalControlLine(profile);
+  const limitedComparison = controlLineScoreComparison(limitedLine, profile);
   const pendingSource = pendingOrdinaryVocationalControlSource(profile);
-  const relevant = Boolean(pendingSource || (line && (
-    isVocationalProfile(profile) || line.record?.controlLineRouteKind === "segment"
+  const relevant = Boolean(pendingSource || ((line || limitedLine) && (
+    isVocationalProfile(profile) || line?.record?.controlLineRouteKind === "segment"
   )));
+  const generalBelow = relevant && comparison.status === "comparable" && comparison.below;
+  const limitedOnly = generalBelow && limitedComparison.status === "comparable" && !limitedComparison.below;
   return {
     line,
     comparison,
+    limitedLine,
+    limitedComparison,
     pendingSource,
     relevant,
-    below: relevant && comparison.status === "comparable" && comparison.below,
+    generalBelow,
+    limitedOnly,
+    below: generalBelow && !limitedOnly,
     unknown: relevant && comparison.status === "missing",
     pending: Boolean(pendingSource),
   };
@@ -1232,6 +1271,13 @@ function isVocationalProfile(profile) {
 
 function candidatePoolsForProfile(profile) {
   const segmentStatus = ordinarySegmentStatus(profile);
+  const vocationalQualification = ordinaryVocationalQualificationStatus(profile);
+  if (vocationalQualification.below || vocationalQualification.limitedOnly) {
+    return CANDIDATE_POOLS.filter((candidate) => ["vocational-dual", "regional-safe"].includes(candidate.id));
+  }
+  if (isVocationalProfile(profile) && !segmentStatus) {
+    return CANDIDATE_POOLS.filter((candidate) => ["vocational-dual", "regional-safe"].includes(candidate.id));
+  }
   const includeVocational = isVocationalProfile(profile) || ["second", "below-second"].includes(segmentStatus?.band);
   return CANDIDATE_POOLS.filter((candidate) => includeVocational || candidate.id !== "vocational-dual");
 }
@@ -1703,12 +1749,34 @@ function admissionFit(record, profile, today = currentChinaDate()) {
 
 function isLimitedAdmissionRecord(record) {
   const quality = String(record?.sourceQuality || "");
-  return /rank-only|regular2/.test(quality);
+  return /rank-only|regular2/.test(quality) || isHubeiLimitedSchoolHistoricalAdmissionRecord(record);
+}
+
+function isHubeiLimitedSchoolHistoricalAdmissionRecord(record, profile = null) {
+  const score = Number(record?.minScore);
+  const profileScore = Number(profile?.score);
+  return normalizeProvince(record?.province) === "湖北" &&
+    record?.year === 2025 &&
+    isVocationalAdmissionRecord(record) &&
+    /^official-hubei-vocational-2025-(history|physics)$/.test(String(record?.sourceId || "")) &&
+    /^C/.test(String(record?.schoolCode || "")) &&
+    Number.isFinite(score) && score >= 150 && score < 200 &&
+    (!profile || (Number.isFinite(profileScore) && score <= profileScore));
+}
+
+function qualificationFilteredAdmissionRecords(profile, records = profileAdmissionRecords(profile)) {
+  const qualification = ordinaryVocationalQualificationStatus(profile);
+  return qualification.limitedOnly
+    ? records.filter((record) => isHubeiLimitedSchoolHistoricalAdmissionRecord(record, profile))
+    : records;
 }
 
 function admissionRecordLimitWarning(record) {
   if (isSchoolOfficialOnlyRecord(record)) {
     return "该来源是学校官网单校录取边界，不是省级考试院全量投档/录取表；只能作为该校候选复核，不能单独推断录取概率。";
+  }
+  if (isHubeiLimitedSchoolHistoricalAdmissionRecord(record)) {
+    return "该记录是湖北2025年官方高职高专普通批中低于200分的本省院校专业组历史投档线，只用于核验2026年150-199分限定院校范围；不得外推为通用专科资格或今年录取概率。";
   }
   if (!isLimitedAdmissionRecord(record)) return "";
   if (String(record?.sourceQuality || "").includes("regular2")) {
@@ -1722,7 +1790,7 @@ function isProfessionalFilingRecord(record) {
 }
 
 function buildAdmissionOptions(candidate, profile) {
-  const records = profileAdmissionRecords(profile)
+  const records = qualificationFilteredAdmissionRecords(profile)
     .filter((record) => recordEligibleForCandidate(record, candidate, profile))
     .filter((record) => candidateMatchesAdmissionRecord(candidate, record, profile))
     .map((record) => {
@@ -1746,7 +1814,9 @@ function buildAdmissionOptions(candidate, profile) {
         role: fit.zone,
         optionScore,
         admissionFit: fit,
-        scoreStatus: isSchoolOfficialOnlyRecord(record)
+        scoreStatus: isHubeiLimitedSchoolHistoricalAdmissionRecord(record)
+          ? "湖北限定院校2025历史投档线：只作2026资格范围核验"
+          : isSchoolOfficialOnlyRecord(record)
           ? record.minRankEnd ? "学校官网单校最低分/位次：仅作候选复核" : "学校官网单校最低分：位次待补，仅作候选复核"
           : record.dataType === "vocational-admission"
           ? record.minRankEnd
@@ -1766,9 +1836,10 @@ function buildAdmissionOptions(candidate, profile) {
 
 function buildSchoolOptions(candidate, profile, band) {
   const scoreStatus = admissionScoreStatus();
-  const profileRecordCount = profileAdmissionRecords(profile).length;
   const provinceReadiness = provinceReadinessForProfile(profile);
   const vocationalQualification = ordinaryVocationalQualificationStatus(profile);
+  const limitedOnly = vocationalQualification.limitedOnly;
+  const profileRecordCount = qualificationFilteredAdmissionRecords(profile).length;
   const belowVocationalLine = vocationalQualification.below;
   const vocationalQualificationUnknown = vocationalQualification.unknown;
   const vocationalLinePending = vocationalQualification.pending;
@@ -1811,8 +1882,25 @@ function buildSchoolOptions(candidate, profile, band) {
     role: roles[index] || "备选核验",
     scoreStatus: genericScoreStatus,
   }));
-  if (belowVocationalLine || vocationalQualificationUnknown || vocationalLinePending) return genericOptions;
+  if (belowVocationalLine) {
+    return [
+      { name: "高职单招与分类考试政策", tags: ["资格与时间节点"], focus: "核对本省后续可用的单招、分类考试或征集政策，不把普通批院校当作可录取结果。", role: "路径调研", scoreStatus: genericScoreStatus },
+      { name: "复读与下一年度重规划", tags: ["分数提升", "选科与专业重建"], focus: "结合单科短板、目标专业和家庭承受度评估复读，不用单次模型分替代家庭决策。", role: "路径调研", scoreStatus: genericScoreStatus },
+      { name: "职业技能与就业衔接", tags: ["技能训练", "升学衔接"], focus: "核验正规办学资质、技能证书含金量、继续升学通道和真实就业去向。", role: "路径调研", scoreStatus: genericScoreStatus },
+    ];
+  }
+  if (vocationalQualificationUnknown || vocationalLinePending) return genericOptions;
   const admissionOptions = buildAdmissionOptions(candidate, profile);
+  if (limitedOnly) {
+    if (admissionOptions.length) return admissionOptions;
+    return [{
+      name: "限定院校范围核验",
+      tags: ["湖北2026", "150-199分", "非通用专科线"],
+      focus: "当前方向没有命中可由官方历史投档证据确认的限定院校专业组；需按2026年招生计划逐校核对办学性质、举办地和专业组资格。",
+      role: "资格核验",
+      scoreStatus: "不生成通用院校候选，也不把外省学校纳入150分限定线",
+    }];
+  }
   const planOptions = buildPlanOptions(candidate, profile, band);
   const shouldSurfacePlans = planOptions.length && (
     !admissionOptions.length ||
@@ -1826,14 +1914,17 @@ function buildSchoolOptions(candidate, profile, band) {
 function scoreCandidate(candidate, profile, band) {
   const evidence = findEvidence(candidate.keywords);
   const scoreStatus = admissionScoreStatus();
-  const profileRecords = profileAdmissionRecords(profile);
+  const vocationalQualification = ordinaryVocationalQualificationStatus(profile);
+  const limitedOnly = vocationalQualification.limitedOnly;
+  const profileRecords = qualificationFilteredAdmissionRecords(profile);
   const provinceReadiness = provinceReadinessForProfile(profile);
   const freshness = admissionDataFreshness(profile);
-  const vocationalQualification = ordinaryVocationalQualificationStatus(profile);
   const belowVocationalLine = vocationalQualification.below;
   const vocationalQualificationUnknown = vocationalQualification.unknown;
   const vocationalLinePending = vocationalQualification.pending;
   const vocationalLineComparison = vocationalQualification.comparison;
+  const limitedVocationalLine = vocationalQualification.limitedLine;
+  const limitedVocationalComparison = vocationalQualification.limitedComparison;
   const candidateAdmissionRecords = profileRecords
     .filter((record) => recordEligibleForCandidate(record, candidate, profile))
     .filter((record) => candidateMatchesAdmissionRecord(candidate, record, profile));
@@ -1853,6 +1944,9 @@ function scoreCandidate(candidate, profile, band) {
   const segmentStatus = ordinarySegmentStatus(profile);
   const bachelorLineLabel = controlLineDisplayLabel(bachelorLine, "普通本科最低控制线");
   const lowerLineLabel = controlLineDisplayLabel(vocationalLine, "普通高职专科最低控制线");
+  const belowAllLineText = belowVocationalLine && limitedVocationalLine
+    ? `，且低于限定院校线${limitedVocationalLine.score}分`
+    : "";
   const segmentedLowerLine = vocationalLine?.record?.controlLineRouteKind === "segment";
   const candidateText = normalizeText([
     candidate.title,
@@ -1919,6 +2013,7 @@ function scoreCandidate(candidate, profile, band) {
   if (missingInputs.includes("位次")) riskPenalty += 8;
   if (missingInputs.includes("省份")) riskPenalty += 8;
   if (belowVocationalLine) riskPenalty += 18;
+  if (limitedOnly) riskPenalty += 14;
   if (vocationalQualificationUnknown) riskPenalty += 14;
   if (vocationalLinePending) riskPenalty += 14;
   if (vocationalMode && !["vocational-dual", "regional-safe"].includes(candidate.id)) riskPenalty += 18;
@@ -1950,6 +2045,7 @@ function scoreCandidate(candidate, profile, band) {
     displayTotal = Math.min(displayTotal, 48);
   }
   if (belowVocationalLine) displayTotal = Math.min(displayTotal, 42);
+  if (limitedOnly) displayTotal = Math.min(displayTotal, 58);
   if (vocationalQualificationUnknown) displayTotal = Math.min(displayTotal, 55);
   if (vocationalLinePending) displayTotal = Math.min(displayTotal, 55);
   if (bestAdmission && bestAdmission.fit.score < 62) {
@@ -1981,6 +2077,9 @@ function scoreCandidate(candidate, profile, band) {
   if (belowVocationalLine) {
     confidence = "C";
     confidenceReason = `当前分数低于本省同科类${lowerLineLabel}，只能做升学路径探索，不能把院校清单解释为可录取结果。`;
+  } else if (limitedOnly) {
+    confidence = "C";
+    confidenceReason = `当前分数只达到湖北2026年限定院校150分线，未达到普通高职高专200分通用线；候选仅作限定院校资格和历史投档核验。`;
   } else if (vocationalQualificationUnknown) {
     confidence = "C";
     confidenceReason = `本省普通专科线使用${vocationalLineComparison.label}，当前未提供该口径分数，不能确认普通专科批资格。`;
@@ -1993,7 +2092,9 @@ function scoreCandidate(candidate, profile, band) {
     `孩子画像为${profile.childType}，当前策略为${profile.strategy}，模型按公开权重给出排序。`,
     `分数/位次进入${band.label}：${band.strategy}`,
     belowVocationalLine
-      ? `当前${vocationalLineComparison.label}${vocationalLineComparison.score}分低于${vocationalLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}${lowerLineLabel}${vocationalLine.score}分；${segmentedLowerLine ? "当前普通类分段资格尚未达到" : "普通批录取资格尚未达到"}，只能核验高职单招、技能培养、复读再规划及后续征集政策。`
+      ? `当前${vocationalLineComparison.label}${vocationalLineComparison.score}分低于${vocationalLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}${lowerLineLabel}${vocationalLine.score}分${belowAllLineText}；${segmentedLowerLine ? "当前普通类分段资格尚未达到" : "普通批录取资格尚未达到"}，只能核验高职单招、技能培养、复读再规划及后续征集政策。`
+      : limitedOnly
+        ? `当前${limitedVocationalComparison.label}${limitedVocationalComparison.score}分达到${limitedVocationalLine.year}年湖北限定院校线${limitedVocationalLine.score}分，但低于普通高职高专通用线${vocationalLine.score}分；只可核验湖北省独立学院和民办高校、湖北省办在武汉市以外的高职院校。`
       : vocationalQualificationUnknown
         ? `${vocationalLine.year}年${profile.province || "本省"}${lowerLineLabel}${vocationalLine.score}分按${vocationalLineComparison.label}判断；当前只填写了高考总分，尚不能判断普通专科批资格。`
       : vocationalLinePending
@@ -2018,6 +2119,10 @@ function scoreCandidate(candidate, profile, band) {
     scoreStatus.available
       ? belowVocationalLine
         ? "当前分数低于普通高职专科控制线，模型不使用历史院校投档命中生成可执行建议。"
+        : limitedOnly
+        ? bestAdmission
+          ? `命中湖北限定院校历史投档证据：${bestAdmission.record.schoolName}${bestAdmission.record.majorGroup ? `-${bestAdmission.record.majorGroup}` : ""}；仍须核对2026招生计划和院校资格。`
+          : "当前只达到湖北限定院校线，本方向没有可由官方历史投档证据确认的限定院校专业组。"
         : vocationalQualificationUnknown
         ? "当前缺少与普通专科控制线同口径的分数，模型不使用历史院校投档命中生成可执行建议。"
         : vocationalLinePending
@@ -2032,7 +2137,8 @@ function scoreCandidate(candidate, profile, band) {
   ].filter(Boolean);
 
   const warnings = [
-    ...(belowVocationalLine ? [`当前${vocationalLineComparison.label}低于${vocationalLine.year}年${lowerLineLabel}${vocationalLine.score}分；下列院校和专业只能作为路径调研，不得视为普通批可录取名单。`] : []),
+    ...(belowVocationalLine ? [`当前${vocationalLineComparison.label}低于${vocationalLine.year}年${lowerLineLabel}${vocationalLine.score}分${belowAllLineText}；下列院校和专业只能作为路径调研，不得视为普通批可录取名单。`] : []),
+    ...(limitedOnly ? [`当前分数低于湖北2026普通高职高专通用线${vocationalLine.score}分；150分线仅适用于湖北省独立学院和民办高校、湖北省办在武汉市以外的高职院校，必须逐校核对2026招生计划。`] : []),
     ...(vocationalQualificationUnknown ? [`${profile.province || "本省"}普通专科线按${vocationalLineComparison.label}判断；请补充该分数后再生成可执行院校专业清单。`] : []),
     ...(vocationalLinePending ? [`${profile.province || "本省"}2026年普通高职专科控制线尚待官方发布；当前结果只作路径调研，发布后必须重新计算资格边界。`] : []),
     ...(profile.rankEstimateText ? [`${profile.rankEstimateText}正式填报前必须回省考试院原表复核。`] : []),
@@ -2084,6 +2190,7 @@ const APPLICATION_PLAN_TIERS = [
 function applicationPlanTier(option) {
   if (!option?.record) return null;
   if (isPlanRecord(option.record)) return "plan";
+  if (isHubeiLimitedSchoolHistoricalAdmissionRecord(option.record)) return "plan";
   const fitScore = Number(option.admissionFit?.score) || 0;
   if (fitScore >= 82) return "priority";
   if (fitScore >= 68) return "steady";
@@ -2152,9 +2259,11 @@ function applicationPlanDetail(option) {
   const major = record.majorName || record.majorGroup || "专业方向待核验";
   const sourceLabel = isPlanRecord(record)
     ? "官方计划来源"
-    : isSchoolOfficialOnlyRecord(record)
-      ? "学校官网录取来源"
-      : "官方投档/录取来源";
+    : isHubeiLimitedSchoolHistoricalAdmissionRecord(record)
+      ? "湖北限定院校历史投档来源"
+      : isSchoolOfficialOnlyRecord(record)
+        ? "学校官网录取来源"
+        : "官方投档/录取来源";
   const sourceLimit = isPlanRecord(record)
     ? isVacancyPlanRecord(record)
       ? "历史征集剩余计划，只作补录信号。"
@@ -2182,11 +2291,18 @@ function applicationPlanDetail(option) {
 function renderApplicationPlan(results) {
   const tiers = buildApplicationPlan(results);
   if (!tiers.length) return "";
+  const planOptions = tiers.flatMap((tier) => tier.options);
+  const limitedSchoolOnly = ordinaryVocationalQualificationStatus(state.recommendation?.profile || {}).limitedOnly &&
+    planOptions.length > 0 && planOptions.every((option) => isHubeiLimitedSchoolHistoricalAdmissionRecord(option.record));
+  const planTitle = limitedSchoolOnly ? "限定院校资格核验清单" : "可执行院校专业清单";
+  const planDescription = limitedSchoolOnly
+    ? "只汇总湖北2025官方投档表中可确认的本省低分专业组，用于核验2026限定院校范围；不是今年可录取名单。"
+    : "只汇总已命中的本省同科类结构化记录；同一院校专业会合并，计划类数据单独展示。";
   return `<section class="band application-plan">
     <div class="application-plan-head">
       <div>
-        <h3>可执行院校专业清单</h3>
-        <p>只汇总已命中的本省同科类结构化记录；同一院校专业会合并，计划类数据单独展示。</p>
+        <h3>${esc(planTitle)}</h3>
+        <p>${esc(planDescription)}</p>
       </div>
       <span>${fmtNumber(tiers.reduce((total, tier) => total + tier.options.length, 0))} 项</span>
     </div>
@@ -2594,13 +2710,18 @@ function renderRecommendationResults() {
 
   const vocationalQualification = ordinaryVocationalQualificationStatus(rec.profile);
   const belowVocationalLine = vocationalQualification.below;
+  const limitedOnly = vocationalQualification.limitedOnly;
   const vocationalQualificationUnknown = vocationalQualification.unknown;
   const vocationalLinePending = vocationalQualification.pending;
   const vocationalLine = vocationalQualification.line;
   const vocationalLineComparison = vocationalQualification.comparison;
   const belowLinePanel = belowVocationalLine ? `<section class="band admission-hit-panel">
     <h3>普通批资格线以下，仅作路径调研</h3>
-    <p>当前${esc(vocationalLineComparison.label)}${esc(String(vocationalLineComparison.score))}分低于${esc(String(vocationalLine.year))}年${esc(rec.profile.province || "本省")}${esc(rec.profile.subject || "普通类")}${esc(controlLineDisplayLabel(vocationalLine, "普通高职专科最低控制线"))}${esc(String(vocationalLine.score))}分。本页不生成可执行院校专业清单，也不展示低于控制线的历史投档命中；仅保留高职单招、技能培养、复读再规划、专业认知和后续征集政策调研。</p>
+    <p>当前${esc(vocationalLineComparison.label)}${esc(String(vocationalLineComparison.score))}分低于${esc(String(vocationalLine.year))}年${esc(rec.profile.province || "本省")}${esc(rec.profile.subject || "普通类")}${esc(controlLineDisplayLabel(vocationalLine, "普通高职专科最低控制线"))}${esc(String(vocationalLine.score))}分${vocationalQualification.limitedLine ? `，且低于限定院校线${esc(String(vocationalQualification.limitedLine.score))}分` : ""}。本页不生成可执行院校专业清单，也不展示低于控制线的历史投档命中；仅保留高职单招、技能培养、复读再规划、专业认知和后续征集政策调研。</p>
+  </section>` : "";
+  const limitedQualificationPanel = limitedOnly ? `<section class="band admission-hit-panel">
+    <h3>仅达到湖北限定院校线</h3>
+    <p>当前${esc(vocationalQualification.limitedComparison.label)}${esc(String(vocationalQualification.limitedComparison.score))}分达到湖北2026年限定院校线${esc(String(vocationalQualification.limitedLine.score))}分，但低于普通高职高专通用线${esc(String(vocationalLine.score))}分。150分线只适用于湖北省独立学院和民办高校、湖北省办在武汉市以外的高职院校；下方只显示由2025年湖北省招办官方投档表可确认的本省历史专业组，2026年院校资格、招生计划和专业组必须逐校复核。</p>
   </section>` : "";
   const unknownQualificationPanel = vocationalQualificationUnknown ? `<section class="band admission-hit-panel">
     <h3>专科资格分数口径待补充</h3>
@@ -2621,7 +2742,7 @@ function renderRecommendationResults() {
       <div class="model-pill">${esc(policy.version || "local-deterministic-v1")}</div>
     </div>
     ${renderDataFreshnessPanel(rec.profile)}
-    ${belowVocationalLine ? belowLinePanel : vocationalQualificationUnknown ? unknownQualificationPanel : vocationalLinePending ? pendingQualificationPanel : renderAdmissionHitPanel(rec.profile)}
+    ${belowVocationalLine ? belowLinePanel : limitedOnly ? limitedQualificationPanel : vocationalQualificationUnknown ? unknownQualificationPanel : vocationalLinePending ? pendingQualificationPanel : renderAdmissionHitPanel(rec.profile)}
     ${belowVocationalLine || vocationalQualificationUnknown || vocationalLinePending ? "" : renderApplicationPlan(rec.results)}
     <div class="grid-2">${resultCards}</div>
     <section class="band">
