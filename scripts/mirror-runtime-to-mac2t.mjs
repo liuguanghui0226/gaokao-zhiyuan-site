@@ -358,6 +358,7 @@ function main() {
   copy("data/manifest.json");
   copy("README.md");
   copy("docs/extraction-report.md");
+  copy("docs/github-storage.md");
   copy("docs/references/admission-data-layer.md");
   copy("docs/references/national-data-roadmap.md");
   copy("ROADMAP.md");
