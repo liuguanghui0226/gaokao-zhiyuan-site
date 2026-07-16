@@ -1,0 +1,163 @@
+{
+  "dataset": "evidence-v3304-yunnan-2026",
+  "generatedAt": "2026-07-16T23:09:10Z",
+  "modelVersion": "local-deterministic-v3.304-yunnan-control-lines2026-art-thresholds-and-rank-image-provenance-847238records",
+  "dataCommit": {
+    "local": "ca733b945fa4127110b485be84a95d59a6bbe309",
+    "remote": "2574a45722c6bd229d6d0e7ee0bda7009ba179b1",
+    "tree": "6b7b936ab61ad83f75f83701b79fd4aefca7c6fe"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29541026690,
+    "liveVerificationRun": 29541257297,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.304",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.304",
+    "baseDataReleaseTag": "data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 847238,
+    "rankConversions": 116656,
+    "sourceNotes": 5110,
+    "controlLineRecords": 1592,
+    "provinceCount": 31,
+    "yunnanRecords": 15460,
+    "yunnanRankConversionsAllYears": 1966,
+    "yunnanRankConversions2026": 986,
+    "yunnanRankConversionsBySubject": {
+      "history": 482,
+      "physics": 504
+    },
+    "yunnanControlLines": {
+      "all": 54,
+      "ordinary": 4,
+      "specialPath": 50,
+      "ordinaryBachelor": 2,
+      "ordinaryVocational": 2,
+      "specialType": 2,
+      "art": 44,
+      "sports": 4,
+      "numericProfessionalThresholds": 44,
+      "professionalQualificationOnly": 4
+    },
+    "officialControlCoverage": {
+      "covered": 31,
+      "missing": 0,
+      "missingProvinces": [],
+      "pendingOrdinaryVocational": [
+        "海南",
+        "江苏",
+        "山西",
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "sourceEvidence": {
+    "controlUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847730.html",
+    "artProfessionalUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847735.html",
+    "rankIndexUrl": "https://gaokao.chsi.com.cn/gkxx/ss/202606/20260626/2293847808.html",
+    "rankMirrorImageUrl": "https://t2.chei.com.cn/news/img/2293847809.png",
+    "originalRankUrl": "https://www.ynzs.cn/html/content/8818.html",
+    "chsiMirrorRetrievalStatus": "success",
+    "directOriginalRankPageRedownloadStatus": "blocked-current-session-tls",
+    "rankImageByteIdentityWithStoredOfficialSource": true,
+    "rankRowsInventoryChecked": 986,
+    "rankRowsContinuityChecked": 986,
+    "rankRowsLinked": 986,
+    "retainedOcrCorrections": 32,
+    "rankValueChanges": 0,
+    "topBucketRangeRepairs": 0,
+    "historyFinalCumulativeAt180": 107628,
+    "historyFinalCumulativeAt465": 43559,
+    "physicsFinalCumulativeAt180": 177823,
+    "physicsFinalCumulativeAt435": 118990
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 35,
+      "failed": 0
+    },
+    "yunnanBoundaryScores": [
+      179,
+      180,
+      434,
+      435,
+      464,
+      465,
+      505,
+      545,
+      600,
+      661,
+      683,
+      700,
+      750,
+      751
+    ],
+    "belowVocationalMaxModelScore": 42,
+    "belowVocationalApplicationPlanRows": 0,
+    "belowVocationalNamedInstitutions": 0,
+    "rankUnavailableBelowPublishedTable": true,
+    "rankValueChanges": 0,
+    "numericProfessionalThresholds": 44,
+    "qualificationOnlyProfessionalRequirements": 4,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "liveAppVersion": "3.304.0",
+    "interactiveBrowserStatus": "not-used-current-turn-enterprise-network-policy-retained",
+    "browserBoundary": "GitHub Actions live readback and direct HTTPS byte readback are separate successful checks; no browser-policy workaround or screenshot claim was used."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "attempted": false,
+    "status": "unavailable-volume-unmounted",
+    "modelVersionClaimed": null,
+    "filesCompared": 0,
+    "filesCopied": 0,
+    "reason": "The external volume was not mounted. It was not remounted or reconnected without explicit user authorization."
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.304-yunnan-2026.tar.gz",
+    "files": 19,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 3690735,
+    "sha256": "b26308f1866da31459df9e43c636b380902e84da74e11f2fd8b780ec88580e7c",
+    "githubDigestMatched": true,
+    "redownloadSha256Verified": true,
+    "redownloadByteMatched": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "8d761632c7f023740953e55ad2c9cde969f687625716b43a0c63b9bd571d3931",
+    "provinceManifestJson": "a2db62df6860dcb23f4e7c35ab311df93887d73a21487e3fe168ca071ff7f583",
+    "yunnanJson": "b9e46ed9ea35b8944268852dcb246e06f8ad9a403def06dd93f8a262b26b8778",
+    "knowledgeCoreGzip": "da195e401cda09528479be2005737d00331d3e1cde99c0738eba5b6917deae79",
+    "provinceManifestGzip": "2d49f3653bae04683104922f9583fa8b54a6eee7a655bbf0bee3bb87e5d413e5",
+    "yunnanGzip": "0c5fd71b6c361af7eb487ccf1c6f18cf3453743c82c931cee5fb8a95f59cb0e1",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "siteIndex": "239c072fe737397df1d5fe8bbb20137ea98f64d3ab2c08df4acb8f2440f713ee",
+    "verifyWorkflow": "6bb247c4edb7777d6c80d36c2891f5dba90ea4d89467c18fbc757bc591b93dc4",
+    "importJson": "e581890fa345c16a2944dc8501ad7cea30ba05aaeb5087a6a84c50a9f52ec482",
+    "runtimeManifestJson": "5f227da3b411986c33acc8487dc96ca174bc8b581c72ffc8e144808ea80355fa",
+    "coverageAuditJson": "cd681b0e9d233b8696aeb54aceacf1c790e0193862fcf94d348139968ae5341a",
+    "controlPage": "f7398a32eca5a5e5e04aba16ff71abffb5ad97628d3b49ddc87cf36e7fa1c676",
+    "controlImage": "3a8c9c72b0af918d8edafab3eac6b85bfe93d5513c7b9d11109b5b4ce48fb2e6",
+    "artProfessionalPage": "e3210a24b5aa05223acc340be38fb122ff5554dc57df9153e853612b94287be7",
+    "artProfessionalImage": "25b74f136750c48215999a47c0e8d62259abb3dd499cdca3f091247673eb4f4d",
+    "rankPage": "5c5c569b734e4f293c40cb676780818c366fbdcb9bd62032076c5f2716266fc3",
+    "rankImage": "2ab0fadc3af4f1d68ad15a14c5bf2a0514c5364723c12c2c32ff4224d7dc797a"
+  },
+  "boundaries": [
+    "The 465/180 history and 435/180 physics lines are Yunnan's 2026 ordinary bachelor and vocational controls. They are not institution-group, institution or major admission scores.",
+    "Special-type, art and sports records remain special-path-only and never replace the ordinary route.",
+    "The 44 art numeric professional thresholds are stored separately from culture scores; the four sports rows retain qualification-only requirements because the control image does not publish a numeric professional threshold.",
+    "The 986 Yunnan 2026 rank rows were inventory and continuity checked, linked to the current CHSI mirror image, and retained 32 prior OCR corrections with zero value changes.",
+    "The current CHSI rank image is byte-identical to the stored official source image. The original rank page was TLS-blocked in this session and is not reported as freshly retrieved.",
+    "Below the ordinary vocational line the recommender reports research paths only, names no institution and creates no executable application plan.",
+    "Scores above 750 are not assigned invented ranks.",
+    "GitHub Pages deployment, live 31-province readback, direct HTTPS byte hashes and Release redownload are reported as separate evidence layers.",
+    "The mac_2T external volume was unmounted, so no runtime mirror synchronization is claimed for v3.304."
+  ]
+}

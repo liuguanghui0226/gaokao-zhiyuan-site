@@ -1,11 +1,11 @@
 change_id: "2026-07-17-v3304-yunnan-control-lines-2026-rank-provenance"
 title: "云南2026控制线、艺术双门槛与位次长图来源闭合"
-phase: review
-status: in_progress
+phase: deliver
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "云南已有986条2026普通类位次，但控制线未进入运行层且位次行未关联当前阳光高考镜像图。"
-last_updated: "2026-07-17T07:00:00+08:00"
+last_updated: "2026-07-17T07:09:10+08:00"
 
 surfaces_touched:
   - surface: information
@@ -81,15 +81,15 @@ task_slices:
     verification_command: "node scripts/test-current-release.mjs"
 
 delivery_evidence:
-  local_data_commit: null
-  remote_data_commit: null
-  data_tree: null
-  pages_run: null
-  live_verification_run: null
+  local_data_commit: "ca733b945fa4127110b485be84a95d59a6bbe309"
+  remote_data_commit: "2574a45722c6bd229d6d0e7ee0bda7009ba179b1"
+  data_tree: "6b7b936ab61ad83f75f83701b79fd4aefca7c6fe"
+  pages_run: 29541026690
+  live_verification_run: 29541257297
   release_tag: "evidence-v3.304"
   release_asset: "evidence-v3.304-yunnan-2026.tar.gz"
-  release_asset_sha256: null
-  live_hashes_match_local: false
+  release_asset_sha256: "b26308f1866da31459df9e43c636b380902e84da74e11f2fd8b780ec88580e7c"
+  live_hashes_match_local: true
   mirror_status: "unavailable-volume-unmounted"
 
 residual_risks:
