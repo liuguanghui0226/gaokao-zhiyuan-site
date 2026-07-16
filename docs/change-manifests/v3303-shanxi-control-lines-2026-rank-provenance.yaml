@@ -1,11 +1,11 @@
 change_id: "2026-07-17-v3303-shanxi-control-lines-2026-rank-provenance"
 title: "山西2026本科控制线、专科待发布与位次来源闭合"
-phase: review
-status: in_progress
+phase: deliver
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "山西已有555条2026普通类位次和2025本专科投档分，但2026控制线未进入运行层且位次行未关联科类页。"
-last_updated: "2026-07-17T05:10:00+08:00"
+last_updated: "2026-07-17T06:05:01+08:00"
 
 surfaces_touched:
   - surface: information
@@ -71,10 +71,25 @@ task_slices:
     scope: "31省分片、2026通用控制线覆盖审计和Pages公网校验"
     verification_command: "node scripts/test-current-release.mjs"
 
+delivery_evidence:
+  local_data_commit: "b1c716dc45e72ee7e3c0c69b4bae1642dac4ba35"
+  remote_data_commit: "9de12dd69421128c582bd745ac1d81dedfa34ceb"
+  data_tree: "25f7aeb829f5966cb5a514aeeec1b5b2826ba276"
+  pages_run: 29537335010
+  live_verification_run: 29537642899
+  release_tag: "evidence-v3.303"
+  release_asset: "evidence-v3.303-shanxi-2026.tar.gz"
+  release_asset_sha256: "66883e32ccafe6cee54722c38e1b59d5fa67624127d487a8b5d3e668fce6bbc0"
+  live_hashes_match_local: true
+  mirror_key_files_match: 15
+  mirror_apple_double_files: 0
+  final_evidence_manifest_copied_to_mirror: false
+  post_runtime_mirror_volume_status: "unmounted-before-final-document-sync"
+
 residual_risks:
   - "控制线不是院校专业组、院校或专业投档线、录取最低分或录取概率证据。"
   - "艺术和体育须同时达到文化与专业门槛，不同分数维度不得相加。"
   - "山西2026普通专科线尚未发布，本科线以下必须保持待发布降级。"
   - "当前2026普通批通用控制线覆盖30省，仍有云南1省待补。"
 
-next_action: "完成v3.303 Pages、公网、mac_2T和Release闭环，再补齐云南并复核各省尚待发布的普通专科线。"
+next_action: "补齐云南并复核各省尚待发布的普通专科线，保持控制线、位次、院校专业录取分和特殊路径证据分层。"

@@ -1,0 +1,170 @@
+{
+  "dataset": "evidence-v3303-shanxi-2026",
+  "generatedAt": "2026-07-16T22:05:01Z",
+  "modelVersion": "local-deterministic-v3.303-shanxi-control-lines2026-pending-vocational-and-rank-provenance-847184records",
+  "dataCommit": {
+    "local": "b1c716dc45e72ee7e3c0c69b4bae1642dac4ba35",
+    "remote": "9de12dd69421128c582bd745ac1d81dedfa34ceb",
+    "tree": "25f7aeb829f5966cb5a514aeeec1b5b2826ba276"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29537335010,
+    "liveVerificationRun": 29537642899,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.303",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.303",
+    "baseDataReleaseTag": "data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 847184,
+    "rankConversions": 116656,
+    "sourceNotes": 5109,
+    "controlLineRecords": 1538,
+    "provinceCount": 31,
+    "shanxiRecords": 19944,
+    "shanxiRankConversionsAllYears": 1070,
+    "shanxiRankConversions2026": 555,
+    "shanxiRankConversionsBySubject": {
+      "history": 260,
+      "physics": 295
+    },
+    "shanxiControlLines": {
+      "all": 32,
+      "ordinary": 2,
+      "specialPath": 30,
+      "ordinaryBachelor": 2,
+      "ordinaryVocational": 0,
+      "specialType": 2,
+      "artSchoolExam": 2,
+      "artOpera": 2,
+      "artUndergraduate": 22,
+      "sports": 2,
+      "numericProfessionalThresholds": 26,
+      "professionalQualificationOnly": 2
+    },
+    "ordinaryVocationalStatus": "pending-official-release",
+    "officialControlCoverage": {
+      "covered": 30,
+      "missing": 1,
+      "missingProvinces": [
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "海南",
+        "江苏",
+        "山西",
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "sourceEvidence": {
+    "controlUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847661.html",
+    "rankIndexUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260626/2293847320.html",
+    "historyRankUrl": "http://www.sxkszx.cn/news/2026625/n5905127212.html",
+    "physicsRankUrl": "http://www.sxkszx.cn/news/2026625/n2816127213.html",
+    "corroborationUrl": "https://www.eol.cn/kaoshi/gaokao/fsx/202606/t20260626_2749513.shtml",
+    "chsiMirrorRetrievalStatus": "success",
+    "directOfficialPageRedownloadStatus": "blocked-current-session-tls-and-http-403",
+    "corroborationMirrorRetrievalStatus": "success",
+    "rankRowsFullCorroborationCrossChecked": 555,
+    "rankRowsContinuityChecked": 555,
+    "rankRowsLinked": 555,
+    "rankValueChanges": 0,
+    "topBucketRangeRepairs": 0,
+    "historyFinalCumulativeAt409": 35387,
+    "physicsFinalCumulativeAt401": 129364
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 34,
+      "failed": 0
+    },
+    "shanxiBoundaryScores": [
+      150,
+      400,
+      401,
+      408,
+      409,
+      524,
+      538,
+      600,
+      668,
+      695,
+      700,
+      750,
+      751
+    ],
+    "pendingVocationalMaxModelScore": 55,
+    "pendingVocationalApplicationPlanRows": 0,
+    "pendingVocationalNamedInstitutions": 0,
+    "rankUnavailableBelowPublishedUndergraduateTables": true,
+    "rankValueChanges": 0,
+    "numericProfessionalThresholds": 26,
+    "qualificationOnlyProfessionalRequirements": 2,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "liveAppVersion": "3.303.0",
+    "interactiveBrowserStatus": "not-used-current-turn-enterprise-network-policy-retained",
+    "browserBoundary": "GitHub Actions live readback and direct HTTPS byte readback are separate successful checks; no browser-policy workaround or screenshot claim was used."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.303-shanxi-control-lines2026-pending-vocational-and-rank-provenance-847184records",
+    "gzipRuntimeFiles": 33,
+    "gzipRuntimeMissing": 0,
+    "gzipRuntimeHashMismatches": 0,
+    "gzipRuntimeOnlyTimestampDifferences": 33,
+    "keyFilesCompared": 15,
+    "keyFilesMissing": 0,
+    "keyFileHashMismatches": 0,
+    "staleDecompressedMasterFiles": 0,
+    "appleDoubleFiles": 0,
+    "doubleJsonFiles": 0,
+    "finalEvidenceManifestCopied": false,
+    "postRuntimeMirrorVolumeStatus": "unmounted-before-final-document-sync"
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.303-shanxi-2026.tar.gz",
+    "files": 16,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 3137793,
+    "sha256": "66883e32ccafe6cee54722c38e1b59d5fa67624127d487a8b5d3e668fce6bbc0",
+    "githubDigestMatched": true,
+    "redownloadSha256Verified": true,
+    "redownloadByteMatched": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "ece02eb59e099df17015e01c84f033da5de4761d94f13a2dceded8b499ee7826",
+    "provinceManifestJson": "8d15e2def18704ca1a190b9123b46b4ef45cadb1131eea78ae3f581ee4a15d12",
+    "shanxiJson": "b7145466f2a95ca2e584164bac6415094e0fcb83d793a9d42da057e00a2305f6",
+    "knowledgeCoreGzip": "21436760c03471de4ac0f0d293ac2663287f267d9ff2934daca030f95c9e5784",
+    "provinceManifestGzip": "e922662625da6331c4e97656bfce8ac59f197497c7fec8346f9ad1fa34ad71c9",
+    "shanxiGzip": "0c09849704840b4b663d4a93f57f77c382764b2877d7b19092223dbcafcaf4a3",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "siteIndex": "f7e870b38b0e84162a064c8af9101bc13a5370d5b1e35c890332ad7af2326cdf",
+    "verifyWorkflow": "475796325862ebfc25dee70b45acfada241e666775d4b20a952ce7cfb9e8c68e",
+    "importJson": "a9d8b20698056096f618fe3f337305fc157a8d1bd3f0a0b530818bd862fdc3ea",
+    "runtimeManifestJson": "a40dba22eaede69bc31adbb72b929c36c3249c66efd2ffa6677c915b5c9f2d08",
+    "coverageAuditJson": "a0b45e83f80b39cd3a88d750f4a3942969e3ddd888427d940f4c667ddc2c196e",
+    "controlPage": "659f252c7a34bf61e136e5a34d56e5b461908301b231b96241d3869ef9467146",
+    "rankIndex": "74aafbc65e16a577cd351cd3bcd0b54b4c6b24b578715f2a283974a8bffdaf60",
+    "rankCorroboration": "c55404ade9fb2db37ffdb39518a1f6b16c17057b9b3850bd10d358b987e4dbe0",
+    "storedOfficialHistoryPage": "75c48ef3422b33a91b68c1127990dcab15ace8ba687ada3cca8119ee15220412",
+    "storedOfficialPhysicsPage": "4e38e5e71ed970a25ec8826a111a268587ea1dacb8075c9ccadef852f3268daf"
+  },
+  "boundaries": [
+    "The 409 history and 401 physics lines are Shanxi's 2026 ordinary undergraduate controls. Neither is an institution-group, institution or major admission score.",
+    "No 2026 ordinary vocational line had been published as of this evidence run. The 2025 value of 100 is not copied forward or presented as a 2026 qualification boundary.",
+    "Special-type, art and sports records remain special-path-only and never replace the ordinary undergraduate route.",
+    "The 26 art and sports numeric professional thresholds are stored separately from culture scores; the two school-exam rows retain qualification-only requirements.",
+    "The 555 Shanxi 2026 rank rows were cross-checked against full corroboration tables with zero value differences and linked to the official subject page URLs.",
+    "Current direct official-page retrieval was blocked by TLS timeout and HTTP 403; retained official-page hashes, the CHSI official-link index and a full-table corroboration mirror remain separate evidence layers.",
+    "Below the ordinary undergraduate line the recommender reports pending-vocational research paths only, names no institution and creates no executable application plan.",
+    "Scores above 750 are not assigned invented ranks.",
+    "GitHub Pages deployment, live 31-province readback, direct HTTPS byte hashes, mac_2T mirror hashes and Release redownload are reported as separate evidence layers."
+  ]
+}
