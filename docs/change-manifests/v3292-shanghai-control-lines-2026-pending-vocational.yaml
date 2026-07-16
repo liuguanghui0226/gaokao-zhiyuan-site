@@ -1,0 +1,89 @@
+change_id: "2026-07-16-v3292-shanghai-control-lines-2026-pending-vocational"
+title: "上海2026控制线、专科待发布保护与位次来源闭合"
+phase: deliver
+status: complete
+execution_mode: full
+resume_mode: full
+resume_reason: "上海本科控制线和位次表已发布，但专科控制线要到7月29日；必须把已知本科边界、部分位次覆盖和专科待发布状态分开。"
+last_updated: "2026-07-16T18:58:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "上海市教育考试院控制线正文、位次发布页、4页PDF和录取日程锁定字节与SHA-256。"
+  - surface: user
+    role: consumer
+    notes: "402分只作职业路径调研且不显示具体院校；403分进入本科路由并按同年官方表估位。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、上海gzip分片、mac_2T镜像、Pages部署和公网31省验证保持同一模型版本。"
+
+sot_map:
+  - info_name: "上海市2026年普通高校招生本科阶段录取控制分数线"
+    pattern: 4
+    source: "https://www.shmeea.edu.cn/page/08000/20260623/20379.html"
+    consumers:
+      - name: "data/admissions/official-shanghai-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/shanghai.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node锁定官方正文哈希，定向重写gzip核心、清单与上海分片。"
+    desync_risk: high
+  - info_name: "上海市2026年普通高校招生本科阶段考生成绩分布表"
+    pattern: 4
+    source: "https://www.shmeea.edu.cn/page/02200/20260623/20375.html"
+    consumers:
+      - name: "site/data/release-v3.275/shanghai.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "214条位次记录补齐正式来源页；发布页和4页PDF锁定字节与SHA-256，位次值零改动。"
+    desync_risk: high
+  - info_name: "上海市2026年普通高等学校招生录取工作日程"
+    pattern: 2
+    source: "https://www.shmeea.edu.cn/page/08000/20260609/20321.html"
+    consumers:
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "7月29日专科线发布日写入source note；发布前保持pending-official-release。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "保留v3.291 gzip产物哈希；来源、数量或逐字段断言失败不覆盖运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.291推荐器，同时保留上海官方镜像和结构化导入用于审计。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过23项完整回归的main提交部署。"
+
+task_slices:
+  - id: "source-import"
+    scope: "控制线正文、位次页面/PDF、招生日程、5条控制线和待发布边界"
+    verification_command: "node scripts/build-official-shanghai-control-lines-2026-v3292.mjs"
+  - id: "runtime-patch"
+    scope: "核心索引、上海分片、214条位次来源、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-shanghai-control-lines-2026-v3292.mjs"
+  - id: "boundary-safety"
+    scope: "402/403本科切换、403以下不估位、616-660顶端区间、待发布状态不出现具体院校"
+    verification_command: "node scripts/test-official-shanghai-control-lines-v3292.mjs"
+  - id: "national-regression"
+    scope: "31省分片、2026通用控制线覆盖审计、桌面/手机和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "上海2026专科控制线要到7月29日晚发布；发布前不得把往年线或2025专科投档线解释为今年资格。"
+  - "上海2026位次表只覆盖本科线403分及以上；403分以下不生成假位次。"
+  - "控制线不是院校专业组投档线、专业录取最低分或录取概率证据。"
+  - "当前2026普通批通用控制线覆盖19省，仍有12省待补；天津专科线继续保持待发布。"
+
+next_action: "从缺失12省中继续补齐2026官方普通批控制线；7月29日后优先回补上海专科线和专科分数分布。"

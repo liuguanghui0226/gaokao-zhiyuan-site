@@ -154,6 +154,7 @@ const IMPORT_SCRIPTS = [
   "scripts/vision-table-row-ocr.swift",
 ];
 const TARGETED_ADMISSION_IMPORTS = [
+  "data/admissions/evidence-v3292-shanghai-2026-manifest.json",
   "data/admissions/official-shanghai-control-lines-2026-import.json",
   "data/admissions/official-shanghai-control-lines-2026-v3292-runtime-manifest.json",
   "data/admissions/official-control-line-coverage-2026-v3292.json",
@@ -323,7 +324,9 @@ function main() {
   if (COPY_TOP_DATA) {
     copy("data/knowledge.json");
   } else {
-    copied.push("data/knowledge.json skipped by default; runtime HTTP readback uses site/data/knowledge.json");
+    const staleMirrorTopData = path.join(mirrorRoot, "data/knowledge.json");
+    if (fs.existsSync(staleMirrorTopData)) fs.rmSync(staleMirrorTopData, { force: true });
+    copied.push("data/knowledge.json skipped by default and stale mirror removed; runtime uses the lighter core plus 31 province shards");
   }
   copy("data/manifest.json");
   copy("README.md");
@@ -349,6 +352,10 @@ function main() {
   }
   if (fs.existsSync(path.join(PROJECT_ROOT, "docs/completion-reports/v3274-szu-national-admission-2024-2025.md"))) {
     copy("docs/completion-reports/v3274-szu-national-admission-2024-2025.md");
+  }
+  if (fs.existsSync(path.join(PROJECT_ROOT, "docs/changes/v3.292-shanghai-control-lines-2026.md"))) {
+    copy("docs/changes/v3.292-shanghai-control-lines-2026.md");
+    copy("docs/change-manifests/v3292-shanghai-control-lines-2026-pending-vocational.yaml");
   }
   copy("docs/changes/v3271-beijing-rank-conversion-2025.md");
   copy("docs/change-manifests/v3271-beijing-rank-conversion-2025.yaml");

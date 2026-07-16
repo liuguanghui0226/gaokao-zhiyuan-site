@@ -1,0 +1,113 @@
+{
+  "dataset": "evidence-v3292-shanghai-2026",
+  "generatedAt": "2026-07-16T10:58:00.000Z",
+  "modelVersion": "local-deterministic-v3.292-shanghai-control-lines2026-pending-vocational-and-rank-provenance-846859records",
+  "dataCommit": {
+    "local": "42e2857dbdb0615a5604274c6b348d9c36c5653b",
+    "remote": "bf1871ada29ff0ad14bd6ac59f275a718770c378",
+    "tree": "b5a6e20e1e16b4e46babca6379956b792f77cf6e"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29491875417,
+    "liveVerificationRun": 29492135102,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.292",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.292"
+  },
+  "runtime": {
+    "structuredRecords": 846859,
+    "rankConversions": 116656,
+    "sourceNotes": 5098,
+    "controlLineRecords": 1213,
+    "provinceCount": 31,
+    "shanghaiRecords": 5986,
+    "shanghaiRankConversions": 214,
+    "shanghaiControlLines": {
+      "all": 5,
+      "ordinary": 1,
+      "specialPath": 4
+    },
+    "officialControlCoverage": {
+      "covered": 19,
+      "missing": 12,
+      "missingProvinces": [
+        "重庆",
+        "甘肃",
+        "广西",
+        "贵州",
+        "海南",
+        "黑龙江",
+        "江苏",
+        "辽宁",
+        "宁夏",
+        "青海",
+        "山西",
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 23,
+      "failed": 0
+    },
+    "shanghaiBoundaryScores": [
+      402,
+      403,
+      616,
+      617,
+      660,
+      661
+    ],
+    "desktopViewport": "1440x1000",
+    "mobileViewport": "390x844",
+    "horizontalOverflow": 0,
+    "pendingVocationalMaxScore": 55,
+    "pendingVocationalApplicationPlanRows": 0,
+    "pendingVocationalNamedInstitutions": 0,
+    "liveProvinceShardsVerified": 31
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.292-shanghai-control-lines2026-pending-vocational-and-rank-provenance-846859records",
+    "provinceShards": 31,
+    "staleMasterFiles": 0,
+    "appleDoubleFiles": 0,
+    "keyFileHashMismatches": 0
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.292-shanghai-2026.tar.gz",
+    "files": 22,
+    "hiddenFiles": 0,
+    "bytes": 2755696,
+    "sha256": "d15fbad5eaf4d776d172ce36856a1a09be778811cd242ad7a3e4da967a53a0a4"
+  },
+  "sha256": {
+    "knowledgeCoreJson": "2fb71e03175a26036768b2b1c3d5dac36504fdf7a61dbf341ba257542f4869ff",
+    "provinceManifestJson": "608017a73af59343e70a39f34c601de576c10604ce39b338d68ef8bc38ed8377",
+    "shanghaiJson": "1eb32f10f46564010a87ed1e17259fb8ff36adec084d552d784c64cb46c70709",
+    "knowledgeCoreGzip": "faacc647e14f829f01498d19a7d94f0d9d14dca2c45f73234b8058e8394bc5be",
+    "provinceManifestGzip": "ee31570bb8f256c163d95269ae6dd71b3676f099ce1353fd580e95eb62d6a429",
+    "shanghaiGzip": "930bc0b550dba2a02b102eb5afea42ce01601383b19b00a822b31983ed9509fd",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "controlPage": "7ec1b138300d46710ea88f21b088b9f10438ad8d94d63caf4ad7cc2c616e28a5",
+    "rankPage": "3faa761df90d0bec7f99627cc1e32cd9df54dc683358d894af9b3cc135a4fa02",
+    "rankPdf": "057f58483e7c54f519982d45a91d27f6994a753543d2a4fb73aa7b49474320e1",
+    "schedulePage": "966666374eaefdba5bb3efd97373df43d3b54f6a1c1dce58ba45d396be253beb",
+    "importJson": "aecf0307f0243f9fc60fb9e8b75be59ba0660bbb40f95bd63fd5d3c5c2b7a007"
+  },
+  "boundaries": [
+    "The 403-point line is the 2026 Shanghai ordinary undergraduate control line; it is not an institution-group, institution or major admission score.",
+    "Shanghai 2026 ordinary vocational control lines are scheduled for publication on July 29 and are not backfilled from prior years.",
+    "The Shanghai 2026 rank table covers undergraduate-control-line candidates only: 403-660, with 616-660 retained as one official top band.",
+    "At 402, the model returns research paths only, names no specific institution and creates no executable application plan; at 403, it may estimate rank 51853 and enter undergraduate routing.",
+    "Local browser interaction, GitHub Pages deployment, live 31-province readback and mac_2T mirror hashes are kept as separate evidence layers."
+  ]
+}
