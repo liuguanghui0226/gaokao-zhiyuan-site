@@ -42,20 +42,22 @@ jobs:
           grep -q "vocationalScoreInput" "$work/app.js"
           grep -q "controlLineScoreComparison" "$work/app.js"
           grep -q "pendingOrdinaryVocationalControlSource" "$work/app.js"
+          grep -q "limitedOrdinaryVocationalControlLine" "$work/app.js"
+          grep -q "限定院校资格核验清单" "$work/app.js"
           grep -q "2026年普通专科控制线待发布" "$work/app.js"
 
           fetch "${base}data/${release_path}/manifest.json.gz" "$work/manifest.json.gz"
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
-          jq -e '.recordCount == 846822' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 846854' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.290-hebei-control-lines2026-and-rank-provenance-846822records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.291-hubei-control-lines2026-limited-school-routing-and-rank-provenance-846854records"' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-tianjin-control-lines-2026" and .ordinaryVocationalStatus == "pending-official-release")] | length == 1' >/dev/null
 
@@ -190,6 +192,22 @@ jobs:
             | jq -e '[.records[] | select(.sourceId == "official-hebei-control-lines-2026" and (.professionalMinScore | type) == "number")] | length == 28' >/dev/null
           gzip -dc "$work/hebei.json.gz" \
             | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-hebei-rank-2026" and .sourceUrl == "https://www.hebeea.edu.cn/c/2026-06-24/493215.html")] | length == 1094' >/dev/null
+          gzip -dc "$work/hubei.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hubei-control-lines-2026")] | length == 32' >/dev/null
+          gzip -dc "$work/hubei.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hubei-control-lines-2026" and .formalScoreScope == "control-line-only")] | length == 4' >/dev/null
+          gzip -dc "$work/hubei.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hubei-control-lines-2026" and .formalScoreScope == "limited-school-control-line-only")] | length == 2' >/dev/null
+          gzip -dc "$work/hubei.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hubei-control-lines-2026" and .formalScoreScope == "special-path-only")] | length == 26' >/dev/null
+          gzip -dc "$work/hubei.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hubei-control-lines-2026" and .controlLineRouteKind == "ordinary-bachelor") | [.subjectType, .minScore]] | sort == [["历史类", 443], ["物理类", 435]]' >/dev/null
+          gzip -dc "$work/hubei.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hubei-control-lines-2026" and .controlLineRouteKind == "ordinary-vocational") | [.subjectType, .minScore]] | sort == [["历史类", 200], ["物理类", 200]]' >/dev/null
+          gzip -dc "$work/hubei.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hubei-control-lines-2026" and .controlLineRouteKind == "ordinary-vocational-limited-school") | [.subjectType, .minScore]] | sort == [["历史类", 150], ["物理类", 150]]' >/dev/null
+          gzip -dc "$work/hubei.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-hubei-rank-2026" and .sourceUrl == "https://www.hbea.edu.cn/html/2026-06/15962.html")] | length == 1079' >/dev/null
           printf 'verified_url=%s\n' "$base"
           printf 'release_path=%s\n' "$release_path"
           printf 'province_shards=%s\n' "$shard_count"
