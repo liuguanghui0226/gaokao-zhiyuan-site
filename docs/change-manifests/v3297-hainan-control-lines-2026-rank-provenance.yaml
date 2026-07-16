@@ -1,0 +1,81 @@
+change_id: "2026-07-16-v3297-hainan-control-lines-2026-rank-provenance"
+title: "海南2026控制线、900分量纲与位次PDF来源闭合"
+phase: deliver
+status: testing
+execution_mode: full
+resume_mode: full
+resume_reason: "海南已有547条2026普通类一分一段记录，但控制线未进入运行层、位次行未关联正式PDF，且900分制与专科先报后划边界需要显式建模。"
+last_updated: "2026-07-16T23:45:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "阳光高考考试局原图、海南日报文字版、中新网、实施办法和20页位次PDF锁定证据；普通控制线、特殊路径和待发布专科线分层。"
+  - surface: user
+    role: consumer
+    notes: "综合478/479、900分上界、专科待发布降级和正式表内位次用于推荐资格切换、风险提示与自动估位。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、海南gzip分片、mac_2T镜像、GitHub Pages和Release证据须保持同一模型版本。"
+
+sot_map:
+  - info_name: "海南省2026年普通高校招生本科各批次录取最低控制分数线"
+    pattern: 4
+    source: "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html"
+    consumers:
+      - name: "data/admissions/official-hainan-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/hainan.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node锁定正式转载页、考试局原图、实施办法、新闻网与海南日报交叉核验哈希，定向重写gzip核心、清单和海南分片；来源等级保持official-content-mirror。"
+    desync_risk: high
+  - info_name: "海南省2026年普通高考普通类考生成绩分布表"
+    pattern: 4
+    source: "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202606/t20260625_4099593.html"
+    consumers:
+      - name: "site/data/release-v3.275/hainan.json.gz"
+        kind: runtime
+        sync_lag: retained
+    sync_mechanism: "重新解析阳光高考镜像的20页正式PDF，逐行复核1个顶端区间和546个逐分行；保留547条位次数值，只补考试局正式PDF URL。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "来源、数量、900分量纲、专科待发布、艺术专业分不补造或位次零改动断言失败时不发布v3.297运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.296 gzip产物，保留海南证据和导入文件用于修复。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: source-import
+    scope: "控制线转载、考试局原图、实施办法、新闻网、海南日报、位次索引、20页PDF和14条边界"
+    verification_command: "node scripts/build-official-hainan-control-lines-2026-v3297.mjs"
+  - id: runtime-patch
+    scope: "核心索引、海南分片、547条位次URL修复、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-hainan-control-lines-2026-v3297.mjs"
+  - id: boundary-safety
+    scope: "478/479边界、专科待发布降级、900分量纲、表内位次、越界和特殊路径隔离"
+    verification_command: "node scripts/test-official-hainan-control-lines-v3297.mjs"
+  - id: national-regression
+    scope: "31省分片、2026通用控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校专业组投档线、专业录取最低分或录取概率证据。"
+  - "艺术体育还须核对专业合格线、综合成绩算法和招生章程；艺术专业数值未在本源公布，不得补造。"
+  - "海南普通专科线须在填报后另行发布；当前只能降级为路径调研，不得用往年线或高职分类招生线替代。"
+  - "海南考试局原站在当前网络环境中TLS连接失败；控制线是正式转载与报纸正文交叉核验的official-content-mirror，不得写成当前会话直接下载。"
+  - "当前2026普通批通用控制线覆盖24省，仍有7省待补；海南、上海和天津专科线继续保持待发布。"
+
+next_action: "完成v3.297 Pages、公网、mac_2T与Release证据闭环，再从黑龙江开始继续补齐缺失7省；始终区分普通控制线、特殊路径、位次表和院校/专业录取分。"

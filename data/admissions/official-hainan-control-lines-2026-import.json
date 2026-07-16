@@ -1,0 +1,722 @@
+{
+  "dataset": "official-hainan-control-lines-2026-import",
+  "generatedAt": "2026-07-16T15:30:00.000Z",
+  "scope": {
+    "province": "海南",
+    "year": 2026,
+    "sourceKind": "official-content-mirror-control-lines"
+  },
+  "notes": [
+    "海南2026本科批普通类479分进入普通本科资格路由；普通专科批实行先报志愿再划线，保持待官方发布，不使用往年线或高职分类考试线补造。",
+    "国家专项479分、部分特殊类型568分、本科体育文化421分/专业75分和10个本科艺术类别文化线共13条保持 special-path-only。",
+    "海南采用900分投档成绩口径；体育文化分与专业分分字段保存，艺术专业数值未在控制线图公布，10条艺术记录只保留专业合格要求。",
+    "海南考试局原站当前TLS连接失败；控制线使用阳光高考正式转载的海南考试局原图，并由海南日报文字版和中新网 attribution 交叉核验，明确标注 official-content-mirror。",
+    "阳光高考转载的20页普通类位次PDF重新解析547行，与运行层547条海南2026位次逐行零差异；本轮只补考试局正式PDF URL。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "official-hainan-control-lines-2026",
+      "province": "海南",
+      "title": "2026年海南省普通高校招生本科各批次录取最低控制分数线公告",
+      "publisher": "海南省考试局（阳光高考正式转载；海南日报与中新网交叉核验）",
+      "publishedAt": "2026-06-25",
+      "url": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "originalOfficialUrl": "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202606/t20260625_4099246.html",
+      "relatedUrls": [
+        "https://t1.chei.com.cn/news/img/2293847184.png",
+        "https://gaokao.chsi.com.cn/gkxx/zc/ss/202605/20260529/2293505726-11.html",
+        "https://www.chinanews.com/edu/2026/06-25/10646983.shtml",
+        "https://news.hndaily.cn/resfile/2026-06-26/005/hnrb20260626005.pdf",
+        "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202606/t20260625_4099593.html",
+        "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202606/P020260625627884748040.pdf",
+        "https://gaokao.chsi.com.cn/gkxx/zc/ss/202607/20260701/2293870259.html",
+        "https://t2.chei.com.cn/news/getfile/2293870260-2293870259-e90d3230a81f15767e6d961f6271460f.pdf"
+      ],
+      "quality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "usage": "抽取海南2026本科普通类、国家专项、特殊类型、体育和艺术控制线14条；仅本科普通类479分参与普通考生资格路由。",
+      "parsedRecords": 14,
+      "scoreMaximum": 900,
+      "directOfficialRetrievalStatus": "blocked-current-session-tls",
+      "ordinaryVocationalStatus": "pending-official-release",
+      "ordinaryVocationalReason": "海南2026实施办法明确专科批次实行先报志愿再划线；截至本轮只有本科各批次控制线，不使用往年普通专科线或高职分类招生线替代。",
+      "evidence": {
+        "chsiControlPage": {
+          "file": "chsi-control-lines.html",
+          "bytes": 44307,
+          "sha256": "35463062b661b401f9d5934c6fac8d8bdf6d038c7cda6f57105b59a7794abd0f"
+        },
+        "chsiControlImage": {
+          "file": "chsi-control-lines.png",
+          "bytes": 185168,
+          "width": 706,
+          "height": 790,
+          "sha256": "55be6fdf1034569e3961b5d7ec1573ae5b7a79a96280825977ad2be6c20db5eb"
+        },
+        "chinaNewsControlPage": {
+          "file": "chinanews-control-lines.html",
+          "bytes": 79472,
+          "sha256": "be3b4bc872626e8b21da02fd332956b8788fb47c668cf1a3d9b27e65544315ba"
+        },
+        "chsiImplementationRules": {
+          "file": "chsi-implementation-rules-art-vocational.html",
+          "bytes": 47214,
+          "sha256": "9bb3075f7bf7e1acbfcf346253ea755dc76cc3218b983f468b11316f9f78fdd7"
+        },
+        "chsiRankIndex": {
+          "file": "chsi-rank-index.html",
+          "bytes": 47506,
+          "sha256": "f3538a212e755891d4b8d94f1f572ba91dc89ef914027cd7c48fcb899a2fa318"
+        },
+        "chsiRankOrdinaryPdf": {
+          "file": "chsi-rank-ordinary.pdf",
+          "bytes": 134849,
+          "pages": 20,
+          "sha256": "9ee71c71ebd8c6a1641b2465fd5eff21707a9fd42306d04b219ea2aa8bca062c"
+        },
+        "hainanDailyControlCrossCheck": {
+          "file": "hainan-daily-control-crosscheck.pdf",
+          "bytes": 1167182,
+          "pages": 1,
+          "sha256": "d0ee7079e98b012292896bb04aa75a18ceac12e0826b93beac35c5898196b5f7"
+        }
+      },
+      "manualVisualVerification": {
+        "verifiedAt": "2026-07-16",
+        "finding": "阳光高考转载的海南省考试局原图清晰显示普通本科479、国家专项479、特殊类型568、体育文化421/专业75、六类艺术383和四类艺术407；与海南日报文字版一致。"
+      },
+      "rankEvidence": {
+        "sourceId": "official-hainan-rank-2026",
+        "records": 547,
+        "officialPageUrl": "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202606/t20260625_4099593.html",
+        "officialPdfUrl": "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202606/P020260625627884748040.pdf",
+        "chsiMirrorPageUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202607/20260701/2293870259.html",
+        "chsiMirrorPdfUrl": "https://t2.chei.com.cn/news/getfile/2293870260-2293870259-e90d3230a81f15767e6d961f6271460f.pdf",
+        "mirrorPdfSha256": "9ee71c71ebd8c6a1641b2465fd5eff21707a9fd42306d04b219ea2aa8bca062c",
+        "fullRowCrossCheck": {
+          "rowsCompared": 547,
+          "exactRows": 546,
+          "topBucketRows": 1,
+          "finalCumulative": 70398,
+          "valueDifferences": 0,
+          "rankRowsNeedingSourceUrlOnV3296Base": 547
+        },
+        "valueChanges": 0,
+        "controlBoundaryCrossCheck": {
+          "ordinaryBachelor": {
+            "score": 479,
+            "rankEnd": 45098
+          },
+          "specialType": {
+            "score": 568,
+            "rankEnd": 19715
+          },
+          "sportsCulture": {
+            "score": 421,
+            "rankEnd": 58664
+          },
+          "artCultureLower": {
+            "score": 383,
+            "rankEnd": 64360
+          },
+          "artCultureUpper": {
+            "score": 407,
+            "rankEnd": 61050
+          },
+          "topBucket": {
+            "scoreRange": {
+              "min": 800,
+              "max": 900
+            },
+            "rankEnd": 111
+          }
+        }
+      },
+      "evidenceBoundary": "control-line-only=1; special-path-only=13; ordinary vocational=pending after filing; Hainan scoreMaximum=900; sports culture/professional thresholds remain separate; art professional numeric thresholds not invented; 547 rank rows full-cross-checked and values unchanged; not institution-group, institution or major admission score"
+    }
+  ],
+  "records": [
+    {
+      "id": "2026-hainan-control-aaf9509f407164e959",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科批（普通类）录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "普通类",
+        "普通类",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科批（普通类）录取最低控制分数线",
+      "majorGroup": "普通类",
+      "minScore": 479,
+      "cultureScoreLine": 479,
+      "scoreDimension": "total-score",
+      "scoreBasis": "gaokao-total",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "control-line-only",
+      "controlLineRouteKind": "ordinary-bachelor",
+      "controlLineKind": "本科批（普通类）录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科批普通类录取最低控制分数线，只用于判断普通本科基本资格边界。",
+        "海南普通高考使用900分投档成绩口径；专科批次实行先报志愿再划线，本轮不得用往年专科线或高职分类考试线补造普通专科线。",
+        "控制线不是院校专业组投档线、院校录取线、专业录取最低分或最低位次，不能单独生成录取概率。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-dfd7dde7be360bde6a",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "国家专项计划（普通类）录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "国家专项计划（普通类）",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "国家专项计划（普通类）录取最低控制分数线",
+      "majorGroup": "国家专项计划（普通类）",
+      "minScore": 479,
+      "cultureScoreLine": 479,
+      "scoreDimension": "total-score",
+      "scoreBasis": "gaokao-total",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "national-special",
+      "controlLineKind": "国家专项计划（普通类）录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年国家专项计划（普通类）录取最低控制分数线，属于专项或特殊类型路径，不替代本科批普通类479分控制线。",
+        "达到该线不等于获得院校或专业录取资格，专项报名条件、校测、体检政审和招生章程要求须另行满足。",
+        "本记录保持 special-path-only，不进入普通类院校推荐概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-5aeed63fdcf860e0a5",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "部分特殊类型招生投档最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "部分特殊类型招生",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "部分特殊类型招生投档最低控制分数线",
+      "majorGroup": "部分特殊类型招生",
+      "minScore": 568,
+      "cultureScoreLine": 568,
+      "scoreDimension": "total-score",
+      "scoreBasis": "gaokao-total",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "special",
+      "controlLineKind": "部分特殊类型招生投档最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年部分特殊类型招生投档最低控制分数线，属于专项或特殊类型路径，不替代本科批普通类479分控制线。",
+        "达到该线不等于获得院校或专业录取资格，专项报名条件、校测、体检政审和招生章程要求须另行满足。",
+        "本记录保持 special-path-only，不进入普通类院校推荐概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-1178b6fd0a57eab0b7",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科体育类录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "体育类",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科体育类录取最低控制分数线",
+      "majorGroup": "体育类",
+      "minScore": 421,
+      "cultureScoreLine": 421,
+      "professionalMinScore": 75,
+      "professionalScoreMaximum": 100,
+      "scoreDimension": "culture-and-professional",
+      "scoreBasis": "culture-score",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "sports",
+      "controlLineKind": "本科体育类录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科体育类文化成绩和专业成绩双重控制线，只适用于体育类考生。",
+        "文化成绩421分和专业成绩75分是两个独立门槛，不得相加，也不得用普通类位次直接解释专业成绩。",
+        "该边界不是具体院校专业组投档线，仍须核对综合成绩、招生章程、体检和选科要求。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-5b3e4837c860bc07b8",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科艺术类（舞蹈学类）文化课成绩录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "舞蹈学类",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科艺术类（舞蹈学类）文化课成绩录取最低控制分数线",
+      "majorGroup": "舞蹈学类",
+      "minScore": 383,
+      "cultureScoreLine": 383,
+      "professionalQualification": "专业成绩达到海南省相应艺术类别统考、联考或校考要求",
+      "scoreDimension": "culture-and-qualification",
+      "scoreBasis": "culture-score",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "本科艺术类（舞蹈学类）文化课成绩录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科艺术类舞蹈学类文化课成绩录取最低控制分数线，只适用于对应艺术类别考生。",
+        "官方控制线图没有给出该类别专业统考数值；考生还必须达到相应专业成绩要求，不得把文化线当成专业线。",
+        "该记录保持 special-path-only，不进入普通本科资格线或普通录取概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-ce0fcd94380084f0d9",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科艺术类（音乐表演类（声乐））文化课成绩录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "音乐表演类（声乐）",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科艺术类（音乐表演类（声乐））文化课成绩录取最低控制分数线",
+      "majorGroup": "音乐表演类（声乐）",
+      "minScore": 383,
+      "cultureScoreLine": 383,
+      "professionalQualification": "专业成绩达到海南省相应艺术类别统考、联考或校考要求",
+      "scoreDimension": "culture-and-qualification",
+      "scoreBasis": "culture-score",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "本科艺术类（音乐表演类（声乐））文化课成绩录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科艺术类音乐表演类（声乐）文化课成绩录取最低控制分数线，只适用于对应艺术类别考生。",
+        "官方控制线图没有给出该类别专业统考数值；考生还必须达到相应专业成绩要求，不得把文化线当成专业线。",
+        "该记录保持 special-path-only，不进入普通本科资格线或普通录取概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-8d824598e34708f734",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科艺术类（音乐表演类（器乐））文化课成绩录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "音乐表演类（器乐）",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科艺术类（音乐表演类（器乐））文化课成绩录取最低控制分数线",
+      "majorGroup": "音乐表演类（器乐）",
+      "minScore": 383,
+      "cultureScoreLine": 383,
+      "professionalQualification": "专业成绩达到海南省相应艺术类别统考、联考或校考要求",
+      "scoreDimension": "culture-and-qualification",
+      "scoreBasis": "culture-score",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "本科艺术类（音乐表演类（器乐））文化课成绩录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科艺术类音乐表演类（器乐）文化课成绩录取最低控制分数线，只适用于对应艺术类别考生。",
+        "官方控制线图没有给出该类别专业统考数值；考生还必须达到相应专业成绩要求，不得把文化线当成专业线。",
+        "该记录保持 special-path-only，不进入普通本科资格线或普通录取概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-8cb59bf0b024bafac4",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科艺术类（服装表演类）文化课成绩录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "服装表演类",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科艺术类（服装表演类）文化课成绩录取最低控制分数线",
+      "majorGroup": "服装表演类",
+      "minScore": 383,
+      "cultureScoreLine": 383,
+      "professionalQualification": "专业成绩达到海南省相应艺术类别统考、联考或校考要求",
+      "scoreDimension": "culture-and-qualification",
+      "scoreBasis": "culture-score",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "本科艺术类（服装表演类）文化课成绩录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科艺术类服装表演类文化课成绩录取最低控制分数线，只适用于对应艺术类别考生。",
+        "官方控制线图没有给出该类别专业统考数值；考生还必须达到相应专业成绩要求，不得把文化线当成专业线。",
+        "该记录保持 special-path-only，不进入普通本科资格线或普通录取概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-050e7084533d744bd1",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科艺术类（戏剧影视导演类）文化课成绩录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "戏剧影视导演类",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科艺术类（戏剧影视导演类）文化课成绩录取最低控制分数线",
+      "majorGroup": "戏剧影视导演类",
+      "minScore": 383,
+      "cultureScoreLine": 383,
+      "professionalQualification": "专业成绩达到海南省相应艺术类别统考、联考或校考要求",
+      "scoreDimension": "culture-and-qualification",
+      "scoreBasis": "culture-score",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "本科艺术类（戏剧影视导演类）文化课成绩录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科艺术类戏剧影视导演类文化课成绩录取最低控制分数线，只适用于对应艺术类别考生。",
+        "官方控制线图没有给出该类别专业统考数值；考生还必须达到相应专业成绩要求，不得把文化线当成专业线。",
+        "该记录保持 special-path-only，不进入普通本科资格线或普通录取概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-fc8ca0ef09b6318c2e",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科艺术类（戏剧影视表演类）文化课成绩录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "戏剧影视表演类",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科艺术类（戏剧影视表演类）文化课成绩录取最低控制分数线",
+      "majorGroup": "戏剧影视表演类",
+      "minScore": 383,
+      "cultureScoreLine": 383,
+      "professionalQualification": "专业成绩达到海南省相应艺术类别统考、联考或校考要求",
+      "scoreDimension": "culture-and-qualification",
+      "scoreBasis": "culture-score",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "本科艺术类（戏剧影视表演类）文化课成绩录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科艺术类戏剧影视表演类文化课成绩录取最低控制分数线，只适用于对应艺术类别考生。",
+        "官方控制线图没有给出该类别专业统考数值；考生还必须达到相应专业成绩要求，不得把文化线当成专业线。",
+        "该记录保持 special-path-only，不进入普通本科资格线或普通录取概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-c00f12d0d17851fa3e",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科艺术类（美术与设计类）文化课成绩录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "美术与设计类",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科艺术类（美术与设计类）文化课成绩录取最低控制分数线",
+      "majorGroup": "美术与设计类",
+      "minScore": 407,
+      "cultureScoreLine": 407,
+      "professionalQualification": "专业成绩达到海南省相应艺术类别统考、联考或校考要求",
+      "scoreDimension": "culture-and-qualification",
+      "scoreBasis": "culture-score",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "本科艺术类（美术与设计类）文化课成绩录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科艺术类美术与设计类文化课成绩录取最低控制分数线，只适用于对应艺术类别考生。",
+        "官方控制线图没有给出该类别专业统考数值；考生还必须达到相应专业成绩要求，不得把文化线当成专业线。",
+        "该记录保持 special-path-only，不进入普通本科资格线或普通录取概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-b929e894e7ac884d75",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科艺术类（书法类）文化课成绩录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "书法类",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科艺术类（书法类）文化课成绩录取最低控制分数线",
+      "majorGroup": "书法类",
+      "minScore": 407,
+      "cultureScoreLine": 407,
+      "professionalQualification": "专业成绩达到海南省相应艺术类别统考、联考或校考要求",
+      "scoreDimension": "culture-and-qualification",
+      "scoreBasis": "culture-score",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "本科艺术类（书法类）文化课成绩录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科艺术类书法类文化课成绩录取最低控制分数线，只适用于对应艺术类别考生。",
+        "官方控制线图没有给出该类别专业统考数值；考生还必须达到相应专业成绩要求，不得把文化线当成专业线。",
+        "该记录保持 special-path-only，不进入普通本科资格线或普通录取概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-d3bacd929e809e9a18",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科艺术类（音乐教育类）文化课成绩录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "音乐教育类",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科艺术类（音乐教育类）文化课成绩录取最低控制分数线",
+      "majorGroup": "音乐教育类",
+      "minScore": 407,
+      "cultureScoreLine": 407,
+      "professionalQualification": "专业成绩达到海南省相应艺术类别统考、联考或校考要求",
+      "scoreDimension": "culture-and-qualification",
+      "scoreBasis": "culture-score",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "本科艺术类（音乐教育类）文化课成绩录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科艺术类音乐教育类文化课成绩录取最低控制分数线，只适用于对应艺术类别考生。",
+        "官方控制线图没有给出该类别专业统考数值；考生还必须达到相应专业成绩要求，不得把文化线当成专业线。",
+        "该记录保持 special-path-only，不进入普通本科资格线或普通录取概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    },
+    {
+      "id": "2026-hainan-control-1bb5c6f0e417c28a74",
+      "province": "海南",
+      "year": 2026,
+      "subjectType": "综合",
+      "batch": "本科艺术类（播音与主持类）文化课成绩录取最低控制分数线",
+      "schoolName": "海南省2026年普通高校招生本科各批次录取最低控制分数线",
+      "schoolTags": [
+        "海南官方内容镜像控制线",
+        "特殊路径",
+        "播音与主持类",
+        "本科"
+      ],
+      "city": "海南",
+      "dataType": "control-line",
+      "majorName": "本科艺术类（播音与主持类）文化课成绩录取最低控制分数线",
+      "majorGroup": "播音与主持类",
+      "minScore": 407,
+      "cultureScoreLine": 407,
+      "professionalQualification": "专业成绩达到海南省相应艺术类别统考、联考或校考要求",
+      "scoreDimension": "culture-and-qualification",
+      "scoreBasis": "culture-score",
+      "scoreMaximum": 900,
+      "rankUnavailable": true,
+      "scoreOnly": true,
+      "sourceId": "official-hainan-control-lines-2026",
+      "sourceQuality": "official-content-mirror-hainan-chsi-official-image-and-hainan-daily-text-verified",
+      "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847183.html",
+      "formalScoreScope": "special-path-only",
+      "controlLineRouteKind": "art",
+      "controlLineKind": "本科艺术类（播音与主持类）文化课成绩录取最低控制分数线",
+      "controlLineSection": "本科",
+      "cautions": [
+        "这是海南省2026年本科艺术类播音与主持类文化课成绩录取最低控制分数线，只适用于对应艺术类别考生。",
+        "官方控制线图没有给出该类别专业统考数值；考生还必须达到相应专业成绩要求，不得把文化线当成专业线。",
+        "该记录保持 special-path-only，不进入普通本科资格线或普通录取概率计算。"
+      ],
+      "sourceFile": "data/admissions/raw/hainan-2026/chsi-control-lines.png",
+      "sourcePublishedAt": "2026-06-25"
+    }
+  ],
+  "diagnostics": {
+    "recordCount": 14,
+    "ordinaryRecords": 1,
+    "specialPathRecords": 13,
+    "artRecords": 10,
+    "artProfessionalQualificationRecords": 10,
+    "sportsRecords": 1,
+    "professionalNumericRecords": 1,
+    "ordinaryVocationalStatus": "pending-official-release",
+    "routeCounts": {
+      "ordinary-bachelor": 1,
+      "national-special": 1,
+      "special": 1,
+      "sports": 1,
+      "art": 10
+    },
+    "ordinaryBoundaries": {
+      "comprehensiveBachelor": 479,
+      "comprehensiveVocational": null
+    },
+    "rankRecords": 547,
+    "rankRowsFullCrossChecked": 547,
+    "rankValueChanges": 0,
+    "scoreMaximum": 900
+  }
+}

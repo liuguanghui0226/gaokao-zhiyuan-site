@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.296-guizhou-control-lines2026-and-rank-provenance-847019records";
+const modelVersion = "local-deterministic-v3.297-hainan-control-lines2026-and-rank-provenance-847033records";
 const sourceId = "official-guizhou-control-lines-2026";
 const rankSourceId = "official-guizhou-rank-2026";
 const historyRankUrl = "https://zsksy.guizhou.gov.cn/zlxz/202606/P020260625601945966806.pdf";
@@ -37,13 +37,13 @@ assert.equal(imported.diagnostics.professionalNumericRecords, 0);
 assert.deepEqual(imported.diagnostics.routeCounts, { "ordinary-bachelor": 2, "ordinary-vocational": 2, special: 2, art: 18, sports: 4, "minority-language-oral": 1 });
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
-assert.equal(core.browserRuntime.fullMasterRecords, 847019);
-assert.equal(core.admissionScoreLayer.structuredRecords, 847019);
+assert.equal(core.browserRuntime.fullMasterRecords, 847033);
+assert.equal(core.admissionScoreLayer.structuredRecords, 847033);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5102);
-assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1373);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5103);
+assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1387);
 assert.equal(manifest.modelVersion, modelVersion);
-assert.equal(manifest.recordCount, 847019);
+assert.equal(manifest.recordCount, 847033);
 assert.equal(manifest.shards["贵州"].records, 56905);
 assert.equal(manifest.shards["贵州"].rankConversions, 3636);
 assert.equal(runtimeManifest.after.sourceRecords, 29);
@@ -217,4 +217,3 @@ console.log(JSON.stringify({
   evidenceBoundary: sourceNote.evidenceBoundary,
   boundarySafety: { belowVocationalMaxTotal: 42, confidence: "C", testedScores: [199, 200, 392, 393, 438, 439, 494, 503, 600, 662, 663, 691, 692, 751] },
 }, null, 2));
-
