@@ -693,6 +693,30 @@ select {
   background: #f8fbf7;
 }
 
+.pending-review-list {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0;
+  padding-left: 20px;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.pending-review-reason {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.pending-review-link {
+  display: inline-flex;
+  margin-top: 2px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 700;
+}
+
 .data-freshness-panel {
   background: #fffaf0;
   border-color: #ead8b5;

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.304-yunnan-control-lines2026-art-thresholds-and-rank-image-provenance-847238records";
+const modelVersion = "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records";
 const sourceId = "official-hebei-control-lines-2026";
 const rankSourceId = "official-hebei-rank-2026";
 const rankUrl = "https://www.hebeea.edu.cn/c/2026-06-24/493215.html";

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.304-yunnan-control-lines2026-art-thresholds-and-rank-image-provenance-847238records";
+const modelVersion = "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records";
 const sourceId = "official-jiangsu-control-lines-2026";
 const rankSourceId = "official-jiangsu-rank-2026";
 const historyRankUrl = "https://www.jseea.cn/webfile/upload/2026/06-24/18-24-3205871556923388.jpg";

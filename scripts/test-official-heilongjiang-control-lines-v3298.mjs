@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.304-yunnan-control-lines2026-art-thresholds-and-rank-image-provenance-847238records";
+const modelVersion = "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records";
 const sourceId = "official-heilongjiang-control-lines-2026";
 const rankSourceId = "official-heilongjiang-rank-2026";
 const historyRankUrl = "https://jyt.hlj.gov.cn/jyt/c110476/202606/31952462/files/1.%E9%BB%91%E9%BE%99%E6%B1%9F%E7%9C%812026%E5%B9%B4%E6%99%AE%E9%80%9A%E9%AB%98%E8%80%83%E5%8E%86%E5%8F%B2%E7%B1%BB%E6%96%87%E5%8C%96%E8%AF%BE%E4%B8%80%E5%88%86%E6%AE%B5%E7%BB%9F%E8%AE%A1%E8%A1%A8.xls";

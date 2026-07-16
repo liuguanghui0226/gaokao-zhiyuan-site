@@ -1,0 +1,192 @@
+{
+  "dataset": "official-pending-vocational-schedule-audit-2026-v3305",
+  "generatedAt": "2026-07-17T08:00:00.000Z",
+  "checkedAt": "2026-07-17",
+  "definition": "仅审计2026年普通高职专科通用控制线尚未发布的省级口径。官方明确控制线发布日期时记录日期；只公布志愿填报、录取窗口或划线规则时仅记录该事实，不反推控制线发布时间，不使用往年分数或高职分类招生线替代。",
+  "entries": [
+    {
+      "sourceId": "official-shanghai-control-lines-2026",
+      "province": "上海",
+      "status": "pending-official-release",
+      "expectedPublicationAt": "2026-07-29",
+      "exactPublicationDateStatus": "official-announced",
+      "statusLabel": "官方日程明确：7月29日晚公布专科各批次录取控制分数线",
+      "reason": "截至2026-07-17尚未到官方公布日，当前不得使用往年上海专科线替代。",
+      "noHistoricalSubstitution": true,
+      "officialMilestones": [
+        {
+          "kind": "control-line-publication",
+          "label": "7月29日晚公布专科各批次录取控制分数线和可填报专科志愿考生成绩分布表",
+          "startsAt": "2026-07-29",
+          "sourceUrl": "https://www.shmeea.edu.cn/page/08000/20260609/20321.html"
+        },
+        {
+          "kind": "vocational-filling-window",
+          "label": "7月30日9:00至16:00填报专科阶段志愿",
+          "startsAt": "2026-07-30T09:00:00+08:00",
+          "endsAt": "2026-07-30T16:00:00+08:00",
+          "sourceUrl": "https://www.shmeea.edu.cn/page/08000/20260609/20321.html"
+        }
+      ],
+      "primarySource": {
+        "publisher": "上海市教育考试院",
+        "title": "上海市2026年普通高等学校招生录取工作日程",
+        "url": "https://www.shmeea.edu.cn/page/08000/20260609/20321.html"
+      },
+      "sourceEvidence": [
+        {
+          "file": "data/admissions/raw/official-pending-vocational-schedules-2026-v3305/shanghai-schedule.html",
+          "bytes": 57658,
+          "sha256": "966666374eaefdba5bb3efd97373df43d3b54f6a1c1dce58ba45d396be253beb"
+        }
+      ]
+    },
+    {
+      "sourceId": "official-jiangsu-control-lines-2026",
+      "province": "江苏",
+      "status": "pending-official-release",
+      "expectedPublicationAt": null,
+      "exactPublicationDateStatus": "not-announced",
+      "statusLabel": "官方已公布专科志愿填报窗口，未公布专科控制线发布日期",
+      "reason": "省考试院明确第二阶段于7月27日至28日填报专科院校专业组志愿，但该日程不能反推控制线数值或发布日期。",
+      "noHistoricalSubstitution": true,
+      "officialMilestones": [
+        {
+          "kind": "vocational-filling-window",
+          "label": "7月27日至28日填报专科院校专业组志愿，7月28日17:00截止",
+          "startsAt": "2026-07-27",
+          "endsAt": "2026-07-28T17:00:00+08:00",
+          "sourceUrl": "https://www.jseea.cn/webfile/index/index_zkxx/2026-06-10/7470370318775750656.html"
+        }
+      ],
+      "primarySource": {
+        "publisher": "江苏省教育考试院",
+        "title": "江苏省2026年普通高考考后提醒",
+        "url": "https://www.jseea.cn/webfile/index/index_zkxx/2026-06-10/7470370318775750656.html"
+      },
+      "sourceEvidence": [
+        {
+          "file": "data/admissions/raw/official-pending-vocational-schedules-2026-v3305/jiangsu-post-exam-reminder.html",
+          "bytes": 19383,
+          "sha256": "0b2b70579bddad875ef43016e5f8c66ca50ecf20c778946956ab901a2c52ee95"
+        }
+      ]
+    },
+    {
+      "sourceId": "official-tianjin-control-lines-2026",
+      "province": "天津",
+      "status": "pending-official-release",
+      "expectedPublicationAt": null,
+      "exactPublicationDateStatus": "not-announced",
+      "statusLabel": "官方已公布高职专科志愿填报窗口，未公布普通高职专科控制线发布日期",
+      "reason": "天津政务网转载市考试院安排，明确7月26日至28日填报普通高职专科志愿，但未给出普通专科控制线的确切发布日。",
+      "scoreBasisNote": "天津普通高职专科批以语文、数学、外语三门统一高考成绩为主要依据；控制线发布后必须按三科450分口径判断，不能直接拿六科总分比较。",
+      "noHistoricalSubstitution": true,
+      "officialMilestones": [
+        {
+          "kind": "vocational-filling-window",
+          "label": "7月26日9:00至7月28日17:00填报艺体类及普通高职专科志愿",
+          "startsAt": "2026-07-26T09:00:00+08:00",
+          "endsAt": "2026-07-28T17:00:00+08:00",
+          "sourceUrl": "https://www.tj.gov.cn/zmhd/hygqx/202606/t20260618_7319903.html"
+        }
+      ],
+      "primarySource": {
+        "publisher": "天津政务网（转载天津市教育招生考试院安排）",
+        "title": "天津高考生志愿填报整体安排发布",
+        "url": "https://www.tj.gov.cn/zmhd/hygqx/202606/t20260618_7319903.html"
+      },
+      "sourceEvidence": [
+        {
+          "file": "data/admissions/raw/official-pending-vocational-schedules-2026-v3305/tianjin-filling-schedule.html",
+          "bytes": 143163,
+          "sha256": "052b84beeea870e2834dd4f0ea578c94944f18ee655e4a13a990f5e0a37e8e98"
+        }
+      ]
+    },
+    {
+      "sourceId": "official-shanxi-control-lines-2026",
+      "province": "山西",
+      "status": "pending-official-release",
+      "expectedPublicationAt": null,
+      "exactPublicationDateStatus": "not-announced",
+      "statusLabel": "官方已公布专科填报与录取日程，未公布普通专科控制线发布日期",
+      "reason": "截至2026-07-17，山西发布的是专科志愿填报和录取窗口，不足以证明2026普通专科控制线数值或确切发布日。",
+      "noHistoricalSubstitution": true,
+      "officialMilestones": [
+        {
+          "kind": "vocational-advance-filling-window",
+          "label": "7月18日8:00至7月19日18:00填报艺术、普通专科高职提前批志愿",
+          "startsAt": "2026-07-18T08:00:00+08:00",
+          "endsAt": "2026-07-19T18:00:00+08:00",
+          "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260623/2293841404.html"
+        },
+        {
+          "kind": "vocational-filling-window",
+          "label": "7月25日8:00至7月26日18:00填报艺术、体育和普通专科高职批志愿",
+          "startsAt": "2026-07-25T08:00:00+08:00",
+          "endsAt": "2026-07-26T18:00:00+08:00",
+          "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260623/2293841404.html"
+        },
+        {
+          "kind": "vocational-admission-window",
+          "label": "普通专科高职提前批8月4日至6日录取，普通专科高职批8月6日至15日录取",
+          "startsAt": "2026-08-04",
+          "endsAt": "2026-08-15",
+          "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202607/20260706/2293872043.html"
+        }
+      ],
+      "primarySource": {
+        "publisher": "山西招生考试网 / 阳光高考",
+        "title": "山西省2026年普通高校招生志愿填报与录取时间安排",
+        "url": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260623/2293841404.html"
+      },
+      "sourceEvidence": [
+        {
+          "file": "data/admissions/raw/official-pending-vocational-schedules-2026-v3305/shanxi-filling-schedule.html",
+          "bytes": 44927,
+          "sha256": "e3a517d0cfc976159c945047c580a8efc3e455078d8c3e949b40198ecbc76cc1"
+        },
+        {
+          "file": "data/admissions/raw/official-pending-vocational-schedules-2026-v3305/shanxi-admission-schedule.html",
+          "bytes": 44766,
+          "sha256": "ec2ea818a9625a2c7561ce8f6d2f7a6edb59d9f2a347f9dc43ca4290256598a5"
+        }
+      ]
+    },
+    {
+      "sourceId": "official-hainan-control-lines-2026",
+      "province": "海南",
+      "status": "pending-official-release",
+      "expectedPublicationAt": null,
+      "exactPublicationDateStatus": "not-announced",
+      "statusLabel": "官方规则明确专科批先报志愿再划线，未公布确切划线日期",
+      "reason": "海南2026实施办法明确专科普通类按专科计划总数100%的相应位次、先报志愿再划线；当前不能用往年普通专科线或高职分类招生线替代。",
+      "noHistoricalSubstitution": true,
+      "officialMilestones": [
+        {
+          "kind": "post-filing-control-line-rule",
+          "label": "专科批次先报志愿再划线，普通类原则上按专科计划总数100%的相应位次考生分数划线",
+          "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202605/20260529/2293505726-11.html"
+        }
+      ],
+      "primarySource": {
+        "publisher": "海南省考试局 / 阳光高考",
+        "title": "2026年海南省普通高等学校招生实施办法（划线比例）",
+        "url": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202605/20260529/2293505726-11.html"
+      },
+      "sourceEvidence": [
+        {
+          "file": "data/admissions/raw/official-pending-vocational-schedules-2026-v3305/hainan-implementation-rules-filing.html",
+          "bytes": 47214,
+          "sha256": "9bb3075f7bf7e1acbfcf346253ea755dc76cc3218b983f468b11316f9f78fdd7"
+        },
+        {
+          "file": "data/admissions/raw/official-pending-vocational-schedules-2026-v3305/hainan-implementation-rules.html",
+          "bytes": 47731,
+          "sha256": "369e936b323f23023f241d8f65208046997c6079c3081fb3ac9271a9880fe0e2"
+        }
+      ]
+    }
+  ]
+}

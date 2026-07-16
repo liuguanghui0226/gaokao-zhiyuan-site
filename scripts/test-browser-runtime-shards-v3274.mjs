@@ -47,7 +47,7 @@ const hnuImported = JSON.parse(fs.readFileSync(hnuImportFile, "utf8"));
 
 assert.match(fs.readFileSync(appFile, "utf8"), /const DEFAULT_PROFILE = \{[\s\S]*?rank: "",/, "Default example must leave rank blank so province/score changes trigger current rank estimation");
 
-assert.equal(core.modelVersion, "local-deterministic-v3.304-yunnan-control-lines2026-art-thresholds-and-rank-image-provenance-847238records");
+assert.equal(core.modelVersion, "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.records.length, 0);
 assert.equal(core.admissionScoreLayer.rankConversions.length, 0);

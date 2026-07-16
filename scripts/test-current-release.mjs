@@ -41,7 +41,8 @@ const tests = [
   "test-official-qinghai-control-lines-v3302.mjs",
   "test-official-shanxi-control-lines-v3303.mjs",
   "test-official-yunnan-control-lines-v3304.mjs",
-  "audit-official-control-line-coverage-v3304.mjs",
+  "test-official-pending-vocational-schedules-v3305.mjs",
+  "audit-official-control-line-coverage-v3305.mjs",
 ];
 
 const results = tests.map((test) => {

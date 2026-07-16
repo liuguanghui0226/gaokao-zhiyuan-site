@@ -1128,6 +1128,49 @@ function pendingOrdinaryVocationalControlSource(profile) {
   ) || null;
 }
 
+function formatOfficialScheduleDate(value) {
+  const match = String(value || "").match(/^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}):(\d{2}))?/);
+  if (!match) return String(value || "");
+  const [, year, month, day, hour, minute] = match;
+  return `${year}年${Number(month)}月${Number(day)}日${hour ? ` ${hour}:${minute}` : ""}`;
+}
+
+function pendingOrdinaryVocationalReviewDetails(source) {
+  const review = source?.ordinaryVocationalReview || {};
+  const milestones = Array.isArray(review.officialMilestones) ? review.officialMilestones : [];
+  const primarySource = review.primarySource || {};
+  return {
+    checkedAt: review.checkedAt || source?.ordinaryVocationalCheckedAt || "",
+    statusLabel: review.statusLabel || "官方尚未发布2026年普通高职专科通用控制线",
+    publicationLabel: review.expectedPublicationAt
+      ? `官方明确公布日期：${formatOfficialScheduleDate(review.expectedPublicationAt)}`
+      : "控制线发布日期：官方尚未明确公布",
+    milestoneLabels: milestones.map((item) => item?.label).filter(Boolean),
+    reason: review.reason || source?.ordinaryVocationalReason || "当前不使用往年分数替代当年资格线。",
+    scoreBasisNote: review.scoreBasisNote || "",
+    sourceUrl: primarySource.url || milestones.find((item) => item?.sourceUrl)?.sourceUrl || source?.ordinaryVocationalScheduleUrl || source?.url || "",
+    sourceTitle: primarySource.title || "查看官方日程或划线规则",
+    noHistoricalSubstitution: review.noHistoricalSubstitution !== false,
+  };
+}
+
+function renderPendingOrdinaryVocationalPanel(profile, source) {
+  const review = pendingOrdinaryVocationalReviewDetails(source);
+  const details = [
+    `核验状态：${review.statusLabel}`,
+    review.publicationLabel,
+    ...review.milestoneLabels.map((label) => `官方节点：${label}`),
+    review.scoreBasisNote,
+  ].filter(Boolean);
+  return `<section class="band admission-hit-panel">
+    <h3>2026年普通专科控制线待发布</h3>
+    <p>${esc(profile?.province || "本省")}2026年普通高职专科通用控制线尚待官方发布。当前只展示升学路径和专业认知调研，不生成可执行院校专业清单，也不把往年专科投档结果解释为今年已具备填报资格。</p>
+    <ul class="pending-review-list">${details.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>
+    <p class="pending-review-reason">截至${esc(formatOfficialScheduleDate(review.checkedAt))}：${esc(review.reason)}${review.noHistoricalSubstitution ? " 不使用往年控制线、高职分类招生线或录取日程反推今年分数。" : ""}</p>
+    ${review.sourceUrl ? `<a class="pending-review-link" href="${esc(review.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(review.sourceTitle)}</a>` : ""}
+  </section>`;
+}
+
 function controlLineScoreComparison(line, profile) {
   if (!line) {
     return {
@@ -2753,10 +2796,9 @@ function renderRecommendationResults() {
     <h3>专科资格分数口径待补充</h3>
     <p>${esc(rec.profile.province || "本省")}${esc(controlLineDisplayLabel(vocationalLine, "普通高职专科最低控制线"))}${esc(String(vocationalLine.score))}分按${esc(vocationalLineComparison.label)}判断。当前高考总分仍用于位次估算，但不能替代这一资格分数；补充后再生成可执行院校专业清单。</p>
   </section>` : "";
-  const pendingQualificationPanel = vocationalLinePending ? `<section class="band admission-hit-panel">
-    <h3>2026年普通专科控制线待发布</h3>
-    <p>${esc(rec.profile.province || "本省")}2026年普通高职专科控制线尚待官方发布。当前只展示升学路径和专业认知调研，不生成可执行院校专业清单，也不把往年专科投档结果解释为今年已具备填报资格。</p>
-  </section>` : "";
+  const pendingQualificationPanel = vocationalLinePending
+    ? renderPendingOrdinaryVocationalPanel(rec.profile, vocationalQualification.pendingSource)
+    : "";
 
   return `<section class="recommend-results">
     <div class="model-summary">

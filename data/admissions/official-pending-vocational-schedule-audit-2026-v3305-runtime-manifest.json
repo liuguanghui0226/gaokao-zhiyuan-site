@@ -1,0 +1,41 @@
+{
+  "dataset": "official-pending-vocational-schedule-audit-2026-v3305-runtime",
+  "generatedAt": "2026-07-17T08:00:00.000Z",
+  "auditFile": "data/admissions/official-pending-vocational-schedule-audit-2026-v3305.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.304-yunnan-control-lines2026-art-thresholds-and-rank-image-provenance-847238records",
+    "recordCount": 847238,
+    "sourceNotes": 5110,
+    "coreBytes": 15253863,
+    "coreSha256": "8d761632c7f023740953e55ad2c9cde969f687625716b43a0c63b9bd571d3931",
+    "manifestBytes": 5529,
+    "manifestSha256": "a2db62df6860dcb23f4e7c35ab311df93887d73a21487e3fe168ca071ff7f583"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records",
+    "recordCount": 847238,
+    "rankConversionCount": 116656,
+    "sourceNotes": 5110,
+    "pendingProvinces": [
+      "上海",
+      "江苏",
+      "天津",
+      "山西",
+      "海南"
+    ],
+    "exactPublicationDateProvinces": [
+      "上海"
+    ],
+    "unannouncedPublicationDateProvinces": [
+      "江苏",
+      "天津",
+      "山西",
+      "海南"
+    ],
+    "coreBytes": 15261878,
+    "coreSha256": "ca00a6ed8cb553d0d6be52dd96988dc3f0853f2afb838db8d203aa029075ac9b",
+    "manifestBytes": 5504,
+    "manifestSha256": "9ae0f72f845d32866b4e542ebb943d39f07907450d8a38d4cf87e1566501e2d2"
+  }
+}

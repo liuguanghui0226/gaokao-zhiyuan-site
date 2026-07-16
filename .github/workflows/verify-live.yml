@@ -28,7 +28,7 @@ jobs:
           fetch "$base" "$work/index.html"
           grep -q "全国高考志愿智能推荐" "$work/index.html"
           grep -q "__GAOKAO_RUNTIME_RELEASE_BASE__" "$work/index.html"
-          grep -q 'app.js?v=3.304.0' "$work/index.html"
+          grep -q 'app.js?v=3.305.0' "$work/index.html"
 
           release_path="$(node -e '
             const html = require("node:fs").readFileSync(process.argv[1], "utf8");
@@ -43,6 +43,8 @@ jobs:
           grep -q "vocationalScoreInput" "$work/app.js"
           grep -q "controlLineScoreComparison" "$work/app.js"
           grep -q "pendingOrdinaryVocationalControlSource" "$work/app.js"
+          grep -q "pendingOrdinaryVocationalReviewDetails" "$work/app.js"
+          grep -q "不使用往年控制线" "$work/app.js"
           grep -q "limitedOrdinaryVocationalControlLine" "$work/app.js"
           grep -q "限定院校资格核验清单" "$work/app.js"
           grep -q "2026年普通专科控制线待发布" "$work/app.js"
@@ -58,7 +60,15 @@ jobs:
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.304-yunnan-control-lines2026-art-thresholds-and-rank-image-provenance-847238records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records"' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '.admissionScoreLayer.pendingOrdinaryVocationalAudit.pendingCount == 5 and .admissionScoreLayer.pendingOrdinaryVocationalAudit.exactPublicationDateProvinces == ["上海"] and (.admissionScoreLayer.pendingOrdinaryVocationalAudit.publicationDateUnannouncedProvinces | sort) == (["天津", "江苏", "海南", "山西"] | sort) and .admissionScoreLayer.pendingOrdinaryVocationalAudit.noHistoricalSubstitution == true' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.ordinaryVocationalReview.checkedAt == "2026-07-17" and .ordinaryVocationalReview.noHistoricalSubstitution == true)] | length == 5' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.ordinaryVocationalReview.expectedPublicationAt != null)] | map(.province) == ["上海"]' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.ordinaryVocationalReview.exactPublicationDateStatus == "not-announced" and .ordinaryVocationalReview.expectedPublicationAt == null)] | map(.province) | sort == (["天津", "江苏", "海南", "山西"] | sort)' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-tianjin-control-lines-2026" and .ordinaryVocationalStatus == "pending-official-release")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
