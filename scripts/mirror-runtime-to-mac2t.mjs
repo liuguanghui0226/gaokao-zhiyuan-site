@@ -2,6 +2,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import zlib from "node:zlib";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
@@ -322,6 +323,21 @@ function readKnowledgeSummary(file) {
   return JSON.parse(result.stdout);
 }
 
+function readGzipKnowledgeSummary(file) {
+  const knowledge = JSON.parse(zlib.gunzipSync(fs.readFileSync(file)).toString("utf8"));
+  return {
+    modelVersion: knowledge.modelVersion || knowledge.modelPolicy?.version || "",
+    rounds: Array.isArray(knowledge.rounds) ? knowledge.rounds.length : 0,
+    structuredRecords: Number(knowledge.admissionScoreLayer?.structuredRecords || 0),
+    coverage: {
+      provinces: knowledge.admissionScoreLayer?.coverage?.provinces || [],
+      years: knowledge.admissionScoreLayer?.coverage?.years || [],
+      schools: knowledge.admissionScoreLayer?.coverage?.schools || [],
+      formalScoreMissingProvinces: knowledge.admissionScoreLayer?.coverage?.formalScoreMissingProvinces || [],
+    },
+  };
+}
+
 function main() {
   if (!fs.existsSync("/Volumes/mac_2T")) {
     throw new Error("/Volumes/mac_2T is not mounted; refusing to create an alternate mirror path.");
@@ -330,9 +346,19 @@ function main() {
 
   const fullKnowledgeFile = path.join(PROJECT_ROOT, "site", "data", "knowledge.json");
   const browserCoreFile = path.join(PROJECT_ROOT, "site", "data", "knowledge-core.json");
-  const summaryFile = fs.existsSync(fullKnowledgeFile) ? fullKnowledgeFile : browserCoreFile;
-  if (!fs.existsSync(summaryFile)) throw new Error("Neither site/data/knowledge.json nor site/data/knowledge-core.json is available for mirror summary.");
-  const knowledge = readKnowledgeSummary(summaryFile);
+  const browserProvinceDir = path.join(PROJECT_ROOT, "site", "data", "provinces");
+  const runtimeReleaseDir = path.join(PROJECT_ROOT, "site", "data", "release-v3.275");
+  const runtimeReleaseCoreFile = path.join(runtimeReleaseDir, "knowledge-core.json.gz");
+  const runtimeReleaseManifestFile = path.join(runtimeReleaseDir, "manifest.json.gz");
+  if (!fs.existsSync(runtimeReleaseCoreFile) || !fs.existsSync(runtimeReleaseManifestFile)) {
+    throw new Error("The authoritative gzip runtime release is incomplete.");
+  }
+  const summaryFile = fs.existsSync(fullKnowledgeFile)
+    ? fullKnowledgeFile
+    : fs.existsSync(browserCoreFile)
+      ? browserCoreFile
+      : runtimeReleaseCoreFile;
+  const knowledge = summaryFile.endsWith(".gz") ? readGzipKnowledgeSummary(summaryFile) : readKnowledgeSummary(summaryFile);
   const copied = [];
   const copy = (relative, options = {}) => {
     const didCopy = copyFile(path.join(PROJECT_ROOT, relative), path.join(mirrorRoot, relative), options);
@@ -340,18 +366,31 @@ function main() {
   };
 
   copy("site/index.html");
+  copyDir(runtimeReleaseDir, path.join(mirrorRoot, "site", "data", "release-v3.275"));
+  copied.push("site/data/release-v3.275/ (gzip core, manifest and 31 province shards)");
   if (fs.existsSync(fullKnowledgeFile)) copy("site/data/knowledge.json");
   else {
     const staleMirrorMaster = path.join(mirrorRoot, "site/data/knowledge.json");
     if (fs.existsSync(staleMirrorMaster)) fs.rmSync(staleMirrorMaster, { force: true });
     copied.push("site/data/knowledge.json absent and stale mirror removed; browser runtime uses the lighter core plus 31 province shards");
   }
-  copy("site/data/knowledge-core.json");
+  if (fs.existsSync(browserCoreFile)) copy("site/data/knowledge-core.json");
+  else {
+    const staleMirrorCore = path.join(mirrorRoot, "site/data/knowledge-core.json");
+    if (fs.existsSync(staleMirrorCore)) fs.rmSync(staleMirrorCore, { force: true });
+    copied.push("site/data/knowledge-core.json absent and stale mirror removed; gzip runtime core is authoritative");
+  }
   const mirrorProvinceDir = path.join(mirrorRoot, "site/data/provinces");
-  copyDir(path.join(PROJECT_ROOT, "site/data/provinces"), mirrorProvinceDir);
-  const removedStaleDoubleJson = removeStaleDoubleJson(mirrorProvinceDir);
-  copied.push("site/data/provinces/ (31 province browser shards and manifest)");
-  copied.push(`stale duplicate shard cleanup: removed ${removedStaleDoubleJson} *.json.json files`);
+  let removedStaleDoubleJson = 0;
+  if (fs.existsSync(browserProvinceDir)) {
+    copyDir(browserProvinceDir, mirrorProvinceDir);
+    removedStaleDoubleJson = removeStaleDoubleJson(mirrorProvinceDir);
+    copied.push("site/data/provinces/ (decompressed compatibility shards)");
+    copied.push(`stale duplicate shard cleanup: removed ${removedStaleDoubleJson} *.json.json files`);
+  } else {
+    if (fs.existsSync(mirrorProvinceDir)) fs.rmSync(mirrorProvinceDir, { recursive: true, force: true });
+    copied.push("site/data/provinces absent and stale mirror removed; gzip runtime shards are authoritative");
+  }
   if (COPY_SITE_ASSETS) {
     copyDir(path.join(PROJECT_ROOT, "site", "assets"), path.join(mirrorRoot, "site", "assets"));
     copied.push("site/assets/");
@@ -454,15 +493,15 @@ function main() {
     generatedAt: new Date().toISOString(),
     mirrorRoot,
     projectRoot: PROJECT_ROOT,
-    purpose: "Runtime mirror for the full gaokao master corpus plus a lightweight browser core and 31 on-demand province shards; Node-only targeted copy, no external-disk Python/lxml processing.",
+    purpose: "Runtime mirror for the authoritative gzip browser core and 31 on-demand province shards; Node-only targeted copy, no external-disk Python/lxml processing.",
     runtimeMirrorPolicy: COPY_FULL_ADMISSIONS
       ? "Copies site knowledge JSON, docs, full admission JSON/source packs, and explicitly whitelisted raw provenance packs/import scripts. Site assets and top-level data/knowledge.json are opt-in because scripts/serve.mjs reads assets from the internal APFS site/ directory and runtime HTTP data from site/data/knowledge.json. Skips the broad raw HTML cache and removes source-side or ExFAT-created AppleDouble metadata entries."
       : COPY_PROVENANCE
         ? "Copies site knowledge JSON, docs, targeted provenance import JSONs, and explicitly whitelisted raw provenance packs/import scripts only. Site assets and top-level data/knowledge.json are opt-in because scripts/serve.mjs reads assets from the internal APFS site/ directory and runtime HTTP data from site/data/knowledge.json. Full data/admissions copying is disabled by default because external ExFAT/fskit writes can stall; set GAOKAO_MIRROR_FULL_ADMISSIONS=1 for a controlled full copy."
         : "Copies site knowledge JSON and docs only. Site assets and top-level data/knowledge.json are opt-in because scripts/serve.mjs reads assets from the internal APFS site/ directory and runtime HTTP data from site/data/knowledge.json. data/admissions provenance copying is skipped by default because external ExFAT/fskit writes can stall; set GAOKAO_MIRROR_PROVENANCE=1 for targeted provenance copy or GAOKAO_MIRROR_FULL_ADMISSIONS=1 for a controlled full copy.",
-    siteData: fs.existsSync(fullKnowledgeFile) ? "site/data/knowledge.json" : "site/data/knowledge-core.json + site/data/provinces/",
-    browserCore: "site/data/knowledge-core.json",
-    browserProvinceShards: "site/data/provinces/",
+    siteData: "site/data/release-v3.275/knowledge-core.json.gz + manifest.json.gz + 31 province gzip shards",
+    browserCore: "site/data/release-v3.275/knowledge-core.json.gz",
+    browserProvinceShards: "site/data/release-v3.275/*.json.gz",
     admissionData: COPY_FULL_ADMISSIONS ? "data/admissions/ (full copy)" : COPY_PROVENANCE ? "data/admissions/ (targeted provenance copy)" : "skipped by default",
     modelVersion: knowledge.modelVersion || "",
     rounds: knowledge.rounds || 0,

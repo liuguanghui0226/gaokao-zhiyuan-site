@@ -1,0 +1,161 @@
+{
+  "dataset": "evidence-v3296-guizhou-2026",
+  "generatedAt": "2026-07-16T14:58:07.000Z",
+  "modelVersion": "local-deterministic-v3.296-guizhou-control-lines2026-and-rank-provenance-847019records",
+  "dataCommit": {
+    "local": "25ddc506708693bc42af42aa48eaf138dc49547c",
+    "remote": "8633912600980b89cfec7af96e4556bd03afdfbe",
+    "tree": "c21b3b562da1c50f4f0f64a72f4b086418a76f2f"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29508098673,
+    "liveVerificationRun": 29508432459,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.296",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.296",
+    "baseDataReleaseTag": "data-v3.275",
+    "baseDataReleaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 847019,
+    "rankConversions": 116656,
+    "sourceNotes": 5102,
+    "controlLineRecords": 1373,
+    "provinceCount": 31,
+    "guizhouRecords": 56905,
+    "guizhouAllRankConversions": 3636,
+    "guizhouRankConversions2026": 1201,
+    "guizhouRankConversionsBySubject": {
+      "history": 561,
+      "physics": 640
+    },
+    "guizhouControlLines": {
+      "all": 29,
+      "ordinary": 4,
+      "specialPath": 25,
+      "artSportsCultureWithProfessionalQualification": 22,
+      "numericProfessionalThresholds": 0,
+      "art": 18,
+      "sports": 4,
+      "specialType": 2,
+      "minorityLanguageOral": 1
+    },
+    "officialControlCoverage": {
+      "covered": 23,
+      "missing": 8,
+      "missingProvinces": [
+        "海南",
+        "黑龙江",
+        "江苏",
+        "辽宁",
+        "宁夏",
+        "青海",
+        "山西",
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "sourceEvidence": {
+    "controlRepublishUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847640.html",
+    "originalWechatUrl": "https://mp.weixin.qq.com/s/nKVg7jaelGMXD2NrAKEDAQ",
+    "quality": "official-content-mirror-guizhou-chsi-government-image-and-chinanews-verified",
+    "originalWechatRetrievalStatus": "blocked-by-environment-verification",
+    "officialRankSiteRedownloadStatus": "blocked-current-session-tls",
+    "rankSourceQuality": "official-guizhou-rank-conversion-pdf-text-validated",
+    "rankRowsLinked": 1201,
+    "rankValueChanges": 0,
+    "historyOfficialPdfSha256": "0b8cf4360336c19442eab70355617624ca87d9f4f40a65b99346ff8fb798d183",
+    "physicsOfficialPdfSha256": "361ae84119880307acff21018f96cd06d1c530859bf4ad6fee41f1e07099f9c4",
+    "identicalMirrorHashVerified": true
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 27,
+      "failed": 0
+    },
+    "guizhouBoundaryScores": [
+      199,
+      200,
+      392,
+      393,
+      438,
+      439,
+      494,
+      503,
+      600,
+      662,
+      663,
+      691,
+      692,
+      751
+    ],
+    "officialControlRankCheckpoints": 6,
+    "belowVocationalMaxModelScore": 42,
+    "belowVocationalApplicationPlanRows": 0,
+    "belowVocationalNamedInstitutions": 0,
+    "rankValueChanges": 0,
+    "numericProfessionalThresholdsInvented": 0,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "liveAppVersion": "3.296.0",
+    "interactiveBrowserStatus": "not-used-current-turn-enterprise-network-policy-retained",
+    "browserBoundary": "GitHub Actions live readback and direct HTTPS byte readback are successful independent checks; no browser-policy workaround or screenshot claim was used."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.296-guizhou-control-lines2026-and-rank-provenance-847019records",
+    "gzipRuntimeFiles": 33,
+    "gzipRuntimeMissing": 0,
+    "gzipRuntimeHashMismatches": 0,
+    "keyFilesCompared": 23,
+    "keyFilesMissing": 0,
+    "keyFileHashMismatches": 0,
+    "staleDecompressedMasterFiles": 0,
+    "appleDoubleFiles": 0
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.296-guizhou-2026.tar.gz",
+    "files": 22,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 6479872,
+    "sha256": "979e6857cce41953824a53231917a5681fbedbacd3351fdda7ab9c98f50079ea",
+    "githubDigestMatched": true,
+    "redownloadSha256Verified": true,
+    "redownloadByteMatched": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "f396691672f76513ace01d03f52368d5919350a011d195eabfd3f2f7c745e246",
+    "provinceManifestJson": "cb0f1626d7453970d874617b50f04cae480ef86aa42b57ab2c93b1df340c2a4f",
+    "guizhouJson": "cee99b040f3749d3cfe0f0cc1d02bfd5c941e8a8464b6b386b82e18bf77238a5",
+    "knowledgeCoreGzip": "18d4c8057aaace11a487a0d60cb2d651f4b9dc3cafd001c90e2452ab653a6964",
+    "provinceManifestGzip": "92dda8f791b1571faa738e011dd481508161f0e43520c88364262f2fd9219a5b",
+    "guizhouGzip": "a33ee468089a4015653c0b2c2e25cf840c0d47078e753ba1b4e70a4cbe8fecea",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "siteIndex": "a20881cf8b07bd14b0d74a340f457ba2006a294cef109330b5de9a5a10809636",
+    "importJson": "624f38eed7f218feaf597b355cb07a647bd1c3ab27dd49fa1c5fc78fcc61d7b0",
+    "runtimeManifestJson": "d8cec2c470849e09e81f49b0eeff8274ade0f6c89f4a7ec90b4123e65e6d5a2f",
+    "coverageAuditJson": "127505d8dfe36c7039dc955a7ef91605545ec5ad51f70a5b6d14e3ad9c1f33a2",
+    "officialWechatBlockedPage": "2a9a2424eccd3c1b0e5b0e4b0ea58150020e9741409ff7a9f6d3abeab98a6e90",
+    "chsiControlPage": "f120e3eb02405ef70242b8936438bd8e8a24a2607ea26c4674aedfb675e7d4c6",
+    "chinaNewsControlPage": "8226481d69def8df3e625227a8095ef027a40597a6dbc55186263c32dfc913b9",
+    "tongrenGovernmentPage": "3970e4b82573636e4195fdcf006c9adf58ab72e908f029bcbe7e477313a4f2c0",
+    "tongrenGovernmentImage": "803941857c6ba11d75791d157f1710d2b7d5855791ed188b86b79970dfad339f"
+  },
+  "boundaries": [
+    "The 439/393-point lines are Guizhou 2026 ordinary undergraduate controls; both ordinary vocational controls are 200. None is an institution-group, institution or major admission score.",
+    "Special qualification, art, sports and minority-language oral records remain special-path-only.",
+    "The 22 art/sports culture rows retain a professional qualification requirement but no numeric professional threshold because the control source did not publish one.",
+    "The 97.70 minority-language oral threshold uses an independent 100-point test scale and never participates in the 750-point ordinary-score route.",
+    "The 1201 Guizhou 2026 rank rows retain every score, same-score count and cumulative-rank value; this round only adds the subject-specific official PDF URL.",
+    "History scores above 662 and physics scores above 691 are outside the published exact-score rows and remain rank-unavailable instead of receiving an invented top bucket.",
+    "At 199 the model returns research paths only, names no institution and creates no executable application plan; 200 enters vocational qualification, while 439 history or 393 physics enters undergraduate routing.",
+    "GitHub Pages deployment, live 31-province readback, direct HTTPS byte hashes, mac_2T mirror hashes and Release redownload are reported as separate evidence layers."
+  ]
+}

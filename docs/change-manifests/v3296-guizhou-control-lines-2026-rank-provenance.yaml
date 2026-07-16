@@ -1,11 +1,11 @@
 change_id: "2026-07-16-v3296-guizhou-control-lines-2026-rank-provenance"
 title: "贵州2026控制线、艺体资格条件与位次PDF来源闭合"
 phase: deliver
-status: testing
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "贵州已有1201条2026官方普通类一分一段记录，但控制线未进入运行层，且位次行未逐条关联对应科类正式PDF。"
-last_updated: "2026-07-16T22:35:00+08:00"
+last_updated: "2026-07-16T23:00:00+08:00"
 
 surfaces_touched:
   - surface: information
@@ -77,4 +77,4 @@ residual_risks:
   - "贵州考试院原站在当前网络环境中TLS连接失败；控制线是正式转载与政府原图交叉核验的official-content-mirror，不得写成当前会话直接下载。"
   - "当前2026普通批通用控制线覆盖23省，仍有8省待补；上海和天津专科线继续保持待发布。"
 
-next_action: "完成Pages、公网、mac_2T和Release证据后关闭v3.296发布；随后从缺失8省继续补齐2026官方普通批控制线。"
+next_action: "从缺失8省继续补齐2026官方普通批控制线；下一省必须继续区分普通控制线、特殊路径、位次表和院校/专业录取分。"
