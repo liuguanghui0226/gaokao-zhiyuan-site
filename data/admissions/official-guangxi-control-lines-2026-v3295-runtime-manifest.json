@@ -1,0 +1,39 @@
+{
+  "dataset": "official-guangxi-control-lines-2026-v3295-runtime",
+  "generatedAt": "2026-07-16T15:30:00.000Z",
+  "sourceId": "official-guangxi-control-lines-2026",
+  "importFile": "data/admissions/official-guangxi-control-lines-2026-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.294-gansu-control-lines2026-and-third-party-rank-boundary-cross-check-846940records",
+    "recordCount": 846940,
+    "guangxiRecords": 19752,
+    "rankConversions": 1012,
+    "rankRowsMissingSourceUrl": 1012,
+    "coreSha256": "83d89f79381404cbe4ae484a8243029c939fde264270f39bdc66121f6035b481",
+    "guangxiSha256": "4471d0ef9a223697ec619a7dbf0b3176dff5b28012291b88d21dd68a8a9c8ded"
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.295-guangxi-control-lines2026-and-rank-provenance-846990records",
+    "recordCount": 846990,
+    "guangxiRecords": 19802,
+    "rankConversions": 1012,
+    "rankRowsLinked": 1012,
+    "rankValueChanges": 0,
+    "sourceRecords": 50,
+    "routeCounts": {
+      "ordinary-bachelor": 2,
+      "ordinary-vocational": 2,
+      "special": 2,
+      "sports": 4,
+      "art": 40
+    },
+    "cultureProfessionalRecords": 44,
+    "coreBytes": 15196248,
+    "coreSha256": "418462b13b869bbb8127a6f2f967763a37cbc4615d319337db48bbf0b08deaa7",
+    "guangxiBytes": 19353895,
+    "guangxiSha256": "32a241dd1a57f2dcdfcbfa7349680e0f324a10b6209ea5fbbe29c7eeb9ff1a7f",
+    "manifestBytes": 5509,
+    "manifestSha256": "3b3b1359b5a7d687d8d5c713ad0f41cc469c1ce2d13df506a61d17dc4d8efa77"
+  }
+}

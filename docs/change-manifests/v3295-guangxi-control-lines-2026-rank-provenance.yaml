@@ -1,0 +1,80 @@
+change_id: "2026-07-16-v3295-guangxi-control-lines-2026-rank-provenance"
+title: "广西2026控制线、艺体双门槛与位次来源闭合"
+phase: signoff
+status: in_progress
+execution_mode: full
+resume_mode: full
+resume_reason: "广西已有1012条2026官方普通类一分一档记录，但控制线未进入运行层，且位次行未逐条关联对应科类正式页面。"
+last_updated: "2026-07-16T23:30:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "广西高校转载的招生考试院原图、来源字段、官方链接页和中新网文字镜像锁定字节与SHA-256；50条边界按普通、特殊类型、体育和艺术分层。"
+  - surface: user
+    role: consumer
+    notes: "历史179/180/397/398、物理179/180/367/368和180-750位次覆盖用于推荐降级、资格切换与自动估位。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、广西gzip分片、mac_2T镜像、GitHub Pages和Release证据须保持同一模型版本。"
+
+sot_map:
+  - info_name: "广西2026年普通高校招生录取最低控制分数线"
+    pattern: 4
+    source: "https://www.gxeea.cn/view/content_619_32889.htm"
+    consumers:
+      - name: "data/admissions/official-guangxi-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/guangxi.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node锁定高校转载页、考试院原图和中新网文字镜像哈希，定向重写gzip核心、清单与广西分片；来源等级保持official-content-mirror。"
+    desync_risk: high
+  - info_name: "广西2026年普通类一分一档表"
+    pattern: 4
+    source: "https://www.gxeea.cn/view/content_722_32896.htm"
+    consumers:
+      - name: "site/data/release-v3.275/guangxi.json.gz"
+        kind: runtime
+        sync_lag: retained
+    sync_mechanism: "保留1012条官方HTML位次数值和既有来源清单，只补历史/物理对应正式页面URL，并核验6个控制线边界累计位次。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "来源、数量、双门槛、位次零改动或来源URL断言失败时不发布v3.295运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.294 gzip产物，保留广西证据和导入文件用于修复。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: "source-import"
+    scope: "高校转载考试院原图、新闻网文字镜像、50条边界和44条艺体双门槛"
+    verification_command: "node scripts/build-official-guangxi-control-lines-2026-v3295.mjs"
+  - id: "runtime-patch"
+    scope: "核心索引、广西分片、1012条位次URL修复、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-guangxi-control-lines-2026-v3295.mjs"
+  - id: "boundary-safety"
+    scope: "两科专科/本科线、600分、顶端区间、751越界和特殊路径隔离"
+    verification_command: "node scripts/test-official-guangxi-control-lines-v3295.mjs"
+  - id: "national-regression"
+    scope: "31省分片、2026通用控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校专业组投档线、专业录取最低分或录取概率证据。"
+  - "艺术体育须同时核对文化与专业分、综合成绩算法和招生章程。"
+  - "广西招生考试院原站在当前网络环境中TLS连接失败；控制线是高校转载考试院原图与新闻网文字交叉核验的official-content-mirror，不得写成当前会话直接下载。"
+  - "当前2026普通批通用控制线覆盖22省，仍有9省待补；上海和天津专科线继续保持待发布。"
+
+next_action: "完成GitHub Pages、公网31省读回、mac_2T镜像与evidence-v3.295证据发布，再从缺失9省继续补齐2026官方普通批控制线。"

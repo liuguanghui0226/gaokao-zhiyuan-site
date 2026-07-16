@@ -28,7 +28,7 @@ jobs:
           fetch "$base" "$work/index.html"
           grep -q "全国高考志愿智能推荐" "$work/index.html"
           grep -q "__GAOKAO_RUNTIME_RELEASE_BASE__" "$work/index.html"
-          grep -q 'app.js?v=3.294.0' "$work/index.html"
+          grep -q 'app.js?v=3.295.0' "$work/index.html"
 
           release_path="$(node -e '
             const html = require("node:fs").readFileSync(process.argv[1], "utf8");
@@ -51,20 +51,24 @@ jobs:
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
-          jq -e '.recordCount == 846940' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 846990' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.294-gansu-control-lines2026-and-third-party-rank-boundary-cross-check-846940records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.295-guangxi-control-lines2026-and-rank-provenance-846990records"' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-tianjin-control-lines-2026" and .ordinaryVocationalStatus == "pending-official-release")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-shanghai-control-lines-2026" and .ordinaryVocationalStatus == "pending-official-release" and .ordinaryVocationalExpectedPublicationAt == "2026-07-29")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "gk100-gansu-rank-2026" and (.quality | startswith("third-party-")) and .provenanceRevision.officialRankPageFound == false and .provenanceRevision.rankRowsCrossChecked == 1343 and .provenanceRevision.valueChanges == 0)] | length == 1' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-guangxi-control-lines-2026" and .quality == "official-content-mirror-guangxi-control-line-image-and-chinanews-text-verified" and .directPageRedownloadStatus == "blocked-current-session-tls" and .parsedRecords == 50)] | length == 1' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-guangxi-rank-2026" and .provenanceRevision.rankRowsLinked == 1012 and .provenanceRevision.valueChanges == 0)] | length == 1' >/dev/null
 
           shard_count=0
           while IFS= read -r file; do
@@ -193,6 +197,22 @@ jobs:
             | jq -e '[.records[] | select(.sourceId == "official-gansu-control-lines-2026" and .controlLineRouteKind == "secondary-vocational")] | length == 16' >/dev/null
           gzip -dc "$work/gansu.json.gz" \
             | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "gk100-gansu-rank-2026" and (.sourceQuality | startswith("third-party-")) and (.sourceUrl == null))] | length == 1343' >/dev/null
+          gzip -dc "$work/guangxi.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-guangxi-control-lines-2026")] | length == 50' >/dev/null
+          gzip -dc "$work/guangxi.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-guangxi-control-lines-2026" and .formalScoreScope == "control-line-only")] | length == 4' >/dev/null
+          gzip -dc "$work/guangxi.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-guangxi-control-lines-2026" and .formalScoreScope == "special-path-only")] | length == 46' >/dev/null
+          gzip -dc "$work/guangxi.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-guangxi-control-lines-2026" and (.professionalMinScore | type) == "number")] | length == 44' >/dev/null
+          gzip -dc "$work/guangxi.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-guangxi-control-lines-2026" and .controlLineRouteKind == "ordinary-bachelor") | [.subjectType, .minScore]] | sort == [["历史类", 398], ["物理类", 368]]' >/dev/null
+          gzip -dc "$work/guangxi.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-guangxi-control-lines-2026" and .controlLineRouteKind == "ordinary-vocational") | [.subjectType, .minScore]] | sort == [["历史类", 180], ["物理类", 180]]' >/dev/null
+          gzip -dc "$work/guangxi.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-guangxi-rank-2026" and .subjectType == "历史类" and .sourceUrl == "https://www.gxeea.cn/2026yfyd/yifenyidang/2026_yifenyidang_lishi_qg.html")] | length == 492' >/dev/null
+          gzip -dc "$work/guangxi.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-guangxi-rank-2026" and .subjectType == "物理类" and .sourceUrl == "https://www.gxeea.cn/2026yfyd/yifenyidang/2026_yifenyidang_wuli_qg.html")] | length == 520' >/dev/null
           gzip -dc "$work/inner-mongolia.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-neimenggu-control-lines-2026")] | length == 74' >/dev/null
           gzip -dc "$work/inner-mongolia.json.gz" \

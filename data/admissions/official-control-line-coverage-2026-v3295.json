@@ -1,0 +1,1083 @@
+{
+  "dataset": "official-control-line-coverage-2026-v3295",
+  "generatedAt": "2026-07-16T15:30:00.000Z",
+  "modelVersion": "local-deterministic-v3.295-guangxi-control-lines2026-and-rank-provenance-846990records",
+  "definition": "运行分片中2026年普通类本科/专科或普通类一段/二段省级通用控制线；限定院校、特殊类型、艺体、军警、专项、定向、预科、少数民族、中职升学、技能高考和对口路径不计入。尚未发布的当年专科线单列为pending，不使用往年线补造。",
+  "provinceCount": 31,
+  "coveredCount": 22,
+  "missingCount": 9,
+  "coveredProvinces": [
+    "安徽",
+    "北京",
+    "重庆",
+    "福建",
+    "甘肃",
+    "广东",
+    "广西",
+    "河北",
+    "河南",
+    "湖北",
+    "湖南",
+    "吉林",
+    "江西",
+    "内蒙古",
+    "山东",
+    "陕西",
+    "上海",
+    "四川",
+    "天津",
+    "西藏",
+    "新疆",
+    "浙江"
+  ],
+  "missingProvinces": [
+    "贵州",
+    "海南",
+    "黑龙江",
+    "江苏",
+    "辽宁",
+    "宁夏",
+    "青海",
+    "山西",
+    "云南"
+  ],
+  "ordinaryVocationalPendingProvinces": [
+    "上海",
+    "天津"
+  ],
+  "coverage": [
+    {
+      "province": "安徽",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-anhui-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科文化课录取控制分数线",
+          "minScore": 490,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类高职（专科）文化课录取控制分数线",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科文化课录取控制分数线",
+          "minScore": 451,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类高职（专科）文化课录取控制分数线",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "北京",
+      "covered": true,
+      "ordinaryRecords": 2,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-beijing-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "综合",
+          "batch": "普通本科录取控制分数线",
+          "minScore": 429,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "综合",
+          "batch": "普通专科录取控制分数线",
+          "minScore": 120,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "chinese-math-foreign-450",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "重庆",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-chongqing-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科批录取最低控制分数线",
+          "minScore": 415,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类专科批录取最低控制分数线",
+          "minScore": 180,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科批录取最低控制分数线",
+          "minScore": 406,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类专科批录取最低控制分数线",
+          "minScore": 180,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "福建",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-fujian-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科录取控制分数线",
+          "minScore": 458,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类高职（专科）录取控制分数线",
+          "minScore": 235,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科录取控制分数线",
+          "minScore": 446,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类高职（专科）录取控制分数线",
+          "minScore": 235,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "甘肃",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-gansu-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科批录取最低控制分数线",
+          "minScore": 405,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类高职（专科）批录取最低控制分数线",
+          "minScore": 160,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科批录取最低控制分数线",
+          "minScore": 367,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类高职（专科）批录取最低控制分数线",
+          "minScore": 180,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "广东",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-guangdong-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科录取最低分数线",
+          "minScore": 440,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类高职专科录取最低分数线",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科录取最低分数线",
+          "minScore": 425,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类高职专科录取最低分数线",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "广西",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-guangxi-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科批次录取最低控制分数线",
+          "minScore": 398,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类高职高专批次录取最低控制分数线",
+          "minScore": 180,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科批次录取最低控制分数线",
+          "minScore": 368,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类高职高专批次录取最低控制分数线",
+          "minScore": 180,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "贵州",
+      "covered": false,
+      "ordinaryRecords": 0,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [],
+      "boundaries": []
+    },
+    {
+      "province": "海南",
+      "covered": false,
+      "ordinaryRecords": 0,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [],
+      "boundaries": []
+    },
+    {
+      "province": "河北",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-hebei-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科录取控制分数线",
+          "minScore": 485,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类专科录取控制分数线",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科录取控制分数线",
+          "minScore": 443,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类专科录取控制分数线",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "河南",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-henan-control-lines-2024-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通本科批控制线",
+          "minScore": 459,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通高职（专科）批控制线",
+          "minScore": 179,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通本科批控制线",
+          "minScore": 419,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通高职（专科）批控制线",
+          "minScore": 179,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "黑龙江",
+      "covered": false,
+      "ordinaryRecords": 0,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [],
+      "boundaries": []
+    },
+    {
+      "province": "湖北",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-hubei-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科",
+          "minScore": 443,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类高职高专",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科",
+          "minScore": 435,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类高职高专",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "湖南",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-hunan-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科录取控制分数线",
+          "minScore": 446,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类高职专科录取控制分数线",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科录取控制分数线",
+          "minScore": 400,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类高职专科录取控制分数线",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "吉林",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-jilin-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科最低控制线",
+          "minScore": 343,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类专科最低控制线",
+          "minScore": 160,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科最低控制线",
+          "minScore": 321,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类专科最低控制线",
+          "minScore": 160,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "江苏",
+      "covered": false,
+      "ordinaryRecords": 0,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [],
+      "boundaries": []
+    },
+    {
+      "province": "江西",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-jiangxi-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科控制线",
+          "minScore": 479,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类高职（专科）控制线",
+          "minScore": 220,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科控制线",
+          "minScore": 412,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类高职（专科）控制线",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "辽宁",
+      "covered": false,
+      "ordinaryRecords": 0,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [],
+      "boundaries": []
+    },
+    {
+      "province": "内蒙古",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-neimenggu-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科录取控制分数线",
+          "minScore": 403,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类专科录取控制分数线",
+          "minScore": 160,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科录取控制分数线",
+          "minScore": 363,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类专科录取控制分数线",
+          "minScore": 160,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "宁夏",
+      "covered": false,
+      "ordinaryRecords": 0,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [],
+      "boundaries": []
+    },
+    {
+      "province": "青海",
+      "covered": false,
+      "ordinaryRecords": 0,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [],
+      "boundaries": []
+    },
+    {
+      "province": "山东",
+      "covered": true,
+      "ordinaryRecords": 2,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-shandong-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "综合改革",
+          "batch": "普通类一段线",
+          "minScore": 442,
+          "routeKind": "ordinary-segment-upper",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "综合改革",
+          "batch": "普通类二段线",
+          "minScore": 150,
+          "routeKind": "ordinary-segment-lower",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "山西",
+      "covered": false,
+      "ordinaryRecords": 0,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [],
+      "boundaries": []
+    },
+    {
+      "province": "陕西",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-shaanxi-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "本科批次",
+          "minScore": 385,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "高职（专科）批次",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "本科批次",
+          "minScore": 376,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "高职（专科）批次",
+          "minScore": 200,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "上海",
+      "covered": true,
+      "ordinaryRecords": 1,
+      "ordinaryVocationalStatus": "pending-official-release",
+      "ordinaryVocationalExpectedPublicationAt": "2026-07-29",
+      "sourceIds": [
+        "official-shanghai-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "综合",
+          "batch": "本科录取控制分数线",
+          "minScore": 403,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "四川",
+      "covered": true,
+      "ordinaryRecords": 4,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-sichuan-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "普通类本科批次控制线",
+          "minScore": 455,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "普通类高职（专科）批次控制线",
+          "minScore": 150,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类本科批次控制线",
+          "minScore": 435,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "普通类高职（专科）批次控制线",
+          "minScore": 150,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "天津",
+      "covered": true,
+      "ordinaryRecords": 1,
+      "ordinaryVocationalStatus": "pending-official-release",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-tianjin-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "综合",
+          "batch": "普通本科录取控制分数线",
+          "minScore": 458,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "西藏",
+      "covered": true,
+      "ordinaryRecords": 12,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-xizang-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "本科一批",
+          "minScore": 330,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "A类考生"
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "本科二批",
+          "minScore": 294,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "A类考生"
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "专科批",
+          "minScore": 237,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "A类考生"
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "本科一批",
+          "minScore": 400,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "B类考生"
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "本科二批",
+          "minScore": 304,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "B类考生"
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "专科批",
+          "minScore": 237,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "B类考生"
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "本科一批",
+          "minScore": 300,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "A类考生"
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "本科二批",
+          "minScore": 260,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "A类考生"
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "专科批",
+          "minScore": 195,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "A类考生"
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "本科一批",
+          "minScore": 400,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "B类考生"
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "本科二批",
+          "minScore": 300,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "B类考生"
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "专科批",
+          "minScore": 195,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": "B类考生"
+        }
+      ]
+    },
+    {
+      "province": "新疆",
+      "covered": true,
+      "ordinaryRecords": 6,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-xinjiang-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "历史类",
+          "batch": "本科一批次",
+          "minScore": 451,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "本科二批次",
+          "minScore": 315,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "历史类",
+          "batch": "高职（专科）批次",
+          "minScore": 140,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "本科一批次",
+          "minScore": 468,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "本科二批次",
+          "minScore": 304,
+          "routeKind": "ordinary-bachelor",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "物理类",
+          "batch": "高职（专科）批次",
+          "minScore": 140,
+          "routeKind": "ordinary-vocational",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    },
+    {
+      "province": "云南",
+      "covered": false,
+      "ordinaryRecords": 0,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [],
+      "boundaries": []
+    },
+    {
+      "province": "浙江",
+      "covered": true,
+      "ordinaryRecords": 2,
+      "ordinaryVocationalStatus": "not-declared",
+      "ordinaryVocationalExpectedPublicationAt": null,
+      "sourceIds": [
+        "official-zhejiang-control-lines-2026"
+      ],
+      "boundaries": [
+        {
+          "subjectType": "综合",
+          "batch": "普通类一段线",
+          "minScore": 494,
+          "routeKind": "segment",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        },
+        {
+          "subjectType": "综合",
+          "batch": "普通类二段线",
+          "minScore": 266,
+          "routeKind": "segment",
+          "scoreBasis": "gaokao-total",
+          "candidateCategory": ""
+        }
+      ]
+    }
+  ]
+}
