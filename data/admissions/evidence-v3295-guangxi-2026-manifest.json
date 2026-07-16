@@ -1,0 +1,148 @@
+{
+  "dataset": "evidence-v3295-guangxi-2026",
+  "generatedAt": "2026-07-16T13:50:00.000Z",
+  "modelVersion": "local-deterministic-v3.295-guangxi-control-lines2026-and-rank-provenance-846990records",
+  "dataCommit": {
+    "local": "a2a550c7b699b39bd7fcfafae1792808229e8c78",
+    "remote": "467473062a62ca980121408150d0ab5cfb54cc1a",
+    "tree": "8f1ec614f4c1eb4c15d7e131ccaa6b79827b0e50"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29502912149,
+    "liveVerificationRun": 29503218055,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.295",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.295",
+    "baseDataReleaseTag": "data-v3.275",
+    "baseDataReleaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 846990,
+    "rankConversions": 116656,
+    "sourceNotes": 5101,
+    "controlLineRecords": 1344,
+    "provinceCount": 31,
+    "guangxiRecords": 19802,
+    "guangxiRankConversions2026": 1012,
+    "guangxiRankConversionsBySubject": {
+      "history": 492,
+      "physics": 520
+    },
+    "guangxiControlLines": {
+      "all": 50,
+      "ordinary": 4,
+      "specialPath": 46,
+      "cultureProfessional": 44,
+      "art": 40,
+      "sports": 4,
+      "specialType": 2
+    },
+    "officialControlCoverage": {
+      "covered": 22,
+      "missing": 9,
+      "missingProvinces": [
+        "贵州",
+        "海南",
+        "黑龙江",
+        "江苏",
+        "辽宁",
+        "宁夏",
+        "青海",
+        "山西",
+        "云南"
+      ],
+      "pendingOrdinaryVocational": [
+        "上海",
+        "天津"
+      ]
+    }
+  },
+  "sourceEvidence": {
+    "canonicalOfficialUrl": "https://www.gxeea.cn/view/content_619_32889.htm",
+    "quality": "official-content-mirror-guangxi-control-line-image-and-chinanews-text-verified",
+    "directPageRedownloadStatus": "blocked-current-session-tls",
+    "universityOfficialImageSignedBy": "广西壮族自治区招生考试院",
+    "universityOfficialImageDate": "2026-06-25",
+    "chinaNewsTextValuesMatched": true,
+    "rankSourceQuality": "official-guangxi-rank-conversion-html-national-bonus",
+    "rankRowsLinked": 1012,
+    "rankValueChanges": 0
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 26,
+      "failed": 0
+    },
+    "guangxiBoundaryScores": [
+      179,
+      180,
+      367,
+      368,
+      397,
+      398,
+      510,
+      520,
+      600,
+      673,
+      699,
+      700,
+      750,
+      751
+    ],
+    "officialControlRankCheckpoints": 6,
+    "belowVocationalMaxScore": 42,
+    "belowVocationalApplicationPlanRows": 0,
+    "belowVocationalNamedInstitutions": 0,
+    "rankValueChanges": 0,
+    "liveProvinceShardsVerified": 31,
+    "liveHttpStatus": 200,
+    "interactiveBrowserStatus": "blocked-by-enterprise-network-policy",
+    "interactiveBrowserScreenshots": 0,
+    "browserBoundary": "The in-app browser policy blocks both localhost and github.io; no browser-policy workaround was used. GitHub Actions live readback and direct HTTPS HTTP readback remain separate successful checks."
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "modelVersion": "local-deterministic-v3.295-guangxi-control-lines2026-and-rank-provenance-846990records",
+    "provinceShards": 31,
+    "staleMasterFiles": 0,
+    "keyFilesCompared": 23,
+    "keyFileHashMismatches": 0,
+    "appleDoubleFiles": 0
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.295-guangxi-2026.tar.gz",
+    "files": 29,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 6765131,
+    "sha256": "c18dfd9ba0ca015d4cca684df9177266d605174e387b18327e2d244513c5e943",
+    "redownloadSha256Verified": true
+  },
+  "sha256": {
+    "knowledgeCoreJson": "418462b13b869bbb8127a6f2f967763a37cbc4615d319337db48bbf0b08deaa7",
+    "provinceManifestJson": "3b3b1359b5a7d687d8d5c713ad0f41cc469c1ce2d13df506a61d17dc4d8efa77",
+    "guangxiJson": "32a241dd1a57f2dcdfcbfa7349680e0f324a10b6209ea5fbbe29c7eeb9ff1a7f",
+    "knowledgeCoreGzip": "dcb0f265d538e297cc419459845e051eeba730824e8c34cc8a0cb77134bb04a6",
+    "provinceManifestGzip": "3f50be0884cef62360529510cdbf0e9c28b7df6d083169bcd3eb6c87445e7cd9",
+    "guangxiGzip": "3bba116c363b1ff552d342d0ca7ccf66dcce7d237a7bf3beda7556f4207e1026",
+    "appJs": "8b800148bc175898709e3aa43a7058e0398c1e45ceaa386f237e176e1df42f00",
+    "siteIndex": "df4ccc7fa71f14f33733ed59c5808b6cd7920cf30d2dd24d3663b14b19e8d51d",
+    "universityLinkMirrorPage": "b38d68575fb3ab14c6e5cc5f7026b6af9ab47bde53a627548feece29979700f7",
+    "universityMirrorPage": "e9b1503379a61a59375cd02fa9bee5647e7f58015c03277b1d5eab8f093fc1c5",
+    "universityOfficialContentMirror": "51404304947a3671f30e18256fd692f1984f4f6270b8d6f0e89489f45563724c",
+    "chinaNewsTextMirror": "507f2e5f7b69521c549ffed0176f91c14d4b297581cdc3b1752e86e51ff14ac7",
+    "independentImageMirror1": "2272aead22c0f7e83f14544147d4908763691f6e93d9ed33eb48e197dd5e4c90",
+    "independentImageMirror2": "c1eacb925b3abdac087002e44f0a2ea85d6f224f7422027a4891c7f98d0b95f5",
+    "importJson": "1e237c68900f7081dc496a59e27495b8505e5b1cc1c76aa71512bf88f06e93f1"
+  },
+  "boundaries": [
+    "The 398/368-point lines are Guangxi 2026 ordinary undergraduate controls; both ordinary vocational controls are 180. None is an institution-group, institution or major admission score.",
+    "Special qualification, art and sports records remain special-path-only; 44 art/sports rows preserve both culture and professional thresholds.",
+    "The 1012 Guangxi 2026 rank rows retain every score, same-score count and cumulative-rank value; this round only adds the subject-specific official page URL.",
+    "The canonical control URL is retained, but current-session TLS access failed. The control values are represented as an official-content mirror verified from a university-republished official image and a China News text mirror, not as a successful direct fetch.",
+    "At 179 the model returns research paths only, names no institution and creates no executable application plan; 180 enters vocational qualification, while 398 history or 368 physics enters undergraduate routing.",
+    "GitHub Pages deployment, live 31-province readback, mac_2T mirror hashes and browser-policy availability are reported as separate evidence layers."
+  ]
+}

@@ -1,11 +1,11 @@
 change_id: "2026-07-16-v3295-guangxi-control-lines-2026-rank-provenance"
 title: "广西2026控制线、艺体双门槛与位次来源闭合"
-phase: signoff
-status: in_progress
+phase: deliver
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "广西已有1012条2026官方普通类一分一档记录，但控制线未进入运行层，且位次行未逐条关联对应科类正式页面。"
-last_updated: "2026-07-16T23:30:00+08:00"
+last_updated: "2026-07-16T21:55:00+08:00"
 
 surfaces_touched:
   - surface: information
@@ -77,4 +77,4 @@ residual_risks:
   - "广西招生考试院原站在当前网络环境中TLS连接失败；控制线是高校转载考试院原图与新闻网文字交叉核验的official-content-mirror，不得写成当前会话直接下载。"
   - "当前2026普通批通用控制线覆盖22省，仍有9省待补；上海和天津专科线继续保持待发布。"
 
-next_action: "完成GitHub Pages、公网31省读回、mac_2T镜像与evidence-v3.295证据发布，再从缺失9省继续补齐2026官方普通批控制线。"
+next_action: "从缺失9省继续补齐2026官方普通批控制线；如后续网络恢复，可重新下载广西考试院控制线原页并对当前official-content-mirror做逐项零差异升级。"
