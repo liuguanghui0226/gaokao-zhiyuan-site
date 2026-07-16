@@ -1,0 +1,81 @@
+change_id: "2026-07-17-v3299-jiangsu-control-lines-2026-rank-provenance"
+title: "江苏2026第一阶段控制线、专科待发布与位次图片来源闭合"
+phase: review
+status: in_progress
+execution_mode: full
+resume_mode: full
+resume_reason: "江苏已有408条2026第一阶段普通类位次，但控制线未进入运行层且位次行未关联科类正式图片。"
+last_updated: "2026-07-17T01:45:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "省考试院控制线页面/原图、位次页面/两张原图和专科填报日程锁定证据；28条边界按普通、特殊和艺体路径分层。"
+  - surface: user
+    role: consumer
+    notes: "历史483/484、物理455/456、第一阶段表内位次和顶端区间用于推荐降级、资格切换与自动估位。"
+  - surface: operational
+    role: consumer
+    notes: "核心索引、江苏gzip分片、mac_2T镜像、GitHub Pages和Release证据须保持同一模型版本。"
+
+sot_map:
+  - info_name: "江苏省2026年普通高校招生第一阶段录取控制分数线"
+    pattern: 4
+    source: "https://www.jseea.cn/webfile/index/index_zkxx/2026-06-24/7475450259783553024.html"
+    consumers:
+      - name: "data/admissions/official-jiangsu-control-lines-2026-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/jiangsu.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node锁定省考试院正式页面/原图字节、哈希和尺寸，定向重写gzip核心、清单与江苏分片。"
+    desync_risk: high
+  - info_name: "江苏省2026年普通高考第一阶段逐分段统计表"
+    pattern: 4
+    source: "https://www.jseea.cn/webfile/index/index_zkxx/2026-06-24/7475494421979467776.html"
+    consumers:
+      - name: "site/data/release-v3.275/jiangsu.json.gz"
+        kind: runtime
+        sync_lag: retained
+    sync_mechanism: "重新下载两张正式图片并锁定哈希；复核408条运行位次库存、端点、宽度、连续性和边界，保留原值并补科类图片URL。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "来源、数量、艺体量纲、专科线不补造或位次零改动断言失败时不发布v3.299运行分片。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.298 gzip产物，保留江苏证据和导入文件用于修复。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只从通过完整回归的main提交部署。"
+
+task_slices:
+  - id: source-import
+    scope: "省考试院控制线页/图、位次页/图、专科填报日程和28条边界"
+    verification_command: "node scripts/build-official-jiangsu-control-lines-2026-v3299.mjs"
+  - id: runtime-patch
+    scope: "核心索引、江苏分片、408条位次URL修复、数量守恒和SHA-256"
+    verification_command: "node scripts/apply-official-jiangsu-control-lines-2026-v3299.mjs"
+  - id: boundary-safety
+    scope: "两科本科线、专科pending、正式表内位次、顶端区间、751越界和特殊路径隔离"
+    verification_command: "node scripts/test-official-jiangsu-control-lines-v3299.mjs"
+  - id: national-regression
+    scope: "31省分片、2026通用控制线覆盖审计和Pages公网校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "控制线不是院校专业组投档线、专业录取最低分或录取概率证据。"
+  - "江苏2026普通专科控制线尚未发布，不得使用2025年220分替代。"
+  - "第一阶段位次表只覆盖本科线以上；表外低分不估位。"
+  - "本轮没有重新逐行OCR两张全图，保留此前Vision校验和12处连续性纠正，并明确库存/连续性复核边界。"
+  - "当前2026普通批通用控制线覆盖26省，仍有辽宁、宁夏、青海、山西、云南5省待补。"
+
+next_action: "完成v3.299 Pages、公网、mac_2T和Release闭环，再从辽宁继续补齐剩余5省。"

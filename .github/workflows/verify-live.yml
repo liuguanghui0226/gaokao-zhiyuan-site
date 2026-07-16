@@ -28,7 +28,7 @@ jobs:
           fetch "$base" "$work/index.html"
           grep -q "全国高考志愿智能推荐" "$work/index.html"
           grep -q "__GAOKAO_RUNTIME_RELEASE_BASE__" "$work/index.html"
-          grep -q 'app.js?v=3.298.0' "$work/index.html"
+          grep -q 'app.js?v=3.299.0' "$work/index.html"
 
           release_path="$(node -e '
             const html = require("node:fs").readFileSync(process.argv[1], "utf8");
@@ -51,14 +51,14 @@ jobs:
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
-          jq -e '.recordCount == 847051' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 847079' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.298-heilongjiang-control-lines2026-and-rank-provenance-847051records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.299-jiangsu-first-stage-control-lines2026-pending-vocational-and-rank-provenance-847079records"' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-tianjin-control-lines-2026" and .ordinaryVocationalStatus == "pending-official-release")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
@@ -81,6 +81,10 @@ jobs:
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-heilongjiang-control-lines-2026" and .quality == "official-heilongjiang-government-control-lines-html" and .parsedRecords == 18 and .scoreMaximum == 750 and .evidence.controlPage.sha256 == "26ff5c8469380e854a5346b4b0ec262823daee4a30051872fa08af376b921159")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-heilongjiang-rank-2026" and .provenanceRevision.rankRowsLinked == 1071 and .provenanceRevision.rowsFullCrossChecked == 1071 and .provenanceRevision.valueChanges == 0 and .provenanceRevision.directOfficialRedownloadStatus == "success" and .provenanceRevision.officialFiles.history.sha256 == "e7beb16f3d3a925ad2fbe6fcc83d35bce16a216bda394e22e37052bbb2f00bcd" and .provenanceRevision.officialFiles.physics.sha256 == "9e70a27172d6c1a4ebe1b57386d14feaa13e71b5bab03c6a798aaadda53007e0")] | length == 1' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-jiangsu-control-lines-2026" and .quality == "official-jiangsu-first-stage-control-line-image-manually-verified" and .parsedRecords == 28 and .ordinaryVocationalStatus == "pending-official-release" and .ordinaryVocationalSchedule.fillingStartsAt == "2026-07-27" and .evidence.controlImage.sha256 == "f4815a19ec6452887aa8007bb57c88f16ace5382ed4a25ab754ca1a3d81837b5")] | length == 1' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-jiangsu-rank-2026" and .provenanceRevision.rankRowsLinked == 408 and .provenanceRevision.rowsInventoryChecked == 408 and .provenanceRevision.rowsContinuityChecked == 408 and .provenanceRevision.priorVisionCorrectionsRetained == 12 and .provenanceRevision.valueChanges == 0 and .provenanceRevision.directOfficialRedownloadStatus == "success" and .provenanceRevision.officialFiles.history.sha256 == "c90751acf88c8cc0129f7cb11c0e48736832a39688bdbf98a49245313b2de46b" and .provenanceRevision.officialFiles.physics.sha256 == "90b38029cd2e345c28400f1cfa9ebaf66030bec6e32b6a06070713fa5af56c96")] | length == 1' >/dev/null
 
           shard_count=0
           while IFS= read -r file; do
@@ -279,6 +283,24 @@ jobs:
             | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-heilongjiang-rank-2026" and .subjectType == "历史类" and .sourceUrl == "https://jyt.hlj.gov.cn/jyt/c110476/202606/31952462/files/1.%E9%BB%91%E9%BE%99%E6%B1%9F%E7%9C%812026%E5%B9%B4%E6%99%AE%E9%80%9A%E9%AB%98%E8%80%83%E5%8E%86%E5%8F%B2%E7%B1%BB%E6%96%87%E5%8C%96%E8%AF%BE%E4%B8%80%E5%88%86%E6%AE%B5%E7%BB%9F%E8%AE%A1%E8%A1%A8.xls")] | length == 520' >/dev/null
           gzip -dc "$work/heilongjiang.json.gz" \
             | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-heilongjiang-rank-2026" and .subjectType == "物理类" and .sourceUrl == "https://jyt.hlj.gov.cn/jyt/c110476/202606/31952462/files/2.%E9%BB%91%E9%BE%99%E6%B1%9F%E7%9C%812026%E5%B9%B4%E6%99%AE%E9%80%9A%E9%AB%98%E8%80%83%E7%89%A9%E7%90%86%E7%B1%BB%E6%96%87%E5%8C%96%E8%AF%BE%E4%B8%80%E5%88%86%E6%AE%B5%E7%BB%9F%E8%AE%A1%E8%A1%A8.xls")] | length == 551' >/dev/null
+          gzip -dc "$work/jiangsu.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-jiangsu-control-lines-2026")] | length == 28' >/dev/null
+          gzip -dc "$work/jiangsu.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-jiangsu-control-lines-2026" and .formalScoreScope == "control-line-only")] | length == 2' >/dev/null
+          gzip -dc "$work/jiangsu.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-jiangsu-control-lines-2026" and .formalScoreScope == "special-path-only")] | length == 26' >/dev/null
+          gzip -dc "$work/jiangsu.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-jiangsu-control-lines-2026" and .controlLineRouteKind == "ordinary-bachelor") | [.subjectType, .minScore]] | sort == [["历史类", 484], ["物理类", 456]]' >/dev/null
+          gzip -dc "$work/jiangsu.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-jiangsu-control-lines-2026" and .controlLineRouteKind == "ordinary-vocational")] | length == 0' >/dev/null
+          gzip -dc "$work/jiangsu.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-jiangsu-control-lines-2026" and (.professionalMinScore | type) == "number")] | length == 20' >/dev/null
+          gzip -dc "$work/jiangsu.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-jiangsu-control-lines-2026" and (.professionalQualification | type) == "string" and (.professionalMinScore | type) != "number")] | length == 4' >/dev/null
+          gzip -dc "$work/jiangsu.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-jiangsu-rank-2026" and .subjectType == "历史类" and .sourceUrl == "https://www.jseea.cn/webfile/upload/2026/06-24/18-24-3205871556923388.jpg")] | length == 174' >/dev/null
+          gzip -dc "$work/jiangsu.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-jiangsu-rank-2026" and .subjectType == "物理类" and .sourceUrl == "https://www.jseea.cn/webfile/upload/2026/06-24/18-24-3208191910823240.jpg")] | length == 234' >/dev/null
           gzip -dc "$work/inner-mongolia.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-neimenggu-control-lines-2026")] | length == 74' >/dev/null
           gzip -dc "$work/inner-mongolia.json.gz" \
