@@ -1,0 +1,80 @@
+{
+  "version": "v3.307",
+  "generatedAt": "2026-07-17T03:03:37Z",
+  "modelVersion": "local-deterministic-v3.307-national-school-official-jxust2023-2025-native-rank-855003records",
+  "dataDeploymentCommit": "a85fa3a6983f79e619728573b76931b5ffa390c1",
+  "runtime": {
+    "structuredRecords": 855003,
+    "rankConversionRecords": 116656,
+    "sourceNotes": 5112,
+    "provinceShards": 31,
+    "jxustRecords": 2905,
+    "jxustNativeRankRecords": 2704,
+    "jxustRankUnavailableRecords": 201,
+    "jxustOrdinaryRecords": 2596,
+    "jxustSpecialPathRecords": 309
+  },
+  "github": {
+    "repository": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site",
+    "site": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "deploymentRun": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29549188501",
+    "liveVerificationRun": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29549395436",
+    "release": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.307"
+  },
+  "publicReadback": {
+    "httpStatus": 200,
+    "byteMatchedFiles": 36,
+    "totalFiles": 36,
+    "desktop": {
+      "viewport": "1440x1000",
+      "horizontalOverflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "horizontalOverflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0
+    }
+  },
+  "files": [
+    {
+      "path": "docs/evidence/v3307/desktop-recommendation.png",
+      "bytes": 209750,
+      "sha256": "450ae617b6a24269a0ce9a48c51551af03e0bee67e79aca46c6bb90c6349312c"
+    },
+    {
+      "path": "docs/evidence/v3307/mobile-recommendation.png",
+      "bytes": 95368,
+      "sha256": "1343baf6fa450358b1112d40d2be2c3754a012feb72573d8e29611dcd1820292"
+    },
+    {
+      "path": "site/data/release-v3.275/knowledge-core.json.gz",
+      "bytes": 2332147,
+      "sha256": "1bc3e3aca66c764ee174d9fea4eabedfe2247ab7fb07ce78dea6bdcbae79f0ea"
+    },
+    {
+      "path": "site/data/release-v3.275/manifest.json.gz",
+      "bytes": 2383,
+      "sha256": "b3473c10c62c38c364e01dedf47652c780b982200cbcf565547244debe9c86f5"
+    },
+    {
+      "path": "site/data/release-v3.275/jiangxi.json.gz",
+      "bytes": 636354,
+      "sha256": "635f5a03967d5dce27996d45ffce56edad64b3dec612e5b498919f84e0ae53f2"
+    }
+  ],
+  "releaseAsset": {
+    "name": "evidence-v3.307-jxust-national-admission.tar.gz",
+    "entries": 59,
+    "bytes": 42641323,
+    "sha256": "073e81b5a6897ea247541ce1e5f20709428664eadba2424be12eb95681f21246",
+    "githubDigest": "sha256:073e81b5a6897ea247541ce1e5f20709428664eadba2424be12eb95681f21246",
+    "redownloadByteIdentical": true,
+    "hiddenSidecarCount": 0
+  },
+  "evidenceBoundary": "JXUST scores and school-recorded min-score ranks are single-school evidence, not province-wide closure or standalone admission probability."
+}
