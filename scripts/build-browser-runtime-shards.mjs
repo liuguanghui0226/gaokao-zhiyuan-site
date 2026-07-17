@@ -30,8 +30,8 @@ const PROVINCES = {
 const RECORD_FIELDS = [
   "id", "province", "year", "subjectType", "batch", "schoolName", "schoolCode", "schoolTags",
   "city", "campus", "dataType", "majorName", "majorCode", "majorGroup", "electiveRequirement", "sourcePlanYear",
-  "educationLevel", "examType", "disciplineCodes", "cautions", "planCount", "admittedCount", "tuition",
-  "controlLine", "minScore", "averageScore", "maxScore", "minRank", "minRankStart",
+  "educationLevel", "examType", "collegeName", "subjectMappingNote", "disciplineCodes", "cautions", "planCount", "admittedCount", "tuition",
+  "controlLine", "minScore", "averageScore", "maxScore", "maxScoreRank", "minRank", "minRankStart",
   "minRankEnd", "rankRangeText", "sourceQuality", "sourceId", "sourceSubjectRaw", "formalScoreScope",
   "rankUnavailable", "scoreOnly", "rankDerivedFromScore", "rankEvidenceScope", "nativeAdmissionRankUnavailable",
   "scoreDerivedRank", "averageScoreDerivedRank", "scoreMetric", "rankMetric", "rankDisclaimer",
@@ -39,6 +39,7 @@ const RECORD_FIELDS = [
   "admissionType", "admissionSubtype", "sourceTableTitle", "sourceFirstChoice",
   "planCorrectionNote", "planRestrictionText", "correctionSourceId", "originalSourceId", "originalSourceQuality",
   "originalSchoolCode", "originalSchoolName", "programDuration", "planRemark", "sourceUrl", "sourcePageUrl", "sourceIndexUrl",
+  "sourceAdmissionTypeRaw", "sourceMajorGroupRaw", "sourceMaxRankRaw",
   "rankUsage", "rankUsageLabel", "rankCategory", "rankLevelUsage", "rankLevelUsageLabel", "scoreRange",
   "score", "rankStart", "rankEnd", "sameRankScore", "planOnly", "planStage", "vacancyRound",
   "vacancyAnnouncement", "vacancyRepeatCount", "vacancyOccurrence", "vacancyKey",

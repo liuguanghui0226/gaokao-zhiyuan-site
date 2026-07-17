@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.306-national-school-official-nchu2021-2025-derived-rank-852098records";
+const modelVersion = "local-deterministic-v3.307-national-school-official-jxust2023-2025-native-rank-855003records";
 const sourceId = "official-nchu-national-2021-2025-school-major-admission";
 
 function sha256(bytes) {
@@ -25,14 +25,14 @@ const coverageAudit = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/ad
 
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
-assert.equal(core.browserRuntime.fullMasterRecords, 852098);
-assert.equal(core.admissionScoreLayer.structuredRecords, 852098);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5111);
+assert.equal(core.browserRuntime.fullMasterRecords, 855003);
+assert.equal(core.admissionScoreLayer.structuredRecords, 855003);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5112);
 assert.equal(manifest.modelVersion, modelVersion);
-assert.equal(manifest.recordCount, 852098);
+assert.equal(manifest.recordCount, 855003);
 assert.equal(manifest.rankConversionCount, 116656);
 assert.equal(Object.keys(manifest.shards).length, 31);
-assert.equal(Object.values(manifest.shards).reduce((sum, item) => sum + item.records, 0), 852098);
+assert.equal(Object.values(manifest.shards).reduce((sum, item) => sum + item.records, 0), 855003);
 assert.equal(manifest.core.bytes, coreBytes.length);
 assert.equal(manifest.core.sha256, sha256(coreBytes));
 
@@ -80,8 +80,8 @@ assert.equal(rankUnavailable, 56);
 assert.equal(nativeRankClaims, 0);
 assert.equal(runtimeManifest.after.nativeAdmissionRankRecords, 0);
 assert.equal(runtimeManifest.after.recordsAdded, 4860);
-assert.equal(manifest.shards["西藏"].records, 28315);
-assert.equal(manifest.shards["宁夏"].records, 9014);
+assert.equal(manifest.shards["西藏"].records, 28324);
+assert.equal(manifest.shards["宁夏"].records, 9096);
 
 assert.ok(jiangxiComputer);
 assert.equal(jiangxiComputer.minScore, 562);

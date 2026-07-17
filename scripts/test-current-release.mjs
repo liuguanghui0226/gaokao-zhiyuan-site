@@ -46,6 +46,9 @@ const tests = [
   "test-official-nchu-import-v3306.mjs",
   "test-nchu-derived-rank-boundaries-v3306.mjs",
   "test-official-nchu-runtime-v3306.mjs",
+  "test-official-jxust-import-v3307.mjs",
+  "test-jxust-native-rank-boundaries-v3307.mjs",
+  "test-official-jxust-runtime-v3307.mjs",
 ];
 
 const results = tests.map((test) => {
