@@ -493,3 +493,7 @@ node scripts/mirror-runtime-to-mac2t.mjs
 2. 院校本科招生网分专业录取分和最低位次。
 3. 学校招生章程、专业组、计划数、选科要求。
 4. 第三方汇总仅作种子或交叉核验，必须保留 `sourceQuality` 和复核提示。
+
+## v3.306 换算位次边界
+
+南昌航空大学 2021-2025 年官方历年分数查询新增 4860 条分专业录取记录。官方说明页面排位由相应最低分按各省一分一段表换算，并非学校真实录取最低位次。运行层用 `rankDerivedFromScore=true`、`rankEvidenceScope=score-derived-provincial-segment` 和 `nativeAdmissionRankUnavailable=true` 明确区分；推荐页面显示“最低分换算位次”，学校官网证据最高仍为 A-，不得升级成省级全量正式录取证据。

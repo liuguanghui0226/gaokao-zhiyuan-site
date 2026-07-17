@@ -1,0 +1,255 @@
+{
+  "dataset": "official-national-school-admission-2021-2025-v3306-nchu-runtime",
+  "generatedAt": "2026-07-17T00:14:32.419Z",
+  "sourceId": "official-nchu-national-2021-2025-school-major-admission",
+  "importFile": "data/admissions/official-national-school-admission-2021-2025-v3306-nchu-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records",
+    "recordCount": 847238,
+    "provinceRecords": {
+      "北京": 6490,
+      "天津": 9656,
+      "河北": 68517,
+      "山西": 19944,
+      "内蒙古": 15333,
+      "辽宁": 33811,
+      "吉林": 53857,
+      "黑龙江": 15413,
+      "上海": 5986,
+      "江苏": 26338,
+      "浙江": 110946,
+      "安徽": 15385,
+      "福建": 21516,
+      "江西": 12798,
+      "山东": 82667,
+      "河南": 22737,
+      "湖北": 15139,
+      "湖南": 31914,
+      "广东": 17644,
+      "广西": 19802,
+      "海南": 10690,
+      "重庆": 61878,
+      "四川": 15864,
+      "贵州": 56905,
+      "云南": 15460,
+      "西藏": 28315,
+      "陕西": 15418,
+      "甘肃": 13294,
+      "青海": 5025,
+      "宁夏": 9014,
+      "新疆": 9482
+    }
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.306-national-school-official-nchu2021-2025-derived-rank-852098records",
+    "recordCount": 852098,
+    "recordsAdded": 4860,
+    "ordinaryRecords": 3955,
+    "specialPathRecords": 905,
+    "scoreDerivedRankRecords": 4804,
+    "nativeAdmissionRankRecords": 0,
+    "rankUnavailableRecords": 56,
+    "provinceCount": 29,
+    "provinceRecords": {
+      "北京": 6532,
+      "天津": 9776,
+      "河北": 68780,
+      "山西": 20130,
+      "内蒙古": 15427,
+      "辽宁": 33928,
+      "吉林": 53936,
+      "黑龙江": 15574,
+      "上海": 6051,
+      "江苏": 26547,
+      "浙江": 111111,
+      "安徽": 15645,
+      "福建": 21699,
+      "江西": 13374,
+      "山东": 82824,
+      "河南": 22984,
+      "湖北": 15343,
+      "湖南": 32159,
+      "广东": 17846,
+      "广西": 19967,
+      "海南": 10808,
+      "重庆": 61976,
+      "四川": 16065,
+      "贵州": 57091,
+      "云南": 15558,
+      "西藏": 28315,
+      "陕西": 15619,
+      "甘肃": 13420,
+      "青海": 5049,
+      "宁夏": 9014,
+      "新疆": 9550
+    },
+    "shardStats": {
+      "北京": {
+        "recordsAdded": 42,
+        "recordsAfter": 6532,
+        "derivedRanksAdded": 42
+      },
+      "天津": {
+        "recordsAdded": 120,
+        "recordsAfter": 9776,
+        "derivedRanksAdded": 120
+      },
+      "河北": {
+        "recordsAdded": 263,
+        "recordsAfter": 68780,
+        "derivedRanksAdded": 263
+      },
+      "山西": {
+        "recordsAdded": 186,
+        "recordsAfter": 20130,
+        "derivedRanksAdded": 186
+      },
+      "内蒙古": {
+        "recordsAdded": 94,
+        "recordsAfter": 15427,
+        "derivedRanksAdded": 94
+      },
+      "辽宁": {
+        "recordsAdded": 117,
+        "recordsAfter": 33928,
+        "derivedRanksAdded": 117
+      },
+      "吉林": {
+        "recordsAdded": 79,
+        "recordsAfter": 53936,
+        "derivedRanksAdded": 79
+      },
+      "黑龙江": {
+        "recordsAdded": 161,
+        "recordsAfter": 15574,
+        "derivedRanksAdded": 161
+      },
+      "上海": {
+        "recordsAdded": 65,
+        "recordsAfter": 6051,
+        "derivedRanksAdded": 65
+      },
+      "江苏": {
+        "recordsAdded": 209,
+        "recordsAfter": 26547,
+        "derivedRanksAdded": 209
+      },
+      "浙江": {
+        "recordsAdded": 165,
+        "recordsAfter": 111111,
+        "derivedRanksAdded": 165
+      },
+      "安徽": {
+        "recordsAdded": 260,
+        "recordsAfter": 15645,
+        "derivedRanksAdded": 260
+      },
+      "福建": {
+        "recordsAdded": 183,
+        "recordsAfter": 21699,
+        "derivedRanksAdded": 183
+      },
+      "江西": {
+        "recordsAdded": 576,
+        "recordsAfter": 13374,
+        "derivedRanksAdded": 576
+      },
+      "山东": {
+        "recordsAdded": 157,
+        "recordsAfter": 82824,
+        "derivedRanksAdded": 157
+      },
+      "河南": {
+        "recordsAdded": 247,
+        "recordsAfter": 22984,
+        "derivedRanksAdded": 247
+      },
+      "湖北": {
+        "recordsAdded": 204,
+        "recordsAfter": 15343,
+        "derivedRanksAdded": 204
+      },
+      "湖南": {
+        "recordsAdded": 245,
+        "recordsAfter": 32159,
+        "derivedRanksAdded": 245
+      },
+      "广东": {
+        "recordsAdded": 202,
+        "recordsAfter": 17846,
+        "derivedRanksAdded": 202
+      },
+      "广西": {
+        "recordsAdded": 165,
+        "recordsAfter": 19967,
+        "derivedRanksAdded": 165
+      },
+      "海南": {
+        "recordsAdded": 118,
+        "recordsAfter": 10808,
+        "derivedRanksAdded": 118
+      },
+      "重庆": {
+        "recordsAdded": 98,
+        "recordsAfter": 61976,
+        "derivedRanksAdded": 98
+      },
+      "四川": {
+        "recordsAdded": 201,
+        "recordsAfter": 16065,
+        "derivedRanksAdded": 201
+      },
+      "贵州": {
+        "recordsAdded": 186,
+        "recordsAfter": 57091,
+        "derivedRanksAdded": 186
+      },
+      "云南": {
+        "recordsAdded": 98,
+        "recordsAfter": 15558,
+        "derivedRanksAdded": 98
+      },
+      "西藏": {
+        "recordsAdded": 0,
+        "recordsAfter": 28315,
+        "derivedRanksAdded": 0
+      },
+      "陕西": {
+        "recordsAdded": 201,
+        "recordsAfter": 15619,
+        "derivedRanksAdded": 201
+      },
+      "甘肃": {
+        "recordsAdded": 126,
+        "recordsAfter": 13420,
+        "derivedRanksAdded": 126
+      },
+      "青海": {
+        "recordsAdded": 24,
+        "recordsAfter": 5049,
+        "derivedRanksAdded": 24
+      },
+      "宁夏": {
+        "recordsAdded": 0,
+        "recordsAfter": 9014,
+        "derivedRanksAdded": 0
+      },
+      "新疆": {
+        "recordsAdded": 68,
+        "recordsAfter": 9550,
+        "derivedRanksAdded": 12
+      }
+    },
+    "coreBytes": 15284614,
+    "coreSha256": "7deed1b5dfe36c641d9b96801b533c6d8da5b0cfe79476d1530747765e62685b",
+    "manifestBytes": 5516,
+    "manifestSha256": "e3682eda0747b07d9a157b1de0ef282804f512fe424f6b9ff8f4fb100e275e61"
+  },
+  "cautions": [
+    "学校官网单校分专业分数不替代省级教育考试院全量投档或最终录取表。",
+    "官网明确说明排位由各省一分一段表按相应分数统计，不是学校录取最低位次；全部用rankDerivedFromScore和rankEvidenceScope显式标记。",
+    "专项、艺体、飞行技术、合作办学等保持special-path-only，不与普通本科批混用。",
+    "正式填报仍须核对考生省份当年招生计划、专业组、选科要求和学校章程。"
+  ]
+}

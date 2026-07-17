@@ -1,0 +1,62 @@
+change_id: "2026-07-17-v3306-nchu-national-admission-2021-2025"
+title: "南昌航空大学 2021-2025 全国录取数据"
+phase: deliver
+status: ready-for-deploy
+execution_mode: full
+resume_mode: full
+resume_reason: "官方动态查询可同时补充29省分专业最低分、均分、最高分、录取人数和换算位次。"
+last_updated: "2026-07-17T00:30:00Z"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "南昌航空大学官方查询入口、说明页、接口响应和江西附件。"
+  - surface: user
+    role: consumer
+    notes: "全国画像得到南昌航空大学分专业跨年候选及明确的换算位次边界。"
+  - surface: operational
+    role: consumer
+    notes: "GitHub仓库、31省gzip分片、Pages运行层和Release证据包。"
+
+sot_map:
+  - info_name: "南昌航空大学历年分数查询"
+    pattern: 4
+    source: "https://zsw.nchu.edu.cn/index.php?sys=home&module=school_lnlqcj"
+    consumers:
+      - name: "data/admissions/official-national-school-admission-2021-2025-v3306-nchu-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/*.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node协调curl下载官方页面和接口响应，在内部APFS解析、审计并原子更新gzip核心索引和31省分片。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "导入包和运行清单锁定新增来源与各省增量。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.305前端与gzip运行分片。"
+    - surface: operational
+      mode: 1
+      rationale: "GitHub提交和Release按版本保留，可回退到上一远端提交。"
+
+task_slices:
+  - id: "source-import"
+    scope: "2021-2025年、29省、专业行、最低/平均/最高分、录取人数和官方说明"
+    verification_command: "node scripts/import-official-national-school-admission-2021-2025-v3306-nchu.mjs --use-cache"
+  - id: "evidence-boundary"
+    scope: "换算位次、位次不可用、普通与特殊路径隔离"
+    verification_command: "node scripts/test-official-nchu-import-v3306.mjs && node scripts/test-nchu-derived-rank-boundaries-v3306.mjs"
+  - id: "runtime-refresh"
+    scope: "核心索引、31省gzip分片、覆盖审计和推荐显示"
+    verification_command: "node scripts/test-official-nchu-runtime-v3306.mjs && node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "学校官网单校分数和换算位次不是省考试院全量投档/录取表。"
+  - "换算位次不是学校真实录取最低位次，必须始终保留免责声明。"
+  - "西藏、宁夏本源无返回记录，仍需继续补充当地省级正式专业录取数据。"

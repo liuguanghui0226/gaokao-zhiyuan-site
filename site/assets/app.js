@@ -618,6 +618,10 @@ function isSchoolOfficialOnlyRecord(record) {
   return record?.formalScoreScope === "school-official-only";
 }
 
+function isScoreDerivedRankRecord(record) {
+  return record?.rankDerivedFromScore === true || record?.rankEvidenceScope === "score-derived-provincial-segment";
+}
+
 function isVocationalAdmissionRecord(record) {
   const batch = String(record?.batch || "");
   if (/本科/.test(batch)) return false;
@@ -1762,15 +1766,16 @@ function admissionFit(record, profile, today = currentChinaDate()) {
   const score = Number(profile.score) || 0;
   const minRankEnd = Number(record.minRankEnd) || 0;
   const minScore = Number(record.minScore) || 0;
+  const rankBoundaryLabel = isScoreDerivedRankRecord(record) ? "最低分换算位次" : "近年最低位次";
   const recency = admissionRecency(record, today);
   let fit;
   if (rank > 0 && minRankEnd > 0) {
     const gap = rank - minRankEnd;
-    if (gap <= -5000) fit = { zone: "稳", score: 94, text: `位次比近年最低位次靠前${fmtNumber(Math.abs(gap))}名` };
-    else if (gap <= -1500) fit = { zone: "稳妥", score: 86, text: `位次比近年最低位次靠前${fmtNumber(Math.abs(gap))}名` };
-    else if (gap <= 600) fit = { zone: "临界稳", score: 76, text: `位次接近近年最低位次，差距${fmtNumber(Math.abs(gap))}名以内` };
-    else if (gap <= 3500) fit = { zone: "冲", score: 62, text: `位次落后近年最低位次约${fmtNumber(gap)}名` };
-    else fit = { zone: "高冲", score: 42, text: `位次落后近年最低位次约${fmtNumber(gap)}名` };
+    if (gap <= -5000) fit = { zone: "稳", score: 94, text: `位次比${rankBoundaryLabel}靠前${fmtNumber(Math.abs(gap))}名` };
+    else if (gap <= -1500) fit = { zone: "稳妥", score: 86, text: `位次比${rankBoundaryLabel}靠前${fmtNumber(Math.abs(gap))}名` };
+    else if (gap <= 600) fit = { zone: "临界稳", score: 76, text: `位次接近${rankBoundaryLabel}，差距${fmtNumber(Math.abs(gap))}名以内` };
+    else if (gap <= 3500) fit = { zone: "冲", score: 62, text: `位次落后${rankBoundaryLabel}约${fmtNumber(gap)}名` };
+    else fit = { zone: "高冲", score: 42, text: `位次落后${rankBoundaryLabel}约${fmtNumber(gap)}名` };
   } else if (score > 0 && minScore > 0) {
     const gap = score - minScore;
     if (gap >= 18) fit = { zone: "分数稳", score: 84, text: `分数高出近年最低分${gap}分，缺位次需复核` };
@@ -1816,6 +1821,9 @@ function qualificationFilteredAdmissionRecords(profile, records = profileAdmissi
 
 function admissionRecordLimitWarning(record) {
   if (isSchoolOfficialOnlyRecord(record)) {
+    if (isScoreDerivedRankRecord(record)) {
+      return "该来源是学校官网单校专业最低分；所示位次由最低分对应省级一分一段表换算，不是学校录取考生中的真实最低位次。只能作为该校候选复核，不能单独推断录取概率。";
+    }
     return "该来源是学校官网单校录取边界，不是省级考试院全量投档/录取表；只能作为该校候选复核，不能单独推断录取概率。";
   }
   if (isHubeiLimitedSchoolHistoricalAdmissionRecord(record)) {
@@ -1860,7 +1868,9 @@ function buildAdmissionOptions(candidate, profile) {
         scoreStatus: isHubeiLimitedSchoolHistoricalAdmissionRecord(record)
           ? "湖北限定院校2025历史投档线：只作2026资格范围核验"
           : isSchoolOfficialOnlyRecord(record)
-          ? record.minRankEnd ? "学校官网单校最低分/位次：仅作候选复核" : "学校官网单校最低分：位次待补，仅作候选复核"
+          ? record.minRankEnd
+            ? isScoreDerivedRankRecord(record) ? "学校官网单校最低分及其一分一段换算位次：非校录取最低位次" : "学校官网单校最低分/位次：仅作候选复核"
+            : "学校官网单校最低分：位次待补，仅作候选复核"
           : record.dataType === "vocational-admission"
           ? record.minRankEnd
             ? isLimitedAdmissionRecord(record) ? "已接入高职专科第2次志愿最低位次（无最低分）" : "已接入高职专科投档线和最低位次"
@@ -2133,7 +2143,9 @@ function scoreCandidate(candidate, profile, band) {
     confidenceReason = limitedAdmission
       ? "输入完整且命中官方投档位次，但来源是第2次志愿或 rank-only 口径，只能作为强候选核验。"
       : schoolOfficialAdmission
-        ? "输入完整且命中学校官网单校最低分/位次，但它不是省级全量投档表，最高只作为 A- 强候选核验。"
+        ? isScoreDerivedRankRecord(bestAdmission.record)
+          ? "输入完整且命中学校官网单校最低分及其一分一段换算位次；该位次不是学校录取最低位次，也不是省级全量投档表，最高只作为 A- 强候选核验。"
+          : "输入完整且命中学校官网单校最低分/位次，但它不是省级全量投档表，最高只作为 A- 强候选核验。"
         : staleAdmission
           ? `输入完整且命中${bestAdmission.fit.recency.label}历史录取边界，模型已按年份降权，最高只作为 A- 强候选核验。`
         : "输入完整且有录取分数据支持，但目标专业仍需逐项核验。";

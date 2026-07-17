@@ -43,6 +43,9 @@ const tests = [
   "test-official-yunnan-control-lines-v3304.mjs",
   "test-official-pending-vocational-schedules-v3305.mjs",
   "audit-official-control-line-coverage-v3305.mjs",
+  "test-official-nchu-import-v3306.mjs",
+  "test-nchu-derived-rank-boundaries-v3306.mjs",
+  "test-official-nchu-runtime-v3306.mjs",
 ];
 
 const results = tests.map((test) => {

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records";
+const modelVersion = "local-deterministic-v3.306-national-school-official-nchu2021-2025-derived-rank-852098records";
 const pendingProvinces = ["上海", "天津", "江苏", "海南", "山西"];
 const sourceIds = {
   上海: "official-shanghai-control-lines-2026",
@@ -38,15 +38,15 @@ assert.ok(audit.entries.every((entry) => entry.noHistoricalSubstitution === true
 
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
-assert.equal(core.browserRuntime.fullMasterRecords, 847238);
-assert.equal(core.admissionScoreLayer.structuredRecords, 847238);
+assert.equal(core.browserRuntime.fullMasterRecords, 852098);
+assert.equal(core.admissionScoreLayer.structuredRecords, 852098);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5110);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5111);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
-assert.equal(manifest.recordCount, 847238);
+assert.equal(manifest.recordCount, 852098);
 assert.equal(manifest.rankConversionCount, 116656);
-assert.equal(runtimeManifest.after.modelVersion, modelVersion);
+assert.equal(runtimeManifest.after.modelVersion, "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records");
 assert.equal(runtimeManifest.after.recordCount, 847238);
 assert.deepEqual([...runtimeManifest.after.pendingProvinces].sort(), [...pendingProvinces].sort());
 assert.deepEqual(runtimeManifest.after.exactPublicationDateProvinces, ["上海"]);
