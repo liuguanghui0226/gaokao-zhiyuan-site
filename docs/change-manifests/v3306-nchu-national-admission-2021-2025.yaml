@@ -1,11 +1,11 @@
 change_id: "2026-07-17-v3306-nchu-national-admission-2021-2025"
 title: "南昌航空大学 2021-2025 全国录取数据"
 phase: deliver
-status: ready-for-deploy
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "官方动态查询可同时补充29省分专业最低分、均分、最高分、录取人数和换算位次。"
-last_updated: "2026-07-17T00:30:00Z"
+last_updated: "2026-07-17T01:23:04Z"
 
 surfaces_touched:
   - surface: information

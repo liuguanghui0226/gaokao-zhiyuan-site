@@ -1,0 +1,132 @@
+{
+  "dataset": "evidence-v3306-nchu-national-admission",
+  "generatedAt": "2026-07-17T01:23:04Z",
+  "modelVersion": "local-deterministic-v3.306-national-school-official-nchu2021-2025-derived-rank-852098records",
+  "dataCommit": {
+    "local": "c5c9ca0620076bb3320d0a8e498e390580319c9e",
+    "remote": "34f8a3df6cf259f9504164152bfd22cbc2dd4682",
+    "tree": "2ad31140af6aee3e4284bdeeb01bc43fecff8869"
+  },
+  "github": {
+    "repository": "liuguanghui0226/gaokao-zhiyuan-site",
+    "pagesUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "pagesRun": 29546265337,
+    "liveVerificationRun": 29546505427,
+    "pagesConclusion": "success",
+    "liveVerificationConclusion": "success",
+    "releaseTag": "evidence-v3.306",
+    "releaseUrl": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.306",
+    "baseDataReleaseTag": "data-v3.275"
+  },
+  "runtime": {
+    "structuredRecords": 852098,
+    "rankConversions": 116656,
+    "sourceNotes": 5111,
+    "provinceCount": 31,
+    "newSource": {
+      "sourceId": "official-nchu-national-2021-2025-school-major-admission",
+      "records": 4860,
+      "provinces": 29,
+      "years": [2021, 2022, 2023, 2024, 2025],
+      "ordinaryRecords": 3955,
+      "specialPathRecords": 905,
+      "scoreDerivedRankRecords": 4804,
+      "nativeAdmissionRankRecords": 0,
+      "rankUnavailableRecords": 56,
+      "missingSourceProvinces": ["西藏", "宁夏"]
+    },
+    "admissionScoreCoverage": {
+      "records": 778431,
+      "recentRecords2023Plus": 674800,
+      "recordsWithAnyRank": 331140,
+      "recordsWithNativeRank": 326336,
+      "recordsWithScoreDerivedRank": 4804,
+      "lowestCoverageProvinces": ["西藏", "青海", "上海", "北京", "宁夏", "新疆", "天津", "海南", "吉林", "江西"]
+    }
+  },
+  "rawSourceEvidence": {
+    "directory": "data/admissions/raw/official-national-school-admission-2021-2025-v3306-nchu",
+    "files": 161,
+    "bytes": 6099161,
+    "gitIgnored": true,
+    "storedInReleaseAsset": true
+  },
+  "qualityAssurance": {
+    "currentReleaseTests": {
+      "passed": 39,
+      "failed": 0
+    },
+    "browserViewports": [
+      {
+        "width": 1440,
+        "height": 1000,
+        "httpStatus": 200,
+        "modelCountVisible": true,
+        "recommendationVisible": true,
+        "javascriptErrors": 0,
+        "pageErrors": 0,
+        "failedRequests": 0,
+        "horizontalOverflowPixels": 0
+      },
+      {
+        "width": 390,
+        "height": 844,
+        "httpStatus": 200,
+        "modelCountVisible": true,
+        "recommendationVisible": true,
+        "javascriptErrors": 0,
+        "pageErrors": 0,
+        "failedRequests": 0,
+        "horizontalOverflowPixels": 0
+      }
+    ],
+    "liveProvinceShardsVerified": 31,
+    "directLiveFilesByteMatched": 6,
+    "liveHttpStatus": 200,
+    "liveAppVersion": "3.306.0",
+    "derivedRankBoundaryTests": 2
+  },
+  "mirror": {
+    "root": "/Volumes/mac_2T/gaokao_zhiyuan_site_runtime",
+    "attempted": false,
+    "status": "unavailable-volume-unmounted",
+    "modelVersionClaimed": null,
+    "filesCompared": 0,
+    "filesCopied": 0,
+    "reason": "The external volume was not mounted. It was not remounted or reconnected without explicit user authorization. The active runtime and evidence are on internal APFS and GitHub."
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.306-nchu-national-admission.tar.gz",
+    "files": 214,
+    "hiddenAppleDoubleOrDsStoreFiles": 0,
+    "bytes": 42511602,
+    "sha256": "e383dbe5aeb734ecd53b11f9eba4e5bc7e72146858587da8c787508c1ea89e02",
+    "githubDigestMatched": true,
+    "redownloadSha256Verified": true,
+    "redownloadByteMatched": true
+  },
+  "sha256": {
+    "importJson": "e632743c6fc474b439c7ea4ef78129a1809b855e043a4908de78bf41de290450",
+    "runtimeManifestJson": "6e47d3986c41c6b104fdae181c636c43c4b37e58bb3bbc0b9429306fb5c1d4a8",
+    "coverageAuditJson": "161ae8cb0a12004422e649539e4fe7638ef607d00c8fb97f981a48f828286475",
+    "importer": "dceb9bf5f10cf3fbf11609c530b756b0a7f4f635fb649139b60ee78b24eabe53",
+    "runtimeApplyScript": "a4ee50d93c8b7470e5587840f7deecf068d2b0e9b8280e779f8bc74025f5df16",
+    "siteIndex": "353626b37dabc04c200c2b93b3e1484e0883583e50583ec2c58259d88cc4587e",
+    "appJs": "c3b0014386ebb86d09caacf9747bf39d146765cc5b86b9df8ba0a0b1ccfd90f3",
+    "stylesCss": "5859443a34de98bad4df5db4e40caf1c6a11bf4bf7a41d40211ebea070c28136",
+    "verifyWorkflow": "56a4b34abad2f6afb7fdc8a3df88b5be5cc9f7543a97b363e94da69c24891125",
+    "knowledgeCoreGzip": "b59f5d0633c3dda7813cccad5a8008ca46264852db60d3d993a6a14110511fff",
+    "provinceManifestGzip": "a555b824e167229f8824271c6a673cb421ccb0e49fa4222bba42f82dc71ec9c3",
+    "jiangxiGzip": "f611f9089229ec671123fece06cf8a1db0d94aad84abddff05361334517b3062",
+    "desktopRecommendationScreenshot": "c0d46f21a752f242489ad9c8064732e615b5e59157e4884868e3130f11edaa05",
+    "mobileRecommendationScreenshot": "361dc2d035ab1e1381cef1c5988d17a30ed5463b6bdcd8343e932fcc6f1a37b7"
+  },
+  "boundaries": [
+    "The official page rank is derived from the provincial score segment table and is not the school's recorded lowest admitted rank.",
+    "School-official ordinary records remain capped at A- evidence and do not establish province-wide closure or admission probability.",
+    "Special pathways remain isolated from ordinary automatic recommendation.",
+    "No records were invented for Xizang or Ningxia when the source API returned none.",
+    "GitHub Pages deployment, live 31-province verification, direct HTTPS byte comparison, browser rendering and Release redownload are separate evidence layers.",
+    "The mac_2T external volume was unmounted, so no runtime mirror synchronization is claimed for v3.306."
+  ]
+}
