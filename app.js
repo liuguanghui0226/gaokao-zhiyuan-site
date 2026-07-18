@@ -929,6 +929,12 @@ function majorInterestScore(record, profile) {
   return score;
 }
 
+function admissionPreferenceScore(record, profile) {
+  const cityPrefs = parseList(profile.cities);
+  if (!cityPrefs.length) return 0;
+  return hasTextHit(`${record.city || ""} ${record.schoolName || ""}`, cityPrefs) ? 24 : 0;
+}
+
 function admissionFit(record, profile) {
   const rank = Number(profile.rank) || 0;
   const score = Number(profile.score) || 0;
@@ -970,6 +976,15 @@ function isProfessionalFilingRecord(record) {
   return /major-filing|ordinary-second-major-filing/.test(String(record?.sourceQuality || ""));
 }
 
+function admissionCautionText(record) {
+  const cautions = record.cautions || [];
+  const electiveCaution = cautions.find((text) => /未列选科要求|选科.*复核/.test(text));
+  return [...new Set([
+    admissionRecordLimitWarning(record),
+    electiveCaution || cautions[0] || "需复核招生计划、专业组和章程。",
+  ].filter(Boolean))].join(" ");
+}
+
 function buildAdmissionOptions(candidate, profile) {
   const records = profileAdmissionRecords(profile)
     .filter((record) => recordEligibleForCandidate(record, candidate, profile))
@@ -977,7 +992,7 @@ function buildAdmissionOptions(candidate, profile) {
     .map((record) => {
       const fit = admissionFit(record, profile);
       const trend = trendForRecord(record);
-      const optionScore = fit.score + majorInterestScore(record, profile) + (trend ? 5 : 0);
+      const optionScore = fit.score + majorInterestScore(record, profile) + admissionPreferenceScore(record, profile) + (trend ? 5 : 0);
       const tags = [
         record.city,
         ...(record.schoolTags || []),
@@ -989,7 +1004,7 @@ function buildAdmissionOptions(candidate, profile) {
       return {
         name: record.schoolName,
         tags,
-        focus: `${record.majorName}：${fit.text}。${trend ? `${trend.text}` : ""}${admissionRecordLimitWarning(record) || (record.cautions || [])[0] || "需复核招生计划、专业组和章程。"}`,
+        focus: `${record.majorName}：${fit.text}。${trend ? `${trend.text}` : ""}${admissionCautionText(record)}`,
         role: fit.zone,
         optionScore,
         admissionFit: fit,

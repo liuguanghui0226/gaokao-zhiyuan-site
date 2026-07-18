@@ -12,7 +12,10 @@ const source = fs.readFileSync(appFile, "utf8");
 const bootIndex = source.lastIndexOf("\nboot().catch");
 if (bootIndex < 0) throw new Error("Could not isolate app.js boot call");
 const instrumented = `${source.slice(0, bootIndex)}
-globalThis.__gaokaoTest = { state, admissionFit, admissionRecordLimitWarning, isScoreDerivedRankRecord, profileAdmissionRecords };`;
+globalThis.__gaokaoTest = {
+  state, admissionFit, admissionRecordLimitWarning, admissionPreferenceScore,
+  buildAdmissionOptions, isScoreDerivedRankRecord, profileAdmissionRecords,
+};`;
 const context = vm.createContext({ console });
 vm.runInContext(instrumented, context, { filename: appFile });
 const api = context.__gaokaoTest;
@@ -47,6 +50,32 @@ const differentElectives = api.profileAdmissionRecords({ ...profile, electives: 
 assert.ok(differentElectives.some((record) => record.id === computer.id));
 assert.ok(computer.cautions.some((text) => /未列选科要求/.test(text)));
 
+const focusedProfile = {
+  ...profile,
+  score: "529",
+  rank: "52796",
+  cities: "济南",
+  interest: "网络空间安全 计算机 软件 数据",
+  abilityProfile: "",
+};
+assert.equal(api.admissionPreferenceScore(computer, focusedProfile), 24);
+assert.equal(api.admissionPreferenceScore(computer, { ...focusedProfile, cities: "南昌" }), 0);
+const focusedCandidate = {
+  id: "industry-tech",
+  disciplines: ["08"],
+  keywords: ["计算机", "软件", "数据", "网络空间安全"],
+  cities: ["济南"],
+};
+const focusedOptions = api.buildAdmissionOptions(focusedCandidate, focusedProfile);
+const focusedComputer = focusedOptions.find((option) => option.name === "齐鲁工业大学");
+assert.ok(
+  focusedComputer,
+  `city-matched QLU record must enter the visible option list: ${JSON.stringify(focusedOptions.map((option) => ({ id: option.record.id, major: option.record.majorName, score: option.optionScore })))}`,
+);
+assert.match(focusedComputer.focus, /学校官网单校录取边界/);
+assert.match(focusedComputer.focus, /官网分数页未列选科要求/);
+assert.equal(focusedComputer.optionScore >= 120, true);
+
 const art = payload.records.find((record) => record.id === "qlu-2025-ba75e83d650809e8b9");
 assert.ok(art);
 assert.ok(!ordinaryCandidates.some((record) => record.id === art.id));
@@ -60,6 +89,8 @@ console.log(JSON.stringify({
   warning,
   ordinaryCandidateCount: ordinaryCandidates.length,
   missingElectiveRequirementPreserved: computer.id,
+  focusedOptionScore: focusedComputer.optionScore,
+  focusedWarning: focusedComputer.focus,
   artExcluded: art.id,
   xinjiangSpecialExcluded: xinjiangSpecial.id,
 }, null, 2));
