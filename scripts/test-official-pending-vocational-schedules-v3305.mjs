@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.308-national-school-official-wtu2021-2025-native-rank-857225records";
+const modelVersion = "local-deterministic-v3.309-national-school-official-qlu2021-2025-native-rank-859382records";
 const pendingProvinces = ["上海", "天津", "江苏", "海南", "山西"];
 const sourceIds = {
   上海: "official-shanghai-control-lines-2026",
@@ -38,13 +38,13 @@ assert.ok(audit.entries.every((entry) => entry.noHistoricalSubstitution === true
 
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
-assert.equal(core.browserRuntime.fullMasterRecords, 857225);
-assert.equal(core.admissionScoreLayer.structuredRecords, 857225);
+assert.equal(core.browserRuntime.fullMasterRecords, 859382);
+assert.equal(core.admissionScoreLayer.structuredRecords, 859382);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5113);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5114);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
-assert.equal(manifest.recordCount, 857225);
+assert.equal(manifest.recordCount, 859382);
 assert.equal(manifest.rankConversionCount, 116656);
 assert.equal(runtimeManifest.after.modelVersion, "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records");
 assert.equal(runtimeManifest.after.recordCount, 847238);

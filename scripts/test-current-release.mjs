@@ -52,6 +52,9 @@ const tests = [
   "test-official-wtu-import-v3308.mjs",
   "test-wtu-native-rank-boundaries-v3308.mjs",
   "test-official-wtu-runtime-v3308.mjs",
+  "test-official-qlu-import-v3309.mjs",
+  "test-qlu-native-rank-boundaries-v3309.mjs",
+  "test-official-qlu-runtime-v3309.mjs",
 ];
 
 const results = tests.map((test) => {

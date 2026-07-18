@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
 const outFile = path.join(projectRoot, "data/admissions/official-control-line-coverage-2026-v3305.json");
-const modelVersion = "local-deterministic-v3.308-national-school-official-wtu2021-2025-native-rank-857225records";
+const modelVersion = "local-deterministic-v3.309-national-school-official-qlu2021-2025-native-rank-859382records";
 const expectedCovered = ["安徽", "北京", "重庆", "福建", "甘肃", "广东", "广西", "贵州", "海南", "河北", "河南", "黑龙江", "湖北", "湖南", "吉林", "江苏", "江西", "辽宁", "内蒙古", "宁夏", "青海", "山东", "山西", "陕西", "上海", "四川", "天津", "西藏", "新疆", "云南", "浙江"];
 const expectedPending = ["上海", "天津", "江苏", "海南", "山西"];
 
@@ -44,7 +44,7 @@ function routeKind(record) {
 const manifest = readGzipJson(path.join(releaseDir, "manifest.json.gz"));
 const core = readGzipJson(path.join(releaseDir, "knowledge-core.json.gz"));
 assert(manifest.modelVersion === modelVersion && core.modelVersion === modelVersion, "Unexpected current model version");
-assert(manifest.recordCount === 857225, "Unexpected v3.308 record count");
+assert(manifest.recordCount === 859382, "Unexpected v3.309 record count");
 assert(core.admissionScoreLayer.coverage.dataTypes["control-line"] === 1592, "Unexpected v3.305 control-line count");
 
 const coverage = [];

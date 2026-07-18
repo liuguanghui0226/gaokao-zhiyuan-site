@@ -1,0 +1,65 @@
+change_id: "2026-07-18-v3309-qlu-national-admission-2021-2025"
+title: "齐鲁工业大学 2021-2025 全国录取数据"
+phase: deliver
+status: in_progress
+execution_mode: full
+resume_mode: full
+resume_reason: "官方分层接口可补充28个非空省份的分专业最低/平均/最高分、官网最低录取位次、控制线和包含专业。"
+last_updated: "2026-07-18T06:12:11Z"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "齐鲁工业大学718份官方原始响应、297个分数查询、2157条分专业记录和证据清单。"
+  - surface: user
+    role: consumer
+    notes: "全国画像得到齐鲁工业大学分专业跨年候选、原生最低录取位次和未公布选科要求边界。"
+  - surface: operational
+    role: consumer
+    notes: "GitHub仓库、31省gzip分片、Pages运行层和Release证据包。"
+
+sot_map:
+  - info_name: "齐鲁工业大学历年分数查询"
+    pattern: 4
+    source: "https://zsb.qlu.edu.cn/score"
+    consumers:
+      - name: "data/admissions/official-national-school-admission-2021-2025-v3309-qlu-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/*.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node协调curl按官网省份、年份、科类和类型字典逐级下载官方JSON，在内部APFS解析、校验接口身份并原子更新gzip核心索引和31省分片。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "导入包、原始响应清单和运行清单锁定新增来源与各省增量。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.308前端与gzip运行分片。"
+    - surface: operational
+      mode: 1
+      rationale: "GitHub提交和Release按版本保留，可回退到上一远端提交。"
+
+task_slices:
+  - id: "source-import"
+    scope: "2021-2025年、31个官网省份入口、28个非空省份、718份响应、297个分数查询和2157条专业行"
+    verification_command: "node scripts/import-official-national-school-admission-2021-2025-v3309-qlu.mjs --use-cache"
+  - id: "source-reconciliation"
+    scope: "2157条官方源行逐条形成唯一记录，原始响应字节数和SHA-256复核"
+    verification_command: "node scripts/test-official-qlu-import-v3309.mjs"
+  - id: "evidence-boundary"
+    scope: "原生最低录取位次、位次不可用、未公布选科要求、八类特殊路径和三个官网空结果省份"
+    verification_command: "node scripts/test-qlu-native-rank-boundaries-v3309.mjs"
+  - id: "runtime-refresh"
+    scope: "核心索引、31省gzip分片、覆盖审计和推荐显示"
+    verification_command: "node scripts/test-official-qlu-runtime-v3309.mjs && node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "学校官网单校分数和最低录取位次不是省考试院全量投档/录取表。"
+  - "官网分数接口未列选科要求和录取人数，正式填报必须回当年计划和章程复核。"
+  - "西藏、青海、宁夏虽有官网省份入口但五年内无分数记录，不能解释为已覆盖。"
