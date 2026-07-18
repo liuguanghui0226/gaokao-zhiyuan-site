@@ -1,0 +1,50 @@
+{
+  "dataset": "official-jiangsu-rank-conversion-2025-v3319-runtime",
+  "generatedAt": "2026-07-18T21:38:35.188Z",
+  "sourceId": "official-jiangsu-rank-2025-v3319",
+  "importFile": "data/admissions/official-jiangsu-rank-conversion-2025-v3319-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.318-hunan-education-department-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 121889,
+    "provinceRankConversions": 408
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.319-jiangsu-jseea-first-stage-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 122287,
+    "rankConversionsAdded": 398,
+    "provinceRecords": 26991,
+    "provinceRankConversions": 806,
+    "linkedAdmissionRecords": 7060,
+    "officialLinkedRecords": 5912,
+    "thirdPartyLinkedRecords": 1148,
+    "schoolOfficialScopeLinkedRecords": 796,
+    "specialPathExcludedRecords": 123,
+    "belowPublishedFloorRecords": 1496,
+    "topBucketLinkedRecords": 8,
+    "linkedSourceNotes": 113,
+    "linkedByType": {
+      "institution-admission": 152,
+      "major-admission": 1750,
+      "major-group-admission": 4826,
+      "school-admission-summary": 2,
+      "vocational-admission": 330
+    },
+    "sourceNotes": 5123,
+    "shardBytes": 29865888,
+    "shardSha256": "3bf9da0e8daee317856263e69c152ee502598762ec37fdca24a6481d9f7b67ec",
+    "coreBytes": 15612959,
+    "coreSha256": "56cffd0f6baefed6ca3c54ca1c1dad0b0d78a08294deaa06940123eeaf4dd744",
+    "manifestBytesBeforeLiteRebuild": 6141,
+    "manifestSha256BeforeLiteRebuild": "565a95ed967bbc55ddc52c58102c1397f9ca7aec3c0ad9b5b0776a0568750132"
+  },
+  "cautions": [
+    "历史类658-750分为1-109名合并档，物理类683-750分为1-126名合并档；不生成合并档内的伪精确位次。",
+    "第一阶段全表只公布到历史类482分、物理类463分；低于公布下限的记录继续保持缺位次。",
+    "第二阶段表只统计仍符合第二阶段志愿填报条件的考生，不是全体考生累计位次，已明确排除且不与第一阶段拼接。",
+    "只用于同年同科类文化课总分到省级位次区间换算；艺术、体育综合投档分、科类不明、非整数分和特殊路径不参与。",
+    "398行、1194个分数/同分人数/累计人数单元在考试院原图和独立全尺寸镜像间零差异；15处OCR校正均由固定分数网格或累计位次算术闭合恢复。"
+  ]
+}

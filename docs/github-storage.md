@@ -32,11 +32,13 @@ were migrated from the earlier account on 2026-07-16 and verified by size and
 SHA-256 before the temporary transfer files were removed. Current incremental
 runtime changes remain in the repository's compressed core and 31 province
 shards, with a separate `evidence-v<version>` release for each verified wave.
-The current incremental evidence release is `evidence-v3.305`; its five-province
-2026 pending vocational-control audit contains 20 immutable files, is 2,611,771
-bytes, and has SHA-256
-`db90009e3776ab4385e0086558b9b6d4a95db87d459550b105366486400105dc`.
-The asset was downloaded again from GitHub after upload and matched byte for byte.
+The current incremental evidence release is
+`evidence-v3.319-jiangsu-rank-2025.tar.gz`; its 26 immutable files contain the
+Jiangsu 2025 first-stage source pages, JSEEA and mirror images, full-table OCR,
+cell audit, second-stage exclusion evidence, and PDF mirrors. The asset is
+18,944,947 bytes with SHA-256
+`21edaf443f868e3464d0297ae75c0afe53476b75211e7bcfa9d1b925d1e3fe3b`.
+It was downloaded again from GitHub after upload and matched byte for byte.
 
 `scripts/serve.mjs` defaults to the internal APFS site root. Set
 `GAOKAO_MIRROR_SITE_ROOT` only for an explicitly approved mirror read; this

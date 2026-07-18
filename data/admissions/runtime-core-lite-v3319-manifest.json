@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3319",
+  "generatedAt": "2026-07-18T21:42:54.128Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.319-jiangsu-jseea-first-stage-rank2025-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5123,
+    "lite": 5123,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15612959,
+    "compressedBytes": 2367587,
+    "sha256": "56cffd0f6baefed6ca3c54ca1c1dad0b0d78a08294deaa06940123eeaf4dd744"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3004644,
+    "compressedBytes": 477833,
+    "sha256": "69608d54ff8e75b8321f3200ee58f21da12a36c5c914e808ff5adc4605843280",
+    "rawReductionRate": 0.807554
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7961,
+    "compressedBytes": 2763,
+    "sha256": "03eb61b8882957f18b487dc0d0caf2d41675b6d12a5d6829650f77cd20212035"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

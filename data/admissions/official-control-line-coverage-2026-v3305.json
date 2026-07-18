@@ -1,7 +1,7 @@
 {
   "dataset": "official-control-line-coverage-2026-v3305",
-  "generatedAt": "2026-07-18T20:28:14.364Z",
-  "modelVersion": "local-deterministic-v3.318-hunan-education-department-rank2025-aligned-868426records",
+  "generatedAt": "2026-07-18T21:38:35.188Z",
+  "modelVersion": "local-deterministic-v3.319-jiangsu-jseea-first-stage-rank2025-aligned-868426records",
   "definition": "运行分片中2026年普通类本科/专科或普通类一段/二段省级通用控制线；限定院校和特殊路径不计入。尚未发布的当年专科线单列为pending，并区分控制线发布日期、填报窗口、录取窗口与划线规则，不使用往年线补造。",
   "provinceCount": 31,
   "coveredCount": 31,

@@ -80,6 +80,10 @@ const tests = [
   "test-official-hunan-rank-import-v3318.mjs",
   "test-hunan-rank-alignment-boundaries-v3318.mjs",
   "test-official-hunan-rank-runtime-v3318.mjs",
+  "test-official-jiangsu-rank-import-v3319.mjs",
+  "test-jiangsu-rank-alignment-boundaries-v3319.mjs",
+  "test-official-jiangsu-rank-runtime-v3319.mjs",
+  "test-runtime-core-lite-v3319.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 
