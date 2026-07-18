@@ -1,0 +1,50 @@
+{
+  "dataset": "official-hunan-rank-conversion-2025-v3318-runtime",
+  "generatedAt": "2026-07-18T20:28:14.364Z",
+  "sourceId": "official-hunan-rank-2025-v3318",
+  "importFile": "data/admissions/official-hunan-rank-conversion-2025-v3318-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.317-liaoning-official-mirror-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 120750,
+    "provinceRankConversions": 1137
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.318-hunan-education-department-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 121889,
+    "rankConversionsAdded": 1139,
+    "provinceRecords": 32686,
+    "provinceRankConversions": 2276,
+    "linkedAdmissionRecords": 9376,
+    "officialLinkedRecords": 8337,
+    "thirdPartyLinkedRecords": 1039,
+    "schoolOfficialScopeLinkedRecords": 635,
+    "specialPathExcludedRecords": 388,
+    "topBucketLinkedRecords": 5,
+    "linkedSourceNotes": 116,
+    "linkedByType": {
+      "institution-admission": 176,
+      "major-admission": 1483,
+      "major-group-admission": 5383,
+      "school-admission-summary": 4,
+      "vocational-admission": 2330
+    },
+    "sourceNotes": 5122,
+    "shardBytes": 35266915,
+    "shardSha256": "55e486355605ef4cd1a0e89c9485149edbbbb05cc9d12403cae6b92ebec54769",
+    "coreBytes": 15577681,
+    "coreSha256": "f9ab6c421205c9430cd96083d31eb45aae0241cc727e3681895a20c767108187",
+    "manifestBytesBeforeLiteRebuild": 6142,
+    "manifestSha256BeforeLiteRebuild": "55b7d0f3b4e6efab574a1f149b6f5ce1df3514088248543e44c96695de9249c0"
+  },
+  "cautions": [
+    "历史类658-750分为1-55名合并档，物理类690-750分为1-53名合并档；不生成合并档内的伪精确位次。",
+    "历史类129、124、116、115、112、110、105、104、103分和物理类107、101分为零人数缺口；保留缺口，不虚构同分考生记录。",
+    "0-99分合并档不参与本站普通录取最低分位次换算；最低可换算分数为100分。",
+    "表中档分含优惠加分；只用于同年同科类文化课档分到省级位次区间换算。",
+    "艺术、体育综合投档分、科类不明、非整数分和特殊路径记录不参与普通类最低分位次回填。",
+    "湖南省教育厅来源标注完整表与独立完整镜像逐行零差异，阳光高考同时保存湖南考试招生来源原图。"
+  ]
+}

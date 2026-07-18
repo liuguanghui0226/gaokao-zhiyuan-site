@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3318",
+  "generatedAt": "2026-07-18T20:30:55.933Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.318-hunan-education-department-rank2025-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5122,
+    "lite": 5122,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15577681,
+    "compressedBytes": 2363359,
+    "sha256": "f9ab6c421205c9430cd96083d31eb45aae0241cc727e3681895a20c767108187"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3003975,
+    "compressedBytes": 477615,
+    "sha256": "d47a3a5c4cb78d8488cc75ab5dbb01f4cc917be64a3661839a670319884af552",
+    "rawReductionRate": 0.807162
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7962,
+    "compressedBytes": 2767,
+    "sha256": "d60a1618d1951760afc91ed9a87605f1badc1bb4409aaace2489f45888c541d0"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

@@ -50,18 +50,18 @@ assert.match(appSource, /const DEFAULT_PROFILE = \{[\s\S]*?rank: "",/, "Default 
 assert.match(appSource, /const visibleSchoolTags = schoolTags\.slice\(0, 24\);/, "Admission overview must cap the rendered school sample");
 assert.match(appSource, /另有 \$\{fmtNumber\(hiddenSchoolTagCount\)\} 所院校已入库，推荐时按省份加载/, "Admission overview must explain that hidden school names remain available to recommendation routing");
 
-assert.equal(core.modelVersion, "local-deterministic-v3.317-liaoning-official-mirror-rank2025-aligned-868426records");
+assert.equal(core.modelVersion, "local-deterministic-v3.318-hunan-education-department-rank2025-aligned-868426records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.records.length, 0);
 assert.equal(core.admissionScoreLayer.rankConversions.length, 0);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 120750);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 121889);
 assert.equal(core.admissionScoreLayer.admissionPlanRecords, 71877);
 assert.equal(core.admissionScoreLayer.admissionPlanCount, 358294, "vacancy snapshots must not inflate annual plan count");
 assert.equal(core.admissionScoreLayer.vacancyPlanRecords, 2187);
 assert.equal(core.admissionScoreLayer.vacancyPlanSnapshotCount, 6099);
 assert.equal(core.admissionScoreLayer.ordinaryVocationalVacancyRecords, 926);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5121);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5122);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-vacancy-plans-2025-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-admission-schedule-2026-v3272"));
@@ -108,14 +108,14 @@ const xizangControlSource = core.admissionScoreLayer.sourceNotes.find((note) => 
 assert.equal(xizangControlSource.mirrorUrl, "https://www.xizang.gov.cn/xwzx_406/bmkx/202606/t20260626_547152.html");
 assert.equal(xizangControlSource.quality, "official-xizang-control-line-image-and-government-html-verified");
 assert.deepEqual(core.admissionScoreLayer.coverage.formalScoreMissingProvinces, ["西藏"]);
-assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 120750);
-assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedSources, 141);
+assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 121889);
+assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedSources, 142);
 assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 66);
 
 assert.equal(manifest.modelVersion, core.modelVersion);
 assert.equal(manifest.provinceCount, 31);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 120750);
+assert.equal(manifest.rankConversionCount, 121889);
 assert.equal(manifest.unknownRecords, 0);
 assert.equal(manifest.unknownRankConversions, 0);
 assert.equal(manifest.core.sha256, sha256(coreFile));
@@ -308,7 +308,7 @@ assert.ok(hnuJiangxiSpecial.every((record) => /专项|艺术/.test(record.admiss
 
 const hunanEntry = manifest.shards["湖南"];
 assert.equal(hunanEntry.records, 32686);
-assert.equal(hunanEntry.rankConversions, 1137);
+assert.equal(hunanEntry.rankConversions, 2276);
 const hunan = runtimeJson(runtimeDataFile(`provinces/${hunanEntry.file}`));
 const hunanControlLines = hunan.records.filter((record) => record.sourceId === "official-hunan-control-lines-2026");
 assert.equal(hunanControlLines.length, 37);

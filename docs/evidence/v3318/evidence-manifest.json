@@ -1,0 +1,119 @@
+{
+  "dataset": "official-hunan-rank-conversion-2025-v3318-evidence",
+  "province": "湖南",
+  "year": 2025,
+  "publisherAttribution": "湖南省教育厅",
+  "chsiAttribution": "湖南考试招生",
+  "governmentReleaseUrl": "https://jyt.hunan.gov.cn/jyt/sjyt/xxgk/2017zwgk/gxxx/202506/t20250625_33741629.html",
+  "chsiHistoryUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202506/20250625/2293392782.html",
+  "chsiPhysicsUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202506/20250625/2293392784.html",
+  "eolHistoryUrl": "https://gaokao.eol.cn/hu_nan/dongtai/202506/t20250625_2676955.shtml",
+  "eolPhysicsUrl": "https://gaokao.eol.cn/hu_nan/dongtai/202506/t20250625_2676956.shtml",
+  "dxsbbHistoryUrl": "https://www.dxsbb.com/news/148837.html",
+  "dxsbbPhysicsUrl": "https://www.dxsbb.com/news/148836.html",
+  "provenanceBoundary": "The two complete EOL tables attribute their source to the Hunan Education Department. CHSI preserves the two Hunan Examination Admission source images. All 1139 independently mirrored rows and 3417 score/count/cumulative-rank cells match the authority-attributed tables. The tables include preferential policy points and do not publish institution-native minimum admission ranks or art/sports composite-score ranks.",
+  "files": {
+    "governmentRelease": {
+      "archivePath": "government-release.html",
+      "bytes": 75405,
+      "sha256": "cb36b5eed2ce049ac310d203ae7270dd95f8e24d5729dedbd8cea0b2ff9c114a"
+    },
+    "chsiHistoryPage": {
+      "archivePath": "chsi-history.html",
+      "bytes": 44056,
+      "sha256": "f7b7417628dcbbccf28218e440e5b2f1afe69944f1777fe511a6092f024aa744"
+    },
+    "chsiHistoryImage": {
+      "archivePath": "chsi-history.png",
+      "bytes": 1981169,
+      "sha256": "8f222b93ac9a6b63c8045caeefe24a5eee291020701e79221b26d05ed6aecea7",
+      "width": 680,
+      "height": 12252
+    },
+    "chsiPhysicsPage": {
+      "archivePath": "chsi-physics.html",
+      "bytes": 44056,
+      "sha256": "bd285bcf76a97fe37c421c285b12572e574add421566a51c7be4d52937b412f2"
+    },
+    "chsiPhysicsImage": {
+      "archivePath": "chsi-physics.png",
+      "bytes": 2236803,
+      "sha256": "ad7de963ba347b317bed18b5781b1cdc39d545463d66a899145f300564c02427",
+      "width": 680,
+      "height": 12651
+    },
+    "eolHistory": {
+      "archivePath": "eol-history.html",
+      "bytes": 679314,
+      "sha256": "c6b7b31ea7ce997caf11eb6d2a6e495290cd8fd3becb94fa78f195cdc0bdd167"
+    },
+    "eolPhysics": {
+      "archivePath": "eol-physics.html",
+      "bytes": 709149,
+      "sha256": "ae4ef3d00194a9f6bcc7913be4f3457a1b7e934fda6252c9b4ec561702a7999a"
+    },
+    "dxsbbHistory": {
+      "archivePath": "dxsbb-history.html",
+      "bytes": 50021,
+      "sha256": "53a17305011c0fe822305d91fa7373a13d8abd8f9550ebe2a71e4abf208eeafd"
+    },
+    "dxsbbPhysics": {
+      "archivePath": "dxsbb-physics.html",
+      "bytes": 52193,
+      "sha256": "f9b6d7402daed7b5f60ac86dd98af3c4f41a40a57208ffe4d2108bbf25cd9e86"
+    }
+  },
+  "parseAudit": {
+    "historyAuthorityRows": 560,
+    "historyRankRows": 550,
+    "historyTopBucket": "658-750 -> rank 1-55",
+    "historyFinalCumulativeRankAt100": 141153,
+    "historyZeroScoreGaps": [129, 124, 116, 115, 112, 110, 105, 104, 103],
+    "physicsAuthorityRows": 592,
+    "physicsRankRows": 589,
+    "physicsTopBucket": "690-750 -> rank 1-53",
+    "physicsFinalCumulativeRankAt100": 318823,
+    "physicsZeroScoreGaps": [107, 101],
+    "authorityRows": 1152,
+    "rowComparisons": 1139,
+    "cellComparisons": 3417,
+    "sourceDifferences": 0,
+    "allCumulativeRanksMonotonic": true,
+    "allAuthorityCountsClose": true
+  },
+  "checkpoints": {
+    "history": {
+      "600": 2369,
+      "500": 27038,
+      "446": 53081,
+      "400": 78486,
+      "300": 124838,
+      "200": 140042,
+      "100": 141153
+    },
+    "physics": {
+      "600": 15860,
+      "500": 90705,
+      "422": 190592,
+      "400": 217140,
+      "300": 293562,
+      "200": 317438,
+      "100": 318823
+    }
+  },
+  "runtimeMerge": {
+    "rankConversionsAdded": 1139,
+    "linkedAdmissionRecords": 9376,
+    "officialLinkedRecords": 8337,
+    "thirdPartyLinkedRecords": 1039,
+    "schoolOfficialScopeLinkedRecords": 635,
+    "specialPathExcludedRecords": 388,
+    "topBucketLinkedRecords": 5
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.318-hunan-rank-2025.tar.gz",
+    "bytes": 4338390,
+    "sha256": "294e1ec63e9ff12d7f9fe82f284a5f5588e1a945a0ddb91eb748a5f8c4bc0938",
+    "targetRelease": "data-v3.275"
+  }
+}

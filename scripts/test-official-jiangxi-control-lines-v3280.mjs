@@ -26,7 +26,7 @@ assert.deepEqual(imported.diagnostics.breakdown, { ordinary: 4, special: 2, thre
 assert.equal(sourceRecords.length, 30);
 assert.equal(new Set(sourceRecords.map((record) => record.id)).size, 30);
 assert.ok(sourceRecords.every((record) => record.dataType === "control-line" && record.year === 2026 && record.province === "江西"));
-assert.equal(core.modelVersion, "local-deterministic-v3.317-liaoning-official-mirror-rank2025-aligned-868426records");
+assert.equal(core.modelVersion, "local-deterministic-v3.318-hunan-education-department-rank2025-aligned-868426records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
