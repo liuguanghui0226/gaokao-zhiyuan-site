@@ -1,11 +1,11 @@
 change_id: "2026-07-19-v3318-hunan-rank-2025"
 title: "湖南 2025 一分一段表与录取最低分位次对齐"
 phase: deliver
-status: in_progress
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "湖南2025已有9376条普通历史类、物理类整数最低分记录，但没有连接同年省级位次证据。"
-last_updated: "2026-07-19T05:00:00Z"
+last_updated: "2026-07-18T21:12:30Z"
 
 surfaces_touched:
   - surface: information
