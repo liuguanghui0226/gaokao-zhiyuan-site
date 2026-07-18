@@ -1,0 +1,69 @@
+{
+  "dataset": "official-ningxia-rank-conversion-2025-v3314-evidence",
+  "province": "宁夏",
+  "year": 2025,
+  "publisher": "宁夏教育考试院",
+  "officialIndexUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202506/20250625/2293390695.html",
+  "officialSiteDirectRetrievalStatus": "blocked-current-session-tls-timeout",
+  "provenanceBoundary": "The CHSI article attributes the announcement to Ningxia Education Examination Authority and lists the exact two official PDF filenames. Each authority-authored PDF was obtained from two independent mirror domains and the mirror pair is byte-identical. The PDFs are provincial score-segment tables, not institution-native minimum-rank tables.",
+  "files": {
+    "officialIndexHtml": {
+      "bytes": 46402,
+      "sha256": "2341a45ee12d14d7b955923cd7d5604df9d467cea355a7726153d024d87d63c6"
+    },
+    "historyPdf": {
+      "officialFilename": "01-2025年宁夏普通高考考生成绩一分段表（历史组）.pdf",
+      "primaryMirrorUrl": "https://cdn.gaokzx.com/zixunzhan/1750823085127%E5%AE%81%E5%A4%8F%E5%8E%86%E5%8F%B2.pdf",
+      "secondMirrorUrl": "https://www.jhgk.cn/upload/file/20250625/1750842732662038889.pdf",
+      "bytes": 49152,
+      "sha256": "e28bb509aa331e201474dfdb29fc6f804b6d1ba8228c71c049e11fdfb860286f",
+      "mirrorPairByteIdentical": true
+    },
+    "historyText": {
+      "bytes": 8828,
+      "sha256": "2ad7c43ce8313e7ea4fa86f50cb8d526ec67f499152ec6d356afe40eb9dedcf1",
+      "parsedRows": 467,
+      "scoreRange": "616-150",
+      "topBucket": "616-750 -> rank 1-54",
+      "finalCumulativeRank": 21406
+    },
+    "physicsPdf": {
+      "officialFilename": "02-2025年宁夏普通高考考生成绩一分一段表（物理组）.pdf",
+      "primaryMirrorUrl": "https://cdn.gaokzx.com/zixunzhan/1750822960933%E5%AE%81%E5%A4%8F%E7%89%A9%E7%90%86.pdf",
+      "secondMirrorUrl": "https://www.jhgk.cn/upload/file/20250625/1750842716111067904.pdf",
+      "bytes": 50176,
+      "sha256": "4f3c76dcfe85d70836290cfc866480b2d10e8d8f8a634d3f2448ed8e326548c3",
+      "mirrorPairByteIdentical": true
+    },
+    "physicsText": {
+      "bytes": 9426,
+      "sha256": "3bc16694464475a263840aa61e6e036b64ba52bbde3f0af8ca2ed8223be5e784",
+      "parsedRows": 492,
+      "scoreRange": "641-150",
+      "topBucket": "641-750 -> rank 1-104",
+      "finalCumulativeRank": 44491
+    },
+    "secondMirrorIndexHtml": {
+      "bytes": 55180,
+      "sha256": "b1debe458179a94949f90460d4048b99175cb10d1997a15cb4585f5fa821c3ec"
+    }
+  },
+  "checkpoints": {
+    "history": {
+      "482": 3415,
+      "404": 9485,
+      "150": 21406
+    },
+    "physics": {
+      "441": 16119,
+      "372": 30025,
+      "150": 44491
+    }
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.314-ningxia-rank-2025.tar.gz",
+    "bytes": 218117,
+    "sha256": "98671ef83854849fe7fade9d73e3af0b5981fb8ac477ea3c7a3012b9dcc716a3",
+    "targetRelease": "data-v3.275"
+  }
+}

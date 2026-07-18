@@ -1,0 +1,38 @@
+{
+  "dataset": "official-ningxia-rank-conversion-2025-v3314-runtime",
+  "generatedAt": "2026-07-18T15:13:49.377Z",
+  "sourceId": "official-ningxia-rank-2025-v3314",
+  "filingSourceId": "official-ningxia-undergraduate-b-2025",
+  "importFile": "data/admissions/official-ningxia-rank-conversion-2025-v3314-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.312-xinjiang-official-2025-undergraduate2-score-only-868426records",
+    "records": 868426,
+    "rankConversions": 116656,
+    "provinceRankConversions": 960
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.314-ningxia-official-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 117615,
+    "rankConversionsAdded": 959,
+    "provinceRecords": 9257,
+    "provinceRankConversions": 1919,
+    "linkedFilingRecords": 2491,
+    "ordinaryLinkedRecords": 2153,
+    "specialPathLinkedRecords": 338,
+    "topBucketLinkedRecords": 18,
+    "sourceNotes": 5118,
+    "shardBytes": 13623813,
+    "shardSha256": "eeb59625ecdc21b3feeb7701e1b7ca0bd0d4c8569db681c539fb89c6483891dd",
+    "coreBytes": 15472932,
+    "coreSha256": "de14e31f82883f9f816469840aee28e0deff36098aad983d08d581958118a2e4",
+    "manifestBytesBeforeLiteRebuild": 6131,
+    "manifestSha256BeforeLiteRebuild": "88e774d0b492b97676f074840c25888d7d0aaec46f915e09140082fa0a18d1f6"
+  },
+  "cautions": [
+    "最高分行是官方合并档，历史类616分及以上仅能确定为1-54名，物理类641分及以上仅能确定为1-104名。",
+    "一分一段表只负责分数到省级位次区间的换算；院校投档表未直接公开最低位次时，网站必须标注为分数换算位次。",
+    "普通类和专项、预科、民族班继续按原投档记录的formalScoreScope隔离。"
+  ]
+}

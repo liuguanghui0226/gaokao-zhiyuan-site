@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3314",
+  "generatedAt": "2026-07-18T15:18:29.875Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.314-ningxia-official-rank2025-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5118,
+    "lite": 5118,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15472932,
+    "compressedBytes": 2345302,
+    "sha256": "de14e31f82883f9f816469840aee28e0deff36098aad983d08d581958118a2e4"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3001735,
+    "compressedBytes": 477087,
+    "sha256": "a8a7202c46087b5910094ef4958750d2e01ea412eed658f11eb3eeb42ae785e7",
+    "rawReductionRate": 0.806001
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7951,
+    "compressedBytes": 2761,
+    "sha256": "545450e39c4c18379e68591ae004b5d20bae98e4096b17b0c3f872952169c96e"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

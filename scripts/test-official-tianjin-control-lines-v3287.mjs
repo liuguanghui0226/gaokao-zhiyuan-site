@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.312-xinjiang-official-2025-undergraduate2-score-only-868426records";
+const modelVersion = "local-deterministic-v3.314-ningxia-official-rank2025-aligned-868426records";
 const sourceId = "official-tianjin-control-lines-2026";
 const rankSourceUrl = "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845980.html";
 
@@ -41,8 +41,8 @@ assert.equal(records.filter((record) => record.formalScoreScope === "special-pat
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5117);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 117615);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5118);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);

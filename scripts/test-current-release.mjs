@@ -15,7 +15,7 @@ const tests = [
   "test-application-plan-v3277.mjs",
   "test-elective-requirement-v3278.mjs",
   "test-browser-runtime-shards-v3274.mjs",
-  "test-runtime-core-lite-v3313.mjs",
+  "test-runtime-core-lite-v3314.mjs",
   "test-national-score-band-coverage-v3279.mjs",
   "test-official-jiangxi-control-lines-v3280.mjs",
   "test-official-xizang-control-lines-v3281.mjs",
@@ -66,6 +66,9 @@ const tests = [
   "test-official-xinjiang-undergraduate2-import-v3312.mjs",
   "test-xinjiang-undergraduate2-boundaries-v3312.mjs",
   "test-official-xinjiang-undergraduate2-runtime-v3312.mjs",
+  "test-official-ningxia-rank-import-v3314.mjs",
+  "test-ningxia-rank-alignment-boundaries-v3314.mjs",
+  "test-official-ningxia-rank-runtime-v3314.mjs",
 ];
 
 const results = tests.map((test) => {

@@ -28,7 +28,7 @@ jobs:
           fetch "$base" "$work/index.html"
           grep -q "全国高考志愿填报" "$work/index.html"
           grep -q "__GAOKAO_RUNTIME_RELEASE_BASE__" "$work/index.html"
-          grep -q 'app.js?v=3.313.0' "$work/index.html"
+          grep -q 'app.js?v=3.314.0' "$work/index.html"
 
           release_path="$(node -e '
             const html = require("node:fs").readFileSync(process.argv[1], "utf8");
@@ -66,16 +66,16 @@ jobs:
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
           jq -e '.recordCount == 868426' "$work/manifest.json" >/dev/null
-          jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
+          jq -e '.rankConversionCount == 117615' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
-          jq -e '.runtimeProfile.version == "v3.313" and .runtimeProfile.initialCore == "knowledge-core-lite.json.gz" and .runtimeProfile.fullEvidenceCore == "knowledge-core.json.gz"' "$work/manifest.json" >/dev/null
-          jq -e '.coreLite.profile == "core-lite-v1" and .coreLite.sourceNotes == 5117 and .coreLite.compressedBytes > 0' "$work/manifest.json" >/dev/null
+          jq -e '.runtimeProfile.version == "v3.314" and .runtimeProfile.initialCore == "knowledge-core-lite.json.gz" and .runtimeProfile.fullEvidenceCore == "knowledge-core.json.gz"' "$work/manifest.json" >/dev/null
+          jq -e '.coreLite.profile == "core-lite-v1" and .coreLite.sourceNotes == 5118 and .coreLite.compressedBytes > 0' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core-lite.json.gz" "$work/knowledge-core-lite.json.gz"
           gzip -t "$work/knowledge-core-lite.json.gz"
           gzip -dc "$work/knowledge-core-lite.json.gz" > "$work/knowledge-core-lite.json"
-          jq -e '.modelVersion == "local-deterministic-v3.312-xinjiang-official-2025-undergraduate2-score-only-868426records"' "$work/knowledge-core-lite.json" >/dev/null
-          jq -e '.browserRuntime.profile == "core-lite-v1" and .admissionScoreLayer.structuredRecords == 868426 and .admissionScoreLayer.rankConversionRecords == 116656 and (.admissionScoreLayer.sourceNotes | length) == 5117' "$work/knowledge-core-lite.json" >/dev/null
+          jq -e '.modelVersion == "local-deterministic-v3.314-ningxia-official-rank2025-aligned-868426records"' "$work/knowledge-core-lite.json" >/dev/null
+          jq -e '.browserRuntime.profile == "core-lite-v1" and .admissionScoreLayer.structuredRecords == 868426 and .admissionScoreLayer.rankConversionRecords == 117615 and (.admissionScoreLayer.sourceNotes | length) == 5118' "$work/knowledge-core-lite.json" >/dev/null
           jq -e '[.admissionScoreLayer.sourceNotes[] | select(.ordinaryVocationalStatus == "pending-official-release" and .ordinaryVocationalReview.noHistoricalSubstitution == true)] | length == 5' "$work/knowledge-core-lite.json" >/dev/null
           test "$(wc -c < "$work/knowledge-core-lite.json" | tr -d ' ')" -eq "$(jq -r '.coreLite.bytes' "$work/manifest.json")"
           test "$(shasum -a 256 "$work/knowledge-core-lite.json" | awk '{print $1}')" = "$(jq -r '.coreLite.sha256' "$work/manifest.json")"
@@ -85,9 +85,9 @@ jobs:
           gzip -dc "$work/knowledge-core.json.gz" > "$work/knowledge-core.json"
           test $(( $(wc -c < "$work/knowledge-core-lite.json") * 4 )) -le "$(wc -c < "$work/knowledge-core.json")"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.312-xinjiang-official-2025-undergraduate2-score-only-868426records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.314-ningxia-official-rank2025-aligned-868426records"' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.admissionScoreLayer.structuredRecords == 868426 and .admissionScoreLayer.rankConversionRecords == 116656 and (.admissionScoreLayer.sourceNotes | length) == 5117' >/dev/null
+            | jq -e '.admissionScoreLayer.structuredRecords == 868426 and .admissionScoreLayer.rankConversionRecords == 117615 and (.admissionScoreLayer.sourceNotes | length) == 5118' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-xinjiang-undergraduate1-filing-2025-v3311" and .parsedRecords == 505 and .imageCount == 3 and (.rawFiles | length) == 21 and .rankUnavailableRecords == 505 and .scoreDerivedRankRecords == 0 and (.evidenceBoundary | contains("no major result, minimum rank")))] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
@@ -144,6 +144,10 @@ jobs:
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-ningxia-control-lines-2026" and .quality == "official-chsi-mirror-ningxia-education-department-control-line-images-verified" and .parsedRecords == 38 and .directMirrorRetrievalStatus == "success" and .evidence.ordinaryImage.sha256 == "4bb7ef514872495f4baf218f500ed3a9d498b4f98df81dddc19e785921cef724" and .evidence.sportsImage.sha256 == "29dbbf62d165ba229e16cdb247b2bc6ead831d7eca20afccb9992f2242eeb3a9" and .evidence.artImage.sha256 == "2b0144c9945d9caacd94ea311212c4e944e5908b32f9fc6fced10c050b92fe14")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-ningxia-rank-2026" and .provenanceRevision.rankRowsLinked == 960 and .provenanceRevision.rowsFullCrossChecked == 960 and .provenanceRevision.rowsContinuityChecked == 960 and .provenanceRevision.officialZeroPersonGapEventsRetained == 12 and .provenanceRevision.officialZeroPersonScoresRetained == 20 and .provenanceRevision.valueChanges == 0 and .provenanceRevision.directOfficialMirrorRedownloadStatus == "success" and .provenanceRevision.officialFiles.history.sha256 == "3c9ed5ff44c9841026873e4a405c951d2fa8b4207cc972d1362902ca5862f507" and .provenanceRevision.officialFiles.physics.sha256 == "19f9bd652b516435f4ded2ab92699881b987737b3c29a3ce8c891c69fcefa6b2")] | length == 1' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-ningxia-rank-2025-v3314" and .quality == "official-ningxia-rank-conversion-pdf-mirror-verified" and .parsedRecords == 959 and .subjectBreakdown."历史类" == 467 and .subjectBreakdown."物理类" == 492 and .provenance.authorityAuthored == true and .provenance.mirrorVerification == "two-independent-domains-byte-identical-per-subject" and .evidence."历史类".pdfSha256 == "e28bb509aa331e201474dfdb29fc6f804b6d1ba8228c71c049e11fdfb860286f" and .evidence."物理类".pdfSha256 == "4f3c76dcfe85d70836290cfc866480b2d10e8d8f8a634d3f2448ed8e326548c3")] | length == 1' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-ningxia-undergraduate-b-2025" and .scoreDerivedRankRecords == 2491 and .nativeRankPublishedRecords == 0 and .rankSourceId == "official-ningxia-rank-2025-v3314" and .rankEvidenceScope == "score-derived-provincial-segment")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-qinghai-control-lines-2026" and .quality == "official-chsi-mirror-qinghai-exam-authority-control-line-image-verified" and .parsedRecords == 19 and .directMirrorRetrievalStatus == "success" and .evidence.controlImage.sha256 == "340c17fe0151884b8d588629944edc286a85008355b862353bf639c680f7ce5b" and .evidence.rankPdf.sha256 == "4aae2d39d60ace58a794c2f47aa93b93a5b1077e074b4f66255d7f37f01585e8")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
@@ -466,6 +470,26 @@ jobs:
             | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-ningxia-rank-2026" and .subjectType == "物理类" and .sourceUrl == "https://t2.chei.com.cn/news/getfile/2293847236-2293847211-cfba6e5fc57b5d9f67885f0b8626fe9a.pdf")] | length == 491' >/dev/null
           gzip -dc "$work/ningxia.json.gz" \
             | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-ningxia-rank-2026" and .subjectType == "物理类" and .score == 150)] | length == 0' >/dev/null
+          gzip -dc "$work/ningxia.json.gz" \
+            | jq -e '.records | length == 9257' >/dev/null
+          gzip -dc "$work/ningxia.json.gz" \
+            | jq -e '.rankConversions | length == 1919' >/dev/null
+          gzip -dc "$work/ningxia.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2025 and .sourceId == "official-ningxia-rank-2025-v3314" and .subjectType == "历史类")] | length == 467' >/dev/null
+          gzip -dc "$work/ningxia.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2025 and .sourceId == "official-ningxia-rank-2025-v3314" and .subjectType == "物理类")] | length == 492' >/dev/null
+          gzip -dc "$work/ningxia.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-ningxia-undergraduate-b-2025" and .rankSourceId == "official-ningxia-rank-2025-v3314" and .rankDerivedFromScore == true and .rankEvidenceScope == "score-derived-provincial-segment" and .nativeAdmissionRankUnavailable == true)] | length == 2491' >/dev/null
+          gzip -dc "$work/ningxia.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-ningxia-undergraduate-b-2025" and .formalScoreScope == "ordinary" and .rankSourceId == "official-ningxia-rank-2025-v3314")] | length == 2153' >/dev/null
+          gzip -dc "$work/ningxia.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-ningxia-undergraduate-b-2025" and .formalScoreScope == "special-path-only" and .rankSourceId == "official-ningxia-rank-2025-v3314")] | length == 338' >/dev/null
+          gzip -dc "$work/ningxia.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-ningxia-undergraduate-b-2025" and .minRankStart == 1)] | length == 18' >/dev/null
+          gzip -dc "$work/ningxia.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-ningxia-undergraduate-b-2025" and .schoolName == "北京大学" and .subjectType == "历史类" and .minScore == 637 and .minRankStart == 1 and .minRankEnd == 54 and .rankRangeText == "1-54（最低分换算）")] | length == 1' >/dev/null
+          gzip -dc "$work/ningxia.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-ningxia-undergraduate-b-2025" and .schoolName == "福州大学" and .subjectType == "物理类" and .minScore == 372 and .formalScoreScope == "special-path-only" and .minRankStart == 29829 and .minRankEnd == 30025)] | length == 1' >/dev/null
           gzip -dc "$work/qinghai.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-qinghai-control-lines-2026")] | length == 19' >/dev/null
           gzip -dc "$work/qinghai.json.gz" \
