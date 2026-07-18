@@ -1,0 +1,88 @@
+{
+  "version": "v3.308",
+  "generatedAt": "2026-07-18T05:28:20Z",
+  "modelVersion": "local-deterministic-v3.308-national-school-official-wtu2021-2025-native-rank-857225records",
+  "dataDeploymentCommit": "34136c1502eed45507760854a69c769c71347f30",
+  "runtime": {
+    "structuredRecords": 857225,
+    "rankConversionRecords": 116656,
+    "sourceNotes": 5113,
+    "provinceShards": 31,
+    "wtuRecords": 2222,
+    "wtuNativeRankRecords": 1921,
+    "wtuRankUnavailableRecords": 301,
+    "wtuOrdinaryRecords": 1633,
+    "wtuSpecialPathRecords": 589,
+    "officialQueryPages": 155,
+    "officialSummaryRows": 481,
+    "sourceSummaryMismatches": 0
+  },
+  "github": {
+    "repository": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site",
+    "site": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "deploymentRun": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29631373359",
+    "liveVerificationRun": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29631522058",
+    "release": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.308"
+  },
+  "publicReadback": {
+    "httpStatus": 200,
+    "verifiedProvinceShards": 31,
+    "desktop": {
+      "viewport": "1440x1000",
+      "horizontalOverflowPixels": 0,
+      "pageConsoleErrors": 0,
+      "wtuRecommendationVisible": true,
+      "nativeRankSampleVisible": true
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "horizontalOverflowPixels": 0,
+      "pageConsoleErrors": 0,
+      "wtuRecommendationVisible": true,
+      "nativeRankSampleVisible": true
+    }
+  },
+  "files": [
+    {
+      "path": "docs/evidence/v3308/desktop-recommendation.png",
+      "bytes": 95295,
+      "sha256": "d6ee7d1fa0fe5857b0ef9ce9f1b9022c19024064d7cf91d396012cdea8d43ef9"
+    },
+    {
+      "path": "docs/evidence/v3308/mobile-recommendation.png",
+      "bytes": 65143,
+      "sha256": "6632b9b213c71167c9ddf511f574a16080fd713dde500b69f56291d7cebe8db0"
+    },
+    {
+      "path": "site/data/release-v3.275/knowledge-core.json.gz",
+      "bytes": 2333172,
+      "sha256": "66e96be33176e330e8a14f7dc924df6544dfa8d48ec14ac30e5100e1ab8e1572"
+    },
+    {
+      "path": "site/data/release-v3.275/manifest.json.gz",
+      "bytes": 2395,
+      "sha256": "863748323ee93d6bd565e352f87929187501b6eac89266126fe89f07d39000b4"
+    },
+    {
+      "path": "site/data/release-v3.275/jiangxi.json.gz",
+      "bytes": 640468,
+      "sha256": "91871149e5b80f9739b1008f3973f705fc13844a5027c749a3934526988ad345"
+    },
+    {
+      "path": "site/data/release-v3.275/xizang.json.gz",
+      "bytes": 1119222,
+      "sha256": "bbf025accf12d9d7202777dd21cd7d08c757311a30e17c7c5c22947a7de351ff"
+    }
+  ],
+  "releaseAsset": {
+    "name": "evidence-v3.308-wtu-national-admission.tar.gz",
+    "fileEntries": 205,
+    "archiveEntries": 219,
+    "bytes": 42675027,
+    "sha256": "38904d1f125f97928116522974d160b4b2eb49d2b072a525136d5a92d9d4b7df",
+    "githubDigest": "sha256:38904d1f125f97928116522974d160b4b2eb49d2b072a525136d5a92d9d4b7df",
+    "redownloadByteIdentical": true,
+    "hiddenSidecarCount": 0
+  },
+  "evidenceBoundary": "WTU scores and school-recorded min-score ranks are single-school evidence, not province-wide closure or standalone admission probability. Xizang records remain rank-unavailable and category-unspecified."
+}

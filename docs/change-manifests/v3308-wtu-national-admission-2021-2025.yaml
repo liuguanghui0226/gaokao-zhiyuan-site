@@ -1,11 +1,11 @@
 change_id: "2026-07-18-v3308-wtu-national-admission-2021-2025"
 title: "武汉纺织大学 2021-2025 全国录取数据"
 phase: deliver
-status: in_progress
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "官方查询可同时补充31省分专业录取人数、最低/平均/最高分、学校表列最低位次和选科备注。"
-last_updated: "2026-07-18T00:00:00Z"
+last_updated: "2026-07-18T05:28:20Z"
 
 surfaces_touched:
   - surface: information
