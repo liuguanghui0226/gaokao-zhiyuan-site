@@ -58,6 +58,10 @@ const tests = [
   "test-official-hdu-import-v3310.mjs",
   "test-hdu-score-only-boundaries-v3310.mjs",
   "test-official-hdu-runtime-v3310.mjs",
+  "test-official-xinjiang-undergraduate1-import-v3311.mjs",
+  "test-xinjiang-score-only-boundaries-v3311.mjs",
+  "test-official-xinjiang-undergraduate1-runtime-v3311.mjs",
+  "test-discipline-navigation-v3311.mjs",
 ];
 
 const results = tests.map((test) => {

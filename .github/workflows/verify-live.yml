@@ -26,9 +26,9 @@ jobs:
           }
 
           fetch "$base" "$work/index.html"
-          grep -q "全国高考志愿智能推荐" "$work/index.html"
+          grep -q "全国高考志愿填报" "$work/index.html"
           grep -q "__GAOKAO_RUNTIME_RELEASE_BASE__" "$work/index.html"
-          grep -q 'app.js?v=3.310.0' "$work/index.html"
+          grep -q 'app.js?v=3.311.0' "$work/index.html"
 
           release_path="$(node -e '
             const html = require("node:fs").readFileSync(process.argv[1], "utf8");
@@ -51,19 +51,27 @@ jobs:
           grep -q '招生数${record.admittedCount}' "$work/app.js"
           grep -q 'schoolTags.slice(0, 24)' "$work/app.js"
           grep -q '推荐时按省份加载' "$work/app.js"
+          grep -q 'DISCIPLINE_MAJOR_CATALOG' "$work/app.js"
+          grep -q 'data-discipline-code' "$work/app.js"
+          grep -q 'id="disciplineRecommend"' "$work/app.js"
+          grep -q 'sectionHead("院校专业推荐")' "$work/app.js"
 
           fetch "${base}data/${release_path}/manifest.json.gz" "$work/manifest.json.gz"
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
-          jq -e '.recordCount == 866845' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 867350' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.310-national-school-official-hdu2014-2025-admitted-count-866845records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.311-xinjiang-official-2025-undergraduate1-score-only-867350records"' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '.admissionScoreLayer.structuredRecords == 867350 and .admissionScoreLayer.rankConversionRecords == 116656 and (.admissionScoreLayer.sourceNotes | length) == 5116' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-xinjiang-undergraduate1-filing-2025-v3311" and .parsedRecords == 505 and .imageCount == 3 and (.rawFiles | length) == 21 and .rankUnavailableRecords == 505 and .scoreDerivedRankRecords == 0 and (.evidenceBoundary | contains("no major result, minimum rank")))] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-nchu-national-2021-2025-school-major-admission" and .parsedRecords == 4860 and .derivedRankRecords == 4804 and .nativeAdmissionRankRecords == 0 and .rankUnavailableRecords == 56 and .provinceCount == 29 and (.evidenceBoundary | contains("not school-recorded lowest admitted rank")))] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
@@ -138,6 +146,14 @@ jobs:
           done < <(jq -r '.shards[].file' "$work/manifest.json")
 
           test "$shard_count" -eq 31
+          gzip -dc "$work/xinjiang.json.gz" \
+            | jq -e '.records | length == 10442' >/dev/null
+          gzip -dc "$work/xinjiang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-xinjiang-undergraduate1-filing-2025-v3311")] | length == 505' >/dev/null
+          gzip -dc "$work/xinjiang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-xinjiang-undergraduate1-filing-2025-v3311" and (.rankUnavailable != true or .rankDerivedFromScore != false or .minRankEnd != null))] | length == 0' >/dev/null
+          gzip -dc "$work/xinjiang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-xinjiang-undergraduate1-filing-2025-v3311" and .imageId == "29623" and .schoolCode == "3666" and .schoolName == "北京大学医学部" and .minScore == 673 and .maxScore == 676)] | length == 1' >/dev/null
           gzip -dc "$work/jiangxi.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-jiangxi-control-lines-2026")] | length == 30' >/dev/null
           gzip -dc "$work/jiangxi.json.gz" \

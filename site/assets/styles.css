@@ -77,7 +77,7 @@ select {
 .brand p {
   margin: 5px 0 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.4;
 }
 
@@ -144,7 +144,7 @@ select {
   display: grid;
   gap: 6px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .search-box input,
@@ -268,6 +268,159 @@ select {
   line-height: 1.6;
 }
 
+.discipline-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.discipline-tile {
+  min-width: 0;
+  min-height: 92px;
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  text-align: left;
+  color: var(--ink);
+  background: var(--panel);
+  cursor: pointer;
+}
+
+.discipline-tile:hover,
+.discipline-tile:focus-visible {
+  border-color: var(--leaf);
+  outline: none;
+}
+
+.discipline-tile.active {
+  border-color: var(--leaf-dark);
+  background: #edf7f1;
+  box-shadow: inset 4px 0 0 var(--leaf);
+}
+
+.discipline-tile > span {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.discipline-tile > strong {
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+.discipline-tile > small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.discipline-detail {
+  margin-top: 22px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.discipline-detail > header,
+.data-summary-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.discipline-detail > header > div {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.discipline-detail > header span {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.discipline-detail h3,
+.data-summary-head h3 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.discipline-detail > header > strong {
+  color: var(--leaf-dark);
+}
+
+.discipline-detail > p,
+.compact-admission-layer p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.major-family-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.major-family-btn {
+  min-height: 42px;
+  border: 1px solid #cbd7cf;
+  border-radius: 8px;
+  padding: 8px 10px;
+  color: var(--ink);
+  background: #fff;
+  cursor: pointer;
+}
+
+.major-family-btn:hover,
+.major-family-btn:focus-visible,
+.major-family-btn.active {
+  border-color: var(--leaf);
+  color: var(--leaf-dark);
+  background: #edf7f1;
+  outline: none;
+}
+
+.major-family-btn.active {
+  font-weight: 800;
+}
+
+.major-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.major-list span,
+.source-title-list span {
+  border-left: 3px solid var(--leaf);
+  background: #f7faf7;
+  padding: 8px 10px;
+  line-height: 1.35;
+}
+
+.discipline-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.catalog-note {
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+.source-title-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
 .tag-row {
   display: flex;
   flex-wrap: wrap;
@@ -281,7 +434,7 @@ select {
   color: var(--leaf-dark);
   background: #f7fbf8;
   padding: 4px 8px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.2;
 }
 
@@ -328,7 +481,7 @@ select {
 }
 
 .status {
-  font-size: 12px;
+  font-size: 13px;
   border-radius: 8px;
   padding: 6px 8px;
   background: #edf7f1;
@@ -388,6 +541,34 @@ select {
   margin: 0 0 8px;
   color: var(--ink);
   font-size: 20px;
+}
+
+.detail-drawer {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+  margin: 16px 0;
+}
+
+.detail-drawer.compact {
+  margin: 12px 0 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.detail-drawer summary {
+  color: var(--leaf-dark);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.detail-drawer[open] summary {
+  margin-bottom: 12px;
+}
+
+.detail-drawer p {
+  color: var(--muted);
+  line-height: 1.55;
 }
 
 .model-band {
@@ -457,11 +638,15 @@ select {
   display: grid;
   gap: 6px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .recommend-form label.wide {
   grid-column: span 3;
+}
+
+.recommend-form [hidden] {
+  display: none;
 }
 
 .recommend-form fieldset {
@@ -480,7 +665,7 @@ select {
 .recommend-form legend {
   padding: 0 4px;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .elective-options {
@@ -577,6 +762,39 @@ select {
   margin: 14px 0;
 }
 
+.compact-admission-layer {
+  background: #fffdf8;
+  border-color: #e3d7bd;
+}
+
+.data-summary-head strong {
+  display: block;
+  margin-top: 5px;
+  color: #7b4400;
+}
+
+.data-summary-head > span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.data-metrics {
+  margin: 14px 0 8px;
+}
+
+.data-metrics .metric {
+  border: 0;
+  border-left: 3px solid #d8c18f;
+  border-radius: 0;
+  padding: 8px 12px;
+  background: transparent;
+  box-shadow: none;
+}
+
+.data-metrics .metric strong {
+  font-size: 21px;
+}
+
 .admission-layer > * {
   min-width: 0;
 }
@@ -617,7 +835,7 @@ select {
   padding: 7px 9px;
   background: #fff;
   color: #7b4400;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.35;
   text-decoration: none;
 }
@@ -658,7 +876,7 @@ select {
 
 .model-pill {
   color: var(--blue);
-  font-size: 12px;
+  font-size: 13px;
   text-align: center;
 }
 
@@ -762,7 +980,7 @@ select {
   padding: 5px 8px;
   background: #edf7f1;
   color: var(--leaf-dark);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
 }
 
@@ -810,7 +1028,7 @@ select {
   padding: 5px 8px;
   color: var(--blue);
   background: #fff;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.35;
 }
@@ -846,7 +1064,7 @@ select {
   display: inline-block;
   margin-top: 9px;
   color: var(--blue);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   text-decoration: none;
 }
@@ -927,7 +1145,7 @@ select {
 .school-option em {
   border-radius: 8px;
   padding: 6px 8px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.35;
   font-style: normal;
   text-align: center;
@@ -947,7 +1165,7 @@ select {
   margin: 0 0 5px !important;
   color: var(--gold) !important;
   font-weight: 800;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .score-badge {
@@ -982,7 +1200,7 @@ select {
   display: block;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--blue), var(--leaf));
+  background: var(--leaf);
 }
 
 .score-grid {
@@ -998,7 +1216,7 @@ select {
 
 .score-part span {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .score-part strong {
@@ -1043,10 +1261,15 @@ select {
   .metric-grid,
   .grid-2,
   .grid-3,
+  .discipline-grid,
   .model-band,
   .admission-layer,
   .recommend-form {
     grid-template-columns: 1fr;
+  }
+
+  .discipline-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .source-row,
@@ -1063,6 +1286,8 @@ select {
   }
 
   .form-actions,
+  .discipline-detail > header,
+  .data-summary-head,
   .model-summary,
   .recommend-card header,
   .application-plan-head,
@@ -1080,10 +1305,29 @@ select {
 
   .sidebar {
     padding: 18px 14px;
+    gap: 14px;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .nav {
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 3px;
+    scrollbar-width: thin;
+  }
+
+  .nav-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 9px 11px;
+  }
+
+  .sidebar-note {
+    display: none;
   }
 
   .section-head {
@@ -1092,5 +1336,9 @@ select {
 
   .score-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .discipline-actions {
+    display: grid;
   }
 }

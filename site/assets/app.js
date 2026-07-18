@@ -6,8 +6,11 @@ const state = {
   view: "overview",
   query: "",
   discipline: "",
+  disciplineBrowse: "08",
+  disciplineFamily: "",
   domain: "",
   recommendation: null,
+  prefillProfile: null,
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -64,6 +67,94 @@ const DEFAULT_PROFILE = {
   budget: "中等敏感",
   strategy: "均衡",
   abilityProfile: "语文120 英语124 数学102 物理77 化学82 生物88；语英较强，数学物理中等，化生基础较稳。",
+};
+
+const DISCIPLINE_MAJOR_CATALOG = {
+  "01": [
+    { key: "philosophy", name: "哲学类", majors: ["哲学", "逻辑学", "宗教学", "伦理学"] },
+  ],
+  "02": [
+    { key: "economics", name: "经济学类", majors: ["经济学", "经济统计学", "国民经济管理", "数字经济"] },
+    { key: "finance-public", name: "财政学类", majors: ["财政学", "税收学", "国际税收"] },
+    { key: "finance", name: "金融学类", majors: ["金融学", "金融工程", "保险学", "投资学", "金融科技"] },
+    { key: "trade", name: "经济与贸易类", majors: ["国际经济与贸易", "贸易经济", "国际经济发展合作"] },
+  ],
+  "03": [
+    { key: "law", name: "法学类", majors: ["法学", "知识产权", "信用风险管理与法律防控", "国际经贸规则"] },
+    { key: "politics", name: "政治学类", majors: ["政治学与行政学", "国际政治", "外交学", "国际事务与国际关系"] },
+    { key: "sociology", name: "社会学类", majors: ["社会学", "社会工作", "人类学", "女性学"] },
+    { key: "marxism", name: "马克思主义理论类", majors: ["科学社会主义", "中国共产党历史", "思想政治教育", "马克思主义理论"] },
+    { key: "public-security", name: "公安学类", majors: ["治安学", "侦查学", "边防管理", "公安情报学", "犯罪学"] },
+  ],
+  "04": [
+    { key: "education", name: "教育学类", majors: ["教育学", "科学教育", "教育技术学", "学前教育", "小学教育", "特殊教育"] },
+    { key: "sports", name: "体育学类", majors: ["体育教育", "运动训练", "社会体育指导与管理", "运动人体科学", "冰雪运动"] },
+  ],
+  "05": [
+    { key: "chinese", name: "中国语言文学类", majors: ["汉语言文学", "汉语言", "汉语国际教育", "古典文献学", "秘书学"] },
+    { key: "foreign-language", name: "外国语言文学类", majors: ["英语", "俄语", "德语", "法语", "西班牙语", "翻译", "商务英语"] },
+    { key: "journalism", name: "新闻传播学类", majors: ["新闻学", "广播电视学", "广告学", "传播学", "网络与新媒体", "国际新闻与传播"] },
+  ],
+  "06": [
+    { key: "history", name: "历史学类", majors: ["历史学", "世界史", "考古学", "文物与博物馆学", "文化遗产"] },
+  ],
+  "07": [
+    { key: "mathematics", name: "数学类", majors: ["数学与应用数学", "信息与计算科学", "数理基础科学", "数据计算及应用"] },
+    { key: "physics", name: "物理学类", majors: ["物理学", "应用物理学", "核物理", "声学", "量子信息科学"] },
+    { key: "chemistry", name: "化学类", majors: ["化学", "应用化学", "化学生物学", "分子科学与工程", "能源化学"] },
+    { key: "earth-space", name: "地球与空间科学", majors: ["天文学", "地理科学", "自然地理与资源环境", "大气科学", "海洋科学", "地球物理学", "地质学"] },
+    { key: "biology", name: "生物科学类", majors: ["生物科学", "生物技术", "生物信息学", "生态学", "整合科学"] },
+    { key: "psychology-statistics", name: "心理与统计", majors: ["心理学", "应用心理学", "统计学", "应用统计学"] },
+  ],
+  "08": [
+    { key: "computer", name: "计算机类", majors: ["计算机科学与技术", "软件工程", "网络工程", "信息安全", "物联网工程", "数字媒体技术", "数据科学与大数据技术", "人工智能", "智能科学与技术", "虚拟现实技术"] },
+    { key: "electronics", name: "电子信息类", majors: ["电子信息工程", "电子科学与技术", "通信工程", "微电子科学与工程", "光电信息科学与工程", "集成电路设计与集成系统"] },
+    { key: "automation", name: "自动化类", majors: ["自动化", "机器人工程", "智能装备与系统", "工业智能"] },
+    { key: "mechanical", name: "机械类", majors: ["机械工程", "机械设计制造及其自动化", "材料成型及控制工程", "车辆工程", "智能制造工程"] },
+    { key: "civil-water", name: "土木水利与建筑", majors: ["土木工程", "建筑环境与能源应用工程", "给排水科学与工程", "水利水电工程", "测绘工程", "建筑学", "城乡规划"] },
+    { key: "materials-energy", name: "材料与能源动力", majors: ["材料科学与工程", "高分子材料与工程", "新能源材料与器件", "能源与动力工程", "新能源科学与工程", "储能科学与工程"] },
+    { key: "chemical-bio", name: "化工与生物工程", majors: ["化学工程与工艺", "制药工程", "资源循环科学与工程", "生物工程", "合成生物学"] },
+    { key: "transport-aerospace", name: "交通海洋与航空航天", majors: ["交通运输", "交通工程", "航海技术", "船舶与海洋工程", "航空航天工程", "飞行器设计与工程"] },
+    { key: "environment-safety", name: "环境安全与公安技术", majors: ["环境工程", "环境科学", "安全工程", "应急技术与管理", "刑事科学技术", "消防工程"] },
+  ],
+  "09": [
+    { key: "plant", name: "植物生产类", majors: ["农学", "园艺", "植物保护", "植物科学与技术", "种子科学与工程", "智慧农业"] },
+    { key: "nature", name: "自然保护与环境生态类", majors: ["农业资源与环境", "野生动物与自然保护区管理", "水土保持与荒漠化防治", "生物质科学与工程"] },
+    { key: "animal", name: "动物生产与医学", majors: ["动物科学", "蚕学", "动物医学", "动物药学", "实验动物学", "兽医公共卫生"] },
+    { key: "forestry-aquatic", name: "林学水产与草学", majors: ["林学", "园林", "森林保护", "水产养殖学", "海洋渔业科学与技术", "草业科学"] },
+  ],
+  "10": [
+    { key: "basic-clinical", name: "基础与临床医学", majors: ["基础医学", "生物医学", "临床医学", "麻醉学", "医学影像学", "儿科学", "精神医学"] },
+    { key: "stomatology-public", name: "口腔与公共卫生", majors: ["口腔医学", "预防医学", "食品卫生与营养学", "妇幼保健医学", "卫生监督"] },
+    { key: "tcm", name: "中医学与中西医结合", majors: ["中医学", "针灸推拿学", "藏医学", "蒙医学", "中西医临床医学"] },
+    { key: "pharmacy", name: "药学类", majors: ["药学", "药物制剂", "临床药学", "药事管理", "中药学", "中药资源与开发"] },
+    { key: "medical-tech-nursing", name: "医学技术与护理", majors: ["医学检验技术", "医学影像技术", "康复治疗学", "智能医学工程", "护理学", "助产学"] },
+  ],
+  "11": [
+    { key: "command", name: "指挥与作战方向", majors: ["作战指挥", "指挥信息系统工程", "侦察情报", "火力指挥与控制工程"] },
+    { key: "military-tech", name: "军事技术方向", majors: ["武器系统与工程", "雷达工程", "导弹工程", "无人系统工程", "信息对抗技术"] },
+    { key: "logistics", name: "后勤与保障方向", majors: ["军事设施工程", "国防工程及其智能化", "装备保障工程", "管理科学与工程"] },
+  ],
+  "12": [
+    { key: "management-science", name: "管理科学与工程类", majors: ["管理科学", "信息管理与信息系统", "工程管理", "大数据管理与应用", "应急管理"] },
+    { key: "business", name: "工商管理类", majors: ["工商管理", "市场营销", "会计学", "财务管理", "人力资源管理", "审计学", "资产评估"] },
+    { key: "public-admin", name: "公共管理类", majors: ["公共事业管理", "行政管理", "劳动与社会保障", "土地资源管理", "健康服务与管理"] },
+    { key: "logistics-ecommerce", name: "物流电商与工业工程", majors: ["物流管理", "供应链管理", "工业工程", "电子商务", "跨境电子商务"] },
+    { key: "tourism-agri", name: "旅游与农林经济管理", majors: ["旅游管理", "酒店管理", "会展经济与管理", "农林经济管理", "农村区域发展"] },
+  ],
+  "13": [
+    { key: "art-theory", name: "艺术学理论类", majors: ["艺术史论", "艺术管理", "非物质文化遗产保护"] },
+    { key: "music-dance", name: "音乐与舞蹈学类", majors: ["音乐表演", "音乐学", "作曲与作曲技术理论", "舞蹈表演", "舞蹈学"] },
+    { key: "drama-film", name: "戏剧与影视学类", majors: ["表演", "戏剧影视文学", "广播电视编导", "播音与主持艺术", "动画", "影视摄影与制作"] },
+    { key: "fine-art", name: "美术学类", majors: ["美术学", "绘画", "雕塑", "摄影", "中国画", "实验艺术"] },
+    { key: "design", name: "设计学类", majors: ["视觉传达设计", "环境设计", "产品设计", "服装与服饰设计", "数字媒体艺术", "艺术与科技"] },
+  ],
+  "14": [
+    { key: "integrated-circuit", name: "集成电路科学与工程", majors: ["集成电路科学与工程相关方向"] },
+    { key: "national-security", name: "国家安全学", majors: ["国家安全学相关方向"] },
+    { key: "design-intelligence", name: "设计与智能交叉", majors: ["智能交互设计", "科技艺术", "数字人文相关方向"] },
+    { key: "future-health", name: "未来健康与工程交叉", majors: ["生物医学工程交叉方向", "智能医学交叉方向", "健康数据科学相关方向"] },
+  ],
 };
 
 const HIGH_TUITION_THRESHOLD = 30000;
@@ -2487,123 +2578,144 @@ function renderTags(items, css = "") {
 }
 
 function sectionHead(title, text) {
-  return `<div class="section-head"><div><h2>${esc(title)}</h2><p>${esc(text)}</p></div></div>`;
+  return `<div class="section-head"><div><h2>${esc(title)}</h2>${text ? `<p>${esc(text)}</p>` : ""}</div></div>`;
 }
 
 function renderOverview() {
   const data = state.data;
   const stats = data.extractionStats;
-  const topDomains = Object.entries(data.domainCounts).slice(0, 8);
-  const topDisciplines = Object.entries(data.disciplineCounts).slice(0, 8);
-  const strategy = data.strategyFramework.map((item) => {
-    const sourceTags = item.sourceIds.map((id) => sourceById(id)?.title).filter(Boolean).slice(0, 4);
+  const strategy = data.strategyFramework.slice(0, 6).map((item) => {
     return `<article class="item-card">
       <h3>${esc(item.title)}</h3>
       <p>${esc(item.body)}</p>
-      ${renderTags(sourceTags)}
     </article>`;
   }).join("");
-  const insights = data.experienceInsights.map((item) => {
-    const sourceTags = item.sourceIds.map((id) => sourceById(id)?.title).filter(Boolean).slice(0, 4);
+  const insights = data.experienceInsights.slice(0, 6).map((item) => {
     return `<article class="item-card">
       <h3>${esc(item.title)}</h3>
       <p>${esc(item.body)}</p>
-      ${renderTags(sourceTags, "warn")}
     </article>`;
   }).join("");
-  const blueprint = (data.recommendationBlueprint || []).map((item) => {
-    const sourceTags = item.sourceIds.map((id) => sourceById(id)?.title).filter(Boolean).slice(0, 3);
-    return `<article class="item-card">
-      <h3>${esc(item.title)}</h3>
-      <p>${esc(item.body)}</p>
-      ${renderTags(sourceTags)}
-    </article>`;
-  }).join("");
-
   $("#view-overview").innerHTML = `
-    ${sectionHead("总览", "把本地资料整理为规则、专业门类、特殊路径、风险、经验和推荐器骨架；每条结论都保留来源文件。")}
+    ${sectionHead("填报总览")}
     <div class="metric-grid">
       ${renderMetric("资料文件", stats.totalFiles)}
       ${renderMetric("已抽取正文", stats.textExtractedFiles)}
       ${renderMetric("OCR抽取文件", stats.ocrExtractedFiles)}
-      ${renderMetric("OCR抽取页数", stats.ocrExtractedPages)}
       ${renderMetric("ASR完整转写", stats.asrTranscribedFiles)}
-      ${renderMetric("ASR部分转写", stats.asrPartialFiles)}
-      ${renderMetric("音频待转写", stats.needsAudioTranscriptFiles)}
-      ${renderMetric("中文OCR待处理", stats.needsChineseOcrFiles)}
       ${renderMetric("整合轮次", data.rounds.length)}
     </div>
     <section class="band">
-      <h3>知识主线</h3>
+      <h3>填报重点</h3>
       <div class="grid-3">${strategy}</div>
-    </section>
-    <section class="band">
-      <h3>升级版推荐骨架</h3>
-      <div class="grid-3">${blueprint}</div>
     </section>
     <section class="band">
       <h3>经验与现状</h3>
       <div class="grid-3">${insights}</div>
     </section>
-    <section class="grid-2">
-      <div class="band">
-        <h3>主题分布</h3>
-        ${topDomains.map(([name, count]) => `<p><strong>${esc(name)}</strong>：${fmtNumber(count)} 个来源命中</p>`).join("")}
-      </div>
-      <div class="band">
-        <h3>门类分布</h3>
-        ${topDisciplines.map(([name, count]) => `<p><strong>${esc(name)}</strong>：${fmtNumber(count)} 个来源命中</p>`).join("")}
-      </div>
-    </section>
-    <section class="band">
-      <h3>诚实边界</h3>
-      ${data.gaps.map((gap) => `<p>${esc(gap)}</p>`).join("")}
-    </section>
+    <details class="detail-drawer">
+      <summary>资料整理状态</summary>
+      <div class="check-grid">${data.gaps.map((gap) => `<span>${esc(gap)}</span>`).join("")}</div>
+    </details>
   `;
 }
 
 function renderDisciplines() {
-  const sources = filteredSources();
+  const query = state.query.trim().toLowerCase();
+  const sources = knowledgeSourceFiles().filter((source) => {
+    const text = [source.title, source.relativePath, source.excerpt, ...(source.domains || []).map((item) => item.label)].join(" ").toLowerCase();
+    return (!query || text.includes(query)) && (!state.domain || (source.domains || []).some((item) => item.id === state.domain));
+  });
+  const selectedCode = state.discipline || state.disciplineBrowse || "08";
+  const selected = state.data.disciplines.find((discipline) => discipline.code === selectedCode) || state.data.disciplines[0];
+  const families = DISCIPLINE_MAJOR_CATALOG[selected.code] || [];
+  const selectedFamily = families.find((family) => family.key === state.disciplineFamily) || families[0];
+  const selectedSources = sources.filter((source) => source.disciplines.some((item) => item.code === selected.code));
   const cards = state.data.disciplines.map((discipline) => {
     const matched = sources.filter((source) => source.disciplines.some((item) => item.code === discipline.code));
-    return `<article class="item-card">
-      <h3>${discipline.code} ${esc(discipline.name)}</h3>
-      <p>${esc(discipline.guide)}</p>
-      <div class="tag-row">
-        <span class="tag">${fmtNumber(matched.length)} 个匹配来源</span>
-        ${discipline.keywords.slice(0, 8).map((kw) => `<span class="tag">${esc(kw)}</span>`).join("")}
-      </div>
-      ${matched.slice(0, 5).map((source) => `<p class="mono">${esc(source.title)}</p>`).join("")}
-    </article>`;
+    const active = discipline.code === selected.code;
+    return `<button class="discipline-tile ${active ? "active" : ""}" type="button" data-discipline-code="${esc(discipline.code)}" aria-pressed="${active}">
+      <span>${esc(discipline.code)}</span>
+      <strong>${esc(discipline.name)}</strong>
+      <small>${fmtNumber(matched.length)} 条资料</small>
+    </button>`;
   }).join("");
 
   $("#view-disciplines").innerHTML = `
-    ${sectionHead("专业门类", "用中国专业门类做第一层导航，07理学、08工学等方向再挂接到来源文件和经验卡片。")}
-    <div class="grid-2">${cards}</div>
+    ${sectionHead("专业门类")}
+    <div class="discipline-grid">${cards}</div>
+    <section class="discipline-detail">
+      <header>
+        <div><span>${esc(selected.code)}</span><h3>${esc(selected.name)}</h3></div>
+        <strong>${fmtNumber(selectedSources.length)} 条资料</strong>
+      </header>
+      <p>${esc(selected.guide)}</p>
+      <div class="major-family-grid">
+        ${families.map((family) => `<button class="major-family-btn ${family.key === selectedFamily?.key ? "active" : ""}" type="button" data-family-key="${esc(family.key)}">${esc(family.name)}</button>`).join("")}
+      </div>
+      ${selectedFamily ? `<div class="major-list">${selectedFamily.majors.map((major) => `<span>${esc(major)}</span>`).join("")}</div>` : ""}
+      <div class="discipline-actions">
+        <button class="primary-action" id="disciplineRecommend" type="button">按此方向推荐</button>
+        ${state.discipline ? `<button class="ghost-action" id="clearDiscipline" type="button">查看全部门类</button>` : ""}
+      </div>
+      ${selected.code === "11" || selected.code === "14" ? `<p class="catalog-note">具体专业名称与招生资格以当年教育部目录和院校章程为准。</p>` : ""}
+      ${selectedSources.length ? `<details class="detail-drawer compact"><summary>相关资料</summary><div class="source-title-list">${selectedSources.slice(0, 6).map((source) => `<span>${esc(source.title)}</span>`).join("")}</div></details>` : ""}
+    </section>
   `;
+  bindDisciplineEvents(selected, selectedFamily);
+}
+
+function bindDisciplineEvents(selected, selectedFamily) {
+  $$('[data-discipline-code]').forEach((button) => {
+    button.addEventListener("click", () => {
+      state.discipline = button.dataset.disciplineCode;
+      state.disciplineBrowse = button.dataset.disciplineCode;
+      state.disciplineFamily = "";
+      $("#disciplineFilter").value = state.discipline;
+      renderDisciplines();
+      renderSources();
+    });
+  });
+  $$('[data-family-key]').forEach((button) => {
+    button.addEventListener("click", () => {
+      state.disciplineFamily = button.dataset.familyKey;
+      renderDisciplines();
+    });
+  });
+  $("#disciplineRecommend")?.addEventListener("click", () => {
+    state.prefillProfile = {
+      ...DEFAULT_PROFILE,
+      disciplineFocus: selected.code,
+      interest: selectedFamily?.majors?.join(" ") || selected.name,
+    };
+    state.recommendation = null;
+    renderRecommend();
+    updateView("recommend");
+  });
+  $("#clearDiscipline")?.addEventListener("click", () => {
+    state.discipline = "";
+    $("#disciplineFilter").value = "";
+    renderDisciplines();
+    renderSources();
+  });
 }
 
 function renderRules() {
-  const checklist = state.data.riskChecklist.map((item) => `
-    <article class="item-card">
-      <h3>${esc(item.text)}</h3>
-      ${renderTags(["填报前确认"], "risk")}
-    </article>`).join("");
+  const checklist = state.data.riskChecklist.map((item) => `<span>${esc(item.text)}</span>`).join("");
 
   const domains = state.data.domains.map((domain) => {
     const sources = knowledgeSourceFiles().filter((source) => (source.domains || []).some((item) => item.id === domain.id));
     return `<article class="item-card">
       <h3>${esc(domain.label)}</h3>
-      <p>${esc(domain.keywords.join(" / "))}</p>
-      <div class="tag-row"><span class="tag">${fmtNumber(sources.length)} 个来源</span></div>
+      <strong>${fmtNumber(sources.length)} 条资料</strong>
     </article>`;
   }).join("");
 
   $("#view-rules").innerHTML = `
-    ${sectionHead("规则与风险", "把高考志愿里的硬规则、软风险和特殊路径前置，先排雷，再做冲稳保。")}
+    ${sectionHead("规则与风险")}
     <section class="band">
       <h3>填报前检查清单</h3>
-      <div class="grid-2">${checklist}</div>
+      <div class="check-grid">${checklist}</div>
     </section>
     <section class="band">
       <h3>主题模块</h3>
@@ -2630,7 +2742,7 @@ function renderRecommendForm(profile) {
   const showBeijingVocationalScore = normalizeProvince(getProfileValue(profile, "province")) === "北京";
   return `<form id="recommendForm" class="recommend-form">
     <label>
-      <span>孩子类型</span>
+      <span>考生类型</span>
       <select id="childType">
         ${CHILD_TYPES.map((item) => `<option value="${esc(item)}" ${isSelected(item, getProfileValue(profile, "childType"))}>${esc(item)}</option>`).join("")}
       </select>
@@ -2740,12 +2852,10 @@ function renderDataFreshnessPanel(profile) {
     ? `<a href="${esc(freshness.scheduleSource.url)}" target="_blank" rel="noreferrer">查看考试院转载日程</a>`
     : "";
   return `<section class="band data-freshness-panel">
-    <h3>${esc(freshness.province || profile.province || "本省")}数据发布时间</h3>
+    <h3>${esc(freshness.province || profile.province || "本省")}数据进度</h3>
     <div class="coverage-row compact">${facts.map((fact) => `<span>${esc(fact)}</span>`).join("")}</div>
     ${freshness.scheduleStage ? `<p class="freshness-stage">${esc(freshness.scheduleStage.text)} ${scheduleLink}</p>` : ""}
-    <div class="check-grid">
-      ${freshness.warnings.map((warning) => `<span>${esc(warning)}</span>`).join("")}
-    </div>
+    ${freshness.warnings.length ? `<details class="detail-drawer compact"><summary>填报前核对</summary><div class="check-grid">${freshness.warnings.map((warning) => `<span>${esc(warning)}</span>`).join("")}</div></details>` : ""}
   </section>`;
 }
 
@@ -2753,8 +2863,7 @@ function renderRecommendationResults() {
   const rec = state.recommendation;
   if (!rec) {
     return `<div class="empty-state">
-      <h2>输入孩子画像和分数后生成推荐</h2>
-      <p>系统会输出候选院校池、模型分、推荐理由、风险提示、来源证据和官方复核清单。</p>
+      <h2>填写成绩后生成候选清单</h2>
     </div>`;
   }
 
@@ -2797,16 +2906,15 @@ function renderRecommendationResults() {
         <h4>模型建议院校</h4>
         <div class="school-option-list">${schools}</div>
       </section>
-      <section>
-        <h4>为什么推荐</h4>
-        <ul>${item.reasons.map((reason) => `<li>${esc(reason)}</li>`).join("")}</ul>
-      </section>
-      <section>
+      <details class="detail-drawer compact">
+        <summary>理由与风险</summary>
+        <h4>推荐理由</h4>
+        <ul>${item.reasons.slice(0, 3).map((reason) => `<li>${esc(reason)}</li>`).join("")}</ul>
         <h4>风险和排除条件</h4>
-        <ul>${item.warnings.map((warning) => `<li>${esc(warning)}</li>`).join("")}</ul>
-      </section>
-      <p class="confidence-text">${esc(item.confidenceReason)}</p>
-      ${renderTags(evidenceTags, item.confidence === "A-" ? "" : "warn")}
+        <ul>${item.warnings.slice(0, 3).map((warning) => `<li>${esc(warning)}</li>`).join("")}</ul>
+        <p class="confidence-text">${esc(item.confidenceReason)}</p>
+        ${renderTags(evidenceTags, item.confidence === "A-" ? "" : "warn")}
+      </details>
     </article>`;
   }).join("");
 
@@ -2840,18 +2948,16 @@ function renderRecommendationResults() {
         <p>${esc(rec.band.strategy)}</p>
         ${renderRankEstimateNotice(rec.profile)}
       </div>
-      <div class="model-pill">${esc(policy.version || "local-deterministic-v1")}</div>
+      <div class="model-pill">数据 ${esc(String(policy.version || "v1").match(/v\d+(?:\.\d+)*/)?.[0] || "v1")}</div>
     </div>
     ${renderDataFreshnessPanel(rec.profile)}
     ${belowVocationalLine ? belowLinePanel : limitedOnly ? limitedQualificationPanel : vocationalQualificationUnknown ? unknownQualificationPanel : vocationalLinePending ? pendingQualificationPanel : renderAdmissionHitPanel(rec.profile)}
     ${belowVocationalLine || vocationalQualificationUnknown || vocationalLinePending ? "" : renderApplicationPlan(rec.results)}
     <div class="grid-2">${resultCards}</div>
-    <section class="band">
-      <h3>官方复核清单</h3>
-      <div class="check-grid">
-        ${(policy.officialChecks || state.data.riskChecklist.map((item) => item.text)).map((item) => `<span>${esc(item)}</span>`).join("")}
-      </div>
-    </section>
+    <details class="detail-drawer">
+      <summary>官方复核清单</summary>
+      <div class="check-grid">${(policy.officialChecks || state.data.riskChecklist.map((item) => item.text)).map((item) => `<span>${esc(item)}</span>`).join("")}</div>
+    </details>
   </section>`;
 }
 
@@ -2988,6 +3094,32 @@ function renderAdmissionScoreLayer() {
   </section>`;
 }
 
+function renderAdmissionScoreSummary() {
+  const layer = state.data.admissionScoreLayer || {};
+  const coverage = layer.coverage || {};
+  const sourceNotes = layer.sourceNotes || [];
+  const provinceCount = (coverage.provinces || []).length || Object.keys(layer.provinceReadiness?.rows || {}).length || 31;
+  const latestYears = (coverage.years || []).slice().sort((a, b) => Number(b) - Number(a)).slice(0, 3);
+  return `<section class="band compact-admission-layer">
+    <div class="data-summary-head">
+      <div><h3>录取数据</h3><strong>全国数据分省加载</strong></div>
+      <span>${latestYears.join(" / ") || "持续更新"}</span>
+    </div>
+    <div class="metric-grid data-metrics">
+      ${renderMetric("录取与计划记录", coverage.records || layer.structuredRecords || 0)}
+      ${renderMetric("覆盖省份", provinceCount)}
+      ${renderMetric("一分一段", layer.rankConversionRecords || layer.rankCoverage?.records || 0)}
+      ${renderMetric("官方来源", sourceNotes.length)}
+    </div>
+    <details class="detail-drawer compact">
+      <summary>数据口径</summary>
+      <p>${esc(layer.currentFinding || "按考生省份加载录取、计划和位次数据。")}</p>
+      ${layer.downgradeReason ? `<p>${esc(layer.downgradeReason)}</p>` : ""}
+      ${sourceNotes.length ? `<div class="score-source-list">${sourceNotes.slice(0, 6).map((source) => `<a href="${esc(source.url)}" target="_blank" rel="noreferrer">${esc(source.title)}</a>`).join("")}</div>` : ""}
+    </details>
+  </section>`;
+}
+
 function bindRecommendEvents() {
   const form = $("#recommendForm");
   if (!form) return;
@@ -3019,6 +3151,7 @@ function bindRecommendEvents() {
   });
   $("#resetRecommend").addEventListener("click", () => {
     state.recommendation = null;
+    state.prefillProfile = null;
     renderRecommend();
   });
 }
@@ -3030,11 +3163,11 @@ function renderAdmissionHitPanel(profile) {
       return { record, fit, score: fit.score + majorInterestScore(record, profile) };
     })
     .sort((a, b) => b.score - a.score)
-    .slice(0, 8);
+    .slice(0, 5);
   if (!records.length) {
     return `<section class="band admission-hit-panel">
-      <h3>当前省份数据状态</h3>
-      <p>本地已有全国通用数据 schema，但暂未导入${esc(profile.province || "该省")}${esc(profile.subject || "")}的结构化录取记录。本次结果会按全国候选池和本地经验知识降级输出；继续导入该省考试院投档表、院校专业分和一分一段表后，可自动升级为分数/位次排序。</p>
+      <h3>${esc(profile.province || "本省")}数据待补</h3>
+      <p>当前按全国院校专业资料排序，不使用虚构录取概率。</p>
     </section>`;
   }
   return `<section class="band admission-hit-panel">
@@ -3060,32 +3193,23 @@ function renderRecommend() {
     confidenceRules: [],
   };
   const sourceTags = (policy.sourceIds || []).map((id) => sourceById(id)?.title).filter(Boolean).slice(0, 5);
-  const profile = state.recommendation?.profile || DEFAULT_PROFILE;
+  const profile = state.recommendation?.profile || state.prefillProfile || DEFAULT_PROFILE;
   $("#view-recommend").innerHTML = `
-    ${sectionHead("智能推荐", "告诉我孩子是什么类型、多少分/位次、想去哪类城市和专业，系统自动给出候选院校池、排序理由和复核清单。")}
-    <section class="model-band">
-      <div>
-        <h3>${esc(policy.name)}</h3>
-        <p>${esc(policy.reliabilityDefinition)}</p>
-        <p class="formula">${esc(policy.formula)}</p>
-        ${renderTags(sourceTags)}
-      </div>
-      <div class="weight-list">
-        ${(policy.weights || []).map((item) => `<div><strong>${esc(item.label)}</strong><span>${Math.round(item.weight * 100)}%</span></div>`).join("")}
-      </div>
-    </section>
-    ${renderAdmissionScoreLayer()}
+    ${sectionHead("院校专业推荐")}
+    ${renderAdmissionScoreSummary()}
     <section class="band">
-      <h3>输入画像</h3>
+      <h3>成绩与偏好</h3>
       ${renderRecommendForm(profile)}
     </section>
     ${renderRecommendationResults()}
-    <section class="band">
-      <h3>可信度规则</h3>
-      <div class="check-grid">
-        ${(policy.confidenceRules || []).map((item) => `<span>${esc(item)}</span>`).join("")}
-      </div>
-    </section>
+    <details class="detail-drawer">
+      <summary>排序口径</summary>
+      <p>${esc(policy.reliabilityDefinition)}</p>
+      <p class="formula">${esc(policy.formula)}</p>
+      <div class="weight-list">${(policy.weights || []).map((item) => `<div><strong>${esc(item.label)}</strong><span>${Math.round(item.weight * 100)}%</span></div>`).join("")}</div>
+      <div class="check-grid">${(policy.confidenceRules || []).map((item) => `<span>${esc(item)}</span>`).join("")}</div>
+      ${renderTags(sourceTags)}
+    </details>
   `;
   bindRecommendEvents();
 }
@@ -3111,7 +3235,7 @@ function renderRounds() {
     </article>`).join("");
 
   $("#view-rounds").innerHTML = `
-    ${sectionHead(`${state.data.rounds.length}轮沉淀`, "每轮都覆盖同一批资料清单，并把命中来源、主题和经验写入可追溯记录。")}
+    ${sectionHead("整合记录", `${state.data.rounds.length} 轮`)}
     <div class="round-list">${rounds}</div>
   `;
 }
@@ -3155,7 +3279,7 @@ function renderAudioQueue() {
   }).filter(Boolean).join("");
 
   $("#view-audio").innerHTML = `
-    ${sectionHead("音频 ASR 库", "124 个音频已按课程系列归档，并通过本地 whisper.cpp 完成完整离线转写；WMA 通过 ffmpeg 临时转码后处理。")}
+    ${sectionHead("音频资料")}
     <div class="metric-grid">
       ${renderMetric("音频文件", queue.totalFiles)}
       ${renderMetric("ASR完整转写", state.data.extractionStats.asrTranscribedFiles)}
@@ -3192,7 +3316,7 @@ function renderSources() {
   }).join("");
 
   $("#view-sources").innerHTML = `
-    ${sectionHead("资料库", `${fmtNumber(sources.length)} 个文件匹配当前筛选。`)}
+    ${sectionHead("资料库", `${fmtNumber(sources.length)} 条`)}
     <div class="source-list">${rows}</div>
   `;
 }
@@ -3226,6 +3350,8 @@ function bindEvents() {
   });
   $("#disciplineFilter").addEventListener("change", (event) => {
     state.discipline = event.target.value;
+    if (state.discipline) state.disciplineBrowse = state.discipline;
+    state.disciplineFamily = "";
     renderSources();
     renderDisciplines();
   });

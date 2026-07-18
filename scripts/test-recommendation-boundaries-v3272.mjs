@@ -249,7 +249,7 @@ assert.ok(freshness.warnings.some((warning) => /没有可计算的一分一段/.
 assert.ok(freshness.warnings.some((warning) => /2025年征集志愿仅是各轮剩余计划快照/.test(warning)));
 
 const panel = api.renderDataFreshnessPanel(lowProfile);
-assert.match(panel, /西藏数据发布时间/);
+assert.match(panel, /西藏数据进度/);
 assert.match(panel, /一分一段最新：未接入/);
 assert.match(panel, /提前单独录取本科批进行中/);
 assert.match(panel, /查看考试院转载日程/);

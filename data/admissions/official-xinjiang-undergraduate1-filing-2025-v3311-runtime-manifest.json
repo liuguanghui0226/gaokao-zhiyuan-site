@@ -1,0 +1,37 @@
+{
+  "dataset": "official-xinjiang-undergraduate1-filing-2025-v3311-runtime",
+  "generatedAt": "2026-07-18T10:28:36.738Z",
+  "sourceId": "official-xinjiang-undergraduate1-filing-2025-v3311",
+  "importFile": "data/admissions/official-xinjiang-undergraduate1-filing-2025-v3311-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.310-national-school-official-hdu2014-2025-admitted-count-866845records",
+    "recordCount": 866845,
+    "provinceRecords": 9937
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.311-xinjiang-official-2025-undergraduate1-score-only-867350records",
+    "recordCount": 867350,
+    "recordsAdded": 505,
+    "provinceRecords": 10442,
+    "historyRecords": 200,
+    "physicsRecords": 305,
+    "scoreOnlyRecords": 505,
+    "rankUnavailableRecords": 505,
+    "planCountRecords": 505,
+    "filingCountRecords": 505,
+    "tieBreakRecords": 505,
+    "shardBytes": 12499970,
+    "shardSha256": "d24416abe6916d29189357422bc9eac32cb94093102476d07782d7b72b22bdc2",
+    "coreBytes": 15433688,
+    "coreSha256": "ba6554f2382358e088eb9c8fa3b284dcc36f8c5c3dd168ad5e8cb7b533954e8f",
+    "manifestBytes": 5516,
+    "manifestSha256": "156e25134ff3e34aac56b364c69acfab3b8b55f9b3586d7d7bc6bf8a2ed3e652"
+  },
+  "cautions": [
+    "Official Xinjiang Education Examination Authority image tables are OCR-parsed on internal APFS.",
+    "This is an institution filing-line layer, not a one-score-one-rank conversion table.",
+    "The official table has filing scores and same-score sorting items but no minimum rank; this import does not invent rank.",
+    "The source is an ordinary provincial examination-authority filing table and remains separate from special, single-category and targeted pathways."
+  ]
+}

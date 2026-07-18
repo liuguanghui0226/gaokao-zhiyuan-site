@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>全国高考志愿智能推荐</title>
+    <title>全国高考志愿填报</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
@@ -13,13 +13,13 @@
         <div class="brand">
           <div class="brand-mark">志</div>
           <div>
-            <h1>全国高考志愿智能推荐</h1>
+            <h1>全国高考志愿填报</h1>
             <p id="generatedAt">正在载入资料</p>
           </div>
         </div>
         <nav class="nav" aria-label="主导航">
           <button class="nav-btn active" data-view="overview">总览</button>
-          <button class="nav-btn" data-view="recommend">智能推荐</button>
+          <button class="nav-btn" data-view="recommend">院校专业推荐</button>
           <button class="nav-btn" data-view="disciplines">专业门类</button>
           <button class="nav-btn" data-view="rules">规则与风险</button>
           <button class="nav-btn" data-view="rounds">整合轮次</button>
@@ -27,8 +27,8 @@
           <button class="nav-btn" data-view="sources">资料库</button>
         </nav>
         <div class="sidebar-note">
-          <strong>全国数据版</strong>
-          <span>按考生省份按需读取官方录取、计划和位次运行数据。</span>
+          <strong>31省数据</strong>
+          <span>按省加载</span>
         </div>
       </aside>
 
@@ -65,13 +65,13 @@
     <template id="emptyTemplate">
       <div class="empty-state">
         <h2>没有匹配结果</h2>
-        <p>换一个关键词，或者清空门类/主题筛选。</p>
+        <p>清空筛选后重试</p>
       </div>
     </template>
 
     <script>
       window.__GAOKAO_RUNTIME_RELEASE_BASE__ = "./data/release-v3.275";
     </script>
-    <script type="module" src="./assets/app.js?v=3.310.0"></script>
+    <script type="module" src="./assets/app.js?v=3.311.0"></script>
   </body>
 </html>
