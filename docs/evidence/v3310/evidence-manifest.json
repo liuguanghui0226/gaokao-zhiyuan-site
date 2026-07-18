@@ -1,0 +1,147 @@
+{
+  "version": "v3.310",
+  "generatedAt": "2026-07-18T09:34:19Z",
+  "modelVersion": "local-deterministic-v3.310-national-school-official-hdu2014-2025-admitted-count-866845records",
+  "dataDeploymentCommit": "5a3a45c8251b390f7427b063cc122e65980ab88c",
+  "finalVerificationCommit": "5a3a45c8251b390f7427b063cc122e65980ab88c",
+  "runtime": {
+    "structuredRecords": 866845,
+    "rankConversionRecords": 116656,
+    "sourceNotes": 5115,
+    "provinceShards": 31,
+    "hduRecords": 7463,
+    "hduAdmittedCountRecords": 7463,
+    "hduNativeRankRecords": 0,
+    "hduScoreDerivedRankRecords": 0,
+    "hduRankUnavailableRecords": 7463,
+    "hduOrdinaryRecords": 6059,
+    "hduSpecialPathRecords": 1404,
+    "provincesWithRecords": 31,
+    "admissionYears": 12,
+    "officialResponseFiles": 373,
+    "officialScoreQueries": 372,
+    "officialSourceRows": 7463,
+    "officialRawBytes": 473907,
+    "skippedRows": 0,
+    "duplicateIds": 0
+  },
+  "coverageAudit": {
+    "admissionRecords": 793178,
+    "recentRecords2023Plus": 682439,
+    "recordsWithAnyRank": 337839,
+    "recordsWithNativeRank": 333035,
+    "recordsWithScoreDerivedRank": 4804,
+    "majorAdmissionRecords": 475801,
+    "provinceOrOtherOfficialRecords": 479197,
+    "schoolOfficialOrdinaryRecords": 163627,
+    "specialPathIsolatedRecords": 48176,
+    "thirdPartyRecords": 101087,
+    "unclassifiedRecords": 1091,
+    "lowestCoverageProvinces": ["西藏", "青海", "上海", "北京", "宁夏", "新疆", "天津", "海南", "吉林", "甘肃"]
+  },
+  "github": {
+    "repository": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site",
+    "site": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "deploymentRun": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29639013920",
+    "liveVerificationRun": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29639159438",
+    "release": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.310"
+  },
+  "publicReadback": {
+    "httpStatus": 200,
+    "appBundle": "assets/app.js?v=3.310.0",
+    "verifiedProvinceShards": 31,
+    "schoolOverviewRenderedSample": 24,
+    "schoolOverviewHiddenCount": 10514,
+    "desktop": {
+      "viewport": "1440x1000",
+      "horizontalOverflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "hduRecommendationVisible": true,
+      "majorVisible": "计算机科学与技术",
+      "minimumScoreVisible": 605,
+      "admittedCountVisible": 3,
+      "singleSchoolBoundaryVisible": true,
+      "rankUnavailableVisible": true,
+      "numericProbabilityClaimVisible": false
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "horizontalOverflowPixels": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "failedRequests": 0,
+      "hduRecommendationVisible": true,
+      "majorVisible": "计算机科学与技术",
+      "minimumScoreVisible": 605,
+      "admittedCountVisible": 3,
+      "singleSchoolBoundaryVisible": true,
+      "rankUnavailableVisible": true,
+      "numericProbabilityClaimVisible": false
+    }
+  },
+  "files": [
+    {
+      "path": "docs/evidence/v3310/desktop-recommendation.png",
+      "bytes": 341203,
+      "sha256": "be3aebf40790545230b3ee2a4ed8990d53bffa8f4b2292f39e318105cd9599c4"
+    },
+    {
+      "path": "docs/evidence/v3310/mobile-recommendation.png",
+      "bytes": 132813,
+      "sha256": "922d01febc0c0259648d5791c95418f4735eac5fda9d9992781d3d2205e3c740"
+    },
+    {
+      "path": "docs/evidence/v3310/browser-qa.json",
+      "bytes": 1868,
+      "sha256": "08c9cdea7fc7badbf999d552ea120f772083cdd1502a86442ae894bde31b9435"
+    },
+    {
+      "path": "data/admissions/raw/official-national-school-admission-2014-2025-v3310-hdu/hdu-raw-manifest.json",
+      "bytes": 185976,
+      "sha256": "6786f3fe5a7137bd185907fa9e1df09e3bd61c798a25458de574eb5868ff3b33"
+    },
+    {
+      "path": "data/admissions/official-national-school-admission-2014-2025-v3310-hdu-import.json",
+      "bytes": 21007160,
+      "sha256": "598bcdde490f571ed9d3a42060711da055613485ea71b305bde2b9123871fba0"
+    },
+    {
+      "path": "data/admissions/official-national-school-admission-2014-2025-v3310-hdu-runtime-manifest.json",
+      "bytes": 10960,
+      "sha256": "ab60cde8e8e908a13bc7261956d56ce6f5a8b061f39db7ed77ae7bbfc7ec64a8"
+    },
+    {
+      "path": "data/admissions/admission-score-coverage-v3310.json",
+      "bytes": 33054,
+      "sha256": "78ff9de436959c3d1562cd7c4d81342926cd1a2f95b111da1d6536de88582199"
+    },
+    {
+      "path": "site/data/release-v3.275/knowledge-core.json.gz",
+      "bytes": 2340978,
+      "sha256": "d00c0136eac2a835c0cce54b37c201d4a3657aeaeda70371a8aff126afeb4848"
+    },
+    {
+      "path": "site/data/release-v3.275/manifest.json.gz",
+      "bytes": 2393,
+      "sha256": "0184d45a46ac68a3a146a8b10191864fbab1fba520ef31a76b7cb297952e2ed3"
+    },
+    {
+      "path": "site/data/release-v3.275/jiangxi.json.gz",
+      "bytes": 666372,
+      "sha256": "2954b329b344c795eec2cd0a42c41fe637ba5c73e64c6bfad089767556e16e43"
+    }
+  ],
+  "releaseAsset": {
+    "name": "evidence-v3.310-hdu-national-admission.tar.gz",
+    "fileEntries": 423,
+    "archiveEntries": 425,
+    "bytes": 43833943,
+    "sha256": "9879bcf6b626432be3d27f5113863f2337dbb539c6de7f820f332c96bc8f9915",
+    "githubDigest": "sha256:9879bcf6b626432be3d27f5113863f2337dbb539c6de7f820f332c96bc8f9915",
+    "redownloadByteIdentical": true,
+    "hiddenSidecarCount": 0
+  },
+  "evidenceBoundary": "The HDU interface has 31 mainland province-level scopes with non-empty 2014-2025 records and a separate Hong Kong/Macao/Taiwan selector that is not mixed into mainland runtime data. It does not publish minimum admitted rank or major elective requirements. School-official scores and admitted counts are single-school evidence, not province-wide closure or standalone admission probability."
+}

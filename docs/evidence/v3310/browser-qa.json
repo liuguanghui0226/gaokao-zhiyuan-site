@@ -1,7 +1,7 @@
 {
   "status": "ok",
-  "generatedAt": "2026-07-18T09:15:12.733Z",
-  "baseUrl": "http://127.0.0.1:4188/",
+  "generatedAt": "2026-07-18T09:29:06.555Z",
+  "baseUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
   "profile": {
     "province": "江西",
     "subject": "物理类",
@@ -18,7 +18,7 @@
         "width": 1440,
         "height": 1000
       },
-      "finalUrl": "http://127.0.0.1:4188/",
+      "finalUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
       "screenshotPath": "docs/evidence/v3310/desktop-recommendation.png",
       "screenshotBytes": 341203,
       "layout": {
@@ -44,7 +44,7 @@
         "width": 390,
         "height": 844
       },
-      "finalUrl": "http://127.0.0.1:4188/",
+      "finalUrl": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
       "screenshotPath": "docs/evidence/v3310/mobile-recommendation.png",
       "screenshotBytes": 132813,
       "layout": {
