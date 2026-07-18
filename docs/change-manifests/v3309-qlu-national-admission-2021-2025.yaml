@@ -1,11 +1,11 @@
 change_id: "2026-07-18-v3309-qlu-national-admission-2021-2025"
 title: "齐鲁工业大学 2021-2025 全国录取数据"
 phase: deliver
-status: in_progress
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "官方分层接口可补充28个非空省份的分专业最低/平均/最高分、官网最低录取位次、控制线和包含专业。"
-last_updated: "2026-07-18T06:12:11Z"
+last_updated: "2026-07-18T07:47:52Z"
 
 surfaces_touched:
   - surface: information

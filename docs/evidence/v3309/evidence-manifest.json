@@ -1,0 +1,105 @@
+{
+  "version": "v3.309",
+  "generatedAt": "2026-07-18T07:51:29Z",
+  "modelVersion": "local-deterministic-v3.309-national-school-official-qlu2021-2025-native-rank-859382records",
+  "dataDeploymentCommit": "b71548aa6fa8d749a68c4fec848f68e2d4f29388",
+  "finalVerificationCommit": "68e31aa04a070845bfbe518f77325b40555fb786",
+  "runtime": {
+    "structuredRecords": 859382,
+    "rankConversionRecords": 116656,
+    "sourceNotes": 5114,
+    "provinceShards": 31,
+    "qluRecords": 2157,
+    "qluNativeRankRecords": 2074,
+    "qluRankUnavailableRecords": 83,
+    "qluOrdinaryRecords": 1849,
+    "qluSpecialPathRecords": 308,
+    "nonEmptyProvinces": 28,
+    "sourceEmptyProvinces": ["西藏", "青海", "宁夏"],
+    "officialResponseFiles": 718,
+    "officialScoreQueries": 297,
+    "officialSourceRows": 2157,
+    "officialRawBytes": 799018,
+    "skippedRows": 0,
+    "duplicateIds": 0
+  },
+  "coverageAudit": {
+    "admissionRecords": 785715,
+    "recentRecords2023Plus": 680456,
+    "recordsWithAnyRank": 337839,
+    "recordsWithNativeRank": 333035,
+    "recordsWithScoreDerivedRank": 4804,
+    "majorAdmissionRecords": 468338,
+    "schoolOfficialOrdinaryRecords": 157568,
+    "specialPathIsolatedRecords": 46772,
+    "lowestCoverageProvinces": ["西藏", "青海", "上海", "北京", "宁夏", "新疆", "天津", "海南", "吉林", "甘肃"]
+  },
+  "github": {
+    "repository": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site",
+    "site": "https://liuguanghui0226.github.io/gaokao-zhiyuan-site/",
+    "deploymentRun": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29635315254",
+    "liveVerificationRun": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/actions/runs/29636289879",
+    "release": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/tag/evidence-v3.309"
+  },
+  "publicReadback": {
+    "httpStatus": 200,
+    "appBundle": "assets/app.js?v=3.309.1",
+    "verifiedProvinceShards": 31,
+    "desktop": {
+      "viewport": "1440x1000",
+      "horizontalOverflowPixels": 0,
+      "pageConsoleErrors": 0,
+      "qluRecommendationVisible": true,
+      "singleSchoolBoundaryVisible": true,
+      "missingElectiveWarningVisible": true,
+      "numericProbabilityClaimVisible": false
+    },
+    "mobile": {
+      "viewport": "390x844",
+      "horizontalOverflowPixels": 0,
+      "pageConsoleErrors": 0,
+      "qluRecommendationVisible": true,
+      "singleSchoolBoundaryVisible": true,
+      "missingElectiveWarningVisible": true,
+      "numericProbabilityClaimVisible": false
+    }
+  },
+  "files": [
+    {
+      "path": "docs/evidence/v3309/desktop-recommendation.png",
+      "bytes": 178876,
+      "sha256": "1c1bc6ec1c96f984a1c06be3b7a66dff6d04f720f47aa7a33e1cd2649dce4a72"
+    },
+    {
+      "path": "docs/evidence/v3309/mobile-recommendation.png",
+      "bytes": 59487,
+      "sha256": "7e98ddddae903ab399b30bd6a4ca6eef0811925c43ac76d38fd3d21e313d482b"
+    },
+    {
+      "path": "site/data/release-v3.275/knowledge-core.json.gz",
+      "bytes": 2337893,
+      "sha256": "44b5c8a419d14b74f49f9a32365e57fdd502d94df6e227faf9eeb0af0c1e4574"
+    },
+    {
+      "path": "site/data/release-v3.275/manifest.json.gz",
+      "bytes": 2381,
+      "sha256": "d5990daf9c39b2aa5d660a77fabda5c19263641a11c6152d5f715bc50d5bb5c6"
+    },
+    {
+      "path": "site/data/release-v3.275/jiangxi.json.gz",
+      "bytes": 649250,
+      "sha256": "7e124dccc2009a1c56fd2a09ca74641729b30990eac95a2d4b18579c23552f30"
+    }
+  ],
+  "releaseAsset": {
+    "name": "evidence-v3.309-qlu-national-admission.tar.gz",
+    "fileEntries": 769,
+    "archiveEntries": 770,
+    "bytes": 42748629,
+    "sha256": "56130b8051741e02495f1f1e56b6b87bdf01324147a850954f9117055ab78b8f",
+    "githubDigest": "sha256:56130b8051741e02495f1f1e56b6b87bdf01324147a850954f9117055ab78b8f",
+    "redownloadByteIdentical": true,
+    "hiddenSidecarCount": 0
+  },
+  "evidenceBoundary": "QLU has 28 provinces with non-empty 2021-2025 score rows; Xizang, Qinghai, and Ningxia remain source-empty. The official interface does not publish elective requirements or admitted counts. School-official scores and school-recorded ranks are single-school evidence, not province-wide closure or standalone admission probability."
+}
