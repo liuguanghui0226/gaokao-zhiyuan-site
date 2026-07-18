@@ -28,7 +28,7 @@ jobs:
           fetch "$base" "$work/index.html"
           grep -q "全国高考志愿填报" "$work/index.html"
           grep -q "__GAOKAO_RUNTIME_RELEASE_BASE__" "$work/index.html"
-          grep -q 'app.js?v=3.312.0' "$work/index.html"
+          grep -q 'app.js?v=3.313.0' "$work/index.html"
 
           release_path="$(node -e '
             const html = require("node:fs").readFileSync(process.argv[1], "utf8");
@@ -55,6 +55,11 @@ jobs:
           grep -q 'data-discipline-code' "$work/app.js"
           grep -q 'id="disciplineRecommend"' "$work/app.js"
           grep -q 'sectionHead("院校专业推荐")' "$work/app.js"
+          grep -q 'fetchRuntimeJson("knowledge-core-lite.json", "核心知识")' "$work/app.js"
+          grep -q 'renderView(state.view, { force: true })' "$work/app.js"
+          grep -q 'data-view="sources">数据来源' "$work/index.html"
+          ! grep -q 'data-view="rounds"' "$work/index.html"
+          ! grep -q 'data-view="audio"' "$work/index.html"
 
           fetch "${base}data/${release_path}/manifest.json.gz" "$work/manifest.json.gz"
           gzip -t "$work/manifest.json.gz"
@@ -63,9 +68,22 @@ jobs:
           jq -e '.recordCount == 868426' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
+          jq -e '.runtimeProfile.version == "v3.313" and .runtimeProfile.initialCore == "knowledge-core-lite.json.gz" and .runtimeProfile.fullEvidenceCore == "knowledge-core.json.gz"' "$work/manifest.json" >/dev/null
+          jq -e '.coreLite.profile == "core-lite-v1" and .coreLite.sourceNotes == 5117 and .coreLite.compressedBytes > 0' "$work/manifest.json" >/dev/null
+
+          fetch "${base}data/${release_path}/knowledge-core-lite.json.gz" "$work/knowledge-core-lite.json.gz"
+          gzip -t "$work/knowledge-core-lite.json.gz"
+          gzip -dc "$work/knowledge-core-lite.json.gz" > "$work/knowledge-core-lite.json"
+          jq -e '.modelVersion == "local-deterministic-v3.312-xinjiang-official-2025-undergraduate2-score-only-868426records"' "$work/knowledge-core-lite.json" >/dev/null
+          jq -e '.browserRuntime.profile == "core-lite-v1" and .admissionScoreLayer.structuredRecords == 868426 and .admissionScoreLayer.rankConversionRecords == 116656 and (.admissionScoreLayer.sourceNotes | length) == 5117' "$work/knowledge-core-lite.json" >/dev/null
+          jq -e '[.admissionScoreLayer.sourceNotes[] | select(.ordinaryVocationalStatus == "pending-official-release" and .ordinaryVocationalReview.noHistoricalSubstitution == true)] | length == 5' "$work/knowledge-core-lite.json" >/dev/null
+          test "$(wc -c < "$work/knowledge-core-lite.json" | tr -d ' ')" -eq "$(jq -r '.coreLite.bytes' "$work/manifest.json")"
+          test "$(shasum -a 256 "$work/knowledge-core-lite.json" | awk '{print $1}')" = "$(jq -r '.coreLite.sha256' "$work/manifest.json")"
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
+          gzip -dc "$work/knowledge-core.json.gz" > "$work/knowledge-core.json"
+          test $(( $(wc -c < "$work/knowledge-core-lite.json") * 4 )) -le "$(wc -c < "$work/knowledge-core.json")"
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '.modelVersion == "local-deterministic-v3.312-xinjiang-official-2025-undergraduate2-score-only-868426records"' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \

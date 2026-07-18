@@ -11,6 +11,7 @@ const state = {
   domain: "",
   recommendation: null,
   prefillProfile: null,
+  renderedViews: new Set(),
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -3321,17 +3322,26 @@ function renderSources() {
   `;
 }
 
+function renderView(view, { force = false } = {}) {
+  const renderers = {
+    overview: renderOverview,
+    recommend: renderRecommend,
+    disciplines: renderDisciplines,
+    rules: renderRules,
+    sources: renderSources,
+  };
+  const renderer = renderers[view];
+  if (!renderer || (!force && state.renderedViews.has(view))) return;
+  renderer();
+  state.renderedViews.add(view);
+}
+
 function render() {
-  renderOverview();
-  renderRecommend();
-  renderDisciplines();
-  renderRules();
-  renderRounds();
-  renderAudioQueue();
-  renderSources();
+  renderView(state.view, { force: true });
 }
 
 function updateView(nextView) {
+  renderView(nextView);
   state.view = nextView;
   $$(".nav-btn").forEach((btn) => btn.classList.toggle("active", btn.dataset.view === nextView));
   $$(".view").forEach((view) => view.classList.remove("active-view"));
@@ -3344,21 +3354,20 @@ function bindEvents() {
   });
   $("#searchInput").addEventListener("input", (event) => {
     state.query = event.target.value;
-    renderSources();
-    renderDisciplines();
-    renderAudioQueue();
+    if (state.view === "sources") renderView("sources", { force: true });
+    if (state.view === "disciplines") renderView("disciplines", { force: true });
   });
   $("#disciplineFilter").addEventListener("change", (event) => {
     state.discipline = event.target.value;
     if (state.discipline) state.disciplineBrowse = state.discipline;
     state.disciplineFamily = "";
-    renderSources();
-    renderDisciplines();
+    if (state.view === "sources") renderView("sources", { force: true });
+    if (state.view === "disciplines") renderView("disciplines", { force: true });
   });
   $("#domainFilter").addEventListener("change", (event) => {
     state.domain = event.target.value;
-    renderSources();
-    renderDisciplines();
+    if (state.view === "sources") renderView("sources", { force: true });
+    if (state.view === "disciplines") renderView("disciplines", { force: true });
   });
 }
 
@@ -3382,7 +3391,7 @@ function populateFilters() {
 
 async function boot() {
   const [core, manifest] = await Promise.all([
-    fetchRuntimeJson("knowledge-core.json", "核心知识"),
+    fetchRuntimeJson("knowledge-core-lite.json", "核心知识"),
     fetchRuntimeJson("provinces/manifest.json", "省份索引"),
   ]);
   state.data = core;

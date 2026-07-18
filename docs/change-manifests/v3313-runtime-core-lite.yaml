@@ -1,0 +1,68 @@
+change_id: "2026-07-18-v3313-runtime-core-lite"
+title: "浏览器首屏轻量核心"
+phase: deliver
+status: complete
+execution_mode: full
+resume_mode: full
+resume_reason: "公开站首屏完整核心解压后15469285字节，其中13458160字节为完整来源说明；浏览器只需要少数字段。"
+last_updated: "2026-07-18T14:30:00Z"
+
+surfaces_touched:
+  - surface: information
+    role: source
+    notes: "完整核心和5117条完整来源证据保持不变。"
+  - surface: user
+    role: primary
+    notes: "首页改为加载3001319字节轻量核心，省级数据仍按需加载。"
+  - surface: operational
+    role: consumer
+    notes: "GitHub Pages、运行清单、公网验证和59项回归。"
+
+sot_map:
+  - info_name: "浏览器运行核心"
+    pattern: 4
+    source: "site/data/release-v3.275/knowledge-core.json.gz"
+    consumers:
+      - name: "site/data/release-v3.275/knowledge-core-lite.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/manifest.json.gz"
+        kind: runtime-manifest
+        sync_lag: generated
+      - name: "site/assets/app.js"
+        kind: frontend
+        sync_lag: release
+    sync_mechanism: "Node确定性构建器读取完整gzip核心，按显式字段白名单生成无缩进轻量JSON，并原子写入gzip和双核心哈希清单。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 0
+      rationale: "完整核心没有修改，无需回滚证据。"
+    - surface: user
+      mode: 1
+      rationale: "将前端首屏读取路径恢复为knowledge-core.json并回退资源版本。"
+    - surface: operational
+      mode: 1
+      rationale: "删除coreLite清单项和轻量gzip资产即可恢复上一发布。"
+
+task_slices:
+  - id: "runtime-profile"
+    scope: "5117条完整来源说明压缩为浏览器字段白名单索引"
+    verification_command: "node scripts/build-runtime-core-lite-v3313.mjs"
+  - id: "payload-integrity"
+    scope: "双核心模型版本、记录总量、来源数、哈希和体积降幅"
+    verification_command: "node scripts/test-runtime-core-lite-v3313.mjs"
+  - id: "frontend-routing"
+    scope: "首页读取轻量核心，31省分片继续按考生省份加载"
+    verification_command: "node scripts/test-discipline-navigation-v3311.mjs && node scripts/test-browser-runtime-shards-v3274.mjs"
+  - id: "release"
+    scope: "59项回归、GitHub Pages和公网双核心校验"
+    verification_command: "node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "未来增量脚本更新完整核心后若未重建轻量核心，测试会阻断发布。"
+  - "浏览器真实性能仍受用户网络、设备和具体省份分片大小影响。"
+  - "轻量核心不改变任何省份的数据覆盖缺口，西藏、青海等仍需继续补官方投档和位次数据。"

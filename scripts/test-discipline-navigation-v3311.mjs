@@ -43,7 +43,12 @@ assert.ok(app.includes('sectionHead("院校专业推荐")'), "recommendation tit
 assert.ok(app.includes("<span>考生类型</span>"), "formal candidate label missing");
 assert.ok(css.includes(".recommend-form [hidden]"), "province-specific hidden fields can leak into the form");
 assert.ok(html.includes("全国高考志愿填报"), "site title not updated");
-assert.ok(html.includes("app.js?v=3.312.0"), "v3.312 asset version missing");
+assert.ok(html.includes("app.js?v=3.313.0"), "v3.313 asset version missing");
+assert.ok(html.includes('data-view="sources">数据来源'), "public source navigation missing");
+assert.ok(!html.includes('data-view="rounds"'), "internal integration-round navigation remains public");
+assert.ok(!html.includes('data-view="audio"'), "internal transcription navigation remains public");
+assert.ok(app.includes("renderView(nextView)"), "views are not rendered on demand");
+assert.ok(app.includes("renderView(state.view, { force: true })"), "boot does not limit rendering to the active view");
 assert.ok(!html.includes("全国高考志愿智能推荐"), "old AI-style brand remains");
 assert.ok(!app.includes('sectionHead("智能推荐"'), "old recommendation heading remains");
 assert.ok(!app.includes("告诉我孩子是什么类型"), "dialogue-style prompt remains");
@@ -54,5 +59,5 @@ console.log(JSON.stringify({
   status: "ok",
   disciplines: 14,
   interaction: "discipline -> family -> major -> recommendation",
-  assetVersion: "3.312.0",
+  assetVersion: "3.313.0",
 }, null, 2));

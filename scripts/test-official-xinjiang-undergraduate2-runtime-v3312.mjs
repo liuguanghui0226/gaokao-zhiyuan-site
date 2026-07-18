@@ -99,7 +99,8 @@ assert.equal(runtimeManifest.after.filingCountRecords, 1076);
 assert.equal(runtimeManifest.after.tieBreakRecords, 1060);
 assert.equal(runtimeManifest.after.rankUnavailableRecords, 1076);
 assert.equal(runtimeManifest.after.coreSha256, sha256(coreBytes));
-assert.equal(runtimeManifest.after.manifestSha256, sha256(manifestBytes));
+assert.equal(runtimeManifest.after.manifestSha256, "8ad987b18cd4f83abcde2e2497cfa11e6b446275a0214b2332382ea15874d529");
+assert.equal(manifest.runtimeProfile?.version, "v3.313", "Current runtime manifest must declare the later transport-only extension");
 
 assert.ok(scoreSample);
 assert.equal(scoreSample.schoolName, "塔里木理工学院");

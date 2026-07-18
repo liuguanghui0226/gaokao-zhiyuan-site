@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3313",
+  "generatedAt": "2026-07-18T14:30:17.327Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.312-xinjiang-official-2025-undergraduate2-score-only-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5117,
+    "lite": 5117,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15469285,
+    "compressedBytes": 2344217,
+    "sha256": "801c3b5e8ad8406e67dc308e829d2f94cc8496066a7d5bdff15ea7caa6fbe782"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3001319,
+    "compressedBytes": 477036,
+    "sha256": "0a01fac3f46bb5a2b3ef2509e641fc9e4ea97f2bca6ed961e4386d5ed5b955f9",
+    "rawReductionRate": 0.805982
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7965,
+    "compressedBytes": 2777,
+    "sha256": "11fb65f58b41828dd049d7fe63c0d74fbf1ece6847d8e28cacac99410b16f1c9"
+  },
+  "boundary": "The full evidence core remains published and unchanged; the browser initial core retains only fields used by the UI."
+}
