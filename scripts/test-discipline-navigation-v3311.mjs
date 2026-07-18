@@ -43,7 +43,7 @@ assert.ok(app.includes('sectionHead("院校专业推荐")'), "recommendation tit
 assert.ok(app.includes("<span>考生类型</span>"), "formal candidate label missing");
 assert.ok(css.includes(".recommend-form [hidden]"), "province-specific hidden fields can leak into the form");
 assert.ok(html.includes("全国高考志愿填报"), "site title not updated");
-assert.ok(html.includes("app.js?v=3.311.0"), "v3.311 asset version missing");
+assert.ok(html.includes("app.js?v=3.312.0"), "v3.312 asset version missing");
 assert.ok(!html.includes("全国高考志愿智能推荐"), "old AI-style brand remains");
 assert.ok(!app.includes('sectionHead("智能推荐"'), "old recommendation heading remains");
 assert.ok(!app.includes("告诉我孩子是什么类型"), "dialogue-style prompt remains");
@@ -54,5 +54,5 @@ console.log(JSON.stringify({
   status: "ok",
   disciplines: 14,
   interaction: "discipline -> family -> major -> recommendation",
-  assetVersion: "3.311.0",
+  assetVersion: "3.312.0",
 }, null, 2));

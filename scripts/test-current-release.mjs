@@ -62,6 +62,9 @@ const tests = [
   "test-xinjiang-score-only-boundaries-v3311.mjs",
   "test-official-xinjiang-undergraduate1-runtime-v3311.mjs",
   "test-discipline-navigation-v3311.mjs",
+  "test-official-xinjiang-undergraduate2-import-v3312.mjs",
+  "test-xinjiang-undergraduate2-boundaries-v3312.mjs",
+  "test-official-xinjiang-undergraduate2-runtime-v3312.mjs",
 ];
 
 const results = tests.map((test) => {

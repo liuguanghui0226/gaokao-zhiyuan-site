@@ -1,0 +1,68 @@
+change_id: "2026-07-18-v3312-xinjiang-undergraduate2-filing-2025"
+title: "新疆 2025 普通类本科二批投档数据"
+phase: deliver
+status: complete
+execution_mode: full
+resume_mode: full
+resume_reason: "新疆教育考试院7张官方图片可补充2025年普通类本科二批院校投档线、计划数、投档人数和同分排序边界。"
+last_updated: "2026-07-18T13:20:00Z"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "新疆教育考试院7张原图、249个证据文件、1076条源行和189个人工修正行。"
+  - surface: user
+    role: consumer
+    notes: "新疆画像得到1060条院校投档边界；16条未投档计划不进入推荐分数池。"
+  - surface: operational
+    role: consumer
+    notes: "GitHub仓库、新疆gzip分片、核心索引、Pages运行层和Release证据包。"
+
+sot_map:
+  - info_name: "新疆维吾尔自治区2025年普通高校招生普通类本科二批次投档情况"
+    pattern: 4
+    source: "https://www.xjzk.gov.cn/c/2025-08-06/494702.shtml"
+    consumers:
+      - name: "data/admissions/official-xinjiang-undergraduate2-filing-2025-v3312-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/xinjiang.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node协调curl下载官方HTML和7张PNG，在内部APFS使用macOS Vision OCR，经过固定列重建、189行人工修正和严格审计后原子更新gzip核心索引与新疆分片。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "导入包、修正表、原始图片SHA和运行清单锁定新增来源与每行边界。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.311核心索引、新疆分片和前端缓存版本。"
+    - surface: operational
+      mode: 1
+      rationale: "GitHub提交和Release按版本保留，可回退到上一远端提交。"
+
+task_slices:
+  - id: "source-import"
+    scope: "7张官方图片、1076个候选行、1076条唯一记录和189个人工修正行"
+    verification_command: "node scripts/import-official-xinjiang-undergraduate2-filing-2025-v3312.mjs --use-cache"
+  - id: "source-reconciliation"
+    scope: "历史类472条、物理类604条、1060条实际投档线和16条未投档计划"
+    verification_command: "node scripts/test-official-xinjiang-undergraduate2-import-v3312.mjs"
+  - id: "evidence-boundary"
+    scope: "位次不可用、未投档计划隔离、280分低分边界和同分排序字段"
+    verification_command: "node scripts/test-xinjiang-undergraduate2-boundaries-v3312.mjs"
+  - id: "runtime-refresh"
+    scope: "核心索引、新疆gzip分片、覆盖审计、推荐降级和公网发布"
+    verification_command: "node scripts/test-official-xinjiang-undergraduate2-runtime-v3312.mjs && node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "官方表是院校投档线，不是最终专业录取分，不能单独回答专业录取结果。"
+  - "官方表未公开最低位次和选科要求，正式填报必须回当年计划和章程复核。"
+  - "OCR虽经189行人工修正和严格字段审计，原始图片仍应随Release保留以便后续抽查。"
