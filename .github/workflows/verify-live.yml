@@ -272,7 +272,7 @@ jobs:
           gzip -dc "$work/hunan.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-hunan-control-lines-2026" and .controlLineRouteKind == "ordinary-vocational") | .minScore] | sort == [200, 200]' >/dev/null
           gzip -dc "$work/hunan.json.gz" \
-            | jq -e '.records | length == 32686 and .rankConversions | length == 2276' >/dev/null
+            | jq -e '(.records | length) == 32686 and (.rankConversions | length) == 2276' >/dev/null
           gzip -dc "$work/hunan.json.gz" \
             | jq -e '[.rankConversions[] | select(.sourceId == "official-hunan-rank-2025-v3318")] | length == 1139' >/dev/null
           gzip -dc "$work/hunan.json.gz" \
