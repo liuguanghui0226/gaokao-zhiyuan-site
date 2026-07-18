@@ -1,0 +1,49 @@
+{
+  "dataset": "official-liaoning-rank-conversion-2025-v3317-runtime",
+  "generatedAt": "2026-07-18T19:26:11.847Z",
+  "sourceId": "official-liaoning-rank-2025-v3317",
+  "importFile": "data/admissions/official-liaoning-rank-conversion-2025-v3317-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.316-chongqing-authority-linked-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 119677,
+    "provinceRankConversions": 1076
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.317-liaoning-official-mirror-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 120750,
+    "rankConversionsAdded": 1073,
+    "provinceRecords": 34360,
+    "provinceRankConversions": 2149,
+    "linkedAdmissionRecords": 21701,
+    "officialLinkedRecords": 20760,
+    "thirdPartyLinkedRecords": 941,
+    "schoolOfficialScopeLinkedRecords": 531,
+    "specialPathExcludedRecords": 41,
+    "topBucketLinkedRecords": 0,
+    "linkedSourceNotes": 106,
+    "linkedByType": {
+      "institution-admission": 109,
+      "major-admission": 15794,
+      "major-group-admission": 6,
+      "school-admission-summary": 3,
+      "vocational-admission": 5789
+    },
+    "sourceNotes": 5121,
+    "shardBytes": 40954866,
+    "shardSha256": "97863d914e791088860a6f687cdc23ddee3dcb138c4e214d94e49990c2ae214a",
+    "coreBytes": 15558671,
+    "coreSha256": "4d04d4b8b4dc960d7c2bf0d12ec6d6ec1d0377cf1edb54958d8277786520dbeb",
+    "manifestBytesBeforeLiteRebuild": 6140,
+    "manifestSha256BeforeLiteRebuild": "3e7df74b1fe96e6d2faada41952ed7206693f420861d144d226352dd62206c31"
+  },
+  "cautions": [
+    "历史类669分及以上为1-10名合并档，物理类707分及以上为1-11名合并档；不生成合并档内的伪精确位次。",
+    "历史类667、227、221分和物理类703、153分为零人数缺口；保留缺口，不虚构同分考生记录。",
+    "表中人数为普通类、艺术类和体育类人数之和；仅用于同科类文化课总分与政策加分之和到省级位次区间换算。",
+    "艺术、体育综合投档分、科类不明、非整数分和特殊路径记录不参与普通类最低分位次回填。",
+    "辽宁招生考试之窗原始PDF当前会话TLS不可达；省教育厅页面保留原始链接，阳光高考附件保存考试院PDF，完整逐分表与PDF逐项零差异。"
+  ]
+}

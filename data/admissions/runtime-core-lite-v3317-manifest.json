@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3317",
+  "generatedAt": "2026-07-18T19:30:52.804Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.317-liaoning-official-mirror-rank2025-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5121,
+    "lite": 5121,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15558671,
+    "compressedBytes": 2360921,
+    "sha256": "4d04d4b8b4dc960d7c2bf0d12ec6d6ec1d0377cf1edb54958d8277786520dbeb"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3003413,
+    "compressedBytes": 477479,
+    "sha256": "d298ba6735c8c1538d76ac9204bc6c069c0723a5f7fc1cbf500cda71eac26608",
+    "rawReductionRate": 0.806962
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7960,
+    "compressedBytes": 2764,
+    "sha256": "6eaa9116f05a301aa648f92c63e841f4e7dc4d6833150a26783abe8afa70de27"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

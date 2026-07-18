@@ -1,7 +1,7 @@
 {
   "dataset": "official-control-line-coverage-2026-v3305",
-  "generatedAt": "2026-07-18T18:09:26.684Z",
-  "modelVersion": "local-deterministic-v3.316-chongqing-authority-linked-rank2025-aligned-868426records",
+  "generatedAt": "2026-07-18T19:26:11.847Z",
+  "modelVersion": "local-deterministic-v3.317-liaoning-official-mirror-rank2025-aligned-868426records",
   "definition": "运行分片中2026年普通类本科/专科或普通类一段/二段省级通用控制线；限定院校和特殊路径不计入。尚未发布的当年专科线单列为pending，并区分控制线发布日期、填报窗口、录取窗口与划线规则，不使用往年线补造。",
   "provinceCount": 31,
   "coveredCount": 31,

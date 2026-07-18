@@ -1,0 +1,117 @@
+{
+  "dataset": "official-liaoning-rank-conversion-2025-v3317-evidence",
+  "province": "辽宁",
+  "year": 2025,
+  "publisher": "辽宁省高中等教育招生考试委员会办公室",
+  "governmentIndexAttribution": "辽宁招生考试之窗",
+  "officialDirectRetrievalStatus": "tls-unavailable-current-session",
+  "governmentIndexUrl": "https://jyt.ln.gov.cn/jyt/jyzx/jyyw/2025062418040445891/index.shtml",
+  "chsiIndexUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202506/20250625/2293390731.html",
+  "officialHistoryUrl": "https://www.lnzsks.com/lnzkbfiles/2025/2025gk1f1d0624ls002.pdf",
+  "officialPhysicsUrl": "https://www.lnzsks.com/lnzkbfiles/2025/2025gk1f1d0624wl001.pdf",
+  "chsiHistoryAttachmentUrl": "https://t4.chei.com.cn/news/getfile/2293390733-2293390731-9f562b4a66f01064b0f350e7ce7f6099.pdf",
+  "chsiPhysicsAttachmentUrl": "https://t1.chei.com.cn/news/getfile/2293390732-2293390731-53c944bf90992bafc4711ee5699247f5.pdf",
+  "eolHistoryUrl": "https://gaokao.eol.cn/liao_ning/dongtai/202506/t20250624_2676782.shtml",
+  "eolPhysicsUrl": "https://gaokao.eol.cn/liao_ning/dongtai/202506/t20250624_2676792.shtml",
+  "provenanceBoundary": "The Liaoning Education Department index attributes the release to Liaoning Admission Examination Window. CHSI preserves the two Liaoning examination-office PDF attachments. Their text rows match the two EOL complete tables across all 1073 published rows and 3219 score/count/cumulative-rank cells. Direct official attachment retrieval was TLS-unavailable in this session. The tables include ordinary, art and sports candidates within each subject category and do not publish institution-native minimum admission ranks.",
+  "files": {
+    "governmentIndex": {
+      "archivePath": "government-index.html",
+      "bytes": 37951,
+      "sha256": "d31718802d4fa011d89f7fd2e71293b22dc0e1d59fc535f08c87e3c87722f64e"
+    },
+    "chsiIndex": {
+      "archivePath": "chsi-index.html",
+      "bytes": 46002,
+      "sha256": "2b7fb8ee3420220fccaa72c410ff5ec0f8f5e98dde1e26066cd7f693721e37ad"
+    },
+    "chsiPhysicsPdf": {
+      "archivePath": "chsi-physics.pdf",
+      "bytes": 196090,
+      "sha256": "acf112a955da480b6d818036d5b5731ea4a937c43f94958eed1a3c68544be91b"
+    },
+    "chsiHistoryPdf": {
+      "archivePath": "chsi-history.pdf",
+      "bytes": 183188,
+      "sha256": "b9e0ed80edda7206107d772bf62214aa8a4a169c6dec982c05a97426ec36b4e4"
+    },
+    "chsiPhysicsRawText": {
+      "archivePath": "chsi-physics-raw.txt",
+      "bytes": 12015,
+      "sha256": "98fdad15d0202a73002e0ed4b067b44880000c662d8f4a498eb7d0aca2870522"
+    },
+    "chsiHistoryRawText": {
+      "archivePath": "chsi-history-raw.txt",
+      "bytes": 10999,
+      "sha256": "fd2f9d9c8f4fbe8b219891128f472e583bfc3b529bd5ab48a5988d02b36f53c9"
+    },
+    "chsiPhysicsLayoutText": {
+      "archivePath": "chsi-physics-layout.txt",
+      "bytes": 47340,
+      "sha256": "9adfe0e8663be56863d43313ba1d465f47ea48736270286c624f504e1e18854f"
+    },
+    "chsiHistoryLayoutText": {
+      "archivePath": "chsi-history-layout.txt",
+      "bytes": 45626,
+      "sha256": "1a2d81f15293649d5905f9b7650e869f9e182c1696d8c6f525981516821e0e39"
+    },
+    "eolPhysics": {
+      "archivePath": "eol-physics.html",
+      "bytes": 977003,
+      "sha256": "41d1ab7d388142957b8256a60693a84fb296362c5089bab063f9b1e4272b3994"
+    },
+    "eolHistory": {
+      "archivePath": "eol-history.html",
+      "bytes": 296748,
+      "sha256": "d7d68c05926390b7248dee585095e321d5654904ce6aa4b48c738427a08e51a1"
+    }
+  },
+  "parseAudit": {
+    "historyRows": 517,
+    "historyPublishedScoreRange": "669-150",
+    "historyTopBucket": "669-750 -> rank 1-10",
+    "historyFinalCumulativeRank": 56324,
+    "historyZeroScoreGaps": [667, 164, 162],
+    "physicsRows": 556,
+    "physicsPublishedScoreRange": "707-150",
+    "physicsTopBucket": "707-750 -> rank 1-11",
+    "physicsFinalCumulativeRank": 143368,
+    "physicsZeroScoreGaps": [703, 153],
+    "rowComparisons": 1073,
+    "cellComparisons": 3219,
+    "sourceDifferences": 0,
+    "allCumulativeRanksMonotonic": true,
+    "allPublishedCountsClose": true
+  },
+  "checkpoints": {
+    "history": {
+      "600": 2025,
+      "500": 14867,
+      "437": 26916,
+      "300": 50663,
+      "150": 56324
+    },
+    "physics": {
+      "600": 13601,
+      "500": 56548,
+      "367": 118109,
+      "300": 135097,
+      "150": 143368
+    }
+  },
+  "runtimeMerge": {
+    "rankConversionsAdded": 1073,
+    "linkedAdmissionRecords": 21701,
+    "officialLinkedRecords": 20760,
+    "thirdPartyLinkedRecords": 941,
+    "schoolOfficialScopeLinkedRecords": 531,
+    "specialPathExcludedRecords": 41,
+    "topBucketLinkedRecords": 0
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.317-liaoning-rank-2025.tar.gz",
+    "bytes": 466359,
+    "sha256": "070e465cba27696940526c72ba5e44cca63eb5724d2d4644bd49720d4904762a",
+    "targetRelease": "data-v3.275"
+  }
+}
