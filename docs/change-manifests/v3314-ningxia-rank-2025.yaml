@@ -1,11 +1,11 @@
 change_id: "2026-07-18-v3314-ningxia-rank-2025"
 title: "宁夏 2025 一分一段与本科批B段位次对齐"
-phase: verify
-status: in_progress
+phase: deliver
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "宁夏2025本科批B段已有2491条官方投档最低分，但缺少可跨年比较的同年省级位次证据。"
-last_updated: "2026-07-18T16:00:00Z"
+last_updated: "2026-07-18T16:08:00Z"
 
 surfaces_touched:
   - surface: information
