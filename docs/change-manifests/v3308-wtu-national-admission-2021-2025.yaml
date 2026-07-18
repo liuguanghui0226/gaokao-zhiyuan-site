@@ -1,0 +1,65 @@
+change_id: "2026-07-18-v3308-wtu-national-admission-2021-2025"
+title: "武汉纺织大学 2021-2025 全国录取数据"
+phase: deliver
+status: in_progress
+execution_mode: full
+resume_mode: full
+resume_reason: "官方查询可同时补充31省分专业录取人数、最低/平均/最高分、学校表列最低位次和选科备注。"
+last_updated: "2026-07-18T00:00:00Z"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "武汉纺织大学155个官方分省分年查询页、481个汇总行和原始证据清单。"
+  - surface: user
+    role: consumer
+    notes: "全国画像得到武汉纺织大学分专业跨年候选、原生最低位次和选科条件边界。"
+  - surface: operational
+    role: consumer
+    notes: "GitHub仓库、31省gzip分片、Pages运行层和Release证据包。"
+
+sot_map:
+  - info_name: "武汉纺织大学历年录取分数"
+    pattern: 4
+    source: "https://zsb.wtu.edu.cn/cx/fsx.jsp"
+    consumers:
+      - name: "data/admissions/official-national-school-admission-2021-2025-v3308-wtu-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/*.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node协调curl按年份和省份下载官方POST查询页，在内部APFS解析HTML表、对齐官网汇总并原子更新gzip核心索引和31省分片。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "导入包和运行清单锁定新增来源与各省增量。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.307前端与gzip运行分片。"
+    - surface: operational
+      mode: 1
+      rationale: "GitHub提交和Release按版本保留，可回退到上一远端提交。"
+
+task_slices:
+  - id: "source-import"
+    scope: "2021-2025年、31省、155个页面、专业行、录取人数、最低/平均/最高分、分差和官网最低位次"
+    verification_command: "node scripts/import-official-national-school-admission-2021-2025-v3308-wtu.mjs --use-cache"
+  - id: "source-reconciliation"
+    scope: "2222条专业行与481条官网汇总行按原科类、计划类型、批次和备注逐组一致"
+    verification_command: "node scripts/test-official-wtu-import-v3308.mjs"
+  - id: "evidence-boundary"
+    scope: "原生最低分位次、位次不可用、选科条件、艺文/艺理及其他特殊路径隔离"
+    verification_command: "node scripts/test-wtu-native-rank-boundaries-v3308.mjs"
+  - id: "runtime-refresh"
+    scope: "核心索引、31省gzip分片、覆盖审计和推荐显示"
+    verification_command: "node scripts/test-official-wtu-runtime-v3308.mjs && node scripts/test-current-release.mjs"
+
+residual_risks:
+  - "学校官网单校分数和最低分位次不是省考试院全量投档/录取表。"
+  - "学校表列最低分位次不能单独用于生成录取概率。"
+  - "西藏17条记录无A/B类口径和最低位次，省级正式分数层缺口仍未关闭。"

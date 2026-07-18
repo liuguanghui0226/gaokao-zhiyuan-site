@@ -49,6 +49,9 @@ const tests = [
   "test-official-jxust-import-v3307.mjs",
   "test-jxust-native-rank-boundaries-v3307.mjs",
   "test-official-jxust-runtime-v3307.mjs",
+  "test-official-wtu-import-v3308.mjs",
+  "test-wtu-native-rank-boundaries-v3308.mjs",
+  "test-official-wtu-runtime-v3308.mjs",
 ];
 
 const results = tests.map((test) => {

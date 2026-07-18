@@ -26,14 +26,14 @@ assert.deepEqual(imported.diagnostics.breakdown, { ordinary: 4, special: 2, thre
 assert.equal(sourceRecords.length, 30);
 assert.equal(new Set(sourceRecords.map((record) => record.id)).size, 30);
 assert.ok(sourceRecords.every((record) => record.dataType === "control-line" && record.year === 2026 && record.province === "江西"));
-assert.equal(core.modelVersion, "local-deterministic-v3.307-national-school-official-jxust2023-2025-native-rank-855003records");
+assert.equal(core.modelVersion, "local-deterministic-v3.308-national-school-official-wtu2021-2025-native-rank-857225records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
-assert.equal(core.admissionScoreLayer.structuredRecords, 855003);
+assert.equal(core.admissionScoreLayer.structuredRecords, 857225);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(core.admissionScoreLayer.sourceNotes.filter((note) => note.id === "official-jiangxi-control-lines-2026").length, 1);
 assert.equal(manifest.modelVersion, core.modelVersion);
-assert.equal(manifest.recordCount, 855003);
-assert.equal(manifest.shards["江西"].records, 13702);
+assert.equal(manifest.recordCount, 857225);
+assert.equal(manifest.shards["江西"].records, 13754);
 assert.equal(runtimeManifest.after.sourceRecords, 30);
 
 function findLine(subjectType, section, category) {
