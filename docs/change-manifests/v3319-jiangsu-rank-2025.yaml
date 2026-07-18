@@ -1,11 +1,11 @@
 change_id: "2026-07-19-v3319-jiangsu-rank-2025"
 title: "江苏 2025 第一阶段一分一段表与录取最低分位次对齐"
 phase: deliver
-status: in_progress
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "江苏2025已有大量普通历史类、物理类整数最低分记录，但没有连接同年省级第一阶段位次证据。"
-last_updated: "2026-07-18T21:54:30Z"
+last_updated: "2026-07-18T22:17:00Z"
 
 surfaces_touched:
   - surface: information
