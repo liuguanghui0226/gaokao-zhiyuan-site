@@ -83,7 +83,10 @@ const tests = [
   "test-official-jiangsu-rank-import-v3319.mjs",
   "test-jiangsu-rank-alignment-boundaries-v3319.mjs",
   "test-official-jiangsu-rank-runtime-v3319.mjs",
-  "test-runtime-core-lite-v3319.mjs",
+  "test-official-guangxi-rank-import-v3320.mjs",
+  "test-guangxi-rank-alignment-boundaries-v3320.mjs",
+  "test-official-guangxi-rank-runtime-v3320.mjs",
+  "test-runtime-core-lite-v3320.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 

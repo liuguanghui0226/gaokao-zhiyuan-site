@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3320",
+  "generatedAt": "2026-07-18T22:57:59.152Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.320-guangxi-dual-bonus-scope-rank2025-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5124,
+    "lite": 5124,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15634575,
+    "compressedBytes": 2370853,
+    "sha256": "ebdf58bb6b3eb05cdfa73178e3adba85a7b9376e5e84406468a77c8ba5eb1150"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3005143,
+    "compressedBytes": 477923,
+    "sha256": "ba1119d454c7808e1e607ea4998141e0be93ab7cdd5e1e713f4becd7966c3121",
+    "rawReductionRate": 0.807789
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7960,
+    "compressedBytes": 2765,
+    "sha256": "a13b698ef4d89e1293d1f664c95c8300581d12988f4b846e0baf1f334bfa7eb2"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

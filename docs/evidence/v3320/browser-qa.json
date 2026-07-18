@@ -1,0 +1,52 @@
+{
+  "status": "ok",
+  "generatedAt": "2026-07-18T23:24:28.276Z",
+  "baseUrl": "http://127.0.0.1:4316/",
+  "profile": {
+    "province": "广西",
+    "subject": "物理类",
+    "outsideScore": 600,
+    "insideScore": 600,
+    "disciplineFocus": "08 工学"
+  },
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "screenshotPath": "docs/evidence/v3320/desktop-guangxi-rank.png",
+      "screenshotBytes": 141681,
+      "layout": {
+        "documentOverflow": 0,
+        "bodyOverflow": 0,
+        "viewportWidth": 1440,
+        "documentWidth": 1440
+      },
+      "estimates": {
+        "outsideGuangxi": 6442,
+        "insideGuangxi": 6473
+      }
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshotPath": "docs/evidence/v3320/mobile-guangxi-rank.png",
+      "screenshotBytes": 41542,
+      "layout": {
+        "documentOverflow": 0,
+        "bodyOverflow": 0,
+        "viewportWidth": 390,
+        "documentWidth": 390
+      },
+      "estimates": {
+        "outsideGuangxi": 6442,
+        "insideGuangxi": 6473
+      }
+    }
+  ]
+}

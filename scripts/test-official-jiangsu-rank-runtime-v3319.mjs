@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.319-jiangsu-jseea-first-stage-rank2025-aligned-868426records";
+const modelVersion = "local-deterministic-v3.320-guangxi-dual-bonus-scope-rank2025-aligned-868426records";
 const sourceId = "official-jiangsu-rank-2025-v3319";
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
 const coreBytes = zlib.gunzipSync(fs.readFileSync(path.join(releaseDir, "knowledge-core.json.gz")));
@@ -23,12 +23,12 @@ const runtimeManifest = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 122287);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5123);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 124183);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5124);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 122287);
-assert.equal(manifest.runtimeProfile.version, "v3.319");
+assert.equal(manifest.rankConversionCount, 124183);
+assert.equal(manifest.runtimeProfile.version, "v3.320");
 assert.equal(manifest.shards["江苏"].records, 26991);
 assert.equal(manifest.shards["江苏"].rankConversions, 806);
 assert.equal(manifest.shards["江苏"].bytes, shardBytes.length);
@@ -88,12 +88,12 @@ assert.equal(rankSource.provenance.rowComparisons, 398);
 assert.equal(rankSource.provenance.cellComparisons, 1194);
 assert.equal(rankSource.provenance.ocrCorrections, 15);
 assert.equal(rankSource.provenance.secondStageExcluded, true);
-assert.equal(core.admissionScoreLayer.rankCoverage.records, 122287);
-assert.equal(core.admissionScoreLayer.rankSourceCoverage.sources, 209);
-assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedSources, 143);
-assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 122287);
+assert.equal(core.admissionScoreLayer.rankCoverage.records, 124183);
+assert.equal(core.admissionScoreLayer.rankSourceCoverage.sources, 210);
+assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedSources, 144);
+assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 124183);
 const year2025 = core.admissionScoreLayer.rankSourceCoverage.byYear.find((row) => row.year === 2025);
-assert.deepEqual([year2025.sources, year2025.parsedSources, year2025.parsedRecords], [75, 51, 18634]);
+assert.deepEqual([year2025.sources, year2025.parsedSources, year2025.parsedRecords], [76, 52, 20530]);
 assert.ok(year2025.parsedProvinces.includes("江苏"));
 
 for (const readiness of [core.admissionScoreLayer.provinceReadiness, core.admissionScoreLayer.coverage.provinceReadiness]) {
@@ -118,6 +118,7 @@ assert.equal(runtimeManifest.after.topBucketLinkedRecords, 8);
 assert.equal(runtimeManifest.after.linkedSourceNotes, 113);
 assert.deepEqual(runtimeManifest.after.linkedByType, { "institution-admission": 152, "major-admission": 1750, "major-group-admission": 4826, "school-admission-summary": 2, "vocational-admission": 330 });
 assert.equal(runtimeManifest.after.shardSha256, sha256(shardBytes));
-assert.equal(runtimeManifest.after.coreSha256, sha256(coreBytes));
+assert.equal(runtimeManifest.after.coreSha256, "56cffd0f6baefed6ca3c54ca1c1dad0b0d78a08294deaa06940123eeaf4dd744");
+assert.notEqual(runtimeManifest.after.coreSha256, sha256(coreBytes));
 
-console.log(JSON.stringify({ ok: true, modelVersion, ranks: 398, linkedAdmissionRecords: 7060, belowPublishedFloor: 1496, specialPathExcluded: 123, sourceNotes: 5123 }, null, 2));
+console.log(JSON.stringify({ ok: true, modelVersion, ranks: 398, linkedAdmissionRecords: 7060, belowPublishedFloor: 1496, specialPathExcluded: 123, sourceNotes: 5124 }, null, 2));

@@ -55,8 +55,10 @@ const PROVINCE_SCORE_SCALES = {
 const DEFAULT_PROFILE = {
   childType: "均衡探索型",
   score: "593",
+  guangxiLocalScore: "",
   vocationalScore: "",
   rank: "",
+  guangxiLocalRank: "",
   province: "江西",
   candidateCategory: "",
   subject: "物理/理科",
@@ -774,6 +776,8 @@ function profileRecordFilterKey(profile) {
     profile?.subject,
     profile?.candidateCategory,
     profile?.score,
+    profile?.guangxiLocalScore,
+    profile?.guangxiLocalRank,
     profile?.rankUsage,
     profile?.rankLevelUsage,
     profile?.electives,
@@ -1486,13 +1490,22 @@ function recordMatchesRankUsage(record, preferredRankUsage, rankCategory, rankLe
   return true;
 }
 
-function estimateRankFromScore(profile) {
-  const score = Number(profile.score) || 0;
+function profileScoreForInstitutionScope(profile, rankInstitutionScope = "") {
+  if (rankInstitutionScope === "inside-guangxi") {
+    return Number(profile?.guangxiLocalScore || profile?.score) || 0;
+  }
+  return Number(profile?.score) || 0;
+}
+
+function estimateRankFromScore(profile, rankInstitutionScope = "") {
+  const activeInstitutionScope = rankInstitutionScope || (normalizeProvince(profile.province) === "广西" ? "outside-guangxi" : "");
+  const score = profileScoreForInstitutionScope(profile, activeInstitutionScope);
   if (!score || !profile.province || !profile.subject || profile.subject === "不确定") return null;
   const pool = rankConversionRecords()
     .filter((record) =>
       provinceMatchesRecord(record, profile) &&
       subjectMatchesRecord(record, profile) &&
+      (!activeInstitutionScope || record.rankInstitutionScope === activeInstitutionScope) &&
       Number.isFinite(Number(record.score)) &&
       Number.isFinite(Number(record.rankEnd))
     );
@@ -1532,6 +1545,7 @@ function estimateRankFromScore(profile) {
   const precisionText = exact ? (matchedRange ? "，为官方区间记录" : "") : "，不是精确同分位次";
   const sameScoreText = sameScoreCount ? `，${matchedRange ? "同区间" : "同分"}${fmtNumber(sameScoreCount)}人` : "";
   const rankUsageText = nearest.rankUsageLabel ? `（${nearest.rankUsageLabel}口径）` : "";
+  const institutionScopeText = nearest.rankInstitutionScopeLabel ? `${nearest.rankInstitutionScopeLabel}、${nearest.scoreBonusScopeLabel || "对应加分"}口径` : "";
   return {
     rank,
     rankStart: Number(nearest.rankStart) || rank,
@@ -1541,9 +1555,13 @@ function estimateRankFromScore(profile) {
     province,
     subjectType,
     exact: Boolean(exact),
+    rankInstitutionScope: nearest.rankInstitutionScope || "",
+    rankInstitutionScopeLabel: nearest.rankInstitutionScopeLabel || "",
+    scoreBonusScope: nearest.scoreBonusScope || "",
+    scoreBonusScopeLabel: nearest.scoreBonusScopeLabel || "",
     sourceTitle: source?.title || "一分一段表",
     sourceUrl: source?.url || "",
-    text: `未手填位次，已按${latestYear}年${province}${subjectType}${rankUsageText}一分一段表${scoreText}估算位次约${fmtNumber(rank)}名${sameScoreText}${precisionText}。`,
+    text: `未手填位次，已按${latestYear}年${province}${subjectType}${rankUsageText}${institutionScopeText}一分一档表${scoreText}估算位次约${fmtNumber(rank)}名${sameScoreText}${precisionText}。`,
   };
 }
 
@@ -1561,9 +1579,12 @@ function profileFromForm() {
   const profile = {
     childType: $("#childType").value,
     score: $("#scoreInput").value.trim(),
+    guangxiLocalScore: $("#guangxiLocalScoreInput")?.value.trim() || "",
     vocationalScore: $("#vocationalScoreInput")?.value.trim() || "",
     rank: $("#rankInput").value.trim(),
     rankInput: $("#rankInput").value.trim(),
+    guangxiLocalRank: $("#guangxiLocalRankInput")?.value.trim() || "",
+    guangxiLocalRankInput: $("#guangxiLocalRankInput")?.value.trim() || "",
     province: $("#provinceInput").value.trim(),
     subject: $("#subjectInput").value,
     candidateCategory: $("#candidateCategoryInput")?.value || "",
@@ -1579,7 +1600,30 @@ function profileFromForm() {
     budget: $("#budgetInput").value,
     strategy: $("#strategyInput").value,
   };
-  if (!profile.rank) {
+  if (normalizeProvince(profile.province) === "广西") {
+    const outsideEstimate = profile.rank ? null : estimateRankFromScore(profile, "outside-guangxi");
+    const localEstimate = profile.guangxiLocalRank ? null : estimateRankFromScore(profile, "inside-guangxi");
+    profile.rankEstimatesByInstitutionScope = {};
+    if (outsideEstimate) {
+      profile.rank = String(outsideEstimate.rank);
+      profile.estimatedRank = outsideEstimate.rank;
+      profile.rankEstimate = outsideEstimate;
+      profile.rankEstimatesByInstitutionScope["outside-guangxi"] = outsideEstimate;
+    }
+    if (localEstimate) {
+      profile.guangxiLocalRank = String(localEstimate.rank);
+      profile.rankEstimatesByInstitutionScope["inside-guangxi"] = localEstimate;
+    }
+    const estimateParts = [];
+    if (outsideEstimate) estimateParts.push(`区外院校按全国性加分表约${fmtNumber(outsideEstimate.rank)}名`);
+    if (localEstimate) estimateParts.push(`区内院校按最高加分表约${fmtNumber(localEstimate.rank)}名`);
+    if (estimateParts.length) {
+      const sourceEstimate = outsideEstimate || localEstimate;
+      profile.rankEstimateText = `广西位次已按目标院校分开估算：${estimateParts.join("；")}。`;
+      profile.rankEstimateSource = sourceEstimate.sourceTitle;
+      profile.rankEstimateUrl = sourceEstimate.sourceUrl;
+    }
+  } else if (!profile.rank) {
     const estimate = estimateRankFromScore(profile);
     if (estimate) {
       profile.rank = String(estimate.rank);
@@ -1864,21 +1908,34 @@ function admissionRecency(record, today = currentChinaDate()) {
   };
 }
 
+function profileRankForAdmissionRecord(record, profile) {
+  if (record?.rankInstitutionScope === "inside-guangxi") {
+    return Number(profile?.guangxiLocalRank) || Number(profile?.rank) || 0;
+  }
+  return Number(profile?.rank) || 0;
+}
+
+function profileScoreForAdmissionRecord(record, profile) {
+  return profileScoreForInstitutionScope(profile, record?.rankInstitutionScope || "");
+}
+
 function admissionFit(record, profile, today = currentChinaDate()) {
-  const rank = Number(profile.rank) || 0;
-  const score = Number(profile.score) || 0;
+  const rank = profileRankForAdmissionRecord(record, profile);
+  const score = profileScoreForAdmissionRecord(record, profile);
   const minRankEnd = Number(record.minRankEnd) || 0;
   const minScore = Number(record.minScore) || 0;
+  const institutionScopeLabel = record?.rankInstitutionScopeLabel ? `${record.rankInstitutionScopeLabel}` : "";
   const rankBoundaryLabel = isScoreDerivedRankRecord(record) ? "最低分换算位次" : "近年最低位次";
+  const scopedRankBoundaryLabel = institutionScopeLabel && isScoreDerivedRankRecord(record) ? `${institutionScopeLabel}${rankBoundaryLabel}` : rankBoundaryLabel;
   const recency = admissionRecency(record, today);
   let fit;
   if (rank > 0 && minRankEnd > 0) {
     const gap = rank - minRankEnd;
-    if (gap <= -5000) fit = { zone: "稳", score: 94, text: `位次比${rankBoundaryLabel}靠前${fmtNumber(Math.abs(gap))}名` };
-    else if (gap <= -1500) fit = { zone: "稳妥", score: 86, text: `位次比${rankBoundaryLabel}靠前${fmtNumber(Math.abs(gap))}名` };
-    else if (gap <= 600) fit = { zone: "临界稳", score: 76, text: `位次接近${rankBoundaryLabel}，差距${fmtNumber(Math.abs(gap))}名以内` };
-    else if (gap <= 3500) fit = { zone: "冲", score: 62, text: `位次落后${rankBoundaryLabel}约${fmtNumber(gap)}名` };
-    else fit = { zone: "高冲", score: 42, text: `位次落后${rankBoundaryLabel}约${fmtNumber(gap)}名` };
+    if (gap <= -5000) fit = { zone: "稳", score: 94, text: `位次比${scopedRankBoundaryLabel}靠前${fmtNumber(Math.abs(gap))}名` };
+    else if (gap <= -1500) fit = { zone: "稳妥", score: 86, text: `位次比${scopedRankBoundaryLabel}靠前${fmtNumber(Math.abs(gap))}名` };
+    else if (gap <= 600) fit = { zone: "临界稳", score: 76, text: `位次接近${scopedRankBoundaryLabel}，差距${fmtNumber(Math.abs(gap))}名以内` };
+    else if (gap <= 3500) fit = { zone: "冲", score: 62, text: `位次落后${scopedRankBoundaryLabel}约${fmtNumber(gap)}名` };
+    else fit = { zone: "高冲", score: 42, text: `位次落后${scopedRankBoundaryLabel}约${fmtNumber(gap)}名` };
   } else if (score > 0 && minScore > 0) {
     const gap = score - minScore;
     if (gap >= 18) fit = { zone: "分数稳", score: 84, text: `分数高出近年最低分${gap}分，缺位次需复核` };
@@ -2742,6 +2799,10 @@ function renderRecommendForm(profile) {
   const rankFieldValue = profile && Object.prototype.hasOwnProperty.call(profile, "rankInput")
     ? profile.rankInput
     : getProfileValue(profile, "rank");
+  const guangxiLocalRankFieldValue = profile && Object.prototype.hasOwnProperty.call(profile, "guangxiLocalRankInput")
+    ? profile.guangxiLocalRankInput
+    : getProfileValue(profile, "guangxiLocalRank");
+  const showGuangxiScopeFields = normalizeProvince(getProfileValue(profile, "province")) === "广西";
   const showBeijingVocationalScore = normalizeProvince(getProfileValue(profile, "province")) === "北京";
   return `<form id="recommendForm" class="recommend-form">
     <label>
@@ -2751,16 +2812,24 @@ function renderRecommendForm(profile) {
       </select>
     </label>
     <label>
-      <span>分数</span>
+      <span id="scoreFieldLabel">${showGuangxiScopeFields ? "区外院校投档分" : "分数"}</span>
       <input id="scoreInput" type="number" min="0" max="1000" value="${esc(getProfileValue(profile, "score"))}" />
+    </label>
+    <label id="guangxiLocalScoreField" ${showGuangxiScopeFields ? "" : "hidden"}>
+      <span>区内院校投档分</span>
+      <input id="guangxiLocalScoreInput" type="number" min="0" max="750" value="${esc(getProfileValue(profile, "guangxiLocalScore"))}" placeholder="未填则按区外分数" />
     </label>
     <label id="beijingVocationalScoreField" ${showBeijingVocationalScore ? "" : "hidden"}>
       <span>专科语数外三科总分</span>
       <input id="vocationalScoreInput" type="number" min="0" max="450" value="${esc(getProfileValue(profile, "vocationalScore"))}" placeholder="北京专科线使用" />
     </label>
     <label>
-      <span>位次</span>
+      <span id="rankFieldLabel">${showGuangxiScopeFields ? "区外院校位次" : "位次"}</span>
       <input id="rankInput" type="number" min="1" value="${esc(rankFieldValue)}" />
+    </label>
+    <label id="guangxiLocalRankField" ${showGuangxiScopeFields ? "" : "hidden"}>
+      <span>区内院校位次</span>
+      <input id="guangxiLocalRankInput" type="number" min="1" value="${esc(guangxiLocalRankFieldValue)}" />
     </label>
     <label>
       <span>省份</span>
@@ -3147,11 +3216,23 @@ function bindRecommendEvents() {
   });
   const provinceInput = $("#provinceInput");
   const beijingVocationalScoreField = $("#beijingVocationalScoreField");
-  provinceInput?.addEventListener("input", () => {
+  const guangxiLocalScoreField = $("#guangxiLocalScoreField");
+  const guangxiLocalRankField = $("#guangxiLocalRankField");
+  const scoreFieldLabel = $("#scoreFieldLabel");
+  const rankFieldLabel = $("#rankFieldLabel");
+  const updateProvinceFields = () => {
+    const province = normalizeProvince(provinceInput?.value || "");
     if (beijingVocationalScoreField) {
-      beijingVocationalScoreField.hidden = normalizeProvince(provinceInput.value) !== "北京";
+      beijingVocationalScoreField.hidden = province !== "北京";
     }
-  });
+    const showGuangxi = province === "广西";
+    if (guangxiLocalScoreField) guangxiLocalScoreField.hidden = !showGuangxi;
+    if (guangxiLocalRankField) guangxiLocalRankField.hidden = !showGuangxi;
+    if (scoreFieldLabel) scoreFieldLabel.textContent = showGuangxi ? "区外院校投档分" : "分数";
+    if (rankFieldLabel) rankFieldLabel.textContent = showGuangxi ? "区外院校位次" : "位次";
+  };
+  provinceInput?.addEventListener("input", updateProvinceFields);
+  updateProvinceFields();
   $("#resetRecommend").addEventListener("click", () => {
     state.recommendation = null;
     state.prefillProfile = null;

@@ -1,0 +1,53 @@
+{
+  "dataset": "official-guangxi-rank-conversion-2025-v3320-runtime",
+  "generatedAt": "2026-07-18T22:49:31.538Z",
+  "sourceId": "official-guangxi-rank-2025-v3320",
+  "importFile": "data/admissions/official-guangxi-rank-conversion-2025-v3320-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.319-jiangsu-jseea-first-stage-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 122287,
+    "provinceRankConversions": 1012
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.320-guangxi-dual-bonus-scope-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 124183,
+    "rankConversionsAdded": 1896,
+    "provinceRecords": 20452,
+    "provinceRankConversions": 2908,
+    "linkedAdmissionRecords": 8222,
+    "officialLinkedRecords": 7554,
+    "thirdPartyLinkedRecords": 668,
+    "schoolOfficialScopeLinkedRecords": 633,
+    "specialPathExcludedRecords": 110,
+    "unclassifiedEligibleRecords": 0,
+    "topBucketLinkedRecords": 1,
+    "linkedSourceNotes": 105,
+    "linkedByInstitutionScope": {
+      "inside-guangxi": 1204,
+      "outside-guangxi": 7018
+    },
+    "linkedByType": {
+      "institution-admission": 135,
+      "major-admission": 1148,
+      "major-group-admission": 5062,
+      "school-admission-summary": 6,
+      "vocational-admission": 1871
+    },
+    "sourceNotes": 5124,
+    "shardBytes": 27866193,
+    "shardSha256": "b39cbfc970b89bde86457567f6b6ec942a88b62ab877372422a2ce6f35f4bcb5",
+    "coreBytes": 15634575,
+    "coreSha256": "ebdf58bb6b3eb05cdfa73178e3adba85a7b9376e5e84406468a77c8ba5eb1150",
+    "manifestBytesBeforeLiteRebuild": 6140,
+    "manifestSha256BeforeLiteRebuild": "81794f4361262907ba147e3af909fb7a2282ee895bcf23620e8def931f39a7e3"
+  },
+  "cautions": [
+    "表中人数、累计人数和名次均不包含已确定录取的考生。",
+    "首批高位考生按官方隐私规则未逐分公开，本导入仅保留官方累计人数能确定的合并位次区间。",
+    "全国性加分适用于区外院校；区内院校按全国性加分和地方性加分中最高一项计入总分。",
+    "最低分换算位次不是院校投档表原生公布的最低位次，正式填报前仍须核验当年考试院表、招生计划和院校章程。"
+  ]
+}

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.319-jiangsu-jseea-first-stage-rank2025-aligned-868426records";
+const modelVersion = "local-deterministic-v3.320-guangxi-dual-bonus-scope-rank2025-aligned-868426records";
 const sourceId = "official-guangxi-control-lines-2026";
 const rankSourceId = "official-guangxi-rank-2026";
 const historyRankUrl = "https://www.gxeea.cn/2026yfyd/yifenyidang/2026_yifenyidang_lishi_qg.html";
@@ -38,13 +38,13 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.browserRuntime.fullMasterRecords, 868426);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 122287);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5123);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 124183);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5124);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.shards["广西"].records, 20452);
-assert.equal(manifest.shards["广西"].rankConversions, 1012);
+assert.equal(manifest.shards["广西"].rankConversions, 2908);
 assert.equal(runtimeManifest.after.sourceRecords, 50);
 assert.equal(runtimeManifest.after.rankRowsLinked, 1012);
 assert.equal(runtimeManifest.after.rankValueChanges, 0);
@@ -176,14 +176,15 @@ for (const [subject, bachelor, vocational] of [["历史类", 398, 180], ["物理
 }
 
 for (const [subject, checkpoints] of [
-  ["历史类", [[180, 109518], [398, 49420], [520, 11410], [600, 1455], [673, 12], [700, 12], [750, 12]]],
-  ["物理类", [[180, 255675], [368, 179539], [510, 60703], [600, 10818], [699, 11], [700, 11], [750, 11]]],
+  ["历史类", [[200, 119153], [398, 55474], [520, 11897], [600, 1291], [659, 10], [700, 10], [750, 10]]],
+  ["物理类", [[200, 260429], [368, 177265], [510, 48973], [600, 6442], [688, 12], [700, 12], [750, 12]]],
 ]) {
   for (const [score, rank] of checkpoints) {
     const estimate = api.estimateRankFromScore(profile(subject, score));
     assert.equal(estimate?.rank, rank, `${subject}/${score} rank drifted`);
     assert.equal(estimate?.exact, true, `${subject}/${score} should be exact or bucket-exact`);
   }
+  assert.equal(api.estimateRankFromScore(profile(subject, 180)), null);
   assert.equal(api.estimateRankFromScore(profile(subject, 751)), null);
 }
 

@@ -1,0 +1,81 @@
+{
+  "dataset": "official-guangxi-rank-conversion-2025-v3320-evidence",
+  "province": "广西",
+  "year": 2025,
+  "publisher": "广西招生考试院",
+  "chsiHistoryUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202506/20250626/2293390995.html",
+  "chsiPhysicsUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202506/20250626/2293390989.html",
+  "policyUrl": "https://jyt.gxzf.gov.cn/wmhd/cjwt/t21237773.shtml",
+  "moeSchoolScopeUrl": "https://www.moe.gov.cn/jyb_xxgk/s5743/s5744/A03/202506/t20250627_1195683.html",
+  "provenanceBoundary": "CHSI pages attribute the four rank-table image groups to the Guangxi admissions authority. Four XLSX workbooks were parsed structurally and compared with two independent full HTML tables. The 2025 MOE regular-college list determines whether a target institution is inside Guangxi. Outside-Guangxi institutions use the national-bonus table; inside-Guangxi institutions use the national-or-local maximum table. Derived ranges are same-year provincial score segments, not institution-native admission ranks.",
+  "evidenceSha256": {
+    "2293390990.png": "39dc7fde833616484d075656d24efac9c98205d26fe59afa32c48800ac9b6c98",
+    "2293390991.png": "b10c5ad59095b3015ff90d6192fe7521825314d4fa1beff698fd823147783eee",
+    "2293390992.png": "4c8c140e76cb4dce87b8bff23fb7f63b59a8d9dab7d9f5222ef45c2403b14d59",
+    "2293390993.png": "a57b6c1b4c2de100ca5bcb8ef1f4804aee8b1ffa72375b7b8c8ecf9da639009f",
+    "2293390994.png": "75874ac0e358676de01d590e2f3ebb7d8c0116a08f65dce5df979b0c2309e145",
+    "2293390996.png": "c18062c15dd0f9b3ffd5db98ecc5d6a8eff304c2427ead87d228886bd5a9a404",
+    "2293390997.png": "be20d39d7f588f7d9711e54b8e87326a256cfa269dce133ebe642ef6378c45f1",
+    "2293390998.png": "b4b8752c0be8b1de9d9faf9f9ca6abdb01ff3ba88d9ebc58a53bac419c4907bb",
+    "2293390999.png": "2b6737b23099f2db96fd446b4cdb5fe02c3047b15423b45b4f683c33a6779698",
+    "chsi-history.html": "904ac94f3a70d1e1142a6a70049f96a781d9085c8e2e60bea6644309ade56aa8",
+    "chsi-physics.html": "c067669f33301ddbce291929eaaac92d4c272150334c148b3a7593dc5ce315ba",
+    "dxsbb-history.html": "5d4fea87291f704b06896aa8fe9786c4797141243ceaf70b01101078b6d26194",
+    "dxsbb-physics.html": "86a4e2e69612e0042d15a970b319f0245eaefb1524caa792aa7e78e1251f58e6",
+    "history-max.xlsx": "3690a7604c749d5310c60c1c904cfde551b2a320bf2d09052de5da31ddc7d791",
+    "history-national.xlsx": "f0cfa43f4c1f8b62f0f9824405ee99c48d8407e2713d158d8efff9ed72ee1713",
+    "physics-max.xlsx": "17be136993f393d84a0941a83fd6313d2768cf3f8fbc756cd69d694081ace21c",
+    "physics-national.xlsx": "b03ae89f3f6264059a99766457899c9592080500cc2c7a65c2eb4b511de952c1",
+    "jhgk-index.html": "3052a7c776fd7be07959f21c8a63f797871ad993195ee549da604a19d49230e1",
+    "moe-colleges-2025.html": "6b7eb67d44b2a7f440327832e8df89daea8872d20f8f80b14d0b93041d329a11",
+    "moe-regular-colleges-2025.xls": "af6f0192c29fb412b441fb55a13311479d08f861d68257960c5edb2e4dfb55af"
+  },
+  "parseAudit": {
+    "rankConversions": 1896,
+    "publishedRows": 1892,
+    "topBuckets": 4,
+    "rowComparisons": 1892,
+    "cellComparisons": 7568,
+    "sourceDifferences": 0,
+    "historyRecords": 920,
+    "physicsRecords": 976,
+    "outsideGuangxiRecords": 948,
+    "insideGuangxiRecords": 948
+  },
+  "schoolScopeAudit": {
+    "nationalInstitutions": 2919,
+    "guangxiInstitutions": 89,
+    "undergraduate": 41,
+    "vocational": 48
+  },
+  "topBuckets": {
+    "historyOutside": "659-750 -> rank 1-10",
+    "historyInside": "659-750 -> rank 1-10",
+    "physicsOutside": "688-750 -> rank 1-12",
+    "physicsInside": "688-750 -> rank 1-13"
+  },
+  "checkpoints": {
+    "history600Outside": { "rankStart": 1248, "rankEnd": 1291 },
+    "history600Inside": { "rankStart": 1257, "rankEnd": 1298 },
+    "physics600Outside": { "rankStart": 6205, "rankEnd": 6442 },
+    "physics600Inside": { "rankStart": 6236, "rankEnd": 6473 }
+  },
+  "runtimeMerge": {
+    "rankConversionsAdded": 1896,
+    "linkedAdmissionRecords": 8222,
+    "outsideGuangxiLinkedRecords": 7018,
+    "insideGuangxiLinkedRecords": 1204,
+    "officialLinkedRecords": 7554,
+    "thirdPartyLinkedRecords": 668,
+    "specialPathExcludedRecords": 110,
+    "topBucketLinkedRecords": 1
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.320-guangxi-rank-2025.tar.gz",
+    "bytes": 4765236,
+    "sha256": "d8534b1029d773a5d99cdb8219562a093a6998e5fba58ea1e46fe481573ce2b0",
+    "targetRelease": "data-v3.275",
+    "url": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/download/data-v3.275/evidence-v3.320-guangxi-rank-2025.tar.gz",
+    "status": "prepared-for-upload"
+  }
+}
