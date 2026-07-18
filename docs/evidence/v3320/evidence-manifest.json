@@ -76,6 +76,6 @@
     "sha256": "d8534b1029d773a5d99cdb8219562a093a6998e5fba58ea1e46fe481573ce2b0",
     "targetRelease": "data-v3.275",
     "url": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/download/data-v3.275/evidence-v3.320-guangxi-rank-2025.tar.gz",
-    "status": "prepared-for-upload"
+    "status": "uploaded-and-redownload-verified"
   }
 }
