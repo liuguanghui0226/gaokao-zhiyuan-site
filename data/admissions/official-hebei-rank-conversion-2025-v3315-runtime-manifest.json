@@ -1,0 +1,47 @@
+{
+  "dataset": "official-hebei-rank-conversion-2025-v3315-runtime",
+  "generatedAt": "2026-07-18T16:40:01.024Z",
+  "sourceId": "official-hebei-rank-2025-v3315",
+  "importFile": "data/admissions/official-hebei-rank-conversion-2025-v3315-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.314-ningxia-official-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 117615,
+    "provinceRankConversions": 1094
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.315-hebei-official-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 118702,
+    "rankConversionsAdded": 1087,
+    "provinceRecords": 69443,
+    "provinceRankConversions": 2181,
+    "linkedAdmissionRecords": 59020,
+    "officialLinkedRecords": 47235,
+    "thirdPartyLinkedRecords": 11785,
+    "schoolOfficialScopeLinkedRecords": 775,
+    "specialPathExcludedRecords": 157,
+    "topBucketLinkedRecords": 2,
+    "linkedSourceNotes": 119,
+    "linkedByType": {
+      "institution-admission": 11258,
+      "major-admission": 27135,
+      "major-group-admission": 6,
+      "school-admission-summary": 6,
+      "vocational-admission": 20615
+    },
+    "sourceNotes": 5119,
+    "shardBytes": 89110943,
+    "shardSha256": "b632748f7b49ffba716c24b24d54426bbb45fec0943e950865a5057841c5fa5c",
+    "coreBytes": 15519388,
+    "coreSha256": "89a139b659c28712d92cb3949d0d3f7576eade58e46122186791f93e04dd621b",
+    "manifestBytesBeforeLiteRebuild": 6129,
+    "manifestSha256BeforeLiteRebuild": "29f6518ba5404b630ba17c0ea9f715cdef7b947823b8fcb47165f224a7606b63"
+  },
+  "cautions": [
+    "物理类693分及以上为1-32名合并档，历史类672分及以上为1-35名合并档；不生成合并档内的伪精确位次。",
+    "一分一档表只负责同年同省同科类的分数到省级位次区间换算，院校原表未公布位次时必须明确标注为最低分换算。",
+    "仅历史类、物理类且使用普通高考总分口径的整数分记录可建立换算；艺术、体育、综合分和科类不明数据继续排除。"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3315",
+  "generatedAt": "2026-07-18T17:04:31.937Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.315-hebei-official-rank2025-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5119,
+    "lite": 5119,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15519388,
+    "compressedBytes": 2354975,
+    "sha256": "89a139b659c28712d92cb3949d0d3f7576eade58e46122186791f93e04dd621b"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3002300,
+    "compressedBytes": 477219,
+    "sha256": "7666d51e8b254a9d558837a0f7b70ec1a6386735d2c14b5da1d68d4db46ed882",
+    "rawReductionRate": 0.806545
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7949,
+    "compressedBytes": 2754,
+    "sha256": "b51dd8fe17ab82f50fb9fb54ab22cbb3b4d81d8b8f099db012e18f646a5412e4"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

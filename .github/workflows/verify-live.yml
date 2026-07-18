@@ -28,7 +28,7 @@ jobs:
           fetch "$base" "$work/index.html"
           grep -q "全国高考志愿填报" "$work/index.html"
           grep -q "__GAOKAO_RUNTIME_RELEASE_BASE__" "$work/index.html"
-          grep -q 'app.js?v=3.314.0' "$work/index.html"
+          grep -q 'app.js?v=3.315.0' "$work/index.html"
 
           release_path="$(node -e '
             const html = require("node:fs").readFileSync(process.argv[1], "utf8");
@@ -66,16 +66,16 @@ jobs:
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
           jq -e '.recordCount == 868426' "$work/manifest.json" >/dev/null
-          jq -e '.rankConversionCount == 117615' "$work/manifest.json" >/dev/null
+          jq -e '.rankConversionCount == 118702' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
-          jq -e '.runtimeProfile.version == "v3.314" and .runtimeProfile.initialCore == "knowledge-core-lite.json.gz" and .runtimeProfile.fullEvidenceCore == "knowledge-core.json.gz"' "$work/manifest.json" >/dev/null
-          jq -e '.coreLite.profile == "core-lite-v1" and .coreLite.sourceNotes == 5118 and .coreLite.compressedBytes > 0' "$work/manifest.json" >/dev/null
+          jq -e '.runtimeProfile.version == "v3.315" and .runtimeProfile.initialCore == "knowledge-core-lite.json.gz" and .runtimeProfile.fullEvidenceCore == "knowledge-core.json.gz"' "$work/manifest.json" >/dev/null
+          jq -e '.coreLite.profile == "core-lite-v1" and .coreLite.sourceNotes == 5119 and .coreLite.compressedBytes > 0' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core-lite.json.gz" "$work/knowledge-core-lite.json.gz"
           gzip -t "$work/knowledge-core-lite.json.gz"
           gzip -dc "$work/knowledge-core-lite.json.gz" > "$work/knowledge-core-lite.json"
-          jq -e '.modelVersion == "local-deterministic-v3.314-ningxia-official-rank2025-aligned-868426records"' "$work/knowledge-core-lite.json" >/dev/null
-          jq -e '.browserRuntime.profile == "core-lite-v1" and .admissionScoreLayer.structuredRecords == 868426 and .admissionScoreLayer.rankConversionRecords == 117615 and (.admissionScoreLayer.sourceNotes | length) == 5118' "$work/knowledge-core-lite.json" >/dev/null
+          jq -e '.modelVersion == "local-deterministic-v3.315-hebei-official-rank2025-aligned-868426records"' "$work/knowledge-core-lite.json" >/dev/null
+          jq -e '.browserRuntime.profile == "core-lite-v1" and .admissionScoreLayer.structuredRecords == 868426 and .admissionScoreLayer.rankConversionRecords == 118702 and (.admissionScoreLayer.sourceNotes | length) == 5119' "$work/knowledge-core-lite.json" >/dev/null
           jq -e '[.admissionScoreLayer.sourceNotes[] | select(.ordinaryVocationalStatus == "pending-official-release" and .ordinaryVocationalReview.noHistoricalSubstitution == true)] | length == 5' "$work/knowledge-core-lite.json" >/dev/null
           test "$(wc -c < "$work/knowledge-core-lite.json" | tr -d ' ')" -eq "$(jq -r '.coreLite.bytes' "$work/manifest.json")"
           test "$(shasum -a 256 "$work/knowledge-core-lite.json" | awk '{print $1}')" = "$(jq -r '.coreLite.sha256' "$work/manifest.json")"
@@ -85,9 +85,9 @@ jobs:
           gzip -dc "$work/knowledge-core.json.gz" > "$work/knowledge-core.json"
           test $(( $(wc -c < "$work/knowledge-core-lite.json") * 4 )) -le "$(wc -c < "$work/knowledge-core.json")"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.314-ningxia-official-rank2025-aligned-868426records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.315-hebei-official-rank2025-aligned-868426records"' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.admissionScoreLayer.structuredRecords == 868426 and .admissionScoreLayer.rankConversionRecords == 117615 and (.admissionScoreLayer.sourceNotes | length) == 5118' >/dev/null
+            | jq -e '.admissionScoreLayer.structuredRecords == 868426 and .admissionScoreLayer.rankConversionRecords == 118702 and (.admissionScoreLayer.sourceNotes | length) == 5119' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-xinjiang-undergraduate1-filing-2025-v3311" and .parsedRecords == 505 and .imageCount == 3 and (.rawFiles | length) == 21 and .rankUnavailableRecords == 505 and .scoreDerivedRankRecords == 0 and (.evidenceBoundary | contains("no major result, minimum rank")))] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
@@ -101,7 +101,7 @@ jobs:
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-qlu-national-2021-2025-school-major-admission" and .parsedRecords == 2157 and .nativeAdmissionRankRecords == 2074 and .derivedRankRecords == 0 and .rankUnavailableRecords == 83 and .ordinaryRecords == 1849 and .specialPathRecords == 308 and .provinceCount == 28 and (.provincesWithRecords | index("西藏") == null) and (.provincesWithRecords | index("青海") == null) and (.provincesWithRecords | index("宁夏") == null) and (.evidenceBoundary | contains("school-recorded min-score rank")) and (.evidenceBoundary | contains("not province-wide closure")))] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-hdu-national-2014-2025-school-major-admission" and .parsedRecords == 7463 and .admittedCountRecords == 7463 and .nativeAdmissionRankRecords == 0 and .derivedRankRecords == 0 and .rankUnavailableRecords == 7463 and .ordinaryRecords == 6059 and .specialPathRecords == 1404 and .provinceCount == 31 and (.yearsWithRecords | length) == 12 and (.evidenceBoundary | contains("rank and elective requirement unavailable")) and (.evidenceBoundary | contains("not province-wide closure")))] | length == 1' >/dev/null
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-hdu-national-2014-2025-school-major-admission" and .parsedRecords == 7463 and .admittedCountRecords == 7463 and .nativeAdmissionRankRecords == 0 and .derivedRankRecords == 28 and .rankUnavailableRecords == 7435 and .hebei2025ScoreDerivedRankRecords == 28 and .ordinaryRecords == 6059 and .specialPathRecords == 1404 and .provinceCount == 31 and (.yearsWithRecords | length) == 12 and (.rankAlignmentBoundary | contains("仅河北2025年28条")) and (.evidenceBoundary | contains("rank and elective requirement unavailable")) and (.evidenceBoundary | contains("not province-wide closure")))] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '.admissionScoreLayer.pendingOrdinaryVocationalAudit.pendingCount == 5 and .admissionScoreLayer.pendingOrdinaryVocationalAudit.exactPublicationDateProvinces == ["上海"] and (.admissionScoreLayer.pendingOrdinaryVocationalAudit.publicationDateUnannouncedProvinces | sort) == (["天津", "江苏", "海南", "山西"] | sort) and .admissionScoreLayer.pendingOrdinaryVocationalAudit.noHistoricalSubstitution == true' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
@@ -148,6 +148,8 @@ jobs:
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-ningxia-rank-2025-v3314" and .quality == "official-ningxia-rank-conversion-pdf-mirror-verified" and .parsedRecords == 959 and .subjectBreakdown."历史类" == 467 and .subjectBreakdown."物理类" == 492 and .provenance.authorityAuthored == true and .provenance.mirrorVerification == "two-independent-domains-byte-identical-per-subject" and .evidence."历史类".pdfSha256 == "e28bb509aa331e201474dfdb29fc6f804b6d1ba8228c71c049e11fdfb860286f" and .evidence."物理类".pdfSha256 == "4f3c76dcfe85d70836290cfc866480b2d10e8d8f8a634d3f2448ed8e326548c3")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-ningxia-undergraduate-b-2025" and .scoreDerivedRankRecords == 2491 and .nativeRankPublishedRecords == 0 and .rankSourceId == "official-ningxia-rank-2025-v3314" and .rankEvidenceScope == "score-derived-provincial-segment")] | length == 1' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-hebei-rank-2025-v3315" and .quality == "official-hebei-rank-conversion-pdf-ocr-full-table-cross-verified" and .parsedRecords == 1087 and .subjectBreakdown."历史类" == 533 and .subjectBreakdown."物理类" == 554 and .provenance.authorityAuthored == true and .provenance.officialPdfPages == 18 and .provenance.fullTableComparisons == 1087 and .provenance.officialPdfSha256 == "d4b2e17f81b3aeb80cdbe9e2b5fbdcc1318f4f57b0dbfb6a1b4707bb5f16f3e2" and .provenance.officialOcrSha256 == "6e57ba38389e4fc77faeac2d6bcf2bffa4a2897c08968d64499ee2840d8faead" and .provenance.independentMirrorSha256 == "cdbaa423992e87def2b183f3e825ea143aa520f3edfd35f4ae87f8ae3a5fb6c9")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-qinghai-control-lines-2026" and .quality == "official-chsi-mirror-qinghai-exam-authority-control-line-image-verified" and .parsedRecords == 19 and .directMirrorRetrievalStatus == "success" and .evidence.controlImage.sha256 == "340c17fe0151884b8d588629944edc286a85008355b862353bf639c680f7ce5b" and .evidence.rankPdf.sha256 == "4aae2d39d60ace58a794c2f47aa93b93a5b1077e074b4f66255d7f37f01585e8")] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
@@ -594,6 +596,26 @@ jobs:
             | jq -e '[.records[] | select(.sourceId == "official-hebei-control-lines-2026" and (.professionalMinScore | type) == "number")] | length == 28' >/dev/null
           gzip -dc "$work/hebei.json.gz" \
             | jq -e '[.rankConversions[] | select(.year == 2026 and .sourceId == "official-hebei-rank-2026" and .sourceUrl == "https://www.hebeea.edu.cn/c/2026-06-24/493215.html")] | length == 1094' >/dev/null
+          gzip -dc "$work/hebei.json.gz" \
+            | jq -e '.records | length == 69443' >/dev/null
+          gzip -dc "$work/hebei.json.gz" \
+            | jq -e '.rankConversions | length == 2181' >/dev/null
+          gzip -dc "$work/hebei.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2025 and .sourceId == "official-hebei-rank-2025-v3315" and .subjectType == "历史类")] | length == 533' >/dev/null
+          gzip -dc "$work/hebei.json.gz" \
+            | jq -e '[.rankConversions[] | select(.year == 2025 and .sourceId == "official-hebei-rank-2025-v3315" and .subjectType == "物理类")] | length == 554' >/dev/null
+          gzip -dc "$work/hebei.json.gz" \
+            | jq -e '[.records[] | select(.rankSourceId == "official-hebei-rank-2025-v3315" and .rankDerivedFromScore == true and .rankEvidenceScope == "score-derived-provincial-segment" and .nativeAdmissionRankUnavailable == true)] | length == 59020' >/dev/null
+          gzip -dc "$work/hebei.json.gz" \
+            | jq -e '[.records[] | select(.rankSourceId == "official-hebei-rank-2025-v3315" and (.sourceQuality | startswith("official")))] | length == 47235' >/dev/null
+          gzip -dc "$work/hebei.json.gz" \
+            | jq -e '[.records[] | select(.rankSourceId == "official-hebei-rank-2025-v3315" and .minRankStart == 1 and .minRankEnd == 35)] | length == 2' >/dev/null
+          gzip -dc "$work/hebei.json.gz" \
+            | jq -e '[.records[] | select(.year == 2025 and .formalScoreScope == "special-path-only" and (.subjectType == "历史类" or .subjectType == "物理类") and (.minScore | type) == "number" and .minScore >= 140 and .minScore <= 750 and .minScore == (.minScore | floor) and ((.minRankEnd // .minRank // 0) == 0))] | length == 157' >/dev/null
+          gzip -dc "$work/hebei.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hebei-undergraduate-filing-2025-physics" and .minScore == 600 and .minRankStart == 26288 and .minRankEnd == 27073 and .rankRangeText == "26288-27073（最低分换算）")] | length > 0' >/dev/null
+          gzip -dc "$work/hebei.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hebei-vocational-filing-2025-physics" and .minScore == 200 and .minRankStart == 361426 and .minRankEnd == 361477)] | length > 0' >/dev/null
           gzip -dc "$work/hubei.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-hubei-control-lines-2026")] | length == 32' >/dev/null
           gzip -dc "$work/hubei.json.gz" \

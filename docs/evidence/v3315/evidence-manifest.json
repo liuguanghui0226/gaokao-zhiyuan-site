@@ -1,0 +1,69 @@
+{
+  "dataset": "official-hebei-rank-conversion-2025-v3315-evidence",
+  "province": "河北",
+  "year": 2025,
+  "publisher": "河北省教育考试院",
+  "officialIndexUrl": "http://www.hebeea.edu.cn/html/xxgl/tzgg/2025/0624-194513-559.html",
+  "officialIndexRetrievalStatus": "empty-reply-current-session",
+  "officialPdfUrl": "https://file.hebeea.edu.cn/files/article/2025/06/20250624193800_658.pdf",
+  "eolAuthorityIndexUrl": "https://gaokao.eol.cn/he_bei/dongtai/202506/t20250624_2676842.shtml",
+  "independentMirrorUrl": "https://985.zhidianwuli.com/qzgl/1759.html",
+  "provenanceBoundary": "The authority PDF publishes provincial score-to-cumulative-rank tables. The EOL index attributes the table to Hebei Education Examination Authority and links the same PDF. All 1087 PDF OCR cumulative-rank cells match an independent full-table source. None of these sources publish an institution-native minimum admission rank.",
+  "files": {
+    "officialPdf": {
+      "archivePath": "official.pdf",
+      "bytes": 6196484,
+      "pages": 18,
+      "sha256": "d4b2e17f81b3aeb80cdbe9e2b5fbdcc1318f4f57b0dbfb6a1b4707bb5f16f3e2"
+    },
+    "officialOcr": {
+      "archivePath": "official-ocr.tsv",
+      "bytes": 9250,
+      "sha256": "6e57ba38389e4fc77faeac2d6bcf2bffa4a2897c08968d64499ee2840d8faead",
+      "parsedCells": 1087
+    },
+    "eolAuthorityIndex": {
+      "archivePath": "eol-authority-index.html",
+      "bytes": 171756,
+      "sha256": "affcc4bbc5b56bb12e5c1751437d5baf5037eb6aacedd714caae46f79710ac08"
+    },
+    "independentMirror": {
+      "archivePath": "independent-mirror.html",
+      "bytes": 1299628,
+      "sha256": "cdbaa423992e87def2b183f3e825ea143aa520f3edfd35f4ae87f8ae3a5fb6c9"
+    }
+  },
+  "parseAudit": {
+    "historyRows": 533,
+    "historyScoreRange": "672-140",
+    "historyTopBucket": "672-750 -> rank 1-35",
+    "historyFinalCumulativeRank": 243714,
+    "physicsRows": 554,
+    "physicsScoreRange": "693-140",
+    "physicsTopBucket": "693-750 -> rank 1-32",
+    "physicsFinalCumulativeRank": 363040,
+    "fullTableComparisons": 1087,
+    "fullTableDifferences": 0,
+    "allScoreRowsContiguous": true,
+    "allCumulativeRanksMonotonic": true,
+    "allPublishedCountsClose": true
+  },
+  "checkpoints": {
+    "history": {
+      "600": 6004,
+      "477": 64897,
+      "200": 236503
+    },
+    "physics": {
+      "600": 27073,
+      "459": 224230,
+      "200": 361477
+    }
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.315-hebei-rank-2025.tar.gz",
+    "bytes": 5713777,
+    "sha256": "9baa342f7bab5f77476de0c08d97ece3307bae4be8860b1acdcc7d3ee8cd6288",
+    "targetRelease": "data-v3.275"
+  }
+}

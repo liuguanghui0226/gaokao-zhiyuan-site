@@ -1,0 +1,69 @@
+change_id: "2026-07-19-v3315-hebei-rank-2025"
+title: "河北 2025 一分一档与录取最低分位次对齐"
+phase: deliver
+status: complete
+execution_mode: full
+resume_mode: full
+resume_reason: "河北2025已有大量院校、专业和专科最低分记录，但约5.9万条缺少可跨年比较的同年省级位次证据。"
+last_updated: "2026-07-18T17:28:23Z"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "河北省教育考试院18页PDF、逐单元格OCR、独立完整表交叉核验和1087条结构化位次。"
+  - surface: user
+    role: consumer
+    notes: "河北2025历史类、物理类59020条整数最低分记录可按同年省级位次区间比较。"
+  - surface: operational
+    role: consumer
+    notes: "GitHub仓库、河北gzip分片、双核心索引、Pages运行层和Release证据包。"
+
+sot_map:
+  - info_name: "河北省2025年普通高校招生物理科目组合、历史科目组合考生成绩统计表"
+    pattern: 4
+    source: "http://www.hebeea.edu.cn/html/xxgl/tzgg/2025/0624-194513-559.html"
+    consumers:
+      - name: "data/admissions/official-hebei-rank-conversion-2025-v3315-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/hebei.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node导入器解析18页官方PDF的表格OCR，并逐项对照独立完整表；合并器只按同年同科类普通高考整数最低分连接位次区间，随后更新河北分片、双核心和运行清单。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "导入包、证据清单和Release资产锁定源文件、哈希与解析结果。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.314核心、河北分片和前端缓存版本。"
+    - surface: operational
+      mode: 1
+      rationale: "GitHub提交和Release按版本保留，可回退到上一远端提交。"
+
+task_slices:
+  - id: "source-import"
+    scope: "历史类533档、物理类554档、18页PDF OCR和1087项双源逐项一致"
+    verification_command: "node scripts/test-official-hebei-rank-import-v3315.mjs"
+  - id: "rank-link"
+    scope: "59020条最低分记录对齐省级位次，最高分合并档保留区间，157条特殊路径隔离"
+    verification_command: "node scripts/test-hebei-rank-alignment-boundaries-v3315.mjs && node scripts/test-official-hebei-rank-runtime-v3315.mjs"
+  - id: "runtime-refresh"
+    scope: "河北分片、完整核心、轻量核心、运行清单和65项全国回归"
+    verification_command: "node scripts/test-runtime-core-lite-v3315.mjs && node scripts/test-current-release.mjs"
+  - id: "release"
+    scope: "GitHub Pages、31省公网分片和证据Release资产"
+    verification_command: "gh workflow run verify-live.yml"
+
+residual_risks:
+  - "59020条记录中11785条来源质量仍为待复核第三方，位次补全不会提升原最低分来源等级。"
+  - "换算位次来自同年省级一分一档表，不是院校投档或录取原表直接公布的原生最低位次。"
+  - "最高分合并档只能保存区间；特殊招生路径、综合分和小数分不连接普通类位次。"
+  - "正式填报仍需核验当年招生计划、专业选科要求、院校招生章程和省考试院最新公告。"
