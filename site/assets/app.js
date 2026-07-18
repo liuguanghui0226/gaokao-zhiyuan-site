@@ -1841,7 +1841,7 @@ function admissionRecency(record, today = currentChinaDate()) {
       fresh: false,
       penalty: 8,
       label: "年份待核",
-      text: "来源年份缺失，模型已降权，必须核验当年招生计划和投档表",
+      text: "来源年份缺失，已降低排序权重，必须核验当年招生计划和投档表",
     };
   }
   const age = Math.max(0, referenceYear - recordYear);
@@ -1860,7 +1860,7 @@ function admissionRecency(record, today = currentChinaDate()) {
     fresh: false,
     penalty,
     label: age === 2 ? "近2年" : `${age}年前`,
-    text: `${recordYear}年历史录取边界，距当前${age}年，模型已降权，必须用当年计划和最新位次复核`,
+    text: `${recordYear}年历史录取边界，距当前${age}年，已降低排序权重，必须用当年计划和最新位次复核`,
   };
 }
 
@@ -2051,7 +2051,7 @@ function buildSchoolOptions(candidate, profile, band) {
   if (belowVocationalLine) {
     return [
       { name: "高职单招与分类考试政策", tags: ["资格与时间节点"], focus: "核对本省后续可用的单招、分类考试或征集政策，不把普通批院校当作可录取结果。", role: "路径调研", scoreStatus: genericScoreStatus },
-      { name: "复读与下一年度重规划", tags: ["分数提升", "选科与专业重建"], focus: "结合单科短板、目标专业和家庭承受度评估复读，不用单次模型分替代家庭决策。", role: "路径调研", scoreStatus: genericScoreStatus },
+      { name: "复读与下一年度重规划", tags: ["分数提升", "选科与专业重建"], focus: "结合单科短板、目标专业和家庭承受度评估复读，不用单次排序分替代家庭决策。", role: "路径调研", scoreStatus: genericScoreStatus },
       { name: "职业技能与就业衔接", tags: ["技能训练", "升学衔接"], focus: "核验正规办学资质、技能证书含金量、继续升学通道和真实就业去向。", role: "路径调研", scoreStatus: genericScoreStatus },
     ];
   }
@@ -2260,7 +2260,7 @@ function scoreCandidate(candidate, profile, band) {
           ? "输入完整且命中学校官网单校最低分及其一分一段换算位次；该位次不是学校录取最低位次，也不是省级全量投档表，最高只作为 A- 强候选核验。"
           : "输入完整且命中学校官网单校最低分/位次，但它不是省级全量投档表，最高只作为 A- 强候选核验。"
         : staleAdmission
-          ? `输入完整且命中${bestAdmission.fit.recency.label}历史录取边界，模型已按年份降权，最高只作为 A- 强候选核验。`
+          ? `输入完整且命中${bestAdmission.fit.recency.label}历史录取边界，已按年份降低排序权重，最高只作为 A- 强候选核验。`
         : "输入完整且有录取分数据支持，但目标专业仍需逐项核验。";
   } else if (evidence.length >= 4 && total >= 62) {
     confidence = "B";
@@ -2283,7 +2283,7 @@ function scoreCandidate(candidate, profile, band) {
   }
 
   const reasons = [
-    `孩子画像为${profile.childType}，当前策略为${profile.strategy}，模型按公开权重给出排序。`,
+    `基本情况：${profile.childType}；当前策略：${profile.strategy}。以下按成绩、位次、专业偏好与证据质量排序。`,
     `分数/位次进入${band.label}：${band.strategy}`,
     belowVocationalLine
       ? `当前${vocationalLineComparison.label}${vocationalLineComparison.score}分低于${vocationalLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}${lowerLineLabel}${vocationalLine.score}分${belowAllLineText}；${segmentedLowerLine ? "当前普通类分段资格尚未达到" : "普通批录取资格尚未达到"}，只能核验高职单招、技能培养、复读再规划及后续征集政策。`
@@ -2305,22 +2305,22 @@ function scoreCandidate(candidate, profile, band) {
               ? `当前${profile.score}分达到${bachelorLine.year}年${profile.province || "本省"}${profile.subject || "普通类"}${bachelorLineLabel}${bachelorLine.score}分，已进入普通本科批次资格边界；这不等于达到任何具体院校或专业投档线。`
             : "",
     candidate.profiles.includes(profile.childType)
-      ? `该院校池适合${profile.childType}，与孩子画像匹配。`
-      : `该院校池不是画像最强匹配项，但可作为对照方案。`,
+      ? `该院校池适合${profile.childType}，与基本情况匹配。`
+      : `该院校池不是最强匹配项，但可作为对照方案。`,
     profile.disciplineFocus && candidate.disciplines.includes(profile.disciplineFocus)
       ? `匹配当前专业门类偏好：${profile.disciplineFocus}。`
       : "专业门类匹配一般，需进一步看具体专业和培养方案。",
     scoreStatus.available
       ? belowVocationalLine
-        ? "当前分数低于普通高职专科控制线，模型不使用历史院校投档命中生成可执行建议。"
+        ? "当前分数低于普通高职专科控制线，不据此用历史院校投档记录生成可执行建议。"
         : limitedOnly
         ? bestAdmission
           ? `命中湖北限定院校历史投档证据：${bestAdmission.record.schoolName}${bestAdmission.record.majorGroup ? `-${bestAdmission.record.majorGroup}` : ""}；仍须核对2026招生计划和院校资格。`
           : "当前只达到湖北限定院校线，本方向没有可由官方历史投档证据确认的限定院校专业组。"
         : vocationalQualificationUnknown
-        ? "当前缺少与普通专科控制线同口径的分数，模型不使用历史院校投档命中生成可执行建议。"
+        ? "当前缺少与普通专科控制线同口径的分数，不据此用历史院校投档记录生成可执行建议。"
         : vocationalLinePending
-        ? "本年度普通高职专科控制线尚待官方发布，模型不使用历史院校投档命中生成可执行建议。"
+        ? "本年度普通高职专科控制线尚待官方发布，不据此用历史院校投档记录生成可执行建议。"
         : bestAdmission
         ? `命中结构化录取数据：${bestAdmission.record.schoolName}${bestAdmission.record.majorName ? `-${bestAdmission.record.majorName}` : ""}，${bestAdmission.fit.zone}。`
         : "本方向暂未命中当前省份/科类的结构化录取记录，仍需导入更多院校/专业分。"
@@ -2348,7 +2348,7 @@ function scoreCandidate(candidate, profile, band) {
     ...(electivePendingRecords.length ? [`当前方向有${fmtNumber(electivePendingRecords.length)}条记录的再选科目要求待核验；填写“再选科目”后可缩小候选。`] : []),
     ...(provinceReadiness && provinceReadiness.status !== "strong" ? [`${provinceReadiness.province}数据成熟度为${provinceReadiness.statusLabel}（${provinceReadiness.readinessScore}分）：${provinceReadiness.recommendationUse}`] : []),
     ...candidate.risks,
-    ...missingInputs.map((item) => `缺少${item}，模型可信度自动降级。`),
+    ...missingInputs.map((item) => `缺少${item}，结果可信度降低。`),
   ];
   if (redLineConflict) warnings.unshift("命中不可接受项，需要人工确认是否排除。");
   if (candidate.highCost && profile.budget !== "不敏感") warnings.unshift("该路径可能触发高成本风险，预算敏感家庭需谨慎。");
@@ -2586,9 +2586,13 @@ function renderOverview() {
   const data = state.data;
   const stats = data.extractionStats;
   const strategy = data.strategyFramework.slice(0, 6).map((item) => {
+    const title = item.id === "five-axis" ? "五项排序依据" : item.title;
+    const body = item.id === "five-axis"
+      ? "每个志愿单元按分数位次安全边界、专业适配、院校平台、城市资源和风险限制五项比较，避免只按排名或热门做单点决策。"
+      : item.body;
     return `<article class="item-card">
-      <h3>${esc(item.title)}</h3>
-      <p>${esc(item.body)}</p>
+      <h3>${esc(title)}</h3>
+      <p>${esc(body)}</p>
     </article>`;
   }).join("");
   const insights = data.experienceInsights.slice(0, 6).map((item) => {
@@ -2633,12 +2637,10 @@ function renderDisciplines() {
   const selectedFamily = families.find((family) => family.key === state.disciplineFamily) || families[0];
   const selectedSources = sources.filter((source) => source.disciplines.some((item) => item.code === selected.code));
   const cards = state.data.disciplines.map((discipline) => {
-    const matched = sources.filter((source) => source.disciplines.some((item) => item.code === discipline.code));
     const active = discipline.code === selected.code;
     return `<button class="discipline-tile ${active ? "active" : ""}" type="button" data-discipline-code="${esc(discipline.code)}" aria-pressed="${active}">
       <span>${esc(discipline.code)}</span>
       <strong>${esc(discipline.name)}</strong>
-      <small>${fmtNumber(matched.length)} 条资料</small>
     </button>`;
   }).join("");
 
@@ -2904,7 +2906,7 @@ function renderRecommendationResults() {
         ${renderScorePart("风险扣分", item.parts.riskPenalty)}
       </div>
       <section>
-        <h4>模型建议院校</h4>
+        <h4>院校建议</h4>
         <div class="school-option-list">${schools}</div>
       </section>
       <details class="detail-drawer compact">
@@ -3187,8 +3189,8 @@ function renderAdmissionHitPanel(profile) {
 
 function renderRecommend() {
   const policy = state.data.modelPolicy || {
-    name: "本地高考志愿可靠推荐模型",
-    formula: "总分 = 35%硬匹配 + 25%分数位次策略 + 20%专业适配 + 10%城市预算 + 10%证据充分度 - 红线风险扣分",
+    name: "院校专业排序规则",
+    formula: "排序分 = 35%硬匹配 + 25%分数位次策略 + 20%专业适配 + 10%城市预算 + 10%证据充分度 - 红线风险扣分",
     reliabilityDefinition: "公开权重、来源证据、置信度标签、排除理由和官方复核清单。",
     weights: [],
     confidenceRules: [],

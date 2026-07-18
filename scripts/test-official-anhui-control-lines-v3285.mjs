@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.315-hebei-official-rank2025-aligned-868426records";
+const modelVersion = "local-deterministic-v3.316-chongqing-authority-linked-rank2025-aligned-868426records";
 const sourceId = "official-anhui-control-lines-2026";
 const rankSourceUrl = "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847718.html";
 
@@ -53,12 +53,12 @@ assert.ok(records.filter((record) => !record.controlLineRouteKind.startsWith("or
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 118702);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5119);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 119677);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5120);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 118702);
+assert.equal(manifest.rankConversionCount, 119677);
 assert.equal(manifest.shards["安徽"].records, 16250);
 assert.equal(manifest.shards["安徽"].rankConversions, 976);
 assert.equal(anhui.rankConversions.length, 976);
@@ -182,7 +182,7 @@ for (const result of [belowHistory, belowPhysics]) {
   assert.ok(result.total <= 42);
   assert.ok(result.schoolOptions.every((option) => !option.record && option.role === "路径调研"));
   assert.ok(result.reasons.every((reason) => !reason.includes("命中结构化录取数据")));
-  assert.ok(result.reasons.some((reason) => reason.includes("不使用历史院校投档命中")));
+  assert.ok(result.reasons.some((reason) => reason.includes("不据此用历史院校投档记录")));
   assert.ok(result.warnings.some((warning) => /高职（专科）文化课录取控制分数线200分/.test(warning)));
 }
 assert.equal(api.isBelowOrdinaryVocationalLine(history199), true);

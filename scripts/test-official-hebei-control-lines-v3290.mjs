@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.315-hebei-official-rank2025-aligned-868426records";
+const modelVersion = "local-deterministic-v3.316-chongqing-authority-linked-rank2025-aligned-868426records";
 const sourceId = "official-hebei-control-lines-2026";
 const rankSourceId = "official-hebei-rank-2026";
 const rankUrl = "https://www.hebeea.edu.cn/c/2026-06-24/493215.html";
@@ -60,8 +60,8 @@ assert.ok(records.filter((record) => !record.controlLineRouteKind.startsWith("or
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 118702);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5119);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 119677);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5120);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
@@ -187,7 +187,7 @@ for (const result of [belowPhysics, belowHistory]) {
   assert.ok(result.total <= 42);
   assert.ok(result.schoolOptions.every((option) => !option.record && option.role === "路径调研"));
   assert.equal(api.buildApplicationPlan([result]).length, 0);
-  assert.ok(result.reasons.some((reason) => reason.includes("不使用历史院校投档命中")));
+  assert.ok(result.reasons.some((reason) => reason.includes("不据此用历史院校投档记录")));
   assert.ok(result.warnings.some((warning) => /低于2026年普通类.*200分/.test(warning)));
 }
 assert.equal(api.isBelowOrdinaryVocationalLine(physics199), true);

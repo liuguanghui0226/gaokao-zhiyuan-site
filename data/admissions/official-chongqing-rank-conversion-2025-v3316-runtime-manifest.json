@@ -1,0 +1,48 @@
+{
+  "dataset": "official-chongqing-rank-conversion-2025-v3316-runtime",
+  "generatedAt": "2026-07-18T18:09:26.684Z",
+  "sourceId": "official-chongqing-rank-2025-v3316",
+  "importFile": "data/admissions/official-chongqing-rank-conversion-2025-v3316-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.315-hebei-official-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 118702,
+    "provinceRankConversions": 988
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.316-chongqing-authority-linked-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 119677,
+    "rankConversionsAdded": 975,
+    "provinceRecords": 62503,
+    "provinceRankConversions": 1963,
+    "linkedAdmissionRecords": 29017,
+    "officialLinkedRecords": 28481,
+    "thirdPartyLinkedRecords": 536,
+    "schoolOfficialScopeLinkedRecords": 530,
+    "specialPathExcludedRecords": 337,
+    "topBucketLinkedRecords": 50,
+    "linkedSourceNotes": 110,
+    "linkedByType": {
+      "institution-admission": 115,
+      "major-admission": 19800,
+      "major-group-admission": 2,
+      "school-admission-summary": 6,
+      "vocational-admission": 9094
+    },
+    "sourceNotes": 5120,
+    "shardBytes": 76367094,
+    "shardSha256": "d2a30c1e8abb1b8c36a267749a1c2b464cc93979115e769eb8c876198cb222b3",
+    "coreBytes": 15540082,
+    "coreSha256": "df506edf71229648e7eee6e70ca71c78d725931f4c22d5a8122051e30a87b15f",
+    "manifestBytesBeforeLiteRebuild": 6142,
+    "manifestSha256BeforeLiteRebuild": "3a5deb5676ced19cf960b64b5b8fa38413e9c0500552af1410d0ce9a748cc646"
+  },
+  "cautions": [
+    "历史类652分及以上为1-66名合并档，物理类681分及以上为1-159名合并档；不生成合并档内的伪精确位次。",
+    "一分一段表只负责同年同省同科类的分数到省级位次区间换算，院校原表未公布位次时必须明确标注为最低分换算。",
+    "仅历史类、物理类且使用普通高考总分口径的整数分记录可建立换算；艺术、体育、综合分、科类不明和特殊路径继续排除。",
+    "重庆考试院官方表链接当前会话TLS不可达；两份转载索引均保留相同考试院原始链接，EOL完整表再与独立完整表逐项核对。"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "dataset": "official-chongqing-rank-conversion-2025-v3316-evidence",
+  "province": "重庆",
+  "year": 2025,
+  "publisherAttributed": "重庆市教育考试院",
+  "officialDirectRetrievalStatus": "tls-unavailable-current-session",
+  "eolAuthorityIndexUrl": "https://gaokao.eol.cn/chong_qing/dongtai/202506/t20250624_2676752.shtml",
+  "secondAuthorityLinkIndexUrl": "https://www.gkzxw.com/gxzs/202506/70965.html",
+  "officialHistoryUrl": "https://www.cqksy.cn/uploadFile/infopub/2025/pg/yfd/wk.htm",
+  "officialPhysicsUrl": "https://www.cqksy.cn/uploadFile/infopub/2025/pg/yfd/lk.htm",
+  "independentHistoryMirrorUrl": "https://www.dxsbb.com/news/148773.html",
+  "independentPhysicsMirrorUrl": "https://www.dxsbb.com/news/148772.html",
+  "provenanceBoundary": "Two independent indexes preserve identical Chongqing Education Examination Authority table links. EOL authority-attributed complete tables match independent DXSBB complete tables across all 975 rows and 2925 score/count/cumulative-rank cells. Direct official retrieval was TLS-unavailable in this session. None of these tables publish an institution-native minimum admission rank.",
+  "files": {
+    "eolIndex": {
+      "archivePath": "eol-index.html",
+      "bytes": 171749,
+      "sha256": "5e3bf43f622e68db6f0740f705ffb606436708490d34913c891cc240a90310d0"
+    },
+    "secondAuthorityLinkIndex": {
+      "archivePath": "gkzxw-index.html",
+      "bytes": 26989,
+      "sha256": "ea8943a6ee65537d3284bce8d01f18a5a2e7474187b8c15e353053c7082bc8bf"
+    },
+    "eolHistory": {
+      "archivePath": "eol-history.html",
+      "bytes": 601467,
+      "sha256": "da546a8a61c6820c70b9e177ff24cca9bf4c0d5f13bf5e4be184b413220893d0"
+    },
+    "eolPhysics": {
+      "archivePath": "eol-physics.html",
+      "bytes": 626923,
+      "sha256": "7338bf36ddb86e5bcf1cdb34eb6d2c9b5728b735cf3a486db16af7c8343f66a0"
+    },
+    "independentHistory": {
+      "archivePath": "dxsbb-history.html",
+      "bytes": 46087,
+      "sha256": "5c3afc936a45c310d18d9c3e0273085265bb53b37f52b714415b5326170a4b59"
+    },
+    "independentPhysics": {
+      "archivePath": "dxsbb-physics.html",
+      "bytes": 47740,
+      "sha256": "a73d7af925c6389c4a3b34fe28b9526fe7e3e31dde54c1f233df1292ce2ea413"
+    }
+  },
+  "parseAudit": {
+    "historyRows": 473,
+    "historyScoreRange": "652-180",
+    "historyTopBucket": "652-750 -> rank 1-66",
+    "historyFinalCumulativeRank": 73373,
+    "physicsRows": 502,
+    "physicsScoreRange": "681-180",
+    "physicsTopBucket": "681-750 -> rank 1-159",
+    "physicsFinalCumulativeRank": 139478,
+    "fullTableComparisons": 975,
+    "fullCellComparisons": 2925,
+    "fullTableDifferences": 0,
+    "allScoreRowsContiguous": true,
+    "allCumulativeRanksMonotonic": true,
+    "allPublishedCountsClose": true
+  },
+  "checkpoints": {
+    "history": {
+      "600": 1576,
+      "500": 17717,
+      "438": 35253,
+      "300": 68711,
+      "180": 73373
+    },
+    "physics": {
+      "600": 11716,
+      "500": 62078,
+      "425": 103219,
+      "300": 134938,
+      "180": 139478
+    }
+  },
+  "runtimeMerge": {
+    "rankConversionsAdded": 975,
+    "linkedAdmissionRecords": 29017,
+    "officialLinkedRecords": 28481,
+    "thirdPartyLinkedRecords": 536,
+    "schoolOfficialScopeLinkedRecords": 530,
+    "specialPathExcludedRecords": 337,
+    "topBucketLinkedRecords": 50
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.316-chongqing-rank-2025.tar.gz",
+    "bytes": 160717,
+    "sha256": "617eecdf8eabf4434fd6d2aa07acefd626e4f957610bd75d025a8d124dc27e31",
+    "targetRelease": "data-v3.275"
+  }
+}

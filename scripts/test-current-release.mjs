@@ -15,7 +15,7 @@ const tests = [
   "test-application-plan-v3277.mjs",
   "test-elective-requirement-v3278.mjs",
   "test-browser-runtime-shards-v3274.mjs",
-  "test-runtime-core-lite-v3315.mjs",
+  "test-runtime-core-lite-v3316.mjs",
   "test-national-score-band-coverage-v3279.mjs",
   "test-official-jiangxi-control-lines-v3280.mjs",
   "test-official-xizang-control-lines-v3281.mjs",
@@ -72,6 +72,10 @@ const tests = [
   "test-official-hebei-rank-import-v3315.mjs",
   "test-hebei-rank-alignment-boundaries-v3315.mjs",
   "test-official-hebei-rank-runtime-v3315.mjs",
+  "test-official-chongqing-rank-import-v3316.mjs",
+  "test-chongqing-rank-alignment-boundaries-v3316.mjs",
+  "test-official-chongqing-rank-runtime-v3316.mjs",
+  "test-interface-plain-language-v3316.mjs",
 ];
 
 const results = tests.map((test) => {
@@ -87,13 +91,12 @@ const results = tests.map((test) => {
   };
 });
 
-for (const result of results) {
-  assert.equal(
-    result.status,
-    0,
-    `${result.test} failed\n${result.stderr || result.stdout}`,
-  );
-}
+const failures = results.filter((result) => result.status !== 0);
+assert.equal(
+  failures.length,
+  0,
+  failures.map((result) => `${result.test} failed\n${result.stderr || result.stdout}`).join("\n\n"),
+);
 
 console.log(JSON.stringify({
   status: "ok",

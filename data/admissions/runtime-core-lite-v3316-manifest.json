@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3316",
+  "generatedAt": "2026-07-18T18:32:41.308Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.316-chongqing-authority-linked-rank2025-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5120,
+    "lite": 5120,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15540082,
+    "compressedBytes": 2357732,
+    "sha256": "df506edf71229648e7eee6e70ca71c78d725931f4c22d5a8122051e30a87b15f"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3002900,
+    "compressedBytes": 477390,
+    "sha256": "5eb523b7bbc83cb670a9562d09d37e32cd77cf850d1fc5aa36c7608a832f7a29",
+    "rawReductionRate": 0.806764
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7962,
+    "compressedBytes": 2770,
+    "sha256": "da726772469526e6562b850d7900aa6499de9418ee9bb24a20735a06d181c098"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.315-hebei-official-rank2025-aligned-868426records";
+const modelVersion = "local-deterministic-v3.316-chongqing-authority-linked-rank2025-aligned-868426records";
 
 function readGzipJson(file) {
   return JSON.parse(zlib.gunzipSync(fs.readFileSync(file)).toString("utf8"));
@@ -49,7 +49,7 @@ assert.ok(records.filter((record) => record.controlLineRouteKind !== "ordinary-b
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5119);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5120);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
@@ -160,7 +160,7 @@ for (const result of [belowHistory, belowPhysics]) {
   assert.ok(result.total <= 42);
   assert.ok(result.schoolOptions.every((option) => !option.record && option.role === "路径调研"));
   assert.ok(result.reasons.every((reason) => !reason.includes("命中结构化录取数据")));
-  assert.ok(result.reasons.some((reason) => reason.includes("不使用历史院校投档命中")));
+  assert.ok(result.reasons.some((reason) => reason.includes("不据此用历史院校投档记录")));
   assert.ok(result.reasons.some((reason) => /高职专科录取控制分数线200分/.test(reason)));
   assert.ok(result.warnings.some((warning) => /低于2026年普通类高职专科录取控制分数线200分/.test(warning)));
 }

@@ -77,7 +77,7 @@ select {
 .brand p {
   margin: 5px 0 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.4;
 }
 
@@ -116,7 +116,7 @@ select {
   border-top: 1px solid var(--line);
   padding-top: 16px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.55;
   display: grid;
   gap: 5px;
@@ -144,7 +144,7 @@ select {
   display: grid;
   gap: 6px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .search-box input,
@@ -220,7 +220,7 @@ select {
   display: block;
   margin-top: 8px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .band {
@@ -309,11 +309,6 @@ select {
 .discipline-tile > strong {
   font-size: 17px;
   line-height: 1.25;
-}
-
-.discipline-tile > small {
-  color: var(--muted);
-  font-size: 13px;
 }
 
 .discipline-detail {
@@ -411,7 +406,7 @@ select {
 
 .catalog-note {
   margin-bottom: 0;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .source-title-list {
@@ -434,7 +429,7 @@ select {
   color: var(--leaf-dark);
   background: #f7fbf8;
   padding: 4px 8px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.2;
 }
 
@@ -475,13 +470,13 @@ select {
 .source-row p {
   margin: 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
 
 .status {
-  font-size: 13px;
+  font-size: 14px;
   border-radius: 8px;
   padding: 6px 8px;
   background: #edf7f1;
@@ -638,7 +633,7 @@ select {
   display: grid;
   gap: 6px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .recommend-form label.wide {
@@ -665,7 +660,7 @@ select {
 .recommend-form legend {
   padding: 0 4px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .elective-options {
@@ -835,7 +830,7 @@ select {
   padding: 7px 9px;
   background: #fff;
   color: #7b4400;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.35;
   text-decoration: none;
 }
@@ -876,7 +871,7 @@ select {
 
 .model-pill {
   color: var(--blue);
-  font-size: 13px;
+  font-size: 14px;
   text-align: center;
 }
 
@@ -892,13 +887,13 @@ select {
   display: block;
   margin-bottom: 4px;
   color: var(--blue);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .rank-estimate-note p {
   margin: 0;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.45;
 }
 
@@ -923,7 +918,7 @@ select {
 
 .pending-review-reason {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.55;
 }
 
@@ -980,14 +975,14 @@ select {
   padding: 5px 8px;
   background: #edf7f1;
   color: var(--leaf-dark);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 .admission-hit p {
   margin: 8px 0 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -1015,7 +1010,7 @@ select {
 .application-plan-row p {
   margin: 6px 0 0;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -1028,7 +1023,7 @@ select {
   padding: 5px 8px;
   color: var(--blue);
   background: #fff;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.35;
 }
@@ -1064,7 +1059,7 @@ select {
   display: inline-block;
   margin-top: 9px;
   color: var(--blue);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   text-decoration: none;
 }
@@ -1138,14 +1133,14 @@ select {
 
 .school-option p {
   margin: 0;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .school-option span,
 .school-option em {
   border-radius: 8px;
   padding: 6px 8px;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.35;
   font-style: normal;
   text-align: center;
@@ -1165,7 +1160,7 @@ select {
   margin: 0 0 5px !important;
   color: var(--gold) !important;
   font-weight: 800;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .score-badge {
@@ -1185,7 +1180,7 @@ select {
 }
 
 .score-badge span {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 800;
 }
 
@@ -1216,7 +1211,7 @@ select {
 
 .score-part span {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .score-part strong {
@@ -1311,19 +1306,22 @@ select {
   }
 
   .nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     width: 100%;
     min-width: 0;
     gap: 6px;
-    overflow-x: auto;
-    padding-bottom: 3px;
-    scrollbar-width: thin;
   }
 
   .nav-btn {
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding: 9px 11px;
+    grid-column: span 2;
+    min-height: 42px;
+    white-space: normal;
+    padding: 9px 6px;
+  }
+
+  .nav-btn:nth-last-child(-n + 2) {
+    grid-column: span 3;
   }
 
   .sidebar-note {

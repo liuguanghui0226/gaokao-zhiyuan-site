@@ -29,7 +29,7 @@ assert.equal(historical.recency.age, 5);
 assert.ok(historical.recency.penalty > fresh.recency.penalty, "historical evidence must receive a larger penalty");
 assert.ok(historical.score < fresh.score, "the same score/rank gap must not receive the same fit score across years");
 assert.match(historical.zone, /年前稳妥/);
-assert.match(historical.text, /模型已降权/);
+assert.match(historical.text, /已降低排序权重/);
 
 console.log(JSON.stringify({
   status: "ok",
