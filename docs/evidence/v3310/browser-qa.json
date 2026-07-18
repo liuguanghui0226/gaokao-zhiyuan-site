@@ -1,0 +1,68 @@
+{
+  "status": "ok",
+  "generatedAt": "2026-07-18T09:15:12.733Z",
+  "baseUrl": "http://127.0.0.1:4188/",
+  "profile": {
+    "province": "江西",
+    "subject": "物理类",
+    "score": 605,
+    "rank": 17798,
+    "disciplineFocus": "08 工学",
+    "interest": "计算机科学与技术",
+    "city": "杭州"
+  },
+  "results": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "finalUrl": "http://127.0.0.1:4188/",
+      "screenshotPath": "docs/evidence/v3310/desktop-recommendation.png",
+      "screenshotBytes": 341203,
+      "layout": {
+        "documentOverflow": 0,
+        "bodyOverflow": 0,
+        "viewportWidth": 1440,
+        "documentWidth": 1440
+      },
+      "renderedSchoolChips": 25,
+      "hduOptionCount": 2,
+      "assertions": {
+        "school": "杭州电子科技大学",
+        "major": "计算机科学与技术",
+        "minScore": 605,
+        "admittedCount": 3,
+        "rankClaim": "unavailable",
+        "numericProbabilityClaim": false
+      }
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "finalUrl": "http://127.0.0.1:4188/",
+      "screenshotPath": "docs/evidence/v3310/mobile-recommendation.png",
+      "screenshotBytes": 132813,
+      "layout": {
+        "documentOverflow": 0,
+        "bodyOverflow": 0,
+        "viewportWidth": 390,
+        "documentWidth": 390
+      },
+      "renderedSchoolChips": 25,
+      "hduOptionCount": 2,
+      "assertions": {
+        "school": "杭州电子科技大学",
+        "major": "计算机科学与技术",
+        "minScore": 605,
+        "admittedCount": 3,
+        "rankClaim": "unavailable",
+        "numericProbabilityClaim": false
+      }
+    }
+  ]
+}

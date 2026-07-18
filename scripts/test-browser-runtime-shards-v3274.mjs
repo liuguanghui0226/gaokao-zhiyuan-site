@@ -15,6 +15,7 @@ const releaseMatch = siteIndex.match(/__GAOKAO_RUNTIME_RELEASE_BASE__\s*=\s*["']
 const releaseDir = releaseMatch ? path.join(siteDataDir, releaseMatch[1]) : "";
 const usingCompressedRelease = Boolean(releaseDir && fs.existsSync(path.join(releaseDir, "knowledge-core.json.gz")));
 const appFile = path.join(projectRoot, "site/assets/app.js");
+const appSource = fs.readFileSync(appFile, "utf8");
 const importFile = path.join(projectRoot, "data/admissions/official-xizang-vacancy-plans-2025-v3272-import.json");
 const szuImportFile = path.join(projectRoot, "data/admissions/official-national-school-admission-2024-2025-v3274-szu-import.json");
 const hnuImportFile = path.join(projectRoot, "data/admissions/official-national-school-admission-2024-v3275-hnu-import.json");
@@ -45,20 +46,22 @@ const imported = JSON.parse(fs.readFileSync(importFile, "utf8"));
 const szuImported = JSON.parse(fs.readFileSync(szuImportFile, "utf8"));
 const hnuImported = JSON.parse(fs.readFileSync(hnuImportFile, "utf8"));
 
-assert.match(fs.readFileSync(appFile, "utf8"), /const DEFAULT_PROFILE = \{[\s\S]*?rank: "",/, "Default example must leave rank blank so province/score changes trigger current rank estimation");
+assert.match(appSource, /const DEFAULT_PROFILE = \{[\s\S]*?rank: "",/, "Default example must leave rank blank so province/score changes trigger current rank estimation");
+assert.match(appSource, /const visibleSchoolTags = schoolTags\.slice\(0, 24\);/, "Admission overview must cap the rendered school sample");
+assert.match(appSource, /另有 \$\{fmtNumber\(hiddenSchoolTagCount\)\} 所院校已入库，推荐时按省份加载/, "Admission overview must explain that hidden school names remain available to recommendation routing");
 
-assert.equal(core.modelVersion, "local-deterministic-v3.309-national-school-official-qlu2021-2025-native-rank-859382records");
+assert.equal(core.modelVersion, "local-deterministic-v3.310-national-school-official-hdu2014-2025-admitted-count-866845records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.records.length, 0);
 assert.equal(core.admissionScoreLayer.rankConversions.length, 0);
-assert.equal(core.admissionScoreLayer.structuredRecords, 859382);
+assert.equal(core.admissionScoreLayer.structuredRecords, 866845);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 116656);
 assert.equal(core.admissionScoreLayer.admissionPlanRecords, 71877);
 assert.equal(core.admissionScoreLayer.admissionPlanCount, 358294, "vacancy snapshots must not inflate annual plan count");
 assert.equal(core.admissionScoreLayer.vacancyPlanRecords, 2187);
 assert.equal(core.admissionScoreLayer.vacancyPlanSnapshotCount, 6099);
 assert.equal(core.admissionScoreLayer.ordinaryVocationalVacancyRecords, 926);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5114);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5115);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-vacancy-plans-2025-v3272"));
 assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "official-xizang-admission-schedule-2026-v3272"));
@@ -111,7 +114,7 @@ assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 66);
 
 assert.equal(manifest.modelVersion, core.modelVersion);
 assert.equal(manifest.provinceCount, 31);
-assert.equal(manifest.recordCount, 859382);
+assert.equal(manifest.recordCount, 866845);
 assert.equal(manifest.rankConversionCount, 116656);
 assert.equal(manifest.unknownRecords, 0);
 assert.equal(manifest.unknownRankConversions, 0);
@@ -124,7 +127,7 @@ for (const entry of Object.values(manifest.shards)) {
   assert.equal(sha256(file), entry.sha256, `${entry.file} SHA-256 mismatch`);
 }
 
-assert.equal(manifest.shards["北京"].records, 6565);
+assert.equal(manifest.shards["北京"].records, 6623);
 assert.equal(manifest.shards["北京"].rankConversions, 688);
 const beijing = runtimeJson(runtimeDataFile(`provinces/${manifest.shards["北京"].file}`));
 const beijingControlLines = beijing.records.filter((record) => record.sourceId === "official-beijing-control-lines-2026");
@@ -135,7 +138,7 @@ assert.equal(beijingControlLines.find((record) => record.controlLineRouteKind ==
 assert.equal(beijingControlLines.find((record) => record.controlLineRouteKind === "ordinary-vocational")?.minScore, 120);
 assert.equal(beijingControlLines.find((record) => record.controlLineRouteKind === "ordinary-vocational")?.scoreBasis, "chinese-math-foreign-450");
 assert.equal(beijing.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-beijing-rank-2026" && record.sourceUrl === "https://www.bjeea.cn/html/gkgz/tzgg/2026/0624/88238.html").length, 341);
-assert.equal(manifest.shards["天津"].records, 9858);
+assert.equal(manifest.shards["天津"].records, 10037);
 assert.equal(manifest.shards["天津"].rankConversions, 381);
 const tianjin = runtimeJson(runtimeDataFile(`provinces/${manifest.shards["天津"].file}`));
 const tianjinControlLines = tianjin.records.filter((record) => record.sourceId === "official-tianjin-control-lines-2026");
@@ -145,7 +148,7 @@ assert.equal(tianjinControlLines.filter((record) => record.formalScoreScope === 
 assert.equal(tianjinControlLines.find((record) => record.controlLineRouteKind === "ordinary-bachelor")?.minScore, 458);
 assert.equal(tianjinControlLines.find((record) => record.controlLineRouteKind === "ordinary-vocational"), undefined);
 assert.equal(tianjin.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-tianjin-rank-2026" && record.sourceUrl === "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845980.html").length, 381);
-assert.equal(manifest.shards["上海"].records, 6113);
+assert.equal(manifest.shards["上海"].records, 6247);
 assert.equal(manifest.shards["上海"].rankConversions, 214);
 const shanghai = runtimeJson(runtimeDataFile(`provinces/${manifest.shards["上海"].file}`));
 const shanghaiControlLines = shanghai.records.filter((record) => record.sourceId === "official-shanghai-control-lines-2026");
@@ -157,7 +160,7 @@ assert.equal(shanghaiControlLines.find((record) => record.controlLineRouteKind =
 assert.deepEqual(shanghaiControlLines.filter((record) => record.controlLineRouteKind === "art").map((record) => record.minScore).sort((left, right) => left - right), [220, 302]);
 assert.equal(shanghai.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-shanghai-rank-2026" && record.sourceUrl === "https://www.shmeea.edu.cn/page/02200/20260623/20375.html").length, 214);
 const neimengguEntry = manifest.shards["内蒙古"];
-assert.equal(neimengguEntry.records, 15559);
+assert.equal(neimengguEntry.records, 15765);
 assert.equal(neimengguEntry.rankConversions, 974);
 const neimenggu = runtimeJson(runtimeDataFile(`provinces/${neimengguEntry.file}`));
 const neimengguControlLines = neimenggu.records.filter((record) => record.sourceId === "official-neimenggu-control-lines-2026");
@@ -182,7 +185,7 @@ assert.deepEqual(
 assert.equal(neimenggu.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-neimenggu-rank-2026" && record.subjectType === "历史类" && record.sourceUrl === "https://www.nm.zsks.cn/fzlm/26gktj/202606/t20260624_46464.html").length, 471);
 assert.equal(neimenggu.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-neimenggu-rank-2026" && record.subjectType === "物理类" && record.sourceUrl === "https://www.nm.zsks.cn/fzlm/26gktj/202606/t20260624_46462.html").length, 503);
 const fujianEntry = manifest.shards["福建"];
-assert.equal(fujianEntry.records, 21966);
+assert.equal(fujianEntry.records, 22234);
 assert.equal(fujianEntry.rankConversions, 927);
 const fujian = runtimeJson(runtimeDataFile(`provinces/${fujianEntry.file}`));
 const fujianControlLines = fujian.records.filter((record) => record.sourceId === "official-fujian-control-lines-2026");
@@ -207,7 +210,7 @@ assert.deepEqual(
 assert.equal(fujian.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-fujian-rank-2026" && record.subjectType === "历史类" && record.sourceUrl === "https://www.eeafj.cn/gkptgkgsgg/20260625/14698.html").length, 455);
 assert.equal(fujian.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-fujian-rank-2026" && record.subjectType === "物理类" && record.sourceUrl === "https://www.eeafj.cn/gkptgkgsgg/20260625/14699.html").length, 472);
 const hebeiEntry = manifest.shards["河北"];
-assert.equal(hebeiEntry.records, 69144);
+assert.equal(hebeiEntry.records, 69443);
 assert.equal(hebeiEntry.rankConversions, 1094);
 const hebei = runtimeJson(runtimeDataFile(`provinces/${hebeiEntry.file}`));
 const hebeiControlLines = hebei.records.filter((record) => record.sourceId === "official-hebei-control-lines-2026");
@@ -231,7 +234,7 @@ assert.deepEqual(
 );
 assert.equal(hebei.rankConversions.filter((record) => record.year === 2026 && record.sourceId === "official-hebei-rank-2026" && record.sourceUrl === "https://www.hebeea.edu.cn/c/2026-06-24/493215.html").length, 1094);
 const xizangEntry = manifest.shards["西藏"];
-assert.equal(xizangEntry.records, 28341);
+assert.equal(xizangEntry.records, 28458);
 assert.equal(xizangEntry.rankConversions, 0);
 const xizang = runtimeJson(runtimeDataFile(`provinces/${xizangEntry.file}`));
 const xizang2026ControlLines = xizang.records.filter((record) => record.sourceId === "official-xizang-control-lines-2026");
@@ -259,7 +262,7 @@ assert.ok(vacancyRecords.every((record) => !Object.hasOwn(record, "minRank") && 
 assert.ok(vacancyRecords.every((record) => record.sourceAttachment));
 
 const anhuiEntry = manifest.shards["安徽"];
-assert.equal(anhuiEntry.records, 15962);
+assert.equal(anhuiEntry.records, 16250);
 assert.equal(anhuiEntry.rankConversions, 976);
 const anhui = runtimeJson(runtimeDataFile(`provinces/${anhuiEntry.file}`));
 const anhuiControlLines = anhui.records.filter((record) => record.sourceId === "official-anhui-control-lines-2026");
@@ -280,7 +283,7 @@ assert.equal(anhuiRankRows.length, 976);
 assert.ok(anhuiRankRows.every((record) => record.sourceUrl === "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260625/2293847718.html"));
 
 const jiangxiEntry = manifest.shards["江西"];
-assert.equal(jiangxiEntry.records, 13843);
+assert.equal(jiangxiEntry.records, 14099);
 const jiangxi = runtimeJson(runtimeDataFile(`provinces/${jiangxiEntry.file}`));
 const jiangxiControlLines = jiangxi.records.filter((record) => record.sourceId === "official-jiangxi-control-lines-2026");
 assert.equal(jiangxiControlLines.length, 30);
@@ -304,7 +307,7 @@ assert.ok(hnuJiangxiSpecial.length > 0);
 assert.ok(hnuJiangxiSpecial.every((record) => /专项|艺术/.test(record.admissionType)));
 
 const hunanEntry = manifest.shards["湖南"];
-assert.equal(hunanEntry.records, 32383);
+assert.equal(hunanEntry.records, 32686);
 assert.equal(hunanEntry.rankConversions, 1137);
 const hunan = runtimeJson(runtimeDataFile(`provinces/${hunanEntry.file}`));
 const hunanControlLines = hunan.records.filter((record) => record.sourceId === "official-hunan-control-lines-2026");
@@ -327,7 +330,7 @@ assert.deepEqual(
 );
 
 const guangdongEntry = manifest.shards["广东"];
-assert.equal(guangdongEntry.records, 18153);
+assert.equal(guangdongEntry.records, 18409);
 assert.equal(guangdongEntry.rankConversions, 8816);
 const guangdong = runtimeJson(runtimeDataFile(`provinces/${guangdongEntry.file}`));
 const guangdongControlLines = guangdong.records.filter((record) => record.sourceId === "official-guangdong-control-lines-2026");
@@ -355,7 +358,7 @@ assert.equal(guangdongRankRows.length, 8816);
 assert.ok(guangdongRankRows.every((record) => record.sourceUrl === "https://eea.gd.gov.cn/ptgk/content/post_4916165.html"));
 
 const zhejiangEntry = manifest.shards["浙江"];
-assert.equal(zhejiangEntry.records, 111407);
+assert.equal(zhejiangEntry.records, 112215);
 assert.equal(zhejiangEntry.rankConversions, 428);
 const zhejiang = runtimeJson(runtimeDataFile(`provinces/${zhejiangEntry.file}`));
 const zhejiangControlLines = zhejiang.records.filter((record) => record.sourceId === "official-zhejiang-control-lines-2026");
@@ -419,7 +422,7 @@ assert.equal(xizangReadiness.vacancyPlanSnapshotCount, 6099, "vacancy plan snaps
 assert.ok(xizangReadiness.missing.includes("缺可计算一分一段"));
 assert.ok(xizangReadiness.missing.includes("高职专科正式投档/录取数据待补（已有征集计划快照）"));
 
-const source = fs.readFileSync(appFile, "utf8");
+const source = appSource;
 const bootIndex = source.lastIndexOf("\nboot().catch");
 if (bootIndex < 0) throw new Error("Could not isolate app.js boot call");
 const instrumented = `${source.slice(0, bootIndex)}

@@ -28,7 +28,7 @@ jobs:
           fetch "$base" "$work/index.html"
           grep -q "全国高考志愿智能推荐" "$work/index.html"
           grep -q "__GAOKAO_RUNTIME_RELEASE_BASE__" "$work/index.html"
-          grep -q 'app.js?v=3.309.1' "$work/index.html"
+          grep -q 'app.js?v=3.310.0' "$work/index.html"
 
           release_path="$(node -e '
             const html = require("node:fs").readFileSync(process.argv[1], "utf8");
@@ -48,19 +48,22 @@ jobs:
           grep -q "limitedOrdinaryVocationalControlLine" "$work/app.js"
           grep -q "限定院校资格核验清单" "$work/app.js"
           grep -q "2026年普通专科控制线待发布" "$work/app.js"
+          grep -q '招生数${record.admittedCount}' "$work/app.js"
+          grep -q 'schoolTags.slice(0, 24)' "$work/app.js"
+          grep -q '推荐时按省份加载' "$work/app.js"
 
           fetch "${base}data/${release_path}/manifest.json.gz" "$work/manifest.json.gz"
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"
           jq -e '.provinceCount == 31' "$work/manifest.json" >/dev/null
-          jq -e '.recordCount == 859382' "$work/manifest.json" >/dev/null
+          jq -e '.recordCount == 866845' "$work/manifest.json" >/dev/null
           jq -e '.rankConversionCount == 116656' "$work/manifest.json" >/dev/null
           jq -e '(.shards | length) == 31' "$work/manifest.json" >/dev/null
 
           fetch "${base}data/${release_path}/knowledge-core.json.gz" "$work/knowledge-core.json.gz"
           gzip -t "$work/knowledge-core.json.gz"
           gzip -dc "$work/knowledge-core.json.gz" \
-            | jq -e '.modelVersion == "local-deterministic-v3.309-national-school-official-qlu2021-2025-native-rank-859382records"' >/dev/null
+            | jq -e '.modelVersion == "local-deterministic-v3.310-national-school-official-hdu2014-2025-admitted-count-866845records"' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-nchu-national-2021-2025-school-major-admission" and .parsedRecords == 4860 and .derivedRankRecords == 4804 and .nativeAdmissionRankRecords == 0 and .rankUnavailableRecords == 56 and .provinceCount == 29 and (.evidenceBoundary | contains("not school-recorded lowest admitted rank")))] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
@@ -69,6 +72,8 @@ jobs:
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-wtu-national-2021-2025-school-major-admission" and .parsedRecords == 2222 and .nativeAdmissionRankRecords == 1921 and .derivedRankRecords == 0 and .rankUnavailableRecords == 301 and .ordinaryRecords == 1633 and .specialPathRecords == 589 and .provinceCount == 31 and (.evidenceBoundary | contains("school-recorded min-score rank")) and (.evidenceBoundary | contains("not province-wide closure")))] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-qlu-national-2021-2025-school-major-admission" and .parsedRecords == 2157 and .nativeAdmissionRankRecords == 2074 and .derivedRankRecords == 0 and .rankUnavailableRecords == 83 and .ordinaryRecords == 1849 and .specialPathRecords == 308 and .provinceCount == 28 and (.provincesWithRecords | index("西藏") == null) and (.provincesWithRecords | index("青海") == null) and (.provincesWithRecords | index("宁夏") == null) and (.evidenceBoundary | contains("school-recorded min-score rank")) and (.evidenceBoundary | contains("not province-wide closure")))] | length == 1' >/dev/null
+          gzip -dc "$work/knowledge-core.json.gz" \
+            | jq -e '[.admissionScoreLayer.sourceNotes[] | select(.id == "official-hdu-national-2014-2025-school-major-admission" and .parsedRecords == 7463 and .admittedCountRecords == 7463 and .nativeAdmissionRankRecords == 0 and .derivedRankRecords == 0 and .rankUnavailableRecords == 7463 and .ordinaryRecords == 6059 and .specialPathRecords == 1404 and .provinceCount == 31 and (.yearsWithRecords | length) == 12 and (.evidenceBoundary | contains("rank and elective requirement unavailable")) and (.evidenceBoundary | contains("not province-wide closure")))] | length == 1' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
             | jq -e '.admissionScoreLayer.pendingOrdinaryVocationalAudit.pendingCount == 5 and .admissionScoreLayer.pendingOrdinaryVocationalAudit.exactPublicationDateProvinces == ["上海"] and (.admissionScoreLayer.pendingOrdinaryVocationalAudit.publicationDateUnannouncedProvinces | sort) == (["天津", "江苏", "海南", "山西"] | sort) and .admissionScoreLayer.pendingOrdinaryVocationalAudit.noHistoricalSubstitution == true' >/dev/null
           gzip -dc "$work/knowledge-core.json.gz" \
@@ -153,6 +158,10 @@ jobs:
             | jq -e '[.records[] | select(.sourceId == "official-qlu-national-2021-2025-school-major-admission")] | length == 89' >/dev/null
           gzip -dc "$work/jiangxi.json.gz" \
             | jq -e '[.records[] | select(.id == "qlu-2025-9170e490195e37b6ae" and .majorName == "网络空间安全" and .minScore == 529 and .averageScore == 538.35 and .maxScore == 551 and .controlLine == 429 and .minRankEnd == 52796 and .sourcePlanTypeRaw == "普通类" and .rankDerivedFromScore == false and .rankEvidenceScope == "school-recorded-min-score-rank" and .nativeAdmissionRankUnavailable == false)] | length == 1' >/dev/null
+          gzip -dc "$work/jiangxi.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hdu-national-2014-2025-school-major-admission")] | length == 256' >/dev/null
+          gzip -dc "$work/jiangxi.json.gz" \
+            | jq -e '[.records[] | select(.id == "hdu-2025-09dd552ef21fc9fc31" and .majorName == "计算机科学与技术" and .admittedCount == 3 and .minScore == 605 and .averageScore == 605.67 and .maxScore == 606 and .rankUnavailable == true and .rankDerivedFromScore == false and .formalScoreScope == "school-official-only")] | length == 1' >/dev/null
           gzip -dc "$work/xizang.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-xizang-control-lines-2026")] | length == 22' >/dev/null
           gzip -dc "$work/xizang.json.gz" \
@@ -169,12 +178,22 @@ jobs:
             | jq -e '[.records[] | select(.sourceId == "official-wtu-national-2021-2025-school-major-admission" and .rankUnavailable == true and .scoreOnly == true and .formalScoreScope == "school-official-only")] | length == 17' >/dev/null
           gzip -dc "$work/xizang.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-qlu-national-2021-2025-school-major-admission")] | length == 0' >/dev/null
+          gzip -dc "$work/xizang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hdu-national-2014-2025-school-major-admission")] | length == 117' >/dev/null
+          gzip -dc "$work/xizang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hdu-national-2014-2025-school-major-admission" and (.rankUnavailable != true or .rankDerivedFromScore != false))] | length == 0' >/dev/null
           gzip -dc "$work/zhejiang.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-zhejiang-control-lines-2026")] | length == 57' >/dev/null
           gzip -dc "$work/zhejiang.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-zhejiang-control-lines-2026" and .controlLineRouteKind == "segment") | .minScore] | sort == [266, 494]' >/dev/null
           gzip -dc "$work/zhejiang.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-zhejiang-control-lines-2026" and .formalScoreScope == "special-path-only")] | length == 55' >/dev/null
+          gzip -dc "$work/zhejiang.json.gz" \
+            | jq -e '[.records[] | select(.sourceId == "official-hdu-national-2014-2025-school-major-admission")] | length == 808' >/dev/null
+          gzip -dc "$work/zhejiang.json.gz" \
+            | jq -e '[.records[] | select(.id == "hdu-2025-19b94ab7c5acac6256" and .majorName == "计算机科学与技术" and .admittedCount == 241 and .minScore == 634 and .formalScoreScope == "school-official-only")] | length == 1' >/dev/null
+          gzip -dc "$work/zhejiang.json.gz" \
+            | jq -e '[.records[] | select(.id == "hdu-2025-99f7483d108727b198" and .sourceBatchRaw == "普通类提前" and .formalScoreScope == "special-path-only")] | length == 1' >/dev/null
           gzip -dc "$work/hunan.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-hunan-control-lines-2026")] | length == 37' >/dev/null
           gzip -dc "$work/hunan.json.gz" \

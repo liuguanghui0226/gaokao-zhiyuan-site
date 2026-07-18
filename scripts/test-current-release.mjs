@@ -55,6 +55,9 @@ const tests = [
   "test-official-qlu-import-v3309.mjs",
   "test-qlu-native-rank-boundaries-v3309.mjs",
   "test-official-qlu-runtime-v3309.mjs",
+  "test-official-hdu-import-v3310.mjs",
+  "test-hdu-score-only-boundaries-v3310.mjs",
+  "test-official-hdu-runtime-v3310.mjs",
 ];
 
 const results = tests.map((test) => {

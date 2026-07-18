@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.309-national-school-official-qlu2021-2025-native-rank-859382records";
+const modelVersion = "local-deterministic-v3.310-national-school-official-hdu2014-2025-admitted-count-866845records";
 const sourceId = "official-qlu-national-2021-2025-school-major-admission";
 
 function sha256(bytes) {
@@ -21,18 +21,18 @@ const manifestBytes = zlib.gunzipSync(fs.readFileSync(path.join(releaseDir, "man
 const core = JSON.parse(coreBytes);
 const manifest = JSON.parse(manifestBytes);
 const runtimeManifest = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/admissions/official-national-school-admission-2021-2025-v3309-qlu-runtime-manifest.json"), "utf8"));
-const coverageAudit = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/admissions/admission-score-coverage-v3309.json"), "utf8"));
+const coverageAudit = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/admissions/admission-score-coverage-v3310.json"), "utf8"));
 
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
-assert.equal(core.browserRuntime.fullMasterRecords, 859382);
-assert.equal(core.admissionScoreLayer.structuredRecords, 859382);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5114);
+assert.equal(core.browserRuntime.fullMasterRecords, 866845);
+assert.equal(core.admissionScoreLayer.structuredRecords, 866845);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5115);
 assert.equal(manifest.modelVersion, modelVersion);
-assert.equal(manifest.recordCount, 859382);
+assert.equal(manifest.recordCount, 866845);
 assert.equal(manifest.rankConversionCount, 116656);
 assert.equal(Object.keys(manifest.shards).length, 31);
-assert.equal(Object.values(manifest.shards).reduce((sum, item) => sum + item.records, 0), 859382);
+assert.equal(Object.values(manifest.shards).reduce((sum, item) => sum + item.records, 0), 866845);
 assert.equal(manifest.core.bytes, coreBytes.length);
 assert.equal(manifest.core.sha256, sha256(coreBytes));
 
@@ -110,12 +110,12 @@ assert.equal(computer.rankDerivedFromScore, false);
 assert.equal(computer.nativeAdmissionRankUnavailable, false);
 assert.equal(computer.sourcePlanTypeRaw, "普通类");
 
-assert.equal(coverageAudit.totals.records, 785715);
-assert.equal(coverageAudit.totals.recentRecords2023Plus, 680456);
+assert.equal(coverageAudit.totals.records, 793178);
+assert.equal(coverageAudit.totals.recentRecords2023Plus, 682439);
 assert.equal(coverageAudit.totals.recordsWithScoreDerivedRank, 4804);
 assert.equal(coverageAudit.totals.recordsWithNativeRank, 333035);
 assert.equal(coverageAudit.totals.recordsWithAnyRank, 337839);
-assert.equal(coverageAudit.totals.byDataType["major-admission"], 468338);
+assert.equal(coverageAudit.totals.byDataType["major-admission"], 475801);
 assert.deepEqual(coverageAudit.lowestCoverageProvinces, ["西藏", "青海", "上海", "北京", "宁夏", "新疆", "天津", "海南", "吉林", "甘肃"]);
 
 console.log(JSON.stringify({

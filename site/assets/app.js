@@ -1717,10 +1717,15 @@ function buildPlanOptions(candidate, profile, band) {
 
 function majorInterestScore(record, profile) {
   const text = normalizeText(recordSearchText(record));
+  const majorText = normalizeText(record.majorName || "");
   const interestWords = parseList(`${profile.interest} ${profile.abilityProfile}`);
   let score = 0;
   for (const word of interestWords) {
-    if (text.includes(normalizeText(word))) score += 8;
+    const normalizedWord = normalizeText(word);
+    if (!normalizedWord) continue;
+    if (text.includes(normalizedWord)) score += 8;
+    if (majorText === normalizedWord) score += 24;
+    else if (majorText.startsWith(normalizedWord)) score += 14;
   }
   if ((record.disciplineCodes || []).includes(profile.disciplineFocus)) score += 14;
   if (/语文|英语|表达|内容|媒体|数字媒体|虚拟现实|VR/i.test(profile.abilityProfile) && /虚拟现实|数字媒体|软件|数据|信息/.test(record.majorName || "")) score += 10;
@@ -1867,6 +1872,7 @@ function buildAdmissionOptions(candidate, profile) {
         record.city,
         ...(record.schoolTags || []),
         record.minScore ? `最低分${record.minScore}` : "",
+        record.admittedCount ? `招生数${record.admittedCount}` : "",
         record.rankRangeText ? `位次${record.rankRangeText}` : "",
         trend?.label || "",
         record.majorGroup || "",
@@ -2862,6 +2868,8 @@ function renderAdmissionScoreLayer() {
   const provinceReadinessRows = provinceReadiness.rows || [];
   const weakestProvinces = provinceReadiness.weakest || [];
   const schoolTags = coverage.schools || [];
+  const visibleSchoolTags = schoolTags.slice(0, 24);
+  const hiddenSchoolTagCount = Math.max(0, schoolTags.length - visibleSchoolTags.length);
   const scoreRange = coverage.scoreRange;
   const rankScoreRange = rankCoverage.scoreRange;
   const lowBands = coverage.lowBands || {};
@@ -2966,7 +2974,10 @@ function renderAdmissionScoreLayer() {
       ${(coverage.schoolTags || []).length ? `<div class="coverage-row compact">
         ${(coverage.schoolTags || []).slice(0, 10).map((tag) => `<span>${esc(tag)}</span>`).join("")}
       </div>` : ""}
-      ${schoolTags.length ? `<div class="source-chip-list">${schoolTags.map((name) => `<span>${esc(name)}</span>`).join("")}</div>` : ""}
+      ${visibleSchoolTags.length ? `<div class="source-chip-list school-sample-list">
+        ${visibleSchoolTags.map((name) => `<span>${esc(name)}</span>`).join("")}
+        ${hiddenSchoolTagCount ? `<span>另有 ${fmtNumber(hiddenSchoolTagCount)} 所院校已入库，推荐时按省份加载</span>` : ""}
+      </div>` : ""}
       ${renderTags(evidenceTags)}
     </div>
     <div class="grid-3">${tables}</div>
