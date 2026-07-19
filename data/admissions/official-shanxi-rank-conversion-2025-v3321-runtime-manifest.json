@@ -1,0 +1,48 @@
+{
+  "dataset": "official-shanxi-rank-conversion-2025-v3321-runtime",
+  "generatedAt": "2026-07-19T00:29:03.428Z",
+  "sourceId": "official-shanxi-rank-2025-v3321",
+  "importFile": "data/admissions/official-shanxi-rank-conversion-2025-v3321-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.320-guangxi-dual-bonus-scope-rank2025-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 124183,
+    "provinceRankConversions": 1070
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.321-shanxi-official-rank2025-bachelor-floor-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 124700,
+    "rankConversionsAdded": 517,
+    "provinceRecords": 20681,
+    "provinceRankConversions": 1587,
+    "linkedAdmissionRecords": 6587,
+    "officialLinkedRecords": 5826,
+    "thirdPartyLinkedRecords": 761,
+    "schoolOfficialScopeLinkedRecords": 572,
+    "specialPathExcludedRecords": 75,
+    "topBucketLinkedRecords": 0,
+    "linkedSourceNotes": 79,
+    "linkedByType": {
+      "institution-admission": 114,
+      "major-admission": 1206,
+      "major-group-admission": 5132,
+      "school-admission-summary": 5,
+      "vocational-admission": 130
+    },
+    "sourceNotes": 5125,
+    "shardBytes": 24466471,
+    "shardSha256": "a2e14d665c173efc674852536c095a098e5904028b1961163ae05331ac2a8e3c",
+    "coreBytes": 15651486,
+    "coreSha256": "9aa889354dedd0d34d3adf9650b3aa181b51adf4b1d9501c90d4b13fd322cd1e",
+    "manifestBytesBeforeLiteRebuild": 6146,
+    "manifestSha256BeforeLiteRebuild": "8496c784bd947dbd8aa970ad7e86fd8840ad9d0b5118c4cdd19af04107d138f9"
+  },
+  "cautions": [
+    "山西2025公开普通类一分一段表止于本科控制线：历史443分、物理419分；专科段不得由本科表外推。",
+    "首批高位考生按公开表合并处理，本导入只保留累计人数可确定的位次区间，不生成档内伪精确名次。",
+    "8月发布的未录取考生成绩分段表属于录取进程中的剩余考生口径，已作为排除证据保存，不与6月全体普通类表合并。",
+    "最低分换算位次不是院校投档表原生公布的最低位次，正式填报前仍须核验当年考试院表、招生计划和院校章程。"
+  ]
+}

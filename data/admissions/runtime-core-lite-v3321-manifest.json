@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3321",
+  "generatedAt": "2026-07-19T01:19:09.677Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.321-shanxi-official-rank2025-bachelor-floor-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5125,
+    "lite": 5125,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15651486,
+    "compressedBytes": 2374434,
+    "sha256": "9aa889354dedd0d34d3adf9650b3aa181b51adf4b1d9501c90d4b13fd322cd1e"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3005662,
+    "compressedBytes": 478004,
+    "sha256": "8f8106f81b1d48835a484a10670dcc822bd686aa0961c6482350f48714a7946b",
+    "rawReductionRate": 0.807963
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7966,
+    "compressedBytes": 2767,
+    "sha256": "3a22f9938a33b756f3da1198ba10c93d92132d49f759c1ec0f6f58ac1fe0f4a6"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

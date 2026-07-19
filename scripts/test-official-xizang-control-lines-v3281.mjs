@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.320-guangxi-dual-bonus-scope-rank2025-aligned-868426records";
+const modelVersion = "local-deterministic-v3.321-shanxi-official-rank2025-bachelor-floor-aligned-868426records";
 
 function readGzipJson(file) {
   return JSON.parse(zlib.gunzipSync(fs.readFileSync(file)).toString("utf8"));

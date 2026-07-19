@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.320-guangxi-dual-bonus-scope-rank2025-aligned-868426records";
+const modelVersion = "local-deterministic-v3.321-shanxi-official-rank2025-bachelor-floor-aligned-868426records";
 const sourceId = "official-shanxi-control-lines-2026";
 const rankSourceId = "official-shanxi-rank-2026";
 const rankUrls = {
@@ -51,13 +51,13 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.browserRuntime.fullMasterRecords, 868426);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 124183);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5124);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 124700);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5125);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.shards["山西"].records, 20681);
-assert.equal(manifest.shards["山西"].rankConversions, 1070);
+assert.equal(manifest.shards["山西"].rankConversions, 1587);
 assert.equal(runtimeManifest.after.sourceRecords, 32);
 assert.equal(runtimeManifest.after.rankRowsLinked, 555);
 assert.equal(runtimeManifest.after.rankRowsFullCorroborationCrossChecked, 555);
