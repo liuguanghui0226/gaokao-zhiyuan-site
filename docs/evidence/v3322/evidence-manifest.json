@@ -1,0 +1,96 @@
+{
+  "dataset": "official-hubei-rank-conversion-2025-v3322-evidence",
+  "province": "湖北",
+  "year": 2025,
+  "publisher": "湖北省招办（湖北省教育考试院、湖北省教育厅发布）",
+  "hbeaUrl": "https://www.hbea.edu.cn/html/2025-06/15292.html",
+  "educationDepartmentUrl": "https://jyt.hubei.gov.cn/bmdt/ztzl/gxzs/zszy/zsfw/202506/t20250625_5706259.shtml",
+  "historyPdfUrl": "https://jyt.hubei.gov.cn/bmdt/ztzl/gxzs/zszy/zsfw/202506/P020250625730351260572.pdf",
+  "physicsPdfUrl": "https://jyt.hubei.gov.cn/bmdt/ztzl/gxzs/zszy/zsfw/202506/P020250625730351882018.pdf",
+  "provenanceBoundary": "The Hubei examination-authority page supplies 12 official images and identifies the provincial admissions office as source. The Hubei Education Department page supplies two official PDFs. PDF rows are the structured source of truth after arithmetic closure; fixed-grid OCR over all authority images is an independent cross-carrier check. Published cumulative counts include policy bonus points. Derived ranges are same-year provincial score segments, not institution-native admission ranks.",
+  "evidenceInventory": {
+    "files": 54,
+    "sourceBytes": 3560742,
+    "officialPages": 2,
+    "officialPdfs": 2,
+    "pdfTextLayers": 2,
+    "officialImages": 12,
+    "fixedGridOcrFiles": 36,
+    "perFileHashes": "data/admissions/official-hubei-rank-conversion-2025-v3322-import.json#audit.evidenceSha256"
+  },
+  "primaryEvidenceSha256": {
+    "hbea-index.html": "25b48fd6f4345849e3be1d6df255641e996af825f6c9a2d313e8816994e2acf6",
+    "hubei-education-page.html": "0afc24d6e573c3a75c9ccd52daea4fce65776d0405f11e4734f11cf610636afc",
+    "hubei-education-history.pdf": "2ea1149d48c317103c6088f313d8cecdf095c4c08c570fce6674b3bbff8e92b8",
+    "hubei-education-physics.pdf": "d76c5bf632b072e6630cdd8a3f7ae1dad8180d2c7bab94022cdf9cf144789833",
+    "hubei-education-history-raw.txt": "10aea0f81b21e691b1edf608904cceb86e61c05cfc9c9130a8d2d422790bceee",
+    "hubei-education-physics-raw.txt": "04c0452ec1e98e73592cbcfabd9d30989edc2dd37de81886d1ff39aab672690e",
+    "hbea-021.jpg": "7a22c3842d1c2206d52d04a88a0402efd82c9e2ae342660dda3eaba3385f767a",
+    "hbea-022.jpg": "42f72a787eb7a797d4419ff78c9436cdad93f346e2252e381f26be166bc27abc",
+    "hbea-023.jpg": "5f9393efd8f6757371fb5455da56e3e5022aba1485344871b681d16b8f7fa260",
+    "hbea-024.jpg": "4290441f45acee278d13e8486d42931076ae9be4427e78c19d0bf98d213786e6",
+    "hbea-025.jpg": "ba09aa163783c6552f65ae71b54043f2c81f227a5e48aca8450908f8a4dde357",
+    "hbea-026.jpg": "0fc76180e92f5e89fd023af463fc787125327e4ec388446c00937cffbe97283b",
+    "hbea-031.jpg": "72eb8f32e372f9d28fc5e737f785ad9b17b7d81bbcd99b21a6cfb2c78594e171",
+    "hbea-032.jpg": "dc3af939f73e43ec742e7de85acafa9a64886df70b2c34629856eb5c155b09be",
+    "hbea-033.jpg": "f371fb21804eb03b73047e8687791914f6f3bf962e366274f680fb6509ac3e88",
+    "hbea-034.jpg": "f8bbf7134da4468e164398fd455e7e447303ff3bb2ea879d4eb26cca229e3283",
+    "hbea-035.jpg": "af9edd07d63196c346cb091a832a1df0d0957ac151688c70a96073b86302c7ae",
+    "hbea-036.jpg": "664f5c0fd7d93ab33928a1f2c873de0866c08de5792e6d99426438e31a13d2fc"
+  },
+  "parseAudit": {
+    "rankConversions": 1313,
+    "publishedRows": 1311,
+    "topBuckets": 2,
+    "officialPdfCellsValidated": 3933,
+    "allCountsClose": true,
+    "allCumulativeRanksContinuous": true,
+    "imageOcrRowsCompared": 1311,
+    "imageOcrScoreMatches": 1276,
+    "imageOcrPeopleMatches": 1046,
+    "imageOcrCumulativeMatches": 1289,
+    "imageOcrAllCellMatches": 1024,
+    "imageOcrScoreCumulativeMatches": 1260,
+    "historyRecords": 650,
+    "physicsRecords": 663
+  },
+  "publishedFloors": {
+    "history": 0,
+    "physics": 0
+  },
+  "topBuckets": {
+    "history": "674-750 -> rank 1-15",
+    "physics": "692-750 -> rank 1-22"
+  },
+  "checkpoints": {
+    "history600": { "rankStart": 3041, "rankEnd": 3166 },
+    "physics600": { "rankStart": 13849, "rankEnd": 14274 },
+    "history200": { "rankStart": 136293, "rankEnd": 136356 },
+    "physics200": { "rankStart": 246211, "rankEnd": 246274 }
+  },
+  "runtimeMerge": {
+    "rankConversionsAdded": 1313,
+    "linkedAdmissionRecords": 7659,
+    "officialLinkedRecords": 7069,
+    "thirdPartyLinkedRecords": 590,
+    "schoolOfficialScopeLinkedRecords": 629,
+    "specialPathExcludedRecords": 196,
+    "ordinaryIntegerScoreRecordsStillUnranked": 0,
+    "linkedByType": {
+      "institution-admission": 166,
+      "major-admission": 1037,
+      "major-group-admission": 4553,
+      "school-admission-summary": 3,
+      "vocational-admission": 1900
+    }
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.322-hubei-rank-2025.tar.gz",
+    "bytes": 2571562,
+    "files": 54,
+    "sha256": "f35a43e0299336a03bafa8fa67bcfe5976e92ee66c2d02d02fcc101a967bf034",
+    "targetRelease": "data-v3.275",
+    "url": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/download/data-v3.275/evidence-v3.322-hubei-rank-2025.tar.gz",
+    "status": "uploaded-and-redownload-verified"
+  }
+}

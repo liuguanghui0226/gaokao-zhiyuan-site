@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.321-shanxi-official-rank2025-bachelor-floor-aligned-868426records";
+const modelVersion = "local-deterministic-v3.322-hubei-official-rank2025-full-cohort-aligned-868426records";
 const sourceId = "official-shanxi-rank-2025-v3321";
 const floors = { 历史类: 443, 物理类: 419 };
 
@@ -61,13 +61,13 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(lite.modelVersion, modelVersion);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 124700);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 126013);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 124700);
-assert.equal(manifest.runtimeProfile.version, "v3.321");
+assert.equal(manifest.rankConversionCount, 126013);
+assert.equal(manifest.runtimeProfile.version, "v3.322");
 assert.equal(manifest.runtimeProfile.initialCore, "knowledge-core-lite.json.gz");
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5125);
-assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5125);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5126);
+assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5126);
 assert.equal(lite.browserRuntime.profile, "core-lite-v1");
 assert.ok(liteAudit.liteCore.rawReductionRate >= 0.75);
 
@@ -120,8 +120,8 @@ assert.ok(sourceNote);
 assert.deepEqual(sourceNote.publishedScoreFloors, { 历史类: 443, 物理类: 419 });
 assert.equal(sourceNote.provenance.htmlDifferences, 0);
 assert.equal(sourceNote.provenance.excludedUnadmittedCandidateTable, true);
-assert.ok(core.admissionScoreLayer.currentFinding.includes("6587条山西2025普通类本科线以上整数最低分记录"));
-assert.ok(core.admissionScoreLayer.downgradeReason.includes("低于本科线"));
+assert.ok(sourceNote.usage.includes("低于对应本科线不外推"));
+assert.ok(sourceNote.cautions.some((value) => value.includes("专科段不得由本科表外推")));
 
 const shardRaw = zlib.gunzipSync(fs.readFileSync(path.join(releaseDir, `${path.basename(shanxiItem.file, ".json")}.json.gz`)));
 const coreRaw = zlib.gunzipSync(fs.readFileSync(coreFile));

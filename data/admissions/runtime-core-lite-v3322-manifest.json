@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3322",
+  "generatedAt": "2026-07-23T17:19:30.651Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.322-hubei-official-rank2025-full-cohort-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5126,
+    "lite": 5126,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15677255,
+    "compressedBytes": 2381436,
+    "sha256": "59fc3d22a0749f5abf389b2a28cbd00400bdc046816798211837198f821f4247"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3006043,
+    "compressedBytes": 477998,
+    "sha256": "1a41ff1d0d0a5a35ed023e5d4bc565c81f3d358c11e68bbec7c1ac74577dc74e",
+    "rawReductionRate": 0.808255
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7962,
+    "compressedBytes": 2769,
+    "sha256": "ba215ed3469d8ff2d502bae7912f89335b8c6930e7dabfe50037f19b16370123"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

@@ -1,0 +1,48 @@
+{
+  "dataset": "official-hubei-rank-conversion-2025-v3322-runtime",
+  "generatedAt": "2026-07-23T17:17:19.426Z",
+  "sourceId": "official-hubei-rank-2025-v3322",
+  "importFile": "data/admissions/official-hubei-rank-conversion-2025-v3322-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.321-shanxi-official-rank2025-bachelor-floor-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 124700,
+    "provinceRankConversions": 1079
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.322-hubei-official-rank2025-full-cohort-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 126013,
+    "rankConversionsAdded": 1313,
+    "provinceRecords": 16239,
+    "provinceRankConversions": 2392,
+    "linkedAdmissionRecords": 7659,
+    "officialLinkedRecords": 7069,
+    "thirdPartyLinkedRecords": 590,
+    "schoolOfficialScopeLinkedRecords": 629,
+    "specialPathExcludedRecords": 196,
+    "topBucketLinkedRecords": 1,
+    "linkedSourceNotes": 109,
+    "linkedByType": {
+      "institution-admission": 166,
+      "major-admission": 1037,
+      "major-group-admission": 4553,
+      "school-admission-summary": 3,
+      "vocational-admission": 1900
+    },
+    "sourceNotes": 5126,
+    "shardBytes": 21852230,
+    "shardSha256": "5f1182ba41a132afd7f39cc0e9693e8c1d964fa36fbe870f5e51300b38898346",
+    "coreBytes": 15677255,
+    "coreSha256": "59fc3d22a0749f5abf389b2a28cbd00400bdc046816798211837198f821f4247",
+    "manifestBytesBeforeLiteRebuild": 6142,
+    "manifestSha256BeforeLiteRebuild": "164a4694126b485d6e4275aeeb973566370f8871e910f69a33b164b21c0d1574"
+  },
+  "cautions": [
+    "表中累计人数含政策性加分，只能用于湖北2025同首选科目的普通类分数位次换算。",
+    "最高分段按官方首个公开分数档之前的累计人数合并为区间，不生成区间内伪精确名次。",
+    "艺术类、体育类、技能高考、综合评价及其他特殊路径不与普通类一分一段表混用。",
+    "最低分换算位次不是院校投档表原生公布的最低位次，正式填报前仍须核验当年考试院表、招生计划和院校章程。"
+  ]
+}
