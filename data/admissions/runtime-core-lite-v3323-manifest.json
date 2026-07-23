@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3323",
+  "generatedAt": "2026-07-23T18:07:00.699Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.323-fujian-official-rank2025-published-floor-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5127,
+    "lite": 5127,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15704606,
+    "compressedBytes": 2386138,
+    "sha256": "73d1006d31dfcef4bfe088c117886985090bc578c325b92aafc198e63e0b7bcc"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3006606,
+    "compressedBytes": 478133,
+    "sha256": "10718fc90c2bd9fc44132251c3d5f9fd2e7a2d34936c26acd17ec900b766fe67",
+    "rawReductionRate": 0.808553
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7968,
+    "compressedBytes": 2771,
+    "sha256": "49cb084d24b840f370cfe743024716a362365604089b4a12fe31b7cb68e3c1aa"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

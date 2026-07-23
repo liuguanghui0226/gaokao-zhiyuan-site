@@ -24,12 +24,12 @@ struct OCRResult: Encodable {
 }
 
 func usage() -> Never {
-    fputs("Usage: vision-numeric-grid-ocr image rowCount firstRowTop rowPitch x0 x1 x2 x3 [scale]\n", stderr)
+    fputs("Usage: vision-numeric-grid-ocr image rowCount firstRowTop rowPitch x0 x1 x2 x3 [scale] [threshold]\n", stderr)
     fputs("Reads score, people, and cumulative numeric cells from one three-column table panel.\n", stderr)
     exit(2)
 }
 
-guard CommandLine.arguments.count == 9 || CommandLine.arguments.count == 10 else {
+guard (9...11).contains(CommandLine.arguments.count) else {
     usage()
 }
 
@@ -50,7 +50,8 @@ guard let rowCount = Int(CommandLine.arguments[2]),
     usage()
 }
 
-let scale = CommandLine.arguments.count == 10 ? max(1, min(12, Int(CommandLine.arguments[9]) ?? 6)) : 6
+let scale = CommandLine.arguments.count >= 10 ? max(1, min(12, Int(CommandLine.arguments[9]) ?? 6)) : 6
+let threshold = CommandLine.arguments.count == 11 ? max(0, min(255, Int(CommandLine.arguments[10]) ?? 0)) : 0
 let imageURL = URL(fileURLWithPath: imagePath)
 guard let source = CGImageSourceCreateWithURL(imageURL as CFURL, nil),
       let loadedImage = CGImageSourceCreateImageAtIndex(source, 0, nil) else {
@@ -79,13 +80,37 @@ func scaled(_ cgImage: CGImage, by scale: Int) -> CGImage {
     return context.makeImage() ?? cgImage
 }
 
+func highContrast(_ cgImage: CGImage, threshold: Int) -> CGImage {
+    guard threshold > 0 else { return cgImage }
+    let width = cgImage.width
+    let height = cgImage.height
+    var pixels = [UInt8](repeating: 255, count: width * height)
+    guard let context = CGContext(
+        data: &pixels,
+        width: width,
+        height: height,
+        bitsPerComponent: 8,
+        bytesPerRow: width,
+        space: CGColorSpaceCreateDeviceGray(),
+        bitmapInfo: CGImageAlphaInfo.none.rawValue
+    ) else {
+        return cgImage
+    }
+    context.draw(cgImage, in: CGRect(x: 0, y: 0, width: width, height: height))
+    for index in pixels.indices {
+        pixels[index] = pixels[index] <= threshold ? 0 : 255
+    }
+    return context.makeImage() ?? cgImage
+}
+
 func recognizeDigits(_ cgImage: CGImage) throws -> (String, Float) {
     let request = VNRecognizeTextRequest()
     request.recognitionLevel = .accurate
     request.recognitionLanguages = ["en-US"]
     request.usesLanguageCorrection = false
     request.minimumTextHeight = 0.05
-    let handler = VNImageRequestHandler(cgImage: scaled(cgImage, by: scale), options: [:])
+    let prepared = highContrast(cgImage, threshold: threshold)
+    let handler = VNImageRequestHandler(cgImage: scaled(prepared, by: scale), options: [:])
     try handler.perform([request])
     let candidates = (request.results ?? []).compactMap { observation -> (String, Float)? in
         guard let candidate = observation.topCandidates(1).first else { return nil }

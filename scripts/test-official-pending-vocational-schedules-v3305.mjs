@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.322-hubei-official-rank2025-full-cohort-aligned-868426records";
+const modelVersion = "local-deterministic-v3.323-fujian-official-rank2025-published-floor-aligned-868426records";
 const pendingProvinces = ["上海", "天津", "江苏", "海南", "山西"];
 const sourceIds = {
   上海: "official-shanghai-control-lines-2026",
@@ -40,12 +40,12 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.browserRuntime.fullMasterRecords, 868426);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 126013);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5126);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 126945);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5127);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 126013);
+assert.equal(manifest.rankConversionCount, 126945);
 assert.equal(runtimeManifest.after.modelVersion, "local-deterministic-v3.305-pending-vocational-schedule-audit-and-ui-847238records");
 assert.equal(runtimeManifest.after.recordCount, 847238);
 assert.deepEqual([...runtimeManifest.after.pendingProvinces].sort(), [...pendingProvinces].sort());

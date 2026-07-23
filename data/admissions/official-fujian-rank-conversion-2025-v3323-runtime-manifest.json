@@ -1,0 +1,50 @@
+{
+  "dataset": "official-fujian-rank-conversion-2025-v3323-runtime",
+  "generatedAt": "2026-07-23T18:03:10.618Z",
+  "sourceId": "official-fujian-rank-2025-v3323",
+  "importFile": "data/admissions/official-fujian-rank-conversion-2025-v3323-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.322-hubei-official-rank2025-full-cohort-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 126013,
+    "provinceRankConversions": 927
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.323-fujian-official-rank2025-published-floor-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 126945,
+    "rankConversionsAdded": 932,
+    "provinceRecords": 22234,
+    "provinceRankConversions": 1859,
+    "linkedAdmissionRecords": 7591,
+    "officialLinkedRecords": 6353,
+    "thirdPartyLinkedRecords": 1238,
+    "schoolOfficialScopeLinkedRecords": 689,
+    "specialPathExcludedRecords": 149,
+    "topBucketLinkedRecords": 0,
+    "linkedSourceNotes": 110,
+    "linkedByType": {
+      "institution-admission": 195,
+      "major-admission": 1718,
+      "major-group-admission": 10,
+      "school-admission-summary": 4,
+      "vocational-admission": 5664
+    },
+    "sourceNotes": 5127,
+    "shardBytes": 25822093,
+    "shardSha256": "930681fbde3d647c523b9a5d36ebb14c3e310c26b6d9a4a466078858684d224a",
+    "coreBytes": 15704606,
+    "coreSha256": "73d1006d31dfcef4bfe088c117886985090bc578c325b92aafc198e63e0b7bcc",
+    "manifestBytesBeforeLiteRebuild": 6148,
+    "manifestSha256BeforeLiteRebuild": "a83e36b3efa4cda78b747a5d82ef2e1fe7c2ab755caa1382e424ce5322dc47e5"
+  },
+  "cautions": [
+    "表中累计人数按含政策性加分的投档成绩统计，只能用于福建2025同首选科目的普通类分数位次换算。",
+    "历史类664分为0人占位，考试院原图未刊出且不生成空位次区间。",
+    "官方原图公开至215分；低于215分的记录保持无位次状态，不向下外推。",
+    "最高分段按官方首个公开分数档之前的累计人数合并为区间，不生成区间内伪精确名次。",
+    "艺术类、体育类、综合评价及其他特殊路径不与普通类一分一段表混用。",
+    "最低分换算位次不是院校投档表原生公布的最低位次，正式填报前仍须核验当年考试院表、招生计划和院校章程。"
+  ]
+}

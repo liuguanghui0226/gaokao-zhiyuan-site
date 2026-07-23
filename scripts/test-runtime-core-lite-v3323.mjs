@@ -43,11 +43,11 @@ for (const note of liteNotes) {
   assert.ok(note.id && note.title && note.quality);
   assert.ok(Object.keys(note).every((key) => allowedFields.has(key)), `Lite source note ${note.id} leaked a full-evidence field`);
 }
-const rankSource = liteNotes.find((note) => note.id === "official-hubei-rank-2025-v3322");
-assert.equal(rankSource.province, "湖北");
+const rankSource = liteNotes.find((note) => note.id === "official-fujian-rank-2025-v3323");
+assert.equal(rankSource.province, "福建");
 assert.equal(rankSource.year, 2025);
-assert.equal(rankSource.quality, "official-hubei-education-department-pdf-exam-authority-images-cross-verified");
-assert.equal(rankSource.url, "https://www.hbea.edu.cn/html/2025-06/15292.html");
+assert.equal(rankSource.quality, "official-fujian-exam-authority-images-eol-structured-table-cross-verified");
+assert.equal(rankSource.url, "https://www.eeafj.cn/gkptgkgsgg/20250625/14056.html");
 
 assert.equal(manifest.coreLite.profile, "core-lite-v1");
 assert.equal(manifest.coreLite.bytes, liteBytes.byteLength);

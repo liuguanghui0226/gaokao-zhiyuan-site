@@ -1,0 +1,92 @@
+{
+  "dataset": "official-fujian-rank-conversion-2025-v3323-evidence",
+  "province": "福建",
+  "year": 2025,
+  "publisher": "福建省教育考试院",
+  "historyUrl": "https://www.eeafj.cn/gkptgkgsgg/20250625/14055.html",
+  "physicsUrl": "https://www.eeafj.cn/gkptgkgsgg/20250625/14056.html",
+  "historyStructuredTableUrl": "https://gaokao.eol.cn/fu_jian/dongtai/202507/t20250702_2678457.shtml",
+  "physicsStructuredTableUrl": "https://gaokao.eol.cn/fu_jian/dongtai/202507/t20250702_2678456.shtml",
+  "provenanceBoundary": "The Fujian examination-authority pages supply eight official score-distribution images. Two complete structured tables explicitly attribute the data to the Fujian Education Examinations Authority. Structured rows are accepted only after score continuity and cumulative arithmetic closure; fixed-grid OCR over all authority images is an independent cross-carrier check. Published cumulative counts include policy bonus points. Derived ranges are same-year provincial score segments, not institution-native admission ranks.",
+  "evidenceInventory": {
+    "files": 36,
+    "sourceBytes": 12834228,
+    "officialPages": 2,
+    "structuredTablePages": 2,
+    "officialImages": 8,
+    "fixedGridOcrFiles": 24,
+    "perFileHashes": "data/admissions/official-fujian-rank-conversion-2025-v3323-import.json#audit.evidenceSha256"
+  },
+  "primaryEvidenceSha256": {
+    "history-page.html": "675ceeae8ca2a7cd842286395bef80f9ce28afc6457d26a22fed950923902b07",
+    "physics-page.html": "917b13308976be25201ede66ae9fcaee3f794a7e4d1696a150b5aac4866a2472",
+    "eol-history.html": "4e777ce95fdefde0a1f3af21f9ff424af2f8c9e02fc2576b3bad0ceee5e05e3c",
+    "eol-physics.html": "23ceb407118d83a2d88e8dbc8ac560a18abfc28873b1b13c1b3460a87b2d4b9b",
+    "ls-01.jpg": "21790209882942810f7be7c9a4e1069507fe748d42981bd99f3b55509ae72424",
+    "ls-02.jpg": "d6f36957ef791dc41e5a3ff736bdd8563eaf426a1075144d0a54c50ecffc94bf",
+    "ls-03.jpg": "e55b01d7705bb3e09d421ab2f3e19efd54e56ba5e1633bc37f04c1c61518c0fa",
+    "ls-04.jpg": "be78d6bceeadc4b99422cdc4aa582fecf9a48874d93c763f6ac1f041b44a6b37",
+    "wl-01.jpg": "13a249db13009e5acf6346b00602d155d3f0e56707912b7cfed0112411364db9",
+    "wl-02.jpg": "789c4d3c116d7a36e23a129f65ffdf20d49987b6a9555a793982ffa5a6df7b7a",
+    "wl-03.jpg": "9039f32baf087e302956d3bb29e1b70960480e6951c61fcd8f3c51e72dae342c",
+    "wl-04.jpg": "3efc8d9fe7680d5ddf3e6c2c2a4ec1599ba3e3221f56b52eed0737b7c32350ca"
+  },
+  "parseAudit": {
+    "rankConversions": 932,
+    "structuredRows": 933,
+    "officialImageRows": 930,
+    "officialImageCellsCompared": 2790,
+    "zeroCandidateRows": 1,
+    "topBuckets": 2,
+    "allCountsClose": true,
+    "allCumulativeRanksContinuous": true,
+    "imageOcrRowsCompared": 930,
+    "imageOcrScoreMatches": 459,
+    "imageOcrPeopleMatches": 465,
+    "imageOcrCumulativeMatches": 438,
+    "imageOcrAllCellMatches": 400,
+    "imageOcrScoreCumulativeMatches": 419,
+    "historyRecords": 457,
+    "physicsRecords": 475
+  },
+  "publishedFloors": {
+    "history": 215,
+    "physics": 215
+  },
+  "topBuckets": {
+    "history": "672-750 -> rank 1-14",
+    "physics": "689-750 -> rank 1-46"
+  },
+  "checkpoints": {
+    "history600": { "rankStart": 1683, "rankEnd": 1756 },
+    "physics600": { "rankStart": 12437, "rankEnd": 12735 },
+    "history215": { "rankStart": 60233, "rankEnd": 60252 },
+    "physics215": { "rankStart": 192083, "rankEnd": 192096 }
+  },
+  "runtimeMerge": {
+    "rankConversionsAdded": 932,
+    "linkedAdmissionRecords": 7591,
+    "officialLinkedRecords": 6353,
+    "thirdPartyLinkedRecords": 1238,
+    "schoolOfficialScopeLinkedRecords": 689,
+    "specialPathExcludedRecords": 149,
+    "belowPublishedFloorRecords": 1,
+    "ordinaryPublishedRangeIntegerScoreRecordsStillUnranked": 0,
+    "linkedByType": {
+      "institution-admission": 195,
+      "major-admission": 1718,
+      "major-group-admission": 10,
+      "school-admission-summary": 4,
+      "vocational-admission": 5664
+    }
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.323-fujian-rank-2025.tar.gz",
+    "bytes": 10930570,
+    "files": 36,
+    "sha256": "64663d44493a74a32a634b1e24f2d1f3420aeaf1e30f9ecf5362990ef8d3a800",
+    "targetRelease": "data-v3.275",
+    "url": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/download/data-v3.275/evidence-v3.323-fujian-rank-2025.tar.gz",
+    "status": "uploaded-and-redownload-verified"
+  }
+}
