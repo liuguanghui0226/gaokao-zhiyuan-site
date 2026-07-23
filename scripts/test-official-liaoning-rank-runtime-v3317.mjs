@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.325-hainan-official-rank2025-policy-bonus-inclusive-published-floor-aligned-868426records";
+const modelVersion = "local-deterministic-v3.326-xinjiang-rank2025-score-basis-conflict-blocked-868426records";
 const sourceId = "official-liaoning-rank-2025-v3317";
 
 function sha256(value) {
@@ -28,11 +28,11 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 128591);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5129);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5130);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 128591);
-assert.equal(manifest.runtimeProfile.version, "v3.325");
+assert.equal(manifest.runtimeProfile.version, "v3.326");
 assert.equal(manifest.shards["辽宁"].records, 34360);
 assert.equal(manifest.shards["辽宁"].rankConversions, 2149);
 assert.equal(manifest.shards["辽宁"].bytes, shardBytes.length);

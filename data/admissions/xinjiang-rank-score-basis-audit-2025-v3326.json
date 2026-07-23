@@ -1,0 +1,209 @@
+{
+  "dataset": "xinjiang-rank-score-basis-audit-2025-v3326",
+  "generatedAt": "2026-07-23T20:10:46.768Z",
+  "province": "新疆",
+  "year": 2025,
+  "sourceId": "sohu-xinjiang-rank-2025-cb85600e32",
+  "evidenceId": "verified-xinjiang-rank-score-basis-2025-v3326",
+  "modelVersion": "local-deterministic-v3.325-hainan-official-rank2025-policy-bonus-inclusive-published-floor-aligned-868426records",
+  "evidence": {
+    "existingSohu": {
+      "url": "https://www.sohu.com/a/909421695_121124032",
+      "htmlBytes": 254991,
+      "htmlSha256": "9cfad1b8cdba04cab2eea6c7a6659a478e4682bc683f2c7cb13763228cdeba48"
+    },
+    "independentGk100": {
+      "url": "https://www.gk100.com/read_58631558.htm",
+      "htmlBytes": 129661,
+      "htmlSha256": "566c6445a8ee68ec918a535cd3e6912f9f48f34c569d170daec18509a08fa24f"
+    },
+    "officialPolicy": {
+      "url": "https://www.xjzk.gov.cn/c/2025-05-16/494130.shtml",
+      "htmlBytes": 120008,
+      "htmlSha256": "67249d78db295af59c74efdfe872b26b7f3242dd8c2f52d7cd26f9cf4be6fe67"
+    },
+    "officialControlLines": {
+      "url": "https://www.xjzk.gov.cn/c/2025-06-25/494441.shtml",
+      "imageUrl": "https://www.xjzk.gov.cn/upload/resources/image/2025/06/25/29511.jpg",
+      "htmlBytes": 22061,
+      "htmlSha256": "0d151f71eb0530fea4193a47a46a621c1002e0dd73996622d102c61f3e5a001e",
+      "imageBytes": 528049,
+      "imageSha256": "0f628e8afad2b2e4c24d6fd2e731c1e971ccba3163e899cb72b8b1aec74731d8"
+    }
+  },
+  "mirrorComparison": {
+    "gk100Rows": 1033,
+    "positiveRows": 996,
+    "zeroRows": 37,
+    "existingRows": 996,
+    "exactPositiveMatches": 996,
+    "valueDiffs": 0,
+    "missingFromExisting": 0,
+    "extraExisting": 0,
+    "subjects": [
+      {
+        "subjectType": "历史类",
+        "sourceSubjectRaw": "文科",
+        "rows": 502,
+        "positiveRows": 475,
+        "zeroRows": 27,
+        "scoreRange": {
+          "min": 140,
+          "max": 641
+        },
+        "finalCumulative": 24010,
+        "topMerged": {
+          "score": 641,
+          "people": 1,
+          "cumulative": 1,
+          "sourceSubjectRaw": "文科",
+          "subjectType": "历史类",
+          "topMerged": true
+        }
+      },
+      {
+        "subjectType": "物理类",
+        "sourceSubjectRaw": "理科",
+        "rows": 531,
+        "positiveRows": 521,
+        "zeroRows": 10,
+        "scoreRange": {
+          "min": 140,
+          "max": 670
+        },
+        "finalCumulative": 52538,
+        "topMerged": {
+          "score": 670,
+          "people": 9,
+          "cumulative": 9,
+          "sourceSubjectRaw": "理科",
+          "subjectType": "物理类",
+          "topMerged": true
+        }
+      }
+    ]
+  },
+  "scoreBasisAudit": {
+    "rankTableScoreBasis": "gaokao-cultural-total-policy-bonus-unspecified",
+    "officialFilingScoreBasis": "gaokao-filing-total-including-policy-bonus",
+    "rankPolicyBonusIncluded": null,
+    "officialFilingPolicyBonusIncluded": true,
+    "automaticAdmissionScoreAlignmentAllowed": false,
+    "unrankedOrdinarySubjectRecords": 4234,
+    "officialFilingRecords": 2302,
+    "officialZeroCandidateConflicts": 9,
+    "allSourceZeroCandidateConflicts": 19,
+    "conflictRecords": [
+      {
+        "id": "2025-xinjiang-undergrad1-v3311-filing-f9ad9ae555a8d2d07d",
+        "subjectType": "历史类",
+        "schoolName": "北京大学",
+        "minScore": 624,
+        "scoreMetric": "新疆教育考试院普通本科一批院校最低投档排序分",
+        "tieBreakTotalScore": 624,
+        "sourceId": "official-xinjiang-undergraduate1-filing-2025-v3311"
+      },
+      {
+        "id": "2025-xinjiang-undergrad1-v3311-filing-eeb0ce96c84f840488",
+        "subjectType": "历史类",
+        "schoolName": "中国人民大学",
+        "minScore": 597,
+        "scoreMetric": "新疆教育考试院普通本科一批院校最低投档排序分",
+        "tieBreakTotalScore": 597,
+        "sourceId": "official-xinjiang-undergraduate1-filing-2025-v3311"
+      },
+      {
+        "id": "2025-xinjiang-undergrad1-v3311-filing-94c45eb42cdfa65ec4",
+        "subjectType": "历史类",
+        "schoolName": "武汉大学",
+        "minScore": 587,
+        "scoreMetric": "新疆教育考试院普通本科一批院校最低投档排序分",
+        "tieBreakTotalScore": 587,
+        "sourceId": "official-xinjiang-undergraduate1-filing-2025-v3311"
+      },
+      {
+        "id": "2025-xinjiang-undergrad1-v3311-filing-6c2ff1d37ed8523244",
+        "subjectType": "历史类",
+        "schoolName": "中山大学",
+        "minScore": 580,
+        "scoreMetric": "新疆教育考试院普通本科一批院校最低投档排序分",
+        "tieBreakTotalScore": 580,
+        "sourceId": "official-xinjiang-undergraduate1-filing-2025-v3311"
+      },
+      {
+        "id": "2025-xinjiang-undergrad1-v3311-filing-03f1993c6226061fbd",
+        "subjectType": "历史类",
+        "schoolName": "西安交通大学",
+        "minScore": 579,
+        "scoreMetric": "新疆教育考试院普通本科一批院校最低投档排序分",
+        "tieBreakTotalScore": 579,
+        "sourceId": "official-xinjiang-undergraduate1-filing-2025-v3311"
+      },
+      {
+        "id": "2025-xinjiang-undergrad1-v3311-filing-4d093609c173eb7837",
+        "subjectType": "物理类",
+        "schoolName": "哈尔滨工业大学",
+        "minScore": 652,
+        "scoreMetric": "新疆教育考试院普通本科一批院校最低投档排序分",
+        "tieBreakTotalScore": 652,
+        "sourceId": "official-xinjiang-undergraduate1-filing-2025-v3311"
+      },
+      {
+        "id": "2025-xinjiang-undergrad1-v3311-filing-d89c2503810ab6d1e5",
+        "subjectType": "物理类",
+        "schoolName": "浙江大学",
+        "minScore": 659,
+        "scoreMetric": "新疆教育考试院普通本科一批院校最低投档排序分",
+        "tieBreakTotalScore": 659,
+        "sourceId": "official-xinjiang-undergraduate1-filing-2025-v3311"
+      },
+      {
+        "id": "2025-xinjiang-undergrad1-v3311-filing-c539b5ac1242839f1a",
+        "subjectType": "物理类",
+        "schoolName": "浙江大学医学院",
+        "minScore": 655,
+        "scoreMetric": "新疆教育考试院普通本科一批院校最低投档排序分",
+        "tieBreakTotalScore": 655,
+        "sourceId": "official-xinjiang-undergraduate1-filing-2025-v3311"
+      },
+      {
+        "id": "2025-xinjiang-undergrad1-v3311-filing-986d177066b4cee181",
+        "subjectType": "物理类",
+        "schoolName": "北京航空航天大学",
+        "minScore": 639,
+        "scoreMetric": "新疆教育考试院普通本科一批院校最低投档排序分",
+        "tieBreakTotalScore": 639,
+        "sourceId": "official-xinjiang-undergraduate1-filing-2025-v3311"
+      }
+    ],
+    "conclusion": "The 996 published rank values are independently reproduced, but the mirror does not state the policy-bonus basis and nine official policy-bonus-inclusive filing rows land on scores with zero candidates in that distribution. Automatic score-to-admission-rank alignment is blocked."
+  },
+  "sourceNotes": [
+    {
+      "id": "verified-xinjiang-rank-score-basis-2025-v3326",
+      "title": "新疆2025普通文理一分一段独立复核与投档分口径冲突审计",
+      "publisher": "新疆教育考试院（政策与投档口径）/高考100与搜狐（两份完整分段镜像）",
+      "url": "https://www.xjzk.gov.cn/c/2025-05-16/494130.shtml",
+      "relatedUrls": [
+        "https://www.xjzk.gov.cn/c/2025-06-25/494441.shtml",
+        "https://www.gk100.com/read_58631558.htm",
+        "https://www.sohu.com/a/909421695_121124032"
+      ],
+      "quality": "official-policy-plus-two-independent-complete-rank-mirrors-score-basis-conflict-audited",
+      "usage": "996个正人数分数档在两份完整镜像间逐行零差异；官方规定平行志愿按含政策加分总分投档，但9条官方本科一批最低投档排序分落在镜像表0人分数档，因此保留分段表供考生位次查询，不把它自动套到院校投档/录取最低分。",
+      "province": "新疆",
+      "year": 2025,
+      "parsedRecords": 996,
+      "scoreBasis": "gaokao-cultural-total-policy-bonus-unspecified",
+      "rankPolicyBonusIncluded": null,
+      "automaticAdmissionScoreAlignmentAllowed": false,
+      "alignmentBlockReason": "官方含政策加分投档排序分与镜像分段表存在9个0人分数冲突，政策加分口径未闭合。",
+      "audit": {
+        "exactPositiveMatches": 996,
+        "zeroRows": 37,
+        "officialZeroCandidateConflicts": 9,
+        "blockedAdmissionRecords": 4234
+      }
+    }
+  ]
+}

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.325-hainan-official-rank2025-policy-bonus-inclusive-published-floor-aligned-868426records";
+const modelVersion = "local-deterministic-v3.326-xinjiang-rank2025-score-basis-conflict-blocked-868426records";
 const sourceId = "official-shanxi-rank-2025-v3321";
 const floors = { 历史类: 443, 物理类: 419 };
 
@@ -64,10 +64,10 @@ assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 128591);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 128591);
-assert.equal(manifest.runtimeProfile.version, "v3.325");
+assert.equal(manifest.runtimeProfile.version, "v3.326");
 assert.equal(manifest.runtimeProfile.initialCore, "knowledge-core-lite.json.gz");
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5129);
-assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5129);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5130);
+assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5130);
 assert.equal(lite.browserRuntime.profile, "core-lite-v1");
 assert.ok(liteAudit.liteCore.rawReductionRate >= 0.75);
 

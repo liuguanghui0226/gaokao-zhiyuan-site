@@ -899,6 +899,9 @@ function admissionDataFreshness(profile, today = currentChinaDate()) {
   const ordinaryAdmissions = scopedRecords.filter((record) =>
     !isPlanRecord(record) && !isControlLineRecord(record) && !isSpecialPathRecord(record)
   );
+  const rankAlignmentBlockedAdmissions = ordinaryAdmissions.filter((record) =>
+    record.rankAlignmentStatus === "blocked-score-basis-unresolved"
+  );
   const categoryRestrictedAdmissions = ordinaryAdmissions.filter((record) =>
     record.candidateCategory && !recordMatchesCandidateCategory(record, profile)
   );
@@ -929,6 +932,9 @@ function admissionDataFreshness(profile, today = currentChinaDate()) {
   if (!latestRankYear) {
     warnings.push(`${province}当前本地没有可计算的一分一段；未填写考试院正式位次时，系统不能给出位次安全边界。`);
   }
+  if (rankAlignmentBlockedAdmissions.length) {
+    warnings.push(`${province}有${fmtNumber(rankAlignmentBlockedAdmissions.length)}条录取分记录因政策加分口径未闭合，保留分数但不自动换算最低位次。`);
+  }
   if (scheduleStage) {
     warnings.push(`${scheduleSource.year || ""}年考试院录取日程：${scheduleStage.text}。`);
   }
@@ -941,6 +947,7 @@ function admissionDataFreshness(profile, today = currentChinaDate()) {
     ordinaryPlanCount: ordinaryPlanRecords.length,
     restrictedPlanCount: restrictedPlanRecords.length,
     categoryRestrictedAdmissionCount: categoryRestrictedAdmissions.length,
+    rankAlignmentBlockedAdmissionCount: rankAlignmentBlockedAdmissions.length,
     latestAdmissionYear,
     latestRankYear,
     latestVacancyYear,

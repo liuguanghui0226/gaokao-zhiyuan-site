@@ -1,0 +1,34 @@
+{
+  "dataset": "xinjiang-rank-score-basis-safety-v3326-runtime",
+  "generatedAt": "2026-07-23T20:10:46.768Z",
+  "evidenceId": "verified-xinjiang-rank-score-basis-2025-v3326",
+  "sourceId": "sohu-xinjiang-rank-2025-cb85600e32",
+  "auditFile": "data/admissions/xinjiang-rank-score-basis-audit-2025-v3326.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.325-hainan-official-rank2025-policy-bonus-inclusive-published-floor-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 128591,
+    "provinceRecords": 11518,
+    "provinceRankConversions": 2823,
+    "sourceNotes": 5129
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.326-xinjiang-rank2025-score-basis-conflict-blocked-868426records",
+    "records": 868426,
+    "rankConversions": 128591,
+    "rankRowsAudited": 996,
+    "blockedAdmissionRecords": 4234,
+    "officialFilingRecords": 2302,
+    "unsafeDerivedRanks": 0,
+    "sourceNotes": 5130,
+    "provinceRecords": 11518,
+    "provinceRankConversions": 2823,
+    "shardBytes": 16141490,
+    "shardSha256": "0cfb0707c8515ee63477c9b7aefe3f08ff54ee25cd3c396d3a6bef19e28a243c",
+    "coreBytes": 15795822,
+    "coreSha256": "4e607565a2fbf13b9b76b1675ef44fae3c4b6c9b60b8e2569a345c12168ad76e",
+    "manifestBytesBeforeLiteRebuild": 6147,
+    "manifestSha256BeforeLiteRebuild": "1e37580269a335bfda372aeefc09396c0eb08833d585aef8702da63b15d9bfe4"
+  }
+}

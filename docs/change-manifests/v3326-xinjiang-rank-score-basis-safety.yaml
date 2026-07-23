@@ -1,0 +1,70 @@
+change_id: "2026-07-24-v3326-xinjiang-rank-score-basis-safety"
+title: "新疆 2025 一分一段与投档分政策加分口径冲突阻断"
+phase: deliver
+status: in_progress
+execution_mode: full
+resume_mode: full
+resume_reason: "新疆2025普通文理分段表可复现，但其政策加分口径未说明，不能直接为官方院校投档分换算位次。"
+last_updated: "2026-07-24T00:00:00Z"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "两份完整分段镜像逐行复核，并与考试院招生政策、控制线和官方投档表做分数口径冲突审计。"
+  - surface: user
+    role: consumer
+    notes: "4234条记录显示政策加分口径未闭合提示，推荐模型禁止自动生成院校最低位次。"
+  - surface: operational
+    role: consumer
+    notes: "GitHub仓库、新疆gzip分片、双核心索引、Pages运行层和Release证据包。"
+
+sot_map:
+  - info_name: "新疆2025普通文理分段表及含政策加分投档排序规则"
+    pattern: 4
+    source: "https://www.xjzk.gov.cn/c/2025-05-16/494130.shtml"
+    consumers:
+      - name: "data/admissions/xinjiang-rank-score-basis-audit-2025-v3326.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/xinjiang.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node审计器比较996个正人数分数档，识别37个零人数档，并将官方本科投档最低分与零人数档交叉；合并器只添加阻断元数据，不生成新位次。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "审计文件和证据包锁定网页、图片、哈希和冲突记录。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.325核心、新疆分片和运行清单。"
+    - surface: operational
+      mode: 1
+      rationale: "GitHub提交和Release按版本保留，可回退到上一远端提交。"
+
+task_slices:
+  - id: "source-audit"
+    scope: "996个正人数档、37个零人数档和两份完整表逐行复核"
+    verification_command: "node scripts/test-xinjiang-rank-score-basis-v3326.mjs"
+  - id: "alignment-block"
+    scope: "9条官方冲突、4234条阻断记录和2302条含政策加分投档记录"
+    verification_command: "node scripts/test-xinjiang-rank-score-basis-v3326.mjs"
+  - id: "runtime-refresh"
+    scope: "新疆分片、完整核心、轻量核心、运行清单和全国回归"
+    verification_command: "node scripts/test-runtime-core-lite-v3326.mjs && node scripts/test-current-release.mjs"
+  - id: "release"
+    scope: "GitHub Pages、31省公网分片和证据Release资产"
+    verification_command: "gh workflow run verify-live.yml"
+
+residual_risks:
+  - "两份完整分段表都属于转载，虽数值逐行一致，但政策加分口径未披露。"
+  - "分段表仍可供同口径考生成绩查询，但不得自动套用到院校投档或录取最低分。"
+  - "4234条记录继续缺少原生最低位次，阻断标记不会补足证据本身。"
+  - "单列类与普通类控制线不同，本轮不把普通文理分段表套到单列类。"
+  - "正式填报仍需核验当年招生计划、专业选科要求、院校招生章程和考试院最新公告。"

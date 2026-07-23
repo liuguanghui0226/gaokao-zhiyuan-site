@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.325-hainan-official-rank2025-policy-bonus-inclusive-published-floor-aligned-868426records";
+const modelVersion = "local-deterministic-v3.326-xinjiang-rank2025-score-basis-conflict-blocked-868426records";
 const sourceId = "official-jiangsu-rank-2025-v3319";
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
 const coreBytes = zlib.gunzipSync(fs.readFileSync(path.join(releaseDir, "knowledge-core.json.gz")));
@@ -24,11 +24,11 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 128591);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5129);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5130);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 128591);
-assert.equal(manifest.runtimeProfile.version, "v3.325");
+assert.equal(manifest.runtimeProfile.version, "v3.326");
 assert.equal(manifest.shards["江苏"].records, 26991);
 assert.equal(manifest.shards["江苏"].rankConversions, 806);
 assert.equal(manifest.shards["江苏"].bytes, shardBytes.length);
@@ -121,4 +121,4 @@ assert.equal(runtimeManifest.after.shardSha256, sha256(shardBytes));
 assert.equal(runtimeManifest.after.coreSha256, "56cffd0f6baefed6ca3c54ca1c1dad0b0d78a08294deaa06940123eeaf4dd744");
 assert.notEqual(runtimeManifest.after.coreSha256, sha256(coreBytes));
 
-console.log(JSON.stringify({ ok: true, modelVersion, ranks: 398, linkedAdmissionRecords: 7060, belowPublishedFloor: 1496, specialPathExcluded: 123, sourceNotes: 5129 }, null, 2));
+console.log(JSON.stringify({ ok: true, modelVersion, ranks: 398, linkedAdmissionRecords: 7060, belowPublishedFloor: 1496, specialPathExcluded: 123, sourceNotes: 5130 }, null, 2));

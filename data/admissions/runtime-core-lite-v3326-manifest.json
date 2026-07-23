@@ -1,0 +1,52 @@
+{
+  "dataset": "runtime-core-lite-v3326",
+  "generatedAt": "2026-07-23T20:16:36.823Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.326-xinjiang-rank2025-score-basis-conflict-blocked-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5130,
+    "lite": 5130,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview",
+      "scoreBasis",
+      "rankPolicyBonusIncluded",
+      "automaticAdmissionScoreAlignmentAllowed",
+      "alignmentBlockReason",
+      "scoreBasisAuditEvidenceId"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15796071,
+    "compressedBytes": 2400209,
+    "sha256": "66453af8e5e598242d62de115848a3cfe5c71cd6b77fc1a873e758d62c829749"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3009538,
+    "compressedBytes": 479335,
+    "sha256": "128b88d6d91fb54dac3aadd04e9fbc5a71eb72c9617ad647cef51f0e550a83d8",
+    "rawReductionRate": 0.809476
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 8134,
+    "compressedBytes": 2858,
+    "sha256": "f4fb995fcf65ac1a6e5f971ca8d2e68a9d5be59f89213495deede1057f1dc414"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}
