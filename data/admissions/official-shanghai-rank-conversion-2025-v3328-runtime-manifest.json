@@ -1,0 +1,45 @@
+{
+  "dataset": "official-shanghai-rank-conversion-2025-v3328-runtime",
+  "generatedAt": "2026-07-23T21:27:02.609Z",
+  "sourceId": "official-shanghai-rank-2025-v3328",
+  "importFile": "data/admissions/official-shanghai-rank-conversion-2025-v3328-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.327-tianjin-official-rank2025-policy-bonus-inclusive-full-table-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 128972,
+    "provinceRankConversions": 214
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.328-shanghai-official-rank2025-policy-bonus-inclusive-undergraduate-floor-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 129194,
+    "rankConversionsAdded": 222,
+    "provinceRecords": 6247,
+    "provinceRankConversions": 436,
+    "linkedAdmissionRecords": 1964,
+    "officialLinkedRecords": 1708,
+    "thirdPartyLinkedRecords": 256,
+    "schoolOfficialScopeLinkedRecords": 235,
+    "specialPathExcludedRecords": 14,
+    "topBucketLinkedRecords": 1,
+    "linkedSourceNotes": 70,
+    "linkedByType": {
+      "institution-admission": 47,
+      "major-admission": 437,
+      "major-group-admission": 1480
+    },
+    "sourceNotes": 5132,
+    "shardBytes": 7378741,
+    "shardSha256": "b1e74453ef4afa6f70a0b054c5c0bb7d098eaa9db0aeefe5c8b9cfee532f2010",
+    "coreBytes": 15853781,
+    "coreSha256": "a40de05720e3b6a0a5bc6cf6077a4a52c148171d017621586248934c29ef4ccd",
+    "manifestBytesBeforeLiteRebuild": 6310,
+    "manifestSha256BeforeLiteRebuild": "352c52fce5b263ed75424de260048bd69ab5e0130a6b92069ff2933e9a49dcfb"
+  },
+  "cautions": [
+    "623分及以上仅保存公开的1-52名合并区间，不生成档内伪精确位次。",
+    "401分及以下未在本科线上分布表公开，不向下外推。",
+    "最低分换算位次不是院校录取表直接公布的原生最低位次。"
+  ]
+}
