@@ -250,7 +250,7 @@ jobs:
           gzip -dc "$work/tianjin.json.gz" \
             | jq -e '[.records[] | select(.rankSourceId == "official-tianjin-rank-2025-v3327" and .rankDerivedFromScore == true and .rankPolicyBonusIncluded == true)] | length == 3195' >/dev/null
           gzip -dc "$work/tianjin.json.gz" \
-            | jq -e '[.records[] | select(.year == 2025 and (.subjectType == "综合" or .subjectType == "综合改革") and .formalScoreScope == "special-path-only" and (.minScore | type) == "number" and .minScore >= 300 and .minScore <= 750 and .rankSourceId != "official-tianjin-rank-2025-v3327")] | length == 20' >/dev/null
+            | jq -e '[.records[] | select(.year == 2025 and (.subjectType == "综合" or .subjectType == "综合改革") and .formalScoreScope == "special-path-only" and (.minScore | type) == "number" and .minScore >= 300 and .minScore <= 750 and ((.minRankEnd // .minRank // 0) == 0) and .rankSourceId != "official-tianjin-rank-2025-v3327")] | length == 20' >/dev/null
           gzip -dc "$work/jiangxi.json.gz" \
             | jq -e '[.records[] | select(.sourceId == "official-jiangxi-control-lines-2026")] | length == 30' >/dev/null
           gzip -dc "$work/jiangxi.json.gz" \
