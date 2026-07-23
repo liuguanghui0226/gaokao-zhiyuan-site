@@ -1,0 +1,86 @@
+{
+  "dataset": "official-heilongjiang-rank-conversion-2025-v3324-evidence",
+  "province": "黑龙江",
+  "year": 2025,
+  "publisher": "黑龙江省招生考试院",
+  "governmentReleaseUrl": "https://www.hlj.gov.cn/hlj/c107857/202506/c00_31851940.shtml",
+  "historyUrl": "https://www.lzk.hl.cn/gkpd/gkxx/202506/W020250624501230928960.xls",
+  "physicsUrl": "https://www.lzk.hl.cn/gkpd/gkxx/202506/W020250624501230928278.xls",
+  "historyStructuredTableUrl": "https://gaokao.eol.cn/hei_long_jiang/dongtai/202506/t20250624_2676679.shtml",
+  "physicsStructuredTableUrl": "https://gaokao.eol.cn/hei_long_jiang/dongtai/202506/t20250624_2676681.shtml",
+  "provenanceBoundary": "The Heilongjiang government release links the two examination-authority XLS files and states that the tables exclude preferential-policy points. LibreOffice produces stable structured CSV copies. Two complete attributed tables cross-check every positive-candidate score, count, and cumulative-count cell. Derived ranges are same-year provincial cultural-score segments, not institution-native admission ranks.",
+  "evidenceInventory": {
+    "files": 7,
+    "sourceBytes": 1525731,
+    "governmentPages": 1,
+    "officialXlsFiles": 2,
+    "structuredCsvFiles": 2,
+    "crossCheckPages": 2,
+    "perFileHashes": "data/admissions/official-heilongjiang-rank-conversion-2025-v3324-import.json#audit.evidenceSha256"
+  },
+  "primaryEvidenceSha256": {
+    "official-government-page.html": "6ad61a4562b69f94615581e79e8bc5b8a3f6e453c87d5b31b885db5abd11bab0",
+    "official-history.xls": "8498d743ecd8ebd38c801af703a77928bebef807cc600586b58c6a4b0062ba13",
+    "official-physics.xls": "e273386a4dd85e6d4254d69fc020ee9ad7106a1b5b429cb00df3865a2650d1a9",
+    "official-history.csv": "debebf3fa33ebfe1bf78991719d5aefce3bef6321f9476ad9bfdce963edc1792",
+    "official-physics.csv": "5222cd17919c59eec265cc3a18c917a95501e6b05d6d678ae9cdfab376442131",
+    "eol-history.html": "c0521f009fc584b341a6269b538d00a778750529d0b8377c233ea3af035c1b29",
+    "eol-physics.html": "2a45096c928504656820e34ad295e45bdda0326ca44e8b2b063d28baf56aed01"
+  },
+  "parseAudit": {
+    "rankConversions": 1091,
+    "officialXlsTableRows": 1093,
+    "officialPositiveRows": 1091,
+    "crossCheckTableRows": 1094,
+    "rowComparisons": 1091,
+    "cellComparisons": 3273,
+    "sourceDifferences": 0,
+    "rawCountCellAnomalies": 2,
+    "zeroCandidateScores": 4,
+    "topBuckets": 2,
+    "allCountsClose": true,
+    "allCumulativeRanksContinuous": true,
+    "historyRecords": 528,
+    "physicsRecords": 563
+  },
+  "scoreBasis": "gaokao-cultural-score-excluding-policy-bonus",
+  "publishedFloors": {
+    "history": 130,
+    "physics": 130
+  },
+  "topBuckets": {
+    "history": "659-750 -> rank 1-19",
+    "physics": "694-750 -> rank 1-34"
+  },
+  "checkpoints": {
+    "history600": { "rankStart": 800, "rankEnd": 846 },
+    "physics600": { "rankStart": 5844, "rankEnd": 5997 },
+    "history130": { "rankStart": 54707, "rankEnd": 54707 },
+    "physics130": { "rankStart": 117407, "rankEnd": 117407 }
+  },
+  "runtimeMerge": {
+    "rankConversionsAdded": 1091,
+    "linkedAdmissionRecords": 7098,
+    "officialLinkedRecords": 5706,
+    "thirdPartyLinkedRecords": 1392,
+    "schoolOfficialScopeLinkedRecords": 493,
+    "specialPathExcludedRecords": 84,
+    "ordinaryPublishedRangeIntegerScoreRecordsStillUnranked": 0,
+    "linkedByType": {
+      "institution-admission": 150,
+      "major-admission": 1722,
+      "major-group-admission": 4016,
+      "school-admission-summary": 4,
+      "vocational-admission": 1206
+    }
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.324-heilongjiang-rank-2025.tar.gz",
+    "bytes": 155483,
+    "files": 7,
+    "sha256": "9a0652f041303b6645c6a7f41c98a01e071923c0651fa1278b62889e0aca4b07",
+    "targetRelease": "data-v3.275",
+    "url": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/download/data-v3.275/evidence-v3.324-heilongjiang-rank-2025.tar.gz",
+    "status": "uploaded-and-redownload-verified"
+  }
+}

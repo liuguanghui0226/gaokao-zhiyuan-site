@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3324",
+  "generatedAt": "2026-07-23T18:41:43.344Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.324-heilongjiang-official-rank2025-no-policy-bonus-published-floor-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5128,
+    "lite": 5128,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15748380,
+    "compressedBytes": 2389213,
+    "sha256": "d4deff59bdf8ee00196852e54a4f6028929a1ae05c383ef2fec5581163a0b626"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3007275,
+    "compressedBytes": 478343,
+    "sha256": "c37bb358c0f05d18d5709d211885a3905e7cd8d2e09ae3ec0962e213ad4a92a6",
+    "rawReductionRate": 0.809042
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7990,
+    "compressedBytes": 2790,
+    "sha256": "23d734dd9703072481ce775f8054f7f5cc50cb16648fe5dd9135c17839e323e1"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

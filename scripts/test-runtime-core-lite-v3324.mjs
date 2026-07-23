@@ -12,7 +12,7 @@ const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
 const fullFile = path.join(releaseDir, "knowledge-core.json.gz");
 const liteFile = path.join(releaseDir, "knowledge-core-lite.json.gz");
 const manifestFile = path.join(releaseDir, "manifest.json.gz");
-const auditFile = path.join(projectRoot, "data/admissions/runtime-core-lite-v3323-manifest.json");
+const auditFile = path.join(projectRoot, "data/admissions/runtime-core-lite-v3324-manifest.json");
 const app = fs.readFileSync(path.join(projectRoot, "site/assets/app.js"), "utf8");
 const readGzip = (file) => zlib.gunzipSync(fs.readFileSync(file));
 const sha256 = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
@@ -43,11 +43,11 @@ for (const note of liteNotes) {
   assert.ok(note.id && note.title && note.quality);
   assert.ok(Object.keys(note).every((key) => allowedFields.has(key)), `Lite source note ${note.id} leaked a full-evidence field`);
 }
-const rankSource = liteNotes.find((note) => note.id === "official-fujian-rank-2025-v3323");
-assert.equal(rankSource.province, "福建");
+const rankSource = liteNotes.find((note) => note.id === "official-heilongjiang-rank-2025-v3324");
+assert.equal(rankSource.province, "黑龙江");
 assert.equal(rankSource.year, 2025);
-assert.equal(rankSource.quality, "official-fujian-exam-authority-images-eol-structured-table-cross-verified");
-assert.equal(rankSource.url, "https://www.eeafj.cn/gkptgkgsgg/20250625/14056.html");
+assert.equal(rankSource.quality, "official-heilongjiang-exam-authority-xls-government-release-eol-full-table-cross-verified");
+assert.equal(rankSource.url, "https://www.hlj.gov.cn/hlj/c107857/202506/c00_31851940.shtml");
 
 assert.equal(manifest.coreLite.profile, "core-lite-v1");
 assert.equal(manifest.coreLite.bytes, liteBytes.byteLength);
@@ -55,7 +55,7 @@ assert.equal(manifest.coreLite.compressedBytes, fs.statSync(liteFile).size);
 assert.equal(manifest.coreLite.sha256, sha256(liteBytes));
 assert.equal(manifest.coreLite.sourceNotes, 5128);
 assert.equal(manifest.runtimeProfile.version, "v3.324");
-assert.equal(audit.dataset, "runtime-core-lite-v3323");
+assert.equal(audit.dataset, "runtime-core-lite-v3324");
 assert.equal(audit.fullCore.sha256, sha256(fullBytes));
 assert.equal(audit.liteCore.sha256, sha256(liteBytes));
 assert.equal(audit.runtimeManifest.sha256, sha256(manifestBytes));

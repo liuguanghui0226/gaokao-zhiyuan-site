@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.323-fujian-official-rank2025-published-floor-aligned-868426records";
+const modelVersion = "local-deterministic-v3.324-heilongjiang-official-rank2025-no-policy-bonus-published-floor-aligned-868426records";
 const sourceId = "official-wtu-national-2021-2025-school-major-admission";
 
 function sha256(bytes) {
@@ -27,10 +27,10 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.browserRuntime.fullMasterRecords, 868426);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5127);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5128);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 126945);
+assert.equal(manifest.rankConversionCount, 128036);
 assert.equal(Object.keys(manifest.shards).length, 31);
 assert.equal(Object.values(manifest.shards).reduce((sum, item) => sum + item.records, 0), 868426);
 assert.equal(manifest.core.bytes, coreBytes.length);

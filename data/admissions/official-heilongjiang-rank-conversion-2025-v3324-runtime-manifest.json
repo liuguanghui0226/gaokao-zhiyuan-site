@@ -1,0 +1,51 @@
+{
+  "dataset": "official-heilongjiang-rank-conversion-2025-v3324-runtime",
+  "generatedAt": "2026-07-23T18:40:22.289Z",
+  "sourceId": "official-heilongjiang-rank-2025-v3324",
+  "importFile": "data/admissions/official-heilongjiang-rank-conversion-2025-v3324-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.323-fujian-official-rank2025-published-floor-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 126945,
+    "provinceRankConversions": 1071
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.324-heilongjiang-official-rank2025-no-policy-bonus-published-floor-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 128036,
+    "rankConversionsAdded": 1091,
+    "provinceRecords": 15910,
+    "provinceRankConversions": 2162,
+    "linkedAdmissionRecords": 7098,
+    "officialLinkedRecords": 5706,
+    "thirdPartyLinkedRecords": 1392,
+    "schoolOfficialScopeLinkedRecords": 493,
+    "specialPathExcludedRecords": 84,
+    "topBucketLinkedRecords": 1,
+    "linkedSourceNotes": 111,
+    "linkedByType": {
+      "institution-admission": 150,
+      "major-admission": 1722,
+      "major-group-admission": 4016,
+      "school-admission-summary": 4,
+      "vocational-admission": 1206
+    },
+    "sourceNotes": 5128,
+    "shardBytes": 21050290,
+    "shardSha256": "8ab2ccb389943e8676a1dd7339a8283d515a51d7408a822668748cc20ff88d78",
+    "coreBytes": 15748380,
+    "coreSha256": "d4deff59bdf8ee00196852e54a4f6028929a1ae05c383ef2fec5581163a0b626",
+    "manifestBytesBeforeLiteRebuild": 6170,
+    "manifestSha256BeforeLiteRebuild": "e21165ed26cd16ff95eb220667dcb57afbe0418653ce712d3a52a7805ee7f350"
+  },
+  "cautions": [
+    "官方明确说明一分段统计不含照顾政策分；有政策加分的考生应使用未加分文化成绩查询本表。",
+    "历史类659-750分只保存1-19名合并档，物理类694-750分只保存1-34名合并档，不生成档内伪精确名次。",
+    "官方XLS两个最高合并档的分段人数原始单元格均为3；本轮依据累计人数19/34、下一行闭合关系和EOL完整表19/34纠正，不改动其他分数档。",
+    "历史类654、144分和物理类136、134分为零人数缺口，不生成空位次区间。",
+    "官方XLS只公开至130分，129分及以下标注为略；低于130分不向下外推。",
+    "艺术、体育综合分、科类不明、非整数分和特殊路径记录不参与普通类文化成绩位次换算。",
+    "最低分换算位次不是院校投档表原生公布的最低位次，正式填报前仍须核验当年考试院表、招生计划和院校章程。"
+  ]
+}
