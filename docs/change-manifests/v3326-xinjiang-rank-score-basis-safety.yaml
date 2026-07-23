@@ -1,11 +1,11 @@
 change_id: "2026-07-24-v3326-xinjiang-rank-score-basis-safety"
 title: "新疆 2025 一分一段与投档分政策加分口径冲突阻断"
 phase: deliver
-status: in_progress
+status: complete
 execution_mode: full
 resume_mode: full
 resume_reason: "新疆2025普通文理分段表可复现，但其政策加分口径未说明，不能直接为官方院校投档分换算位次。"
-last_updated: "2026-07-24T00:00:00Z"
+last_updated: "2026-07-23T20:38:01Z"
 
 surfaces_touched:
   - surface: information
