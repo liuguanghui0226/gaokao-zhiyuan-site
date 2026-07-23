@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.328-shanghai-official-rank2025-policy-bonus-inclusive-undergraduate-floor-aligned-868426records";
+const modelVersion = "local-deterministic-v3.329-anhui-official-rank2025-policy-bonus-inclusive-full-table-aligned-868426records";
 const sourceId = "official-gansu-control-lines-2026";
 const rankSourceId = "gk100-gansu-rank-2026";
 
@@ -61,8 +61,8 @@ assert.ok(records.filter((record) => !record.controlLineRouteKind.startsWith("or
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 129194);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5132);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 130155);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5133);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);

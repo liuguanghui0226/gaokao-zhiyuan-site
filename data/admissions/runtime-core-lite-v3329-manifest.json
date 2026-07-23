@@ -1,0 +1,52 @@
+{
+  "dataset": "runtime-core-lite-v3329",
+  "generatedAt": "2026-07-23T22:19:14.626Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.329-anhui-official-rank2025-policy-bonus-inclusive-full-table-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5133,
+    "lite": 5133,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview",
+      "scoreBasis",
+      "rankPolicyBonusIncluded",
+      "automaticAdmissionScoreAlignmentAllowed",
+      "alignmentBlockReason",
+      "scoreBasisAuditEvidenceId"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15903047,
+    "compressedBytes": 2412972,
+    "sha256": "9ac070225942cbeac6fca821a00548f6da5d4a5cdf558cd03c02143b8c9f7897"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3011859,
+    "compressedBytes": 479873,
+    "sha256": "1c0787092a2c7fea3a1dfe733de984cc8eefa6743a421afdd4b348c4cf0f03d0",
+    "rawReductionRate": 0.810611
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 8154,
+    "compressedBytes": 2876,
+    "sha256": "7e41d25fdd0057cbff2dff5e0b8c7fd4c102976ca6f3e2f1b939d4fe79d59cac"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

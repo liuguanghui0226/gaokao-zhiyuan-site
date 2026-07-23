@@ -35,7 +35,7 @@ assert.ok(styles.includes(".discipline-tile > strong"));
 assert.ok(!styles.includes(".discipline-tile > small"));
 assert.ok(styles.includes("grid-template-columns: repeat(6, minmax(0, 1fr))"));
 assert.ok(styles.includes(".nav-btn:nth-last-child(-n + 2)"));
-assert.ok(index.includes("./assets/app.js?v=3.328.0"));
+assert.ok(index.includes("./assets/app.js?v=3.329.0"));
 assert.ok(app.includes("位次口径含政策加分"));
 assert.ok(app.includes("Number((score - minScore).toFixed(3))"));
 
