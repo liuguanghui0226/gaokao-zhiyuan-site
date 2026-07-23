@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.329-anhui-official-rank2025-policy-bonus-inclusive-full-table-aligned-868426records";
+const modelVersion = "local-deterministic-v3.330-jiangxi-official-rank2025-filing-score-policy-bonus-inclusive-full-table-replaced-868426records";
 const sourceId = "official-shanghai-rank-2025-v3328";
 const readBytes = (file) => zlib.gunzipSync(fs.readFileSync(file));
 const readJson = (file) => JSON.parse(readBytes(file));
@@ -35,12 +35,12 @@ assert.equal(lite.modelVersion, modelVersion);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 130155);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5133);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5134);
 assert.equal(manifest.rankConversionCount, 130155);
-assert.equal(manifest.runtimeProfile.version, "v3.329");
+assert.equal(manifest.runtimeProfile.version, "v3.330");
 assert.deepEqual(
   [core.admissionScoreLayer.rankSourceCoverage.sources, core.admissionScoreLayer.rankSourceCoverage.parsedSources],
-  [218, 152],
+  [219, 153],
 );
 
 assert.equal(shard.records.length, 6247);

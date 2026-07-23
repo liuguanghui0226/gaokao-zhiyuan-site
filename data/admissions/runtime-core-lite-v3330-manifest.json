@@ -1,0 +1,52 @@
+{
+  "dataset": "runtime-core-lite-v3330",
+  "generatedAt": "2026-07-23T23:01:24.308Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.330-jiangxi-official-rank2025-filing-score-policy-bonus-inclusive-full-table-replaced-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5134,
+    "lite": 5134,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview",
+      "scoreBasis",
+      "rankPolicyBonusIncluded",
+      "automaticAdmissionScoreAlignmentAllowed",
+      "alignmentBlockReason",
+      "scoreBasisAuditEvidenceId"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15942122,
+    "compressedBytes": 2417083,
+    "sha256": "22be84fe88c83f4b807d76a64ecbe0504f4b8254c7239a7b1e6bc9ab9da78040"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3012878,
+    "compressedBytes": 480128,
+    "sha256": "c521ff8ee6f01b605a9590802d1e6bbae6d738589fa4e329bc02daa6269a36aa",
+    "rawReductionRate": 0.811011
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 8170,
+    "compressedBytes": 2890,
+    "sha256": "3bf1731e8246ae3f7ea8c460389cffc9b4c9a38619da82b87d504c3cee27753e"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

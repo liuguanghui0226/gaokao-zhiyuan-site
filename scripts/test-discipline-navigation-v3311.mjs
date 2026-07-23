@@ -43,7 +43,7 @@ assert.ok(app.includes('sectionHead("院校专业推荐")'), "recommendation tit
 assert.ok(app.includes("<span>考生类型</span>"), "formal candidate label missing");
 assert.ok(css.includes(".recommend-form [hidden]"), "province-specific hidden fields can leak into the form");
 assert.ok(html.includes("全国高考志愿填报"), "site title not updated");
-assert.ok(html.includes("app.js?v=3.329.0"), "v3.329 asset version missing");
+assert.ok(html.includes("app.js?v=3.330.0"), "v3.330 asset version missing");
 assert.ok(html.includes('data-view="sources">数据来源'), "public source navigation missing");
 assert.ok(!html.includes('data-view="rounds"'), "internal integration-round navigation remains public");
 assert.ok(!html.includes('data-view="audio"'), "internal transcription navigation remains public");

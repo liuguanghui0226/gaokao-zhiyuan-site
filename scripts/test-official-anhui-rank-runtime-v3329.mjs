@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.329-anhui-official-rank2025-policy-bonus-inclusive-full-table-aligned-868426records";
+const modelVersion = "local-deterministic-v3.330-jiangxi-official-rank2025-filing-score-policy-bonus-inclusive-full-table-replaced-868426records";
 const sourceId = "official-anhui-rank-2025-v3329";
 const readBytes = (file) => zlib.gunzipSync(fs.readFileSync(file));
 const readJson = (file) => JSON.parse(readBytes(file));
@@ -35,12 +35,12 @@ assert.equal(lite.modelVersion, modelVersion);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 130155);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5133);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5134);
 assert.equal(manifest.rankConversionCount, 130155);
-assert.equal(manifest.runtimeProfile.version, "v3.329");
+assert.equal(manifest.runtimeProfile.version, "v3.330");
 assert.deepEqual(
   [core.admissionScoreLayer.rankSourceCoverage.sources, core.admissionScoreLayer.rankSourceCoverage.parsedSources],
-  [218, 152],
+  [219, 153],
 );
 assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 130155);
 
@@ -88,7 +88,7 @@ const hdu = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "off
 assert.equal(hdu.anhui2025ScoreDerivedRankRecords, 25);
 assert.equal(hdu.anhui2025RankPolicyBonusIncluded, true);
 assert.ok(hdu.rankAlignmentBoundary.includes("安徽2025年25条"));
-assert.ok(hdu.rankAlignmentBoundary.includes("安徽按历史/物理分别使用含加分且公开至200分的完整分档表"));
+assert.ok(hdu.rankAlignmentBoundary.includes("安徽使用含加分且公开至200分的完整分档表"));
 assert.ok(core.admissionScoreLayer.currentFinding.includes("1804条安徽历史类/物理类普通整数最低分"));
 assert.ok(core.admissionScoreLayer.currentFinding.includes("179条特殊路径继续隔离"));
 assert.ok(core.admissionScoreLayer.downgradeReason.includes("199分及以下"));

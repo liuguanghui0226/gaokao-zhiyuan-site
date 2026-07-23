@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.329-anhui-official-rank2025-policy-bonus-inclusive-full-table-aligned-868426records";
+const modelVersion = "local-deterministic-v3.330-jiangxi-official-rank2025-filing-score-policy-bonus-inclusive-full-table-replaced-868426records";
 const sourceId = "official-heilongjiang-rank-2025-v3324";
 const floors = { 历史类: 130, 物理类: 130 };
 
@@ -61,10 +61,10 @@ assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 130155);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 130155);
-assert.equal(manifest.runtimeProfile.version, "v3.329");
+assert.equal(manifest.runtimeProfile.version, "v3.330");
 assert.equal(manifest.runtimeProfile.initialCore, "knowledge-core-lite.json.gz");
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5133);
-assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5133);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5134);
+assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5134);
 assert.equal(lite.browserRuntime.profile, "core-lite-v1");
 assert.ok(liteAudit.liteCore.rawReductionRate >= 0.75);
 
@@ -151,8 +151,8 @@ assert.deepEqual(applied.after.linkedByType, {
 
 const hdu = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "official-hdu-national-2014-2025-school-major-admission");
 assert.equal(hdu.heilongjiang2025ScoreDerivedRankRecords, 15);
-assert.equal(hdu.derivedRankRecords, 273);
-assert.equal(hdu.rankUnavailableRecords, 7190);
+assert.equal(hdu.derivedRankRecords, 297);
+assert.equal(hdu.rankUnavailableRecords, 7166);
 assert.ok(hdu.rankAlignmentBoundary.includes("黑龙江2025年15条"));
 
 console.log("official Heilongjiang 2025 rank runtime v3.326 tests passed");
