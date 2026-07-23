@@ -72,6 +72,6 @@
     "sha256": "168b9f8f0404db8b5f0005702c1936fab964ff887df1af282a237c9fdb3ce331",
     "targetRelease": "data-v3.275",
     "url": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/download/data-v3.275/evidence-v3.325-hainan-rank-2025.tar.gz",
-    "status": "prepared-for-upload"
+    "status": "uploaded-and-redownload-verified"
   }
 }
