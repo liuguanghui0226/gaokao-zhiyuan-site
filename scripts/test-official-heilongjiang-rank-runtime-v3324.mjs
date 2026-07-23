@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.324-heilongjiang-official-rank2025-no-policy-bonus-published-floor-aligned-868426records";
+const modelVersion = "local-deterministic-v3.325-hainan-official-rank2025-policy-bonus-inclusive-published-floor-aligned-868426records";
 const sourceId = "official-heilongjiang-rank-2025-v3324";
 const floors = { 历史类: 130, 物理类: 130 };
 
@@ -58,13 +58,13 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(lite.modelVersion, modelVersion);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 128036);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 128591);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 128036);
-assert.equal(manifest.runtimeProfile.version, "v3.324");
+assert.equal(manifest.rankConversionCount, 128591);
+assert.equal(manifest.runtimeProfile.version, "v3.325");
 assert.equal(manifest.runtimeProfile.initialCore, "knowledge-core-lite.json.gz");
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5128);
-assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5128);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5129);
+assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5129);
 assert.equal(lite.browserRuntime.profile, "core-lite-v1");
 assert.ok(liteAudit.liteCore.rawReductionRate >= 0.75);
 
@@ -130,8 +130,8 @@ assert.deepEqual(sourceNote.publishedScoreFloors, { 历史类: 130, 物理类: 1
 assert.equal(sourceNote.scoreBasis, "gaokao-cultural-score-excluding-policy-bonus");
 assert.equal(sourceNote.provenance.rowComparisons, 1091);
 assert.equal(sourceNote.provenance.cellComparisons, 3273);
-assert.ok(core.admissionScoreLayer.currentFinding.includes("7098条黑龙江2025普通类整数最低分"));
-assert.ok(core.admissionScoreLayer.downgradeReason.includes("不含照顾政策分"));
+assert.ok(core.admissionScoreLayer.currentFinding.includes("4241条海南2025综合普通类整数最低分"));
+assert.ok(core.admissionScoreLayer.downgradeReason.includes("口径含照顾加分"));
 
 const shardRaw = zlib.gunzipSync(fs.readFileSync(path.join(releaseDir, `${path.basename(heilongjiangItem.file, ".json")}.json.gz`)));
 const coreRaw = zlib.gunzipSync(fs.readFileSync(coreFile));
@@ -151,8 +151,8 @@ assert.deepEqual(applied.after.linkedByType, {
 
 const hdu = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "official-hdu-national-2014-2025-school-major-admission");
 assert.equal(hdu.heilongjiang2025ScoreDerivedRankRecords, 15);
-assert.equal(hdu.derivedRankRecords, 214);
-assert.equal(hdu.rankUnavailableRecords, 7249);
+assert.equal(hdu.derivedRankRecords, 222);
+assert.equal(hdu.rankUnavailableRecords, 7241);
 assert.ok(hdu.rankAlignmentBoundary.includes("黑龙江2025年15条"));
 
-console.log("official Heilongjiang 2025 rank runtime v3.324 tests passed");
+console.log("official Heilongjiang 2025 rank runtime v3.325 tests passed");

@@ -43,11 +43,11 @@ for (const note of liteNotes) {
   assert.ok(note.id && note.title && note.quality);
   assert.ok(Object.keys(note).every((key) => allowedFields.has(key)), `Lite source note ${note.id} leaked a full-evidence field`);
 }
-const rankSource = liteNotes.find((note) => note.id === "official-hubei-rank-2025-v3322");
-assert.equal(rankSource.province, "湖北");
+const rankSource = liteNotes.find((note) => note.id === "official-hainan-rank-2025-v3325");
+assert.equal(rankSource.province, "海南");
 assert.equal(rankSource.year, 2025);
-assert.equal(rankSource.quality, "official-hubei-education-department-pdf-exam-authority-images-cross-verified");
-assert.equal(rankSource.url, "https://www.hbea.edu.cn/html/2025-06/15292.html");
+assert.equal(rankSource.quality, "official-hainan-exam-authority-21-page-image-table-government-repost-dual-resolution-ocr-arithmetic-verified");
+assert.equal(rankSource.url, "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202506/t20250624_3885371.html");
 
 assert.equal(manifest.coreLite.profile, "core-lite-v1");
 assert.equal(manifest.coreLite.bytes, liteBytes.byteLength);
@@ -62,4 +62,11 @@ assert.equal(audit.runtimeManifest.sha256, sha256(manifestBytes));
 assert.ok(liteBytes.byteLength <= fullBytes.byteLength * 0.25);
 assert.ok(fs.statSync(liteFile).size <= fs.statSync(fullFile).size * 0.35);
 
-console.log(JSON.stringify({ status: "ok", modelVersion: lite.modelVersion, sourceNotes: liteNotes.length, fullBytes: fullBytes.byteLength, liteBytes: liteBytes.byteLength, compressedReductionRate: Number((1 - fs.statSync(liteFile).size / fs.statSync(fullFile).size).toFixed(6)) }, null, 2));
+console.log(JSON.stringify({
+  status: "ok",
+  modelVersion: lite.modelVersion,
+  sourceNotes: liteNotes.length,
+  fullBytes: fullBytes.byteLength,
+  liteBytes: liteBytes.byteLength,
+  compressedReductionRate: Number((1 - fs.statSync(liteFile).size / fs.statSync(fullFile).size).toFixed(6)),
+}, null, 2));

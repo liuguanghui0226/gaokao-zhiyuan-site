@@ -1,0 +1,49 @@
+{
+  "dataset": "official-hainan-rank-conversion-2025-v3325-runtime",
+  "generatedAt": "2026-07-23T19:32:09.625Z",
+  "sourceId": "official-hainan-rank-2025-v3325",
+  "importFile": "data/admissions/official-hainan-rank-conversion-2025-v3325-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.324-heilongjiang-official-rank2025-no-policy-bonus-published-floor-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 128036,
+    "provinceRankConversions": 547
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.325-hainan-official-rank2025-policy-bonus-inclusive-published-floor-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 128591,
+    "rankConversionsAdded": 555,
+    "provinceRecords": 11076,
+    "provinceRankConversions": 1102,
+    "linkedAdmissionRecords": 4241,
+    "officialLinkedRecords": 3976,
+    "thirdPartyLinkedRecords": 265,
+    "schoolOfficialScopeLinkedRecords": 244,
+    "specialPathExcludedRecords": 35,
+    "topBucketLinkedRecords": 16,
+    "linkedSourceNotes": 76,
+    "linkedByType": {
+      "institution-admission": 56,
+      "major-admission": 447,
+      "major-group-admission": 2867,
+      "vocational-admission": 871
+    },
+    "sourceNotes": 5129,
+    "shardBytes": 16156069,
+    "shardSha256": "631969501393b7d37cf0dcfcaab58f308956be40ef21633523d24127162e0218",
+    "coreBytes": 15788167,
+    "coreSha256": "35749a1cf5f3172d851ba5831935fafd7211f24123d956f6075d9291d0baf1f9",
+    "manifestBytesBeforeLiteRebuild": 6172,
+    "manifestSha256BeforeLiteRebuild": "937cedc4bc5284964b8643d2633a0f367c1599db5da5c08b4c642391013695a7"
+  },
+  "cautions": [
+    "海南2025普通类采用综合投档成绩口径，本表全体考生列包含高考成绩综合分与照顾加分；只与同口径最低分记录对齐。",
+    "800分及以上仅保存1-105名合并档，不生成档内伪精确位次。",
+    "官方公开至246分；低于246分不向下外推。",
+    "本轮使用全体考生人数/累计列，不把物理、化学、生物、政治、历史、地理选考人数列当作独立招生科类位次。",
+    "历史类、物理类标签、艺术体育综合分、科类不明、非整数分和特殊路径记录不参与海南综合普通类自动换算。",
+    "最低分换算位次不是院校投档表原生公布的最低位次，正式填报前仍须核验当年考试院表、招生计划和院校章程。"
+  ]
+}

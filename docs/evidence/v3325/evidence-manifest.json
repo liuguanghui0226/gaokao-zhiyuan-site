@@ -1,0 +1,77 @@
+{
+  "dataset": "official-hainan-rank-conversion-2025-v3325-evidence",
+  "province": "海南",
+  "year": 2025,
+  "publisher": "海南省考试局",
+  "officialUrl": "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202506/t20250624_3885371.html",
+  "mirrorUrl": "https://thirdpage.thepaper.cn/h5/jrtt/31040129",
+  "provenanceBoundary": "The Hainan examination authority publishes 21 original table images and defines filing score as the candidate's comprehensive Gaokao score plus preferential-care points. A government-account repost supplies an independent 21-image downscaled copy attributed to the authority. Derived ranges are same-year all-candidate comprehensive-score segments, not institution-native admission ranks or history/physics subject-group ranks.",
+  "evidenceInventory": {
+    "files": 86,
+    "sourceBytes": 113368530,
+    "officialPages": 1,
+    "officialImages": 21,
+    "officialGridOcrFiles": 21,
+    "mirrorPages": 1,
+    "mirrorImages": 21,
+    "mirrorGridOcrFiles": 21,
+    "perFileHashes": "data/admissions/official-hainan-rank-conversion-2025-v3325-import.json#sourceNotes[0].provenance.imageEvidenceSha256"
+  },
+  "evidenceBundleSha256": {
+    "officialPage": "1d3042f39f2a4193fa36f89d8a823424e108eba29e7d5eaa4e1233fea26a2b71",
+    "mirrorPage": "e6bdcf64e1053dbc0e5c54fe739e5327e8e43d594ba7b0fa1b224c11c77b25b8",
+    "officialImages": "13a3e20e8ab39a50a7156d31afe2a4f99cda3653083fcd1ff0228d151a77f4d7",
+    "officialGrid": "8c6ac5e205efe4b84c06673f0ddecfb6127e1204ed5685a74c76e4359d78fa41",
+    "mirrorImages": "4e3e62043a65397a1be8e20dff47f691dd0536c2480a6dd16e3d94f0df5d93a9",
+    "mirrorGrid": "bb781210b3eb286cd78da13d51f2e34bca4d2c5d1cc4168b0ed105f8b0f292e8"
+  },
+  "parseAudit": {
+    "rankConversions": 555,
+    "numericScoreRows": 554,
+    "directCumulativeMatches": 549,
+    "rawDifferenceRows": 38,
+    "rawCumulativeDifferences": 5,
+    "cumulativeCorrections": 7,
+    "mirrorCorrections": 3,
+    "arithmeticCorrections": 4,
+    "topBuckets": 1,
+    "allCountsClose": true,
+    "allCumulativeRanksContinuous": true
+  },
+  "scoreBasis": "gaokao-comprehensive-filing-score-including-policy-bonus",
+  "rankPolicyBonusIncluded": true,
+  "publishedFloor": 246,
+  "topBucket": "800-900 -> rank 1-105",
+  "checkpoints": {
+    "score700": { "rankStart": 1721, "rankEnd": 1763 },
+    "score600": { "rankStart": 12011, "rankEnd": 12182 },
+    "score500": { "rankStart": 37237, "rankEnd": 37504 },
+    "score480": { "rankStart": 42848, "rankEnd": 43089 },
+    "score246": { "rankStart": 67404, "rankEnd": 67408 }
+  },
+  "runtimeMerge": {
+    "rankConversionsAdded": 555,
+    "linkedAdmissionRecords": 4241,
+    "officialLinkedRecords": 3976,
+    "thirdPartyLinkedRecords": 265,
+    "schoolOfficialScopeLinkedRecords": 244,
+    "specialPathExcludedRecords": 35,
+    "ordinaryPublishedRangeIntegerScoreRecordsStillUnranked": 0,
+    "mislabeledHistoryPhysicsRecordsExcluded": 87,
+    "linkedByType": {
+      "institution-admission": 56,
+      "major-admission": 447,
+      "major-group-admission": 2867,
+      "vocational-admission": 871
+    }
+  },
+  "releaseAsset": {
+    "name": "evidence-v3.325-hainan-rank-2025.tar.gz",
+    "bytes": 77804992,
+    "files": 86,
+    "sha256": "168b9f8f0404db8b5f0005702c1936fab964ff887df1af282a237c9fdb3ce331",
+    "targetRelease": "data-v3.275",
+    "url": "https://github.com/liuguanghui0226/gaokao-zhiyuan-site/releases/download/data-v3.275/evidence-v3.325-hainan-rank-2025.tar.gz",
+    "status": "prepared-for-upload"
+  }
+}

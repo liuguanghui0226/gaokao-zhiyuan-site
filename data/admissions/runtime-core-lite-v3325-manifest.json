@@ -1,0 +1,47 @@
+{
+  "dataset": "runtime-core-lite-v3325",
+  "generatedAt": "2026-07-23T19:33:49.287Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.325-hainan-official-rank2025-policy-bonus-inclusive-published-floor-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5129,
+    "lite": 5129,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15788167,
+    "compressedBytes": 2397393,
+    "sha256": "35749a1cf5f3172d851ba5831935fafd7211f24123d956f6075d9291d0baf1f9"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3007816,
+    "compressedBytes": 478554,
+    "sha256": "884e017ba6b1d8d07335f905b182f19193da310623d0b156335aaf27a9d4e88e",
+    "rawReductionRate": 0.809489
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 7992,
+    "compressedBytes": 2799,
+    "sha256": "54822e8701568bc6ea8845891458d0cd94799adc50470144d8e3e9346e35f06d"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.324-heilongjiang-official-rank2025-no-policy-bonus-published-floor-aligned-868426records";
+const modelVersion = "local-deterministic-v3.325-hainan-official-rank2025-policy-bonus-inclusive-published-floor-aligned-868426records";
 const sourceId = "official-fujian-rank-2025-v3323";
 const floors = { 历史类: 215, 物理类: 215 };
 
@@ -58,13 +58,13 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(lite.modelVersion, modelVersion);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 128036);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 128591);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 128036);
-assert.equal(manifest.runtimeProfile.version, "v3.324");
+assert.equal(manifest.rankConversionCount, 128591);
+assert.equal(manifest.runtimeProfile.version, "v3.325");
 assert.equal(manifest.runtimeProfile.initialCore, "knowledge-core-lite.json.gz");
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5128);
-assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5128);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5129);
+assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5129);
 assert.equal(lite.browserRuntime.profile, "core-lite-v1");
 assert.ok(liteAudit.liteCore.rawReductionRate >= 0.75);
 
@@ -126,7 +126,7 @@ assert.ok(sourceNote);
 assert.deepEqual(sourceNote.publishedScoreFloors, { 历史类: 215, 物理类: 215 });
 assert.equal(sourceNote.provenance.officialImageRows, 930);
 assert.equal(sourceNote.provenance.imageOcrCumulativeMatches, 438);
-assert.ok(core.admissionScoreLayer.currentFinding.includes("7098条黑龙江2025普通类整数最低分"));
+assert.ok(core.admissionScoreLayer.currentFinding.includes("4241条海南2025综合普通类整数最低分"));
 assert.ok(core.admissionScoreLayer.downgradeReason.includes("低于公开分数档"));
 
 const shardRaw = zlib.gunzipSync(fs.readFileSync(path.join(releaseDir, `${path.basename(fujianItem.file, ".json")}.json.gz`)));
