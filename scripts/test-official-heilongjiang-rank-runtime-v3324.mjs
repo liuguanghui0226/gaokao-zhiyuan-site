@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.326-xinjiang-rank2025-score-basis-conflict-blocked-868426records";
+const modelVersion = "local-deterministic-v3.327-tianjin-official-rank2025-policy-bonus-inclusive-full-table-aligned-868426records";
 const sourceId = "official-heilongjiang-rank-2025-v3324";
 const floors = { 历史类: 130, 物理类: 130 };
 
@@ -58,13 +58,13 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(lite.modelVersion, modelVersion);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 128591);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 128972);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 128591);
-assert.equal(manifest.runtimeProfile.version, "v3.326");
+assert.equal(manifest.rankConversionCount, 128972);
+assert.equal(manifest.runtimeProfile.version, "v3.327");
 assert.equal(manifest.runtimeProfile.initialCore, "knowledge-core-lite.json.gz");
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5130);
-assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5130);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5131);
+assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5131);
 assert.equal(lite.browserRuntime.profile, "core-lite-v1");
 assert.ok(liteAudit.liteCore.rawReductionRate >= 0.75);
 
@@ -151,8 +151,8 @@ assert.deepEqual(applied.after.linkedByType, {
 
 const hdu = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "official-hdu-national-2014-2025-school-major-admission");
 assert.equal(hdu.heilongjiang2025ScoreDerivedRankRecords, 15);
-assert.equal(hdu.derivedRankRecords, 222);
-assert.equal(hdu.rankUnavailableRecords, 7241);
+assert.equal(hdu.derivedRankRecords, 238);
+assert.equal(hdu.rankUnavailableRecords, 7225);
 assert.ok(hdu.rankAlignmentBoundary.includes("黑龙江2025年15条"));
 
 console.log("official Heilongjiang 2025 rank runtime v3.326 tests passed");

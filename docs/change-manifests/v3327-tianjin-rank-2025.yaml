@@ -1,0 +1,70 @@
+change_id: "2026-07-24-v3327-tianjin-rank-2025"
+title: "天津 2025 官方分数档与普通类最低分位次换算"
+phase: deliver
+status: complete
+execution_mode: full
+resume_mode: full
+resume_reason: "天津2025录取最低分已有较厚覆盖，但缺同年官方位次换算，影响院校专业比较。"
+last_updated: "2026-07-23T20:56:01Z"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "官方PDF与完整HTML逐格复核，并用政策文件闭合政策加分口径。"
+  - surface: user
+    role: consumer
+    notes: "3195条天津普通类最低分显示换算位次和政策加分口径。"
+  - surface: operational
+    role: consumer
+    notes: "GitHub仓库、天津gzip分片、双核心索引、Pages运行层和Release证据包。"
+
+sot_map:
+  - info_name: "天津2025普通高考总成绩分数档（含政策加分）"
+    pattern: 4
+    source: "https://gaokao.chsi.com.cn/gkxx/zc/ss/202506/20250624/2293390529.html"
+    consumers:
+      - name: "data/admissions/official-tianjin-rank-conversion-2025-v3327-import.json"
+        kind: data
+        sync_lag: generated
+      - name: "site/data/release-v3.275/tianjin.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node导入器比较381行、1143个数值格；合并器仅连接同年综合普通类整数最低分并写入口径字段。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "导入JSON和证据包锁定PDF、HTML、政策文件及其哈希。"
+    - surface: user
+      mode: 1
+      rationale: "恢复v3.326核心、天津分片、界面资源和运行清单。"
+    - surface: operational
+      mode: 1
+      rationale: "GitHub提交和Release按版本保留，可回退到上一远端提交。"
+
+task_slices:
+  - id: "source-import"
+    scope: "381个分数档、1143个数值格和政策加分口径"
+    verification_command: "node scripts/test-official-tianjin-rank-import-v3327.mjs"
+  - id: "alignment"
+    scope: "3195条连接、2910条官方来源、20条特殊路径隔离和680分以上合并档"
+    verification_command: "node scripts/test-tianjin-rank-alignment-boundaries-v3327.mjs && node scripts/test-official-tianjin-rank-runtime-v3327.mjs"
+  - id: "runtime"
+    scope: "天津分片、完整核心、轻量核心、界面口径标签和全国回归"
+    verification_command: "node scripts/test-runtime-core-lite-v3327.mjs && node scripts/test-current-release.mjs"
+  - id: "release"
+    scope: "GitHub Pages、31省公网分片和证据Release资产"
+    verification_command: "gh workflow run verify-live.yml"
+
+residual_risks:
+  - "680分及以上为合并档，不能生成档内伪精确位次。"
+  - "299分及以下不在公开表范围，不向下外推。"
+  - "最低分换算位次不是院校原表直接公布的录取最低位次。"
+  - "物理/历史标签、艺体综合分、非整数分和特殊路径不混入天津综合普通类表。"
+  - "正式填报仍需核验当年招生计划、专业选科要求、院校招生章程和考试院最新公告。"

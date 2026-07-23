@@ -1,0 +1,52 @@
+{
+  "dataset": "runtime-core-lite-v3327",
+  "generatedAt": "2026-07-23T20:47:59.835Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.327-tianjin-official-rank2025-policy-bonus-inclusive-full-table-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5131,
+    "lite": 5131,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview",
+      "scoreBasis",
+      "rankPolicyBonusIncluded",
+      "automaticAdmissionScoreAlignmentAllowed",
+      "alignmentBlockReason",
+      "scoreBasisAuditEvidenceId"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15823708,
+    "compressedBytes": 2406552,
+    "sha256": "6cb6a0bd7384ba90524b7151517e64c0d8ab080b595ae9a6f27ae965a89a3dc3"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3010391,
+    "compressedBytes": 479580,
+    "sha256": "053a975dcb3332967129b9fe83faec23162103e168c1923de864cdc7b19ae164",
+    "rawReductionRate": 0.809754
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 8155,
+    "compressedBytes": 2873,
+    "sha256": "bdf500b6f58fa45d549b98ff789bea97512011853889c16c46cf404ee4608eb2"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

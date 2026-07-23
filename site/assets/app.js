@@ -716,6 +716,13 @@ function isScoreDerivedRankRecord(record) {
   return record?.rankDerivedFromScore === true || record?.rankEvidenceScope === "score-derived-provincial-segment";
 }
 
+function rankScoreBasisLabel(record) {
+  if (!isScoreDerivedRankRecord(record)) return "";
+  if (record?.rankPolicyBonusIncluded === true) return "位次口径含政策加分";
+  if (record?.rankPolicyBonusIncluded === false) return "位次口径不含政策加分";
+  return "位次加分口径待核";
+}
+
 function isVocationalAdmissionRecord(record) {
   const batch = String(record?.batch || "");
   if (/本科/.test(batch)) return false;
@@ -1944,7 +1951,7 @@ function admissionFit(record, profile, today = currentChinaDate()) {
     else if (gap <= 3500) fit = { zone: "冲", score: 62, text: `位次落后${scopedRankBoundaryLabel}约${fmtNumber(gap)}名` };
     else fit = { zone: "高冲", score: 42, text: `位次落后${scopedRankBoundaryLabel}约${fmtNumber(gap)}名` };
   } else if (score > 0 && minScore > 0) {
-    const gap = score - minScore;
+    const gap = Number((score - minScore).toFixed(3));
     if (gap >= 18) fit = { zone: "分数稳", score: 84, text: `分数高出近年最低分${gap}分，缺位次需复核` };
     else if (gap >= 8) fit = { zone: "分数稳妥", score: 76, text: `分数高出近年最低分${gap}分，缺位次需复核` };
     else if (gap >= 0) fit = { zone: "分数临界", score: 66, text: `分数高出近年最低分${gap}分，缺位次需复核` };
@@ -2030,6 +2037,7 @@ function buildAdmissionOptions(candidate, profile) {
         record.minScore ? `最低分${record.minScore}` : "",
         record.admittedCount ? `招生数${record.admittedCount}` : "",
         record.rankRangeText ? `位次${record.rankRangeText}` : "",
+        rankScoreBasisLabel(record),
         trend?.label || "",
         record.majorGroup || "",
         record.electiveRequirement ? `选科${record.electiveRequirement}` : "",
@@ -2536,6 +2544,7 @@ function applicationPlanDetail(option) {
       record.year ? `${record.year}年` : "",
       record.minScore ? `最低分${record.minScore}` : "",
       record.rankRangeText ? `位次${record.rankRangeText}` : "",
+      rankScoreBasisLabel(record),
       fit?.recency?.label || "",
       record.electiveRequirement ? `选科${record.electiveRequirement}` : "",
       electiveRequirementForProfile(record, state.recommendation?.profile || {}).state === "needs-check" ? "选科待核" : "",
