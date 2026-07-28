@@ -78,7 +78,7 @@ const supersededBeijingQueue = core.admissionScoreLayer.sourceNotes.find((note) 
 assert.equal(supersededBeijingQueue?.supersededBy, "official-beijing-rank-2025-v3271");
 assert.equal(core.admissionScoreLayer.rankSourceCoverage.sources, 203);
 assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedSources, 137);
-assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 66);
+assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 64);
 assert.equal(core.admissionScoreLayer.rankSourceCoverage.imageQueuedSources, 66);
 assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 116656);
 const rank2025Coverage = core.admissionScoreLayer.rankSourceCoverage.byYear.find((row) => row.year === 2025);

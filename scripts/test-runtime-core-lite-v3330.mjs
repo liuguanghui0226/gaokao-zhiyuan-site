@@ -25,10 +25,10 @@ const audit = JSON.parse(fs.readFileSync(
   "utf8",
 ));
 
-assert.equal(lite.modelVersion, "local-deterministic-v3.330-jiangxi-official-rank2025-filing-score-policy-bonus-inclusive-full-table-replaced-868426records");
+assert.equal(lite.modelVersion, "local-deterministic-v3.331-guangdong-official-rank2025-dual-level-bonus-full-table-aligned-868426records");
 assert.equal(lite.modelVersion, full.modelVersion);
-assert.equal(lite.admissionScoreLayer.rankConversionRecords, 130155);
-assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5134);
+assert.equal(lite.admissionScoreLayer.rankConversionRecords, 132497);
+assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5135);
 assert.equal(lite.browserRuntime.profile, "core-lite-v1");
 const allowedFields = new Set(lite.browserRuntime.sourceNoteFields);
 assert.ok(lite.admissionScoreLayer.sourceNotes.every((note) => Object.keys(note).every((key) => allowedFields.has(key))));
@@ -40,8 +40,8 @@ const xinjiang = lite.admissionScoreLayer.sourceNotes.find((note) => note.id ===
 assert.equal(xinjiang.automaticAdmissionScoreAlignmentAllowed, false);
 assert.equal(manifest.coreLite.bytes, liteBytes.byteLength);
 assert.equal(manifest.coreLite.sha256, sha256(liteBytes));
-assert.equal(manifest.coreLite.sourceNotes, 5134);
-assert.equal(manifest.runtimeProfile.version, "v3.330");
+assert.equal(manifest.coreLite.sourceNotes, 5135);
+assert.equal(manifest.runtimeProfile.version, "v3.331");
 assert.equal(audit.dataset, "runtime-core-lite-v3330");
 assert.equal(audit.fullCore.sha256, sha256(fullBytes));
 assert.equal(audit.liteCore.sha256, sha256(liteBytes));

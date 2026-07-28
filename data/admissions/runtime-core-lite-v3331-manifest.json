@@ -1,0 +1,53 @@
+{
+  "dataset": "runtime-core-lite-v3331",
+  "generatedAt": "2026-07-28T03:23:32.574Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.331-guangdong-official-rank2025-dual-level-bonus-full-table-aligned-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5135,
+    "lite": 5135,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview",
+      "scoreBasis",
+      "rankPolicyBonusIncluded",
+      "automaticAdmissionScoreAlignmentAllowed",
+      "alignmentBlockReason",
+      "scoreBasisAuditEvidenceId",
+      "rankUsageRequired"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 15980801,
+    "compressedBytes": 2422763,
+    "sha256": "704a7c221dbc3514235ed0d498d0a8996d448d4db55fd34b59c694294db835f4"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3013805,
+    "compressedBytes": 480502,
+    "sha256": "5404e66bf50c78c4840cd84adecdf8231b525165dcb97057d3e5837ad99e01f5",
+    "rawReductionRate": 0.811411
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 8180,
+    "compressedBytes": 2887,
+    "sha256": "e3af2fe68cf0aa5eadea93f35b46b9da27ff3d516148dc5d498b0ce6306f25ee"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.330-jiangxi-official-rank2025-filing-score-policy-bonus-inclusive-full-table-replaced-868426records";
+const modelVersion = "local-deterministic-v3.331-guangdong-official-rank2025-dual-level-bonus-full-table-aligned-868426records";
 const sourceId = "official-guangdong-control-lines-2026";
 const rankSourceUrl = "https://eea.gd.gov.cn/ptgk/content/post_4916165.html";
 
@@ -60,15 +60,15 @@ assert.ok(records.filter((record) => !record.controlLineRouteKind.startsWith("or
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 130155);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5134);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 132497);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5135);
 assert.equal(core.admissionScoreLayer.coverage.dataTypes["control-line"], 1592);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 130155);
+assert.equal(manifest.rankConversionCount, 132497);
 assert.equal(manifest.shards["广东"].records, 18409);
-assert.equal(manifest.shards["广东"].rankConversions, 8816);
-assert.equal(guangdong.rankConversions.length, 8816);
+assert.equal(manifest.shards["广东"].rankConversions, 11158);
+assert.equal(guangdong.rankConversions.length, 11158);
 assert.equal(runtimeManifest.after.sourceRecords, 49);
 assert.equal(runtimeManifest.after.rankSourceUrlRecords, 8816);
 assert.equal(rankRows.length, 8816);

@@ -15,7 +15,7 @@ const tests = [
   "test-application-plan-v3277.mjs",
   "test-elective-requirement-v3278.mjs",
   "test-browser-runtime-shards-v3274.mjs",
-  "test-runtime-core-lite-v3330.mjs",
+  "test-runtime-core-lite-v3331.mjs",
   "test-national-score-band-coverage-v3279.mjs",
   "test-official-jiangxi-control-lines-v3280.mjs",
   "test-official-xizang-control-lines-v3281.mjs",
@@ -114,6 +114,9 @@ const tests = [
   "test-official-jiangxi-rank-import-v3330.mjs",
   "test-jiangxi-rank-alignment-boundaries-v3330.mjs",
   "test-official-jiangxi-rank-runtime-v3330.mjs",
+  "test-official-guangdong-rank-import-v3331.mjs",
+  "test-guangdong-rank-alignment-boundaries-v3331.mjs",
+  "test-official-guangdong-rank-runtime-v3331.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 

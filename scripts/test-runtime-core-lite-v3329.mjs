@@ -27,7 +27,7 @@ const audit = JSON.parse(fs.readFileSync(
 
 assert.equal(lite.modelVersion, "local-deterministic-v3.329-anhui-official-rank2025-policy-bonus-inclusive-full-table-aligned-868426records");
 assert.equal(lite.modelVersion, full.modelVersion);
-assert.equal(lite.admissionScoreLayer.rankConversionRecords, 130155);
+assert.equal(lite.admissionScoreLayer.rankConversionRecords, 132497);
 assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5133);
 assert.equal(lite.browserRuntime.profile, "core-lite-v1");
 const allowedFields = new Set(lite.browserRuntime.sourceNoteFields);

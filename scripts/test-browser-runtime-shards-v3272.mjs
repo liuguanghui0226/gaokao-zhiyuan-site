@@ -39,7 +39,7 @@ assert.ok(core.admissionScoreLayer.sourceNotes.some((note) => note.id === "offic
 assert.deepEqual(core.admissionScoreLayer.coverage.formalScoreMissingProvinces, ["西藏"]);
 assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 116656);
 assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedSources, 137);
-assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 66);
+assert.equal(core.admissionScoreLayer.rankSourceCoverage.queuedSources, 64);
 
 assert.equal(manifest.modelVersion, core.modelVersion);
 assert.equal(manifest.provinceCount, 31);
