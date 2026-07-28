@@ -3,8 +3,10 @@
 ## 发布结果
 
 - 运行版本：`local-deterministic-v3.331-guangdong-official-rank2025-dual-level-bonus-full-table-aligned-868426records`。
+- 数据、界面与门禁提交：`2b7fa46281a67ee7299f64318d3e22520e06a09c`。
+- GitHub Pages 部署：`30327746553`，结论 `success`。
+- 公网 31 省逐分片验证：`30328060688`，结论 `success`。
 - 公开地址：`https://liuguanghui0226.github.io/gaokao-zhiyuan-site/`。
-- GitHub 提交、Pages 部署、在线验证和证据资产信息将在本轮发布完成后补入。
 
 ## 数据接入与对齐
 
@@ -27,6 +29,15 @@
 - 普通本科记录只有在明确属于普通本科批且不低于历史类 464 分、物理类 436 分时才自动连接本科口径。
 - 只有明确标注专科或高职批的记录才连接专科口径；艺术、体育、特殊类型、非整数分和已有原生位次不自动套表。
 - 最低分换算位次不是院校录取表直接公布的原生最低位次。
+
+## 证据资产
+
+- GitHub Release：`data-v3.275`。
+- 资产：`evidence-v3.331-guangdong-rank-2025.tar.gz`。
+- 大小：6069377 字节。
+- SHA-256：`0b98fb82f5051c4212f24bdaa609534db37ae0b917bd972e16d30ca90c38929a`。
+- 资产包含官方与镜像 ZIP、官方与复核页面、历史/物理 PDF、PDF 文本层、结构化 TSV、导入与运行清单、关键脚本和发布报告。
+- 上传后从 GitHub Release 重新下载，重新下载文件与本地证据包大小和哈希一致。
 
 ## 验证记录
 
