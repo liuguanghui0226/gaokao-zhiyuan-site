@@ -12,7 +12,7 @@ const release = path.join(root, "site/data/release-v3.275");
 const raw = (name) => zlib.gunzipSync(fs.readFileSync(path.join(release, name)));
 const read = (name) => JSON.parse(raw(name).toString("utf8"));
 const sha256 = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
-const version = "local-deterministic-v3.337-admission-provenance-relative-rank-dedup-868426records";
+const version = "local-deterministic-v3.338-route-safe-dedup-official-preference-868426records";
 const core = read("knowledge-core.json.gz");
 const lite = read("knowledge-core-lite.json.gz");
 const manifest = read("manifest.json.gz");
@@ -23,17 +23,21 @@ const evidence = JSON.parse(fs.readFileSync(path.join(root, "data/admissions/evi
 assert.equal(core.modelVersion, version);
 assert.equal(lite.modelVersion, version);
 assert.equal(manifest.modelVersion, version);
-assert.equal(manifest.runtimeProfile.version, "v3.337");
+assert.equal(manifest.runtimeProfile.version, "v3.338");
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
-assert.deepEqual(core.modelPolicy.admissionEvidencePolicy, {
-  thirdPartyMaximumConfidence: "B",
-  thirdPartyExecutable: false,
-  thirdPartyTier: "待复核数据候选",
-  logicalDedupeFields: ["province", "subjectType", "school", "major", "majorGroup", "dataType"],
-  relativeRankThresholds: { safe: 0.82, steady: 0.94, borderline: 1.03, reach: 1.18 },
-});
+assert.equal(core.modelPolicy.admissionEvidencePolicy.thirdPartyMaximumConfidence, "B");
+assert.equal(core.modelPolicy.admissionEvidencePolicy.thirdPartyExecutable, false);
+assert.equal(core.modelPolicy.admissionEvidencePolicy.thirdPartyTier, "待复核数据候选");
+assert.deepEqual(
+  core.modelPolicy.admissionEvidencePolicy.logicalDedupeFields,
+  ["province", "subjectType", "school", "major", "majorGroup", "dataType"],
+);
+assert.deepEqual(
+  core.modelPolicy.admissionEvidencePolicy.relativeRankThresholds,
+  { safe: 0.82, steady: 0.94, borderline: 1.03, reach: 1.18 },
+);
 assert.ok(core.modelPolicy.confidenceRules.some((rule) => rule.includes("第三方录取摘要最高为B")));
 
 const falseElite = jiangxi.records.filter((record) => (

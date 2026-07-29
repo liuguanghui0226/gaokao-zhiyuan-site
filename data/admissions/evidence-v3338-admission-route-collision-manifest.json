@@ -1,0 +1,376 @@
+{
+  "dataset": "evidence-v3338-admission-route-collision",
+  "generatedAt": "2026-07-30T20:30:00+08:00",
+  "sourceModelVersion": "local-deterministic-v3.337-admission-provenance-relative-rank-dedup-868426records",
+  "provinces": 31,
+  "admissionRecords": 794934,
+  "provenanceCounts": {
+    "official-exam-authority": 528948,
+    "school-official": 163808,
+    "third-party": 102178
+  },
+  "highestThirdPartyRates": [
+    {
+      "province": "湖南",
+      "total": 32589,
+      "official": 17394,
+      "schoolOfficial": 6209,
+      "thirdParty": 8986,
+      "thirdPartyRate": 0.275737
+    },
+    {
+      "province": "四川",
+      "total": 16476,
+      "official": 4537,
+      "schoolOfficial": 7425,
+      "thirdParty": 4514,
+      "thirdPartyRate": 0.273974
+    },
+    {
+      "province": "陕西",
+      "total": 15819,
+      "official": 5521,
+      "schoolOfficial": 5974,
+      "thirdParty": 4324,
+      "thirdPartyRate": 0.273342
+    },
+    {
+      "province": "江苏",
+      "total": 26891,
+      "official": 13258,
+      "schoolOfficial": 6283,
+      "thirdParty": 7350,
+      "thirdPartyRate": 0.273326
+    },
+    {
+      "province": "甘肃",
+      "total": 13749,
+      "official": 4364,
+      "schoolOfficial": 5695,
+      "thirdParty": 3690,
+      "thirdPartyRate": 0.268383
+    },
+    {
+      "province": "江西",
+      "total": 14001,
+      "official": 4061,
+      "schoolOfficial": 6370,
+      "thirdParty": 3570,
+      "thirdPartyRate": 0.254982
+    }
+  ],
+  "collisionDefinition": "按v3.337同省、同科类、同校、同专业、同数据类型宽键分组，再检查各组最新年份内的重复记录。",
+  "collisions": {
+    "broadIdentityGroups": 428254,
+    "latestYearCollisionGroups": 40538,
+    "differingMajorGroup": 22846,
+    "differingScore": 28554,
+    "mixedProvenance": 12579,
+    "routeSafeDistinctGroups": 30329,
+    "clearDuplicatesCollapsed": 13826,
+    "officialReplacementsSelected": 3404
+  },
+  "controls": {
+    "preserveDifferentNonblankMajorGroups": true,
+    "preserveGenericInstitutionAndMajorGroupRoutes": true,
+    "preserveRouteFields": [
+      "majorGroup",
+      "admissionSubtype",
+      "campus",
+      "tuition",
+      "electiveRequirement",
+      "majorCode",
+      "rankInstitutionScope"
+    ],
+    "blankGroupMergeRequiresExactSameYearBoundary": true,
+    "sameRouteEvidencePreference": [
+      "official-exam-authority",
+      "school-official",
+      "other",
+      "third-party"
+    ]
+  },
+  "examples": {
+    "beijingSportUniversity": [
+      {
+        "id": "2025-beijing-undergrad-filing-ed984c0d2e42b2d3b4",
+        "province": "北京",
+        "schoolName": "北京体育大学",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "01 不限",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "不限",
+        "minScore": 604,
+        "minRankEnd": 10979,
+        "provenance": "official-exam-authority"
+      },
+      {
+        "id": "2025-beijing-undergrad-filing-b6e9c61c4b2679813e",
+        "province": "北京",
+        "schoolName": "北京体育大学",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "02 不限",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "不限",
+        "minScore": 600,
+        "minRankEnd": 11883,
+        "provenance": "official-exam-authority"
+      },
+      {
+        "id": "2025-beijing-undergrad-filing-03a0c0030a45310b89",
+        "province": "北京",
+        "schoolName": "北京体育大学",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "03 物理",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "物理",
+        "minScore": 589,
+        "minRankEnd": 14358,
+        "provenance": "official-exam-authority"
+      },
+      {
+        "id": "2025-beijing-undergrad-filing-f9f98ffcc52c0a87a2",
+        "province": "北京",
+        "schoolName": "北京体育大学",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "04 物理",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "物理",
+        "minScore": 595,
+        "minRankEnd": 13015,
+        "provenance": "official-exam-authority"
+      },
+      {
+        "id": "2025-beijing-undergrad-filing-cd1cae51d36f55ff05",
+        "province": "北京",
+        "schoolName": "北京体育大学",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "05 物理＋化学",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "物理＋化学",
+        "minScore": 589,
+        "minRankEnd": 14358,
+        "provenance": "official-exam-authority"
+      },
+      {
+        "id": "2025-beijing-undergrad-filing-e7349cb3a0609b7355",
+        "province": "北京",
+        "schoolName": "北京体育大学",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "06 物理＋化学",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "物理＋化学",
+        "minScore": 585,
+        "minRankEnd": 15321,
+        "provenance": "official-exam-authority"
+      },
+      {
+        "id": "2025-beijing-undergrad-filing-b449c217cbd6c62ae7",
+        "province": "北京",
+        "schoolName": "北京体育大学",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "07 思想政治＋历史",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "思想政治＋历史",
+        "minScore": 601,
+        "minRankEnd": 11659,
+        "provenance": "official-exam-authority"
+      },
+      {
+        "id": "2025-beijing-undergrad-filing-6ed4ee8100c0eaac63",
+        "province": "北京",
+        "schoolName": "北京体育大学",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "08 不限(中外合办)",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "不限(中外合办)",
+        "minScore": 524,
+        "minRankEnd": 31126,
+        "provenance": "official-exam-authority"
+      }
+    ],
+    "centralAcademyOfFineArts": [
+      {
+        "id": "2025-beijing-undergrad-filing-f82474fd16c37c20cc",
+        "province": "北京",
+        "schoolName": "中央美术学院",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "01 不限",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "不限",
+        "minScore": 609,
+        "minRankEnd": 9914,
+        "provenance": "official-exam-authority"
+      },
+      {
+        "id": "2025-beijing-undergrad-filing-3701b9383b9f567e6a",
+        "province": "北京",
+        "schoolName": "中央美术学院",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "02 历史",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "历史",
+        "minScore": 601,
+        "minRankEnd": 11659,
+        "provenance": "official-exam-authority"
+      },
+      {
+        "id": "2025-beijing-undergrad-filing-fcc294ec76f45eaa22",
+        "province": "北京",
+        "schoolName": "中央美术学院",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "03 物理＋化学",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "物理＋化学",
+        "minScore": 610,
+        "minRankEnd": 9714,
+        "provenance": "official-exam-authority"
+      },
+      {
+        "id": "2025-beijing-undergrad-filing-2e46650ccecdbae092",
+        "province": "北京",
+        "schoolName": "中央美术学院",
+        "dataType": "major-group-admission",
+        "majorName": "院校专业组投档线",
+        "majorGroup": "04 不限(中外合办)",
+        "batch": "本科普通批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "不限(中外合办)",
+        "minScore": 598,
+        "minRankEnd": 12318,
+        "provenance": "official-exam-authority"
+      }
+    ],
+    "shenyangAgriculturalUniversity": [
+      {
+        "id": "2025-5c26f6d05eec1786",
+        "province": "北京",
+        "schoolName": "沈阳农业大学",
+        "dataType": "institution-admission",
+        "majorName": "院校投档线",
+        "majorGroup": "普通类",
+        "batch": "普通类",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "",
+        "minScore": 519,
+        "minRankEnd": null,
+        "provenance": "third-party"
+      },
+      {
+        "id": "2025-45003cb78ee03ed0",
+        "province": "北京",
+        "schoolName": "沈阳农业大学",
+        "dataType": "institution-admission",
+        "majorName": "院校投档线",
+        "majorGroup": "中外合作办学",
+        "batch": "中外合作办学",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "",
+        "minScore": 501,
+        "minRankEnd": null,
+        "provenance": "third-party"
+      }
+    ],
+    "minzuUniversityElectronicInformation": [
+      {
+        "id": "2025-329d92086148a2a8",
+        "province": "北京",
+        "schoolName": "中央民族大学",
+        "dataType": "major-admission",
+        "majorName": "电子信息类",
+        "majorGroup": "",
+        "batch": "本科批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "",
+        "minScore": 623,
+        "minRankEnd": null,
+        "provenance": "third-party"
+      },
+      {
+        "id": "muc-8afdfd073c7e6f2bad",
+        "province": "北京",
+        "schoolName": "中央民族大学",
+        "dataType": "major-admission",
+        "majorName": "电子信息类",
+        "majorGroup": "",
+        "batch": "本科批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "",
+        "minScore": 623,
+        "minRankEnd": 7249,
+        "provenance": "school-official"
+      }
+    ],
+    "jiangxiFinanceSoftware": [
+      {
+        "id": "2025-2c7d7a85727b531c",
+        "province": "江西",
+        "schoolName": "江西财经大学",
+        "dataType": "major-admission",
+        "majorName": "软件工程(VR软件开发）",
+        "majorGroup": "",
+        "batch": "本科批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "",
+        "minScore": 543,
+        "minRankEnd": 40558,
+        "provenance": "third-party"
+      },
+      {
+        "id": "2025-jx-physics-jxufe-software-vr",
+        "province": "江西",
+        "schoolName": "江西财经大学",
+        "dataType": "major-admission",
+        "majorName": "软件工程(VR软件开发）",
+        "majorGroup": "50C组",
+        "batch": "本科批",
+        "admissionSubtype": "",
+        "campus": "",
+        "electiveRequirement": "",
+        "minScore": 543,
+        "minRankEnd": 40558,
+        "provenance": "third-party"
+      }
+    ]
+  },
+  "boundary": "This is a read-only collision audit. No admission, rank, plan, or source-note record was added, deleted, or rewritten."
+}

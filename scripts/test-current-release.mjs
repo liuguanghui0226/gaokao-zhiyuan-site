@@ -131,6 +131,9 @@ const tests = [
   "test-admission-provenance-and-relative-rank-v3337.mjs",
   "test-real-jiangxi-provenance-routing-v3337.mjs",
   "test-admission-provenance-runtime-v3337.mjs",
+  "test-admission-route-safe-dedup-v3338.mjs",
+  "test-real-cross-province-route-dedup-v3338.mjs",
+  "test-admission-route-runtime-v3338.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 

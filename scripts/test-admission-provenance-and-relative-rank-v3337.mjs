@@ -47,7 +47,7 @@ const duplicateRecord = {
   ...thirdPartyRecord,
   id: "third-party-b",
   batch: "本科批",
-  majorGroup: "另一专业组",
+  majorGroup: "",
   sourceUrl: "https://example.com/duplicate",
 };
 const fit = api.admissionFit(thirdPartyRecord, { ...rankProfile, rank: "", score: "593" }, "2026-07-30");

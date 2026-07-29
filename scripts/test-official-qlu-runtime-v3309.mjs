@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.337-admission-provenance-relative-rank-dedup-868426records";
+const modelVersion = "local-deterministic-v3.338-route-safe-dedup-official-preference-868426records";
 const sourceId = "official-qlu-national-2021-2025-school-major-admission";
 
 function sha256(bytes) {

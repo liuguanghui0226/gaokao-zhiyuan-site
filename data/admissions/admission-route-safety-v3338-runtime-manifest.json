@@ -1,0 +1,70 @@
+{
+  "dataset": "admission-route-safety-v3338-runtime",
+  "generatedAt": "2026-07-30T20:30:00+08:00",
+  "before": {
+    "modelVersion": "local-deterministic-v3.337-admission-provenance-relative-rank-dedup-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.338-route-safe-dedup-official-preference-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136,
+    "admissionRecordsAudited": 794934,
+    "provincesAudited": 31,
+    "collisionSummary": {
+      "broadIdentityGroups": 428254,
+      "latestYearCollisionGroups": 40538,
+      "differingMajorGroup": 22846,
+      "differingScore": 28554,
+      "mixedProvenance": 12579,
+      "routeSafeDistinctGroups": 30329,
+      "clearDuplicatesCollapsed": 13826,
+      "officialReplacementsSelected": 3404
+    },
+    "admissionEvidencePolicy": {
+      "thirdPartyMaximumConfidence": "B",
+      "thirdPartyExecutable": false,
+      "thirdPartyTier": "待复核数据候选",
+      "logicalDedupeFields": [
+        "province",
+        "subjectType",
+        "school",
+        "major",
+        "majorGroup",
+        "dataType"
+      ],
+      "relativeRankThresholds": {
+        "safe": 0.82,
+        "steady": 0.94,
+        "borderline": 1.03,
+        "reach": 1.18
+      },
+      "routeSafeDedupe": true,
+      "candidateBestEvidenceDedupeBeforeScoring": true,
+      "clearDuplicateDefinition": "同省、同科类、同校、同数据类型、同专业且同招生路径；一条缺专业组时，仅同年分数或位次边界完全一致且无校区、合作、专项、学费、选科等冲突才合并。",
+      "preservedRouteFields": [
+        "majorGroup",
+        "admissionSubtype",
+        "campus",
+        "tuition",
+        "electiveRequirement",
+        "majorCode",
+        "rankInstitutionScope"
+      ],
+      "sameYearEvidencePreference": [
+        "official-exam-authority",
+        "school-official",
+        "other",
+        "third-party"
+      ]
+    },
+    "coreBytes": 16041059,
+    "coreSha256": "891b44da7e8dde6788ca2c13f6bc80ec4493a3b732f1214ed3871b3996b68a6a",
+    "manifestBytesBeforeLiteRebuild": 6715,
+    "manifestSha256BeforeLiteRebuild": "7b339d18f0dc77c2393f28b68536181ff2f760760365071975897410ce5c29b4"
+  },
+  "boundary": "No admission, rank, plan, or source-note records changed. The release changes browser selection semantics and records a nationwide read-only collision audit."
+}

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.337-admission-provenance-relative-rank-dedup-868426records";
+const modelVersion = "local-deterministic-v3.338-route-safe-dedup-official-preference-868426records";
 const sourceId = "official-shanxi-rank-2025-v3321";
 const floors = { 历史类: 443, 物理类: 419 };
 
@@ -64,7 +64,7 @@ assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.337");
+assert.equal(manifest.runtimeProfile.version, "v3.338");
 assert.equal(manifest.runtimeProfile.initialCore, "knowledge-core-lite.json.gz");
 assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5136);

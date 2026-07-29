@@ -1049,7 +1049,10 @@ function admissionTrendKey(record) {
   ].join("|");
 }
 
-function admissionOptionIdentityKey(record) {
+const GENERIC_ADMISSION_MAJOR_PATTERN = /^(院校投档线|院校专业组投档线|学校录取分数线|院校最低分|专业组投档线|投档线)$/;
+const DISTINCT_ADMISSION_ROUTE_PATTERN = /中外|合作|国际|联合培养|境外|校区|医学院|专项|民族|预科|定向|单列|较高收费|高收费|护理|公费|优师/;
+
+function admissionOptionBaseIdentityKey(record) {
   const majorIdentity = record.majorName || record.majorGroup || record.majorCode || "";
   return [
     record.province || "",
@@ -1059,6 +1062,92 @@ function admissionOptionIdentityKey(record) {
     record.majorName ? "" : record.majorGroup || "",
     record.dataType || "",
   ].map(normalizeText).join("|");
+}
+
+function isNamedMajorAdmissionRecord(record) {
+  const majorName = normalizeText(record?.majorName || "");
+  return ["major-admission", "vocational-admission"].includes(record?.dataType) &&
+    Boolean(majorName) &&
+    !GENERIC_ADMISSION_MAJOR_PATTERN.test(majorName);
+}
+
+function admissionRouteFields(record) {
+  return {
+    group: normalizeText(record?.majorGroup || ""),
+    subtype: normalizeText(record?.admissionSubtype || ""),
+    campus: normalizeText(record?.campus || record?.campusName || record?.schoolCampus || ""),
+    tuition: normalizeText(record?.tuition || record?.tuitionFee || ""),
+    elective: normalizeText(record?.electiveRequirement || ""),
+    majorCode: normalizeText(record?.majorCode || ""),
+    rankScope: normalizeText(record?.rankInstitutionScope || ""),
+  };
+}
+
+function admissionRouteIdentityKey(record) {
+  const route = admissionRouteFields(record);
+  return [
+    admissionOptionBaseIdentityKey(record),
+    route.group,
+    route.subtype,
+    route.campus,
+    route.tuition,
+    route.elective,
+    route.majorCode,
+    route.rankScope,
+  ].join("|");
+}
+
+function admissionRouteFieldsConflict(left, right) {
+  const leftRoute = admissionRouteFields(left);
+  const rightRoute = admissionRouteFields(right);
+  for (const field of ["subtype", "campus", "tuition", "elective", "majorCode", "rankScope"]) {
+    const leftValue = leftRoute[field];
+    const rightValue = rightRoute[field];
+    if (leftValue && rightValue && leftValue !== rightValue) return true;
+    if (!leftValue !== !rightValue) {
+      const presentValue = leftValue || rightValue;
+      if (
+        ["campus", "tuition", "elective", "rankScope"].includes(field) ||
+        DISTINCT_ADMISSION_ROUTE_PATTERN.test(presentValue)
+      ) return true;
+    }
+  }
+  return false;
+}
+
+function sameYearAdmissionBoundary(left, right) {
+  if ((Number(left?.year) || 0) !== (Number(right?.year) || 0)) return false;
+  const leftScore = Number(left?.minScore) || 0;
+  const rightScore = Number(right?.minScore) || 0;
+  const leftRank = Number(left?.minRankEnd || left?.minRank) || 0;
+  const rightRank = Number(right?.minRankEnd || right?.minRank) || 0;
+  if (leftScore && rightScore && leftScore !== rightScore) return false;
+  if (leftRank && rightRank && leftRank !== rightRank) return false;
+  return Boolean((leftScore && rightScore) || (leftRank && rightRank));
+}
+
+function admissionRecordsShareRoute(left, right) {
+  if (admissionOptionBaseIdentityKey(left) !== admissionOptionBaseIdentityKey(right)) return false;
+  const leftRoute = admissionRouteFields(left);
+  const rightRoute = admissionRouteFields(right);
+  if (!isNamedMajorAdmissionRecord(left) || !isNamedMajorAdmissionRecord(right)) {
+    return leftRoute.group === rightRoute.group && !admissionRouteFieldsConflict(left, right);
+  }
+  if (leftRoute.group === rightRoute.group) return !admissionRouteFieldsConflict(left, right);
+  if (leftRoute.group && rightRoute.group) return false;
+  const namedGroup = leftRoute.group || rightRoute.group;
+  if (DISTINCT_ADMISSION_ROUTE_PATTERN.test(namedGroup)) return false;
+  return sameYearAdmissionBoundary(left, right) && !admissionRouteFieldsConflict(left, right);
+}
+
+function admissionRouteTags(record) {
+  const tuition = Number(record?.tuition || record?.tuitionFee) || 0;
+  return [...new Set([
+    record?.majorGroup || "",
+    record?.admissionSubtype || "",
+    record?.campus || record?.campusName || record?.schoolCampus || "",
+    tuition ? `学费${fmtNumber(tuition)}元/年` : "",
+  ].filter(Boolean))];
 }
 
 function admissionEvidencePriority(record) {
@@ -1160,24 +1249,36 @@ function trendForRecord(record) {
 }
 
 function dedupeAdmissionOptions(options) {
-  const map = new Map();
+  const selected = [];
+  const indexesByBase = new Map();
   for (const option of options) {
-    const key = admissionOptionIdentityKey(option.record);
-    const existing = map.get(key);
+    const baseKey = admissionOptionBaseIdentityKey(option.record);
+    const indexes = indexesByBase.get(baseKey) || [];
+    const existingIndex = indexes.find((index) => admissionRecordsShareRoute(selected[index].record, option.record));
+    if (existingIndex === undefined) {
+      indexes.push(selected.length);
+      indexesByBase.set(baseKey, indexes);
+      selected.push(option);
+      continue;
+    }
+    const existing = selected[existingIndex];
     const optionYear = Number(option.record.year) || 0;
-    const existingYear = Number(existing?.record?.year) || 0;
+    const existingYear = Number(existing.record.year) || 0;
     const optionPriority = admissionEvidencePriority(option.record);
-    const existingPriority = admissionEvidencePriority(existing?.record);
+    const existingPriority = admissionEvidencePriority(existing.record);
     if (
-      !existing ||
       optionYear > existingYear ||
       (optionYear === existingYear && optionPriority > existingPriority) ||
       (optionYear === existingYear && optionPriority === existingPriority && option.record.minRankEnd && !existing.record.minRankEnd)
     ) {
-      map.set(key, option);
+      selected[existingIndex] = option;
     }
   }
-  return [...map.values()];
+  return selected;
+}
+
+function dedupeAdmissionRecords(records) {
+  return dedupeAdmissionOptions(records.map((record) => ({ record }))).map((option) => option.record);
 }
 
 function dedupePlanOptions(options) {
@@ -2150,7 +2251,7 @@ function buildAdmissionOptions(candidate, profile) {
         record.rankRangeText ? `位次${record.rankRangeText}` : "",
         rankScoreBasisLabel(record),
         trend?.label || "",
-        record.majorGroup || "",
+        ...admissionRouteTags(record),
         record.electiveRequirement ? `选科${record.electiveRequirement}` : "",
         electiveRequirementForProfile(record, profile).state === "needs-check" ? "选科待核" : "",
       ].filter(Boolean);
@@ -2304,9 +2405,10 @@ function scoreCandidate(candidate, profile, band) {
   const vocationalLineComparison = vocationalQualification.comparison;
   const limitedVocationalLine = vocationalQualification.limitedLine;
   const limitedVocationalComparison = vocationalQualification.limitedComparison;
-  const candidateAdmissionRecords = profileRecords
+  const rawCandidateAdmissionRecords = profileRecords
     .filter((record) => recordEligibleForCandidate(record, candidate, profile))
     .filter((record) => candidateMatchesAdmissionRecord(candidate, record, profile));
+  const candidateAdmissionRecords = dedupeAdmissionRecords(rawCandidateAdmissionRecords);
   const bestAdmission = belowVocationalLine || vocationalQualificationUnknown || vocationalLinePending ? null : candidateAdmissionRecords
     .map((record) => ({ record, fit: admissionFit(record, profile), interest: majorInterestScore(record, profile) }))
     .sort((a, b) => (b.fit.score + b.interest) - (a.fit.score + a.interest))[0];
@@ -2602,7 +2704,7 @@ function applicationPlanTier(option) {
 
 function applicationPlanKey(option) {
   const record = option.record || {};
-  if (!isPlanRecord(record)) return admissionOptionIdentityKey(record);
+  if (!isPlanRecord(record)) return admissionRouteIdentityKey(record);
   return [
     record.province || "",
     record.subjectType || "",
@@ -2623,14 +2725,14 @@ function applicationPlanOptionScore(option, result, tierIndex) {
 }
 
 function buildApplicationPlan(results) {
-  const selected = new Map();
+  const selected = [];
+  const planIndexes = new Map();
+  const admissionIndexesByBase = new Map();
   for (const result of results || []) {
     for (const option of result.schoolOptions || []) {
       const tier = applicationPlanTier(option);
       if (!tier) continue;
       const tierIndex = APPLICATION_PLAN_TIERS.findIndex((item) => item.id === tier);
-      const key = applicationPlanKey(option);
-      const previous = selected.get(key);
       const entry = {
         ...option,
         tier,
@@ -2638,21 +2740,46 @@ function buildApplicationPlan(results) {
         matchingPools: [result.title],
         candidateScore: applicationPlanOptionScore(option, result, tierIndex),
       };
-      if (!previous) {
-        selected.set(key, entry);
+      const planRecord = isPlanRecord(option.record);
+      const baseKey = planRecord
+        ? applicationPlanKey(option)
+        : admissionOptionBaseIdentityKey(option.record);
+      const candidateIndexes = planRecord
+        ? (planIndexes.has(baseKey) ? [planIndexes.get(baseKey)] : [])
+        : (admissionIndexesByBase.get(baseKey) || []);
+      const existingIndex = planRecord
+        ? candidateIndexes[0]
+        : candidateIndexes.find((index) => admissionRecordsShareRoute(selected[index].record, option.record));
+      if (existingIndex === undefined) {
+        const nextIndex = selected.length;
+        selected.push(entry);
+        if (planRecord) {
+          planIndexes.set(baseKey, nextIndex);
+        } else {
+          candidateIndexes.push(nextIndex);
+          admissionIndexesByBase.set(baseKey, candidateIndexes);
+        }
         continue;
       }
+      const previous = selected[existingIndex];
       previous.matchingPools = [...new Set([...previous.matchingPools, result.title])];
-      if (entry.candidateScore > previous.candidateScore) {
-        entry.matchingPools = previous.matchingPools;
-        selected.set(key, entry);
-      }
+      const preferred = planRecord
+        ? (entry.candidateScore > previous.candidateScore ? entry : previous)
+        : dedupeAdmissionOptions([previous, entry])[0];
+      const merged = {
+        ...preferred,
+        matchingPools: previous.matchingPools,
+        candidateScore: Math.max(previous.candidateScore, entry.candidateScore),
+      };
+      merged.tier = applicationPlanTier(merged);
+      merged.tierIndex = APPLICATION_PLAN_TIERS.findIndex((item) => item.id === merged.tier);
+      selected[existingIndex] = merged;
     }
   }
 
   return APPLICATION_PLAN_TIERS.map((tier) => ({
     ...tier,
-    options: [...selected.values()]
+    options: selected
       .filter((option) => option.tier === tier.id)
       .sort((left, right) => right.candidateScore - left.candidateScore)
       .slice(0, tier.id === "plan" ? 3 : 5),
@@ -2688,6 +2815,7 @@ function applicationPlanDetail(option) {
       record.rankRangeText ? `位次${record.rankRangeText}` : "",
       rankScoreBasisLabel(record),
       fit?.recency?.label || "",
+      ...admissionRouteTags(record),
       record.electiveRequirement ? `选科${record.electiveRequirement}` : "",
       electiveRequirementForProfile(record, state.recommendation?.profile || {}).state === "needs-check" ? "选科待核" : "",
       ...((option.matchingPools?.length || 0) > 1 ? [`命中${option.matchingPools.length}个方向`] : []),
@@ -3483,7 +3611,7 @@ function renderAdmissionHitPanel(profile) {
         <div class="admission-hit">
           <strong>${esc(record.schoolName)} · ${esc(record.majorName || record.majorGroup || "专业组")}</strong>
           <span>${esc(fit.zone)}</span>
-          <p>${esc(fit.text)}${record.minScore ? `；最低分${record.minScore}` : ""}${record.rankRangeText ? `；位次${record.rankRangeText}` : ""}</p>
+          <p>${esc(fit.text)}${record.minScore ? `；最低分${record.minScore}` : ""}${record.rankRangeText ? `；位次${record.rankRangeText}` : ""}${admissionRouteTags(record).length ? `；招生路径${esc(admissionRouteTags(record).join(" / "))}` : ""}</p>
         </div>
       `).join("")}
     </div>

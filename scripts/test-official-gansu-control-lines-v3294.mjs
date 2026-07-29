@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.337-admission-provenance-relative-rank-dedup-868426records";
+const modelVersion = "local-deterministic-v3.338-route-safe-dedup-official-preference-868426records";
 const sourceId = "official-gansu-control-lines-2026";
 const rankSourceId = "gk100-gansu-rank-2026";
 

@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.337-admission-provenance-relative-rank-dedup-868426records";
+const modelVersion = "local-deterministic-v3.338-route-safe-dedup-official-preference-868426records";
 const sourceId = "official-shanghai-control-lines-2026";
 const rankSourceId = "official-shanghai-rank-2026";
 const rankSourceUrl = "https://www.shmeea.edu.cn/page/02200/20260623/20375.html";

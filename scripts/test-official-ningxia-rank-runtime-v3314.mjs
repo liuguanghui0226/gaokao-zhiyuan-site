@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.337-admission-provenance-relative-rank-dedup-868426records";
+const modelVersion = "local-deterministic-v3.338-route-safe-dedup-official-preference-868426records";
 const sourceId = "official-ningxia-rank-2025-v3314";
 const filingSourceId = "official-ningxia-undergraduate-b-2025";
 
@@ -33,7 +33,7 @@ assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.337");
+assert.equal(manifest.runtimeProfile.version, "v3.338");
 assert.equal(manifest.shards["宁夏"].records, 9257);
 assert.equal(manifest.shards["宁夏"].rankConversions, 1919);
 assert.equal(manifest.shards["宁夏"].bytes, shardBytes.length);
