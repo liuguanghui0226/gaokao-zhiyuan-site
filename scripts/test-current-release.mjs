@@ -137,6 +137,9 @@ const tests = [
   "test-admission-trend-provenance-v3339.mjs",
   "test-real-admission-trend-routing-v3339.mjs",
   "test-admission-trend-runtime-v3339.mjs",
+  "test-admission-trend-name-canonicalization-v3340.mjs",
+  "test-real-admission-trend-name-variants-v3340.mjs",
+  "test-admission-trend-name-runtime-v3340.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 

@@ -12,7 +12,7 @@ const release = path.join(root, "site/data/release-v3.275");
 const raw = (name) => zlib.gunzipSync(fs.readFileSync(path.join(release, name)));
 const read = (name) => JSON.parse(raw(name).toString("utf8"));
 const sha256 = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
-const version = "local-deterministic-v3.339-route-isolated-official-first-trends-868426records";
+const version = "local-deterministic-v3.340-typography-safe-trends-868426records";
 const core = read("knowledge-core.json.gz");
 const lite = read("knowledge-core-lite.json.gz");
 const manifest = read("manifest.json.gz");
@@ -23,7 +23,7 @@ const evidence = JSON.parse(fs.readFileSync(path.join(root, "data/admissions/evi
 assert.equal(core.modelVersion, version);
 assert.equal(lite.modelVersion, version);
 assert.equal(manifest.modelVersion, version);
-assert.equal(manifest.runtimeProfile.version, "v3.339");
+assert.equal(manifest.runtimeProfile.version, "v3.340");
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);

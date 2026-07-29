@@ -12,22 +12,21 @@ const releaseDir = path.join(root, "site/data/release-v3.275");
 const readGzip = (name) => JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(releaseDir, name))).toString("utf8"));
 const readJson = (name) => JSON.parse(fs.readFileSync(path.join(root, "data/admissions", name), "utf8"));
 const expectedVersion = "local-deterministic-v3.340-typography-safe-trends-868426records";
-const historicalVersion = "local-deterministic-v3.339-route-isolated-official-first-trends-868426records";
 
 const core = readGzip("knowledge-core.json.gz");
 const lite = readGzip("knowledge-core-lite.json.gz");
 const manifest = readGzip("manifest.json.gz");
-const runtime = readJson("admission-trend-provenance-v3339-runtime-manifest.json");
-const evidence = readJson("evidence-v3339-admission-trend-provenance-manifest.json");
-const liteAudit = readJson("runtime-core-lite-v3339-manifest.json");
+const runtime = readJson("admission-trend-name-variants-v3340-runtime-manifest.json");
+const evidence = readJson("evidence-v3340-admission-trend-name-variants-manifest.json");
+const liteAudit = readJson("runtime-core-lite-v3340-manifest.json");
 const policy = core.modelPolicy.admissionEvidencePolicy.trendEvidencePolicy;
 
 assert.equal(core.modelVersion, expectedVersion);
 assert.equal(lite.modelVersion, expectedVersion);
 assert.equal(manifest.modelVersion, expectedVersion);
-assert.equal(runtime.after.modelVersion, historicalVersion);
+assert.equal(runtime.after.modelVersion, expectedVersion);
 assert.equal(manifest.runtimeProfile.version, "v3.340");
-assert.equal(liteAudit.modelVersion, historicalVersion);
+assert.equal(liteAudit.modelVersion, expectedVersion);
 assert.equal(core.generatedAt, "2026-07-30T04:18:00+08:00");
 assert.equal(manifest.generatedAt, "2026-07-30T04:18:00+08:00");
 assert.equal(policy.routeIsolated, true);
@@ -47,17 +46,28 @@ assert.equal(policy.thirdPartyTrendWarningRequired, true);
 assert.equal(policy.majorCodeExcludedFromCrossYearIdentity, true);
 assert.ok(policy.routeKeyFields.includes("campus"));
 assert.ok(policy.routeKeyFields.includes("electiveRequirement"));
+assert.equal(policy.typographyCanonicalization.unicodeNormalization, "NFKC");
+assert.equal(policy.typographyCanonicalization.preservesWordsDigitsAndQualifiers, true);
+assert.equal(policy.typographyCanonicalization.exactKeyFallbackOnSameYearBoundaryConflict, true);
+assert.equal(policy.typographyCanonicalization.sameYearBoundaryConflictGroups, 140);
+assert.equal(policy.typographyCanonicalization.recoveredMultiYearGroups, 3834);
+assert.equal(policy.typographyCanonicalization.extendedExistingMultiYearGroups, 1071);
+assert.equal(policy.typographyCanonicalization.addedDistinctYearLinks, 4959);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(evidence.provinces, 31);
 assert.equal(evidence.majorAdmissionRecords, 475801);
-assert.equal(evidence.before.officialReplacements, 4523);
-assert.equal(evidence.before.routeConflicts.semanticRouteConflictGroups, 4384);
-assert.equal(evidence.afterPolicySimulation.officialReplacements, 726);
-assert.equal(evidence.afterPolicySimulation.trendEvidence.containsThirdParty, 19038);
-assert.equal(evidence.examples.electiveAndCampusIsolation.length, 4);
-assert.equal(evidence.examples.campusIsolation.length, 2);
+assert.equal(evidence.exactTrendKeys, 301738);
+assert.equal(evidence.canonicalTrendKeys, 296607);
+assert.equal(evidence.exactMultiYearKeys, 106989);
+assert.equal(evidence.safePolicyMultiYearGroups, 110770);
+assert.equal(evidence.recoveredMultiYearGroups, 3834);
+assert.equal(evidence.extendedExistingMultiYearGroups, 1071);
+assert.equal(evidence.addedDistinctYearLinks, 4959);
+assert.equal(evidence.sameYearBoundaryConflictGroups, 140);
+assert.equal(evidence.recoveredOfficialOnlyGroups, 3710);
+assert.equal(evidence.recoveredRecordCount, 7669);
 assert.equal(runtime.after.records, 868426);
 assert.equal(runtime.after.ranks, 133640);
 assert.equal(runtime.after.notes, 5136);
@@ -74,8 +84,9 @@ console.log(JSON.stringify({
     majorAdmissionRecordsAudited: evidence.majorAdmissionRecords,
   },
   trendControls: {
-    routeConflictGroupsBlocked: evidence.before.routeConflicts.semanticRouteConflictGroups,
-    lowerPriorityFirstGroupsCorrected: evidence.before.officialReplacements,
-    thirdPartyTrendBonus: policy.trendBonus.thirdParty,
+    recoveredMultiYearGroups: evidence.recoveredMultiYearGroups,
+    extendedExistingMultiYearGroups: evidence.extendedExistingMultiYearGroups,
+    addedDistinctYearLinks: evidence.addedDistinctYearLinks,
+    sameYearBoundaryConflictGroups: evidence.sameYearBoundaryConflictGroups,
   },
 }, null, 2));

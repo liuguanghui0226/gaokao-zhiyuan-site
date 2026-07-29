@@ -1038,8 +1038,23 @@ function admissionDataFreshness(profile, today = currentChinaDate()) {
 
 let admissionTrendIndexCache = null;
 
-function admissionTrendKey(record) {
+function normalizeAdmissionTrendTypography(value) {
+  return String(value ?? "")
+    .normalize("NFKC")
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/[·•‧∙・]/g, "·")
+    .replace(/[‐‑‒–—―﹘﹣－]/g, "-")
+    .replace(/[【〔〖［]/g, "[")
+    .replace(/[】〕〗］]/g, "]")
+    .replace(/[〈《]/g, "<")
+    .replace(/[〉》]/g, ">");
+}
+
+function admissionTrendKey(record, canonicalTypography = true) {
   const route = admissionRouteFields(record);
+  const clean = canonicalTypography ? normalizeAdmissionTrendTypography : normalizeText;
   return [
     record.province || "",
     record.subjectType || "",
@@ -1053,7 +1068,30 @@ function admissionTrendKey(record) {
     route.tuition,
     route.elective,
     route.rankScope,
-  ].map(normalizeText).join("|");
+  ].map(clean).join("|");
+}
+
+function admissionTrendExactKey(record) {
+  return admissionTrendKey(record, false);
+}
+
+function admissionTrendBoundarySignature(record) {
+  return [
+    Number(record?.minScore) || 0,
+    Number(record?.minRankEnd || record?.minRank) || 0,
+  ].join("|");
+}
+
+function admissionTrendCanonicalMergeSafe(records) {
+  const exactKeys = new Set(records.map(admissionTrendExactKey));
+  if (exactKeys.size < 2) return true;
+  const boundariesByYear = new Map();
+  for (const record of records) {
+    const year = Number(record.year) || 0;
+    if (!boundariesByYear.has(year)) boundariesByYear.set(year, new Set());
+    boundariesByYear.get(year).add(admissionTrendBoundarySignature(record));
+  }
+  return [...boundariesByYear.values()].every((signatures) => signatures.size <= 1);
 }
 
 const GENERIC_ADMISSION_MAJOR_PATTERN = /^(院校投档线|院校专业组投档线|学校录取分数线|院校最低分|专业组投档线|投档线)$/;
@@ -1244,7 +1282,10 @@ function withAdmissionTrendEvidence(records, trend) {
 
 function trendForRecord(record) {
   if (record.dataType !== "major-admission" || !record.majorName) return null;
-  const records = admissionTrendIndex().get(admissionTrendKey(record)) || [];
+  const indexedRecords = admissionTrendIndex().get(admissionTrendKey(record)) || [];
+  const records = admissionTrendCanonicalMergeSafe(indexedRecords)
+    ? indexedRecords
+    : indexedRecords.filter((item) => admissionTrendExactKey(item) === admissionTrendExactKey(record));
   const series = admissionTrendSeries(records);
   if (series.length < 2) return null;
   const current = series.find((item) => Number(item.year) === Number(record.year)) || series[0];
