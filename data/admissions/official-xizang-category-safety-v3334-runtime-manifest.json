@@ -1,0 +1,32 @@
+{
+  "dataset": "official-xizang-category-safety-v3334-runtime",
+  "generatedAt": "2026-07-29T14:43:56Z",
+  "evidenceManifest": "data/admissions/evidence-v3334-xizang-category-safety-manifest.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.333-beijing-official-undergraduate-rank2025-national-bonus-municipal-local-bonus-guard-868426records",
+    "records": 868426,
+    "rankConversions": 133640,
+    "sourceNotes": 5136,
+    "provinceRecords": 28458,
+    "provinceRankConversions": 0
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.334-xizang-official-category-required-no-public-rank-guard-868426records",
+    "records": 868426,
+    "rankConversions": 133640,
+    "rankConversionsAdded": 0,
+    "sourceNotes": 5136,
+    "provinceRecords": 28458,
+    "provinceRankConversions": 0,
+    "candidateCategoryNormalizedRecords": 22,
+    "publicRankConversionAvailable": false,
+    "shardBytes": 28256332,
+    "shardSha256": "3c6b447036d058d64d6b915b133d6ba9db4efe23d857e2707ce4b12ae9c070af",
+    "coreBytes": 16037723,
+    "coreSha256": "3531818ed27a016d48108e2e9430d338782d90b7e6d527b6b769a6b50e2d1bba",
+    "manifestBytesBeforeLiteRebuild": 6386,
+    "manifestSha256BeforeLiteRebuild": "f3cd5e18c7e8da6789eea55555aa6f44afc956afd84009a0660ee491c16a0cd6"
+  },
+  "boundary": "A/B类别用于控制线与同类别单校记录路由；公开官方页面未提供可计算一分一段，因此不得按分数估算西藏位次。"
+}

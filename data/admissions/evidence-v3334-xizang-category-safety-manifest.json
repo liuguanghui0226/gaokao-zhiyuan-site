@@ -1,0 +1,101 @@
+{
+  "dataset": "evidence-v3334-xizang-category-safety",
+  "generatedAt": "2026-07-29T14:43:56Z",
+  "province": "西藏",
+  "year": 2025,
+  "controlLineSourceId": "official-xizang-control-lines-2025",
+  "officialFacts": {
+    "candidateCategoryRequired": true,
+    "candidateCategoryDefinitions": {
+      "A类考生": "区内世居两代（含两代）以上少数民族考生",
+      "B类考生": "汉族及区外少数民族考生"
+    },
+    "ordinaryControlLines": {
+      "历史类": {
+        "本科一批": {
+          "A类考生": 338,
+          "B类考生": 410
+        },
+        "本科二批": {
+          "A类考生": 304,
+          "B类考生": 315
+        },
+        "专科批": {
+          "A类考生": 255,
+          "B类考生": 255
+        }
+      },
+      "物理类": {
+        "本科一批": {
+          "A类考生": 300,
+          "B类考生": 400
+        },
+        "本科二批": {
+          "A类考生": 266,
+          "B类考生": 305
+        },
+        "专科批": {
+          "A类考生": 222,
+          "B类考生": 222
+        }
+      }
+    },
+    "reviewedOfficialPagesPublishCalculableRankTable": false,
+    "scoreInformationAccess": "candidate-and-relevant-filing-universities",
+    "automaticScoreToRankConversionAllowed": false
+  },
+  "runtimeBoundary": {
+    "controlLineRecords": 22,
+    "ordinaryControlLineRecords": 12,
+    "artSportsControlLineRecords": 8,
+    "militaryControlLineRecords": 2,
+    "candidateCategoryNormalizedRecords": 22,
+    "rankConversionsAdded": 0,
+    "missingCategoryMaximumConfidence": "C",
+    "nonXizangCategoryControlHidden": true
+  },
+  "files": [
+    {
+      "name": "xizang-government-2025-control-lines.html",
+      "url": "https://www.xizang.gov.cn/xwzx_406/bmkx/202506/t20250626_486252.html",
+      "publisher": "西藏自治区人民政府",
+      "sourceAttribution": "西藏自治区教育考试院",
+      "bytes": 61723,
+      "sha256": "663762a459a4c5e99bdf415e4b6bd273352ab27b4975b9fa22ee8124f0556da8"
+    },
+    {
+      "name": "xizang-government-2023-ab-definition.html",
+      "url": "https://www.xizang.gov.cn/zmhd/hygq/202306/t20230627_363051.html",
+      "publisher": "西藏自治区人民政府",
+      "sourceAttribution": "西藏自治区教育考试院",
+      "bytes": 65170,
+      "sha256": "eb79faef9d8d902aa41a270edc0d76d594ebbc893b94923cfaecf4d30fd61b4f"
+    },
+    {
+      "name": "xizang-daily-2025-control-lines.pdf",
+      "url": "https://e.xzxw.com/xzsb/202506/26/9495a595-9037-40a6-9a51-752f8123d7b7.pdf",
+      "publisher": "西藏日报",
+      "sourceAttribution": "西藏自治区教育考试院",
+      "bytes": 3715821,
+      "sha256": "570f0b3759241a6d5ef2ede4d3392b87e53e1e47a9abc4619b1a05c6503f96fa"
+    }
+  ],
+  "reviewedOfficialChannels": [
+    {
+      "title": "西藏自治区2025年普通高考分数线出炉",
+      "url": "https://www.xizang.gov.cn/xwzx_406/bmkx/202506/t20250626_486252.html",
+      "result": "公开A/B类控制线，未公开可计算一分一段表"
+    },
+    {
+      "title": "西藏：2025年普通高等学校招生规定",
+      "url": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202506/20250603/2293383313-7.html",
+      "result": "规定成绩信息主要向考生本人及有关投档高校提供"
+    },
+    {
+      "title": "西藏自治区教育考试院官方网站",
+      "url": "http://zsks.edu.xizang.gov.cn",
+      "result": "当前公开站点未检得2025可计算一分一段表"
+    }
+  ],
+  "boundary": "A/B类别用于控制线与同类别单校记录路由；公开官方页面未提供可计算一分一段，因此不得按分数估算西藏位次。"
+}

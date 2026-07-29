@@ -245,7 +245,7 @@ assert.equal(freshness.latestVacancyYear, 2025);
 assert.equal(freshness.scheduleStage.state, "active");
 assert.match(freshness.scheduleStage.text, /提前单独录取本科批进行中/);
 assert.ok(freshness.warnings.some((warning) => /2026年招生计划已发布.*普通录取数据最新到2024年/.test(warning)));
-assert.ok(freshness.warnings.some((warning) => /没有可计算的一分一段/.test(warning)));
+assert.ok(freshness.warnings.some((warning) => /未提供可计算的一分一段/.test(warning)));
 assert.ok(freshness.warnings.some((warning) => /2025年征集志愿仅是各轮剩余计划快照/.test(warning)));
 
 const panel = api.renderDataFreshnessPanel(lowProfile);
@@ -258,7 +258,7 @@ const result = api.scoreCandidate(vocational, lowProfile, api.classifyScoreBand(
 assert.notEqual(result.confidence, "A");
 assert.notEqual(result.confidence, "A-");
 assert.ok(result.schoolOptions.some((option) => option.record?.id === vocationalVacancy.id));
-assert.ok(result.warnings.some((warning) => /没有可计算的一分一段/.test(warning)));
+assert.ok(result.warnings.some((warning) => /未提供可计算的一分一段/.test(warning)));
 assert.ok(result.warnings.some((warning) => /考试院录取日程/.test(warning)));
 assert.ok(result.schoolOptions.every((option) => !option.record || !api.isSpecialPathRecord(option.record)));
 

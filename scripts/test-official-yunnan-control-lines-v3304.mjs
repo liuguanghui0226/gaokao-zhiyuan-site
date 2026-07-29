@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.333-beijing-official-undergraduate-rank2025-national-bonus-municipal-local-bonus-guard-868426records";
+const modelVersion = "local-deterministic-v3.334-xizang-official-category-required-no-public-rank-guard-868426records";
 const sourceId = "official-yunnan-control-lines-2026";
 const rankSourceId = "official-yunnan-rank-2026";
 const rankMirrorUrl = "https://t2.chei.com.cn/news/img/2293847809.png";

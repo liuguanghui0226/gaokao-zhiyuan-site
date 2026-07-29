@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.333-beijing-official-undergraduate-rank2025-national-bonus-municipal-local-bonus-guard-868426records";
+const modelVersion = "local-deterministic-v3.334-xizang-official-category-required-no-public-rank-guard-868426records";
 const sourceId = "official-hainan-rank-2025-v3325";
 
 function readGzip(file) {
@@ -59,7 +59,7 @@ assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.333");
+assert.equal(manifest.runtimeProfile.version, "v3.334");
 assert.equal(manifest.runtimeProfile.initialCore, "knowledge-core-lite.json.gz");
 assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5136);
