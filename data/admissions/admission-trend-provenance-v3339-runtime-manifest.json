@@ -1,0 +1,94 @@
+{
+  "dataset": "admission-trend-provenance-v3339-runtime",
+  "generatedAt": "2026-07-30T03:35:00+08:00",
+  "before": {
+    "modelVersion": "local-deterministic-v3.338-route-safe-dedup-official-preference-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.339-route-isolated-official-first-trends-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136,
+    "provincesAudited": 31,
+    "majorAdmissionRecordsAudited": 475801,
+    "trendAuditBefore": {
+      "keys": 288627,
+      "multiYearKeys": 107621,
+      "sameYearDuplicateGroups": 6145,
+      "mixedProvenanceGroups": 5189,
+      "officialReplacements": 4523,
+      "trendEvidence": {
+        "officialOrSchoolOfficial": 88363,
+        "containsThirdParty": 19258,
+        "containsUnclassified": 0
+      },
+      "routeConflicts": {
+        "semanticRouteConflictGroups": 4384,
+        "campus": 688,
+        "subtype": 2914,
+        "tuition": 0,
+        "elective": 1103,
+        "rankScope": 0,
+        "majorCode": 30636
+      }
+    },
+    "trendAuditAfter": {
+      "keys": 301738,
+      "multiYearKeys": 106989,
+      "sameYearDuplicateGroups": 1369,
+      "mixedProvenanceGroups": 736,
+      "officialReplacements": 726,
+      "trendEvidence": {
+        "officialOrSchoolOfficial": 87951,
+        "containsThirdParty": 19038,
+        "containsUnclassified": 0
+      },
+      "multiYearKeysRemovedForRouteSafety": 632
+    },
+    "trendEvidencePolicy": {
+      "routeIsolated": true,
+      "routeKeyFields": [
+        "province",
+        "subjectType",
+        "batch",
+        "school",
+        "dataType",
+        "majorName",
+        "majorGroup",
+        "admissionSubtype",
+        "campus",
+        "tuition",
+        "electiveRequirement",
+        "rankInstitutionScope"
+      ],
+      "sameYearPreference": [
+        "official-exam-authority",
+        "school-official",
+        "other",
+        "third-party"
+      ],
+      "samePriorityRankPreference": true,
+      "trendBonus": {
+        "officialOrSchoolOfficial": 5,
+        "other": 3,
+        "thirdParty": 2
+      },
+      "thirdPartyTrendWarningRequired": true,
+      "majorCodeExcludedFromCrossYearIdentity": true,
+      "majorCodeReason": "专业代码可能逐年变化；同校同专业仍须由专业组、校区、类型、学费、选科和位次适用范围约束。"
+    },
+    "timestampCorrection": {
+      "previousGeneratedAt": "2026-07-30T20:30:00+08:00",
+      "correctedGeneratedAt": "2026-07-30T03:35:00+08:00",
+      "reason": "上一版生成时间晚于机器实际时间，本轮恢复为实际本地时间。"
+    },
+    "coreBytes": 16042100,
+    "coreSha256": "4bcb817d46272dfd03262197025f4a7391ee028a8f7ddf08cf25cac997224a68",
+    "manifestBytesBeforeLiteRebuild": 6715,
+    "manifestSha256BeforeLiteRebuild": "a7ff7af4c93d3b6f1cff65c81638c1409e68e19f956a82b3828be50782abb06b"
+  },
+  "boundary": "No admission, rank, plan, or source-note records changed. The release changes trend grouping, same-year provenance selection, trend weighting, warning text, and the runtime timestamp."
+}

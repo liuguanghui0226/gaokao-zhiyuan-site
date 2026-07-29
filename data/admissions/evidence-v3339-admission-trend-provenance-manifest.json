@@ -1,0 +1,264 @@
+{
+  "dataset": "evidence-v3339-admission-trend-provenance",
+  "generatedAt": "2026-07-30T03:35:00+08:00",
+  "sourceModelVersion": "local-deterministic-v3.338-route-safe-dedup-official-preference-868426records",
+  "provinces": 31,
+  "majorAdmissionRecords": 475801,
+  "before": {
+    "keys": 288627,
+    "multiYearKeys": 107621,
+    "sameYearDuplicateGroups": 6145,
+    "mixedProvenanceGroups": 5189,
+    "officialReplacements": 4523,
+    "trendEvidence": {
+      "officialOrSchoolOfficial": 88363,
+      "containsThirdParty": 19258,
+      "containsUnclassified": 0
+    },
+    "routeConflicts": {
+      "semanticRouteConflictGroups": 4384,
+      "campus": 688,
+      "subtype": 2914,
+      "tuition": 0,
+      "elective": 1103,
+      "rankScope": 0,
+      "majorCode": 30636
+    }
+  },
+  "afterPolicySimulation": {
+    "keys": 301738,
+    "multiYearKeys": 106989,
+    "sameYearDuplicateGroups": 1369,
+    "mixedProvenanceGroups": 736,
+    "officialReplacements": 726,
+    "trendEvidence": {
+      "officialOrSchoolOfficial": 87951,
+      "containsThirdParty": 19038,
+      "containsUnclassified": 0
+    },
+    "multiYearKeysRemovedForRouteSafety": 632
+  },
+  "controls": {
+    "routeKeyFields": [
+      "province",
+      "subjectType",
+      "batch",
+      "school",
+      "dataType",
+      "majorName",
+      "majorGroup",
+      "admissionSubtype",
+      "campus",
+      "tuition",
+      "electiveRequirement",
+      "rankInstitutionScope"
+    ],
+    "sameYearPreference": [
+      "official-exam-authority",
+      "school-official",
+      "other",
+      "third-party"
+    ],
+    "samePriorityRankPreference": true,
+    "thirdPartyTrendBonus": 2,
+    "officialTrendBonus": 5,
+    "thirdPartyTrendWarningRequired": true,
+    "majorCodeExcludedFromCrossYearIdentity": "专业代码可能逐年变化；同校同专业仍须由专业组、校区、类型、学费、选科和位次适用范围约束。"
+  },
+  "examples": {
+    "officialFirst": [
+      {
+        "id": "2025-329d92086148a2a8",
+        "province": "北京",
+        "schoolName": "中央民族大学",
+        "majorName": "电子信息类",
+        "year": 2025,
+        "minScore": 623,
+        "minRankEnd": null,
+        "majorGroup": "",
+        "subtype": "",
+        "campus": "",
+        "elective": "",
+        "provenance": "third-party"
+      },
+      {
+        "id": "muc-8afdfd073c7e6f2bad",
+        "province": "北京",
+        "schoolName": "中央民族大学",
+        "majorName": "电子信息类",
+        "year": 2025,
+        "minScore": 623,
+        "minRankEnd": 7249,
+        "majorGroup": "",
+        "subtype": "",
+        "campus": "",
+        "elective": "",
+        "provenance": "school-official"
+      },
+      {
+        "id": "2024-8d47209ca9f30a21",
+        "province": "北京",
+        "schoolName": "中央民族大学",
+        "majorName": "电子信息类",
+        "year": 2024,
+        "minScore": 623,
+        "minRankEnd": null,
+        "majorGroup": "",
+        "subtype": "",
+        "campus": "",
+        "elective": "",
+        "provenance": "third-party"
+      },
+      {
+        "id": "muc-d2cd820a5430af4d42",
+        "province": "北京",
+        "schoolName": "中央民族大学",
+        "majorName": "电子信息类",
+        "year": 2024,
+        "minScore": 623,
+        "minRankEnd": 6848,
+        "majorGroup": "",
+        "subtype": "",
+        "campus": "",
+        "elective": "",
+        "provenance": "school-official"
+      },
+      {
+        "id": "2023-68afc2d0f0bdd612",
+        "province": "北京",
+        "schoolName": "中央民族大学",
+        "majorName": "电子信息类",
+        "year": 2023,
+        "minScore": 619,
+        "minRankEnd": null,
+        "majorGroup": "",
+        "subtype": "",
+        "campus": "",
+        "elective": "",
+        "provenance": "third-party"
+      },
+      {
+        "id": "muc-1ef52c44e090d48628",
+        "province": "北京",
+        "schoolName": "中央民族大学",
+        "majorName": "电子信息类",
+        "year": 2023,
+        "minScore": 619,
+        "minRankEnd": 7037,
+        "majorGroup": "",
+        "subtype": "",
+        "campus": "",
+        "elective": "",
+        "provenance": "school-official"
+      },
+      {
+        "id": "muc-6606aa0915b35c1ff1",
+        "province": "北京",
+        "schoolName": "中央民族大学",
+        "majorName": "电子信息类",
+        "year": 2022,
+        "minScore": 616,
+        "minRankEnd": 6509,
+        "majorGroup": "",
+        "subtype": "",
+        "campus": "",
+        "elective": "",
+        "provenance": "school-official"
+      }
+    ],
+    "electiveAndCampusIsolation": [
+      {
+        "id": "xidian-ac598802b2ccc2358b",
+        "province": "北京",
+        "schoolName": "西安电子科技大学",
+        "majorName": "计算机类",
+        "year": 2025,
+        "minScore": 641,
+        "minRankEnd": 4368,
+        "majorGroup": "",
+        "subtype": "普通",
+        "campus": "长安校区",
+        "elective": "物理+化学",
+        "provenance": "school-official"
+      },
+      {
+        "id": "xidian-6724611e517b294e29",
+        "province": "北京",
+        "schoolName": "西安电子科技大学",
+        "majorName": "计算机类",
+        "year": 2024,
+        "minScore": 640,
+        "minRankEnd": 4365,
+        "majorGroup": "",
+        "subtype": "普通",
+        "campus": "长安校区",
+        "elective": "物理+化学",
+        "provenance": "school-official"
+      },
+      {
+        "id": "xidian-e74e6758977be85808",
+        "province": "北京",
+        "schoolName": "西安电子科技大学",
+        "majorName": "计算机类",
+        "year": 2023,
+        "minScore": 634,
+        "minRankEnd": 4729,
+        "majorGroup": "",
+        "subtype": "普通",
+        "campus": "长安校区",
+        "elective": "物理",
+        "provenance": "school-official"
+      },
+      {
+        "id": "xidian-81bbbadd658c712edd",
+        "province": "北京",
+        "schoolName": "西安电子科技大学",
+        "majorName": "计算机类",
+        "year": 2022,
+        "minScore": 627,
+        "minRankEnd": 5172,
+        "majorGroup": "",
+        "subtype": "普通",
+        "campus": "南校区",
+        "elective": "物理",
+        "provenance": "school-official"
+      }
+    ],
+    "campusIsolation": [
+      {
+        "id": "hnucm-c83d750877ab3ecb75",
+        "province": "北京",
+        "schoolName": "湖南中医药大学",
+        "majorName": "针灸推拿学",
+        "year": 2025,
+        "minScore": 595,
+        "minRankEnd": 13015,
+        "majorGroup": "",
+        "subtype": "普通",
+        "campus": "含浦校区",
+        "elective": "",
+        "provenance": "school-official"
+      },
+      {
+        "id": "hnucm-d77a08f5c6ac2ae656",
+        "province": "北京",
+        "schoolName": "湖南中医药大学",
+        "majorName": "针灸推拿学",
+        "year": 2024,
+        "minScore": 565,
+        "minRankEnd": 17728,
+        "majorGroup": "",
+        "subtype": "普通",
+        "campus": "东塘校区",
+        "elective": "",
+        "provenance": "school-official"
+      }
+    ]
+  },
+  "timestampCorrection": {
+    "previousGeneratedAt": "2026-07-30T20:30:00+08:00",
+    "correctedGeneratedAt": "2026-07-30T03:35:00+08:00",
+    "reason": "上一版生成时间晚于机器实际时间，本轮恢复为实际本地时间。"
+  },
+  "boundary": "This is a read-only trend audit. No admission, rank, plan, or source-note record was added, deleted, or rewritten."
+}

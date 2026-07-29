@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.338-route-safe-dedup-official-preference-868426records";
+const modelVersion = "local-deterministic-v3.339-route-isolated-official-first-trends-868426records";
 const sourceId = "official-liaoning-rank-2025-v3317";
 
 function sha256(value) {
@@ -32,7 +32,7 @@ assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.338");
+assert.equal(manifest.runtimeProfile.version, "v3.339");
 assert.equal(manifest.shards["辽宁"].records, 34360);
 assert.equal(manifest.shards["辽宁"].rankConversions, 2149);
 assert.equal(manifest.shards["辽宁"].bytes, shardBytes.length);

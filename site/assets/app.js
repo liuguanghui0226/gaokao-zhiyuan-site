@@ -1039,14 +1039,21 @@ function admissionDataFreshness(profile, today = currentChinaDate()) {
 let admissionTrendIndexCache = null;
 
 function admissionTrendKey(record) {
+  const route = admissionRouteFields(record);
   return [
     record.province || "",
     record.subjectType || "",
     record.batch || "",
-    record.schoolName || "",
+    record.schoolName || record.schoolCode || "",
+    record.dataType || "",
     record.majorName || "",
-    record.majorGroup || "",
-  ].join("|");
+    route.group,
+    route.subtype,
+    route.campus,
+    route.tuition,
+    route.elective,
+    route.rankScope,
+  ].map(normalizeText).join("|");
 }
 
 const GENERIC_ADMISSION_MAJOR_PATTERN = /^(院校投档线|院校专业组投档线|学校录取分数线|院校最低分|专业组投档线|投档线)$/;
@@ -1186,16 +1193,61 @@ function trendRecordLabel(count) {
   return `${count}年`;
 }
 
+function preferredAdmissionTrendRecord(existing, candidate) {
+  if (!existing) return candidate;
+  const existingPriority = admissionEvidencePriority(existing);
+  const candidatePriority = admissionEvidencePriority(candidate);
+  if (candidatePriority !== existingPriority) {
+    return candidatePriority > existingPriority ? candidate : existing;
+  }
+  const existingHasRank = Number(existing.minRankEnd || existing.minRank) > 0;
+  const candidateHasRank = Number(candidate.minRankEnd || candidate.minRank) > 0;
+  if (candidateHasRank !== existingHasRank) return candidateHasRank ? candidate : existing;
+  return existing;
+}
+
+function admissionTrendSeries(records) {
+  const seriesByYear = new Map();
+  for (const record of records) {
+    const year = Number(record.year) || 0;
+    if (!year) continue;
+    seriesByYear.set(year, preferredAdmissionTrendRecord(seriesByYear.get(year), record));
+  }
+  return [...seriesByYear.values()].sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
+}
+
+function admissionTrendEvidence(records) {
+  const thirdPartyYears = records.filter(isThirdPartyAdmissionRecord).map((record) => record.year);
+  const unclassifiedYears = records
+    .filter((record) => admissionEvidencePriority(record) === 1)
+    .map((record) => record.year);
+  if (thirdPartyYears.length) {
+    return {
+      bonus: 2,
+      evidenceLabel: "趋势含待复核第三方",
+      caution: `趋势中的${[...new Set(thirdPartyYears)].join("、")}年数据来自待复核第三方摘要，只作变化线索，不能据此推断录取概率。`,
+    };
+  }
+  if (unclassifiedYears.length) {
+    return {
+      bonus: 3,
+      evidenceLabel: "趋势来源待核",
+      caution: `趋势中的${[...new Set(unclassifiedYears)].join("、")}年来源等级待核，只作变化线索。`,
+    };
+  }
+  return { bonus: 5, evidenceLabel: "", caution: "" };
+}
+
+function withAdmissionTrendEvidence(records, trend) {
+  return { ...trend, ...admissionTrendEvidence(records) };
+}
+
 function trendForRecord(record) {
   if (record.dataType !== "major-admission" || !record.majorName) return null;
   const records = admissionTrendIndex().get(admissionTrendKey(record)) || [];
-  const seriesByYear = new Map();
-  for (const item of records) {
-    if (item.year && !seriesByYear.has(item.year)) seriesByYear.set(item.year, item);
-  }
-  const series = [...seriesByYear.values()].sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
+  const series = admissionTrendSeries(records);
   if (series.length < 2) return null;
-  const current = series.find((item) => item.id === record.id) || series[0];
+  const current = series.find((item) => Number(item.year) === Number(record.year)) || series[0];
   const previous = series.find((item) => item.year && item.year !== current.year);
   if (!previous) return null;
   const rankSeries = series.filter((item) => Number(item.minRankEnd) > 0);
@@ -1214,10 +1266,10 @@ function trendForRecord(record) {
         ? `${label}位次区间${fmtNumber(Math.min(...values))}-${fmtNumber(Math.max(...values))}。`
         : "";
       const yearText = visibleSeries.map((item) => `${item.year}年${fmtNumber(Number(item.minRankEnd))}`).join("，");
-      return {
+      return withAdmissionTrendEvidence(visibleSeries, {
         label: `${label}专业位次`,
         text: `${yearText}；${currentRankItem.year}较${previousRankItem.year}${direction}${gap ? `${fmtNumber(Math.abs(gap))}名` : ""}。${rangeText}`,
-      };
+      });
     }
   }
   const scoreSeries = series.filter((item) => Number(item.minScore) > 0);
@@ -1236,16 +1288,16 @@ function trendForRecord(record) {
         ? `${label}最低分区间${Math.min(...values)}-${Math.max(...values)}分。`
         : "";
       const yearText = visibleSeries.map((item) => `${item.year}年${Number(item.minScore)}`).join("，");
-      return {
+      return withAdmissionTrendEvidence(visibleSeries, {
         label: `${label}专业分`,
         text: `${yearText}；${currentScoreItem.year}较${previousScoreItem.year}${direction}${gap ? `${Math.abs(gap)}分` : ""}。${rangeText}`,
-      };
+      });
     }
   }
-  return {
+  return withAdmissionTrendEvidence(series.slice(0, 6), {
     label: `${trendYearsLabel(series.length)}专业分`,
-    text: `已命中同省同科类同校同专业${trendRecordLabel(series.length)}记录，仍需复核招生计划变化。`,
-  };
+    text: `已命中同省同科类同校同专业同招生路径${trendRecordLabel(series.length)}记录，仍需复核招生计划变化。`,
+  });
 }
 
 function dedupeAdmissionOptions(options) {
@@ -2242,7 +2294,7 @@ function buildAdmissionOptions(candidate, profile) {
     .map((record) => {
       const fit = admissionFit(record, profile);
       const trend = trendForRecord(record);
-      const optionScore = fit.score + majorInterestScore(record, profile) + admissionPreferenceScore(record, profile) + (trend ? 5 : 0);
+      const optionScore = fit.score + majorInterestScore(record, profile) + admissionPreferenceScore(record, profile) + (trend?.bonus || 0);
       const tags = [
         record.city,
         ...(record.schoolTags || []),
@@ -2251,6 +2303,7 @@ function buildAdmissionOptions(candidate, profile) {
         record.rankRangeText ? `位次${record.rankRangeText}` : "",
         rankScoreBasisLabel(record),
         trend?.label || "",
+        trend?.evidenceLabel || "",
         ...admissionRouteTags(record),
         record.electiveRequirement ? `选科${record.electiveRequirement}` : "",
         electiveRequirementForProfile(record, profile).state === "needs-check" ? "选科待核" : "",
@@ -2258,7 +2311,7 @@ function buildAdmissionOptions(candidate, profile) {
       return {
         name: record.schoolName,
         tags,
-        focus: `${record.majorName}：${fit.text}。${trend ? `${trend.text}` : ""}${admissionCautionText(record)}`,
+        focus: `${record.majorName}：${fit.text}。${trend ? `${trend.text}${trend.caution}` : ""}${admissionCautionText(record)}`,
         role: fit.zone,
         optionScore,
         admissionFit: fit,
