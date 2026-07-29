@@ -1,0 +1,62 @@
+{
+  "dataset": "evidence-v3337-admission-provenance-and-rank-fit",
+  "generatedAt": "2026-07-30T18:00:00+08:00",
+  "triggerProfile": {
+    "province": "江西",
+    "score": 593,
+    "rank": 17798,
+    "subject": "物理/理科",
+    "disciplineFocus": "08",
+    "interests": [
+      "计算机",
+      "软件",
+      "数据",
+      "数字媒体",
+      "虚拟现实"
+    ]
+  },
+  "observedRisks": [
+    "第三方院校分数摘要曾显示为A并被标作官方来源",
+    "同一院校专业因记录ID不同重复进入清单",
+    "独立学院继承母体高校的211和双一流标签",
+    "固定绝对位次差无法适配全国不同位次规模"
+  ],
+  "controls": {
+    "thirdPartyMaximumConfidence": "B",
+    "thirdPartyExecutable": false,
+    "thirdPartyTier": "待复核数据候选",
+    "logicalDedupeFields": [
+      "province",
+      "subjectType",
+      "school",
+      "major",
+      "majorGroup",
+      "dataType"
+    ],
+    "relativeRankThresholds": {
+      "safe": 0.82,
+      "steady": 0.94,
+      "borderline": 1.03,
+      "reach": 1.18
+    }
+  },
+  "dataCorrection": {
+    "school": "南昌大学共青学院",
+    "records": 22,
+    "removedTags": [
+      "985",
+      "211",
+      "双一流",
+      "C9"
+    ],
+    "retainedTag": "民办/独立学院",
+    "sampleIds": [
+      "2025-d57bb9a12f7474f0",
+      "2025-dcf9544463235088",
+      "2025-93c4d518c0ed6dcc",
+      "2025-d51012bec3102565",
+      "2025-7844de8527322206"
+    ]
+  },
+  "limitation": "本清单记录模型控制与数据纠错，不把第三方摘要升级为官方数据，也不声称输出录取概率。"
+}

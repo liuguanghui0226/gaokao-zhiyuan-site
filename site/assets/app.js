@@ -163,6 +163,12 @@ const DISCIPLINE_MAJOR_CATALOG = {
 };
 
 const HIGH_TUITION_THRESHOLD = 30000;
+const RANK_FIT_RATIO_THRESHOLDS = {
+  safe: 0.82,
+  steady: 0.94,
+  borderline: 1.03,
+  reach: 1.18,
+};
 
 const CANDIDATE_POOLS = [
   {
@@ -725,6 +731,14 @@ function isSchoolOfficialOnlyRecord(record) {
   return record?.formalScoreScope === "school-official-only";
 }
 
+function isThirdPartyAdmissionRecord(record) {
+  return /third-party/.test(String(record?.sourceQuality || ""));
+}
+
+function isIndependentCollegeRecord(record) {
+  return (record?.schoolTags || []).some((tag) => /民办\/独立学院|独立学院/.test(String(tag)));
+}
+
 function isScoreDerivedRankRecord(record) {
   return record?.rankDerivedFromScore === true || record?.rankEvidenceScope === "score-derived-provincial-segment";
 }
@@ -1035,6 +1049,25 @@ function admissionTrendKey(record) {
   ].join("|");
 }
 
+function admissionOptionIdentityKey(record) {
+  const majorIdentity = record.majorName || record.majorGroup || record.majorCode || "";
+  return [
+    record.province || "",
+    record.subjectType || "",
+    record.schoolName || record.schoolCode || "",
+    majorIdentity,
+    record.majorName ? "" : record.majorGroup || "",
+    record.dataType || "",
+  ].map(normalizeText).join("|");
+}
+
+function admissionEvidencePriority(record) {
+  if (isThirdPartyAdmissionRecord(record)) return 0;
+  if (isSchoolOfficialOnlyRecord(record)) return 2;
+  if (/official/.test(String(record?.sourceQuality || ""))) return 3;
+  return 1;
+}
+
 function admissionTrendIndex() {
   if (admissionTrendIndexCache) return admissionTrendIndexCache;
   admissionTrendIndexCache = new Map();
@@ -1129,12 +1162,17 @@ function trendForRecord(record) {
 function dedupeAdmissionOptions(options) {
   const map = new Map();
   for (const option of options) {
-    const key = admissionTrendKey(option.record);
+    const key = admissionOptionIdentityKey(option.record);
     const existing = map.get(key);
+    const optionYear = Number(option.record.year) || 0;
+    const existingYear = Number(existing?.record?.year) || 0;
+    const optionPriority = admissionEvidencePriority(option.record);
+    const existingPriority = admissionEvidencePriority(existing?.record);
     if (
       !existing ||
-      (Number(option.record.year) || 0) > (Number(existing.record.year) || 0) ||
-      (option.record.minRankEnd && !existing.record.minRankEnd)
+      optionYear > existingYear ||
+      (optionYear === existingYear && optionPriority > existingPriority) ||
+      (optionYear === existingYear && optionPriority === existingPriority && option.record.minRankEnd && !existing.record.minRankEnd)
     ) {
       map.set(key, option);
     }
@@ -1763,7 +1801,7 @@ function candidateMatchesAdmissionRecord(candidate, record, profile) {
   const schoolText = normalizeText(`${record.schoolName || ""} ${record.city || ""} ${(record.schoolTags || []).join(" ")}`);
   const majorText = normalizeText(`${record.majorName || ""} ${record.majorGroup || ""}`);
   const scopeMatchers = {
-    "elite-platform": () => /985|211|双一流|C9/.test(schoolText),
+    "elite-platform": () => !isIndependentCollegeRecord(record) && /985|211|双一流|C9/.test(schoolText),
     "shanghai-city": () => /上海|杭州|南京|苏州|宁波|无锡|常州/.test(schoolText),
     "wuhan-city": () => /武汉|湖北/.test(schoolText),
     "hongkong-macao": () => /香港|澳门|港澳/.test(schoolText),
@@ -2010,11 +2048,16 @@ function admissionFit(record, profile, today = currentChinaDate()) {
   let fit;
   if (rank > 0 && minRankEnd > 0) {
     const gap = rank - minRankEnd;
-    if (gap <= -5000) fit = { zone: "稳", score: 94, text: `位次比${scopedRankBoundaryLabel}靠前${fmtNumber(Math.abs(gap))}名` };
-    else if (gap <= -1500) fit = { zone: "稳妥", score: 86, text: `位次比${scopedRankBoundaryLabel}靠前${fmtNumber(Math.abs(gap))}名` };
-    else if (gap <= 600) fit = { zone: "临界稳", score: 76, text: `位次接近${scopedRankBoundaryLabel}，差距${fmtNumber(Math.abs(gap))}名以内` };
-    else if (gap <= 3500) fit = { zone: "冲", score: 62, text: `位次落后${scopedRankBoundaryLabel}约${fmtNumber(gap)}名` };
-    else fit = { zone: "高冲", score: 42, text: `位次落后${scopedRankBoundaryLabel}约${fmtNumber(gap)}名` };
+    const ratio = rank / minRankEnd;
+    const relativeGapPercent = Number((Math.abs(1 - ratio) * 100).toFixed(1));
+    const relativeText = gap <= 0
+      ? `位次比${scopedRankBoundaryLabel}靠前${fmtNumber(Math.abs(gap))}名（约${relativeGapPercent}%）`
+      : `位次落后${scopedRankBoundaryLabel}约${fmtNumber(gap)}名（约${relativeGapPercent}%）`;
+    if (ratio <= RANK_FIT_RATIO_THRESHOLDS.safe) fit = { zone: "稳", score: 94, text: relativeText };
+    else if (ratio <= RANK_FIT_RATIO_THRESHOLDS.steady) fit = { zone: "稳妥", score: 86, text: relativeText };
+    else if (ratio <= RANK_FIT_RATIO_THRESHOLDS.borderline) fit = { zone: "临界稳", score: 76, text: relativeText };
+    else if (ratio <= RANK_FIT_RATIO_THRESHOLDS.reach) fit = { zone: "冲", score: 62, text: relativeText };
+    else fit = { zone: "高冲", score: 42, text: relativeText };
   } else if (score > 0 && minScore > 0) {
     const gap = Number((score - minScore).toFixed(3));
     if (gap >= 18) fit = { zone: "分数稳", score: 84, text: `分数高出近年最低分${gap}分，缺位次需复核` };
@@ -2059,6 +2102,9 @@ function qualificationFilteredAdmissionRecords(profile, records = profileAdmissi
 }
 
 function admissionRecordLimitWarning(record) {
+  if (isThirdPartyAdmissionRecord(record)) {
+    return "该录取最低分来自待复核第三方摘要，不是考试院或学校官网原表；即使位次由官方一分一段换算，也只能作为候选线索，可信度最高为B，不能直接形成可执行志愿。";
+  }
   if (isSchoolOfficialOnlyRecord(record)) {
     if (isScoreDerivedRankRecord(record)) {
       return "该来源是学校官网单校专业最低分；所示位次由最低分对应省级一分一段表换算，不是学校录取考生中的真实最低位次。只能作为该校候选复核，不能单独推断录取概率。";
@@ -2117,6 +2163,10 @@ function buildAdmissionOptions(candidate, profile) {
         admissionFit: fit,
         scoreStatus: isHubeiLimitedSchoolHistoricalAdmissionRecord(record)
           ? "湖北限定院校2025历史投档线：只作2026资格范围核验"
+          : isThirdPartyAdmissionRecord(record)
+          ? record.minRankEnd
+            ? "待复核第三方最低分及其一分一段换算位次：最高B级"
+            : "待复核第三方最低分摘要：最高B级"
           : isSchoolOfficialOnlyRecord(record)
           ? record.minRankEnd
             ? isScoreDerivedRankRecord(record) ? "学校官网单校最低分及其一分一段换算位次：非校录取最低位次" : "学校官网单校最低分/位次：仅作候选复核"
@@ -2262,6 +2312,7 @@ function scoreCandidate(candidate, profile, band) {
     .sort((a, b) => (b.fit.score + b.interest) - (a.fit.score + a.interest))[0];
   const limitedAdmission = bestAdmission && isLimitedAdmissionRecord(bestAdmission.record);
   const schoolOfficialAdmission = bestAdmission && isSchoolOfficialOnlyRecord(bestAdmission.record);
+  const thirdPartyAdmission = bestAdmission && isThirdPartyAdmissionRecord(bestAdmission.record);
   const staleAdmission = bestAdmission && !bestAdmission.fit.recency?.fresh;
   const electivePendingRecords = candidateAdmissionRecords.filter((record) => electiveRequirementForProfile(record, profile).state === "needs-check");
   const redLines = parseList(profile.redLines);
@@ -2382,6 +2433,7 @@ function scoreCandidate(candidate, profile, band) {
   if (vocationalLinePending) displayTotal = Math.min(displayTotal, 55);
   if (xizangCandidateCategoryMissing(profile)) displayTotal = Math.min(displayTotal, 55);
   if (xizangRankSourceUnconfirmed(profile)) displayTotal = Math.min(displayTotal, 55);
+  if (thirdPartyAdmission) displayTotal = Math.min(displayTotal, 72);
   if (bestAdmission && bestAdmission.fit.score < 62) {
     displayTotal = Math.min(displayTotal, 68);
   } else if (bestAdmission && bestAdmission.fit.score < 76) {
@@ -2390,10 +2442,10 @@ function scoreCandidate(candidate, profile, band) {
 
   let confidence = "C";
   let confidenceReason = "探索性建议：需要补充更多输入或官方数据后再进入正式方案。";
-  if (bestAdmission?.record?.minRankEnd && !limitedAdmission && !schoolOfficialAdmission && !staleAdmission && !missingInputs.length && evidence.length >= 4 && bestAdmission.fit.score >= 76 && total >= 76 && riskPenalty <= 12) {
+  if (bestAdmission?.record?.minRankEnd && !limitedAdmission && !schoolOfficialAdmission && !thirdPartyAdmission && !staleAdmission && !missingInputs.length && evidence.length >= 4 && bestAdmission.fit.score >= 76 && total >= 76 && riskPenalty <= 12) {
     confidence = "A";
     confidenceReason = "输入完整且已接入结构化录取分，可进入院校/专业分数排序；最终仍需官方核验。";
-  } else if (bestAdmission && !missingInputs.length && evidence.length >= 4 && bestAdmission.fit.score >= 62 && total >= 68 && riskPenalty <= 16) {
+  } else if (bestAdmission && !thirdPartyAdmission && !missingInputs.length && evidence.length >= 4 && bestAdmission.fit.score >= 62 && total >= 68 && riskPenalty <= 16) {
     confidence = "A-";
     confidenceReason = limitedAdmission
       ? "输入完整且命中官方投档位次，但来源是第2次志愿或 rank-only 口径，只能作为强候选核验。"
@@ -2406,7 +2458,9 @@ function scoreCandidate(candidate, profile, band) {
         : "输入完整且有录取分数据支持，但目标专业仍需逐项核验。";
   } else if (evidence.length >= 4 && total >= 62) {
     confidence = "B";
-    confidenceReason = scoreStatus.available
+    confidenceReason = thirdPartyAdmission
+      ? "当前最佳院校专业边界来自待复核第三方摘要；即使分数已连接官方一分一段，最高只作为B级候选线索，必须回考试院或学校官网原表确认。"
+      : scoreStatus.available
       ? "本地证据可用，但存在关键输入缺口或风险项，适合作为候选继续核验。"
       : "缺少结构化院校/专业录取分，当前只能作为候选核验清单，不能判断录取概率。";
   }
@@ -2470,7 +2524,9 @@ function scoreCandidate(candidate, profile, band) {
         : vocationalLinePending
         ? "本年度普通高职专科控制线尚待官方发布，不据此用历史院校投档记录生成可执行建议。"
         : bestAdmission
-        ? `命中结构化录取数据：${bestAdmission.record.schoolName}${bestAdmission.record.majorName ? `-${bestAdmission.record.majorName}` : ""}，${bestAdmission.fit.zone}。`
+        ? thirdPartyAdmission
+          ? `命中待复核第三方录取摘要：${bestAdmission.record.schoolName}${bestAdmission.record.majorName ? `-${bestAdmission.record.majorName}` : ""}，${bestAdmission.fit.zone}；只作为候选线索。`
+          : `命中结构化录取数据：${bestAdmission.record.schoolName}${bestAdmission.record.majorName ? `-${bestAdmission.record.majorName}` : ""}，${bestAdmission.fit.zone}。`
         : "本方向暂未命中当前省份/科类的结构化录取记录，仍需导入更多院校/专业分。"
       : "尚未接入结构化院校/专业录取分，分数可达性必须人工查表核验。",
     cityPrefs.length && candidate.cities.some((city) => hasTextHit(city, cityPrefs))
@@ -2494,6 +2550,7 @@ function scoreCandidate(candidate, profile, band) {
     ...(bestAdmission && bestAdmission.fit.score < 62 ? ["当前最佳命中仍属于高冲区间，不能作为稳妥志愿使用。"] : []),
     ...(staleAdmission ? [bestAdmission.fit.recency.text] : []),
     ...(limitedAdmission ? [admissionRecordLimitWarning(bestAdmission.record)] : []),
+    ...(thirdPartyAdmission ? [admissionRecordLimitWarning(bestAdmission.record)] : []),
     ...(schoolOfficialAdmission ? [admissionRecordLimitWarning(bestAdmission.record)] : []),
     ...(electivePendingRecords.length ? [`当前方向有${fmtNumber(electivePendingRecords.length)}条记录的再选科目要求待核验；填写“再选科目”后可缩小候选。`] : []),
     ...(provinceReadiness && provinceReadiness.status !== "strong" ? [`${provinceReadiness.province}数据成熟度为${provinceReadiness.statusLabel}（${provinceReadiness.readinessScore}分）：${provinceReadiness.recommendationUse}`] : []),
@@ -2528,6 +2585,7 @@ const APPLICATION_PLAN_TIERS = [
   { id: "priority", label: "优先核验", note: "录取边界相对有利，仍须逐项核验当年计划、专业组与调剂范围。" },
   { id: "steady", label: "稳妥候选", note: "与近年边界接近或有一定余量，适合与优先核验项搭配。" },
   { id: "reach", label: "冲刺候选", note: "当前边界偏紧，只作为孩子愿意承担风险的上探项。" },
+  { id: "review", label: "待复核数据候选", note: "最低分来自第三方摘要，只作检索线索；回考试院或学校官网原表确认前不得进入正式志愿单。" },
   { id: "plan", label: "计划与资格核验", note: "这是招生计划或历史征集线索，不是录取概率。" },
 ];
 
@@ -2535,6 +2593,7 @@ function applicationPlanTier(option) {
   if (!option?.record) return null;
   if (isPlanRecord(option.record)) return "plan";
   if (isHubeiLimitedSchoolHistoricalAdmissionRecord(option.record)) return "plan";
+  if (isThirdPartyAdmissionRecord(option.record)) return "review";
   const fitScore = Number(option.admissionFit?.score) || 0;
   if (fitScore >= 82) return "priority";
   if (fitScore >= 68) return "steady";
@@ -2543,13 +2602,16 @@ function applicationPlanTier(option) {
 
 function applicationPlanKey(option) {
   const record = option.record || {};
-  return record.id || [
-    record.schoolName || option.name,
-    record.majorName || record.majorGroup || "未区分专业",
-    record.province,
-    record.subjectType,
-    record.dataType,
-  ].join("|");
+  if (!isPlanRecord(record)) return admissionOptionIdentityKey(record);
+  return [
+    record.province || "",
+    record.subjectType || "",
+    record.batch || "",
+    record.schoolName || record.schoolCode || option.name || "",
+    record.majorName || record.majorGroup || record.majorCode || "",
+    record.majorGroup || "",
+    isVacancyPlanRecord(record) ? "vacancy" : "regular",
+  ].map(normalizeText).join("|");
 }
 
 function applicationPlanOptionScore(option, result, tierIndex) {
@@ -2605,9 +2667,11 @@ function applicationPlanDetail(option) {
     ? "官方计划来源"
     : isHubeiLimitedSchoolHistoricalAdmissionRecord(record)
       ? "湖北限定院校历史投档来源"
-      : isSchoolOfficialOnlyRecord(record)
-        ? "学校官网录取来源"
-        : "官方投档/录取来源";
+      : isThirdPartyAdmissionRecord(record)
+        ? "待复核第三方录取摘要"
+        : isSchoolOfficialOnlyRecord(record)
+          ? "学校官网录取来源"
+          : "官方投档/录取来源";
   const sourceLimit = isPlanRecord(record)
     ? isVacancyPlanRecord(record)
       ? "历史征集剩余计划，只作补录信号。"
@@ -2626,7 +2690,7 @@ function applicationPlanDetail(option) {
       fit?.recency?.label || "",
       record.electiveRequirement ? `选科${record.electiveRequirement}` : "",
       electiveRequirementForProfile(record, state.recommendation?.profile || {}).state === "needs-check" ? "选科待核" : "",
-      ...(option.matchingPools.length > 1 ? [`命中${option.matchingPools.length}个方向`] : []),
+      ...((option.matchingPools?.length || 0) > 1 ? [`命中${option.matchingPools.length}个方向`] : []),
     ].filter(Boolean),
     sourceUrl: record.sourceUrl || "",
     sourceLabel,
@@ -2639,10 +2703,17 @@ function renderApplicationPlan(results) {
   const planOptions = tiers.flatMap((tier) => tier.options);
   const limitedSchoolOnly = ordinaryVocationalQualificationStatus(state.recommendation?.profile || {}).limitedOnly &&
     planOptions.length > 0 && planOptions.every((option) => isHubeiLimitedSchoolHistoricalAdmissionRecord(option.record));
-  const planTitle = limitedSchoolOnly ? "限定院校资格核验清单" : "可执行院校专业清单";
+  const containsThirdParty = planOptions.some((option) => isThirdPartyAdmissionRecord(option.record));
+  const planTitle = limitedSchoolOnly
+    ? "限定院校资格核验清单"
+    : containsThirdParty
+      ? "院校专业核验清单"
+      : "可执行院校专业清单";
   const planDescription = limitedSchoolOnly
     ? "只汇总湖北2025官方投档表中可确认的本省低分专业组，用于核验2026限定院校范围；不是今年可录取名单。"
-    : "只汇总已命中的本省同科类结构化记录；同一院校专业会合并，计划类数据单独展示。";
+    : containsThirdParty
+      ? "同一院校专业已合并；官方记录按冲稳层展示，第三方最低分摘要单列为待复核线索，不能直接进入正式志愿单。"
+      : "只汇总已命中的本省同科类结构化记录；同一院校专业会合并，计划类数据单独展示。";
   return `<section class="band application-plan">
     <div class="application-plan-head">
       <div>
@@ -3392,12 +3463,12 @@ function invalidateRecommendationResults() {
 }
 
 function renderAdmissionHitPanel(profile) {
-  const records = profileAdmissionRecords(profile)
+  const records = dedupeAdmissionOptions(profileAdmissionRecords(profile)
     .map((record) => {
       const fit = admissionFit(record, profile);
       return { record, fit, score: fit.score + majorInterestScore(record, profile) };
     })
-    .sort((a, b) => b.score - a.score)
+    .sort((a, b) => b.score - a.score))
     .slice(0, 5);
   if (!records.length) {
     return `<section class="band admission-hit-panel">

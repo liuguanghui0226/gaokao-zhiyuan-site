@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.336-xizang-rank-attestation-input-binding-required-868426records";
+const modelVersion = "local-deterministic-v3.337-admission-provenance-relative-rank-dedup-868426records";
 const sourceId = "official-guangxi-rank-2025-v3320";
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
 const readGzip = (file) => zlib.gunzipSync(fs.readFileSync(file));
@@ -29,7 +29,7 @@ assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.336");
+assert.equal(manifest.runtimeProfile.version, "v3.337");
 assert.equal(manifest.shards["广西"].records, 20452);
 assert.equal(manifest.shards["广西"].rankConversions, 2908);
 assert.equal(manifest.shards["广西"].bytes, shardBytes.length);

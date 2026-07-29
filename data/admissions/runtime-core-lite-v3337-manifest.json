@@ -1,0 +1,67 @@
+{
+  "dataset": "runtime-core-lite-v3337",
+  "generatedAt": "2026-07-29T17:54:18.088Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.337-admission-provenance-relative-rank-dedup-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5136,
+    "lite": 5136,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview",
+      "scoreBasis",
+      "rankPolicyBonusIncluded",
+      "policyBonusStatus",
+      "automaticAdmissionScoreAlignmentAllowed",
+      "alignmentBlockReason",
+      "scoreBasisAuditEvidenceId",
+      "rankUsageRequired",
+      "lowerAggregateEstimateGuard",
+      "lowerAggregateGuardedRecords",
+      "rankPublicationStatus",
+      "publicRankConversionAvailable",
+      "candidateCategoryRequired",
+      "candidateCategoryDefinitions",
+      "reviewedOfficialChannels",
+      "manualRankSourceConfirmationRequired",
+      "acceptedManualRankSources",
+      "manualRankSourceLabel",
+      "manualRankAttestationBoundFields",
+      "staleRecommendationInvalidationRequired",
+      "officialPublicDisclosureAudit"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 16040195,
+    "compressedBytes": 2434334,
+    "sha256": "530f4af681225712460f8f174ac2e3ed17f81075a56425ee491bb1c93d1468d9"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3020459,
+    "compressedBytes": 483383,
+    "sha256": "a1b12cf64b9ed32b6cb52c721902142e24b2ac1dbbd8d22b49e235b3d5aad262",
+    "rawReductionRate": 0.811694
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 8679,
+    "compressedBytes": 3062,
+    "sha256": "9d3630f46f43aa8093fdbd5450d0cef7e7a818c99296b42104642b42d741c1c7"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

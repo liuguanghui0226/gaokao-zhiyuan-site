@@ -1,0 +1,46 @@
+{
+  "dataset": "admission-provenance-relative-rank-v3337-runtime",
+  "generatedAt": "2026-07-30T18:00:00+08:00",
+  "before": {
+    "modelVersion": "local-deterministic-v3.336-xizang-rank-attestation-input-binding-required-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136,
+    "falseEliteRecords": 22
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.337-admission-provenance-relative-rank-dedup-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136,
+    "falseEliteRecords": 0,
+    "correctedRecords": 22,
+    "correctedSchool": "南昌大学共青学院",
+    "admissionEvidencePolicy": {
+      "thirdPartyMaximumConfidence": "B",
+      "thirdPartyExecutable": false,
+      "thirdPartyTier": "待复核数据候选",
+      "logicalDedupeFields": [
+        "province",
+        "subjectType",
+        "school",
+        "major",
+        "majorGroup",
+        "dataType"
+      ],
+      "relativeRankThresholds": {
+        "safe": 0.82,
+        "steady": 0.94,
+        "borderline": 1.03,
+        "reach": 1.18
+      }
+    },
+    "coreBytes": 16040195,
+    "coreSha256": "530f4af681225712460f8f174ac2e3ed17f81075a56425ee491bb1c93d1468d9",
+    "jiangxiBytes": 17736506,
+    "jiangxiSha256": "0d672d0f5b451421e11bcf563f081b8b3ff0102f2f246ddfd591711fb4986819",
+    "manifestBytesBeforeLiteRebuild": 6719,
+    "manifestSha256BeforeLiteRebuild": "25835e238f4ec8716a869220abdbac3c54738400385cce3556643e8f992405cf"
+  },
+  "boundary": "No admission or rank records were added or deleted. Third-party score summaries are non-executable evidence, rank fit uses relative ratios, and independent colleges do not inherit parent-university elite tags."
+}

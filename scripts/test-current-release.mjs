@@ -128,6 +128,9 @@ const tests = [
   "test-xizang-rank-source-routing-v3335.mjs",
   "test-xizang-rank-attestation-runtime-v3336.mjs",
   "test-xizang-rank-attestation-binding-v3336.mjs",
+  "test-admission-provenance-and-relative-rank-v3337.mjs",
+  "test-real-jiangxi-provenance-routing-v3337.mjs",
+  "test-admission-provenance-runtime-v3337.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 
