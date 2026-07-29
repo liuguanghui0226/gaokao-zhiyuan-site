@@ -50,7 +50,7 @@ assert.match(appSource, /const DEFAULT_PROFILE = \{[\s\S]*?rank: "",/, "Default 
 assert.match(appSource, /const visibleSchoolTags = schoolTags\.slice\(0, 24\);/, "Admission overview must cap the rendered school sample");
 assert.match(appSource, /另有 \$\{fmtNumber\(hiddenSchoolTagCount\)\} 所院校已入库，推荐时按省份加载/, "Admission overview must explain that hidden school names remain available to recommendation routing");
 
-assert.equal(core.modelVersion, "local-deterministic-v3.334-xizang-official-category-required-no-public-rank-guard-868426records");
+assert.equal(core.modelVersion, "local-deterministic-v3.335-xizang-official-rank-source-confirmation-required-868426records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.records.length, 0);
 assert.equal(core.admissionScoreLayer.rankConversions.length, 0);
@@ -421,7 +421,7 @@ assert.equal(xizangReadiness.ordinaryVocationalVacancyRecords, 926);
 assert.equal(xizangReadiness.planCount, 87995, "readiness annual plan count must remain unchanged");
 assert.equal(xizangReadiness.vacancyPlanRecords, 2187, "vacancy records must remain separate from annual plans");
 assert.equal(xizangReadiness.vacancyPlanSnapshotCount, 6099, "vacancy plan snapshots must remain separate from annual plans");
-assert.ok(xizangReadiness.missing.includes("官方公开渠道未提供可计算一分一段（仅接受考生本人官方查询位次）"));
+assert.ok(xizangReadiness.missing.includes("官方公开渠道未提供可计算一分一段（手填位次须确认来自考生本人官方查询）"));
 assert.ok(xizangReadiness.missing.includes("高职专科正式投档/录取数据待补（已有征集计划快照）"));
 
 const source = appSource;

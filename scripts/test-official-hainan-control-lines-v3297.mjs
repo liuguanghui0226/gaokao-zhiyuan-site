@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.334-xizang-official-category-required-no-public-rank-guard-868426records";
+const modelVersion = "local-deterministic-v3.335-xizang-official-rank-source-confirmation-required-868426records";
 const sourceId = "official-hainan-control-lines-2026";
 const rankSourceId = "official-hainan-rank-2026";
 const rankSourceUrl = "https://ea.hainan.gov.cn/ywdt/ptgkyjszsb/202606/P020260625627884748040.pdf";

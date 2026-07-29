@@ -1,0 +1,26 @@
+{
+  "dataset": "xizang-rank-source-confirmation-v3335-runtime",
+  "generatedAt": "2026-07-30T00:00:00+08:00",
+  "before": {
+    "modelVersion": "local-deterministic-v3.334-xizang-official-category-required-no-public-rank-guard-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.335-xizang-official-rank-source-confirmation-required-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136,
+    "xizangRankConversions": 0,
+    "manualRankSourceConfirmationRequired": true,
+    "acceptedManualRankSources": [
+      "official-personal-query"
+    ],
+    "coreBytes": 16038275,
+    "coreSha256": "eda5fbab495376fb6db3e3ae80daf9b9f7be3ab02f065605e60878ded6d1bed7",
+    "manifestBytesBeforeLiteRebuild": 6528,
+    "manifestSha256BeforeLiteRebuild": "c06cabb3d101f2607202f16d43a66cefabe16ce4101394689b66d30aeae3b4f4"
+  },
+  "boundary": "No admission or rank records were added. Unconfirmed Tibet manual ranks are excluded by the browser model."
+}

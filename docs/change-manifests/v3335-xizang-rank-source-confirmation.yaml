@@ -1,0 +1,71 @@
+change_id: "2026-07-30-v3335-xizang-rank-source-confirmation"
+title: "西藏手填位次官方个人查询来源强制确认"
+phase: deliver
+status: complete
+execution_mode: full
+resume_mode: full
+resume_reason: "西藏公开渠道没有可计算一分一段，未经来源确认的手填位次不能进入院校排序。"
+last_updated: "2026-07-30T00:00:00+08:00"
+
+surfaces_touched:
+  - surface: information
+    role: primary
+    notes: "沿用v3.334已核验官方渠道及无公开可计算一分一段边界，不新增位次数据。"
+  - surface: user
+    role: consumer
+    notes: "西藏专属位次来源字段；未确认时手填位次归零、排除排序并强制C级。"
+  - surface: operational
+    role: consumer
+    notes: "完整核心、轻量核心、Pages入口、部署前回归和公网全量验证同步到v3.335。"
+
+sot_map:
+  - info_name: "西藏无公开可计算一分一段与官方个人查询位次边界"
+    pattern: 4
+    source: "https://www.xizang.gov.cn/xwzx_406/bmkx/202506/t20250626_486252.html"
+    consumers:
+      - name: "site/assets/app.js"
+        kind: runtime
+        sync_lag: direct
+      - name: "site/data/release-v3.275/knowledge-core.json.gz"
+        kind: runtime
+        sync_lag: generated
+      - name: "site/data/release-v3.275/knowledge-core-lite.json.gz"
+        kind: runtime
+        sync_lag: generated
+    sync_mechanism: "Node运行补丁只增加手填位次来源确认政策元数据；浏览器模型通过usableRankForProfile统一阻断未经确认的西藏位次。"
+    desync_risk: high
+
+rollback:
+  overall_mode: 1
+  per_surface_modes:
+    - surface: information
+      mode: 1
+      rationale: "不改历史官方证据和位次记录，只增加可靠性约束。"
+    - surface: user
+      mode: 1
+      rationale: "可恢复v3.334前端，但会重新暴露未经来源确认的位次进入排序风险。"
+    - surface: operational
+      mode: 1
+      rationale: "Pages只部署通过完整回归的main提交。"
+
+task_slices:
+  - id: "rank-source-routing"
+    scope: "未确认位次排除、官方来源确认后启用、非西藏逻辑保持不变"
+    verification_command: "node scripts/test-xizang-rank-source-routing-v3335.mjs"
+  - id: "runtime-policy"
+    scope: "核心版本、来源说明、数量守恒和西藏0条位次换算"
+    verification_command: "node scripts/test-xizang-rank-source-runtime-v3335.mjs"
+  - id: "national-regression"
+    scope: "31省边界、推荐逻辑、运行分片和轻量核心"
+    verification_command: "node scripts/test-current-release.mjs"
+  - id: "public-verification"
+    scope: "GitHub Pages线上入口、应用脚本、双核心和31省gzip分片"
+    verification_command: "gh workflow run verify-live.yml"
+
+residual_risks:
+  - "系统无法独立验证用户选择的位次来源是否真实，只能要求显式确认并提示正式填报前复核。"
+  - "西藏仍缺公开可计算一分一段、省级全量普通及高职投档录取表和专业最低位次。"
+  - "个人查询位次必须与当年、科类和A/B类别一致，不得套用其他考生截图或往年结果。"
+  - "控制线只作资格边界，不等于院校投档线、专业录取分或录取概率。"
+
+next_action: "继续补西藏官方公开投档录取数据和专业最低位次；官方未公开前维持来源确认与C级边界。"

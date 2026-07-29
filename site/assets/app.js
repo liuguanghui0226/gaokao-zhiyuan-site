@@ -58,6 +58,7 @@ const DEFAULT_PROFILE = {
   guangxiLocalScore: "",
   vocationalScore: "",
   rank: "",
+  xizangRankSource: "",
   guangxiLocalRank: "",
   province: "江西",
   candidateCategory: "",
@@ -644,7 +645,7 @@ function classifyProfileBand(profile) {
   if (isVocationalProfile(profile)) {
     return { id: "foundation", label: "专科/技能段", order: 1, strategy: "优先看公办高职、双高专业群、专升本通道、区域产业和家庭可执行性。" };
   }
-  const band = classifyScoreBand(profile.score, profile.rank, profile.province);
+  const band = classifyScoreBand(profile.score, usableRankForProfile(profile), profile.province);
   const bachelorLine = ordinaryBachelorControlLine(profile);
   if (band.label === "专科/技能段" && bachelorLine && Number(profile.score) >= bachelorLine.score) {
     const category = profile.candidateCategory ? `${profile.candidateCategory}` : "";
@@ -791,6 +792,19 @@ function xizangCandidateCategoryMissing(profile) {
     !normalizeXizangCandidateCategory(profile?.candidateCategory);
 }
 
+const XIZANG_OFFICIAL_RANK_SOURCE = "official-personal-query";
+
+function xizangRankSourceUnconfirmed(profile) {
+  if (normalizeProvince(profile?.province) !== "西藏") return false;
+  const enteredRank = Number(profile?.rankInput || profile?.rank) || 0;
+  return enteredRank > 0 && profile?.xizangRankSource !== XIZANG_OFFICIAL_RANK_SOURCE;
+}
+
+function usableRankForProfile(profile) {
+  if (xizangRankSourceUnconfirmed(profile)) return 0;
+  return Number(profile?.rank) || 0;
+}
+
 function recordMatchesCandidateCategory(record, profile) {
   const required = normalizeText(record?.candidateCategory || record?.candidateClass);
   if (!required) return true;
@@ -811,6 +825,9 @@ function profileRecordFilterKey(profile) {
     profile?.subject,
     profile?.candidateCategory,
     profile?.score,
+    profile?.rank,
+    profile?.rankInput,
+    profile?.xizangRankSource,
     profile?.guangxiLocalScore,
     profile?.guangxiLocalRank,
     profile?.rankUsage,
@@ -967,9 +984,12 @@ function admissionDataFreshness(profile, today = currentChinaDate()) {
   if (province === "西藏" && xizangCandidateCategoryMissing(profile)) {
     warnings.push("西藏普通生源必须先确认A/B类：A类为区内世居两代（含两代）以上少数民族考生，B类为汉族及区外少数民族考生；未选择时结果只作调研。");
   }
+  if (xizangRankSourceUnconfirmed(profile)) {
+    warnings.push("已填写的西藏位次尚未确认为官方个人查询结果，系统已将其排除，不用于分段、院校比较或排序。");
+  }
   if (!latestRankYear) {
     warnings.push(province === "西藏"
-      ? "西藏已核验的官方公开渠道未提供可计算的一分一段表；系统不按分数编造位次，只有考生从官方个人查询取得的位次才能手工填写并用于比较。"
+      ? "西藏已核验的官方公开渠道未提供可计算的一分一段表；系统不按分数编造位次，只有选择“西藏官方个人查询”来源后，手填位次才会用于比较。"
       : `${province}当前本地没有可计算的一分一段；未填写考试院正式位次时，系统不能给出位次安全边界。`);
   }
   if (rankAlignmentBlockedAdmissions.length) {
@@ -1633,6 +1653,7 @@ function profileFromForm() {
     vocationalScore: $("#vocationalScoreInput")?.value.trim() || "",
     rank: $("#rankInput").value.trim(),
     rankInput: $("#rankInput").value.trim(),
+    xizangRankSource: $("#xizangRankSourceInput")?.value || "",
     guangxiLocalRank: $("#guangxiLocalRankInput")?.value.trim() || "",
     guangxiLocalRankInput: $("#guangxiLocalRankInput")?.value.trim() || "",
     province: $("#provinceInput").value.trim(),
@@ -1650,7 +1671,13 @@ function profileFromForm() {
     budget: $("#budgetInput").value,
     strategy: $("#strategyInput").value,
   };
-  if (normalizeProvince(profile.province) !== "西藏") profile.candidateCategory = "";
+  if (normalizeProvince(profile.province) !== "西藏") {
+    profile.candidateCategory = "";
+    profile.xizangRankSource = "";
+  } else if (xizangRankSourceUnconfirmed(profile)) {
+    profile.rank = "";
+    profile.rankRejectedBySource = true;
+  }
   if (normalizeProvince(profile.province) === "广西") {
     const outsideEstimate = profile.rank ? null : estimateRankFromScore(profile, "outside-guangxi");
     const localEstimate = profile.guangxiLocalRank ? null : estimateRankFromScore(profile, "inside-guangxi");
@@ -1961,9 +1988,9 @@ function admissionRecency(record, today = currentChinaDate()) {
 
 function profileRankForAdmissionRecord(record, profile) {
   if (record?.rankInstitutionScope === "inside-guangxi") {
-    return Number(profile?.guangxiLocalRank) || Number(profile?.rank) || 0;
+    return Number(profile?.guangxiLocalRank) || usableRankForProfile(profile);
   }
-  return Number(profile?.rank) || 0;
+  return usableRankForProfile(profile);
 }
 
 function profileScoreForAdmissionRecord(record, profile) {
@@ -2259,7 +2286,7 @@ function scoreCandidate(candidate, profile, band) {
   const missingInputs = [];
   if (!profile.province) missingInputs.push("省份");
   if (!profile.subject || profile.subject === "不确定") missingInputs.push("科类/选科");
-  if (!profile.rank) missingInputs.push("位次");
+  if (!usableRankForProfile(profile)) missingInputs.push("位次");
   if (xizangCandidateCategoryMissing(profile)) missingInputs.push("西藏考生类别");
   if (vocationalQualificationUnknown) missingInputs.push("北京专科语数外三科总分");
   if (vocationalLinePending) missingInputs.push(`${profile.province || "本省"}2026年普通高职专科控制线`);
@@ -2272,7 +2299,7 @@ function scoreCandidate(candidate, profile, band) {
   let hardFit = 66;
   if (profile.province) hardFit += 8;
   if (profile.subject && profile.subject !== "不确定") hardFit += 8;
-  if (profile.rank) hardFit += 8;
+  if (usableRankForProfile(profile)) hardFit += 8;
   if (profile.disciplineFocus && candidate.disciplines.includes(profile.disciplineFocus)) hardFit += 10;
   if (vocationalMode && candidate.id === "vocational-dual") hardFit += 12;
   if (redLineConflict) hardFit -= 30;
@@ -2319,6 +2346,7 @@ function scoreCandidate(candidate, profile, band) {
   if (vocationalQualificationUnknown) riskPenalty += 14;
   if (vocationalLinePending) riskPenalty += 14;
   if (xizangCandidateCategoryMissing(profile)) riskPenalty += 18;
+  if (xizangRankSourceUnconfirmed(profile)) riskPenalty += 6;
   if (vocationalMode && !["vocational-dual", "regional-safe"].includes(candidate.id)) riskPenalty += 18;
   if (scoreStatus.available && !profileRecords.length) riskPenalty += 10;
   if (bestAdmission && bestAdmission.fit.score < 62) riskPenalty += 16;
@@ -2352,6 +2380,7 @@ function scoreCandidate(candidate, profile, band) {
   if (vocationalQualificationUnknown) displayTotal = Math.min(displayTotal, 55);
   if (vocationalLinePending) displayTotal = Math.min(displayTotal, 55);
   if (xizangCandidateCategoryMissing(profile)) displayTotal = Math.min(displayTotal, 55);
+  if (xizangRankSourceUnconfirmed(profile)) displayTotal = Math.min(displayTotal, 55);
   if (bestAdmission && bestAdmission.fit.score < 62) {
     displayTotal = Math.min(displayTotal, 68);
   } else if (bestAdmission && bestAdmission.fit.score < 76) {
@@ -2395,6 +2424,9 @@ function scoreCandidate(candidate, profile, band) {
   } else if (xizangCandidateCategoryMissing(profile)) {
     confidence = "C";
     confidenceReason = "西藏A/B类决定控制线和可比录取记录；未确认考生类别时，当前结果只能作调研，不能形成可执行志愿单。";
+  } else if (xizangRankSourceUnconfirmed(profile)) {
+    confidence = "C";
+    confidenceReason = "已填写的西藏位次未确认为官方个人查询结果，系统已排除该位次；确认来源前只能按分数和资格边界调研。";
   }
 
   const reasons = [
@@ -2451,6 +2483,7 @@ function scoreCandidate(candidate, profile, band) {
     ...(vocationalQualificationUnknown ? [`${profile.province || "本省"}普通专科线按${vocationalLineComparison.label}判断；请补充该分数后再生成可执行院校专业清单。`] : []),
     ...(vocationalLinePending ? [`${profile.province || "本省"}2026年普通高职专科控制线尚待官方发布；当前结果只作路径调研，发布后必须重新计算资格边界。`] : []),
     ...(xizangCandidateCategoryMissing(profile) ? ["西藏A/B类尚未确认：A类仅指区内世居两代（含两代）以上少数民族考生，B类指汉族及区外少数民族考生；控制线和单校记录不得跨类别混用。"] : []),
+    ...(xizangRankSourceUnconfirmed(profile) ? ["西藏手填位次来源未确认：该位次已从模型输入中排除，不影响分段、院校匹配和排序。"] : []),
     ...(profile.rankEstimateText ? [`${profile.rankEstimateText}正式填报前必须回省考试院原表复核。`] : []),
     ...freshness.warnings,
     ...(vocationalMode && !["vocational-dual", "regional-safe"].includes(candidate.id) ? ["当前分数段不宜只按本科平台逻辑排序，应同步核验高职专科和专升本路径。"] : []),
@@ -2865,6 +2898,7 @@ function renderRecommendForm(profile) {
   const showGuangxiScopeFields = normalizeProvince(getProfileValue(profile, "province")) === "广西";
   const showBeijingVocationalScore = normalizeProvince(getProfileValue(profile, "province")) === "北京";
   const showXizangCandidateCategory = normalizeProvince(getProfileValue(profile, "province")) === "西藏";
+  const showXizangRankSource = showXizangCandidateCategory;
   return `<form id="recommendForm" class="recommend-form">
     <label>
       <span>考生类型</span>
@@ -2885,8 +2919,15 @@ function renderRecommendForm(profile) {
       <input id="vocationalScoreInput" type="number" min="0" max="450" value="${esc(getProfileValue(profile, "vocationalScore"))}" placeholder="北京专科线使用" />
     </label>
     <label>
-      <span id="rankFieldLabel">${showGuangxiScopeFields ? "区外院校位次" : "位次"}</span>
+      <span id="rankFieldLabel">${showGuangxiScopeFields ? "区外院校位次" : showXizangRankSource ? "官方个人查询位次" : "位次"}</span>
       <input id="rankInput" type="number" min="1" value="${esc(rankFieldValue)}" />
+    </label>
+    <label id="xizangRankSourceField" ${showXizangRankSource ? "" : "hidden"}>
+      <span>西藏位次来源</span>
+      <select id="xizangRankSourceInput">
+        <option value="" ${isSelected("", getProfileValue(profile, "xizangRankSource"))}>未确认，不进入排序</option>
+        <option value="${XIZANG_OFFICIAL_RANK_SOURCE}" ${isSelected(XIZANG_OFFICIAL_RANK_SOURCE, getProfileValue(profile, "xizangRankSource"))}>西藏官方个人查询</option>
+      </select>
     </label>
     <label id="guangxiLocalRankField" ${showGuangxiScopeFields ? "" : "hidden"}>
       <span>区内院校位次</span>
@@ -3278,6 +3319,8 @@ function bindRecommendEvents() {
   const provinceInput = $("#provinceInput");
   const beijingVocationalScoreField = $("#beijingVocationalScoreField");
   const xizangCandidateCategoryField = $("#xizangCandidateCategoryField");
+  const xizangRankSourceField = $("#xizangRankSourceField");
+  const xizangRankSourceInput = $("#xizangRankSourceInput");
   const guangxiLocalScoreField = $("#guangxiLocalScoreField");
   const guangxiLocalRankField = $("#guangxiLocalRankField");
   const scoreFieldLabel = $("#scoreFieldLabel");
@@ -3290,11 +3333,19 @@ function bindRecommendEvents() {
     if (xizangCandidateCategoryField) {
       xizangCandidateCategoryField.hidden = province !== "西藏";
     }
+    if (xizangRankSourceField) {
+      xizangRankSourceField.hidden = province !== "西藏";
+    }
+    if (province !== "西藏" && xizangRankSourceInput) {
+      xizangRankSourceInput.value = "";
+    }
     const showGuangxi = province === "广西";
     if (guangxiLocalScoreField) guangxiLocalScoreField.hidden = !showGuangxi;
     if (guangxiLocalRankField) guangxiLocalRankField.hidden = !showGuangxi;
     if (scoreFieldLabel) scoreFieldLabel.textContent = showGuangxi ? "区外院校投档分" : "分数";
-    if (rankFieldLabel) rankFieldLabel.textContent = showGuangxi ? "区外院校位次" : "位次";
+    if (rankFieldLabel) rankFieldLabel.textContent = showGuangxi
+      ? "区外院校位次"
+      : province === "西藏" ? "官方个人查询位次" : "位次";
   };
   provinceInput?.addEventListener("input", updateProvinceFields);
   updateProvinceFields();
