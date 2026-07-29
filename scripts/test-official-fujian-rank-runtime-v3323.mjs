@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.343-multiyear-official-boundary-guard-868426records";
+const modelVersion = "local-deterministic-v3.344-current-official-plan-corroboration-868426records";
 const sourceId = "official-fujian-rank-2025-v3323";
 const floors = { 历史类: 215, 物理类: 215 };
 
@@ -61,7 +61,7 @@ assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.343");
+assert.equal(manifest.runtimeProfile.version, "v3.344");
 assert.equal(manifest.runtimeProfile.initialCore, "knowledge-core-lite.json.gz");
 assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5136);

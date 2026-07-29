@@ -1,0 +1,540 @@
+{
+  "version": "v3.344",
+  "generatedAt": "2026-07-30T07:30:00+08:00",
+  "audit": "admission-current-plan-corroboration",
+  "policy": {
+    "evidenceDirection": "positive-corroboration-only",
+    "currentYear": 2026,
+    "planYearsAccepted": [
+      2025,
+      2026
+    ],
+    "planRecordsIncluded": "official ordinary non-vacancy plans only",
+    "matchFields": [
+      "province",
+      "school code or canonical school name",
+      "major code or canonical full major name",
+      "canonical batch route",
+      "compatible subject",
+      "compatible admission subtype, campus, and candidate category"
+    ],
+    "missingMatchMeaning": "unknown-not-discontinued",
+    "matchedPlanMeaning": "official-plan-presence-not-admission-probability",
+    "unmatchedElectiveAction": "exclude only when an exact latest-plan match explicitly conflicts with the profile"
+  },
+  "counts": {
+    "provinces": 31,
+    "admissionRecords": 746748,
+    "namedAdmissionRecords": 596431,
+    "candidateGroups": 389435,
+    "ordinaryPlanRecords": 66735,
+    "eligibleRecentPlanRecords": 59052,
+    "currentYearPlanRecords": 28422,
+    "matchedCandidateGroups": 1869,
+    "currentYearMatchedCandidateGroups": 1640,
+    "nearYearMatchedCandidateGroups": 229,
+    "matchedWithPlanCount": 1869,
+    "matchedWithElectiveRequirement": 1583,
+    "admissionMissingElectiveButPlanSupplies": 1489,
+    "matchedSchoolOfficialPlans": 42,
+    "matchedExamAuthorityPlans": 1827,
+    "matchedThirdPartyAdmissions": 588,
+    "plansExcludedAsVacancy": 2157,
+    "plansExcludedAsRestricted": 2793,
+    "plansExcludedAsSpecialPath": 209,
+    "oldPlanRecordsExcluded": 7683,
+    "provincesWithPlans": 31,
+    "provincesWithMatches": 21,
+    "provincesWithCurrentYearMatches": 21
+  },
+  "provinceRows": [
+    {
+      "province": "安徽",
+      "candidateGroups": 5496,
+      "ordinaryPlans": 40,
+      "matchedCandidateGroups": 3,
+      "currentYearMatchedCandidateGroups": 3
+    },
+    {
+      "province": "北京",
+      "candidateGroups": 2007,
+      "ordinaryPlans": 19,
+      "matchedCandidateGroups": 2,
+      "currentYearMatchedCandidateGroups": 2
+    },
+    {
+      "province": "重庆",
+      "candidateGroups": 45549,
+      "ordinaryPlans": 20,
+      "matchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 0
+    },
+    {
+      "province": "福建",
+      "candidateGroups": 12926,
+      "ordinaryPlans": 41,
+      "matchedCandidateGroups": 2,
+      "currentYearMatchedCandidateGroups": 2
+    },
+    {
+      "province": "甘肃",
+      "candidateGroups": 4448,
+      "ordinaryPlans": 19,
+      "matchedCandidateGroups": 1,
+      "currentYearMatchedCandidateGroups": 1
+    },
+    {
+      "province": "广东",
+      "candidateGroups": 4046,
+      "ordinaryPlans": 32,
+      "matchedCandidateGroups": 1,
+      "currentYearMatchedCandidateGroups": 1
+    },
+    {
+      "province": "广西",
+      "candidateGroups": 4995,
+      "ordinaryPlans": 36,
+      "matchedCandidateGroups": 2,
+      "currentYearMatchedCandidateGroups": 2
+    },
+    {
+      "province": "贵州",
+      "candidateGroups": 49783,
+      "ordinaryPlans": 11,
+      "matchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 0
+    },
+    {
+      "province": "海南",
+      "candidateGroups": 1897,
+      "ordinaryPlans": 14,
+      "matchedCandidateGroups": 1,
+      "currentYearMatchedCandidateGroups": 1
+    },
+    {
+      "province": "河北",
+      "candidateGroups": 51751,
+      "ordinaryPlans": 19,
+      "matchedCandidateGroups": 2,
+      "currentYearMatchedCandidateGroups": 2
+    },
+    {
+      "province": "黑龙江",
+      "candidateGroups": 4228,
+      "ordinaryPlans": 30,
+      "matchedCandidateGroups": 1,
+      "currentYearMatchedCandidateGroups": 1
+    },
+    {
+      "province": "河南",
+      "candidateGroups": 7829,
+      "ordinaryPlans": 38,
+      "matchedCandidateGroups": 1,
+      "currentYearMatchedCandidateGroups": 1
+    },
+    {
+      "province": "湖北",
+      "candidateGroups": 3873,
+      "ordinaryPlans": 37,
+      "matchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 0
+    },
+    {
+      "province": "湖南",
+      "candidateGroups": 7539,
+      "ordinaryPlans": 37,
+      "matchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 0
+    },
+    {
+      "province": "内蒙古",
+      "candidateGroups": 12095,
+      "ordinaryPlans": 37,
+      "matchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 0
+    },
+    {
+      "province": "江苏",
+      "candidateGroups": 5851,
+      "ordinaryPlans": 41,
+      "matchedCandidateGroups": 2,
+      "currentYearMatchedCandidateGroups": 2
+    },
+    {
+      "province": "江西",
+      "candidateGroups": 5945,
+      "ordinaryPlans": 36,
+      "matchedCandidateGroups": 1,
+      "currentYearMatchedCandidateGroups": 1
+    },
+    {
+      "province": "吉林",
+      "candidateGroups": 4332,
+      "ordinaryPlans": 42585,
+      "matchedCandidateGroups": 1541,
+      "currentYearMatchedCandidateGroups": 1357
+    },
+    {
+      "province": "辽宁",
+      "candidateGroups": 26188,
+      "ordinaryPlans": 17,
+      "matchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 0
+    },
+    {
+      "province": "宁夏",
+      "candidateGroups": 2133,
+      "ordinaryPlans": 17,
+      "matchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 0
+    },
+    {
+      "province": "青海",
+      "candidateGroups": 1602,
+      "ordinaryPlans": 7,
+      "matchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 0
+    },
+    {
+      "province": "陕西",
+      "candidateGroups": 4445,
+      "ordinaryPlans": 41,
+      "matchedCandidateGroups": 6,
+      "currentYearMatchedCandidateGroups": 6
+    },
+    {
+      "province": "山东",
+      "candidateGroups": 56372,
+      "ordinaryPlans": 17,
+      "matchedCandidateGroups": 2,
+      "currentYearMatchedCandidateGroups": 2
+    },
+    {
+      "province": "上海",
+      "candidateGroups": 1398,
+      "ordinaryPlans": 14,
+      "matchedCandidateGroups": 1,
+      "currentYearMatchedCandidateGroups": 1
+    },
+    {
+      "province": "山西",
+      "candidateGroups": 6981,
+      "ordinaryPlans": 41,
+      "matchedCandidateGroups": 2,
+      "currentYearMatchedCandidateGroups": 2
+    },
+    {
+      "province": "四川",
+      "candidateGroups": 8237,
+      "ordinaryPlans": 44,
+      "matchedCandidateGroups": 6,
+      "currentYearMatchedCandidateGroups": 6
+    },
+    {
+      "province": "天津",
+      "candidateGroups": 2639,
+      "ordinaryPlans": 22,
+      "matchedCandidateGroups": 1,
+      "currentYearMatchedCandidateGroups": 1
+    },
+    {
+      "province": "新疆",
+      "candidateGroups": 3862,
+      "ordinaryPlans": 30,
+      "matchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 0
+    },
+    {
+      "province": "西藏",
+      "candidateGroups": 897,
+      "ordinaryPlans": 13774,
+      "matchedCandidateGroups": 288,
+      "currentYearMatchedCandidateGroups": 243
+    },
+    {
+      "province": "云南",
+      "candidateGroups": 5557,
+      "ordinaryPlans": 1918,
+      "matchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 0
+    },
+    {
+      "province": "浙江",
+      "candidateGroups": 34534,
+      "ordinaryPlans": 18,
+      "matchedCandidateGroups": 3,
+      "currentYearMatchedCandidateGroups": 3
+    }
+  ],
+  "topSources": [
+    {
+      "sourceId": "official-jilin-admission-guide-2026-volume2-plan",
+      "matchedCandidateGroups": 1357
+    },
+    {
+      "sourceId": "official-xizang-admission-plan-2026",
+      "matchedCandidateGroups": 241
+    },
+    {
+      "sourceId": "official-chsi-jilin-admission-guide-2025-volume2-plan",
+      "matchedCandidateGroups": 184
+    },
+    {
+      "sourceId": "official-xizang-admission-plan-2025",
+      "matchedCandidateGroups": 45
+    },
+    {
+      "sourceId": "official-njust-national-2023-2026-school-plan-score",
+      "matchedCandidateGroups": 42
+    }
+  ],
+  "examples": [
+    {
+      "province": "安徽",
+      "schoolName": "南京理工大学",
+      "majorName": "法学",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 5,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "安徽",
+      "schoolName": "南京理工大学",
+      "majorName": "社会工作",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 4,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "安徽",
+      "schoolName": "南京理工大学",
+      "majorName": "英语",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 6,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "北京",
+      "schoolName": "南京理工大学",
+      "majorName": "法学",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 4,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "北京",
+      "schoolName": "南京理工大学",
+      "majorName": "工商管理类(会计学、人力资源管理)",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 7,
+      "planSubjectType": "物理类",
+      "planElectiveRequirement": "物理",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "福建",
+      "schoolName": "南京理工大学",
+      "majorName": "社会工作",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 3,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "福建",
+      "schoolName": "南京理工大学",
+      "majorName": "英语",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 5,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "甘肃",
+      "schoolName": "南京理工大学",
+      "majorName": "电子信息工程(知识产权创新实践班)",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 4,
+      "planSubjectType": "物理类",
+      "planElectiveRequirement": "物理+化学",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "广东",
+      "schoolName": "南京理工大学",
+      "majorName": "英语",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 3,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "广西",
+      "schoolName": "南京理工大学",
+      "majorName": "社会工作",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 2,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "广西",
+      "schoolName": "南京理工大学",
+      "majorName": "英语",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 2,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "海南",
+      "schoolName": "南京理工大学",
+      "majorName": "工商管理类(会计学、人力资源管理)",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 5,
+      "planSubjectType": "物理类",
+      "planElectiveRequirement": "物理",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "河北",
+      "schoolName": "南京理工大学",
+      "majorName": "数据科学与大数据技术",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 2,
+      "planSubjectType": "物理类",
+      "planElectiveRequirement": "物理+化学",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "河北",
+      "schoolName": "南京理工大学",
+      "majorName": "网络空间安全",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 2,
+      "planSubjectType": "物理类",
+      "planElectiveRequirement": "物理+化学",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "黑龙江",
+      "schoolName": "南京理工大学",
+      "majorName": "英语",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 2,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "河南",
+      "schoolName": "南京理工大学",
+      "majorName": "英语",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 2,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "江苏",
+      "schoolName": "南京理工大学",
+      "majorName": "法学",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 30,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "江苏",
+      "schoolName": "南京理工大学",
+      "majorName": "英语",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 5,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "江西",
+      "schoolName": "南京理工大学",
+      "majorName": "英语",
+      "admissionYear": 2025,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planCount": 3,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "历史",
+      "planSourceId": "official-njust-national-2023-2026-school-plan-score"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "武昌理工学院",
+      "majorName": "法学",
+      "admissionYear": 2025,
+      "admissionBatch": "本科批",
+      "planYear": 2026,
+      "planCount": 2,
+      "planSubjectType": "历史类",
+      "planElectiveRequirement": "不限",
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    }
+  ],
+  "boundaries": [
+    "A missing plan match is never treated as evidence that a major stopped recruiting because local plan coverage is uneven.",
+    "Vacancy, special-path, military, targeted, preparatory, advance, and other restricted plans do not corroborate ordinary admission options.",
+    "Plan presence confirms only that an official plan lists the school-major route; it does not create or raise an admission-probability estimate.",
+    "Current plan elective requirements may exclude an exactly matched historical option when the profile explicitly fails them.",
+    "Canonical matching only normalizes typography; semantic major-name changes are not merged automatically."
+  ]
+}

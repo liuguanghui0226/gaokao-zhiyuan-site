@@ -150,6 +150,10 @@ const tests = [
   "test-admission-multiyear-safety-v3343.mjs",
   "test-real-admission-multiyear-safety-v3343.mjs",
   "test-admission-multiyear-safety-runtime-v3343.mjs",
+  "audit-admission-current-plan-corroboration-v3344.mjs",
+  "test-admission-current-plan-corroboration-v3344.mjs",
+  "test-real-admission-current-plan-corroboration-v3344.mjs",
+  "test-admission-current-plan-corroboration-runtime-v3344.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 

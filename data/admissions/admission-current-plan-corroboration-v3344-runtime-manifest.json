@@ -1,0 +1,54 @@
+{
+  "dataset": "admission-current-plan-corroboration-v3344-runtime",
+  "generatedAt": "2026-07-30T07:30:00+08:00",
+  "before": {
+    "modelVersion": "local-deterministic-v3.343-multiyear-official-boundary-guard-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.344-current-official-plan-corroboration-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136,
+    "currentPlanCorroboration": {
+      "positiveEvidenceOnly": true,
+      "officialOrdinaryPlansOnly": true,
+      "currentYear": 2026,
+      "acceptedPlanYears": [
+        2025,
+        2026
+      ],
+      "schoolAndMajorIdentityMustMatch": true,
+      "canonicalTypographyOnly": true,
+      "semanticMajorRenamesNeverMerged": true,
+      "canonicalBatchRouteMustMatch": true,
+      "subjectAndOptionalRouteMustBeCompatible": true,
+      "vacancyAndRestrictedPlansExcluded": true,
+      "missingMatchMeansUnknownNotDiscontinued": true,
+      "currentPlanElectiveConflictExcludesOption": true,
+      "priorYearPlanElectiveConflictDoesNotExclude": true,
+      "planPresenceNeverCreatesAdmissionProbability": true,
+      "planPresenceNeverRaisesAdmissionFitZone": true,
+      "maximumRankingEvidenceBonus": 8,
+      "ordinaryPlanRecords": 66735,
+      "eligibleRecentPlanRecords": 59052,
+      "currentYearPlanRecords": 28422,
+      "matchedCandidateGroups": 1869,
+      "currentYearMatchedCandidateGroups": 1640,
+      "nearYearMatchedCandidateGroups": 229,
+      "matchedWithPlanCount": 1869,
+      "matchedWithElectiveRequirement": 1583,
+      "admissionMissingElectiveButPlanSupplies": 1489,
+      "oldPlanRecordsExcluded": 7683,
+      "provincesWithPlans": 31,
+      "provincesWithCurrentYearMatches": 21
+    },
+    "coreBytes": 16047592,
+    "coreSha256": "5b42ed2d4e52f09fd1fda6aa42fe739bc08f2c9d33032f8609398c371a6c03cf",
+    "manifestBytesBeforeLiteRebuild": 6714,
+    "manifestSha256BeforeLiteRebuild": "972e6e3214a09fadfd5414fa9eb9bc8777a4392bc3dd3bbb05f31c81991d983e"
+  },
+  "boundary": "No admission, rank, plan, or source-note record changed. Exact recent official plan matches add visible positive evidence only. A missing match never means discontinued; only an exact 2026 plan with an explicit elective conflict can remove a historical candidate."
+}

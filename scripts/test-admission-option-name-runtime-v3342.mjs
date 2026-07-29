@@ -11,7 +11,7 @@ if (root.startsWith("/Volumes/")) throw new Error("Refusing external-volume test
 const releaseDir = path.join(root, "site/data/release-v3.275");
 const readGzip = (name) => JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(releaseDir, name))).toString("utf8"));
 const readJson = (name) => JSON.parse(fs.readFileSync(path.join(root, "data/admissions", name), "utf8"));
-const expectedVersion = "local-deterministic-v3.343-multiyear-official-boundary-guard-868426records";
+const expectedVersion = "local-deterministic-v3.344-current-official-plan-corroboration-868426records";
 const historicalVersion = "local-deterministic-v3.342-typography-safe-admission-options-868426records";
 
 const core = readGzip("knowledge-core.json.gz");
@@ -19,7 +19,7 @@ const lite = readGzip("knowledge-core-lite.json.gz");
 const manifest = readGzip("manifest.json.gz");
 const runtime = readJson("admission-option-name-safety-v3342-runtime-manifest.json");
 const evidence = readJson("evidence-v3342-admission-option-name-variants-manifest.json");
-const liteAudit = readJson("runtime-core-lite-v3343-manifest.json");
+const liteAudit = readJson("runtime-core-lite-v3344-manifest.json");
 const policy = core.modelPolicy.admissionEvidencePolicy;
 const optionPolicy = policy.optionNameCanonicalization;
 
@@ -27,10 +27,10 @@ assert.equal(core.modelVersion, expectedVersion);
 assert.equal(lite.modelVersion, expectedVersion);
 assert.equal(manifest.modelVersion, expectedVersion);
 assert.equal(runtime.after.modelVersion, historicalVersion);
-assert.equal(manifest.runtimeProfile.version, "v3.343");
+assert.equal(manifest.runtimeProfile.version, "v3.344");
 assert.equal(liteAudit.modelVersion, expectedVersion);
-assert.equal(core.generatedAt, "2026-07-30T06:30:00+08:00");
-assert.equal(manifest.generatedAt, "2026-07-30T06:30:00+08:00");
+assert.equal(core.generatedAt, "2026-07-30T07:30:00+08:00");
+assert.equal(manifest.generatedAt, "2026-07-30T07:30:00+08:00");
 assert.equal(policy.routeSafeDedupe, true);
 assert.equal(policy.batchRoutePolicy.semanticBatchRouteIsolation, true);
 assert.equal(optionPolicy.unicodeNormalization, "NFKC");

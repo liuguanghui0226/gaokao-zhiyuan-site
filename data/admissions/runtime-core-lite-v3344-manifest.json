@@ -1,0 +1,67 @@
+{
+  "dataset": "runtime-core-lite-v3344",
+  "generatedAt": "2026-07-29T23:25:16.792Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.344-current-official-plan-corroboration-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5136,
+    "lite": 5136,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview",
+      "scoreBasis",
+      "rankPolicyBonusIncluded",
+      "policyBonusStatus",
+      "automaticAdmissionScoreAlignmentAllowed",
+      "alignmentBlockReason",
+      "scoreBasisAuditEvidenceId",
+      "rankUsageRequired",
+      "lowerAggregateEstimateGuard",
+      "lowerAggregateGuardedRecords",
+      "rankPublicationStatus",
+      "publicRankConversionAvailable",
+      "candidateCategoryRequired",
+      "candidateCategoryDefinitions",
+      "reviewedOfficialChannels",
+      "manualRankSourceConfirmationRequired",
+      "acceptedManualRankSources",
+      "manualRankSourceLabel",
+      "manualRankAttestationBoundFields",
+      "staleRecommendationInvalidationRequired",
+      "officialPublicDisclosureAudit"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 16047592,
+    "compressedBytes": 2436688,
+    "sha256": "5b42ed2d4e52f09fd1fda6aa42fe739bc08f2c9d33032f8609398c371a6c03cf"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3027856,
+    "compressedBytes": 486333,
+    "sha256": "7d9c4d6ae54f10e8bb602e0299d9ea0f5a2b4688583e80499fd44b8d98dc2365",
+    "rawReductionRate": 0.81132
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 8674,
+    "compressedBytes": 3065,
+    "sha256": "a486e7af1fca464595bf91fcbea91f7729a4ba4f658f449df151f17b65c21bd7"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}
