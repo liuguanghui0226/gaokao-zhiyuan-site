@@ -15,12 +15,12 @@ const manifest = read("manifest.json.gz");
 const shard = read("beijing.json.gz");
 const runtimeAudit = JSON.parse(fs.readFileSync(path.join(root, "data/admissions/official-beijing-rank-alignment-2025-v3333-runtime-manifest.json")));
 const evidence = JSON.parse(fs.readFileSync(path.join(root, "data/admissions/evidence-v3333-beijing-rank-alignment-2025-manifest.json")));
-const version = "local-deterministic-v3.340-typography-safe-trends-868426records";
+const version = "local-deterministic-v3.341-batch-isolated-admission-options-868426records";
 
 assert.equal(core.modelVersion, version);
 assert.equal(lite.modelVersion, version);
 assert.equal(manifest.modelVersion, version);
-assert.equal(manifest.runtimeProfile.version, "v3.340");
+assert.equal(manifest.runtimeProfile.version, "v3.341");
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);

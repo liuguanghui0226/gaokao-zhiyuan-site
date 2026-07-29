@@ -1,0 +1,58 @@
+{
+  "dataset": "admission-batch-route-safety-v3341-runtime",
+  "generatedAt": "2026-07-30T04:45:00+08:00",
+  "before": {
+    "modelVersion": "local-deterministic-v3.340-typography-safe-trends-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.341-batch-isolated-admission-options-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136,
+    "provincesAudited": 31,
+    "admissionRecordsAudited": 794934,
+    "crossBatchSharedRouteGroups": 7607,
+    "crossBatchSharedRoutePairs": 13137,
+    "preventedCrossBatchGroups": 4740,
+    "preventedCrossBatchPairs": 9085,
+    "retainedAliasPairs": 4052,
+    "preventedBoundaryConflictPairs": 8348,
+    "preventedOfficialInvolvedPairs": 3479,
+    "batchRoutePolicy": {
+      "semanticBatchRouteIsolation": true,
+      "semanticAliasesRetained": 4052,
+      "distinctRoutePairsPreserved": 9085,
+      "distinctRouteGroupsPreserved": 4740,
+      "boundaryConflictPairsPreserved": 8348,
+      "officialInvolvedPairsPreserved": 3479,
+      "ordinaryInitialAliases": [
+        "本科批",
+        "普通类本科批",
+        "综合改革（3+1+2）",
+        "普通类常规批第1次志愿",
+        "普通类第一段平行投档"
+      ],
+      "preservedDistinctRoutes": [
+        "提前批",
+        "国家专项",
+        "地方专项",
+        "高校专项",
+        "征集轮次",
+        "本科一批/二批/三批",
+        "普通类第二段/第三段",
+        "A/B/C段",
+        "文理预科"
+      ],
+      "sameSemanticRouteEvidencePreferencePreserved": true,
+      "batchShownInCandidateTags": true
+    },
+    "coreBytes": 16043929,
+    "coreSha256": "06d5a8506bb1ac24a3084167d41edbe203409522e0f5a4d051740624d75f697d",
+    "manifestBytesBeforeLiteRebuild": 6711,
+    "manifestSha256BeforeLiteRebuild": "747b8117dac1803d1bb06d46aff6e32c7fc18510b41580da2c2d27c73e1e1687"
+  },
+  "boundary": "No admission, rank, plan, or source-note record changed. This release changes only candidate-route identity, dedupe, evidence selection boundaries, and visible batch labels."
+}

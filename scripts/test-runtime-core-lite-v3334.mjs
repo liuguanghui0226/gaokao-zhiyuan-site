@@ -26,7 +26,7 @@ assert.ok(lite.browserRuntime.sourceNoteFields.includes("candidateCategoryDefini
 assert.ok(lite.browserRuntime.sourceNoteFields.includes("publicRankConversionAvailable"));
 assert.ok(1 - liteBytes.length / fullBytes.length >= 0.75);
 assert.equal(manifest.coreLite.sha256, hash(liteBytes));
-assert.equal(manifest.runtimeProfile.version, "v3.340");
+assert.equal(manifest.runtimeProfile.version, "v3.341");
 assert.equal(audit.modelVersion, full.modelVersion);
 const rankNote = lite.admissionScoreLayer.sourceNotes.find((row) => row.id === "official-beijing-rank-2025-v3271");
 const vocationalNote = lite.admissionScoreLayer.sourceNotes.find((row) => row.id === "official-beijing-vocational-filing-2025");

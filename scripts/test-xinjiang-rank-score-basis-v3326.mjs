@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.340-typography-safe-trends-868426records";
+const modelVersion = "local-deterministic-v3.341-batch-isolated-admission-options-868426records";
 const sourceId = "sohu-xinjiang-rank-2025-cb85600e32";
 const evidenceId = "verified-xinjiang-rank-score-basis-2025-v3326";
 const readGzipBytes = (file) => zlib.gunzipSync(fs.readFileSync(file));
@@ -54,7 +54,7 @@ assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.340");
+assert.equal(manifest.runtimeProfile.version, "v3.341");
 assert.equal(liteAudit.dataset, "runtime-core-lite-v3326");
 
 assert.equal(shard.records.length, 11518);

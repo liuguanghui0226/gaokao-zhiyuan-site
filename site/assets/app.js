@@ -1097,6 +1097,53 @@ function admissionTrendCanonicalMergeSafe(records) {
 const GENERIC_ADMISSION_MAJOR_PATTERN = /^(院校投档线|院校专业组投档线|学校录取分数线|院校最低分|专业组投档线|投档线)$/;
 const DISTINCT_ADMISSION_ROUTE_PATTERN = /中外|合作|国际|联合培养|境外|校区|医学院|专项|民族|预科|定向|单列|较高收费|高收费|护理|公费|优师/;
 
+function admissionBatchQualifier(value) {
+  const text = normalizeAdmissionTrendTypography(value);
+  const sectionMatch = text.match(/[a-z](?:段|组|类)/)?.[0] || "";
+  const bareSection = text.match(/批([a-z])(?:[（(]|$)/)?.[1] || "";
+  const section = sectionMatch || (bareSection ? `${bareSection}段` : "");
+  const subject = /(?:^|[（(])(文|理)(?:[）)]|$)/.exec(text)?.[1] || "";
+  return [section, subject].filter(Boolean).join(":");
+}
+
+function admissionBatchRouteKey(value) {
+  const text = normalizeAdmissionTrendTypography(value);
+  if (!text) return "";
+  const qualifier = admissionBatchQualifier(text);
+  const append = (base) => qualifier ? `${base}:${qualifier}` : base;
+  if (/征集/.test(text)) {
+    const round = /第三轮|第3轮|第三次|第3次/.test(text) ? "3"
+      : /第二轮|第2轮|第二次|第2次/.test(text) ? "2" : "1";
+    const level = /专科|高职/.test(text) ? "vocational" : /本科/.test(text) ? "undergraduate" : "ordinary";
+    return append(`vacancy:${level}:${round}`);
+  }
+  if (/提前/.test(text)) {
+    const level = /专科|高职/.test(text) ? "vocational" : "undergraduate";
+    const special = /国家|贫困/.test(text) ? ":national-special"
+      : /地方/.test(text) ? ":local-special"
+        : /高校/.test(text) ? ":school-special" : "";
+    return append(`${level}-early${special}`);
+  }
+  if (/国家专项|贫困专项/.test(text)) return append("national-special");
+  if (/地方专项/.test(text)) return append("local-special");
+  if (/高校专项/.test(text)) return append("school-special");
+  if (/农村专项/.test(text)) return append("rural-special");
+  if (/专项/.test(text)) return append(`special:${text}`);
+  if (/预科/.test(text)) return append(`preparatory:${text.replace(/[（(][文理][）)]/g, "")}`);
+  if (/第三次志愿|第3次志愿/.test(text)) return append("ordinary-round-3");
+  if (/第二次志愿|第2次志愿/.test(text)) return append("ordinary-round-2");
+  if (/第二段|二段/.test(text)) return append("ordinary-segment-2");
+  if (/第三段|三段/.test(text)) return append("ordinary-segment-3");
+  if (/本科一批|本一|第一批本科/.test(text)) return append("undergraduate-1");
+  if (/本科二批|本二|第二批本科/.test(text)) return append("undergraduate-2");
+  if (/本科三批|本三|第三批本科/.test(text)) return append("undergraduate-3");
+  if (/专科|高职/.test(text)) return append("vocational-regular");
+  if (/第一段|一段|第一次志愿|第1次志愿|第一志愿|本科|普通类|常规批|综合改革/.test(text)) {
+    return append("ordinary-initial");
+  }
+  return `other:${text}`;
+}
+
 function admissionOptionBaseIdentityKey(record) {
   const majorIdentity = record.majorName || record.majorGroup || record.majorCode || "";
   return [
@@ -1118,6 +1165,7 @@ function isNamedMajorAdmissionRecord(record) {
 
 function admissionRouteFields(record) {
   return {
+    batch: admissionBatchRouteKey(record?.batch),
     group: normalizeText(record?.majorGroup || ""),
     subtype: normalizeText(record?.admissionSubtype || ""),
     campus: normalizeText(record?.campus || record?.campusName || record?.schoolCampus || ""),
@@ -1132,6 +1180,7 @@ function admissionRouteIdentityKey(record) {
   const route = admissionRouteFields(record);
   return [
     admissionOptionBaseIdentityKey(record),
+    route.batch,
     route.group,
     route.subtype,
     route.campus,
@@ -1145,6 +1194,11 @@ function admissionRouteIdentityKey(record) {
 function admissionRouteFieldsConflict(left, right) {
   const leftRoute = admissionRouteFields(left);
   const rightRoute = admissionRouteFields(right);
+  if (leftRoute.batch !== rightRoute.batch) {
+    if (leftRoute.batch && rightRoute.batch) return true;
+    const presentBatch = leftRoute.batch || rightRoute.batch;
+    if (presentBatch !== "ordinary-initial" || !sameYearAdmissionBoundary(left, right)) return true;
+  }
   for (const field of ["subtype", "campus", "tuition", "elective", "majorCode", "rankScope"]) {
     const leftValue = leftRoute[field];
     const rightValue = rightRoute[field];
@@ -1188,6 +1242,7 @@ function admissionRecordsShareRoute(left, right) {
 function admissionRouteTags(record) {
   const tuition = Number(record?.tuition || record?.tuitionFee) || 0;
   return [...new Set([
+    record?.batch || "",
     record?.majorGroup || "",
     record?.admissionSubtype || "",
     record?.campus || record?.campusName || record?.schoolCampus || "",
