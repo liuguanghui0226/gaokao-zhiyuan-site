@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.335-xizang-official-rank-source-confirmation-required-868426records";
+const modelVersion = "local-deterministic-v3.336-xizang-rank-attestation-input-binding-required-868426records";
 const sourceId = "official-tianjin-rank-2025-v3327";
 const readBytes = (file) => zlib.gunzipSync(fs.readFileSync(file));
 const readJson = (file) => JSON.parse(readBytes(file));
@@ -37,7 +37,7 @@ assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.335");
+assert.equal(manifest.runtimeProfile.version, "v3.336");
 assert.deepEqual(
   [core.admissionScoreLayer.rankSourceCoverage.sources, core.admissionScoreLayer.rankSourceCoverage.parsedSources],
   [221, 155],

@@ -1,0 +1,49 @@
+{
+  "dataset": "xizang-rank-attestation-binding-v3336-runtime",
+  "generatedAt": "2026-07-30T12:00:00+08:00",
+  "before": {
+    "modelVersion": "local-deterministic-v3.335-xizang-official-rank-source-confirmation-required-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.336-xizang-rank-attestation-input-binding-required-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136,
+    "xizangRankConversions": 0,
+    "manualRankSourceConfirmationRequired": true,
+    "acceptedManualRankSources": [
+      "official-personal-query"
+    ],
+    "manualRankAttestationBoundFields": [
+      "score",
+      "rank",
+      "province",
+      "subject",
+      "candidateCategory",
+      "rankUsage"
+    ],
+    "staleRecommendationInvalidationRequired": true,
+    "officialPublicDisclosureAudit": {
+      "checkedAt": "2026-07-30",
+      "listUrl": "http://zsks.edu.xizang.gov.cn/71/74/index.html",
+      "reviewedListPages": 12,
+      "reviewedDateRange": [
+        "2021-06-30",
+        "2026-07-19"
+      ],
+      "notices2025": 42,
+      "provinceWideFormalAdmissionTablesFound": 0,
+      "publicRankConversionTablesFound": 0,
+      "finding": "已核查考试院公告目录和2025招生规定；未在所核官方公开页面发现普通本科或专科省级投档表、录取最低位次表或一分一段表。",
+      "limitation": "仅说明所核官方公开页面未发现，不证明其他渠道绝对不存在；不得据此生成缺失数据。"
+    },
+    "coreBytes": 16039401,
+    "coreSha256": "7d5ea3a0ac4a1d43c5405424e92039a9733c7861f6d651b6aa1a785113cdad38",
+    "manifestBytesBeforeLiteRebuild": 6616,
+    "manifestSha256BeforeLiteRebuild": "e025e2704fc4c8b558506534695b63394936c23bbcd7a20400c4b7a2ea02522d"
+  },
+  "boundary": "No admission or rank records were added. Official-rank confirmation is bound to the current Tibet form inputs, and reviewed public pages are not treated as missing data."
+}

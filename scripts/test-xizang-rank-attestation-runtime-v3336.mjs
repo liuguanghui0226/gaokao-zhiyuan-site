@@ -13,7 +13,7 @@ const core = read("knowledge-core.json.gz");
 const lite = read("knowledge-core-lite.json.gz");
 const manifest = read("manifest.json.gz");
 const shard = read("xizang.json.gz");
-const audit = JSON.parse(fs.readFileSync(path.join(root, "data/admissions/xizang-rank-source-confirmation-v3335-runtime-manifest.json")));
+const audit = JSON.parse(fs.readFileSync(path.join(root, "data/admissions/xizang-rank-attestation-binding-v3336-runtime-manifest.json")));
 const version = "local-deterministic-v3.336-xizang-rank-attestation-input-binding-required-868426records";
 
 assert.equal(core.modelVersion, version);
@@ -33,6 +33,18 @@ for (const note of [fullNote, liteNote]) {
   assert.equal(note.manualRankSourceConfirmationRequired, true);
   assert.deepEqual(note.acceptedManualRankSources, ["official-personal-query"]);
   assert.equal(note.manualRankSourceLabel, "西藏官方个人查询");
+  assert.deepEqual(note.manualRankAttestationBoundFields, [
+    "score",
+    "rank",
+    "province",
+    "subject",
+    "candidateCategory",
+    "rankUsage",
+  ]);
+  assert.equal(note.staleRecommendationInvalidationRequired, true);
+  assert.equal(note.officialPublicDisclosureAudit.notices2025, 42);
+  assert.equal(note.officialPublicDisclosureAudit.provinceWideFormalAdmissionTablesFound, 0);
+  assert.equal(note.officialPublicDisclosureAudit.publicRankConversionTablesFound, 0);
 }
 
 const readiness = core.admissionScoreLayer.provinceReadiness.rows.find((item) => item.province === "西藏");
@@ -40,6 +52,8 @@ assert.equal(readiness.rankConversionRecords, 0);
 assert.ok(readiness.missing.some((item) => /手填位次须确认来自考生本人官方查询/.test(item)));
 assert.equal(audit.after.manualRankSourceConfirmationRequired, true);
 assert.deepEqual(audit.after.acceptedManualRankSources, ["official-personal-query"]);
+assert.equal(audit.after.staleRecommendationInvalidationRequired, true);
+assert.equal(audit.after.officialPublicDisclosureAudit.reviewedListPages, 12);
 assert.equal(audit.after.records, 868426);
 assert.equal(audit.after.ranks, 133640);
 assert.equal(audit.after.notes, 5136);
@@ -49,4 +63,5 @@ console.log(JSON.stringify({
   modelVersion: version,
   xizangRankConversions: shard.rankConversions.length,
   sourceConfirmationRequired: fullNote.manualRankSourceConfirmationRequired,
+  attestationBoundFields: fullNote.manualRankAttestationBoundFields,
 }, null, 2));

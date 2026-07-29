@@ -10,6 +10,7 @@ const state = {
   disciplineFamily: "",
   domain: "",
   recommendation: null,
+  recommendationInvalidated: false,
   prefillProfile: null,
   renderedViews: new Set(),
 };
@@ -2699,6 +2700,7 @@ async function runRecommendation() {
     .sort((a, b) => b.total - a.total || b.evidence.length - a.evidence.length)
     .slice(0, 8);
   state.recommendation = { profile, band, results, generatedAt: new Date().toISOString() };
+  state.recommendationInvalidated = false;
   renderRecommend();
 }
 
@@ -2842,6 +2844,7 @@ function bindDisciplineEvents(selected, selectedFamily) {
       interest: selectedFamily?.majors?.join(" ") || selected.name,
     };
     state.recommendation = null;
+    state.recommendationInvalidated = false;
     renderRecommend();
     updateView("recommend");
   });
@@ -3037,7 +3040,7 @@ function renderRecommendationResults() {
   const rec = state.recommendation;
   if (!rec) {
     return `<div class="empty-state">
-      <h2>填写成绩后生成候选清单</h2>
+      <h2>${state.recommendationInvalidated ? "输入已变化，请重新生成推荐" : "填写成绩后生成候选清单"}</h2>
     </div>`;
   }
 
@@ -3348,12 +3351,44 @@ function bindRecommendEvents() {
       : province === "西藏" ? "官方个人查询位次" : "位次";
   };
   provinceInput?.addEventListener("input", updateProvinceFields);
+  const attestationBoundInputIds = new Set([
+    "scoreInput",
+    "rankInput",
+    "provinceInput",
+    "subjectInput",
+    "candidateCategoryInput",
+    "rankUsageInput",
+  ]);
+  const handleRecommendationInputChange = (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLInputElement || target instanceof HTMLSelectElement || target instanceof HTMLTextAreaElement)) return;
+    if (
+      attestationBoundInputIds.has(target.id)
+      && normalizeProvince(provinceInput?.value || "") === "西藏"
+      && xizangRankSourceInput
+    ) {
+      xizangRankSourceInput.value = "";
+    }
+    invalidateRecommendationResults();
+  };
+  form.addEventListener("input", handleRecommendationInputChange);
+  form.addEventListener("change", handleRecommendationInputChange);
   updateProvinceFields();
   $("#resetRecommend").addEventListener("click", () => {
     state.recommendation = null;
+    state.recommendationInvalidated = false;
     state.prefillProfile = null;
     renderRecommend();
   });
+}
+
+function invalidateRecommendationResults() {
+  if (!state.recommendation) return false;
+  state.recommendation = null;
+  state.recommendationInvalidated = true;
+  const region = $("#recommendResultRegion");
+  if (region) region.innerHTML = renderRecommendationResults();
+  return true;
 }
 
 function renderAdmissionHitPanel(profile) {
@@ -3401,7 +3436,7 @@ function renderRecommend() {
       <h3>成绩与偏好</h3>
       ${renderRecommendForm(profile)}
     </section>
-    ${renderRecommendationResults()}
+    <div id="recommendResultRegion">${renderRecommendationResults()}</div>
     <details class="detail-drawer">
       <summary>排序口径</summary>
       <p>${esc(policy.reliabilityDefinition)}</p>

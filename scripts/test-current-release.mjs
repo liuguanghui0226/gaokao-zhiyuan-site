@@ -126,6 +126,8 @@ const tests = [
   "test-xizang-category-routing-v3334.mjs",
   "test-xizang-rank-source-runtime-v3335.mjs",
   "test-xizang-rank-source-routing-v3335.mjs",
+  "test-xizang-rank-attestation-runtime-v3336.mjs",
+  "test-xizang-rank-attestation-binding-v3336.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 

@@ -1,0 +1,51 @@
+{
+  "dataset": "evidence-v3336-xizang-public-disclosure-and-attestation",
+  "checkedAt": "2026-07-30",
+  "province": "西藏",
+  "officialAnnouncementCatalog": {
+    "url": "http://zsks.edu.xizang.gov.cn/71/74/index.html",
+    "publishedItemsReportedBySite": 354,
+    "publishedPagesReportedBySite": 24,
+    "reviewedPages": 12,
+    "reviewedDateRange": [
+      "2021-06-30",
+      "2026-07-19"
+    ],
+    "noticesDated2025": 42,
+    "matchingProvinceWideFormalAdmissionTables": 0,
+    "matchingPublicRankConversionTables": 0
+  },
+  "reviewedPolicyPages": [
+    {
+      "title": "西藏自治区2025年普通高等学校招生规定",
+      "url": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202506/20250603/2293383313.html"
+    },
+    {
+      "title": "关于做好西藏自治区2025年普通高等学校招生志愿填报工作的通知",
+      "url": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202506/20250627/2293393158.html"
+    },
+    {
+      "title": "西藏自治区2025年普通高等学校招生计划",
+      "url": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202506/20250625/2293390719.html"
+    },
+    {
+      "title": "西藏自治区2025年普通高校招生录取时间安排（区内）",
+      "url": "https://lasa.xzdw.gov.cn/fbt/gsgg/202507/t20250711_586608.html"
+    }
+  ],
+  "finding": "在所核西藏教育考试院公开公告目录和权威转载政策页中，未发现2025普通本科或专科省级投档表、录取最低位次表或公开一分一段表。",
+  "limitation": "该结论只描述已核查的官方公开页面，不证明其他渠道绝对不存在。网站不得据此生成、推算或补造缺失省级投档与位次记录。",
+  "productRule": {
+    "manualRankSourceConfirmationRequired": true,
+    "acceptedManualRankSource": "official-personal-query",
+    "attestationBoundFields": [
+      "score",
+      "rank",
+      "province",
+      "subject",
+      "candidateCategory",
+      "rankUsage"
+    ],
+    "staleRecommendationInvalidationRequired": true
+  }
+}
