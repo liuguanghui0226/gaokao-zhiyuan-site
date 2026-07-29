@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.341-batch-isolated-admission-options-868426records";
+const modelVersion = "local-deterministic-v3.342-typography-safe-admission-options-868426records";
 const sourceId = "official-hebei-rank-2025-v3315";
 
 function sha256(value) {
@@ -32,7 +32,7 @@ assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.341");
+assert.equal(manifest.runtimeProfile.version, "v3.342");
 assert.equal(manifest.shards["河北"].records, 69443);
 assert.equal(manifest.shards["河北"].rankConversions, 2181);
 assert.equal(manifest.shards["河北"].bytes, shardBytes.length);

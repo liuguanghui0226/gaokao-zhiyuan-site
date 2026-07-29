@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.341-batch-isolated-admission-options-868426records";
+const modelVersion = "local-deterministic-v3.342-typography-safe-admission-options-868426records";
 const pendingProvinces = ["上海", "天津", "江苏", "海南", "山西"];
 const sourceIds = {
   上海: "official-shanghai-control-lines-2026",

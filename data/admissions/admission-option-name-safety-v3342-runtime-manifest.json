@@ -1,0 +1,53 @@
+{
+  "dataset": "admission-option-name-safety-v3342-runtime",
+  "generatedAt": "2026-07-30T05:30:00+08:00",
+  "before": {
+    "modelVersion": "local-deterministic-v3.341-batch-isolated-admission-options-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.342-typography-safe-admission-options-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136,
+    "provincesAudited": 31,
+    "admissionRecordsAudited": 794934,
+    "canonicalNameVariantGroups": 6838,
+    "routeTypographyVariantGroups": 2689,
+    "affectedCandidateGroups": 2881,
+    "safelyRemovedDuplicateOptions": 3015,
+    "sameYearSafeMerges": 389,
+    "crossYearSafeMerges": 3468,
+    "officialInvolvedSafeMerges": 3371,
+    "boundaryConflictPairsPreserved": 537,
+    "optionNameCanonicalization": {
+      "unicodeNormalization": "NFKC",
+      "removesInternalWhitespace": true,
+      "normalizesMiddleDots": true,
+      "normalizesDashVariants": true,
+      "normalizesBracketVariants": true,
+      "preservesWordsDigitsAndQualifiers": true,
+      "exactBaseGroups": 428254,
+      "canonicalBaseGroups": 421393,
+      "canonicalNameVariantGroups": 6838,
+      "routeTypographyVariantGroups": 2689,
+      "affectedCandidateGroups": 2881,
+      "safelyRemovedDuplicateOptions": 3015,
+      "sameYearSafeMerges": 389,
+      "crossYearSafeMerges": 3468,
+      "officialInvolvedSafeMerges": 3371,
+      "boundaryConflictPairsPreserved": 537,
+      "sameYearBoundaryRequired": true,
+      "semanticRouteIsolationPreserved": true,
+      "evidencePreferencePreserved": true,
+      "originalDisplayNamesPreserved": true
+    },
+    "coreBytes": 16044970,
+    "coreSha256": "c24313fad6c055c8374f6d6305c5a67677be0cf574cee483727ed586ed7a921d",
+    "manifestBytesBeforeLiteRebuild": 6712,
+    "manifestSha256BeforeLiteRebuild": "b1b59463ec012fc7baa62b4db233349908a657ba7d0265c06fe5b5933fdcc911"
+  },
+  "boundary": "No admission, rank, plan, or source-note record changed. This release changes only candidate identity normalization, route comparison of pure typography variants, and same-year conflict preservation. Original display names remain unchanged."
+}

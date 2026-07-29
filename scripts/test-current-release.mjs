@@ -143,6 +143,9 @@ const tests = [
   "test-admission-batch-route-isolation-v3341.mjs",
   "test-real-admission-batch-routes-v3341.mjs",
   "test-admission-batch-route-runtime-v3341.mjs",
+  "test-admission-option-name-canonicalization-v3342.mjs",
+  "test-real-admission-option-name-variants-v3342.mjs",
+  "test-admission-option-name-runtime-v3342.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 

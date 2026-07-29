@@ -11,7 +11,7 @@ if (root.startsWith("/Volumes/")) throw new Error("Refusing external-volume test
 const releaseDir = path.join(root, "site/data/release-v3.275");
 const readGzip = (name) => JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(releaseDir, name))).toString("utf8"));
 const readJson = (name) => JSON.parse(fs.readFileSync(path.join(root, "data/admissions", name), "utf8"));
-const expectedVersion = "local-deterministic-v3.341-batch-isolated-admission-options-868426records";
+const expectedVersion = "local-deterministic-v3.342-typography-safe-admission-options-868426records";
 const historicalVersion = "local-deterministic-v3.339-route-isolated-official-first-trends-868426records";
 
 const core = readGzip("knowledge-core.json.gz");
@@ -26,10 +26,10 @@ assert.equal(core.modelVersion, expectedVersion);
 assert.equal(lite.modelVersion, expectedVersion);
 assert.equal(manifest.modelVersion, expectedVersion);
 assert.equal(runtime.after.modelVersion, historicalVersion);
-assert.equal(manifest.runtimeProfile.version, "v3.341");
+assert.equal(manifest.runtimeProfile.version, "v3.342");
 assert.equal(liteAudit.modelVersion, historicalVersion);
-assert.equal(core.generatedAt, "2026-07-30T04:45:00+08:00");
-assert.equal(manifest.generatedAt, "2026-07-30T04:45:00+08:00");
+assert.equal(core.generatedAt, "2026-07-30T05:30:00+08:00");
+assert.equal(manifest.generatedAt, "2026-07-30T05:30:00+08:00");
 assert.equal(policy.routeIsolated, true);
 assert.deepEqual(policy.sameYearPreference, [
   "official-exam-authority",

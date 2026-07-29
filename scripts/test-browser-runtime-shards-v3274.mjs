@@ -50,7 +50,7 @@ assert.match(appSource, /const DEFAULT_PROFILE = \{[\s\S]*?rank: "",/, "Default 
 assert.match(appSource, /const visibleSchoolTags = schoolTags\.slice\(0, 24\);/, "Admission overview must cap the rendered school sample");
 assert.match(appSource, /另有 \$\{fmtNumber\(hiddenSchoolTagCount\)\} 所院校已入库，推荐时按省份加载/, "Admission overview must explain that hidden school names remain available to recommendation routing");
 
-assert.equal(core.modelVersion, "local-deterministic-v3.341-batch-isolated-admission-options-868426records");
+assert.equal(core.modelVersion, "local-deterministic-v3.342-typography-safe-admission-options-868426records");
 assert.equal(core.modelPolicy.version, core.modelVersion);
 assert.equal(core.admissionScoreLayer.records.length, 0);
 assert.equal(core.admissionScoreLayer.rankConversions.length, 0);

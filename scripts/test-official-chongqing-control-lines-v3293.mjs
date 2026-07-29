@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.341-batch-isolated-admission-options-868426records";
+const modelVersion = "local-deterministic-v3.342-typography-safe-admission-options-868426records";
 const sourceId = "official-chongqing-control-lines-2026";
 const rankSourceId = "official-chongqing-rank-2026";
 const rankHistoryUrl = "https://www.cqksy.cn/uploadFile/infopub/2026/ptgk/yfd/wk.htm";

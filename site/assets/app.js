@@ -1053,7 +1053,7 @@ function normalizeAdmissionTrendTypography(value) {
 }
 
 function admissionTrendKey(record, canonicalTypography = true) {
-  const route = admissionRouteFields(record);
+  const route = admissionRouteFields(record, canonicalTypography);
   const clean = canonicalTypography ? normalizeAdmissionTrendTypography : normalizeText;
   return [
     record.province || "",
@@ -1144,7 +1144,8 @@ function admissionBatchRouteKey(value) {
   return `other:${text}`;
 }
 
-function admissionOptionBaseIdentityKey(record) {
+function admissionOptionBaseIdentityKey(record, canonicalTypography = true) {
+  const clean = canonicalTypography ? normalizeAdmissionTrendTypography : normalizeText;
   const majorIdentity = record.majorName || record.majorGroup || record.majorCode || "";
   return [
     record.province || "",
@@ -1153,7 +1154,7 @@ function admissionOptionBaseIdentityKey(record) {
     majorIdentity,
     record.majorName ? "" : record.majorGroup || "",
     record.dataType || "",
-  ].map(normalizeText).join("|");
+  ].map(clean).join("|");
 }
 
 function isNamedMajorAdmissionRecord(record) {
@@ -1163,23 +1164,24 @@ function isNamedMajorAdmissionRecord(record) {
     !GENERIC_ADMISSION_MAJOR_PATTERN.test(majorName);
 }
 
-function admissionRouteFields(record) {
+function admissionRouteFields(record, canonicalTypography = false) {
+  const clean = canonicalTypography ? normalizeAdmissionTrendTypography : normalizeText;
   return {
     batch: admissionBatchRouteKey(record?.batch),
-    group: normalizeText(record?.majorGroup || ""),
-    subtype: normalizeText(record?.admissionSubtype || ""),
-    campus: normalizeText(record?.campus || record?.campusName || record?.schoolCampus || ""),
-    tuition: normalizeText(record?.tuition || record?.tuitionFee || ""),
-    elective: normalizeText(record?.electiveRequirement || ""),
-    majorCode: normalizeText(record?.majorCode || ""),
-    rankScope: normalizeText(record?.rankInstitutionScope || ""),
+    group: clean(record?.majorGroup || ""),
+    subtype: clean(record?.admissionSubtype || ""),
+    campus: clean(record?.campus || record?.campusName || record?.schoolCampus || ""),
+    tuition: clean(record?.tuition || record?.tuitionFee || ""),
+    elective: clean(record?.electiveRequirement || ""),
+    majorCode: clean(record?.majorCode || ""),
+    rankScope: clean(record?.rankInstitutionScope || ""),
   };
 }
 
-function admissionRouteIdentityKey(record) {
-  const route = admissionRouteFields(record);
+function admissionRouteIdentityKey(record, canonicalTypography = true) {
+  const route = admissionRouteFields(record, canonicalTypography);
   return [
-    admissionOptionBaseIdentityKey(record),
+    admissionOptionBaseIdentityKey(record, canonicalTypography),
     route.batch,
     route.group,
     route.subtype,
@@ -1191,9 +1193,9 @@ function admissionRouteIdentityKey(record) {
   ].join("|");
 }
 
-function admissionRouteFieldsConflict(left, right) {
-  const leftRoute = admissionRouteFields(left);
-  const rightRoute = admissionRouteFields(right);
+function admissionRouteFieldsConflict(left, right, canonicalTypography = true) {
+  const leftRoute = admissionRouteFields(left, canonicalTypography);
+  const rightRoute = admissionRouteFields(right, canonicalTypography);
   if (leftRoute.batch !== rightRoute.batch) {
     if (leftRoute.batch && rightRoute.batch) return true;
     const presentBatch = leftRoute.batch || rightRoute.batch;
@@ -1225,18 +1227,32 @@ function sameYearAdmissionBoundary(left, right) {
   return Boolean((leftScore && rightScore) || (leftRank && rightRank));
 }
 
-function admissionRecordsShareRoute(left, right) {
-  if (admissionOptionBaseIdentityKey(left) !== admissionOptionBaseIdentityKey(right)) return false;
-  const leftRoute = admissionRouteFields(left);
-  const rightRoute = admissionRouteFields(right);
+function admissionRecordsShareRouteCore(left, right, canonicalTypography) {
+  if (
+    admissionOptionBaseIdentityKey(left, canonicalTypography) !==
+    admissionOptionBaseIdentityKey(right, canonicalTypography)
+  ) return false;
+  const leftRoute = admissionRouteFields(left, canonicalTypography);
+  const rightRoute = admissionRouteFields(right, canonicalTypography);
   if (!isNamedMajorAdmissionRecord(left) || !isNamedMajorAdmissionRecord(right)) {
-    return leftRoute.group === rightRoute.group && !admissionRouteFieldsConflict(left, right);
+    return leftRoute.group === rightRoute.group &&
+      !admissionRouteFieldsConflict(left, right, canonicalTypography);
   }
-  if (leftRoute.group === rightRoute.group) return !admissionRouteFieldsConflict(left, right);
+  if (leftRoute.group === rightRoute.group) {
+    return !admissionRouteFieldsConflict(left, right, canonicalTypography);
+  }
   if (leftRoute.group && rightRoute.group) return false;
   const namedGroup = leftRoute.group || rightRoute.group;
   if (DISTINCT_ADMISSION_ROUTE_PATTERN.test(namedGroup)) return false;
-  return sameYearAdmissionBoundary(left, right) && !admissionRouteFieldsConflict(left, right);
+  return sameYearAdmissionBoundary(left, right) &&
+    !admissionRouteFieldsConflict(left, right, canonicalTypography);
+}
+
+function admissionRecordsShareRoute(left, right) {
+  if (!admissionRecordsShareRouteCore(left, right, true)) return false;
+  const sameYear = (Number(left?.year) || 0) === (Number(right?.year) || 0);
+  if (!sameYear || admissionRecordsShareRouteCore(left, right, false)) return true;
+  return sameYearAdmissionBoundary(left, right);
 }
 
 function admissionRouteTags(record) {
