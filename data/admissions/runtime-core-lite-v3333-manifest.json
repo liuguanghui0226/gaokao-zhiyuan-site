@@ -1,0 +1,56 @@
+{
+  "dataset": "runtime-core-lite-v3333",
+  "generatedAt": "2026-07-29T13:30:22.905Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.333-beijing-official-undergraduate-rank2025-national-bonus-municipal-local-bonus-guard-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5136,
+    "lite": 5136,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview",
+      "scoreBasis",
+      "rankPolicyBonusIncluded",
+      "policyBonusStatus",
+      "automaticAdmissionScoreAlignmentAllowed",
+      "alignmentBlockReason",
+      "scoreBasisAuditEvidenceId",
+      "rankUsageRequired",
+      "lowerAggregateEstimateGuard",
+      "lowerAggregateGuardedRecords"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 16035225,
+    "compressedBytes": 2431830,
+    "sha256": "c046790078ab67b873831da7da13a022a51040dd71260dd2a2f5c94ca3a95956"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3016496,
+    "compressedBytes": 481603,
+    "sha256": "499a80ba1c032f598138a9f9d5424b21a79f11de444d6cf731c76303d70e9770",
+    "rawReductionRate": 0.811883
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 8297,
+    "compressedBytes": 2927,
+    "sha256": "4885e589a817f554256303c7efec31c155df82c3e1d2d82873ed8a6bc9cd8ef5"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

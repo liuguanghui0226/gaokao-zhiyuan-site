@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.332-shaanxi-official-rank2025-dual-domain-lower-absent-bucket-guard-868426records";
+const modelVersion = "local-deterministic-v3.333-beijing-official-undergraduate-rank2025-national-bonus-municipal-local-bonus-guard-868426records";
 const sourceId = "official-liaoning-control-lines-2026";
 const rankSourceId = "official-liaoning-rank-2026";
 const historyRankUrl = "https://www.lnzsks.com/lnzkbfiles/2026/lns2026gkcjtjb0624clhptlw02.pdf";

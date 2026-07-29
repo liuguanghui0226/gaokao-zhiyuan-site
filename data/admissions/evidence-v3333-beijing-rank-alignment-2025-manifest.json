@@ -1,0 +1,96 @@
+{
+  "dataset": "evidence-v3333-beijing-rank-alignment-2025",
+  "generatedAt": "2026-07-29T13:22:33Z",
+  "province": "北京",
+  "year": 2025,
+  "rankSourceId": "official-beijing-rank-2025-v3271",
+  "filingSourceId": "official-beijing-undergraduate-filing-2025",
+  "scoreBasis": "gaokao-total-including-national-policy-bonus",
+  "officialFacts": {
+    "undergraduateTotalScoreMaximum": 750,
+    "undergraduateSubjectCount": 6,
+    "undergraduateParallelFilingOrder": "admission-total-score-descending",
+    "rankDistributionIncludesNationalPolicyBonus": true,
+    "localMinorityBonusPoints": 5,
+    "localMinorityBonusScope": "beijing-municipal-universities-only",
+    "vocationalSubjectCount": 3
+  },
+  "runtimeBoundary": {
+    "officialUndergraduateFilingRecords": 1397,
+    "nationalBonusCompatibleRecords": 1271,
+    "municipalLocalBonusGuardedRecords": 126,
+    "municipalUniversityBaseNames": 20,
+    "vocationalThreeSubjectGuardedRecords": 580,
+    "rankConversionsReused": 347,
+    "rankConversionsAdded": 0
+  },
+  "municipalUniversityBaseNames": [
+    "首都师范大学",
+    "北京工业大学",
+    "首都经济贸易大学",
+    "首都体育学院",
+    "北京农学院",
+    "北京联合大学",
+    "北京建筑大学",
+    "北方工业大学",
+    "北京工商大学",
+    "北京物资学院",
+    "北京服装学院",
+    "中国音乐学院",
+    "中国戏曲学院",
+    "北京舞蹈学院",
+    "北京电影学院",
+    "北京第二外国语学院",
+    "北京石油化工学院",
+    "北京印刷学院",
+    "北京信息科技大学",
+    "首都医科大学"
+  ],
+  "files": [
+    {
+      "name": "beijing-rank-2025-page.html",
+      "url": "https://www.bjeea.cn/html/gkgz/tzgg/2025/0625/87165.html",
+      "bytes": 12938,
+      "sha256": "79b375f0b40dc2746da4004e13d769652aba6e4ebb28aa02fea9fc780d0d47c9"
+    },
+    {
+      "name": "beijing-rank-2025.pdf",
+      "url": "https://www.bjeea.cn/uploads/soft/250625/172-2506250Q456.pdf",
+      "bytes": 156767,
+      "pages": 10,
+      "sha256": "338827fa23721b1a0450f7052f35d35b5b8502b8e80e462c724d88ec34b80a6c"
+    },
+    {
+      "name": "beijing-undergraduate-filing-2025-page.html",
+      "url": "https://www.bjeea.cn/html/gkgz/tzgg/2025/0720/87252.html",
+      "bytes": 12698,
+      "sha256": "bb042d7c858a7dd72a8ffa73e0f8ae6d2acad4571cd855e76bf141960a40ac1f"
+    },
+    {
+      "name": "beijing-undergraduate-filing-2025.pdf",
+      "url": "https://www.bjeea.cn/uploads/soft/250720/178-250H0201058.pdf",
+      "bytes": 702514,
+      "pages": 46,
+      "sha256": "4d2fe5bacb8c50f6ff7c4a30a864a7b3a074fb4cfd1a98285ddff27fba61c277"
+    },
+    {
+      "name": "beijing-admissions-rules-2025-page.html",
+      "url": "https://www.bjeea.cn/html/gkgz/tzgg/2025/0425/86915.html",
+      "bytes": 135230,
+      "sha256": "ad566b1e9edc894ace02d4d7dd9542a40f21b3e5cbd236658aff82af469bd75f"
+    },
+    {
+      "name": "beijing-municipal-universities-2025-page.html",
+      "url": "https://jw.beijing.gov.cn/jyzx/ztzl/czysgk2025/index.html",
+      "bytes": 34010,
+      "sha256": "423e5b78cda9a7bed34998cf1c15c7e322505100a23819ec3d6517a4502629ec"
+    },
+    {
+      "name": "beijing-care-policy-explainer-page.html",
+      "url": "https://www.bjeea.cn/html/gkgz/zkzc/2018/0517/70549.html",
+      "bytes": 16941,
+      "sha256": "aa3595223ae3eddec2ca183269bc442714da01f41adbf302d46bc3eeac55d98b"
+    }
+  ],
+  "boundary": "Only 2025 Beijing ordinary undergraduate filing rows whose institutions are outside the official 2025 municipal-university list receive score-derived ranks. Municipal-university rows remain rankless because the filing score may include a local 5-point bonus absent from the national-bonus rank distribution. Vocational rows remain rankless because they use a three-subject total."
+}

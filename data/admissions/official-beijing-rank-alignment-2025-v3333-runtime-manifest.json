@@ -1,0 +1,41 @@
+{
+  "dataset": "official-beijing-rank-alignment-2025-v3333-runtime",
+  "generatedAt": "2026-07-29T13:22:33Z",
+  "rankSourceId": "official-beijing-rank-2025-v3271",
+  "filingSourceId": "official-beijing-undergraduate-filing-2025",
+  "evidenceManifest": "data/admissions/evidence-v3333-beijing-rank-alignment-2025-manifest.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.332-shaanxi-official-rank2025-dual-domain-lower-absent-bucket-guard-868426records",
+    "records": 868426,
+    "rankConversions": 133640,
+    "sourceNotes": 5136,
+    "provinceRecords": 6623,
+    "provinceRankConversions": 688,
+    "ranklessOfficialUndergraduateFilingRecords": 1397
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.333-beijing-official-undergraduate-rank2025-national-bonus-municipal-local-bonus-guard-868426records",
+    "records": 868426,
+    "rankConversions": 133640,
+    "rankConversionsAdded": 0,
+    "sourceNotes": 5136,
+    "provinceRecords": 6623,
+    "provinceRankConversions": 688,
+    "linkedAdmissionRecords": 1271,
+    "municipalLocalBonusGuardedRecords": 126,
+    "vocationalThreeSubjectGuardedRecords": 580,
+    "linkedByScoreCheckpoints": {
+      "430": 53,
+      "500": 6,
+      "600": 10
+    },
+    "shardBytes": 7903919,
+    "shardSha256": "332a50e928184363be112674576789d628f6c3b7ebd0e3edcf2bfad2e53fc7f0",
+    "coreBytes": 16035225,
+    "coreSha256": "c046790078ab67b873831da7da13a022a51040dd71260dd2a2f5c94ca3a95956",
+    "manifestBytesBeforeLiteRebuild": 6414,
+    "manifestSha256BeforeLiteRebuild": "975da9ad166dd305ecb7a0d0e468cad7efe4a655e33c9d52be7e0d60415d5952"
+  },
+  "boundary": "Only 2025 Beijing ordinary undergraduate filing rows whose institutions are outside the official 2025 municipal-university list receive score-derived ranks. Municipal-university rows remain rankless because the filing score may include a local 5-point bonus absent from the national-bonus rank distribution. Vocational rows remain rankless because they use a three-subject total."
+}
