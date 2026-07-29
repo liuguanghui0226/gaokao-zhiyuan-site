@@ -1,0 +1,56 @@
+{
+  "dataset": "runtime-core-lite-v3332",
+  "generatedAt": "2026-07-29T11:48:18.225Z",
+  "releaseDir": "site/data/release-v3.275",
+  "modelVersion": "local-deterministic-v3.332-shaanxi-official-rank2025-dual-domain-lower-absent-bucket-guard-868426records",
+  "profile": "core-lite-v1",
+  "sourceNotes": {
+    "full": 5136,
+    "lite": 5136,
+    "fields": [
+      "id",
+      "title",
+      "url",
+      "quality",
+      "province",
+      "year",
+      "schedule",
+      "ordinaryVocationalStatus",
+      "ordinaryVocationalPending",
+      "ordinaryVocationalExpectedPublicationAt",
+      "ordinaryVocationalCheckedAt",
+      "ordinaryVocationalReason",
+      "ordinaryVocationalScheduleUrl",
+      "ordinaryVocationalReview",
+      "scoreBasis",
+      "rankPolicyBonusIncluded",
+      "policyBonusStatus",
+      "automaticAdmissionScoreAlignmentAllowed",
+      "alignmentBlockReason",
+      "scoreBasisAuditEvidenceId",
+      "rankUsageRequired",
+      "lowerAggregateEstimateGuard",
+      "lowerAggregateGuardedRecords"
+    ]
+  },
+  "fullCore": {
+    "file": "site/data/release-v3.275/knowledge-core.json.gz",
+    "bytes": 16030528,
+    "compressedBytes": 2429944,
+    "sha256": "b5970f7e6b656305401f31e97e1b08f98c37664b63a5e4fc326f0c3b5c37e0b6"
+  },
+  "liteCore": {
+    "file": "site/data/release-v3.275/knowledge-core-lite.json.gz",
+    "bytes": 3014909,
+    "compressedBytes": 480995,
+    "sha256": "e44b78fff56345e313dc5a72cfd548b98b0aae6a59f17f610b1922a23a3f4212",
+    "rawReductionRate": 0.811927
+  },
+  "runtimeManifest": {
+    "file": "site/data/release-v3.275/manifest.json.gz",
+    "bytes": 8282,
+    "compressedBytes": 2925,
+    "sha256": "ca94c67299848d11e60a341f02e6b722a02c0e470c32f2c5923789fdeef2671f"
+  },
+  "boundary": "The full evidence core remains published; the browser initial core retains only source-note fields used by the UI."
+}

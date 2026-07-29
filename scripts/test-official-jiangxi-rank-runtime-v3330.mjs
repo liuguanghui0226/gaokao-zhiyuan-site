@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.331-guangdong-official-rank2025-dual-level-bonus-full-table-aligned-868426records";
+const modelVersion = "local-deterministic-v3.332-shaanxi-official-rank2025-dual-domain-lower-absent-bucket-guard-868426records";
 const sourceId = "official-jiangxi-rank-2025-v3330";
 const oldSourceIds = ["dxsbb-rank-d2ed9325b0", "dxsbb-rank-60200dce4b"];
 const readBytes = (file) => zlib.gunzipSync(fs.readFileSync(file));
@@ -35,17 +35,17 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(lite.modelVersion, modelVersion);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 132497);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5135);
-assert.equal(manifest.rankConversionCount, 132497);
-assert.equal(manifest.runtimeProfile.version, "v3.331");
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
+assert.equal(manifest.rankConversionCount, 133640);
+assert.equal(manifest.runtimeProfile.version, "v3.332");
 assert.deepEqual(
   [core.admissionScoreLayer.rankSourceCoverage.sources, core.admissionScoreLayer.rankSourceCoverage.parsedSources],
-  [220, 154],
+  [221, 155],
 );
-assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 132497);
+assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 133640);
 const coverage2025 = core.admissionScoreLayer.rankSourceCoverage.byYear.find((row) => row.year === 2025);
-assert.deepEqual([coverage2025.sources, coverage2025.parsedSources, coverage2025.parsedRecords], [86, 62, 28844]);
+assert.deepEqual([coverage2025.sources, coverage2025.parsedSources, coverage2025.parsedRecords], [87, 63, 29987]);
 
 assert.equal(shard.records.length, 14099);
 assert.equal(shard.rankConversions.length, 2297);

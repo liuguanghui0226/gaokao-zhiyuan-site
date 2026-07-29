@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.331-guangdong-official-rank2025-dual-level-bonus-full-table-aligned-868426records";
+const modelVersion = "local-deterministic-v3.332-shaanxi-official-rank2025-dual-domain-lower-absent-bucket-guard-868426records";
 const sourceId = "official-hebei-rank-2025-v3315";
 
 function sha256(value) {
@@ -27,12 +27,12 @@ const runtimeManifest = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/
 assert.equal(core.modelVersion, modelVersion);
 assert.equal(core.modelPolicy.version, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 132497);
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5135);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 132497);
-assert.equal(manifest.runtimeProfile.version, "v3.331");
+assert.equal(manifest.rankConversionCount, 133640);
+assert.equal(manifest.runtimeProfile.version, "v3.332");
 assert.equal(manifest.shards["河北"].records, 69443);
 assert.equal(manifest.shards["河北"].rankConversions, 2181);
 assert.equal(manifest.shards["河北"].bytes, shardBytes.length);
@@ -102,14 +102,14 @@ assert.equal(rankSource.parsedRecords, 1087);
 assert.equal(rankSource.provenance.fullTableComparisons, 1087);
 assert.equal(rankSource.provenance.officialPdfPages, 18);
 
-assert.equal(core.admissionScoreLayer.rankCoverage.records, 132497);
-assert.equal(core.admissionScoreLayer.rankSourceCoverage.sources, 220);
-assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedSources, 154);
-assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 132497);
+assert.equal(core.admissionScoreLayer.rankCoverage.records, 133640);
+assert.equal(core.admissionScoreLayer.rankSourceCoverage.sources, 221);
+assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedSources, 155);
+assert.equal(core.admissionScoreLayer.rankSourceCoverage.parsedRecords, 133640);
 const year2025 = core.admissionScoreLayer.rankSourceCoverage.byYear.find((row) => row.year === 2025);
-assert.equal(year2025.sources, 86);
-assert.equal(year2025.parsedSources, 62);
-assert.equal(year2025.parsedRecords, 28844);
+assert.equal(year2025.sources, 87);
+assert.equal(year2025.parsedSources, 63);
+assert.equal(year2025.parsedRecords, 29987);
 assert.ok(year2025.parsedProvinces.includes("河北"));
 
 for (const readiness of [core.admissionScoreLayer.provinceReadiness, core.admissionScoreLayer.coverage.provinceReadiness]) {

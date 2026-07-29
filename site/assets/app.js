@@ -1517,6 +1517,7 @@ function estimateRankFromScore(profile, rankInstitutionScope = "") {
   if (!score || !profile.province || !profile.subject || profile.subject === "不确定") return null;
   const pool = rankConversionRecords()
     .filter((record) =>
+      record.rankEstimateUsable !== false &&
       provinceMatchesRecord(record, profile) &&
       subjectMatchesRecord(record, profile) &&
       (!activeInstitutionScope || record.rankInstitutionScope === activeInstitutionScope) &&

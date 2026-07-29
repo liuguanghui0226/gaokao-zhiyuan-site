@@ -1,0 +1,61 @@
+{
+  "dataset": "official-shaanxi-rank-conversion-2025-v3332-runtime",
+  "generatedAt": "2026-07-29T11:42:48.805Z",
+  "sourceId": "official-shaanxi-rank-2025-v3332",
+  "importFile": "data/admissions/official-shaanxi-rank-conversion-2025-v3332-import.json",
+  "releaseDir": "site/data/release-v3.275",
+  "before": {
+    "modelVersion": "local-deterministic-v3.331-guangdong-official-rank2025-dual-level-bonus-full-table-aligned-868426records",
+    "records": 868426,
+    "rankConversions": 132497,
+    "provinceRecords": 16003,
+    "provinceRankConversions": 1163,
+    "queuedRankSources": 2
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.332-shaanxi-official-rank2025-dual-domain-lower-absent-bucket-guard-868426records",
+    "records": 868426,
+    "rankConversions": 133640,
+    "rankConversionsAdded": 1143,
+    "usableRankRecordsAdded": 1141,
+    "lowerAbsentAggregateRecordsAdded": 2,
+    "guardedExisting2026LowerAggregateRecords": 2,
+    "provinceRecords": 16003,
+    "provinceRankConversions": 2306,
+    "linkedAdmissionRecords": 992,
+    "officialLinkedRecords": 537,
+    "thirdPartyLinkedRecords": 455,
+    "schoolOfficialScopeLinkedRecords": 537,
+    "specialPathExcludedRecords": 289,
+    "ambiguousExcludedRecords": 302,
+    "topBucketLinkedRecords": 0,
+    "linkedSourceNotes": 93,
+    "linkedByUsage": {
+      "undergraduate": 986,
+      "vocational": 6
+    },
+    "linkedBySubject": {
+      "历史类": 263,
+      "物理类": 729
+    },
+    "linkedByType": {
+      "institution-admission": 106,
+      "major-admission": 876,
+      "major-group-admission": 7,
+      "school-admission-summary": 3
+    },
+    "sourceNotes": 5136,
+    "shardBytes": 18441828,
+    "shardSha256": "0791c74b0ee8536748c6f712f4bc0ea32886cad46583af0798a8b2a8aa58134c",
+    "coreBytes": 16030528,
+    "coreSha256": "b5970f7e6b656305401f31e97e1b08f98c37664b63a5e4fc326f0c3b5c37e0b6",
+    "manifestBytesBeforeLiteRebuild": 6318,
+    "manifestSha256BeforeLiteRebuild": "be33824294ada37c18b1e8304d487621aed4770740b36b243cb0a1a2bc03ec96"
+  },
+  "cautions": [
+    "官方页面未单独说明政策加分是否计入分数段，系统不擅自标注为含加分或不含加分。",
+    "历史678分及以上、物理710分及以上只保存官方合并区间，不生成档内伪精确位次。",
+    "两个“101分以下及缺考”汇总桶含无法分离的缺考人数，已标记为不可用于位次估算。",
+    "最低分换算位次不是院校录取表直接公布的原生最低位次。"
+  ]
+}

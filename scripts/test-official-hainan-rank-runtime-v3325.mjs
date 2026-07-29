@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.331-guangdong-official-rank2025-dual-level-bonus-full-table-aligned-868426records";
+const modelVersion = "local-deterministic-v3.332-shaanxi-official-rank2025-dual-domain-lower-absent-bucket-guard-868426records";
 const sourceId = "official-hainan-rank-2025-v3325";
 
 function readGzip(file) {
@@ -56,13 +56,13 @@ assert.equal(core.modelVersion, modelVersion);
 assert.equal(lite.modelVersion, modelVersion);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
-assert.equal(core.admissionScoreLayer.rankConversionRecords, 132497);
+assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(manifest.recordCount, 868426);
-assert.equal(manifest.rankConversionCount, 132497);
-assert.equal(manifest.runtimeProfile.version, "v3.331");
+assert.equal(manifest.rankConversionCount, 133640);
+assert.equal(manifest.runtimeProfile.version, "v3.332");
 assert.equal(manifest.runtimeProfile.initialCore, "knowledge-core-lite.json.gz");
-assert.equal(core.admissionScoreLayer.sourceNotes.length, 5135);
-assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5135);
+assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
+assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(lite.browserRuntime.profile, "core-lite-v1");
 assert.ok(liteAudit.liteCore.rawReductionRate >= 0.75);
 
@@ -139,8 +139,8 @@ const hdu = core.admissionScoreLayer.sourceNotes.find((note) => note.id === "off
 assert.equal(hdu.hainan2025ScoreDerivedRankRecords, 8);
 assert.equal(hdu.hainan2025RankScoreBasis, "gaokao-comprehensive-filing-score-including-policy-bonus");
 assert.equal(hdu.hainan2025RankPolicyBonusIncluded, true);
-assert.equal(hdu.derivedRankRecords, 321);
-assert.equal(hdu.rankUnavailableRecords, 7142);
+assert.equal(hdu.derivedRankRecords, 338);
+assert.equal(hdu.rankUnavailableRecords, 7125);
 assert.ok(hdu.rankAlignmentBoundary.includes("海南2025年8条"));
 
 console.log("official Hainan 2025 rank runtime v3.326 tests passed");
