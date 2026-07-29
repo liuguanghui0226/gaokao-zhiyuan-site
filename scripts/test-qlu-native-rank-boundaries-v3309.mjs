@@ -67,14 +67,19 @@ const focusedCandidate = {
   cities: ["济南"],
 };
 const focusedOptions = api.buildAdmissionOptions(focusedCandidate, focusedProfile);
-const focusedComputer = focusedOptions.find((option) => option.name === "齐鲁工业大学");
-assert.ok(
+const focusedComputer = focusedOptions.find((option) => option.record.id === computer.id);
+const focusedComputerFit = api.admissionFit(computer, focusedProfile, "2026-07-30");
+assert.equal(focusedComputerFit.historicalGuard.applied, true);
+assert.equal(focusedComputerFit.historicalGuard.latestBoundary, 52796);
+assert.equal(focusedComputerFit.historicalGuard.safetyBoundary, 31578);
+assert.equal(focusedComputerFit.score, 42);
+assert.equal(focusedComputerFit.zone, "多年保护高冲");
+assert.match(focusedComputerFit.text, /只降低乐观程度，不会抬高候选/);
+assert.equal(
   focusedComputer,
-  `city-matched QLU record must enter the visible option list: ${JSON.stringify(focusedOptions.map((option) => ({ id: option.record.id, major: option.record.majorName, score: option.optionScore })))}`,
+  undefined,
+  `guarded high-reach major must not displace safer top-five options: ${JSON.stringify(focusedOptions.map((option) => ({ id: option.record.id, major: option.record.majorName, score: option.optionScore })))}`,
 );
-assert.match(focusedComputer.focus, /学校官网单校录取边界/);
-assert.match(focusedComputer.focus, /官网分数页未列选科要求/);
-assert.equal(focusedComputer.optionScore >= 120, true);
 
 const art = payload.records.find((record) => record.id === "qlu-2025-ba75e83d650809e8b9");
 assert.ok(art);
@@ -89,8 +94,8 @@ console.log(JSON.stringify({
   warning,
   ordinaryCandidateCount: ordinaryCandidates.length,
   missingElectiveRequirementPreserved: computer.id,
-  focusedOptionScore: focusedComputer.optionScore,
-  focusedWarning: focusedComputer.focus,
+  focusedMajorGuard: focusedComputerFit.historicalGuard,
+  focusedTopFiveIds: focusedOptions.map((option) => option.record.id),
   artExcluded: art.id,
   xinjiangSpecialExcluded: xinjiangSpecial.id,
 }, null, 2));

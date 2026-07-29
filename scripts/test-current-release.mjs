@@ -146,6 +146,10 @@ const tests = [
   "test-admission-option-name-canonicalization-v3342.mjs",
   "test-real-admission-option-name-variants-v3342.mjs",
   "test-admission-option-name-runtime-v3342.mjs",
+  "audit-admission-multiyear-boundary-volatility-v3343.mjs",
+  "test-admission-multiyear-safety-v3343.mjs",
+  "test-real-admission-multiyear-safety-v3343.mjs",
+  "test-admission-multiyear-safety-runtime-v3343.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 

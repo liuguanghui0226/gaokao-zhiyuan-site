@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.342-typography-safe-admission-options-868426records";
+const modelVersion = "local-deterministic-v3.343-multiyear-official-boundary-guard-868426records";
 const sourceId = "official-xinjiang-undergraduate2-filing-2025-v3312";
 
 function sha256(value) {
@@ -100,7 +100,7 @@ assert.equal(runtimeManifest.after.tieBreakRecords, 1060);
 assert.equal(runtimeManifest.after.rankUnavailableRecords, 1076);
 assert.equal(runtimeManifest.after.coreSha256, "801c3b5e8ad8406e67dc308e829d2f94cc8496066a7d5bdff15ea7caa6fbe782");
 assert.equal(runtimeManifest.after.manifestSha256, "8ad987b18cd4f83abcde2e2497cfa11e6b446275a0214b2332382ea15874d529");
-assert.equal(manifest.runtimeProfile?.version, "v3.342", "Current runtime manifest must declare the later verified extension");
+assert.equal(manifest.runtimeProfile?.version, "v3.343", "Current runtime manifest must declare the later verified extension");
 
 assert.ok(scoreSample);
 assert.equal(scoreSample.schoolName, "塔里木理工学院");

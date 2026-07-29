@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.342-typography-safe-admission-options-868426records";
+const modelVersion = "local-deterministic-v3.343-multiyear-official-boundary-guard-868426records";
 const sourceId = "official-tianjin-control-lines-2026";
 const rankSourceUrl = "https://gaokao.chsi.com.cn/gkxx/zc/ss/202606/20260624/2293845980.html";
 

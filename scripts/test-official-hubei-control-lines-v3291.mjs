@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.342-typography-safe-admission-options-868426records";
+const modelVersion = "local-deterministic-v3.343-multiyear-official-boundary-guard-868426records";
 const sourceId = "official-hubei-control-lines-2026";
 const rankSourceId = "official-hubei-rank-2026";
 const rankUrl = "https://www.hbea.edu.cn/html/2026-06/15962.html";

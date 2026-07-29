@@ -1277,7 +1277,7 @@ function admissionTrendIndex() {
   if (admissionTrendIndexCache) return admissionTrendIndexCache;
   admissionTrendIndexCache = new Map();
   for (const record of admissionRecords()) {
-    if (record.dataType !== "major-admission" || !record.majorName) continue;
+    if (!isNamedMajorAdmissionRecord(record) || isSpecialPathRecord(record)) continue;
     const key = admissionTrendKey(record);
     if (!admissionTrendIndexCache.has(key)) admissionTrendIndexCache.set(key, []);
     admissionTrendIndexCache.get(key).push(record);
@@ -1325,6 +1325,122 @@ function admissionTrendSeries(records) {
   return [...seriesByYear.values()].sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
 }
 
+function comparableAdmissionTrendRecords(record) {
+  if (!isNamedMajorAdmissionRecord(record) || isSpecialPathRecord(record)) return [];
+  const indexedRecords = admissionTrendIndex().get(admissionTrendKey(record)) || [];
+  return admissionTrendCanonicalMergeSafe(indexedRecords)
+    ? indexedRecords
+    : indexedRecords.filter((item) => admissionTrendExactKey(item) === admissionTrendExactKey(record));
+}
+
+function comparableAdmissionSafetyRecords(record) {
+  return comparableAdmissionTrendRecords(record).filter((item) =>
+    admissionRouteIdentityKey(record) === admissionRouteIdentityKey(item)
+  );
+}
+
+function admissionEligibilityBasisKey(record) {
+  return [
+    record?.candidateCategory || record?.candidateClass || "",
+    record?.rankUsage || "",
+    record?.rankCategory || "",
+    record?.rankLevelUsage || "",
+  ].map(normalizeText).join("|");
+}
+
+function admissionRankBasisKey(record) {
+  return [
+    admissionEligibilityBasisKey(record),
+    record?.rankMetric || "",
+    record?.rankScoreBasis || "",
+    record?.rankEvidenceScope || "",
+    record?.rankDerivedFromScore === true ? "score-derived" : "native-or-unknown",
+    record?.rankPolicyBonusIncluded === true
+      ? "bonus-included"
+      : record?.rankPolicyBonusIncluded === false
+        ? "bonus-excluded"
+        : "bonus-unknown",
+  ].map(normalizeText).join("|");
+}
+
+function admissionScoreBasisKey(record) {
+  return [
+    admissionEligibilityBasisKey(record),
+    record?.scoreMetric || "",
+  ].map(normalizeText).join("|");
+}
+
+function conservativeAdmissionBoundary(values, metric) {
+  const sorted = [...values].sort((left, right) =>
+    metric === "rank" ? left - right : right - left);
+  return sorted[sorted.length === 2 ? 0 : 1];
+}
+
+function admissionMultiyearSafetyBoundary(record, profile) {
+  if (admissionEvidencePriority(record) < 2) return null;
+  const series = admissionTrendSeries(
+    comparableAdmissionSafetyRecords(record).filter((item) => admissionEvidencePriority(item) >= 2)
+  ).slice(0, 6);
+  if (series.length < 2 || Number(series[0].year) !== Number(record.year)) return null;
+  if (series[0] !== record && series[0].id && record.id && series[0].id !== record.id) return null;
+
+  const profileRank = profileRankForAdmissionRecord(record, profile);
+  const currentRank = Number(record.minRankEnd || record.minRank) || 0;
+  const currentScore = Number(record.minScore) || 0;
+  let metric = "";
+  let rows = [];
+  if (profileRank > 0 && currentRank > 0) {
+    const rankBasis = admissionRankBasisKey(record);
+    rows = series.filter((item) =>
+      Number(item.minRankEnd || item.minRank) > 0 &&
+      admissionRankBasisKey(item) === rankBasis
+    );
+    if (rows.length >= 2) metric = "rank";
+  }
+  if (!metric && profileScoreForAdmissionRecord(record, profile) > 0 && currentScore > 0) {
+    const scoreBasis = admissionScoreBasisKey(record);
+    rows = series.filter((item) =>
+      Number(item.minScore) > 0 &&
+      admissionScoreBasisKey(item) === scoreBasis
+    );
+    if (rows.length >= 2) metric = "score";
+  }
+  if (!metric) return null;
+
+  const values = rows.map((item) =>
+    metric === "rank"
+      ? Number(item.minRankEnd || item.minRank)
+      : Number(item.minScore)
+  );
+  const latestBoundary = metric === "rank" ? currentRank : currentScore;
+  const safetyBoundary = conservativeAdmissionBoundary(values, metric);
+  const morePermissive = metric === "rank"
+    ? latestBoundary > safetyBoundary
+    : latestBoundary < safetyBoundary;
+  if (!morePermissive) return null;
+
+  const label = metric === "rank" ? "多年位次保护" : "多年分数保护";
+  const boundaryText = metric === "rank"
+    ? `${fmtNumber(safetyBoundary)}名`
+    : `${safetyBoundary}分`;
+  const valuesText = rows.map((item) =>
+    metric === "rank"
+      ? `${item.year}年${fmtNumber(Number(item.minRankEnd || item.minRank))}名`
+      : `${item.year}年${Number(item.minScore)}分`
+  ).join("、");
+  return {
+    metric,
+    label,
+    latestBoundary,
+    safetyBoundary,
+    years: rows.map((item) => Number(item.year)),
+    boundaries: values,
+    outlierDiscarded: rows.length >= 3 &&
+      safetyBoundary !== (metric === "rank" ? Math.min(...values) : Math.max(...values)),
+    text: `${trendYearsLabel(rows.length)}同路径官方边界为${valuesText}；按${boundaryText}保守复核，只降低乐观程度，不会抬高候选。`,
+  };
+}
+
 function admissionTrendEvidence(records) {
   const thirdPartyYears = records.filter(isThirdPartyAdmissionRecord).map((record) => record.year);
   const unclassifiedYears = records
@@ -1352,11 +1468,7 @@ function withAdmissionTrendEvidence(records, trend) {
 }
 
 function trendForRecord(record) {
-  if (record.dataType !== "major-admission" || !record.majorName) return null;
-  const indexedRecords = admissionTrendIndex().get(admissionTrendKey(record)) || [];
-  const records = admissionTrendCanonicalMergeSafe(indexedRecords)
-    ? indexedRecords
-    : indexedRecords.filter((item) => admissionTrendExactKey(item) === admissionTrendExactKey(record));
+  const records = comparableAdmissionTrendRecords(record);
   const series = admissionTrendSeries(records);
   if (series.length < 2) return null;
   const current = series.find((item) => Number(item.year) === Number(record.year)) || series[0];
@@ -2301,7 +2413,7 @@ function profileScoreForAdmissionRecord(record, profile) {
   return profileScoreForInstitutionScope(profile, record?.rankInstitutionScope || "");
 }
 
-function admissionFit(record, profile, today = currentChinaDate()) {
+function singleYearAdmissionFit(record, profile, today = currentChinaDate()) {
   const rank = profileRankForAdmissionRecord(record, profile);
   const score = profileScoreForAdmissionRecord(record, profile);
   const minRankEnd = Number(record.minRankEnd) || 0;
@@ -2339,6 +2451,38 @@ function admissionFit(record, profile, today = currentChinaDate()) {
     score: Math.max(0, fit.score - recency.penalty),
     text: `${fit.text}；${recency.text}`,
     recency,
+  };
+}
+
+function admissionFit(record, profile, today = currentChinaDate()) {
+  const latestFit = singleYearAdmissionFit(record, profile, today);
+  const safety = admissionMultiyearSafetyBoundary(record, profile);
+  if (!safety) return latestFit;
+
+  const safetyRecord = safety.metric === "rank"
+    ? { ...record, minRankEnd: safety.safetyBoundary, minRank: safety.safetyBoundary }
+    : { ...record, minScore: safety.safetyBoundary };
+  const safetyFit = singleYearAdmissionFit(safetyRecord, profile, today);
+  const applied = safetyFit.score < latestFit.score;
+  const guardedScore = Math.min(latestFit.score, safetyFit.score);
+  const guardedZone = applied ? `多年保护${safetyFit.zone}` : latestFit.zone;
+  const guardText = applied
+    ? `${safety.text}可达性由“${latestFit.zone}”降为“${guardedZone}”。`
+    : `${safety.text}当前可达性等级不变。`;
+  return {
+    ...latestFit,
+    zone: guardedZone,
+    score: guardedScore,
+    text: `${latestFit.text}；${guardText}`,
+    historicalGuard: {
+      ...safety,
+      applied,
+      scoreBefore: latestFit.score,
+      scoreAfter: guardedScore,
+      zoneBefore: latestFit.zone,
+      zoneAfter: guardedZone,
+      text: guardText,
+    },
   };
 }
 
@@ -2416,6 +2560,7 @@ function buildAdmissionOptions(candidate, profile) {
         rankScoreBasisLabel(record),
         trend?.label || "",
         trend?.evidenceLabel || "",
+        fit.historicalGuard?.label || "",
         ...admissionRouteTags(record),
         record.electiveRequirement ? `选科${record.electiveRequirement}` : "",
         electiveRequirementForProfile(record, profile).state === "needs-check" ? "选科待核" : "",
@@ -2581,6 +2726,7 @@ function scoreCandidate(candidate, profile, band) {
   const schoolOfficialAdmission = bestAdmission && isSchoolOfficialOnlyRecord(bestAdmission.record);
   const thirdPartyAdmission = bestAdmission && isThirdPartyAdmissionRecord(bestAdmission.record);
   const staleAdmission = bestAdmission && !bestAdmission.fit.recency?.fresh;
+  const multiyearGuard = bestAdmission?.fit?.historicalGuard || null;
   const electivePendingRecords = candidateAdmissionRecords.filter((record) => electiveRequirementForProfile(record, profile).state === "needs-check");
   const redLines = parseList(profile.redLines);
   const cityPrefs = parseList(profile.cities);
@@ -2711,7 +2857,9 @@ function scoreCandidate(candidate, profile, band) {
   let confidenceReason = "探索性建议：需要补充更多输入或官方数据后再进入正式方案。";
   if (bestAdmission?.record?.minRankEnd && !limitedAdmission && !schoolOfficialAdmission && !thirdPartyAdmission && !staleAdmission && !missingInputs.length && evidence.length >= 4 && bestAdmission.fit.score >= 76 && total >= 76 && riskPenalty <= 12) {
     confidence = "A";
-    confidenceReason = "输入完整且已接入结构化录取分，可进入院校/专业分数排序；最终仍需官方核验。";
+    confidenceReason = multiyearGuard
+      ? "输入完整且已接入结构化录取分，并已按多年官方保守边界降低乐观程度；可进入院校/专业排序，最终仍需官方核验。"
+      : "输入完整且已接入结构化录取分，可进入院校/专业分数排序；最终仍需官方核验。";
   } else if (bestAdmission && !thirdPartyAdmission && !missingInputs.length && evidence.length >= 4 && bestAdmission.fit.score >= 62 && total >= 68 && riskPenalty <= 16) {
     confidence = "A-";
     confidenceReason = limitedAdmission
@@ -2722,7 +2870,9 @@ function scoreCandidate(candidate, profile, band) {
           : "输入完整且命中学校官网单校最低分/位次，但它不是省级全量投档表，最高只作为 A- 强候选核验。"
         : staleAdmission
           ? `输入完整且命中${bestAdmission.fit.recency.label}历史录取边界，已按年份降低排序权重，最高只作为 A- 强候选核验。`
-        : "输入完整且有录取分数据支持，但目标专业仍需逐项核验。";
+          : multiyearGuard
+            ? "输入完整且有录取分数据支持，并已按多年官方保守边界降低乐观程度；目标专业仍需逐项核验。"
+            : "输入完整且有录取分数据支持，但目标专业仍需逐项核验。";
   } else if (evidence.length >= 4 && total >= 62) {
     confidence = "B";
     confidenceReason = thirdPartyAdmission
@@ -2816,6 +2966,7 @@ function scoreCandidate(candidate, profile, band) {
     ...(scoreStatus.available && profileRecords.length && !candidateAdmissionRecords.length ? ["当前方向没有命中已导入的本省同科类分数记录，建议继续补充该方向院校数据。"] : []),
     ...(bestAdmission && bestAdmission.fit.score < 62 ? ["当前最佳命中仍属于高冲区间，不能作为稳妥志愿使用。"] : []),
     ...(staleAdmission ? [bestAdmission.fit.recency.text] : []),
+    ...(multiyearGuard ? [multiyearGuard.text] : []),
     ...(limitedAdmission ? [admissionRecordLimitWarning(bestAdmission.record)] : []),
     ...(thirdPartyAdmission ? [admissionRecordLimitWarning(bestAdmission.record)] : []),
     ...(schoolOfficialAdmission ? [admissionRecordLimitWarning(bestAdmission.record)] : []),
@@ -2980,6 +3131,7 @@ function applicationPlanDetail(option) {
       record.rankRangeText ? `位次${record.rankRangeText}` : "",
       rankScoreBasisLabel(record),
       fit?.recency?.label || "",
+      fit?.historicalGuard?.label || "",
       ...admissionRouteTags(record),
       record.electiveRequirement ? `选科${record.electiveRequirement}` : "",
       electiveRequirementForProfile(record, state.recommendation?.profile || {}).state === "needs-check" ? "选科待核" : "",

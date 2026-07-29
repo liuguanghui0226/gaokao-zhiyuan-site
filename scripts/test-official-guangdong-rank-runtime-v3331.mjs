@@ -12,7 +12,7 @@ const read = (name) => JSON.parse(zlib.gunzipSync(fs.readFileSync(path.join(rele
 const core = read("knowledge-core.json.gz");
 const manifest = read("manifest.json.gz");
 const shard = read("guangdong.json.gz");
-const version = "local-deterministic-v3.342-typography-safe-admission-options-868426records";
+const version = "local-deterministic-v3.343-multiyear-official-boundary-guard-868426records";
 assert.equal(core.modelVersion, version);
 assert.equal(manifest.modelVersion, version);
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);

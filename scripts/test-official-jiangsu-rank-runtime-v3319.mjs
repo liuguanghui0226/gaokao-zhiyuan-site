@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.342-typography-safe-admission-options-868426records";
+const modelVersion = "local-deterministic-v3.343-multiyear-official-boundary-guard-868426records";
 const sourceId = "official-jiangsu-rank-2025-v3319";
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
 const coreBytes = zlib.gunzipSync(fs.readFileSync(path.join(releaseDir, "knowledge-core.json.gz")));
@@ -28,7 +28,7 @@ assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(manifest.modelVersion, modelVersion);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.342");
+assert.equal(manifest.runtimeProfile.version, "v3.343");
 assert.equal(manifest.shards["江苏"].records, 26991);
 assert.equal(manifest.shards["江苏"].rankConversions, 806);
 assert.equal(manifest.shards["江苏"].bytes, shardBytes.length);
