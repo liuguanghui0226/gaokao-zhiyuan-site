@@ -95,7 +95,7 @@ jobs:
           grep -q '只降低乐观程度，不会抬高候选' "$work/app.js"
           grep -q 'currentPlanEvidenceForAdmissionRecord' "$work/app.js"
           grep -q 'currentPlanAllowsProfile' "$work/app.js"
-          grep -q '2026计划在招' "$work/app.js"
+          grep -q '${year}计划在招' "$work/app.js"
           grep -q '计划存在只证明当年专业池，不代表录取概率' "$work/app.js"
           grep -q 'admissionBatchRouteKey' "$work/app.js"
           grep -q 'admissionBatchQualifier' "$work/app.js"
