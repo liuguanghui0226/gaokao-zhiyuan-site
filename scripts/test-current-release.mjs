@@ -154,6 +154,10 @@ const tests = [
   "test-admission-current-plan-corroboration-v3344.mjs",
   "test-real-admission-current-plan-corroboration-v3344.mjs",
   "test-admission-current-plan-corroboration-runtime-v3344.mjs",
+  "audit-admission-plan-route-transition-v3345.mjs",
+  "test-admission-plan-route-transition-v3345.mjs",
+  "test-real-admission-plan-route-transition-v3345.mjs",
+  "test-admission-plan-route-transition-runtime-v3345.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 

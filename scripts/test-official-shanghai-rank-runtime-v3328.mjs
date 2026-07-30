@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.344-current-official-plan-corroboration-868426records";
+const modelVersion = "local-deterministic-v3.345-plan-route-transition-safety-868426records";
 const sourceId = "official-shanghai-rank-2025-v3328";
 const readBytes = (file) => zlib.gunzipSync(fs.readFileSync(file));
 const readJson = (file) => JSON.parse(readBytes(file));
@@ -37,7 +37,7 @@ assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.344");
+assert.equal(manifest.runtimeProfile.version, "v3.345");
 assert.deepEqual(
   [core.admissionScoreLayer.rankSourceCoverage.sources, core.admissionScoreLayer.rankSourceCoverage.parsedSources],
   [221, 155],

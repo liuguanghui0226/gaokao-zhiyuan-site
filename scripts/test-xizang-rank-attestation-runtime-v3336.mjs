@@ -14,12 +14,12 @@ const lite = read("knowledge-core-lite.json.gz");
 const manifest = read("manifest.json.gz");
 const shard = read("xizang.json.gz");
 const audit = JSON.parse(fs.readFileSync(path.join(root, "data/admissions/xizang-rank-attestation-binding-v3336-runtime-manifest.json")));
-const version = "local-deterministic-v3.344-current-official-plan-corroboration-868426records";
+const version = "local-deterministic-v3.345-plan-route-transition-safety-868426records";
 
 assert.equal(core.modelVersion, version);
 assert.equal(lite.modelVersion, version);
 assert.equal(manifest.modelVersion, version);
-assert.equal(manifest.runtimeProfile.version, "v3.344");
+assert.equal(manifest.runtimeProfile.version, "v3.345");
 assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);

@@ -15,7 +15,7 @@ const liteBytes = readBytes("knowledge-core-lite.json.gz");
 const full = JSON.parse(fullBytes);
 const lite = JSON.parse(liteBytes);
 const manifest = JSON.parse(readBytes("manifest.json.gz"));
-const audit = JSON.parse(fs.readFileSync(path.join(root, "data/admissions/runtime-core-lite-v3344-manifest.json")));
+const audit = JSON.parse(fs.readFileSync(path.join(root, "data/admissions/runtime-core-lite-v3345-manifest.json")));
 const hash = (bytes) => crypto.createHash("sha256").update(bytes).digest("hex");
 assert.equal(lite.modelVersion, full.modelVersion);
 assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5136);
@@ -31,7 +31,7 @@ assert.ok(lite.browserRuntime.sourceNoteFields.includes("staleRecommendationInva
 assert.ok(lite.browserRuntime.sourceNoteFields.includes("officialPublicDisclosureAudit"));
 assert.ok(1 - liteBytes.length / fullBytes.length >= 0.75);
 assert.equal(manifest.coreLite.sha256, hash(liteBytes));
-assert.equal(manifest.runtimeProfile.version, "v3.344");
+assert.equal(manifest.runtimeProfile.version, "v3.345");
 assert.equal(audit.modelVersion, full.modelVersion);
 const rankNote = lite.admissionScoreLayer.sourceNotes.find((row) => row.id === "official-beijing-rank-2025-v3271");
 const vocationalNote = lite.admissionScoreLayer.sourceNotes.find((row) => row.id === "official-beijing-vocational-filing-2025");
