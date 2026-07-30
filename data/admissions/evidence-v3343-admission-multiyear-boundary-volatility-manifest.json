@@ -1,7 +1,7 @@
 {
   "dataset": "evidence-v3343-admission-multiyear-boundary-volatility",
   "generatedAt": "2026-07-30T06:30:00+08:00",
-  "sourceModelVersion": "local-deterministic-v3.345-plan-route-transition-safety-868426records",
+  "sourceModelVersion": "local-deterministic-v3.346-current-plan-readiness-gate-868426records",
   "provinces": 31,
   "admissionRecords": 794934,
   "namedMajorRecords": 596431,

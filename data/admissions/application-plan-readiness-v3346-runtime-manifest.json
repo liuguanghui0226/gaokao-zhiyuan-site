@@ -1,0 +1,50 @@
+{
+  "dataset": "application-plan-readiness-v3346-runtime",
+  "generatedAt": "2026-07-30T10:45:00+08:00",
+  "before": {
+    "modelVersion": "local-deterministic-v3.345-plan-route-transition-safety-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136
+  },
+  "after": {
+    "modelVersion": "local-deterministic-v3.346-current-plan-readiness-gate-868426records",
+    "records": 868426,
+    "ranks": 133640,
+    "notes": 5136,
+    "applicationPlanReadiness": {
+      "currentYear": 2026,
+      "listTitle": "院校专业候选清单",
+      "executableClaimRemoved": true,
+      "historicalFitTierKeptSeparateFromCurrentPlanReadiness": true,
+      "perOptionReadinessRequired": true,
+      "headerConfirmedCountRequired": true,
+      "missingCurrentPlanMeansUnknownNotDiscontinued": true,
+      "unresolvedCurrentPlanNeverPresentedAsFormalListEligible": true,
+      "currentPlanEvidenceNeverCreatesAdmissionProbability": true,
+      "readinessStateIds": [
+        "current-plan-confirmed",
+        "current-plan-unmatched",
+        "near-year-only",
+        "current-plan-needs-check",
+        "current-plan-conflict",
+        "current-plan-ambiguous",
+        "plan-only"
+      ],
+      "candidateGroups": 389435,
+      "currentPlanConfirmedGroups": 2142,
+      "currentPlanPendingGroups": 387293,
+      "nearYearOnlyGroups": 313,
+      "recentPlanMatchedGroups": 2455,
+      "noRecentPlanMatchGroups": 386980,
+      "exactCurrentPlanMatchedGroups": 1640,
+      "transitionCurrentPlanMatchedGroups": 502,
+      "currentPlanCoverageRate": 0.0055
+    },
+    "coreBytes": 16049620,
+    "coreSha256": "1405b93dc285dd5f2196dcb412e28051e1add4b4de3c93f3050e00d0a79a4141",
+    "manifestBytesBeforeLiteRebuild": 6706,
+    "manifestSha256BeforeLiteRebuild": "45747de9f199de31fe2390b0b2bc6f791ab641d5d3e58046e28f885be83343f7"
+  },
+  "boundary": "No admission, rank, plan, or source-note record changed. Historical fit tiers remain visible, but every admission option now carries a separate current-plan readiness state and unresolved states never claim formal-list eligibility."
+}

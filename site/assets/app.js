@@ -3327,9 +3327,9 @@ function scoreCandidate(candidate, profile, band) {
 }
 
 const APPLICATION_PLAN_TIERS = [
-  { id: "priority", label: "优先核验", note: "录取边界相对有利，仍须逐项核验当年计划、专业组与调剂范围。" },
-  { id: "steady", label: "稳妥候选", note: "与近年边界接近或有一定余量，适合与优先核验项搭配。" },
-  { id: "reach", label: "冲刺候选", note: "当前边界偏紧，只作为孩子愿意承担风险的上探项。" },
+  { id: "priority", label: "优先核验", note: "历史录取边界相对有利；是否当年可报，仍以每项的当前计划状态为准。" },
+  { id: "steady", label: "稳妥候选", note: "历史边界接近或有一定余量；计划待核的项目不能直接进入正式志愿单。" },
+  { id: "reach", label: "冲刺候选", note: "历史边界偏紧，只作为孩子愿意承担风险且当前计划允许的上探项。" },
   { id: "review", label: "待复核数据候选", note: "最低分来自第三方摘要，只作检索线索；回考试院或学校官网原表确认前不得进入正式志愿单。" },
   { id: "plan", label: "计划与资格核验", note: "这是招生计划或历史征集线索，不是录取概率。" },
 ];
@@ -3365,6 +3365,82 @@ function applicationPlanOptionScore(option, result, tierIndex) {
     (Number(option.optionScore) || 0) * 2 +
     (Number(result.total) || 0) +
     recencyScore;
+}
+
+function applicationPlanReadiness(option) {
+  const record = option?.record;
+  if (!record) {
+    return {
+      state: "unknown",
+      label: "当前计划待核",
+      text: "该项缺少可绑定的记录，不能进入正式志愿单。",
+      confirmed: false,
+      admissionOption: false,
+    };
+  }
+  if (isPlanRecord(record)) {
+    return {
+      state: "plan-only",
+      label: isVacancyPlanRecord(record) ? "历史征集计划" : "计划层候选",
+      text: "该项只有计划证据，没有可比较的录取边界。",
+      confirmed: false,
+      admissionOption: false,
+    };
+  }
+
+  const evidence = option.planEvidence;
+  if (!evidence) {
+    return {
+      state: "current-plan-unmatched",
+      label: "2026计划待核",
+      text: "本地尚未命中可严格对应的2026官方计划；这不表示停招，但核验前不能进入正式志愿单。",
+      confirmed: false,
+      admissionOption: true,
+    };
+  }
+  if (!evidence.current) {
+    return {
+      state: "near-year-only",
+      label: `仅${evidence.year}计划佐证`,
+      text: `当前只命中${evidence.year}年计划，2026年是否继续招生仍须核验。`,
+      confirmed: false,
+      admissionOption: true,
+    };
+  }
+  if (evidence.ambiguousPlanRequirements) {
+    return {
+      state: "current-plan-ambiguous",
+      label: "2026计划多口径待核",
+      text: "2026年同一院校专业存在多个选科或招生口径，核验前不能进入正式志愿单。",
+      confirmed: false,
+      admissionOption: true,
+    };
+  }
+  if (evidence.eligibility?.state === "unmatched") {
+    return {
+      state: "current-plan-conflict",
+      label: "2026选科冲突待核",
+      text: "历史录取批次与2026计划批次口径不同，且当前选科与计划要求冲突；只保留为人工复核项。",
+      confirmed: false,
+      admissionOption: true,
+    };
+  }
+  if (evidence.eligibility?.state === "needs-check") {
+    return {
+      state: "current-plan-needs-check",
+      label: "2026选科待核",
+      text: "已命中2026官方计划，但选科或招生资格尚不能自动确认，核验前不能进入正式志愿单。",
+      confirmed: false,
+      admissionOption: true,
+    };
+  }
+  return {
+    state: "current-plan-confirmed",
+    label: "2026计划已佐证",
+    text: "已命中2026官方计划且当前科类、选科未发现冲突；这仍不代表录取概率。",
+    confirmed: true,
+    admissionOption: true,
+  };
 }
 
 function buildApplicationPlan(results) {
@@ -3432,6 +3508,7 @@ function buildApplicationPlan(results) {
 function applicationPlanDetail(option) {
   const record = option.record || {};
   const fit = option.admissionFit;
+  const planReadiness = applicationPlanReadiness(option);
   const major = record.majorName || record.majorGroup || "专业方向待核验";
   const sourceLabel = isPlanRecord(record)
     ? "官方计划来源"
@@ -3448,10 +3525,15 @@ function applicationPlanDetail(option) {
       : "官方招生计划，只说明可报专业池。"
     : admissionRecordLimitWarning(record);
   const fitText = fit?.text || option.focus || "需复核招生章程与当年计划。";
+  const detailText = [fitText, sourceLimit, planReadiness.text]
+    .map((text) => String(text || "").trim().replace(/[。；]+$/g, ""))
+    .filter(Boolean)
+    .join("；");
   return {
     major,
-    text: `${fitText}${sourceLimit || ""}`,
+    text: `${detailText}。`,
     tags: [
+      planReadiness.label,
       record.city,
       record.year ? `${record.year}年` : "",
       record.minScore ? `最低分${record.minScore}` : "",
@@ -3473,6 +3555,10 @@ function renderApplicationPlan(results) {
   const tiers = buildApplicationPlan(results);
   if (!tiers.length) return "";
   const planOptions = tiers.flatMap((tier) => tier.options);
+  const planReadiness = planOptions.map((option) => applicationPlanReadiness(option));
+  const admissionOptionCount = planReadiness.filter((item) => item.admissionOption).length;
+  const currentPlanConfirmedCount = planReadiness.filter((item) => item.confirmed).length;
+  const currentPlanPendingCount = admissionOptionCount - currentPlanConfirmedCount;
   const limitedSchoolOnly = ordinaryVocationalQualificationStatus(state.recommendation?.profile || {}).limitedOnly &&
     planOptions.length > 0 && planOptions.every((option) => isHubeiLimitedSchoolHistoricalAdmissionRecord(option.record));
   const containsThirdParty = planOptions.some((option) => isThirdPartyAdmissionRecord(option.record));
@@ -3480,19 +3566,19 @@ function renderApplicationPlan(results) {
     ? "限定院校资格核验清单"
     : containsThirdParty
       ? "院校专业核验清单"
-      : "可执行院校专业清单";
+      : "院校专业候选清单";
   const planDescription = limitedSchoolOnly
     ? "只汇总湖北2025官方投档表中可确认的本省低分专业组，用于核验2026限定院校范围；不是今年可录取名单。"
     : containsThirdParty
-      ? "同一院校专业已合并；官方记录按冲稳层展示，第三方最低分摘要单列为待复核线索，不能直接进入正式志愿单。"
-      : "只汇总已命中的本省同科类结构化记录；同一院校专业会合并，计划类数据单独展示。";
+      ? `同一院校专业已合并；冲稳层只表示历史边界，第三方摘要和${currentPlanPendingCount}项当前计划未闭合记录均不能直接进入正式志愿单。`
+      : `只汇总已命中的本省同科类结构化记录；冲稳层只表示历史边界，当前有${currentPlanConfirmedCount}/${admissionOptionCount}项命中2026计划且未发现科类、选科冲突。`;
   return `<section class="band application-plan">
     <div class="application-plan-head">
       <div>
         <h3>${esc(planTitle)}</h3>
         <p>${esc(planDescription)}</p>
       </div>
-      <span>${fmtNumber(tiers.reduce((total, tier) => total + tier.options.length, 0))} 项</span>
+      <span>${fmtNumber(currentPlanConfirmedCount)}/${fmtNumber(admissionOptionCount)} 当前计划已佐证</span>
     </div>
     <div class="application-plan-grid">
       ${tiers.map((tier) => `<section class="application-plan-group">

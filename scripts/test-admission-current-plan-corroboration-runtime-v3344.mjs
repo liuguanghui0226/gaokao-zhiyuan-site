@@ -16,7 +16,7 @@ const readJson = (name) => JSON.parse(fs.readFileSync(
   path.join(root, "data/admissions", name),
   "utf8",
 ));
-const expectedVersion = "local-deterministic-v3.345-plan-route-transition-safety-868426records";
+const expectedVersion = "local-deterministic-v3.346-current-plan-readiness-gate-868426records";
 const historicalVersion = "local-deterministic-v3.344-current-official-plan-corroboration-868426records";
 
 const core = readGzip("knowledge-core.json.gz");
@@ -24,7 +24,7 @@ const lite = readGzip("knowledge-core-lite.json.gz");
 const manifest = readGzip("manifest.json.gz");
 const runtime = readJson("admission-current-plan-corroboration-v3344-runtime-manifest.json");
 const evidence = readJson("evidence-v3344-admission-current-plan-corroboration-manifest.json");
-const liteAudit = readJson("runtime-core-lite-v3345-manifest.json");
+const liteAudit = readJson("runtime-core-lite-v3346-manifest.json");
 const policy = core.modelPolicy.admissionEvidencePolicy;
 const planPolicy = policy.currentPlanCorroboration;
 
@@ -32,10 +32,10 @@ assert.equal(core.modelVersion, expectedVersion);
 assert.equal(lite.modelVersion, expectedVersion);
 assert.equal(manifest.modelVersion, expectedVersion);
 assert.equal(runtime.after.modelVersion, historicalVersion);
-assert.equal(manifest.runtimeProfile.version, "v3.345");
+assert.equal(manifest.runtimeProfile.version, "v3.346");
 assert.equal(liteAudit.modelVersion, expectedVersion);
-assert.equal(core.generatedAt, "2026-07-30T10:30:00+08:00");
-assert.equal(manifest.generatedAt, "2026-07-30T10:30:00+08:00");
+assert.equal(core.generatedAt, "2026-07-30T10:45:00+08:00");
+assert.equal(manifest.generatedAt, "2026-07-30T10:45:00+08:00");
 assert.equal(policy.multiyearBoundaryGuard.guardDirection, "downgrade-only");
 assert.equal(planPolicy.positiveEvidenceOnly, true);
 assert.equal(planPolicy.officialOrdinaryPlansOnly, true);
@@ -90,8 +90,8 @@ assert.equal(evidence.counts.provincesWithCurrentYearMatches, 21);
 assert.equal(runtime.after.records, 868426);
 assert.equal(runtime.after.ranks, 133640);
 assert.equal(runtime.after.notes, 5136);
-assert.equal(liteAudit.liteCore.bytes, 3028826);
-assert.equal(liteAudit.liteCore.compressedBytes, 486629);
+assert.equal(liteAudit.liteCore.bytes, 3029884);
+assert.equal(liteAudit.liteCore.compressedBytes, 486984);
 
 console.log(JSON.stringify({
   status: "ok",

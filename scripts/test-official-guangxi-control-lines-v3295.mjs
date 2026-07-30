@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.345-plan-route-transition-safety-868426records";
+const modelVersion = "local-deterministic-v3.346-current-plan-readiness-gate-868426records";
 const sourceId = "official-guangxi-control-lines-2026";
 const rankSourceId = "official-guangxi-rank-2026";
 const historyRankUrl = "https://www.gxeea.cn/2026yfyd/yifenyidang/2026_yifenyidang_lishi_qg.html";

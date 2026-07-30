@@ -158,6 +158,10 @@ const tests = [
   "test-admission-plan-route-transition-v3345.mjs",
   "test-real-admission-plan-route-transition-v3345.mjs",
   "test-admission-plan-route-transition-runtime-v3345.mjs",
+  "audit-application-plan-readiness-v3346.mjs",
+  "test-application-plan-readiness-v3346.mjs",
+  "test-real-application-plan-readiness-v3346.mjs",
+  "test-application-plan-readiness-runtime-v3346.mjs",
   "test-interface-plain-language-v3316.mjs",
 ];
 

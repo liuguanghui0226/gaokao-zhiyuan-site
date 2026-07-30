@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const releaseDir = path.join(projectRoot, "site/data/release-v3.275");
-const modelVersion = "local-deterministic-v3.345-plan-route-transition-safety-868426records";
+const modelVersion = "local-deterministic-v3.346-current-plan-readiness-gate-868426records";
 const sourceId = "official-hubei-rank-2025-v3322";
 const floors = { 历史类: 0, 物理类: 0 };
 
@@ -59,7 +59,7 @@ assert.equal(core.admissionScoreLayer.structuredRecords, 868426);
 assert.equal(core.admissionScoreLayer.rankConversionRecords, 133640);
 assert.equal(manifest.recordCount, 868426);
 assert.equal(manifest.rankConversionCount, 133640);
-assert.equal(manifest.runtimeProfile.version, "v3.345");
+assert.equal(manifest.runtimeProfile.version, "v3.346");
 assert.equal(manifest.runtimeProfile.initialCore, "knowledge-core-lite.json.gz");
 assert.equal(core.admissionScoreLayer.sourceNotes.length, 5136);
 assert.equal(lite.admissionScoreLayer.sourceNotes.length, 5136);
