@@ -163,6 +163,7 @@ const tests = [
   "test-real-application-plan-readiness-v3346.mjs",
   "test-application-plan-readiness-runtime-v3346.mjs",
   "test-interface-plain-language-v3316.mjs",
+  "test-recommendation-profile-persistence-v3347.mjs",
 ];
 
 const results = tests.map((test) => {

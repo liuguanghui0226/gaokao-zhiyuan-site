@@ -74,6 +74,37 @@ const DEFAULT_PROFILE = {
   abilityProfile: "语文120 英语124 数学102 物理77 化学82 生物88；语英较强，数学物理中等，化生基础较稳。",
 };
 
+const RECOMMEND_PROFILE_STORAGE_KEY = "gaokao-zhiyuan-site:recommend-profile:v1";
+
+function loadSavedRecommendationProfile() {
+  try {
+    const raw = globalThis.localStorage?.getItem(RECOMMEND_PROFILE_STORAGE_KEY);
+    if (!raw) return null;
+    const profile = JSON.parse(raw);
+    return profile && typeof profile === "object" && !Array.isArray(profile) ? profile : null;
+  } catch {
+    return null;
+  }
+}
+
+function saveRecommendationProfile(profile) {
+  try {
+    if (profile && typeof profile === "object" && !Array.isArray(profile)) {
+      globalThis.localStorage?.setItem(RECOMMEND_PROFILE_STORAGE_KEY, JSON.stringify(profile));
+    }
+  } catch {
+    // Local draft persistence is optional; private browsing and storage quotas must not block recommendations.
+  }
+}
+
+function clearSavedRecommendationProfile() {
+  try {
+    globalThis.localStorage?.removeItem(RECOMMEND_PROFILE_STORAGE_KEY);
+  } catch {
+    // Ignore unavailable local storage so reset still restores the example profile.
+  }
+}
+
 const DISCIPLINE_MAJOR_CATALOG = {
   "01": [
     { key: "philosophy", name: "哲学类", majors: ["哲学", "逻辑学", "宗教学", "伦理学"] },
@@ -2406,6 +2437,31 @@ function profileFromForm() {
   return profile;
 }
 
+function recommendationDraftFromForm() {
+  const profile = profileFromForm();
+  const draft = {
+    ...profile,
+    rank: $("#rankInput")?.value.trim() || "",
+    rankInput: $("#rankInput")?.value.trim() || "",
+    guangxiLocalRank: $("#guangxiLocalRankInput")?.value.trim() || "",
+    guangxiLocalRankInput: $("#guangxiLocalRankInput")?.value.trim() || "",
+  };
+  for (const key of [
+    "estimatedRank",
+    "rankEstimate",
+    "rankEstimateText",
+    "rankEstimateSource",
+    "rankEstimateUrl",
+    "rankEstimatesByInstitutionScope",
+    "rankRejectedBySource",
+  ]) delete draft[key];
+  return draft;
+}
+
+function saveCurrentRecommendationDraft() {
+  saveRecommendationProfile(recommendationDraftFromForm());
+}
+
 function hasTextHit(text, keywords) {
   const normalized = normalizeText(text);
   return keywords.some((keyword) => normalized.includes(normalizeText(keyword)));
@@ -3933,6 +3989,7 @@ function renderRecommendForm(profile) {
       <button class="ghost-action" id="resetRecommend" type="button">恢复示例</button>
     </div>
     <p id="recommendStatus" class="form-status" role="status" aria-live="polite"></p>
+    <p class="form-hint">表单草稿仅保存在本机浏览器，点击“恢复示例”可清除。</p>
   </form>`;
 }
 
@@ -4232,6 +4289,7 @@ function bindRecommendEvents() {
   if (!form) return;
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
+    saveCurrentRecommendationDraft();
     const submit = form.querySelector('button[type="submit"]');
     const status = $("#recommendStatus");
     const originalLabel = submit?.textContent || "生成推荐";
@@ -4307,12 +4365,18 @@ function bindRecommendEvents() {
     ) {
       xizangRankSourceInput.value = "";
     }
+    if (handleRecommendationInputChange.draftTimer) clearTimeout(handleRecommendationInputChange.draftTimer);
+    handleRecommendationInputChange.draftTimer = setTimeout(() => {
+      handleRecommendationInputChange.draftTimer = null;
+      saveCurrentRecommendationDraft();
+    }, 250);
     invalidateRecommendationResults();
   };
   form.addEventListener("input", handleRecommendationInputChange);
   form.addEventListener("change", handleRecommendationInputChange);
   updateProvinceFields();
   $("#resetRecommend").addEventListener("click", () => {
+    clearSavedRecommendationProfile();
     state.recommendation = null;
     state.recommendationInvalidated = false;
     state.prefillProfile = null;
@@ -4568,6 +4632,7 @@ async function boot() {
   ]);
   state.data = core;
   state.provinceManifest = manifest;
+  state.prefillProfile = loadSavedRecommendationProfile();
   $("#generatedAt").textContent = `更新于 ${new Date(state.data.generatedAt).toLocaleString("zh-CN")}`;
   populateFilters();
   bindEvents();
