@@ -23,11 +23,17 @@ const html = context.__gaokaoTest.renderEvidenceLinks([
   { source: { title: "江西省教育考试院", url: "https://example.com/jiangxi" } },
   { source: { title: "招生网", url: "https://example.com/admission" } },
 ]);
+const localHtml = context.__gaokaoTest.renderEvidenceLinks([
+  { source: { title: "本地讲义" } },
+]);
 
 assert.match(html, /evidence-link-row/);
 assert.match(html, /江西省教育考试院/);
 assert.match(html, /href="https:\/\/example\.com\/jiangxi"/);
 assert.match(html, /target="_blank" rel="noreferrer"/);
 assert.equal((html.match(/example\.com\/jiangxi/g) || []).length, 1, "duplicate source links should collapse");
+assert.match(localHtml, /local-source-tag/);
+assert.match(localHtml, /本地资料：本地讲义/);
+assert.doesNotMatch(localHtml, /href=/, "local-only evidence must not invent a public URL");
 
-console.log(JSON.stringify({ ok: true, linkedSources: 2, duplicatesCollapsed: true, safeTarget: true }, null, 2));
+console.log(JSON.stringify({ ok: true, linkedSources: 2, localSourcesLabeled: true, duplicatesCollapsed: true, safeTarget: true }, null, 2));

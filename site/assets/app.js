@@ -4187,7 +4187,7 @@ function renderEvidenceLinks(evidence, css = "") {
     const title = esc(source.title || "证据来源");
     return source.url
       ? `<a class="tag source-tag${safeCss}" href="${esc(source.url)}" target="_blank" rel="noreferrer">${title}</a>`
-      : `<span class="tag source-tag${safeCss}">${title}</span>`;
+      : `<span class="tag source-tag local-source-tag${safeCss}" title="仅本机索引，无公开链接">本地资料：${title}</span>`;
   }).join("")}</div>`;
 }
 
