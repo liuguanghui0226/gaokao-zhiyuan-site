@@ -4169,6 +4169,28 @@ async function copyTextToClipboard(text) {
   }
 }
 
+function renderEvidenceLinks(evidence, css = "") {
+  const seen = new Set();
+  const sources = [];
+  for (const entry of evidence || []) {
+    const source = entry?.source;
+    if (!source) continue;
+    const key = source.url || source.title || "";
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    sources.push(source);
+    if (sources.length >= 5) break;
+  }
+  if (!sources.length) return "";
+  const safeCss = css ? ` ${esc(css)}` : "";
+  return `<div class="tag-row evidence-link-row">${sources.map((source) => {
+    const title = esc(source.title || "证据来源");
+    return source.url
+      ? `<a class="tag source-tag${safeCss}" href="${esc(source.url)}" target="_blank" rel="noreferrer">${title}</a>`
+      : `<span class="tag source-tag${safeCss}">${title}</span>`;
+  }).join("")}</div>`;
+}
+
 function renderRecommendationResults() {
   const rec = state.recommendation;
   if (!rec) {
@@ -4179,7 +4201,7 @@ function renderRecommendationResults() {
 
   const policy = state.data.modelPolicy || {};
   const resultCards = rec.results.map((item, index) => {
-    const evidenceTags = item.evidence.map((entry) => entry.source.title).slice(0, 5);
+    const evidenceLinks = renderEvidenceLinks(item.evidence, item.confidence === "A-" ? "" : "warn");
     const schools = item.schoolOptions.map((school) => `
       <div class="school-option">
         <div>
@@ -4223,7 +4245,7 @@ function renderRecommendationResults() {
         <h4>风险和排除条件</h4>
         <ul>${item.warnings.slice(0, 3).map((warning) => `<li>${esc(warning)}</li>`).join("")}</ul>
         <p class="confidence-text">${esc(item.confidenceReason)}</p>
-        ${renderTags(evidenceTags, item.confidence === "A-" ? "" : "warn")}
+        ${evidenceLinks}
       </details>
     </article>`;
   }).join("");

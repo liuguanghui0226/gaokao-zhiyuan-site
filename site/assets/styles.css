@@ -541,6 +541,17 @@ select {
   border-color: #efc5c8;
 }
 
+.source-tag {
+  text-decoration: none;
+}
+
+.source-tag:hover,
+.source-tag:focus-visible {
+  border-color: var(--leaf-dark);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(36, 116, 90, 0.16);
+}
+
 .source-list {
   display: grid;
   gap: 10px;
