@@ -3885,6 +3885,17 @@ function renderRules() {
   `;
 }
 
+function geographySummaryMetrics(data) {
+  const items = data?.items || [];
+  return {
+    courses: data?.courses?.length || 0,
+    items: items.length,
+    sources: data?.sources?.length || 0,
+    authoredSummaries: items.filter((item) => item.licenseStatus === "authored-summary").length,
+    citationOnlyItems: items.filter((item) => item.licenseStatus === "citation-only").length,
+  };
+}
+
 function renderGeography() {
   const data = state.geographyData;
   if (!data) {
@@ -3892,6 +3903,7 @@ function renderGeography() {
     return;
   }
 
+  const metrics = geographySummaryMetrics(data);
   const query = normalizeText(state.query);
   const courseMap = new Map(data.courses.map((course) => [course.id, course]));
   const visibleItems = data.items.filter((item) => {
@@ -3905,8 +3917,11 @@ function renderGeography() {
     return courseOk && (!query || searchText.includes(query));
   });
   const courseButtons = [
-    `<button class="geography-course-btn ${state.geographyCourse ? "" : "active"}" type="button" data-geography-course="">全部课程</button>`,
-    ...data.courses.map((course) => `<button class="geography-course-btn ${state.geographyCourse === course.id ? "active" : ""}" type="button" data-geography-course="${esc(course.id)}">${esc(course.name)}</button>`),
+    `<button class="geography-course-btn ${state.geographyCourse ? "" : "active"}" type="button" data-geography-course="">全部课程 · ${fmtNumber(metrics.items)}</button>`,
+    ...data.courses.map((course) => {
+      const count = data.items.filter((item) => item.courseId === course.id).length;
+      return `<button class="geography-course-btn ${state.geographyCourse === course.id ? "active" : ""}" type="button" data-geography-course="${esc(course.id)}">${esc(course.name)} · ${fmtNumber(count)}</button>`;
+    }),
   ].join("");
   const cards = visibleItems.map((item) => {
     const course = courseMap.get(item.courseId);
@@ -3945,6 +3960,22 @@ function renderGeography() {
       <h3>按课程复习自然地理、人文地理与资源环境</h3>
       <p>${esc(data.description)}</p>
       <div class="geography-course-grid">${courseButtons}</div>
+    </section>
+    <section class="band geography-provenance" data-geography-version="${esc(data.version)}">
+      <div class="data-summary-head">
+        <div>
+          <h3>资料边界与更新</h3>
+          <p>资料版本 ${esc(data.version)} · 来源索引与原创摘要分开标识。</p>
+        </div>
+        <span class="status">${fmtNumber(metrics.sources)} 条来源</span>
+      </div>
+      <div class="metric-grid geography-metric-grid">
+        ${renderMetric("课程", metrics.courses)}
+        ${renderMetric("知识摘要", metrics.items)}
+        ${renderMetric("原创摘要", metrics.authoredSummaries)}
+        ${renderMetric("引文型方法卡", metrics.citationOnlyItems)}
+      </div>
+      <p class="geography-boundary-note">引文型方法卡只用于概念与题型交叉核对，不复制题面、答案或竞赛知识点清单；原始许可未核验的本地资料不提供公开链接。</p>
     </section>
     ${cards ? `<div class="geography-card-list">${cards}</div>` : `<div class="empty-state"><h2>没有匹配的地理摘要</h2><p>换一个关键词，或切换课程范围。</p></div>`}
   `;
