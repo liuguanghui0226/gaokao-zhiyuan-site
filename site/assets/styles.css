@@ -280,6 +280,21 @@ select {
   line-height: 1.6;
 }
 
+.geography-provenance .metric-grid {
+  margin-bottom: 0;
+}
+
+.geography-provenance > .data-summary-head p,
+.geography-boundary-note {
+  margin: 6px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.geography-boundary-note {
+  font-size: 14px;
+}
+
 .geography-course-grid {
   display: flex;
   flex-wrap: wrap;

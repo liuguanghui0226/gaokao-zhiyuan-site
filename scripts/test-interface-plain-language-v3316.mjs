@@ -35,7 +35,7 @@ assert.ok(styles.includes(".discipline-tile > strong"));
 assert.ok(!styles.includes(".discipline-tile > small"));
 assert.ok(styles.includes("grid-template-columns: repeat(6, minmax(0, 1fr))"));
 assert.ok(styles.includes(".nav-btn:nth-last-child(-n + 2)"));
-assert.ok(index.includes("./assets/app.js?v=3.346.4"));
+assert.ok(index.includes("./assets/app.js?v=3.346.5"));
 assert.ok(app.includes("位次口径含政策加分"));
 assert.ok(app.includes("Number((score - minScore).toFixed(3))"));
 assert.ok(app.includes('aria-describedby="recommendStatus"'));
@@ -45,4 +45,4 @@ assert.ok(app.includes('form.setAttribute("aria-busy", "true")'));
 assert.ok(app.includes('await new Promise((resolve) => setTimeout(resolve, 0))'));
 assert.ok(styles.includes(".form-status"));
 
-console.log(JSON.stringify({ ok: true, plainLanguage: true, clickableDisciplineTiles: true, minimumExplicitTextSizePx: 14, assetVersion: "3.346.4" }, null, 2));
+console.log(JSON.stringify({ ok: true, plainLanguage: true, clickableDisciplineTiles: true, minimumExplicitTextSizePx: 14, assetVersion: "3.346.5" }, null, 2));
