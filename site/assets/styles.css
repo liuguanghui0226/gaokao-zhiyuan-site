@@ -712,6 +712,18 @@ select {
   justify-content: flex-end;
 }
 
+.recommendation-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.copy-status {
+  color: var(--leaf-dark);
+  font-size: 14px;
+}
+
 .form-status {
   grid-column: 1 / -1;
   min-height: 1.5em;

@@ -4023,6 +4023,72 @@ function renderDataFreshnessPanel(profile, today = currentChinaDate()) {
   </section>`;
 }
 
+function recommendationExportText(recommendation) {
+  const profile = recommendation?.profile || {};
+  const results = Array.isArray(recommendation?.results) ? recommendation.results : [];
+  const value = (input, fallback = "未填写") => {
+    const text = String(input ?? "").trim();
+    return text || fallback;
+  };
+  const generatedAt = recommendation?.generatedAt
+    ? new Date(recommendation.generatedAt).toLocaleString("zh-CN")
+    : "本次页面生成";
+  const lines = [
+    "全国高考志愿填报｜院校专业候选核验清单",
+    `生成时间：${generatedAt}`,
+    `省份：${value(profile.province)}`,
+    `科类/选科：${value(profile.subject)}`,
+    `分数：${value(profile.score)}；位次：${value(profile.rank)}`,
+    `策略：${value(profile.strategy)}`,
+    `结果分段：${value(recommendation?.band?.label)}`,
+    "",
+    "重要说明：以下内容是历史边界、专业适配和当前证据的核验线索，不等于录取概率，也不是正式志愿单。请逐项回省考试院和高校官网核对当年计划、选科、批次、收费和招生资格。",
+    "",
+  ];
+  if (!results.length) {
+    lines.push("当前没有可复制的推荐结果，请先生成推荐。");
+    return lines.join("\n");
+  }
+  results.forEach((result, index) => {
+    const examples = Array.isArray(result.examples) && result.examples.length
+      ? result.examples.join(" / ")
+      : "请展开页面查看院校建议";
+    const warnings = Array.isArray(result.warnings) && result.warnings.length
+      ? result.warnings.slice(0, 3).join("；")
+      : "请展开页面查看理由与风险";
+    lines.push(`${index + 1}. ${value(result.title, "未命名方向")}（${value(result.stance, "候选")}，置信度${value(result.confidence, "C")}）`);
+    lines.push(`   代表院校：${examples}`);
+    lines.push(`   当前提醒：${warnings}`);
+  });
+  return lines.join("\n");
+}
+
+async function copyTextToClipboard(text) {
+  try {
+    if (globalThis.navigator?.clipboard?.writeText) {
+      await globalThis.navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch {
+    // Fall through to the legacy selection-based copy path.
+  }
+  if (typeof document === "undefined" || typeof document.execCommand !== "function") return false;
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    return document.execCommand("copy");
+  } catch {
+    return false;
+  } finally {
+    textarea.remove();
+  }
+}
+
 function renderRecommendationResults() {
   const rec = state.recommendation;
   if (!rec) {
@@ -4113,6 +4179,10 @@ function renderRecommendationResults() {
         ${renderRankEstimateNotice(rec.profile)}
       </div>
       <div class="model-pill">数据 ${esc(String(policy.version || "v1").match(/v\d+(?:\.\d+)*/)?.[0] || "v1")}</div>
+    </div>
+    <div class="recommendation-actions">
+      <button class="ghost-action" id="copyRecommendation" type="button">复制核验清单</button>
+      <span id="copyRecommendationStatus" class="copy-status" role="status" aria-live="polite"></span>
     </div>
     ${renderDataFreshnessPanel(rec.profile)}
     ${belowVocationalLine ? belowLinePanel : limitedOnly ? limitedQualificationPanel : vocationalQualificationUnknown ? unknownQualificationPanel : vocationalLinePending ? pendingQualificationPanel : renderAdmissionHitPanel(rec.profile)}
@@ -4287,6 +4357,19 @@ function renderAdmissionScoreSummary() {
 function bindRecommendEvents() {
   const form = $("#recommendForm");
   if (!form) return;
+  const copyButton = $("#copyRecommendation");
+  const copyStatus = $("#copyRecommendationStatus");
+  copyButton?.addEventListener("click", async () => {
+    copyButton.disabled = true;
+    copyButton.setAttribute("aria-busy", "true");
+    if (copyStatus) copyStatus.textContent = "正在准备核验清单…";
+    const copied = await copyTextToClipboard(recommendationExportText(state.recommendation));
+    if (copyStatus) copyStatus.textContent = copied
+      ? "已复制，可发给家人讨论。"
+      : "复制失败，请手动选择页面内容。";
+    copyButton.disabled = false;
+    copyButton.removeAttribute("aria-busy");
+  });
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     saveCurrentRecommendationDraft();
