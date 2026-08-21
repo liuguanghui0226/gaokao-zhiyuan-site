@@ -1,0 +1,501 @@
+{
+  "version": "geo-2026.08.22.1",
+  "title": "高中地理核心知识与读图方法",
+  "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
+  "courses": [
+    {
+      "id": "compulsory-1",
+      "name": "地理必修第一册",
+      "gradeBand": "高中必修",
+      "focus": "自然地理过程、圈层相互作用与灾害防护"
+    },
+    {
+      "id": "compulsory-2",
+      "name": "地理必修第二册",
+      "gradeBand": "高中必修",
+      "focus": "人口、城镇、产业、交通与人地协调"
+    },
+    {
+      "id": "selective-1",
+      "name": "选择性必修1 自然地理基础",
+      "gradeBand": "高中选择性必修",
+      "focus": "地球运动、大气水体与自然环境规律"
+    },
+    {
+      "id": "selective-2",
+      "name": "选择性必修2 区域发展",
+      "gradeBand": "高中选择性必修",
+      "focus": "区域联系、综合治理与发展路径"
+    },
+    {
+      "id": "selective-3",
+      "name": "选择性必修3 资源、环境与国家安全",
+      "gradeBand": "高中选择性必修",
+      "focus": "资源环境治理、国家安全与生态文明"
+    }
+  ],
+  "sources": [
+    {
+      "id": "pep-geography-compulsory-1",
+      "title": "普通高中教科书 地理 必修 第一册",
+      "publisher": "人民教育出版社",
+      "editionNote": "人民教育出版社课程教材研究所、地理课程教材研究开发中心编著",
+      "licenseNote": "仅作教材来源标注与原创学习摘要证据；不在本站复制教材全文、插图或版式。"
+    },
+    {
+      "id": "pep-geography-compulsory-2",
+      "title": "普通高中教科书 地理 必修 第二册",
+      "publisher": "人民教育出版社",
+      "editionNote": "人民教育出版社课程教材研究所、地理课程教材研究开发中心编著",
+      "licenseNote": "仅作教材来源标注与原创学习摘要证据；不在本站复制教材全文、插图或版式。"
+    },
+    {
+      "id": "pep-geography-selective-1",
+      "title": "普通高中教科书 地理 选择性必修1 自然地理基础",
+      "publisher": "人民教育出版社",
+      "editionNote": "人民教育出版社课程教材研究所、地理课程教材研究开发中心编著",
+      "licenseNote": "仅作教材来源标注与原创学习摘要证据；不在本站复制教材全文、插图或版式。"
+    },
+    {
+      "id": "pep-geography-selective-2",
+      "title": "普通高中教科书 地理 选择性必修2 区域发展",
+      "publisher": "人民教育出版社",
+      "editionNote": "人民教育出版社课程教材研究所、地理课程教材研究开发中心编著",
+      "licenseNote": "仅作教材来源标注与原创学习摘要证据；不在本站复制教材全文、插图或版式。"
+    },
+    {
+      "id": "pep-geography-selective-3",
+      "title": "普通高中教科书 地理 选择性必修3 资源、环境与国家安全",
+      "publisher": "人民教育出版社",
+      "editionNote": "人民教育出版社课程教材研究所、地理课程教材研究开发中心编著",
+      "licenseNote": "仅作教材来源标注与原创学习摘要证据；不在本站复制教材全文、插图或版式。"
+    }
+  ],
+  "items": [
+    {
+      "id": "geo-c1-atmospheric-heating",
+      "courseId": "compulsory-1",
+      "title": "大气受热与近地面运动",
+      "summary": "分析气温变化时先分清太阳辐射、地面辐射和大气逆辐射，再沿着受热差异解释垂直运动、水平气压梯度和风。读图时要把能量过程与等温线、等压线位置对应起来，避免把“温度高”直接等同于“气压高”。",
+      "keywords": ["大气受热", "热力环流", "等压线", "风"],
+      "sourceIds": ["pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 34-45 页",
+          "note": "对应大气受热过程和大气运动章节，页码用于回到教材核对概念与图示。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-disaster-risk",
+      "courseId": "compulsory-1",
+      "title": "灾害风险的识别与减灾链条",
+      "summary": "灾害题可按“致灾因子-孕灾环境-承灾体-防御能力”拆解。先定位灾害类型和触发条件，再判断暴露人口、工程设施与脆弱环节，最后从监测预警、工程防护、应急响应和恢复重建等环节提出措施。",
+      "keywords": ["气象灾害", "地质灾害", "防灾减灾", "风险"],
+      "sourceIds": ["pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 100-119 页",
+          "note": "对应气象灾害、地质灾害、防灾减灾和地理信息技术应用内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-geomorphic-process",
+      "courseId": "compulsory-1",
+      "title": "地貌形成的过程证据",
+      "summary": "地貌判读不能只凭外形命名，要把物质来源、动力方向、侵蚀或堆积位置和时间尺度连成过程链。河流、风、海浪和冰川等外力作用常可通过沉积物粒径、地形剖面、沟谷形态和迎风背风差异寻找证据。",
+      "keywords": ["地貌", "侵蚀", "堆积", "过程"],
+      "sourceIds": ["pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 66-80 页",
+          "note": "对应常见地貌类型和地貌观察内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-water-cycle",
+      "courseId": "compulsory-1",
+      "title": "水循环与人类用水",
+      "summary": "水循环题先区分蒸发、降水、下渗、径流和水汽输送等环节，再判断人类活动改变的是水量分配、下垫面条件还是水质。修建水库、硬化地面和引水工程的影响应分别从时间、空间与生态效应说明。",
+      "keywords": ["水循环", "径流", "下渗", "水资源"],
+      "sourceIds": ["pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 46-49 页",
+          "note": "对应水循环章节起始内容，具体图表需结合教材原图复核。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-earth-system",
+      "courseId": "compulsory-1",
+      "title": "圈层联系与综合分析",
+      "summary": "综合自然地理材料时，把岩石圈、大气圈、水圈和生物圈当作相互作用系统。一个环节变化可能通过能量、物质或信息传递影响其他环节，答题应明确“变化-传递-结果”的方向，而不是罗列互不相连的自然要素。",
+      "keywords": ["地球圈层", "自然系统", "物质循环", "综合分析"],
+      "sourceIds": ["pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 21-27 页",
+          "note": "对应地球圈层结构内容，用于建立自然要素综合联系框架。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-agricultural-location",
+      "courseId": "compulsory-2",
+      "title": "农业区位的自然与社会因素",
+      "summary": "农业区位分析先看光热水土等自然条件，再看市场、交通、技术、劳动力和政策等社会经济条件。区位优势不是固定标签，市场变化、设施农业和技术进步可能改变限制因素，评价时要指出主导因素及其变化方向。",
+      "keywords": ["农业区位", "自然条件", "市场", "技术"],
+      "sourceIds": ["pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 54-62 页",
+          "note": "对应农业区位因素及其变化内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-industrial-location",
+      "courseId": "compulsory-2",
+      "title": "工业与服务业区位比较",
+      "summary": "工业布局常围绕原料、能源、市场、交通、土地和环境约束展开，服务业更强调人口集聚、消费需求、可达性和信息联系。比较两个地点时要使用同一评价维度，并区分企业成本、区域就业和环境影响。",
+      "keywords": ["工业区位", "服务业", "交通", "环境约束"],
+      "sourceIds": ["pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 63-79 页",
+          "note": "对应工业区位因素及其变化、服务业区位因素内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-migration",
+      "courseId": "compulsory-2",
+      "title": "人口分布、迁移与容量",
+      "summary": "人口材料要把“现状分布”“迁移过程”和“承载或容量约束”分开。解释人口集中既要联系自然环境与资源条件，也要联系就业、公共服务和交通；评价迁移影响时分别讨论迁出地与迁入地，并避免把人口容量当作精确人口上限。",
+      "keywords": ["人口分布", "人口迁移", "人口容量", "公共服务"],
+      "sourceIds": ["pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 2-23 页",
+          "note": "对应人口分布、人口迁移和人口容量三个主题。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-sustainable-development",
+      "courseId": "compulsory-2",
+      "title": "人地协调与可持续发展",
+      "summary": "可持续发展评价至少同时看资源环境、经济收益和社会公平，并明确时间尺度。治理措施要从减少压力、提高效率、修复生态和制度协同等方面形成组合，不能只写“加强宣传”或把短期产值增加等同于发展质量提高。",
+      "keywords": ["人地协调", "可持续发展", "资源环境", "社会公平"],
+      "sourceIds": ["pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 96-119 页",
+          "note": "对应主要环境问题、可持续发展和中国国家发展战略举例内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-transport-network",
+      "courseId": "compulsory-2",
+      "title": "交通布局与区域联系",
+      "summary": "交通题可分为“为什么这样布局”和“布局后带来什么影响”两步。前者关注地形、人口、产业、技术与投资，后者关注时空距离、要素流动、产业分工、城市等级和生态风险；评价线路不能只看最短距离。",
+      "keywords": ["交通运输", "区域联系", "网络", "产业分工"],
+      "sourceIds": ["pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 80-95 页",
+          "note": "对应区域发展对交通布局的影响和交通布局对区域发展的影响内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-climate-system",
+      "courseId": "selective-1",
+      "title": "地球运动与气候节律",
+      "summary": "地球运动题先锁定自转、公转、黄赤交角和太阳直射点，再推导昼夜长短、正午太阳高度和季节变化。图示中要统一观察者纬度、日期与方向，先写变化规律，再解释热量差异及其对气候的影响。",
+      "keywords": ["地球运动", "太阳高度", "昼夜长短", "季节"],
+      "sourceIds": ["pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 2-17 页",
+          "note": "对应地球的自转和公转、地球运动的地理意义内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-atmospheric-circulation",
+      "courseId": "selective-1",
+      "title": "天气系统与大气环流",
+      "summary": "天气系统判读要把气压场、风场、锋面或气旋反气旋的空间结构结合起来，再联系移动方向判断天气变化。气候题则应从太阳辐射、环流、海陆位置、地形和下垫面共同解释，避免用单一因素套用所有区域。",
+      "keywords": ["天气系统", "气压带风带", "气候", "锋面"],
+      "sourceIds": ["pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 42-63 页",
+          "note": "对应常见天气系统、气压带风带及其对气候影响内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-ocean-atmosphere",
+      "courseId": "selective-1",
+      "title": "陆地水体、洋流与海气作用",
+      "summary": "水体题先判断水量补给、排泄和季节变化，再分析洋流对热量、盐度、渔场和航运的影响。海气相互作用强调双向反馈，海温异常可以影响大气环流，而风场和降水变化也会反过来改变海洋状态。",
+      "keywords": ["洋流", "海气相互作用", "水体", "渔场"],
+      "sourceIds": ["pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 64-79 页",
+          "note": "对应陆地水体、洋流和海气相互作用内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-natural-regionality",
+      "courseId": "selective-1",
+      "title": "自然环境整体性与地域差异",
+      "summary": "整体性强调自然要素之间的相互制约和牵一发而动全身，地域差异性强调空间分异规律。分析区域变化时先判断主导分异因素，再说明从局部到整体的影响链，做到“位置-要素-规律-结果”相互对应。",
+      "keywords": ["整体性", "地域差异", "分异规律", "主导因素"],
+      "sourceIds": ["pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 80-94 页",
+          "note": "对应自然环境的整体性和地域差异性内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-landform-mechanism",
+      "courseId": "selective-1",
+      "title": "内外力共同塑造地表形态",
+      "summary": "地表形态变化既受构造运动、岩浆活动等内力影响，也受风化、侵蚀、搬运和堆积等外力影响。题目若给出剖面、岩层或河流演化信息，应先判读地质过程，再结合地形对聚落、交通和工程的约束。",
+      "keywords": ["内力作用", "外力作用", "构造地貌", "河流地貌"],
+      "sourceIds": ["pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 18-41 页",
+          "note": "对应塑造地表形态的力量、构造地貌和河流地貌发育内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-regional-coordination",
+      "courseId": "selective-2",
+      "title": "区域整体性与关联性",
+      "summary": "区域分析要先说明边界和尺度，再判断区域内部要素的整体联系以及区域之间的要素流动。跨区域比较不能只列差异，应指出差异如何形成分工、互补或约束，并说明尺度变化会不会改变结论。",
+      "keywords": ["区域整体性", "区域关联性", "尺度", "要素流动"],
+      "sourceIds": ["pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 2-17 页",
+          "note": "对应多种多样的区域、区域整体性和关联性内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-ecological-restoration",
+      "courseId": "selective-2",
+      "title": "生态脆弱区与资源型城市转型",
+      "summary": "综合治理应先识别生态脆弱性的主导机制或资源型城市的路径依赖，再把产业调整、生态修复、基础设施、就业转移和治理制度组合起来。评价转型不能只看项目数量，还要看资源消耗、环境质量和居民收益是否持续改善。",
+      "keywords": ["生态脆弱区", "资源型城市", "综合治理", "产业转型"],
+      "sourceIds": ["pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 18-39 页",
+          "note": "对应区域发展的自然环境基础、生态脆弱区治理和资源枯竭型城市转型发展内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-industrial-transfer",
+      "courseId": "selective-2",
+      "title": "产业结构变化与产业转移",
+      "summary": "产业结构变化要结合技术、需求、资源环境约束和区域政策解释。产业转移既可能带来资本、就业和技术，也可能转移污染与资源压力；因此要同时评价迁出地、迁入地和产业链上下游的长期影响。",
+      "keywords": ["产业结构", "产业转移", "技术", "区域政策"],
+      "sourceIds": ["pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 40-58 页",
+          "note": "对应城市的辐射功能和地区产业结构变化内容；产业转移延伸证据见第 76-82 页。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-resource-allocation",
+      "courseId": "selective-2",
+      "title": "流域协调与资源跨区域调配",
+      "summary": "流域治理具有上下游、左右岸和不同部门之间的外部性，措施要覆盖水量、水质、用地和产业。资源跨区域调配应同时分析调出区、受调区、线路建设和生态风险，不能只用“缓解短缺”概括全部影响。",
+      "keywords": ["流域治理", "资源调配", "上下游", "生态风险"],
+      "sourceIds": ["pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 60-75 页",
+          "note": "对应流域内协调发展和资源跨区域调配内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-international-cooperation",
+      "courseId": "selective-2",
+      "title": "区域发展与国际合作",
+      "summary": "国际合作题应从区位、资源、市场、交通、制度和风险等维度说明合作基础，再评价分工收益与安全边界。区域开放不是单向输出，稳定的合作需要基础设施互联、规则协调、利益共享和风险治理共同支撑。",
+      "keywords": ["国际合作", "区域开放", "区位", "风险治理"],
+      "sourceIds": ["pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 83-93 页",
+          "note": "对应国际合作内容，具体案例应按题目材料单独核对。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-ecosystem-services",
+      "courseId": "selective-3",
+      "title": "自然环境服务与资源利用",
+      "summary": "自然环境既提供供给、调节、文化和支持等服务，也存在承载边界和机会成本。资源利用评价要把资源类型、形成条件、更新速度、空间分布与利用方式连起来，区分“有资源”与“可持续利用”。",
+      "keywords": ["生态系统服务", "自然资源", "承载力", "机会成本"],
+      "sourceIds": ["pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 2-21 页",
+          "note": "对应自然环境服务功能、自然资源及其利用和环境问题内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-energy-security",
+      "courseId": "selective-3",
+      "title": "能源安全的多维度判断",
+      "summary": "能源安全不只是总量够不够，还包括来源多样性、运输通道、价格波动、技术能力、生态约束和应急替代。分析能源方案时要比较供给稳定性、经济成本和环境代价，并明确不同时间尺度下的优先级。",
+      "keywords": ["能源安全", "能源转型", "运输通道", "应急保障"],
+      "sourceIds": ["pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 22-36 页",
+          "note": "对应资源安全对国家安全的影响和中国能源安全内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-food-security",
+      "courseId": "selective-3",
+      "title": "耕地、粮食与食物安全",
+      "summary": "粮食安全要同时考虑耕地数量与质量、水资源、技术、储运、贸易和灾害风险。保护耕地不能只追求面积，还要关注土壤质量、生产稳定性和用途管制；提高供给能力也应与节约、减损和膳食结构联系起来。",
+      "keywords": ["粮食安全", "耕地保护", "土壤质量", "资源约束"],
+      "sourceIds": ["pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 37-45 页",
+          "note": "对应中国的耕地资源与粮食安全内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-marine-space-security",
+      "courseId": "selective-3",
+      "title": "海洋空间资源开发与安全",
+      "summary": "海洋空间开发需要统筹港口、渔业、能源、生态保护、航运和国土安全等用途。评价海洋项目时应先识别空间冲突和环境容量，再比较区位收益、工程条件、风险防控与长期公共利益。",
+      "keywords": ["海洋空间", "海洋资源", "国土安全", "空间冲突"],
+      "sourceIds": ["pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 46-56 页",
+          "note": "对应海洋空间资源开发与国家安全内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-climate-environmental-safety",
+      "courseId": "selective-3",
+      "title": "环境安全、气候变化与生态文明",
+      "summary": "环境安全题应从暴露度、脆弱性和适应能力判断风险，并区分污染治理、生态保护与气候变化适应减缓。生态文明建设需要把资源效率、污染控制、生态修复、空间规划和制度合作放在同一治理框架中。",
+      "keywords": ["环境安全", "气候变化", "生态保护", "生态文明"],
+      "sourceIds": ["pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 58-113 页",
+          "note": "对应环境安全、环境污染、生态保护、全球气候变化和生态文明内容。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    }
+  ]
+}
