@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.2",
+  "version": "geo-2026.08.22.3",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -117,6 +117,69 @@
       "title": "海赛参考知识点：防灾减灾",
       "publisher": "本地海洋竞赛参考资料",
       "editionNote": "DOC 文件；文件元数据标示 31 页；作为风暴潮、海冰、海岸灾害与防灾措施的交叉核对材料。",
+      "licenseNote": "原始发布许可未核验；仅作 citation-only 研究来源，公开层只发布原创高中地理方法摘要，不复制原文或知识点清单。"
+    },
+    {
+      "id": "local-geography-worktree-2026-06",
+      "title": "本地历史高中地理知识模块（其他工作树）",
+      "publisher": "用户本地历史工作树",
+      "editionNote": "lghui-round542-proof-depth/high_school_geology，2026 年 6 月快照；KNOWLEDGE_STRUCTURE.md SHA-256 5cf04f0b0fbfc96798d20e2ec8db31d96772ce159d3eb663e4ff0c5bf18cdcb7。",
+      "licenseNote": "用户自有历史工作树；公开层只发布重新组织的原创方法框架，不复制 HTML 正文、题库、图表或页面版式。"
+    },
+    {
+      "id": "exam-zhejiang-four-schools-2026-03-geography",
+      "title": "浙江四校（含精诚联盟）2025—2026 学年高二下学期 3 月阶段检测地理试题",
+      "publisher": "浙江四校联考（本地题库文件）",
+      "editionNote": "2026 年 3 月 PDF，7 页；SHA-256 4e47fa894358a9c7e20bf3e2c3d833a60a45a8572f565d4de10131d3d31224cd；用于识别人口、气候舒适度、土地退化、GIS 和区域农业题型方法。",
+      "licenseNote": "仅作题型研究与来源标注；公开层只发布原创方法抽象，不复制题干、答案、解析、图表或版式。"
+    },
+    {
+      "id": "exam-harbin-no3-2026-04-geography",
+      "title": "哈尔滨市第三中学 2025—2026 学年度下学期高二 4 月月考地理试题",
+      "publisher": "哈尔滨市第三中学（本地题库文件）",
+      "editionNote": "2026 年 4 月 PDF，8 页；SHA-256 6be1b38b12ba0a98c804b27ec7bedf69e1f34c9dc736886866eee9a916b91571；用于识别农业轮作、智能农业、交通工程、地方时、生态与区域发展题型方法。",
+      "licenseNote": "仅作题型研究与来源标注；公开层只发布原创方法抽象，不复制题干、答案、解析、图表或版式。"
+    },
+    {
+      "id": "exam-shenyang-huimin-2026-04-geography",
+      "title": "沈阳市回民中学 2027 级高二下学 4 月月考地理试题",
+      "publisher": "沈阳市回民中学（本地题库文件）",
+      "editionNote": "2026 年 4 月 PDF，6 页；SHA-256 3a3675d992a51e1f6a56ad571e7298f261c057058d91e7789747c2f5c57bb53c；用于识别冻土、荒漠化、农田水利、极地科考和流域生态补偿题型方法。",
+      "licenseNote": "仅作题型研究与来源标注；公开层只发布原创方法抽象，不复制题干、答案、解析、图表或版式。"
+    },
+    {
+      "id": "marine-ecology-reference-2017",
+      "title": "海赛参考知识点：海洋生态",
+      "publisher": "本地海洋竞赛参考资料",
+      "editionNote": "DOCX；转换为 PDF 后 4 页供内部页码核验；SHA-256 fd882c35c9c10f38c71f45e93625ce97292d4461fe35efd32eaa091059bb697c。",
+      "licenseNote": "原始发布许可未核验；仅作 citation-only 研究来源，公开层只发布原创高中地理方法摘要，不复制原文或知识点清单。"
+    },
+    {
+      "id": "marine-chemistry-reference-2017",
+      "title": "海赛参考知识点：海洋化学",
+      "publisher": "本地海洋竞赛参考资料",
+      "editionNote": "DOCX；转换为 PDF 后 15 页供内部页码核验；SHA-256 8f26b59d69ba69be788da310b0964b31602fbffb17a44ba89a29814e8479c212。",
+      "licenseNote": "原始发布许可未核验；仅作 citation-only 研究来源，公开层只发布原创高中地理方法摘要，不复制原文或知识点清单。"
+    },
+    {
+      "id": "marine-survey-reference-2017",
+      "title": "海赛参考知识点：海洋调查",
+      "publisher": "本地海洋竞赛参考资料",
+      "editionNote": "DOCX；转换为 PDF 后 10 页供内部页码核验；SHA-256 21201584dc8ee96f327489481ac022b8d11acbc1c58494f7caab8fe8727e5d6f。",
+      "licenseNote": "原始发布许可未核验；仅作 citation-only 研究来源，公开层只发布原创高中地理方法摘要，不复制原文或知识点清单。"
+    },
+    {
+      "id": "marine-island-reference-2017",
+      "title": "海赛参考知识点：海岛管理",
+      "publisher": "本地海洋竞赛参考资料",
+      "editionNote": "DOCX；转换为 PDF 后 2 页供内部页码核验；SHA-256 8d819a109d931c2a98a2d241ba7ad428bb5bfa46523d409325a5d2ebdada7dce。",
+      "licenseNote": "原始发布许可未核验；仅作 citation-only 研究来源，公开层只发布原创高中地理方法摘要，不复制原文或知识点清单。"
+    },
+    {
+      "id": "marine-weather-reference-2017",
+      "title": "海赛参考知识点：海洋气象",
+      "publisher": "本地海洋竞赛参考资料",
+      "editionNote": "DOC 文件；Word 元数据标示 5 页；SHA-256 45e7c6c8dc4b7931882c9965aada7967ab087408b32eb8ecf1a7e97363c3e454。",
       "licenseNote": "原始发布许可未核验；仅作 citation-only 研究来源，公开层只发布原创高中地理方法摘要，不复制原文或知识点清单。"
     }
   ],
@@ -979,6 +1042,595 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "第 46-56 页",
           "note": "回到教材核对海洋空间资源开发与国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-water-resource-balance",
+      "courseId": "compulsory-1",
+      "title": "水资源供需平衡与时空配置",
+      "summary": "水资源题先把供水来源、需求部门和季节变化放在同一张表中，再判断限制环节是总量、时序、空间还是水质。水库、节水灌溉和跨区调配要分别说明改变了什么，并补充下游生态与用水公平的影响。",
+      "keywords": ["水资源", "供需平衡", "水利工程", "生态影响"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-harbin-no3-2026-04-geography", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "exam-harbin-no3-2026-04-geography",
+          "locator": "第 1-2 页",
+          "note": "对应轮作灌溉、高标准农田和水资源调蓄的题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 46-49 页",
+          "note": "回到教材核对水循环环节和人类用水影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-ecosystem-biodiversity",
+      "courseId": "compulsory-1",
+      "title": "生态系统与生物多样性判读",
+      "summary": "判断生物多样性时，不只看物种数量，还要联系栖息地类型、食物供给、水热条件、空间连通性和人类干扰。材料若涉及河流、湿地或山地，应沿着环境梯度解释群落差异，再评价保护措施。",
+      "keywords": ["生态系统", "生物多样性", "栖息地", "环境梯度"],
+      "sourceIds": ["local-geography-worktree-2026-06", "marine-ecology-reference-2017", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "marine-ecology-reference-2017",
+          "locator": "第 1-4 页",
+          "note": "对应海洋生态系统组成、食物网和滨海生境的交叉核对范围。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 21-27 页",
+          "note": "回到教材核对自然环境要素之间的整体联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-coastal-process-tidal-landform",
+      "courseId": "compulsory-1",
+      "title": "海岸动力与潮汐地貌过程",
+      "summary": "海岸地貌判读要把波浪、潮汐、沿岸流、河流来沙和海平面变化分开。先判断能量来源与物质输运方向，再解释海湾、沙滩、三角洲或海蚀地貌的形成，工程布局还要考虑泥沙再分配和灾害风险。",
+      "keywords": ["海岸地貌", "波浪", "潮汐", "泥沙输运"],
+      "sourceIds": ["local-geography-worktree-2026-06", "marine-geology-reference-2024", "marine-weather-reference-2017"],
+      "evidence": [
+        {
+          "sourceId": "marine-geology-reference-2024",
+          "locator": "第 1-46 页",
+          "note": "对应海岸地貌、海水运动和沉积物输运的交叉核对范围。"
+        },
+        {
+          "sourceId": "marine-weather-reference-2017",
+          "locator": "第 1-10 页",
+          "note": "对应风场、波浪和沿海天气过程的交叉核对范围。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-change-age-structure",
+      "courseId": "compulsory-2",
+      "title": "人口变化、年龄结构与公共服务",
+      "summary": "人口变化题要区分自然增长、机械增长、户籍人口与常住人口，并把年龄结构和就业机会联系起来。面对人口流出或老龄化，措施应同时覆盖产业、公共服务、住房教育和养老，不能只提出吸引人才。",
+      "keywords": ["人口变化", "年龄结构", "常住人口", "公共服务"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-zhejiang-four-schools-2026-03-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "exam-zhejiang-four-schools-2026-03-geography",
+          "locator": "第 2-3 页",
+          "note": "对应户籍人口、常住人口和区域人口措施的题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 1-27 页",
+          "note": "回到教材核对人口数量变化、空间变化和合理容量。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urban-spatial-structure",
+      "courseId": "compulsory-2",
+      "title": "城市内部空间结构判读",
+      "summary": "城市内部空间结构可按功能分区、土地付租能力、交通可达性和历史演变分析。读图时先定位中心商务区、居住区、工业区与生态空间，再解释布局差异及其对通勤、污染和公共服务的影响。",
+      "keywords": ["城市空间结构", "功能分区", "可达性", "土地利用"],
+      "sourceIds": ["local-geography-worktree-2026-06", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 28-53 页",
+          "note": "回到教材核对城市内部空间结构、功能区和城市化内容。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urban-hierarchy-services",
+      "courseId": "compulsory-2",
+      "title": "城市等级与服务功能网络",
+      "summary": "城市等级与服务功能判断要看服务范围、功能种类、交通联系和区域分工，而不是只看行政名称。评价中心城市辐射时，应同时培育次级节点、完善网络联系和形成错位互补，避免单中心过度集聚。",
+      "keywords": ["城市等级", "服务范围", "中心城市", "网络协同"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-zhejiang-four-schools-2026-03-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "exam-zhejiang-four-schools-2026-03-geography",
+          "locator": "第 1-2 页",
+          "note": "对应中心城市辐射和城市群交通联系的题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 28-53 页",
+          "note": "回到教材核对不同等级城市的服务功能。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-agricultural-type-modernization",
+      "courseId": "compulsory-2",
+      "title": "农业地域类型与现代化转型",
+      "summary": "农业地域类型题先判断自然条件与主导作物，再分析经营规模、机械化、市场和技术。现代化不等于单纯扩大规模，还要考察水土保持、投入品效率、产业链延伸和抗风险能力。",
+      "keywords": ["农业地域类型", "机械化", "农业现代化", "产业链"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-harbin-no3-2026-04-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "exam-harbin-no3-2026-04-geography",
+          "locator": "第 1-2 页",
+          "note": "对应小麦—玉米轮作、智能农业和土地整治的题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 54-62 页",
+          "note": "回到教材核对农业区位因素及其变化。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-industrial-region-formation",
+      "courseId": "compulsory-2",
+      "title": "工业地域形成与集聚扩散",
+      "summary": "工业地域形成题要沿原料、能源、市场、交通、劳动力、技术和环境约束追踪集聚过程。产业集聚能共享基础设施和信息，也可能带来拥堵、污染与同质竞争，评价时要写出集聚与扩散的双向变化。",
+      "keywords": ["工业地域", "产业集聚", "产业扩散", "环境约束"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-harbin-no3-2026-04-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "exam-harbin-no3-2026-04-geography",
+          "locator": "第 2-3 页",
+          "note": "对应交通工程与区域产业协同的题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 63-79 页",
+          "note": "回到教材核对工业和服务业区位因素。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-transport-corridor-accessibility",
+      "courseId": "compulsory-2",
+      "title": "交通廊道、可达性与区域联系",
+      "summary": "交通廊道题分成线路为何经过、建成后如何改变区域两步。先比较地形、地质、河网、投资与技术，再分析时空距离、要素流动、产业链协同和生态风险；旧线路保留还要看货运、短途客运与网络冗余。",
+      "keywords": ["交通廊道", "可达性", "区域联系", "网络冗余"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-harbin-no3-2026-04-geography", "exam-zhejiang-four-schools-2026-03-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "exam-harbin-no3-2026-04-geography",
+          "locator": "第 2-3 页",
+          "note": "对应铁路选线、地形地质约束和新旧线路分工的题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 80-95 页",
+          "note": "回到教材核对交通运输布局及区域联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-solar-radiation-seasonality",
+      "courseId": "selective-1",
+      "title": "太阳辐射、季节变化与能量收支",
+      "summary": "太阳辐射题先锁定直射点、纬度、日期和地方时，再推导太阳高度、昼夜长短与地表获得热量。涉及光伏或建筑采光时，还要把季节收支、遮挡、坡向和储能需求纳入同一过程链。",
+      "keywords": ["太阳辐射", "太阳高度", "季节变化", "能量收支"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-harbin-no3-2026-04-geography", "exam-zhejiang-four-schools-2026-03-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "exam-harbin-no3-2026-04-geography",
+          "locator": "第 3-5 页",
+          "note": "对应地方时、太阳视运动和建筑日照题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 1-22 页",
+          "note": "回到教材核对地球运动和太阳辐射规律。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-earth-structure-seismic-evidence",
+      "courseId": "selective-1",
+      "title": "地球内部结构与地震构造证据",
+      "summary": "地球内部结构和地质过程题要用地震波、板块边界、岩层关系和火山地震分布寻找证据。回答构造地貌形成时，先判运动类型，再说明挤压、张裂、俯冲或抬升如何改变地表形态与工程条件。",
+      "keywords": ["地球内部结构", "地震波", "板块边界", "构造地貌"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-zhejiang-four-schools-2026-03-geography", "marine-geology-reference-2024", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "exam-zhejiang-four-schools-2026-03-geography",
+          "locator": "第 1-2 页",
+          "note": "对应板块边界、地貌和地质剖面题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 44-61 页",
+          "note": "回到教材核对地球内部结构和地表形态形成。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-soil-profile-formation",
+      "courseId": "selective-1",
+      "title": "土壤剖面与成土过程",
+      "summary": "土壤剖面题先看成土母质、气候、生物、地形和时间，再区分有机质积累、淋溶、淀积和盐分聚集。比较不同地点时要指出主导因素及其对肥力、保水性、侵蚀风险和农业利用的影响。",
+      "keywords": ["土壤剖面", "成土因素", "淋溶", "土壤肥力"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-shenyang-huimin-2026-04-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "exam-shenyang-huimin-2026-04-geography",
+          "locator": "第 2-3 页",
+          "note": "对应冻土、土壤冻结和区域自然地理资料判读。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 80-106 页",
+          "note": "回到教材核对自然环境要素及地域差异。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-vegetation-altitudinal-zonation",
+      "courseId": "selective-1",
+      "title": "植被垂直地带性与水热组合",
+      "summary": "植被垂直地带性判读要同时观察海拔、坡向、热量、水分和风力，不能把海拔变化直接等同于温度变化。若出现林线、草甸或荒漠带，应沿水热组合解释，并说明人类放牧、灌溉等干扰。",
+      "keywords": ["植被分异", "垂直地带性", "水热组合", "林线"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-zhejiang-four-schools-2026-03-geography", "exam-harbin-no3-2026-04-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "exam-zhejiang-four-schools-2026-03-geography",
+          "locator": "第 4-5 页",
+          "note": "对应山地植被垂直变化和主导因素题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 80-106 页",
+          "note": "回到教材核对自然环境整体性和地域差异。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-climate-comfort-and-classification",
+      "courseId": "selective-1",
+      "title": "气候类型与舒适度综合判读",
+      "summary": "气候舒适度材料要把气温、湿度、风速和降水分解后再合成评价，先找季节主导因素，再联系纬度、海陆位置、环流和天气系统。旅游关注度不等于舒适度，二者要用时间错位和市场行为分别解释。",
+      "keywords": ["气候类型", "舒适度", "湿度", "天气系统"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-zhejiang-four-schools-2026-03-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "exam-zhejiang-four-schools-2026-03-geography",
+          "locator": "第 2-3 页",
+          "note": "对应气候舒适度、旅游关注度和天气系统的题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 23-43 页",
+          "note": "回到教材核对大气环流和气候形成因素。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-seawater-salinity-and-ice",
+      "courseId": "selective-1",
+      "title": "海水盐度、密度与结冰变化",
+      "summary": "海水盐度和海冰题先判断蒸发、降水、径流、融冰与结冰析盐的方向，再分析密度、对流和水体流动性。比较结冰期时要区分纬度、海拔、封闭程度、盐度和季节热量，避免只按气温判断。",
+      "keywords": ["海水盐度", "海水密度", "海冰", "结冰期"],
+      "sourceIds": ["local-geography-worktree-2026-06", "marine-chemistry-reference-2017", "marine-weather-reference-2017", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "marine-chemistry-reference-2017",
+          "locator": "第 13-15 页",
+          "note": "对应盐度、海冰冰点和海水理化性质的交叉核对范围。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 55-80 页",
+          "note": "回到教材核对水体性质、洋流和海气作用。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-gis-remote-sensing-evidence",
+      "courseId": "selective-2",
+      "title": "GIS、遥感与区域证据链",
+      "summary": "地理信息技术选择题要按任务匹配工具：遥感获取大范围表面信息，GIS进行图层叠加与空间分析，定位系统提供位置与导航。作答时先说明数据来源，再写分析目标和误差边界，不能把预测、监测和定位混为一谈。",
+      "keywords": ["GIS", "遥感", "空间分析", "证据链"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-zhejiang-four-schools-2026-03-geography", "marine-survey-reference-2017", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "exam-zhejiang-four-schools-2026-03-geography",
+          "locator": "第 4-5 页",
+          "note": "对应海温变化研究与地理信息技术选择题材料。"
+        },
+        {
+          "sourceId": "marine-survey-reference-2017",
+          "locator": "第 1-10 页",
+          "note": "对应海洋观测、测量和空间数据获取的交叉核对范围。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-desertification-mechanism",
+      "courseId": "selective-2",
+      "title": "土地退化与荒漠化机制",
+      "summary": "土地退化分析要区分自然脆弱性、气候波动与人类压力，沿植被减少、土壤裸露、风蚀增强和生产力下降建立因果链。治理应结合封育、节水、合理放牧、能源替代和生计调整，不能只写植树。",
+      "keywords": ["土地退化", "荒漠化", "风蚀", "生态治理"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-zhejiang-four-schools-2026-03-geography", "exam-shenyang-huimin-2026-04-geography", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "exam-zhejiang-four-schools-2026-03-geography",
+          "locator": "第 3-4 页",
+          "note": "对应非洲土地退化和主导因素判读材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 1-24 页",
+          "note": "回到教材核对生态脆弱区与区域综合治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-forest-ecosystem-restoration",
+      "courseId": "selective-2",
+      "title": "森林生态功能与恢复治理",
+      "summary": "森林保护题要从水源涵养、土壤保持、生物栖息和碳循环等功能出发，判断采伐、火灾、道路或单一造林的影响。修复措施应匹配退化机制，兼顾自然恢复、树种结构、社区收益和长期监测。",
+      "keywords": ["森林生态", "水源涵养", "生态修复", "生物栖息"],
+      "sourceIds": ["local-geography-worktree-2026-06", "marine-ecology-reference-2017", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "marine-ecology-reference-2017",
+          "locator": "第 1-4 页",
+          "note": "对应生态系统结构、栖息地和生态服务的交叉核对范围。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 25-48 页",
+          "note": "回到教材核对生态脆弱区治理和区域发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-energy-development-environment",
+      "courseId": "selective-2",
+      "title": "能源开发、区域发展与环境代价",
+      "summary": "能源开发评价先看资源分布、品质、开采条件、交通与市场，再比较供给稳定性、技术成本和生态代价。能源基地建设要同步考虑水资源、土地扰动、污染控制、产业转型和应急替代，避免只写增加供给。",
+      "keywords": ["能源开发", "资源条件", "环境代价", "能源转型"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-shenyang-huimin-2026-04-geography", "marine-chemistry-reference-2017", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "exam-shenyang-huimin-2026-04-geography",
+          "locator": "第 1-2 页",
+          "note": "对应资源贸易、冻土环境和农业基础设施的区域条件材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 20-42 页",
+          "note": "回到教材核对能源安全、供给结构与环境约束。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-watershed-ecological-compensation",
+      "courseId": "selective-2",
+      "title": "流域生态补偿与上下游外部性",
+      "summary": "流域生态补偿题要先识别上游保护行为与下游受益之间的外部性，再说明水量、水质、产业和财政责任如何传导。措施可以组合监测考核、横向补偿、产业调整和生态修复，并明确谁付出、谁受益、谁承担风险。",
+      "keywords": ["流域治理", "生态补偿", "上下游", "外部性"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-shenyang-huimin-2026-04-geography", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "exam-shenyang-huimin-2026-04-geography",
+          "locator": "第 4-6 页",
+          "note": "对应流域水文、生态安全和上下游责任的题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 49-78 页",
+          "note": "回到教材核对流域协调和资源跨区域配置。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-regional-agriculture-tourism",
+      "courseId": "selective-2",
+      "title": "区域农业、研学旅游与产业融合",
+      "summary": "区域农业与旅游融合题要把资源特色、季节节律、交通可达性、市场需求和承载力连起来。农业研学或乡村旅游既要延长产业链，也要保护景观、控制游客压力和保障社区收益，不能把项目数量当成发展质量。",
+      "keywords": ["区域农业", "研学旅游", "产业融合", "承载力"],
+      "sourceIds": ["local-geography-worktree-2026-06", "exam-harbin-no3-2026-04-geography", "exam-zhejiang-four-schools-2026-03-geography", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "exam-harbin-no3-2026-04-geography",
+          "locator": "第 6-8 页",
+          "note": "对应地坑院保护、农业研学和区域产业发展的题型材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 79-102 页",
+          "note": "回到教材核对区域发展、产业融合与可持续路径。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-marine-ecosystem-red-tide",
+      "courseId": "selective-3",
+      "title": "海洋生态系统与赤潮风险",
+      "summary": "赤潮等海洋生态异常应按营养盐输入、水体交换、温度、光照和风浪条件分析，不把单一因素当成充分原因。治理要沿陆源减排、监测预警、养殖管理和生态修复展开，并关注食物网和公共安全。",
+      "keywords": ["海洋生态", "赤潮", "营养盐", "生态风险"],
+      "sourceIds": ["local-geography-worktree-2026-06", "marine-ecology-reference-2017", "marine-environment-reference-2023", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "marine-ecology-reference-2017",
+          "locator": "第 1-4 页",
+          "note": "对应赤潮、海洋生态系统结构和滨海生境的交叉核对范围。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 58-82 页",
+          "note": "回到教材核对环境安全、污染治理和生态保护。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-marine-water-quality-indicators",
+      "courseId": "selective-3",
+      "title": "海洋水质指标与污染过程",
+      "summary": "海洋水质评价要区分污染负荷、溶解氧、酸碱度和营养盐等指标的含义，说明它们分别反映有机物分解、缺氧风险或富营养化过程。读材料时先判指标变化，再连接污染来源、水体交换和治理措施。",
+      "keywords": ["海洋水质", "溶解氧", "富营养化", "污染过程"],
+      "sourceIds": ["marine-chemistry-reference-2017", "marine-environment-reference-2023", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "marine-chemistry-reference-2017",
+          "locator": "第 1-15 页",
+          "note": "对应 COD、BOD、溶解氧、pH 和营养盐指标的交叉核对范围。"
+        },
+        {
+          "sourceId": "marine-environment-reference-2023",
+          "locator": "第 1-5 页",
+          "note": "对应海洋污染、富营养化和环境承载力的交叉核对范围。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-marine-observation-remote-sensing",
+      "courseId": "selective-3",
+      "title": "海洋观测、遥感与尺度匹配",
+      "summary": "海洋观测材料要区分现场测量、遥感反演和长期平台观测的空间时间尺度。选择仪器或数据时先明确测的是海流、温盐、潮位还是水色，再说明校准、代表性和不确定性，避免把观测值直接当成机制结论。",
+      "keywords": ["海洋观测", "遥感反演", "尺度", "不确定性"],
+      "sourceIds": ["local-geography-worktree-2026-06", "marine-survey-reference-2017", "marine-weather-reference-2017", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "marine-survey-reference-2017",
+          "locator": "第 1-10 页",
+          "note": "对应海流、潮位、温盐和海洋平台观测的交叉核对范围。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 1-20 页",
+          "note": "回到教材核对资源环境调查、证据和风险判断。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-island-use-ecological-protection",
+      "courseId": "selective-3",
+      "title": "海岛利用与生态保护边界",
+      "summary": "海岛开发题要同时看淡水、土地、岸线、交通、生态敏感性和公共服务约束。规划应先划分保护、生活、产业和旅游空间，再用容量控制、污水处理、岸线避让和灾害预案降低脆弱性。",
+      "keywords": ["海岛开发", "岸线利用", "生态敏感性", "空间规划"],
+      "sourceIds": ["local-geography-worktree-2026-06", "marine-island-reference-2017", "marine-disaster-reference-2017", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "marine-island-reference-2017",
+          "locator": "第 1-2 页",
+          "note": "对应海岛资源、空间管理和生态保护的交叉核对范围。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 46-56 页",
+          "note": "回到教材核对海洋空间资源开发与安全边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-marine-weather-coastal-warning",
+      "courseId": "selective-3",
+      "title": "海洋气象与沿海灾害预警",
+      "summary": "海洋气象与沿海预警题要把风场、气压、海温、潮位和波浪联系起来，区分天气尺度事件与缓慢海岸变化。预警措施应分别覆盖监测预报、工程防护、航运养殖调整和人员避险，并说明每项措施降低的风险环节。",
+      "keywords": ["海洋气象", "沿海预警", "风暴潮", "波浪"],
+      "sourceIds": ["local-geography-worktree-2026-06", "marine-weather-reference-2017", "marine-disaster-reference-2017", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "marine-weather-reference-2017",
+          "locator": "第 1-10 页",
+          "note": "对应海洋气象、风浪和海况观测的交叉核对范围。"
+        },
+        {
+          "sourceId": "marine-disaster-reference-2017",
+          "locator": "第 1-31 页",
+          "note": "对应沿海灾害类型、防御链和应急措施的交叉核对范围。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-ocean-acidification-carbon-cycle",
+      "courseId": "selective-3",
+      "title": "海洋酸化与碳循环反馈",
+      "summary": "海洋碳循环题要说明海洋吸收二氧化碳、碳酸盐平衡和生物泵之间的联系，再判断酸化对钙化生物、食物网和渔业的可能影响。治理既包括减排，也包括监测、适应和保护蓝碳生态系统。",
+      "keywords": ["海洋酸化", "碳循环", "碳汇", "生态适应"],
+      "sourceIds": ["marine-chemistry-reference-2017", "marine-ecology-reference-2017", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "marine-chemistry-reference-2017",
+          "locator": "第 13-15 页",
+          "note": "对应海水酸碱平衡、二氧化碳吸收和海洋碳库的交叉核对范围。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 58-82 页",
+          "note": "回到教材核对气候变化、生态系统服务和环境安全。"
         }
       ],
       "licenseStatus": "citation-only",

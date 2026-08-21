@@ -52,6 +52,46 @@ const REQUIRED_EXPANSION_ITEMS = new Set([
   "geo-s3-marine-disaster-defense",
   "geo-s3-marine-space-conflict",
 ]);
+const REQUIRED_NEXT_EXPANSION_SOURCES = new Set([
+  "local-geography-worktree-2026-06",
+  "exam-zhejiang-four-schools-2026-03-geography",
+  "exam-harbin-no3-2026-04-geography",
+  "exam-shenyang-huimin-2026-04-geography",
+  "marine-ecology-reference-2017",
+  "marine-chemistry-reference-2017",
+  "marine-survey-reference-2017",
+  "marine-island-reference-2017",
+  "marine-weather-reference-2017",
+]);
+const REQUIRED_NEXT_EXPANSION_ITEMS = new Set([
+  "geo-c1-water-resource-balance",
+  "geo-c1-ecosystem-biodiversity",
+  "geo-c1-coastal-process-tidal-landform",
+  "geo-c2-population-change-age-structure",
+  "geo-c2-urban-spatial-structure",
+  "geo-c2-urban-hierarchy-services",
+  "geo-c2-agricultural-type-modernization",
+  "geo-c2-industrial-region-formation",
+  "geo-c2-transport-corridor-accessibility",
+  "geo-s1-solar-radiation-seasonality",
+  "geo-s1-earth-structure-seismic-evidence",
+  "geo-s1-soil-profile-formation",
+  "geo-s1-vegetation-altitudinal-zonation",
+  "geo-s1-climate-comfort-and-classification",
+  "geo-s1-seawater-salinity-and-ice",
+  "geo-s2-gis-remote-sensing-evidence",
+  "geo-s2-desertification-mechanism",
+  "geo-s2-forest-ecosystem-restoration",
+  "geo-s2-energy-development-environment",
+  "geo-s2-watershed-ecological-compensation",
+  "geo-s2-regional-agriculture-tourism",
+  "geo-s3-marine-ecosystem-red-tide",
+  "geo-s3-marine-water-quality-indicators",
+  "geo-s3-marine-observation-remote-sensing",
+  "geo-s3-island-use-ecological-protection",
+  "geo-s3-marine-weather-coastal-warning",
+  "geo-s3-ocean-acidification-carbon-cycle",
+]);
 const ALLOWED_LICENSE_STATES = new Set(["authored-summary", "citation-only"]);
 
 assert.equal(typeof payload.version, "string");
@@ -80,6 +120,9 @@ const courseIds = new Set(payload.courses.map((course) => course.id));
 for (const sourceId of REQUIRED_EXPANSION_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing expanded geography source ${sourceId}`);
 }
+for (const sourceId of REQUIRED_NEXT_EXPANSION_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing next geography source ${sourceId}`);
+}
 const itemIds = new Set();
 for (const item of payload.items) {
   assert.equal(typeof item.id, "string");
@@ -106,7 +149,7 @@ for (const item of payload.items) {
   }
 }
 
-assert.ok(payload.items.length >= 40, "the expanded curriculum slice must cover at least eight items per course");
+assert.ok(payload.items.length >= 65, "the comprehensive geography slice must cover the planned next expansion");
 for (const courseId of REQUIRED_COURSES) {
   assert.ok(
     payload.items.filter((item) => item.courseId === courseId).length >= 8,
@@ -119,8 +162,11 @@ for (const anchor of REQUIRED_ANCHORS) {
 for (const itemId of REQUIRED_EXPANSION_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing expanded geography item ${itemId}`);
 }
+for (const itemId of REQUIRED_NEXT_EXPANSION_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing next expanded geography item ${itemId}`);
+}
 assert.ok(
-  payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 15,
+  payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,
   "expanded question-method and reference-derived items must retain citation-only provenance",
 );
 
