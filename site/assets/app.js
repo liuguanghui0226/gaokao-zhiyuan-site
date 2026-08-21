@@ -3831,7 +3831,7 @@ function renderRecommendForm(profile) {
   const showBeijingVocationalScore = normalizeProvince(getProfileValue(profile, "province")) === "北京";
   const showXizangCandidateCategory = normalizeProvince(getProfileValue(profile, "province")) === "西藏";
   const showXizangRankSource = showXizangCandidateCategory;
-  return `<form id="recommendForm" class="recommend-form">
+  return `<form id="recommendForm" class="recommend-form" aria-describedby="recommendStatus">
     <label>
       <span>考生类型</span>
       <select id="childType">
@@ -3929,9 +3929,10 @@ function renderRecommendForm(profile) {
       <textarea id="redLineInput" rows="3" placeholder="例如：不接受高学费、不接受远离省内、不接受调剂到冷门专业">${esc(getProfileValue(profile, "redLines"))}</textarea>
     </label>
     <div class="form-actions">
-      <button class="primary-action" type="submit">生成推荐</button>
+      <button class="primary-action" type="submit" aria-controls="recommendResultRegion">生成推荐</button>
       <button class="ghost-action" id="resetRecommend" type="button">恢复示例</button>
     </div>
+    <p id="recommendStatus" class="form-status" role="status" aria-live="polite"></p>
   </form>`;
 }
 
@@ -4232,19 +4233,27 @@ function bindRecommendEvents() {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     const submit = form.querySelector('button[type="submit"]');
+    const status = $("#recommendStatus");
     const originalLabel = submit?.textContent || "生成推荐";
+    form.setAttribute("aria-busy", "true");
     if (submit) {
       submit.disabled = true;
       submit.textContent = "载入数据…";
+      submit.setAttribute("aria-busy", "true");
     }
+    if (status) status.textContent = "正在载入本省数据，请稍候…";
     try {
+      await new Promise((resolve) => setTimeout(resolve, 0));
       await runRecommendation();
     } catch (error) {
+      if (status) status.textContent = "载入失败，请检查输入后重试。";
       window.alert(error.message || String(error));
     } finally {
+      form.removeAttribute("aria-busy");
       if (submit) {
         submit.disabled = false;
         submit.textContent = originalLabel;
+        submit.removeAttribute("aria-busy");
       }
     }
   });
