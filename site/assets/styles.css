@@ -1149,6 +1149,21 @@ select {
   align-items: start;
 }
 
+.application-plan-actions,
+.application-plan-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.application-plan-row-actions {
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 0 0 auto;
+}
+
 .application-plan-head h3,
 .application-plan-group h4 {
   margin: 0;
@@ -1163,7 +1178,12 @@ select {
   line-height: 1.5;
 }
 
+.shortlist-note {
+  font-size: 14px !important;
+}
+
 .application-plan-head > span,
+.application-plan-actions > span,
 .application-plan-group header > span,
 .application-plan-row > span {
   flex: 0 0 auto;
@@ -1224,6 +1244,19 @@ select {
   border-color: #c9ddcf;
   background: #edf7f1;
   text-align: center;
+}
+
+.shortlist-toggle,
+.shortlist-clear {
+  min-height: 36px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
+.shortlist-toggle[aria-pressed="true"] {
+  border-color: #9bc8ab;
+  background: #edf7f1;
+  color: var(--leaf-dark);
 }
 
 .recommend-card {
