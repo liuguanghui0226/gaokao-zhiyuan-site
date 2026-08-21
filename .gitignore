@@ -14,6 +14,8 @@ site/data/
 site/data/*
 !site/data/release-v3.275/
 !site/data/release-v3.275/*.gz
+!site/data/geography/
+!site/data/geography/knowledge.json
 
 # Raw official evidence is published as a versioned GitHub Release asset.
 data/admissions/raw/

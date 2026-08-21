@@ -1,6 +1,8 @@
 const state = {
   data: null,
   provinceManifest: null,
+  geographyData: null,
+  geographyCourse: "",
   loadedProvince: "",
   provinceShardCache: new Map(),
   view: "overview",
@@ -34,6 +36,12 @@ async function fetchRuntimeJson(relativePath, label) {
     throw new Error(`${label}需要支持 gzip 流解压的现代浏览器`);
   }
   return new Response(response.body.pipeThrough(new DecompressionStream("gzip"))).json();
+}
+
+async function fetchGeographyKnowledge() {
+  const response = await fetch("./data/geography/knowledge.json", { cache: "no-store" });
+  if (!response.ok) throw new Error(`高中地理资料载入失败（HTTP ${response.status}）`);
+  return response.json();
 }
 
 const CHILD_TYPES = ["稳健型", "均衡探索型", "冲刺型", "专业兴趣强", "城市资源型", "家庭预算敏感", "学术深造型", "就业导向型"];
@@ -3865,6 +3873,78 @@ function renderRules() {
   `;
 }
 
+function renderGeography() {
+  const data = state.geographyData;
+  if (!data) {
+    $("#view-geography").innerHTML = `<div class="empty-state"><h2>高中地理资料暂未载入</h2><p>请刷新页面后重试。</p></div>`;
+    return;
+  }
+
+  const query = normalizeText(state.query);
+  const courseMap = new Map(data.courses.map((course) => [course.id, course]));
+  const visibleItems = data.items.filter((item) => {
+    const courseOk = !state.geographyCourse || item.courseId === state.geographyCourse;
+    const searchText = normalizeText([
+      item.title,
+      item.summary,
+      ...(item.keywords || []),
+      courseMap.get(item.courseId)?.name || "",
+    ].join(" "));
+    return courseOk && (!query || searchText.includes(query));
+  });
+  const courseButtons = [
+    `<button class="geography-course-btn ${state.geographyCourse ? "" : "active"}" type="button" data-geography-course="">全部课程</button>`,
+    ...data.courses.map((course) => `<button class="geography-course-btn ${state.geographyCourse === course.id ? "active" : ""}" type="button" data-geography-course="${esc(course.id)}">${esc(course.name)}</button>`),
+  ].join("");
+  const cards = visibleItems.map((item) => {
+    const course = courseMap.get(item.courseId);
+    const sourceTitles = item.sourceIds.map((sourceId) => {
+      const source = data.sources.find((candidate) => candidate.id === sourceId);
+      return source?.title || sourceId;
+    });
+    const evidence = item.evidence.map((entry) => {
+      const source = data.sources.find((candidate) => candidate.id === entry.sourceId);
+      return `${source?.title || entry.sourceId} · ${entry.locator}`;
+    });
+    return `<article class="geography-card">
+      <header>
+        <div>
+          <span class="geography-course-label">${esc(course?.name || item.courseId)}</span>
+          <h3>${esc(item.title)}</h3>
+        </div>
+        <span class="status">${esc(item.reviewStatus === "reviewed" ? "已复核摘要" : "待复核")}</span>
+      </header>
+      <p>${esc(item.summary)}</p>
+      ${renderTags(item.keywords)}
+      <details class="detail-drawer compact">
+        <summary>教材证据与来源</summary>
+        <div class="geography-evidence">
+          ${evidence.map((entry) => `<span>${esc(entry)}</span>`).join("")}
+        </div>
+        <p class="geography-license">${esc(item.licenseStatus === "authored-summary" ? "本站为原创摘要；请回到教材原页核对完整定义、图表与案例。" : "本站仅提供来源索引，不复制原文。")}</p>
+        <p class="geography-source-title">${esc(sourceTitles.join("；"))}</p>
+      </details>
+    </article>`;
+  }).join("");
+
+  $("#view-geography").innerHTML = `
+    ${sectionHead("高中地理知识库", `${fmtNumber(visibleItems.length)} 条摘要`)}
+    <section class="band geography-intro">
+      <h3>按课程复习自然地理、人文地理与资源环境</h3>
+      <p>${esc(data.description)}</p>
+      <div class="geography-course-grid">${courseButtons}</div>
+    </section>
+    ${cards ? `<div class="geography-card-list">${cards}</div>` : `<div class="empty-state"><h2>没有匹配的地理摘要</h2><p>换一个关键词，或切换课程范围。</p></div>`}
+  `;
+
+  $$('[data-geography-course]').forEach((button) => {
+    button.addEventListener("click", () => {
+      state.geographyCourse = button.dataset.geographyCourse || "";
+      renderGeography();
+    });
+  });
+}
+
 function renderScorePart(label, value) {
   return `<div class="score-part"><span>${esc(label)}</span><strong>${fmtNumber(value)}</strong></div>`;
 }
@@ -4646,6 +4726,7 @@ function renderView(view, { force = false } = {}) {
     overview: renderOverview,
     recommend: renderRecommend,
     disciplines: renderDisciplines,
+    geography: renderGeography,
     rules: renderRules,
     sources: renderSources,
   };
@@ -4675,6 +4756,7 @@ function bindEvents() {
     state.query = event.target.value;
     if (state.view === "sources") renderView("sources", { force: true });
     if (state.view === "disciplines") renderView("disciplines", { force: true });
+    if (state.view === "geography") renderView("geography", { force: true });
   });
   $("#disciplineFilter").addEventListener("change", (event) => {
     state.discipline = event.target.value;
@@ -4709,12 +4791,14 @@ function populateFilters() {
 }
 
 async function boot() {
-  const [core, manifest] = await Promise.all([
+  const [core, manifest, geography] = await Promise.all([
     fetchRuntimeJson("knowledge-core-lite.json", "核心知识"),
     fetchRuntimeJson("provinces/manifest.json", "省份索引"),
+    fetchGeographyKnowledge(),
   ]);
   state.data = core;
   state.provinceManifest = manifest;
+  state.geographyData = geography;
   state.prefillProfile = loadSavedRecommendationProfile();
   $("#generatedAt").textContent = `更新于 ${new Date(state.data.generatedAt).toLocaleString("zh-CN")}`;
   populateFilters();

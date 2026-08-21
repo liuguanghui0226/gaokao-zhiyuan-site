@@ -274,6 +274,102 @@ select {
   gap: 10px;
 }
 
+.geography-intro p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.geography-course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.geography-course-btn {
+  border: 1px solid #cbd7cf;
+  border-radius: 999px;
+  padding: 8px 12px;
+  color: var(--ink);
+  background: #fff;
+  cursor: pointer;
+}
+
+.geography-course-btn:hover,
+.geography-course-btn:focus-visible,
+.geography-course-btn.active {
+  border-color: var(--leaf);
+  color: var(--leaf-dark);
+  background: #edf7f1;
+  outline: none;
+}
+
+.geography-course-btn.active {
+  font-weight: 800;
+}
+
+.geography-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 12px;
+}
+
+.geography-card {
+  min-width: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+
+.geography-card header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.geography-card h3 {
+  margin: 4px 0 0;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.geography-card > p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.geography-course-label {
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.geography-evidence {
+  display: grid;
+  gap: 7px;
+}
+
+.geography-evidence span {
+  border-left: 3px solid var(--leaf);
+  background: #f7faf7;
+  padding: 7px 9px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.geography-license,
+.geography-source-title {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .discipline-tile {
   min-width: 0;
   min-height: 92px;

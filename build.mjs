@@ -14,6 +14,8 @@ const EXTRACT_DIR = path.join(DATA_DIR, "extracts");
 const TRANSCRIPT_DIR = path.join(DATA_DIR, "transcripts");
 const ROUND_DIR = path.join(DATA_DIR, "rounds");
 const SITE_DATA_DIR = path.join(PROJECT_ROOT, "site", "data");
+const GEOGRAPHY_DATA_PATH = path.join(DATA_DIR, "geography", "knowledge.json");
+const GEOGRAPHY_SITE_PATH = path.join(SITE_DATA_DIR, "geography", "knowledge.json");
 const REPORT_DIR = path.join(PROJECT_ROOT, "docs");
 const TMP_ROOT = path.join(os.homedir(), ".codex", "tmp", "gaokao-zhiyuan-ingest");
 
@@ -299,6 +301,14 @@ function ensureDirs() {
   for (const dir of [DATA_DIR, ADMISSION_DIR, EXTRACT_DIR, TRANSCRIPT_DIR, ROUND_DIR, SITE_DATA_DIR, REPORT_DIR, TMP_ROOT]) {
     fs.mkdirSync(dir, { recursive: true });
   }
+}
+
+function syncGeographyData() {
+  if (!fs.existsSync(GEOGRAPHY_DATA_PATH)) {
+    throw new Error(`Missing geography knowledge data: ${GEOGRAPHY_DATA_PATH}`);
+  }
+  fs.mkdirSync(path.dirname(GEOGRAPHY_SITE_PATH), { recursive: true });
+  fs.copyFileSync(GEOGRAPHY_DATA_PATH, GEOGRAPHY_SITE_PATH);
 }
 
 function run(cmd, args, options = {}) {
@@ -2388,6 +2398,7 @@ function refreshAdmissionsOnly() {
   fs.renameSync(tempKnowledgePath, knowledgePath);
   buildProgress("writing site/data/knowledge.json");
   fs.copyFileSync(knowledgePath, path.join(SITE_DATA_DIR, "knowledge.json"));
+  syncGeographyData();
   writeReports(knowledge);
   console.log(JSON.stringify({
     ok: true,
@@ -2423,6 +2434,7 @@ function main() {
   const knowledgeJson = JSON.stringify(knowledge);
   fs.writeFileSync(path.join(DATA_DIR, "knowledge.json"), knowledgeJson, "utf8");
   fs.writeFileSync(path.join(SITE_DATA_DIR, "knowledge.json"), knowledgeJson, "utf8");
+  syncGeographyData();
   writeReports(knowledge);
 
   console.log(JSON.stringify({
