@@ -170,6 +170,7 @@ const tests = [
   "test-recommendation-evidence-links-v3349.mjs",
   "test-site-freshness-label-v3350.mjs",
   "test-geography-provenance-ui-v3351.mjs",
+  "test-recommendation-shortlist-v3352.mjs",
 ];
 
 const results = tests.map((test) => {

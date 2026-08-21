@@ -12,6 +12,7 @@ const state = {
   disciplineFamily: "",
   domain: "",
   recommendation: null,
+  recommendationShortlist: { profileKey: "", items: [] },
   recommendationInvalidated: false,
   prefillProfile: null,
   renderedViews: new Set(),
@@ -95,6 +96,9 @@ const DEFAULT_PROFILE = {
 };
 
 const RECOMMEND_PROFILE_STORAGE_KEY = "gaokao-zhiyuan-site:recommend-profile:v1";
+const RECOMMEND_SHORTLIST_STORAGE_KEY = "gaokao-zhiyuan-site:recommend-shortlist:v1";
+const SHORTLIST_MAX_ITEMS = 30;
+const SHORTLIST_MAX_PROFILES = 8;
 
 function loadSavedRecommendationProfile() {
   try {
@@ -122,6 +126,105 @@ function clearSavedRecommendationProfile() {
     globalThis.localStorage?.removeItem(RECOMMEND_PROFILE_STORAGE_KEY);
   } catch {
     // Ignore unavailable local storage so reset still restores the example profile.
+  }
+}
+
+function shortlistProfileKey(profile) {
+  return [
+    profile?.province,
+    profile?.candidateCategory,
+    profile?.subject,
+    profile?.electives,
+    profile?.score,
+    profile?.rankInput || profile?.rank,
+    profile?.disciplineFocus,
+    profile?.interest,
+    profile?.cities,
+    profile?.budget,
+    profile?.strategy,
+    profile?.redLines,
+  ].map(normalizeText).join("|");
+}
+
+function normalizeShortlistItem(item) {
+  if (!item || typeof item !== "object" || Array.isArray(item)) return null;
+  const key = String(item.key || "").trim();
+  if (!key) return null;
+  return {
+    key,
+    schoolName: String(item.schoolName || "").trim(),
+    majorName: String(item.majorName || "").trim(),
+    tierLabel: String(item.tierLabel || "").trim(),
+    readinessLabel: String(item.readinessLabel || "").trim(),
+    sourceUrl: String(item.sourceUrl || "").trim(),
+    sourceLabel: String(item.sourceLabel || "").trim(),
+  };
+}
+
+function normalizeShortlistItems(items) {
+  const unique = new Map();
+  for (const item of Array.isArray(items) ? items : []) {
+    const normalized = normalizeShortlistItem(item);
+    if (!normalized || unique.has(normalized.key)) continue;
+    unique.set(normalized.key, normalized);
+    if (unique.size >= SHORTLIST_MAX_ITEMS) break;
+  }
+  return [...unique.values()];
+}
+
+function readRecommendationShortlistStore() {
+  try {
+    const raw = globalThis.localStorage?.getItem(RECOMMEND_SHORTLIST_STORAGE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return {};
+    return parsed.profiles && typeof parsed.profiles === "object" && !Array.isArray(parsed.profiles)
+      ? parsed.profiles
+      : {};
+  } catch {
+    return {};
+  }
+}
+
+function writeRecommendationShortlistStore(profiles) {
+  try {
+    globalThis.localStorage?.setItem(RECOMMEND_SHORTLIST_STORAGE_KEY, JSON.stringify({
+      version: 1,
+      profiles,
+    }));
+  } catch {
+    // Local shortlist persistence is optional and must never block recommendations.
+  }
+}
+
+function loadRecommendationShortlist(profile) {
+  const profileKey = shortlistProfileKey(profile);
+  const profiles = readRecommendationShortlistStore();
+  return normalizeShortlistItems(profiles[profileKey]);
+}
+
+function saveRecommendationShortlist(profile, items) {
+  const profileKey = shortlistProfileKey(profile);
+  const profiles = readRecommendationShortlistStore();
+  profiles[profileKey] = normalizeShortlistItems(items);
+  const profileKeys = Object.keys(profiles);
+  while (profileKeys.length > SHORTLIST_MAX_PROFILES) {
+    delete profiles[profileKeys.shift()];
+  }
+  writeRecommendationShortlistStore(profiles);
+}
+
+function clearRecommendationShortlist(profile) {
+  const profiles = readRecommendationShortlistStore();
+  delete profiles[shortlistProfileKey(profile)];
+  if (Object.keys(profiles).length) {
+    writeRecommendationShortlistStore(profiles);
+  } else {
+    try {
+      globalThis.localStorage?.removeItem(RECOMMEND_SHORTLIST_STORAGE_KEY);
+    } catch {
+      // Ignore unavailable local storage so reset still works.
+    }
   }
 }
 
@@ -3627,6 +3730,42 @@ function applicationPlanDetail(option) {
   };
 }
 
+function shortlistItemFromOption(option, tierLabel) {
+  const record = option?.record || {};
+  const detail = applicationPlanDetail(option);
+  return normalizeShortlistItem({
+    key: applicationPlanKey(option),
+    schoolName: record.schoolName || option?.name || "院校待核验",
+    majorName: detail.major,
+    tierLabel,
+    readinessLabel: applicationPlanReadiness(option).label,
+    sourceUrl: detail.sourceUrl,
+    sourceLabel: detail.sourceLabel,
+  });
+}
+
+function toggleRecommendationShortlist(key) {
+  const recommendation = state.recommendation;
+  if (!recommendation || !key) return;
+  const profileKey = shortlistProfileKey(recommendation.profile);
+  const current = state.recommendationShortlist?.profileKey === profileKey
+    ? state.recommendationShortlist.items
+    : loadRecommendationShortlist(recommendation.profile);
+  const items = [...current];
+  const existingIndex = items.findIndex((item) => item.key === key);
+  if (existingIndex >= 0) {
+    items.splice(existingIndex, 1);
+  } else {
+    const option = buildApplicationPlan(recommendation.results)
+      .flatMap((tier) => tier.options.map((candidate) => ({ candidate, tier })))
+      .find(({ candidate }) => applicationPlanKey(candidate) === key);
+    if (!option) return;
+    items.push(shortlistItemFromOption(option.candidate, option.tier.label));
+  }
+  state.recommendationShortlist = { profileKey, items: normalizeShortlistItems(items) };
+  saveRecommendationShortlist(recommendation.profile, state.recommendationShortlist.items);
+}
+
 function renderApplicationPlan(results) {
   const tiers = buildApplicationPlan(results);
   if (!tiers.length) return "";
@@ -3635,6 +3774,8 @@ function renderApplicationPlan(results) {
   const admissionOptionCount = planReadiness.filter((item) => item.admissionOption).length;
   const currentPlanConfirmedCount = planReadiness.filter((item) => item.confirmed).length;
   const currentPlanPendingCount = admissionOptionCount - currentPlanConfirmedCount;
+  const shortlistItems = state.recommendationShortlist?.items || [];
+  const shortlistKeys = new Set(shortlistItems.map((item) => item.key));
   const limitedSchoolOnly = ordinaryVocationalQualificationStatus(state.recommendation?.profile || {}).limitedOnly &&
     planOptions.length > 0 && planOptions.every((option) => isHubeiLimitedSchoolHistoricalAdmissionRecord(option.record));
   const containsThirdParty = planOptions.some((option) => isThirdPartyAdmissionRecord(option.record));
@@ -3653,8 +3794,13 @@ function renderApplicationPlan(results) {
       <div>
         <h3>${esc(planTitle)}</h3>
         <p>${esc(planDescription)}</p>
+        <p class="shortlist-note">核验清单只保存在本机浏览器，用于和家人讨论，不会上传个人信息。</p>
       </div>
-      <span>${fmtNumber(currentPlanConfirmedCount)}/${fmtNumber(admissionOptionCount)} 当前计划已佐证</span>
+      <div class="application-plan-actions">
+        <span>${fmtNumber(currentPlanConfirmedCount)}/${fmtNumber(admissionOptionCount)} 当前计划已佐证</span>
+        <span>${fmtNumber(shortlistItems.length)} 项已加入核验清单</span>
+        ${shortlistItems.length ? `<button class="ghost-action shortlist-clear" id="clearRecommendationShortlist" type="button">清空清单</button>` : ""}
+      </div>
     </div>
     <div class="application-plan-grid">
       ${tiers.map((tier) => `<section class="application-plan-group">
@@ -3663,6 +3809,8 @@ function renderApplicationPlan(results) {
         <div class="application-plan-list">
           ${tier.options.map((option) => {
             const detail = applicationPlanDetail(option);
+            const shortlistKey = applicationPlanKey(option);
+            const shortlisted = shortlistKeys.has(shortlistKey);
             return `<div class="application-plan-row">
               <div>
                 <strong>${esc(option.name)} · ${esc(detail.major)}</strong>
@@ -3670,7 +3818,10 @@ function renderApplicationPlan(results) {
                 ${renderTags(detail.tags)}
                 ${detail.sourceUrl ? `<a class="application-plan-source" href="${esc(detail.sourceUrl)}" target="_blank" rel="noreferrer">${esc(detail.sourceLabel)}</a>` : ""}
               </div>
-              <span>${esc(option.role || tier.label)}</span>
+              <div class="application-plan-row-actions">
+                <span>${esc(option.role || tier.label)}</span>
+                <button class="ghost-action shortlist-toggle" type="button" data-shortlist-key="${esc(shortlistKey)}" aria-pressed="${shortlisted}">${shortlisted ? "已加入核验清单" : "加入核验清单"}</button>
+              </div>
             </div>`;
           }).join("")}
         </div>
@@ -3705,6 +3856,10 @@ async function runRecommendation() {
     .sort((a, b) => b.total - a.total || b.evidence.length - a.evidence.length)
     .slice(0, 8);
   state.recommendation = { profile, band, results, generatedAt: new Date().toISOString() };
+  state.recommendationShortlist = {
+    profileKey: shortlistProfileKey(profile),
+    items: loadRecommendationShortlist(profile),
+  };
   state.recommendationInvalidated = false;
   renderRecommend();
 }
@@ -4149,6 +4304,7 @@ function renderDataFreshnessPanel(profile, today = currentChinaDate()) {
 function recommendationExportText(recommendation) {
   const profile = recommendation?.profile || {};
   const results = Array.isArray(recommendation?.results) ? recommendation.results : [];
+  const shortlist = normalizeShortlistItems(recommendation?.shortlist);
   const value = (input, fallback = "未填写") => {
     const text = String(input ?? "").trim();
     return text || fallback;
@@ -4183,6 +4339,18 @@ function recommendationExportText(recommendation) {
     lines.push(`   代表院校：${examples}`);
     lines.push(`   当前提醒：${warnings}`);
   });
+  lines.push("");
+  lines.push(`我的核验清单（${shortlist.length}项）`);
+  if (!shortlist.length) {
+    lines.push("   尚未选择候选项，可在页面的院校专业候选清单中加入。");
+  } else {
+    shortlist.forEach((item, index) => {
+      const name = [value(item.schoolName, "院校待核"), value(item.majorName, "专业待核")].join(" · ");
+      const labels = [item.tierLabel, item.readinessLabel].filter(Boolean).join("；");
+      lines.push(`${index + 1}. ${name}${labels ? `（${labels}）` : ""}`);
+      if (item.sourceUrl) lines.push(`   来源：${item.sourceUrl}`);
+    });
+  }
   return lines.join("\n");
 }
 
@@ -4499,22 +4667,48 @@ function renderAdmissionScoreSummary() {
   </section>`;
 }
 
-function bindRecommendEvents() {
-  const form = $("#recommendForm");
-  if (!form) return;
+function refreshRecommendationResults() {
+  const region = $("#recommendResultRegion");
+  if (!region) return;
+  region.innerHTML = renderRecommendationResults();
+  bindRecommendationResultEvents();
+}
+
+function bindRecommendationResultEvents() {
   const copyButton = $("#copyRecommendation");
   const copyStatus = $("#copyRecommendationStatus");
   copyButton?.addEventListener("click", async () => {
     copyButton.disabled = true;
     copyButton.setAttribute("aria-busy", "true");
     if (copyStatus) copyStatus.textContent = "正在准备核验清单…";
-    const copied = await copyTextToClipboard(recommendationExportText(state.recommendation));
+    const copied = await copyTextToClipboard(recommendationExportText({
+      ...state.recommendation,
+      shortlist: state.recommendationShortlist?.items || [],
+    }));
     if (copyStatus) copyStatus.textContent = copied
       ? "已复制，可发给家人讨论。"
       : "复制失败，请手动选择页面内容。";
     copyButton.disabled = false;
     copyButton.removeAttribute("aria-busy");
   });
+  $$("[data-shortlist-key]").forEach((button) => {
+    button.addEventListener("click", () => {
+      toggleRecommendationShortlist(button.dataset.shortlistKey || "");
+      refreshRecommendationResults();
+    });
+  });
+  $("#clearRecommendationShortlist")?.addEventListener("click", () => {
+    const profile = state.recommendation?.profile;
+    if (!profile) return;
+    clearRecommendationShortlist(profile);
+    state.recommendationShortlist = { profileKey: shortlistProfileKey(profile), items: [] };
+    refreshRecommendationResults();
+  });
+}
+
+function bindRecommendEvents() {
+  const form = $("#recommendForm");
+  if (!form) return;
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
     saveCurrentRecommendationDraft();
@@ -4604,12 +4798,15 @@ function bindRecommendEvents() {
   form.addEventListener("change", handleRecommendationInputChange);
   updateProvinceFields();
   $("#resetRecommend").addEventListener("click", () => {
+    clearRecommendationShortlist(recommendationDraftFromForm());
     clearSavedRecommendationProfile();
     state.recommendation = null;
+    state.recommendationShortlist = { profileKey: "", items: [] };
     state.recommendationInvalidated = false;
     state.prefillProfile = null;
     renderRecommend();
   });
+  bindRecommendationResultEvents();
 }
 
 function invalidateRecommendationResults() {
