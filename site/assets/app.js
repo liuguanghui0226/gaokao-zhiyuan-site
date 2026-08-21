@@ -44,6 +44,18 @@ async function fetchGeographyKnowledge() {
   return response.json();
 }
 
+function formatGeographyVersionDate(version) {
+  const match = /^geo-(\d{4})\.(\d{1,2})\.(\d{1,2})(?:\.\d+)?$/.exec(String(version || ""));
+  if (!match) return "";
+  return `${Number(match[1])}/${Number(match[2])}/${Number(match[3])}`;
+}
+
+function renderFreshnessLabel(coreGeneratedAt, geographyVersion) {
+  const coreLabel = `更新于 ${new Date(coreGeneratedAt).toLocaleString("zh-CN")}`;
+  const geographyDate = formatGeographyVersionDate(geographyVersion);
+  return geographyDate ? `${coreLabel} · 高中地理 ${geographyDate}` : coreLabel;
+}
+
 const CHILD_TYPES = ["稳健型", "均衡探索型", "冲刺型", "专业兴趣强", "城市资源型", "家庭预算敏感", "学术深造型", "就业导向型"];
 const SUBJECT_TYPES = ["物理类", "历史类", "物理/理科", "历史/文科", "综合", "不确定"];
 const RANK_LEVEL_LABELS = { undergraduate: "本科加分", vocational: "专科加分" };
@@ -4187,7 +4199,7 @@ function renderEvidenceLinks(evidence, css = "") {
     const title = esc(source.title || "证据来源");
     return source.url
       ? `<a class="tag source-tag${safeCss}" href="${esc(source.url)}" target="_blank" rel="noreferrer">${title}</a>`
-      : `<span class="tag source-tag${safeCss}">${title}</span>`;
+      : `<span class="tag source-tag local-source-tag${safeCss}" title="仅本机索引，无公开链接">本地资料：${title}</span>`;
   }).join("")}</div>`;
 }
 
@@ -4822,7 +4834,7 @@ async function boot() {
   state.provinceManifest = manifest;
   state.geographyData = geography;
   state.prefillProfile = loadSavedRecommendationProfile();
-  $("#generatedAt").textContent = `更新于 ${new Date(state.data.generatedAt).toLocaleString("zh-CN")}`;
+  $("#generatedAt").textContent = renderFreshnessLabel(state.data.generatedAt, state.geographyData?.version);
   populateFilters();
   bindEvents();
   render();

@@ -19,11 +19,14 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.22.2");
+assert.equal(site.version, "geo-2026.08.22.3");
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
+assert.ok(site.items.some((item) => item.id === "geo-s2-gis-remote-sensing-evidence"));
+assert.ok(site.items.some((item) => item.id === "geo-s3-ocean-acidification-carbon-cycle"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
-assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 15);
+assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
+assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 
 const index = fs.readFileSync(indexPath, "utf8");
 assert.match(index, /data-view="geography"/);

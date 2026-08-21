@@ -168,6 +168,7 @@ const tests = [
   "test-recommendation-profile-persistence-v3347.mjs",
   "test-recommendation-export-v3348.mjs",
   "test-recommendation-evidence-links-v3349.mjs",
+  "test-site-freshness-label-v3350.mjs",
 ];
 
 const results = tests.map((test) => {
