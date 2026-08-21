@@ -248,11 +248,14 @@ assert.ok(freshness.warnings.some((warning) => /2026年招生计划已发布.*�
 assert.ok(freshness.warnings.some((warning) => /未提供可计算的一分一段/.test(warning)));
 assert.ok(freshness.warnings.some((warning) => /2025年征集志愿仅是各轮剩余计划快照/.test(warning)));
 
-const panel = api.renderDataFreshnessPanel(lowProfile);
+const panel = api.renderDataFreshnessPanel(lowProfile, "2026-07-15");
 assert.match(panel, /西藏数据进度/);
 assert.match(panel, /一分一段最新：未接入/);
-assert.match(panel, /本科一批（含预科班）进行中/);
+assert.match(panel, /提前单独录取本科批进行中/);
 assert.match(panel, /查看考试院转载日程/);
+
+const lateSummerPanel = api.renderDataFreshnessPanel(lowProfile, "2026-08-22");
+assert.match(lateSummerPanel, /对口高职专科批进行中/);
 
 const result = api.scoreCandidate(vocational, lowProfile, api.classifyScoreBand(lowProfile.score, lowProfile.rank));
 assert.notEqual(result.confidence, "A");

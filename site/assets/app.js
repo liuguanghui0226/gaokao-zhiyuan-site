@@ -3946,8 +3946,8 @@ function renderRankEstimateNotice(profile) {
   </div>`;
 }
 
-function renderDataFreshnessPanel(profile) {
-  const freshness = admissionDataFreshness(profile);
+function renderDataFreshnessPanel(profile, today = currentChinaDate()) {
+  const freshness = admissionDataFreshness(profile, today);
   const facts = [
     `招生计划最新：${freshness.latestPlanYear || "未接入"}`,
     `普通录取数据最新：${freshness.latestAdmissionYear || "未闭合"}`,
