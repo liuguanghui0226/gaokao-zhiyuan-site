@@ -12,11 +12,18 @@ const indexPath = path.join(projectRoot, "site", "index.html");
 const appPath = path.join(projectRoot, "site", "assets", "app.js");
 
 assert.equal(fs.existsSync(sitePath), true, "the published site must contain geography data");
+const source = JSON.parse(fs.readFileSync(sourcePath, "utf8"));
+const site = JSON.parse(fs.readFileSync(sitePath, "utf8"));
 assert.deepEqual(
-  JSON.parse(fs.readFileSync(sitePath, "utf8")),
-  JSON.parse(fs.readFileSync(sourcePath, "utf8")),
+  site,
+  source,
   "site geography data must match the canonical source data",
 );
+assert.equal(site.version, "geo-2026.08.22.2");
+assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
+assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
+assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
+assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 15);
 
 const index = fs.readFileSync(indexPath, "utf8");
 assert.match(index, /data-view="geography"/);

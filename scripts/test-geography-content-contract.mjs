@@ -23,6 +23,35 @@ const REQUIRED_ANCHORS = new Set([
   "geo-s2-regional-coordination",
   "geo-s3-food-security",
 ]);
+const REQUIRED_EXPANSION_SOURCES = new Set([
+  "exam-shanxi-affiliated-2025-12-geography",
+  "exam-nanning-no3-2026-03-geography",
+  "exam-zhejiang-quzhou-2026-04-geography",
+  "marine-geology-reference-2024",
+  "marine-resources-reference-2017",
+  "marine-environment-reference-2023",
+  "marine-disaster-reference-2017",
+]);
+const REQUIRED_EXPANSION_ITEMS = new Set([
+  "geo-c1-rock-cycle-evidence",
+  "geo-c1-river-regime-diagnosis",
+  "geo-c1-coastal-disaster-exposure",
+  "geo-c2-city-radiation-and-economic-hinterland",
+  "geo-c2-industrial-chain-spatial-division",
+  "geo-c2-circular-agriculture",
+  "geo-s1-rock-stratigraphy-sequencing",
+  "geo-s1-pressure-field-weather",
+  "geo-s1-ocean-current-productivity",
+  "geo-s1-earth-sun-shadow",
+  "geo-s2-regional-scale-and-function",
+  "geo-s2-basin-ecological-coordination",
+  "geo-s2-industrial-upgrading-path",
+  "geo-s3-marine-resources-evaluation",
+  "geo-s3-marine-pollution-governance",
+  "geo-s3-coastal-wetland-services",
+  "geo-s3-marine-disaster-defense",
+  "geo-s3-marine-space-conflict",
+]);
 const ALLOWED_LICENSE_STATES = new Set(["authored-summary", "citation-only"]);
 
 assert.equal(typeof payload.version, "string");
@@ -48,6 +77,9 @@ for (const source of payload.sources) {
 }
 
 const courseIds = new Set(payload.courses.map((course) => course.id));
+for (const sourceId of REQUIRED_EXPANSION_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing expanded geography source ${sourceId}`);
+}
 const itemIds = new Set();
 for (const item of payload.items) {
   assert.equal(typeof item.id, "string");
@@ -74,10 +106,23 @@ for (const item of payload.items) {
   }
 }
 
-assert.ok(payload.items.length >= 25, "the initial curriculum slice must cover at least five items per course");
+assert.ok(payload.items.length >= 40, "the expanded curriculum slice must cover at least eight items per course");
+for (const courseId of REQUIRED_COURSES) {
+  assert.ok(
+    payload.items.filter((item) => item.courseId === courseId).length >= 8,
+    `${courseId} must retain at least eight geography items`,
+  );
+}
 for (const anchor of REQUIRED_ANCHORS) {
   assert.equal(itemIds.has(anchor), true, `missing curriculum anchor ${anchor}`);
 }
+for (const itemId of REQUIRED_EXPANSION_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing expanded geography item ${itemId}`);
+}
+assert.ok(
+  payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 15,
+  "expanded question-method and reference-derived items must retain citation-only provenance",
+);
 
 console.log(JSON.stringify({
   status: "ok",
