@@ -59,7 +59,7 @@ context.__gaokaoTest.renderSources();
 
 assert.match(view.innerHTML, /class="band geography-source-directory"/);
 assert.match(view.innerHTML, /高中地理来源目录/);
-assert.match(view.innerHTML, /150 个公开链接/);
+assert.match(view.innerHTML, /156 个公开链接/);
 assert.match(view.innerHTML, /22 个本地\/教材/);
 assert.match(view.innerHTML, /class="geography-directory-link" href="https:\/\/oceanservice\.noaa\.gov\/education\/tutorial_tides\/tides01_intro\.html"/);
 assert.match(view.innerHTML, /访问 2026-08-23/);
@@ -107,6 +107,12 @@ assert.match(view.innerHTML, /commit 0ea592460b04452e7e761343113f1092968b1b2b/);
 assert.match(view.innerHTML, /广西贵港市部分高中 2025—2026 学年高二上学期期末地理试卷/);
 assert.match(view.innerHTML, /commit 0198f84c3552bf20df90124e1c18dc412f0cf0fd/);
 assert.match(view.innerHTML, /github\.com\/giswqs\/geog-510/);
+assert.match(view.innerHTML, /github\.com\/YutaOzawaTU\/edu-3d-terrain/);
+assert.match(view.innerHTML, /github\.com\/vrautenbach\/isprs_catalogue/);
+assert.match(view.innerHTML, /github\.com\/yujinnee\/WorldHunter/);
+assert.match(view.innerHTML, /github\.com\/mukombradon\/GlobeGuesser/);
+assert.match(view.innerHTML, /github\.com\/GIS-Info\/GISphereKG-ChatBot/);
+assert.match(view.innerHTML, /https:\/\/www\.noaa\.gov\/education\/resource-collections/);
 assert.match(view.innerHTML, /class="geography-directory-local"/);
 assert.doesNotMatch(view.innerHTML, /class="geography-directory-link"[^>]*>普通高中教科书/);
 

@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.24",
+  "version": "geo-2026.08.23.25",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1603,6 +1603,65 @@
       "commitSha": "ba9b9f1228451dc717b95289e82c9d36ba67a954",
       "accessedAt": "2026-08-23",
       "licenseNote": "仓库说明不同材料具有 CC BY、CC BY-SA、CC0 或不可改编的不同许可；本项目仅作开源地理空间教育、标准和资料治理的 citation-only 参照，不复制文档、图片、代码或品牌材料。"
+    },
+    {
+      "id": "github-yuta-edu-3d-terrain",
+      "title": "edu-3d-terrain：教育用三维地形查看器",
+      "publisher": "YutaOzawaTU/edu-3d-terrain（GitHub）",
+      "editionNote": "公开仓库提交 `34b7ecd7a1cb6a0948e26869ea56b08c55935a28`；访问日期 2026-08-23；index.html 提供地名/坐标输入、真上/斜角/低角度视点、起伏誇张滑杆和富士山、阿苏、善光寺平预设，并说明国土地理院地理院タイル的地图来源与加工标识。",
+      "url": "https://github.com/YutaOzawaTU/edu-3d-terrain",
+      "commitSha": "34b7ecd7a1cb6a0948e26869ea56b08c55935a28",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作三维地形、视点、起伏誇张和地图归因的 citation-only 参照，不复制代码、图件、数据或页面文字。"
+    },
+    {
+      "id": "github-vrautenbach-isprs-catalogue",
+      "title": "ISPRS Catalogue：地理空间教育资源目录",
+      "publisher": "vrautenbach/isprs_catalogue（GitHub）",
+      "editionNote": "公开仓库提交 `9825eda0b70f33860ba4e0e8ba018685da8098cc`；访问日期 2026-08-23；README 与 App.js 说明以 React、Firestore 和可搜索字段组织地理空间教育资源，记录标题、描述、日期、作者和关键词，并区分普通检索、进阶检索及登录后维护。",
+      "url": "https://github.com/vrautenbach/isprs_catalogue",
+      "commitSha": "9825eda0b70f33860ba4e0e8ba018685da8098cc",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作地理空间教育资源目录、元数据和可检索性方法的 citation-only 参照，不复制代码、资源正文、图片或数据库内容。"
+    },
+    {
+      "id": "github-yujinnee-worldhunter",
+      "title": "WorldHunter：大陆、邻国线索与全球地理探索",
+      "publisher": "yujinnee/WorldHunter（GitHub）",
+      "editionNote": "公开仓库提交 `84dcc3a76132e73dfe6f29572f8723c7d6a1d791`；访问日期 2026-08-23；README 说明应用通过大陆选择、可旋转三维地球、邻国线索、国家地图缩放和国家问答组织全球地理学习，并把 AR 观察作为探索环节。",
+      "url": "https://github.com/yujinnee/WorldHunter",
+      "commitSha": "84dcc3a76132e73dfe6f29572f8723c7d6a1d791",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作大陆—国家—邻国线索和地图探索的 citation-only 参照，不复制代码、地图、图片、国家资料或应用版式。"
+    },
+    {
+      "id": "github-mukombradon-globeguesser",
+      "title": "GlobeGuesser：国旗、国家与地理游戏化学习",
+      "publisher": "mukombradon/GlobeGuesser（GitHub）",
+      "editionNote": "公开仓库提交 `f0129d7b41a8519361472adae686cd6d2fc292f3`；访问日期 2026-08-23；README 说明项目覆盖国家、属地、美国各州和历史国家的旗帜识别，设置经典、限时、困难、每日、求生和马拉松模式，并记录难度与区域表现。",
+      "url": "https://github.com/mukombradon/GlobeGuesser",
+      "commitSha": "f0129d7b41a8519361472adae686cd6d2fc292f3",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作地理检索、区域分类、难度设计和游戏化复习的 citation-only 参照，不复制代码、旗帜、国家资料、题目或页面文字。"
+    },
+    {
+      "id": "github-gisphere-kg-chatbot",
+      "title": "GISphere-KG ChatBot：GIS 地理教育知识图谱",
+      "publisher": "GIS-Info/GISphereKG-ChatBot（GitHub）",
+      "editionNote": "公开仓库提交 `a59ae1ae927344f2fa75058b91b79f819a76e455`；访问日期 2026-08-23；README 说明项目将数百个 GIS 项目、教师/研究者、研究兴趣、大学和地理位置组织为知识图谱，并用显式图查询与语义相似度支持资源检索。",
+      "url": "https://github.com/GIS-Info/GISphereKG-ChatBot",
+      "commitSha": "a59ae1ae927344f2fa75058b91b79f819a76e455",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作 GIS 实体—关系组织、空间位置字段、资源检索和资料标准化的 citation-only 参照，不复制论文、代码、数据库、图件或个人资料。"
+    },
+    {
+      "id": "web-noaa-education-resource-collections",
+      "title": "NOAA Education：地球系统资源合集",
+      "publisher": "National Oceanic and Atmospheric Administration",
+      "editionNote": "公开教育资源入口；访问日期 2026-08-23；页面按海洋与海岸、天气与大气、气候、海洋生物、淡水、教育者数据资源和可打印活动等主题组织资料。",
+      "url": "https://www.noaa.gov/education/resource-collections",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "NOAA 教育资源入口；本项目仅作地球系统主题检索、资源类型识别和海洋—大气—淡水概念边界的 citation-only 参照，不复制页面正文、图片、活动材料或数据。"
     }
   ],
   "items": [
@@ -9976,6 +10035,336 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：资源安全、环境治理、生态文明与国家安全章节",
           "note": "回到教材核对资源安全、环境约束、治理能力和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-terrain-relief-and-vertical-exaggeration",
+      "courseId": "compulsory-1",
+      "title": "三维地形中的起伏与垂直夸张",
+      "summary": "三维地形工具可以把山地、火山和盆地的起伏关系变得直观，但起伏夸张只是观察手段，不是实际高程比例。判读时先看地形位置、坡向和相对高差，再核对图层来源、比例尺与视角，避免把视觉效果直接当成地貌定量结论。",
+      "keywords": ["三维地形", "相对高差", "垂直夸张", "地貌判读"],
+      "sourceIds": ["github-yuta-edu-3d-terrain", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-yuta-edu-3d-terrain",
+          "locator": "index.html / 起伏を強調（Z）、起伏誇張 1×→10× 与富士山、阿苏、善光寺平预设",
+          "note": "GitHub项目用于交叉核对三维地形、相对高差和垂直夸张的观察边界；不复制代码、图件、数据或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地貌、地形特征、外力作用与自然环境整体性章节",
+          "note": "回到教材核对地形起伏、坡面过程、地貌类型和自然地理解释。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-3d-model-viewpoint-and-scale",
+      "courseId": "compulsory-1",
+      "title": "三维视点变化与地理尺度",
+      "summary": "真上、斜角和低角度视点会突出不同的地形关系：真上便于看平面位置和范围，斜角便于观察山谷与坡面，低角度容易强化近处起伏。比较三种视点时要保持地点、图层和缩放级别一致，才能把视角差异与真实空间差异分开。",
+      "keywords": ["视点", "空间尺度", "平面位置", "坡面"],
+      "sourceIds": ["github-yuta-edu-3d-terrain", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-yuta-edu-3d-terrain",
+          "locator": "index.html / 真上、斜め、低い角度视点按钮与富士山、阿苏、善光寺平地点预设",
+          "note": "GitHub项目用于交叉核对视点、摄像机角度、地点预设和地形空间关系的边界；不复制代码、图件或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地理位置、地形剖面、地图判读与空间尺度章节",
+          "note": "回到教材核对位置、范围、尺度、剖面和地形判读方法。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-ocean-weather-resource-collection",
+      "courseId": "compulsory-1",
+      "title": "从资源目录进入海洋、天气与淡水过程",
+      "summary": "面对网络地理资料，先按海洋与海岸、天气与大气、气候、海洋生物和淡水等主题分流，再确定要解释的是能量、水循环、天气过程还是生态响应。目录分类只能帮助检索，具体结论仍要回到观测时间、空间范围、变量定义和教材概念。",
+      "keywords": ["资源目录", "天气与大气", "淡水", "资料检索"],
+      "sourceIds": ["web-noaa-education-resource-collections", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-education-resource-collections",
+          "locator": "NOAA Education / Ocean and coasts、Weather and atmosphere、Climate、Freshwater、Data resources for educators",
+          "note": "NOAA官方教育入口用于交叉核对地球系统主题分类和教育资源检索边界；不复制页面正文、图片、活动材料或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：大气、水循环、海洋与自然环境整体性章节",
+          "note": "回到教材核对大气过程、水循环、海洋作用和自然环境各圈层联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-continent-country-neighbor-clues",
+      "courseId": "compulsory-2",
+      "title": "大陆—国家—邻国线索的区域定位",
+      "summary": "区域定位可以从大陆范围开始，再用邻国、海陆位置和国家轮廓逐步缩小候选。线索题不要只凭国名或旗帜记忆，应把相邻关系、边界方向、交通联系和区域层级组合起来，并在地图上回查空间位置。",
+      "keywords": ["大陆", "邻国", "区域定位", "空间关系"],
+      "sourceIds": ["github-yujinnee-worldhunter", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-yujinnee-worldhunter",
+          "locator": "README / Continental Selection、country quiz、neighboring countries and continent map exploration",
+          "note": "GitHub项目用于交叉核对大陆选择、邻国线索、国家地图和区域定位的边界；不复制代码、地图、图片或国家资料。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：地域文化、区域联系、国家与区域空间结构章节",
+          "note": "回到教材核对区域层级、空间联系、位置条件和人文地理区域分析。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-global-flag-information-and-regional-hierarchy",
+      "courseId": "compulsory-2",
+      "title": "国旗识别不能替代国家与区域信息",
+      "summary": "国旗游戏适合训练国家名称和快速检索，但高中地理还要继续追问国家所属区域、人口与产业特征、自然资源和对外联系。遇到历史国家、属地或相似旗帜时，应明确资料时间和政治地理口径，避免把视觉识别误当成完整区域知识。",
+      "keywords": ["国旗", "国家地理", "区域层级", "资料时间"],
+      "sourceIds": ["github-mukombradon-globeguesser", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-mukombradon-globeguesser",
+          "locator": "README / countries、territories、US states、historical nations and regional performance",
+          "note": "GitHub项目用于交叉核对国旗、属地、历史国家、区域分类和游戏化检索的边界；不复制代码、旗帜、国家资料或题目。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：人口、城镇、产业、交通与区域联系章节",
+          "note": "回到教材核对国家与区域的人口、产业、交通和人地关系解释。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-geography-resource-catalogue-metadata",
+      "courseId": "compulsory-2",
+      "title": "地理资源目录中的元数据与区域证据",
+      "summary": "整理地理学习资料时，标题、描述、日期、作者和关键词不是装饰信息，而是判断资料主题、时间和责任主体的基本元数据。区域研究应先建立可检索的资料清单，再比较不同来源的空间单元、时间范围和证据质量，避免只凭搜索结果摘要下结论。",
+      "keywords": ["元数据", "资料目录", "作者", "时间范围"],
+      "sourceIds": ["github-vrautenbach-isprs-catalogue", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-vrautenbach-isprs-catalogue",
+          "locator": "README / geospatial educational resources catalogue；App.js / title、description、date、author、keywords 与 search",
+          "note": "ISPRS目录项目用于交叉核对地理资源元数据、检索字段和资料责任边界；不复制代码、资源正文、图片或数据库内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：区域调查、统计资料、区域比较与地理实践章节",
+          "note": "回到教材核对区域调查、统计资料、空间单元和资料评价。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-terrain-dem-map-layer-and-attribution",
+      "courseId": "selective-1",
+      "title": "DEM 地形图层与地图来源归因",
+      "summary": "三维地形表达至少要区分普通底图、DEM 高程图层和由程序加工形成的视觉效果。读图时检查高程数据是否真正加载、起伏夸张值是否改变、底图与高程图层是否同一空间范围，并保留地图服务和加工说明，才能把地貌观察变成可复核的地理信息技术证据。",
+      "keywords": ["DEM", "高程图层", "底图", "来源归因"],
+      "sourceIds": ["github-yuta-edu-3d-terrain", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-yuta-edu-3d-terrain",
+          "locator": "index.html / GSI standard map attribution、raster-dem TODO、map.setTerrain 与加工标识",
+          "note": "GitHub项目用于交叉核对普通底图、DEM、高程解码、起伏夸张和地图归因的边界；不复制代码、图件或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地形剖面、地理信息技术、遥感与空间尺度章节",
+          "note": "回到教材核对高程、地形表达、遥感和 GIS 图层判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-ocean-atmosphere-resource-path",
+      "courseId": "selective-1",
+      "title": "海洋—大气资料的主题路径与过程解释",
+      "summary": "研究海洋与大气相互作用时，可先从 NOAA 的海洋与海岸、天气与大气、气候和淡水资源入口确定资料路径，再回到能量交换、水循环、风场、洋流和生态响应建立过程链。分类目录帮助找到资料，但不能替代变量、时段和空间尺度的核对。",
+      "keywords": ["海洋大气", "水循环", "资料路径", "空间尺度"],
+      "sourceIds": ["web-noaa-education-resource-collections", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-education-resource-collections",
+          "locator": "NOAA Education / Ocean and coasts、Weather and atmosphere、Climate、Freshwater resource collections",
+          "note": "NOAA官方教育入口用于交叉核对海洋、大气、气候和淡水主题的资源路径；不复制页面正文、图片、活动材料或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：大气运动、海洋水体、水循环、洋流与自然环境整体性章节",
+          "note": "回到教材核对海洋—大气交换、风场、洋流、水循环和自然环境过程。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-terrain-viewpoint-and-landform-evidence",
+      "courseId": "selective-1",
+      "title": "视点预设与地貌证据的多角度核验",
+      "summary": "同一地貌在真上、斜角和低角度视图中呈现的证据不同：平面视图强调范围与位置，斜视图强调坡面与谷地，低角度视图容易放大起伏。综合判读应在多个视角下寻找稳定特征，再用等高线、剖面或高程数据核验，而不是只相信一张最有冲击力的截图。",
+      "keywords": ["多视角", "地貌证据", "等高线", "剖面核验"],
+      "sourceIds": ["github-yuta-edu-3d-terrain", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-yuta-edu-3d-terrain",
+          "locator": "index.html / 真上、斜め、低い角度视点与富士山、阿苏、善光寺平预设",
+          "note": "GitHub项目用于交叉核对多视角观察、地貌稳定特征和截图证据边界；不复制代码、图件或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地貌过程、地形剖面、等高线与自然地理综合判读章节",
+          "note": "回到教材核对等高线、剖面、地貌过程和多源自然地理证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-geospatial-resource-catalogue-and-reproducibility",
+      "courseId": "selective-2",
+      "title": "地理空间教育资源目录与可复现研究",
+      "summary": "区域研究资料库应同时保存主题、作者、日期、关键词和检索方式，并在新增资料时记录版本和来源。这样既能按区域问题快速找到地图、数据或教学资源，也能让同学复查为什么选择某一资料、它适用于哪个空间尺度，以及结论是否可由原始来源重建。",
+      "keywords": ["资源目录", "可复现", "版本记录", "区域研究"],
+      "sourceIds": ["github-vrautenbach-isprs-catalogue", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-vrautenbach-isprs-catalogue",
+          "locator": "README / catalogue for geospatial educational resources；App.js / Firestore resources、search 和 metadata fields",
+          "note": "ISPRS目录项目用于交叉核对资源索引、元数据、搜索和可追溯性边界；不复制代码、资源正文、图片或数据库内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域研究、地理信息技术、规划与资料评价章节",
+          "note": "回到教材核对区域问题、GIS、资料评价、规划和研究过程。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-knowledge-graph-entity-relation-region",
+      "courseId": "selective-2",
+      "title": "知识图谱中的地理实体、关系与区域检索",
+      "summary": "把区域问题整理成知识图谱时，可将地点、学校或项目、研究主题和空间位置作为实体，把“位于”“关联”“相似”和“服务于”等作为关系。检索结果仍需回到地图、统计表和原始来源核验，知识图谱适合发现联系，不等于自动证明因果关系或区域发展结论。",
+      "keywords": ["知识图谱", "地理实体", "空间关系", "因果边界"],
+      "sourceIds": ["github-gisphere-kg-chatbot", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-gisphere-kg-chatbot",
+          "locator": "README / knowledge graph entities, research interests, universities, geographic locations and explicit/implicit graph search",
+          "note": "GISphere项目用于交叉核对地理实体、空间关系、知识图谱检索和相似度推断的边界；不复制论文、代码、数据库、图件或个人资料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域联系、地理信息技术、区域比较与因果解释章节",
+          "note": "回到教材核对区域要素联系、空间关系、GIS 表达和综合分析。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-country-region-spatial-comparison-game",
+      "courseId": "selective-2",
+      "title": "国家地图游戏中的区域比较",
+      "summary": "国家地图和邻国线索可以作为区域比较的入口：先确定位置与边界，再比较人口、产业、交通、资源和区域联系。游戏中的正确答案只解决定位问题，真正的区域发展分析还要补充统计指标、时间范围、尺度和不同区域之间的可比条件。",
+      "keywords": ["区域比较", "国家地图", "邻国关系", "统计指标"],
+      "sourceIds": ["github-yujinnee-worldhunter", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-yujinnee-worldhunter",
+          "locator": "README / continent selection、neighboring-country hints、zoomable continent map and country quiz",
+          "note": "WorldHunter项目用于交叉核对国家定位、邻国关系、地图缩放和区域比较的入口边界；不复制代码、地图、图片或国家资料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域比较、区域联系、人口产业和交通网络章节",
+          "note": "回到教材核对区域比较条件、发展要素、交通联系和尺度转换。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-ocean-climate-resource-evidence",
+      "courseId": "selective-3",
+      "title": "海洋与气候资源资料的安全边界",
+      "summary": "资源环境题不能因为资料来自权威教育网站就跳过证据核验。使用海洋、气候、淡水或数据资源时，要记录资料主题、时间、空间范围和变量定义，区分科普资源、原始观测、统计指标和治理政策，再判断它能支持资源安全、环境风险还是生态保护结论。",
+      "keywords": ["海洋资源", "气候资料", "水安全", "证据边界"],
+      "sourceIds": ["web-noaa-education-resource-collections", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-education-resource-collections",
+          "locator": "NOAA Education / Ocean and coasts、Climate、Freshwater、Data resources for educators",
+          "note": "NOAA官方教育入口用于交叉核对海洋、气候、淡水和数据资源的主题边界；不复制页面正文、图片、活动材料或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：海洋资源、气候变化、水安全、生态保护与国家安全章节",
+          "note": "回到教材核对资源环境安全、生态治理、气候风险和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geospatial-data-standardization-and-provenance",
+      "courseId": "selective-3",
+      "title": "地理数据标准化与资源环境决策溯源",
+      "summary": "资源环境决策需要把地点、组织、研究主题、指标和来源版本统一记录，否则同名地点、不同年份或不同空间尺度的数据容易被错误合并。知识图谱和语义检索可以帮助发现候选关系，但最终使用前仍要核对原始来源、许可、时间和空间口径，保留可追溯的决策链。",
+      "keywords": ["数据标准化", "来源溯源", "资源环境", "空间口径"],
+      "sourceIds": ["github-gisphere-kg-chatbot", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-gisphere-kg-chatbot",
+          "locator": "README / data cleaning and standardization、entity categories、geographic location and semantic similarity",
+          "note": "GISphere项目用于交叉核对数据标准化、实体分类、空间位置、语义相似度和来源溯源的边界；不复制论文、代码、数据库或个人资料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境数据、国家安全、生态治理与风险决策章节",
+          "note": "回到教材核对资源环境证据、数据口径、治理决策和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geography-game-data-scope-and-fairness",
+      "courseId": "selective-3",
+      "title": "地理游戏的数据范围与公平性",
+      "summary": "游戏化地理复习应先说明题目覆盖哪些国家、属地、历史国家或区域，难度如何分层，答案容错如何设置，再评价学习效果。排行榜和连续挑战可以提高参与度，却不能证明地理理解深度；资源环境与国家安全学习还要加入来源质量、时间变化和现实治理案例。",
+      "keywords": ["游戏化学习", "数据范围", "难度分层", "公平性"],
+      "sourceIds": ["github-mukombradon-globeguesser", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-mukombradon-globeguesser",
+          "locator": "README / countries、territories、historical nations、difficulty levels、daily challenge and typo tolerance",
+          "note": "GlobeGuesser项目用于交叉核对地理游戏的数据范围、难度、容错和公平性边界；不复制代码、旗帜、题目或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境问题、风险治理、国家安全与综合评价章节",
+          "note": "回到教材核对资源环境证据、风险治理、评价标准和国家安全。"
         }
       ],
       "licenseStatus": "citation-only",

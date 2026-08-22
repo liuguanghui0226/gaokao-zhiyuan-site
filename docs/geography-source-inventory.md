@@ -1,12 +1,25 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026.08.23.24
+盘点日期：2026-08-23；扩展轮次：geo-2026.08.23.25
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.24`：172 个来源、380 条卡片，其中 38 条 `authored-summary`、342 条 `citation-only`；五个课程族分别为 67、77、82、75、79 条。本轮新增 1 个公开网站、5 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖云观测、公民科学、地图寻宝、地貌气候 GIS、课例设计、开源地理治理和资料伦理。
+当前发布版本 `geo-2026.08.23.25`：178 个来源、395 条卡片，其中 38 条 `authored-summary`、357 条 `citation-only`；五个课程族分别为 70、80、85、78、82 条。本轮新增 1 个公开网站、5 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖三维地形、地理资源目录、国家与邻国定位、地理游戏化学习、知识图谱、海洋气候资源检索和数据溯源。
 
-本轮累计新增 106 条 citation-only 方法卡：在上一轮 91 条的基础上，本轮继续吸收云观测、公民科学、地图交互、地貌气候教育和开源地理治理来源，补齐观测抽样、云量辐射、位置隐私、图例语义和数据伦理等专题。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 121 条 citation-only 方法卡：在上一轮 106 条的基础上，本轮继续吸收三维地形、地理空间教育目录、全球国家定位、知识图谱和 NOAA 教育资源，补齐视点与尺度、元数据、区域层级、资料范围、公平性和资源环境证据溯源等专题。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.23.25 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-yuta-edu-3d-terrain` | [edu-3d-terrain：教育用三维地形查看器](https://github.com/YutaOzawaTU/edu-3d-terrain) | commit `34b7ecd7a1cb6a0948e26869ea56b08c55935a28`；访问日期 2026-08-23 | 参照 DEM、视点预设、起伏夸张、地形地点和国土地理院地图归因；不复制代码、图件、数据或页面文字。 |
+| `github-vrautenbach-isprs-catalogue` | [ISPRS Catalogue：地理空间教育资源目录](https://github.com/vrautenbach/isprs_catalogue) | commit `9825eda0b70f33860ba4e0e8ba018685da8098cc`；访问日期 2026-08-23 | 参照标题、描述、日期、作者、关键词、检索和资源维护等元数据；不复制代码、资源正文、图片或数据库内容。 |
+| `github-yujinnee-worldhunter` | [WorldHunter：大陆、邻国线索与全球地理探索](https://github.com/yujinnee/WorldHunter) | commit `84dcc3a76132e73dfe6f29572f8723c7d6a1d791`；访问日期 2026-08-23 | 参照大陆选择、国家地图、邻国线索和区域定位；不复制代码、地图、图片、国家资料或应用版式。 |
+| `github-mukombradon-globeguesser` | [GlobeGuesser：国旗、国家与地理游戏化学习](https://github.com/mukombradon/GlobeGuesser) | commit `f0129d7b41a8519361472adae686cd6d2fc292f3`；访问日期 2026-08-23 | 参照国家、属地、历史国家、难度分层和复习公平性；不复制代码、旗帜、题目或页面文字。 |
+| `github-gisphere-kg-chatbot` | [GISphere-KG ChatBot：GIS 地理教育知识图谱](https://github.com/GIS-Info/GISphereKG-ChatBot) | commit `a59ae1ae927344f2fa75058b91b79f819a76e455`；访问日期 2026-08-23 | 参照地理实体、空间位置、关系、标准化和知识图谱检索；不复制论文、代码、数据库、图件或个人资料。 |
+| `web-noaa-education-resource-collections` | [NOAA Education：地球系统资源合集](https://www.noaa.gov/education/resource-collections) | 页面访问日期 2026-08-23 | 参照海洋、天气、大气、气候、海洋生物、淡水和教育者数据资源的主题组织；不复制正文、图片、活动材料或数据。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每个课程族 3 条。外部来源只用于三维观察、资源组织、区域定位、知识图谱、游戏化复习和地球系统资料边界的交叉核对，公开层继续保留人民教育出版社教材证据和原创表述；没有把第三方题目、答案、页面代码、图件或个人资料并入站点。
 
 ## geo-2026.08.23.24 新增公开来源
 
