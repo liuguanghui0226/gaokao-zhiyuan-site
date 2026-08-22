@@ -4112,6 +4112,19 @@ function geographySummaryMetrics(data) {
   };
 }
 
+function renderGeographySource(source) {
+  const title = esc(source?.title || source?.id || "未命名来源");
+  const revision = [
+    source?.commitSha ? `commit ${source.commitSha}` : "",
+    source?.accessedAt ? `访问 ${source.accessedAt}` : "",
+  ].filter(Boolean).join(" · ");
+  const label = revision ? `${title} · ${esc(revision)}` : title;
+  if (source?.url) {
+    return `<a class="geography-source-link" href="${esc(source.url)}" target="_blank" rel="noreferrer">${label}</a>`;
+  }
+  return `<span class="geography-source-local" title="本地索引或教材来源，无公开链接">${label}</span>`;
+}
+
 function renderGeography() {
   const data = state.geographyData;
   if (!data) {
@@ -4141,9 +4154,9 @@ function renderGeography() {
   ].join("");
   const cards = visibleItems.map((item) => {
     const course = courseMap.get(item.courseId);
-    const sourceTitles = item.sourceIds.map((sourceId) => {
+    const sources = item.sourceIds.map((sourceId) => {
       const source = data.sources.find((candidate) => candidate.id === sourceId);
-      return source?.title || sourceId;
+      return source || { id: sourceId };
     });
     const evidence = item.evidence.map((entry) => {
       const source = data.sources.find((candidate) => candidate.id === entry.sourceId);
@@ -4165,7 +4178,9 @@ function renderGeography() {
           ${evidence.map((entry) => `<span>${esc(entry)}</span>`).join("")}
         </div>
         <p class="geography-license">${esc(item.licenseStatus === "authored-summary" ? "本站为原创摘要；请回到教材原页核对完整定义、图表与案例。" : "本站仅提供来源索引，不复制原文。")}</p>
-        <p class="geography-source-title">${esc(sourceTitles.join("；"))}</p>
+        <div class="geography-source-list" aria-label="来源列表">
+          ${sources.map(renderGeographySource).join("")}
+        </div>
       </details>
     </article>`;
   }).join("");

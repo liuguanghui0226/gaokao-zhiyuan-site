@@ -398,6 +398,35 @@ select {
   line-height: 1.5;
 }
 
+.geography-source-list {
+  display: grid;
+  gap: 7px;
+  margin-top: 10px;
+}
+
+.geography-source-link,
+.geography-source-local {
+  display: block;
+  padding: 8px 10px;
+  border-left: 3px solid var(--leaf);
+  background: #f7faf7;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.geography-source-link {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.geography-source-link:hover,
+.geography-source-link:focus-visible {
+  color: var(--leaf-dark);
+  text-decoration: underline;
+}
+
 .discipline-tile {
   min-width: 0;
   min-height: 92px;
