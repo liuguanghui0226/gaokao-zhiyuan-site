@@ -9,59 +9,49 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-cgs-geological-survey": {
-    url: "https://www.cgs.gov.cn/",
+  "github-onicio-geodeck": {
+    url: "https://github.com/onicio/geodeck",
+    commitSha: "f43955d7d50b97bb5f75698cba5c99aed59ee3d6",
     accessedAt: "2026-08-23",
   },
-  "web-mot-transport-geography-data": {
-    url: "https://www.mot.gov.cn/",
+  "github-nocci-high-school-geography": {
+    url: "https://github.com/Nocci-lab/geography_high_school",
+    commitSha: "955972d59683d5b67fcdc6a706503b4dfb92d449",
     accessedAt: "2026-08-23",
   },
-  "web-nea-energy-security-information": {
-    url: "https://www.nea.gov.cn/",
+  "github-alexjohnj-geographyas": {
+    url: "https://github.com/alexjohnj/geographyas",
+    commitSha: "1b8a7666bc1004955a45787a49e81930f8aba6e5",
     accessedAt: "2026-08-23",
   },
-  "web-nmdis-marine-information": {
-    url: "https://www.nmdis.org.cn/",
+  "github-spatialthoughts-qgis-tutorials": {
+    url: "https://github.com/spatialthoughts/qgis-tutorials",
+    commitSha: "e6c1e1650e37ada34ae78be3155c6b63c526c3b8",
     accessedAt: "2026-08-23",
   },
-  "web-geodata-earth-system-data": {
-    url: "https://www.geodata.cn/",
-    accessedAt: "2026-08-23",
-  },
-  "github-lmec-map-education-collections": {
-    url: "https://github.com/boston-library/lmec_collections",
-    commitSha: "1d2f104a2a5a8b186bfd06a45dde7fd1af25279f",
-    accessedAt: "2026-08-23",
-  },
-  "github-qgis-lesson-geography": {
-    url: "https://github.com/sagesteppe/QGIS_Lesson",
-    commitSha: "baccacf5893cf02d545258c0d3ceacab35430a62",
-    accessedAt: "2026-08-23",
-  },
-  "github-tactile-map-generator": {
-    url: "https://github.com/jesse-flores/Tactile-Map-Generator",
-    commitSha: "623966ce1963b41472ea667fbae62dc24b97f90a",
+  "github-opengeos-pygis": {
+    url: "https://github.com/opengeos/pygis",
+    commitSha: "bb36d465c05fadf768e4ca21fbfa0eeee419b8ce",
     accessedAt: "2026-08-23",
   },
 };
 
 const expectedItems = {
-  "geo-c1-river-basin-water-resource-observation": "compulsory-1",
-  "geo-c1-geological-survey-map-and-landform-evidence": "compulsory-1",
-  "geo-c1-tactile-map-scale-and-spatial-orientation": "compulsory-1",
-  "geo-c2-transport-corridor-and-accessibility": "compulsory-2",
-  "geo-c2-energy-industry-location-and-transition": "compulsory-2",
-  "geo-c2-historical-map-and-regional-change": "compulsory-2",
-  "geo-s1-river-basin-process-and-runoff-seasonality": "selective-1",
-  "geo-s1-geological-map-and-plate-process-evidence": "selective-1",
-  "geo-s1-marine-observation-and-coastal-change": "selective-1",
-  "geo-s2-national-geospatial-data-and-regional-planning": "selective-2",
-  "geo-s2-qgis-layer-overlay-and-field-verification": "selective-2",
-  "geo-s2-map-education-collection-and-scale-comparison": "selective-2",
-  "geo-s3-energy-security-and-low-carbon-transition": "selective-3",
-  "geo-s3-marine-data-and-coastal-resource-governance": "selective-3",
-  "geo-s3-accessible-mapping-and-spatial-inclusion": "selective-3",
+  "geo-c1-absolute-distance-direction-map-reading": "compulsory-1",
+  "geo-c1-elevation-isoline-evidence": "compulsory-1",
+  "geo-c1-revision-process-chain-and-scale": "compulsory-1",
+  "geo-c2-cartogram-statistical-space": "compulsory-2",
+  "geo-c2-europe-north-america-regional-comparison": "compulsory-2",
+  "geo-c2-case-study-evidence-chain": "compulsory-2",
+  "geo-s1-map-projection-distortion-purpose": "selective-1",
+  "geo-s1-physical-region-map-compare": "selective-1",
+  "geo-s1-climate-case-evidence-and-uncertainty": "selective-1",
+  "geo-s2-thematic-map-symbol-selection": "selective-2",
+  "geo-s2-qgis-tutorial-task-sequence": "selective-2",
+  "geo-s2-geospatial-environment-reproducibility": "selective-2",
+  "geo-s3-map-design-and-environmental-equity": "selective-3",
+  "geo-s3-resource-environment-case-review": "selective-3",
+  "geo-s3-data-license-and-provenance-boundary": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.23.23");
@@ -70,17 +60,18 @@ assert.equal(payload.items.length, 365);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v21 source ${sourceId}`);
+  assert.ok(source, `missing v23 source ${sourceId}`);
   assert.equal(source.url, expected.url);
+  assert.equal(source.commitSha, expected.commitSha);
   assert.equal(source.accessedAt, expected.accessedAt);
-  if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
+  assert.ok(source.editionNote.includes(expected.commitSha), `${sourceId} edition note must repeat its commit SHA`);
   assert.match(source.licenseNote, /citation|原创|不复制|仅作/i);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v21 item ${itemId}`);
+  assert.ok(item, `missing v23 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

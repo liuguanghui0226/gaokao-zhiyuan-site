@@ -1,12 +1,24 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026.08.23.22
+盘点日期：2026-08-23；扩展轮次：geo-2026.08.23.23
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.22`：161 个来源、350 条卡片，其中 38 条 `authored-summary`、312 条 `citation-only`；五个课程族分别为 61、71、76、69、73 条。本轮新增 4 个公开网站、5 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖 QGIS/ArcGIS 空间分析、NASA 遥感时间序列、保护地生态治理、开放课程数据工作流、教师地理实践和大气环流交互模型。
+当前发布版本 `geo-2026.08.23.23`：166 个来源、365 条卡片，其中 38 条 `authored-summary`、327 条 `citation-only`；五个课程族分别为 64、74、79、72、76 条。本轮新增 5 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖地图距离与投影、专题地图符号、欧洲与北美区域比较、地理案例复习、QGIS 任务序列和 GIS 环境可复现性。
 
-本轮累计新增 76 条 citation-only 方法卡：在上一轮 61 条的基础上，本轮继续吸收 GIS 教学、遥感时间序列、保护地空间数据、开放课程和教师工具来源，补齐图层尺度、区域规划、生态连通性、灾害风险和资源安全等专题。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 91 条 citation-only 方法卡：在上一轮 76 条的基础上，本轮继续吸收地图投影、区域比较、复习案例、QGIS 教学和 GIS 环境工作流来源，补齐专题地图选择、证据尺度、资料归因和可复现性等专题。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.23.23 新增公开 GitHub 来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-onicio-geodeck` | [GeoDeck：地图与空间思维高中学习卡](https://github.com/onicio/geodeck) | commit `f43955d7d50b97bb5f75698cba5c99aed59ee3d6`；访问日期 2026-08-23 | 参照绝对距离、方向、高程、等值线、专题图和投影学习卡的组织方式；仓库声明 CC0-1.0，不复制 HTML、图片、题目或页面文字。 |
+| `github-nocci-high-school-geography` | [Geography High School：欧洲与北美地理复习游戏](https://github.com/Nocci-lab/geography_high_school) | commit `955972d59683d5b67fcdc6a706503b4dfb92d449`；访问日期 2026-08-23 | 参照欧洲、北美自然地理、产业和区域联系的地图复习与比较任务；未声明统一许可证，不复制页面、地图、题目或图片。 |
+| `github-alexjohnj-geographyas` | [Geography AS Notes：地理复习网站](https://github.com/alexjohnj/geographyas) | commit `1b8a7666bc1004955a45787a49e81930f8aba6e5`；访问日期 2026-08-23 | 参照学生复习网站的案例索引、过程链和学习导航；README 说明文字采用 CC BY-NC 4.0，不复制正文、图片、题目或版式。 |
+| `github-spatialthoughts-qgis-tutorials` | [QGIS Tutorials and Tips：GIS 教程](https://github.com/spatialthoughts/qgis-tutorials) | commit `e6c1e1650e37ada34ae78be3155c6b63c526c3b8`；访问日期 2026-08-23 | 参照 QGIS 任务序列、空间处理、构建复核与归因流程；README 说明教程采用 CC BY 4.0，不复制教程正文、代码、图件或数据。 |
+| `github-opengeos-pygis` | [pygis：GIS 编程工具环境](https://github.com/opengeos/pygis) | commit `bb36d465c05fadf768e4ca21fbfa0eeee419b8ce`；访问日期 2026-08-23 | 参照 GIS 环境安装、文档入口和可复现空间工作流；仓库声明 MIT，不复制代码、notebook、图片或数据。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每个课程族 3 条。第三方仓库只用于方法和资料组织交叉核对，公开层继续以人民教育出版社教材页码为主证据；没有把第三方题目、答案、页面代码或图件并入站点。
 
 ## geo-2026.08.23.22 新增公开来源
 

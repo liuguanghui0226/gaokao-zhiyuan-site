@@ -19,10 +19,10 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.23.22");
-assert.equal(site.sources.length, 161);
-assert.equal(site.items.length, 350);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 139);
+assert.equal(site.version, "geo-2026.08.23.23");
+assert.equal(site.sources.length, 166);
+assert.equal(site.items.length, 365);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 144);
 assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 22);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
@@ -207,6 +207,25 @@ for (const itemId of [
 ]) {
   assert.ok(site.items.some((item) => item.id === itemId), `missing v22 runtime item ${itemId}`);
 }
+for (const itemId of [
+  "geo-c1-absolute-distance-direction-map-reading",
+  "geo-c1-elevation-isoline-evidence",
+  "geo-c1-revision-process-chain-and-scale",
+  "geo-c2-cartogram-statistical-space",
+  "geo-c2-europe-north-america-regional-comparison",
+  "geo-c2-case-study-evidence-chain",
+  "geo-s1-map-projection-distortion-purpose",
+  "geo-s1-physical-region-map-compare",
+  "geo-s1-climate-case-evidence-and-uncertainty",
+  "geo-s2-thematic-map-symbol-selection",
+  "geo-s2-qgis-tutorial-task-sequence",
+  "geo-s2-geospatial-environment-reproducibility",
+  "geo-s3-map-design-and-environmental-equity",
+  "geo-s3-resource-environment-case-review",
+  "geo-s3-data-license-and-provenance-boundary",
+]) {
+  assert.ok(site.items.some((item) => item.id === itemId), `missing v23 runtime item ${itemId}`);
+}
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-noaa-tides-education"));
@@ -328,6 +347,15 @@ for (const sourceId of [
   "github-geography-teaching-plugin",
 ]) {
   assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v22 runtime source ${sourceId}`);
+}
+for (const sourceId of [
+  "github-onicio-geodeck",
+  "github-nocci-high-school-geography",
+  "github-alexjohnj-geographyas",
+  "github-spatialthoughts-qgis-tutorials",
+  "github-opengeos-pygis",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v23 runtime source ${sourceId}`);
 }
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 

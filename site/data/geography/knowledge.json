@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.22",
+  "version": "geo-2026.08.23.23",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1494,6 +1494,56 @@
       "commitSha": "0ea592460b04452e7e761343113f1092968b1b2b",
       "accessedAt": "2026-08-23",
       "licenseNote": "仓库未声明统一许可证；本项目仅作高中地理大气环流模型、交互观察和课堂演示边界的 citation-only 参照，不复制 HTML、代码、图片或页面文字。"
+    },
+    {
+      "id": "github-onicio-geodeck",
+      "title": "GeoDeck：地图与空间思维高中学习卡",
+      "publisher": "onicio/geodeck（GitHub）",
+      "editionNote": "公开仓库提交 `f43955d7d50b97bb5f75698cba5c99aed59ee3d6`；访问日期 2026-08-23；index.html 组织地图距离、方向、比例尺、投影、等值线和专题图的高中学习卡与测验。",
+      "url": "https://github.com/onicio/geodeck",
+      "commitSha": "f43955d7d50b97bb5f75698cba5c99aed59ee3d6",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 CC0-1.0；本项目仅作地图、空间思维和学习卡组织的 citation-only 参照，公开层发布原创高中地理方法，不复制 HTML、图片、题目或页面文字。"
+    },
+    {
+      "id": "github-nocci-high-school-geography",
+      "title": "Geography High School：欧洲与北美地理复习游戏",
+      "publisher": "Nocci-lab/geography_high_school（GitHub）",
+      "editionNote": "公开仓库提交 `955972d59683d5b67fcdc6a706503b4dfb92d449`；访问日期 2026-08-23；项目首页按欧洲、北美自然地理、产业和区域联系组织地图复习入口。",
+      "url": "https://github.com/Nocci-lab/geography_high_school",
+      "commitSha": "955972d59683d5b67fcdc6a706503b4dfb92d449",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库页面未声明统一许可证；本项目仅作欧洲、北美区域地图复习与空间比较的 citation-only 参照，公开层发布原创方法，不复制页面、地图、题目或图片。"
+    },
+    {
+      "id": "github-alexjohnj-geographyas",
+      "title": "Geography AS Notes：地理复习网站",
+      "publisher": "alexjohnj/geographyas（GitHub）",
+      "editionNote": "公开仓库提交 `1b8a7666bc1004955a45787a49e81930f8aba6e5`；访问日期 2026-08-23；README 将其定位为面向学生的静态 Geography revision website，并说明案例复习与许可边界。",
+      "url": "https://github.com/alexjohnj/geographyas",
+      "commitSha": "1b8a7666bc1004955a45787a49e81930f8aba6e5",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库 README 说明文字采用 CC BY-NC 4.0；本项目仅作地理复习结构与案例证据组织的 citation-only 参照，不复制正文、图片、题目或页面版式。"
+    },
+    {
+      "id": "github-spatialthoughts-qgis-tutorials",
+      "title": "QGIS Tutorials and Tips：GIS 教程",
+      "publisher": "spatialthoughts/qgis-tutorials（GitHub）",
+      "editionNote": "公开仓库提交 `e6c1e1650e37ada34ae78be3155c6b63c526c3b8`；访问日期 2026-08-23；README 说明项目以 Sphinx 源文件维护 QGIS Tutorials and Tips，并覆盖处理流程与构建复核。",
+      "url": "https://github.com/spatialthoughts/qgis-tutorials",
+      "commitSha": "e6c1e1650e37ada34ae78be3155c6b63c526c3b8",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库 README 说明教程采用 CC BY 4.0；本项目仅作 QGIS 任务序列、空间处理和教程归因的 citation-only 参照，不复制教程正文、代码、图件或数据。"
+    },
+    {
+      "id": "github-opengeos-pygis",
+      "title": "pygis：GIS 编程工具环境",
+      "publisher": "opengeos/pygis（GitHub）",
+      "editionNote": "公开仓库提交 `bb36d465c05fadf768e4ca21fbfa0eeee419b8ce`；访问日期 2026-08-23；README 将项目定位为安装常用 GIS 编程包的 Python 工具，并提供文档与 Binder 入口。",
+      "url": "https://github.com/opengeos/pygis",
+      "commitSha": "bb36d465c05fadf768e4ca21fbfa0eeee419b8ce",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 MIT；本项目仅作 GIS 环境、可复现分析和多源空间工作流的 citation-only 参照，公开层发布原创高中地理方法，不复制代码、notebook、图片或数据。"
     }
   ],
   "items": [
@@ -9202,6 +9252,341 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：自然灾害风险、防灾减灾与国家安全章节",
           "note": "回到教材核对灾害风险、暴露度、脆弱性、防灾减灾和安全治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-absolute-distance-direction-map-reading",
+      "courseId": "compulsory-1",
+      "title": "绝对距离与绝对方向的地图判读",
+      "summary": "读地图中的位置关系时，先区分绝对距离、绝对方向和相对位置：千米、米等单位表达距离，东南西北表达固定方向，近邻、上游或迎风侧则依赖参照对象。只有把比例尺、指向标、经纬网和参照物一起核对，才能把空间关系转成可靠的自然地理过程判断。",
+      "keywords": ["绝对距离", "绝对方向", "比例尺", "空间参照"],
+      "sourceIds": ["github-onicio-geodeck", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-onicio-geodeck",
+          "locator": "index.html / Maps & Spatial Thinking study deck: absolute distance, absolute direction and map scale",
+          "note": "GitHub学习卡用于交叉核对距离、方向和地图空间思维的教学边界；不复制 HTML、图片、题目或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地图、经纬网、比例尺与地理实践章节",
+          "note": "回到教材核对方向、距离、比例尺和自然地理空间定位。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-elevation-isoline-evidence",
+      "courseId": "compulsory-1",
+      "title": "高程与等值线的过程证据",
+      "summary": "等高线、等温线或等降水量线都不是地貌过程本身，而是把连续变量转换成可比较的空间边界。判读时先看数值、等值距、疏密和闭合关系，再把坡度、汇流方向或水热梯度与地形、下垫面和观测时间连接起来，避免只凭线条密集就直接断言灾害或生态结果。",
+      "keywords": ["高程", "等值线", "等值距", "过程证据"],
+      "sourceIds": ["github-onicio-geodeck", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-onicio-geodeck",
+          "locator": "index.html / Maps & Spatial Thinking study deck: elevation and isoline maps",
+          "note": "GitHub学习卡用于交叉核对高程、等值线和专题地图的读图边界；不复制 HTML、图件或测验内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：等高线地形图、自然环境观察与地貌过程章节",
+          "note": "回到教材核对等高线、地形起伏、径流方向和自然过程证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-revision-process-chain-and-scale",
+      "courseId": "compulsory-1",
+      "title": "自然地理复习的过程链与尺度",
+      "summary": "复习自然地理时，不要只按名词背诵，而要把触发条件、传输过程、空间表现、时间尺度和反馈结果串成过程链。案例网站可以帮助整理材料，但每个结论仍要回到教材概念、图表单位和观测尺度核对，明确哪些是普遍规律，哪些只是特定区域或特定时间的案例。",
+      "keywords": ["过程链", "时间尺度", "空间尺度", "案例复习"],
+      "sourceIds": ["github-alexjohnj-geographyas", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-alexjohnj-geographyas",
+          "locator": "README / Geography AS Notes revision website and student-facing revision structure",
+          "note": "复习网站用于交叉核对案例复习、静态课程组织和学习导航的边界；不复制正文、图片、题目或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：自然地理过程、整体性与尺度章节",
+          "note": "回到教材核对自然地理过程链、整体性、空间尺度和时间尺度。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-cartogram-statistical-space",
+      "courseId": "compulsory-2",
+      "title": "变形地图与统计空间",
+      "summary": "变形地图可以把人口、经济量或其他统计量直接转化为空间大小，但读图时必须把统计值与真实面积、人口密度和行政边界分开。先确认变量、单位、时间和变形规则，再与普通分级设色图或点密度图交叉比较，才能避免把图形面积变化误读为自然地理面积变化。",
+      "keywords": ["变形地图", "统计空间", "人口密度", "地图比较"],
+      "sourceIds": ["github-onicio-geodeck", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-onicio-geodeck",
+          "locator": "index.html / Maps & Spatial Thinking study deck: cartogram and thematic map concepts",
+          "note": "GitHub学习卡用于交叉核对变形地图、统计表达和专题制图的教学边界；不复制 HTML、图件或题目。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：人口分布、区域比较与地图表达章节",
+          "note": "回到教材核对人口密度、统计口径、区域差异和地图表达。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-europe-north-america-regional-comparison",
+      "courseId": "compulsory-2",
+      "title": "欧洲与北美区域比较的证据层次",
+      "summary": "比较世界区域时，先分别读取自然基础、人口聚落、产业分布和区域联系，再用相同指标与相同尺度比较异同。欧洲与北美的地图复习材料适合训练位置和区域特征识别，但不能用记忆中的单一案例代替统计资料、图例和时间口径核验。",
+      "keywords": ["区域比较", "欧洲", "北美", "指标口径"],
+      "sourceIds": ["github-nocci-high-school-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-nocci-high-school-geography",
+          "locator": "index.html / Europe and North America geography review game; regional maps, nature, industry and EU integration",
+          "note": "GitHub项目用于交叉核对欧洲、北美地图复习与区域比较的组织边界；不复制页面、地图、题目或图片。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：区域差异、人口聚落、产业活动与区域联系章节",
+          "note": "回到教材核对区域比较、产业区位、人口分布和人地关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-case-study-evidence-chain",
+      "courseId": "compulsory-2",
+      "title": "人文地理案例的证据链复习",
+      "summary": "整理人文地理案例时，可按问题、区位条件、要素变化、空间结果和治理反馈建立证据链。复习资料只负责提供案例入口，不能把案例中的结论直接推广到所有地区；还要补上人口、市场、交通、政策和环境约束的具体证据，并标出资料的时间与空间范围。",
+      "keywords": ["案例复习", "区位条件", "空间结果", "治理反馈"],
+      "sourceIds": ["github-alexjohnj-geographyas", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-alexjohnj-geographyas",
+          "locator": "README / Geography AS Notes revision website, static content and student revision use",
+          "note": "复习网站用于交叉核对案例材料组织和学习导航的边界；不复制正文、图片、题目或案例原文。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：农业、工业、城镇、交通与人地关系章节",
+          "note": "回到教材核对区位因素、空间联系、人地协调和案例分析方法。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-map-projection-distortion-purpose",
+      "courseId": "selective-1",
+      "title": "地图投影变形与使用目的",
+      "summary": "地图投影不可能同时保持所有几何性质，读图前要先判断任务更关注面积、形状、距离还是方向。等面积投影适合区域面积与分布比较，其他投影可能更适合航线、方向或局部形状表达；结论必须说明投影和尺度，否则同一对象的视觉大小不能直接比较。",
+      "keywords": ["地图投影", "面积变形", "形状变形", "读图目的"],
+      "sourceIds": ["github-onicio-geodeck", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-onicio-geodeck",
+          "locator": "index.html / Maps & Spatial Thinking study deck: projection, area distortion and equal-area projection",
+          "note": "GitHub学习卡用于交叉核对投影、面积变形和地图目的的教学边界；不复制 HTML、图件或测验内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地图投影、空间尺度与地理信息技术章节",
+          "note": "回到教材核对地图投影、空间表达和自然地理判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-physical-region-map-compare",
+      "courseId": "selective-1",
+      "title": "自然区域地图的分层比较",
+      "summary": "比较两个自然区域时，应先分别读取地形、气候、水文和植被图层，再寻找水热组合与地域分异的共同解释。欧洲与北美的区域地图可以训练从位置到自然特征的联读，但必须区分地图概括、边界差异和真实自然梯度，不能用某一城市或海岸的局部现象代表整个大区。",
+      "keywords": ["自然区域", "地形气候", "水热组合", "地域分异"],
+      "sourceIds": ["github-nocci-high-school-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-nocci-high-school-geography",
+          "locator": "index.html / Europe and North America physical geography maps and review activities",
+          "note": "GitHub项目用于交叉核对自然区域地图、区域复习和空间比较的边界；不复制地图、页面或题目。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：自然环境整体性、地域分异与区域比较章节",
+          "note": "回到教材核对地形、气候、水文、植被和地域分异规律。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-climate-case-evidence-and-uncertainty",
+      "courseId": "selective-1",
+      "title": "气候案例的证据与不确定性",
+      "summary": "气候案例复习要把观测时段、基准期、空间范围和指标定义写清楚，再判断异常、趋势或区域差异。案例网站能帮助建立问题清单，但温度、降水、环流和灾害影响仍需分别核验；样本短、站点少或尺度不一致时，应把不确定性写进结论，而不是用肯定句掩盖证据不足。",
+      "keywords": ["气候案例", "基准期", "观测尺度", "不确定性"],
+      "sourceIds": ["github-alexjohnj-geographyas", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-alexjohnj-geographyas",
+          "locator": "README / Geography AS Notes revision website and student revision structure",
+          "note": "复习网站用于交叉核对气候案例组织与学生学习导航的边界；不复制正文、图片、题目或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：天气、气候、自然灾害与资料判读章节",
+          "note": "回到教材核对天气气候资料、时间尺度、区域差异和自然灾害解释。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-thematic-map-symbol-selection",
+      "courseId": "selective-2",
+      "title": "专题地图符号的任务匹配",
+      "summary": "选择专题地图表达方式时，先判断数据是连续场、行政区统计、点位数量还是流向关系，再决定使用等值线、分级设色、点密度、比例符号或流线图。符号选择应服务于区域问题，图例、统计单位、时间范围和空间尺度必须同时出现，避免把制图形式误当成地理规律。",
+      "keywords": ["专题地图", "符号选择", "分级设色", "空间尺度"],
+      "sourceIds": ["github-onicio-geodeck", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-onicio-geodeck",
+          "locator": "index.html / Maps & Spatial Thinking study deck: choropleth, dot distribution, graduated symbol and isoline maps",
+          "note": "GitHub学习卡用于交叉核对专题地图类型和符号表达的教学边界；不复制 HTML、图件或测验内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：专题地图、区域研究与空间表达章节",
+          "note": "回到教材核对专题地图、区域比较、地理信息技术和空间表达。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-qgis-tutorial-task-sequence",
+      "courseId": "selective-2",
+      "title": "QGIS 探究任务的顺序与复核",
+      "summary": "把 GIS 任务拆成问题定义、数据准备、坐标与图层检查、处理操作、地图表达和结果复核六步。教程中的菜单路径只能说明操作方法，不能替代地理解释；每次输出都要记录数据版本、参数、比例尺和异常值，并用统计资料、影像或实地观察检查空间结论。",
+      "keywords": ["QGIS", "任务序列", "图层检查", "结果复核"],
+      "sourceIds": ["github-spatialthoughts-qgis-tutorials", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-spatialthoughts-qgis-tutorials",
+          "locator": "README / QGIS Tutorials and Tips source workflow, Sphinx build and processing tutorials",
+          "note": "QGIS教程仓库用于交叉核对任务序列、处理流程和教程构建复核的边界；不复制教程正文、代码、图件或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：地理信息技术、区域研究与规划实践章节",
+          "note": "回到教材核对 GIS 应用、区域研究、资料处理和规划实践。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-geospatial-environment-reproducibility",
+      "courseId": "selective-2",
+      "title": "地理计算环境与区域分析可复现性",
+      "summary": "区域空间分析要把数据、软件环境、坐标系统、处理参数和输出结果分开记录，保证别人能够追溯结论来自哪一步。GIS 编程环境可以降低工具安装和复现实验的门槛，但不能消除数据许可、时间版本、尺度错配和模型假设；可复现的是过程，不自动等于结论正确。",
+      "keywords": ["地理计算", "可复现性", "软件环境", "参数记录"],
+      "sourceIds": ["github-opengeos-pygis", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-opengeos-pygis",
+          "locator": "README / pygis package, documentation, Binder and GIS programming environment setup",
+          "note": "GIS工具环境仓库用于交叉核对安装、环境和可复现工作流的技术边界；不复制代码、notebook、图片或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域数据、地理信息技术与综合实践章节",
+          "note": "回到教材核对区域研究、资料处理、地理信息技术和实践复核。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-map-design-and-environmental-equity",
+      "courseId": "selective-3",
+      "title": "资源环境地图与空间公平",
+      "summary": "资源环境地图不仅要表达危险性、资源量或污染强度，还要说明谁暴露、谁受益、谁承担治理成本。制图时应同时检查色阶、分类阈值、统计单元、缺失值和无障碍阅读，再把地图模式与人口、设施、生态脆弱性和治理能力连接，避免用醒目的颜色替代公平性判断。",
+      "keywords": ["资源环境地图", "空间公平", "分类阈值", "暴露度"],
+      "sourceIds": ["github-onicio-geodeck", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-onicio-geodeck",
+          "locator": "index.html / Maps & Spatial Thinking study deck: choropleth, graduated symbols and thematic map reading",
+          "note": "GitHub学习卡用于交叉核对专题制图和地图阅读的表达边界；不复制 HTML、图件、题目或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境安全、灾害风险与公平治理章节",
+          "note": "回到教材核对资源环境风险、暴露度、脆弱性、生态安全和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-resource-environment-case-review",
+      "courseId": "selective-3",
+      "title": "资源环境案例的综合复核",
+      "summary": "复习资源环境案例时，按资源基础、利用方式、环境压力、受影响群体和治理反馈整理材料，再区分现状描述、因果解释和方案评价。案例复习网站可以帮助建立跨章节索引，但最终仍要回到教材与正式数据核对资源安全、环境承载力和国家安全之间的联系。",
+      "keywords": ["资源环境案例", "承载力", "治理反馈", "跨章节复习"],
+      "sourceIds": ["github-alexjohnj-geographyas", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-alexjohnj-geographyas",
+          "locator": "README / Geography AS Notes revision website, student revision and case-study organization",
+          "note": "复习网站用于交叉核对案例索引与学习导航的边界；不复制正文、图片、题目或案例材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源安全、环境承载力、生态文明与国家安全章节",
+          "note": "回到教材核对资源环境压力、治理反馈、承载力和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-data-license-and-provenance-boundary",
+      "courseId": "selective-3",
+      "title": "资源环境资料的许可与来源边界",
+      "summary": "吸收网络地图、教程和数据时，要把事实证据、方法说明、代码、图件和可再分发许可分开登记。即使资料公开可访问，也不能默认可以复制；学习者应记录来源、版本、访问日期、许可条件和自己重新组织的判断，保证资源环境结论可回查、可复核且不越过版权边界。",
+      "keywords": ["数据许可", "来源归因", "版本记录", "可追溯"],
+      "sourceIds": ["github-spatialthoughts-qgis-tutorials", "github-opengeos-pygis", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-spatialthoughts-qgis-tutorials",
+          "locator": "README / CC BY 4.0 tutorial license, source workflow and attribution guidance",
+          "note": "QGIS教程仓库用于交叉核对公开教程的许可、归因和版本工作流边界；不复制教程正文、代码、图件或数据。"
+        },
+        {
+          "sourceId": "github-opengeos-pygis",
+          "locator": "README / MIT-licensed GIS programming environment and documentation entry points",
+          "note": "GIS工具仓库用于交叉核对代码许可、环境来源和复现记录边界；不复制代码、notebook、图片或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境资料、生态治理与国家安全章节",
+          "note": "回到教材核对资源环境证据、治理判断和国家安全分析。"
         }
       ],
       "licenseStatus": "citation-only",

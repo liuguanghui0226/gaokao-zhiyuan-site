@@ -639,6 +639,37 @@ const REQUIRED_V22_ITEMS = new Set([
   "geo-s3-geography-teaching-tools-and-resource-security",
   "geo-s3-disaster-risk-map-and-inclusive-decision",
 ]);
+const REQUIRED_V23_SOURCES = new Set([
+  "github-onicio-geodeck",
+  "github-nocci-high-school-geography",
+  "github-alexjohnj-geographyas",
+  "github-spatialthoughts-qgis-tutorials",
+  "github-opengeos-pygis",
+]);
+const REQUIRED_V23_EXTERNAL_SOURCES = new Set([
+  "github-onicio-geodeck",
+  "github-nocci-high-school-geography",
+  "github-alexjohnj-geographyas",
+  "github-spatialthoughts-qgis-tutorials",
+  "github-opengeos-pygis",
+]);
+const REQUIRED_V23_ITEMS = new Set([
+  "geo-c1-absolute-distance-direction-map-reading",
+  "geo-c1-elevation-isoline-evidence",
+  "geo-c1-revision-process-chain-and-scale",
+  "geo-c2-cartogram-statistical-space",
+  "geo-c2-europe-north-america-regional-comparison",
+  "geo-c2-case-study-evidence-chain",
+  "geo-s1-map-projection-distortion-purpose",
+  "geo-s1-physical-region-map-compare",
+  "geo-s1-climate-case-evidence-and-uncertainty",
+  "geo-s2-thematic-map-symbol-selection",
+  "geo-s2-qgis-tutorial-task-sequence",
+  "geo-s2-geospatial-environment-reproducibility",
+  "geo-s3-map-design-and-environmental-equity",
+  "geo-s3-resource-environment-case-review",
+  "geo-s3-data-license-and-provenance-boundary",
+]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
   "geo-s1-time-zone-and-date-line",
@@ -715,6 +746,9 @@ for (const sourceId of REQUIRED_V21_SOURCES) {
 for (const sourceId of REQUIRED_V22_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing v22 geography source ${sourceId}`);
 }
+for (const sourceId of REQUIRED_V23_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing v23 geography source ${sourceId}`);
+}
 for (const sourceId of REQUIRED_EXTERNAL_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing external geography source ${sourceId}`);
 }
@@ -770,6 +804,11 @@ for (const source of payload.sources.filter((item) => REQUIRED_V22_EXTERNAL_SOUR
 }
 for (const source of payload.sources.filter((item) => REQUIRED_V22_PUBLIC_WEB_SOURCES.has(item.id))) {
   assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.accessedAt), /^2026-08-23$/, `${source.id} must retain an access date`);
+}
+for (const source of payload.sources.filter((item) => REQUIRED_V23_EXTERNAL_SOURCES.has(item.id))) {
+  assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.commitSha), /^[a-f0-9]{40}$/i, `${source.id} must retain an immutable commit SHA`);
   assert.match(String(source.accessedAt), /^2026-08-23$/, `${source.id} must retain an access date`);
 }
 const itemIds = new Set();
@@ -869,6 +908,9 @@ for (const itemId of REQUIRED_V21_ITEMS) {
 }
 for (const itemId of REQUIRED_V22_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing v22 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V23_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v23 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,
