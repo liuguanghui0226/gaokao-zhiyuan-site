@@ -19,10 +19,10 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.23.20");
-assert.equal(site.sources.length, 144);
-assert.equal(site.items.length, 320);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 122);
+assert.equal(site.version, "geo-2026.08.23.21");
+assert.equal(site.sources.length, 152);
+assert.equal(site.items.length, 335);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 130);
 assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 22);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
@@ -169,6 +169,25 @@ for (const itemId of [
 ]) {
   assert.ok(site.items.some((item) => item.id === itemId), `missing v20 runtime item ${itemId}`);
 }
+for (const itemId of [
+  "geo-c1-river-basin-water-resource-observation",
+  "geo-c1-geological-survey-map-and-landform-evidence",
+  "geo-c1-tactile-map-scale-and-spatial-orientation",
+  "geo-c2-transport-corridor-and-accessibility",
+  "geo-c2-energy-industry-location-and-transition",
+  "geo-c2-historical-map-and-regional-change",
+  "geo-s1-river-basin-process-and-runoff-seasonality",
+  "geo-s1-geological-map-and-plate-process-evidence",
+  "geo-s1-marine-observation-and-coastal-change",
+  "geo-s2-national-geospatial-data-and-regional-planning",
+  "geo-s2-qgis-layer-overlay-and-field-verification",
+  "geo-s2-map-education-collection-and-scale-comparison",
+  "geo-s3-energy-security-and-low-carbon-transition",
+  "geo-s3-marine-data-and-coastal-resource-governance",
+  "geo-s3-accessible-mapping-and-spatial-inclusion",
+]) {
+  assert.ok(site.items.some((item) => item.id === itemId), `missing v21 runtime item ${itemId}`);
+}
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-noaa-tides-education"));
@@ -265,6 +284,18 @@ for (const sourceId of [
   "exam-guigang-2026-02-geography",
 ]) {
   assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v20 runtime source ${sourceId}`);
+}
+for (const sourceId of [
+  "web-cgs-geological-survey",
+  "web-mot-transport-geography-data",
+  "web-nea-energy-security-information",
+  "web-nmdis-marine-information",
+  "web-geodata-earth-system-data",
+  "github-lmec-map-education-collections",
+  "github-qgis-lesson-geography",
+  "github-tactile-map-generator",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v21 runtime source ${sourceId}`);
 }
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 

@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.20",
+  "version": "geo-2026.08.23.21",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1333,6 +1333,81 @@
       "publisher": "广西贵港市部分高中（本地题库文件）",
       "editionNote": "2026 年 2 月 PDF，6 页；SHA-256 db8633980741c185061d867b4549068271057daa7762a0f956f30f841058fa5c；覆盖选择性必修1与选择性必修2前两章的地貌、沙尘、洋流、资源城市、冻土水文、太阳高度、垂直地域分异与 ENSO 产业影响题型。",
       "licenseNote": "仅作本地题型研究与来源标注；公开层只发布原创方法抽象，不复制题干、答案、解析、图表或版式。"
+    },
+    {
+      "id": "web-cgs-geological-survey",
+      "title": "中国地质调查局：地质调查与地学信息入口",
+      "publisher": "中国地质调查局",
+      "editionNote": "公开中国地质调查局政府门户；访问日期 2026-08-23；用于核对地质调查、矿产资源、地下水、地质灾害与地学信息服务的资料组织边界。",
+      "url": "https://www.cgs.gov.cn/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "中国地质调查局公共信息入口；仅作地质过程、资源条件、地下水和地质灾害证据边界核对，公开层发布原创高中地理方法，不复制正文、图件或数据。"
+    },
+    {
+      "id": "web-mot-transport-geography-data",
+      "title": "交通运输部：综合交通运输信息入口",
+      "publisher": "中华人民共和国交通运输部",
+      "editionNote": "公开交通运输部政府门户；访问日期 2026-08-23；用于核对综合交通、基础设施、运输网络、区域联系与交通治理资料的空间和时间口径。",
+      "url": "https://www.mot.gov.cn/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "交通运输部公共信息入口；仅作交通网络、可达性、区域联系和运输治理方法边界核对，公开层发布原创高中地理方法，不复制正文、图表或数据。"
+    },
+    {
+      "id": "web-nea-energy-security-information",
+      "title": "国家能源局：能源信息与能源安全入口",
+      "publisher": "国家能源局",
+      "editionNote": "公开国家能源局政府门户；访问日期 2026-08-23；用于核对能源资源、能源结构、电力系统、能源转型与能源安全资料的指标边界。",
+      "url": "https://www.nea.gov.cn/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "国家能源局公共信息入口；仅作能源资源、能源安全和低碳转型方法边界核对，公开层发布原创高中地理方法，不复制正文、图表或数据。"
+    },
+    {
+      "id": "web-nmdis-marine-information",
+      "title": "中国海洋信息网：海洋信息与观测入口",
+      "publisher": "国家海洋信息中心",
+      "editionNote": "公开中国海洋信息网；访问日期 2026-08-23；用于核对海洋观测、海洋资源、海洋环境、海洋灾害与海岸带信息的资料组织边界。",
+      "url": "https://www.nmdis.org.cn/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "国家海洋信息中心公共信息入口；仅作海洋观测、海岸带变化、海洋资源与灾害治理方法边界核对，公开层发布原创高中地理方法，不复制正文、图表或数据。"
+    },
+    {
+      "id": "web-geodata-earth-system-data",
+      "title": "国家地球系统科学数据中心：地球系统数据入口",
+      "publisher": "国家地球系统科学数据中心",
+      "editionNote": "公开国家地球系统科学数据中心首页；访问日期 2026-08-23；用于核对陆地、大气、海洋和地球系统数据的元数据、空间尺度与跨源比较边界。",
+      "url": "https://www.geodata.cn/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "国家地球系统科学数据中心公共数据入口；仅作地理数据检索、元数据、尺度和跨源证据方法边界核对，不复制数据表、图件或产品内容。"
+    },
+    {
+      "id": "github-lmec-map-education-collections",
+      "title": "LMEC Collections：地图与地理图像数据教育入口",
+      "publisher": "boston-library/lmec_collections（GitHub）",
+      "editionNote": "公开仓库提交 `1d2f104a2a5a8b186bfd06a45dde7fd1af25279f`；访问日期 2026-08-23；README 将项目定位为地图与地理图像数据的检索界面，关联 Leventhal Map & Education Center。",
+      "url": "https://github.com/boston-library/lmec_collections",
+      "commitSha": "1d2f104a2a5a8b186bfd06a45dde7fd1af25279f",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作地图教育、图像检索、历史空间证据和尺度比较的 citation-only 参照，不复制图像、数据、代码或页面文字。"
+    },
+    {
+      "id": "github-qgis-lesson-geography",
+      "title": "QGIS Lesson：GIS 图层与野外数据教学",
+      "publisher": "sagesteppe/QGIS_Lesson（GitHub）",
+      "editionNote": "公开仓库提交 `baccacf5893cf02d545258c0d3ceacab35430a62`；访问日期 2026-08-23；README 介绍 GIS、QGIS、底图、图层、项目数据和野外调查数据的教学组织。",
+      "url": "https://github.com/sagesteppe/QGIS_Lesson",
+      "commitSha": "baccacf5893cf02d545258c0d3ceacab35430a62",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 AGPL-3.0；本项目仅作 GIS 图层叠加、项目数据组织和野外核验方法的 citation-only 参照，不复制代码、图片、数据或教程正文。"
+    },
+    {
+      "id": "github-tactile-map-generator",
+      "title": "Tactile Map Generator：可触摸地图与城市空间建模",
+      "publisher": "jesse-flores/Tactile-Map-Generator（GitHub）",
+      "editionNote": "公开仓库提交 `623966ce1963b41472ea667fbae62dc24b97f90a`；访问日期 2026-08-23；README 介绍从 OpenStreetMap 数据生成建筑、步行路径和可触摸三维地图，并涉及投影、缩放和空间简化。",
+      "url": "https://github.com/jesse-flores/Tactile-Map-Generator",
+      "commitSha": "623966ce1963b41472ea667fbae62dc24b97f90a",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 MIT；本项目仅作地图比例尺、空间简化、无障碍表达和城市空间建模的 citation-only 参照，不复制代码、数据、模型或图片。"
     }
   ],
   "items": [
@@ -8381,6 +8456,336 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：自然灾害风险、环境安全与国家安全章节",
           "note": "回到教材核对自然灾害风险、减灾能力、适应治理和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-river-basin-water-resource-observation",
+      "courseId": "compulsory-1",
+      "title": "流域水资源观测与径流证据",
+      "summary": "流域水资源材料要先确定降水、蒸发、下渗、地下水和地表径流分别对应什么观测或估算，再按上游到下游和季节变化连接水量过程。比较不同流域时还要核对数据的空间单元、时间分辨率和缺测情况，不能把单站降水或一次流量值直接代表整个流域的水资源状况。",
+      "keywords": ["流域水循环", "径流观测", "水量平衡", "数据尺度"],
+      "sourceIds": ["web-geodata-earth-system-data", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-geodata-earth-system-data",
+          "locator": "国家地球系统科学数据中心 / data/land-atmosphere-water metadata and scale information",
+          "note": "数据中心用于交叉核对陆地、水循环和流域数据的元数据、空间尺度与时间口径；不复制数据表、图件或产品内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：水循环、河流与自然环境整体性章节",
+          "note": "回到教材核对水循环环节、流域水量平衡、地表径流与地下水联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-geological-survey-map-and-landform-evidence",
+      "courseId": "compulsory-1",
+      "title": "地质调查图与地貌证据",
+      "summary": "阅读地质调查或地貌材料时，应把岩性、构造、地层年代、断裂和外力作用分别标记，再判断它们如何共同形成山地、盆地、河谷或海岸地貌。地质图提供的是空间和过程线索，不等于现成结论；解释地貌差异还要结合气候、水文、植被和人类利用条件。",
+      "keywords": ["地质调查", "地质图", "岩性构造", "地貌过程"],
+      "sourceIds": ["web-cgs-geological-survey", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-cgs-geological-survey",
+          "locator": "China Geological Survey / geological survey, groundwater and geological-hazard evidence",
+          "note": "中国地质调查局入口用于交叉核对地质调查、地下水和地质灾害资料的证据边界；不复制正文、图件或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地球的圈层、地表形态与地貌观察章节",
+          "note": "回到教材核对内外力作用、岩石与地貌形成以及地理实践观察方法。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-tactile-map-scale-and-spatial-orientation",
+      "courseId": "compulsory-1",
+      "title": "可触摸地图的比例尺与空间定向",
+      "summary": "把二维地理信息转为可触摸或三维模型时，必须先决定保留哪些地物、采用什么比例尺和投影，并说明简化会丢失哪些细节。读图或制作模型都要保持方向、相对位置、距离和高低差的逻辑一致，不能因为视觉效果突出就把示意图当成精确测量成果。",
+      "keywords": ["可触摸地图", "比例尺", "空间定向", "地图简化"],
+      "sourceIds": ["github-tactile-map-generator", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-tactile-map-generator",
+          "locator": "README / tactile maps, projection, scaling and spatial orientation",
+          "note": "GitHub项目用于交叉核对地图投影、缩放、几何简化与无障碍空间表达的教学边界；不复制代码、数据、模型或图片。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地理信息技术与地理实践力相关章节",
+          "note": "回到教材核对地图要素、比例尺、方向和空间信息表达。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-transport-corridor-and-accessibility",
+      "courseId": "compulsory-2",
+      "title": "交通走廊与区域可达性",
+      "summary": "交通走廊分析不能只数线路条数，应同时判断节点等级、运输方式、换装成本、时间距离和沿线产业人口。评价一条新通道的区域作用时，还要比较通达性变化是否扩大市场范围、改善城乡联系或造成资源和环境压力，避免把建设规模直接等同于发展成效。",
+      "keywords": ["交通走廊", "可达性", "节点体系", "区域联系"],
+      "sourceIds": ["web-mot-transport-geography-data", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-mot-transport-geography-data",
+          "locator": "Ministry of Transport / transport infrastructure, network and accessibility information",
+          "note": "交通运输部入口用于交叉核对综合交通、运输网络和区域联系资料的空间与时间口径；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：交通运输布局与区域发展章节",
+          "note": "回到教材核对交通区位、交通网络、区域联系和产业布局。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-energy-industry-location-and-transition",
+      "courseId": "compulsory-2",
+      "title": "能源工业区位与转型",
+      "summary": "能源工业区位要把资源地、市场、运输、电网、技术和环境容量放在同一产业链中判断，并区分一次能源开发、加工转换和终端消费的位置关系。分析能源转型时不能只看新能源装机，还要追踪储能、电网调节、就业结构、土地占用和区域利益分配等配套变化。",
+      "keywords": ["能源工业", "产业区位", "能源转型", "电力系统"],
+      "sourceIds": ["web-nea-energy-security-information", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-nea-energy-security-information",
+          "locator": "National Energy Administration / energy resources, power structure and energy security information",
+          "note": "国家能源局入口用于交叉核对能源资源、能源结构和能源安全资料的指标边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：工业区位、产业链与区域发展章节",
+          "note": "回到教材核对工业区位、能源运输、产业联系和环境影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-historical-map-and-regional-change",
+      "courseId": "compulsory-2",
+      "title": "历史地图与区域变化",
+      "summary": "比较历史地图和现代地图时，要先统一方向、比例尺、地名、行政边界与时间点，再识别河道、道路、聚落、土地利用和产业空间的变化。地图差异既可能来自真实区域转型，也可能来自制图目的和图层选择，解释时应把图面证据与人口、交通、政策和自然环境条件交叉核对。",
+      "keywords": ["历史地图", "区域变化", "图层比较", "时间尺度"],
+      "sourceIds": ["github-lmec-map-education-collections", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-lmec-map-education-collections",
+          "locator": "README / map and geographic image discovery for education",
+          "note": "GitHub项目用于交叉核对地图检索、历史空间证据和图像资料教育使用的边界；不复制图像、数据、代码或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：区域联系、城市发展与地域文化相关章节",
+          "note": "回到教材核对区域变化、聚落发展、交通联系和人地关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-river-basin-process-and-runoff-seasonality",
+      "courseId": "selective-1",
+      "title": "流域过程与径流季节性",
+      "summary": "解释径流季节变化时，应把降水类型、积雪冰川融水、土壤入渗、地下水补给和植被蒸散按季节排列，再判断流量峰值的形成和滞后。不同气候区的流域不能套用同一条因果链，必须结合海拔、冻土、地质渗透性和人类调蓄工程进行区域化解释。",
+      "keywords": ["径流季节性", "流域过程", "地下水补给", "融水"],
+      "sourceIds": ["web-geodata-earth-system-data", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-geodata-earth-system-data",
+          "locator": "data/earth-system / river basin, runoff and seasonal observation metadata",
+          "note": "数据中心用于交叉核对流域径流、季节观测和跨区域数据比较的元数据边界；不复制数据表、图件或产品内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：水循环、河流与自然环境整体性章节",
+          "note": "回到教材核对水循环、径流形成、地下水和自然环境整体性。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-geological-map-and-plate-process-evidence",
+      "courseId": "selective-1",
+      "title": "地质图与板块过程证据",
+      "summary": "用地质图解释板块构造或地质灾害时，要把断层、褶皱、岩浆活动、地层接触关系和地震火山分布放到同一空间框架中。图件只能提供证据组合，结论还要说明过程发生的时间、尺度和不确定性，不能把任何线性地貌或单次地震直接等同于板块边界。",
+      "keywords": ["地质图", "板块构造", "断层褶皱", "地震火山"],
+      "sourceIds": ["web-cgs-geological-survey", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-cgs-geological-survey",
+          "locator": "China Geological Survey / geological survey, tectonic and hazard evidence",
+          "note": "中国地质调查局入口用于交叉核对地质构造、地质灾害和地学调查证据的边界；不复制正文、图件或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地球的演化、地质构造与地质灾害章节",
+          "note": "回到教材核对板块运动、地质构造、地震火山和地质灾害证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-marine-observation-and-coastal-change",
+      "courseId": "selective-1",
+      "title": "海洋观测与海岸变化",
+      "summary": "分析海岸变化时，应区分潮汐、波浪、沿岸流、风暴、海平面变化和人类工程的作用时间尺度，再判断侵蚀、堆积、岸线迁移或湿地变化的证据。海洋观测资料需要注明观测位置、潮位基准、时间窗口和空间分辨率，避免把局地岸线变化直接推广为整个海域趋势。",
+      "keywords": ["海洋观测", "海岸变化", "潮汐波浪", "岸线迁移"],
+      "sourceIds": ["web-nmdis-marine-information", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nmdis-marine-information",
+          "locator": "China Marine Information Network / marine observation, coastal change and disaster information",
+          "note": "中国海洋信息网用于交叉核对海洋观测、海岸带变化和海洋灾害资料的尺度边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：海水运动、海岸地貌与海洋环境章节",
+          "note": "回到教材核对潮汐、波浪、洋流、海岸侵蚀堆积和海洋环境。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-national-geospatial-data-and-regional-planning",
+      "courseId": "selective-2",
+      "title": "地球系统数据与区域规划",
+      "summary": "区域规划使用地球系统数据时，先建立数据目录，记录变量定义、空间分辨率、时间范围、处理方法和许可边界，再叠加人口、交通、生态和灾害图层。不同来源的结果只有在尺度、坐标和时间能够对齐时才适合比较，规划结论还应保留数据缺口与不确定性说明。",
+      "keywords": ["地球系统数据", "元数据", "区域规划", "空间尺度"],
+      "sourceIds": ["web-geodata-earth-system-data", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-geodata-earth-system-data",
+          "locator": "data/metadata / spatial scale, geospatial datasets and regional planning",
+          "note": "数据中心用于交叉核对地理数据检索、元数据、空间尺度和区域应用的证据边界；不复制数据表、图件或产品内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域发展、空间组织与地理信息技术章节",
+          "note": "回到教材核对区域尺度、空间组织、规划决策和地理信息技术。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-qgis-layer-overlay-and-field-verification",
+      "courseId": "selective-2",
+      "title": "QGIS 图层叠加与野外核验",
+      "summary": "GIS 探究应先明确问题和空间单元，再分别加载底图、地形、土地利用、交通或生态图层，检查坐标系统、图例、时间版本和数据来源。叠加分析只能提出空间关联，最终还要通过影像、统计资料或野外观察核验，避免把图层重合误判为单一因果关系。",
+      "keywords": ["QGIS", "图层叠加", "空间核验", "数据来源"],
+      "sourceIds": ["github-qgis-lesson-geography", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-qgis-lesson-geography",
+          "locator": "README / GIS, QGIS, basemaps, layers and field-data verification",
+          "note": "GitHub项目用于交叉核对 GIS 图层、底图、项目数据和野外核验的教学边界；不复制代码、图片、数据或教程正文。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：地理信息技术、区域研究与规划实践章节",
+          "note": "回到教材核对遥感、GIS、区域调查和规划实践的证据链。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-map-education-collection-and-scale-comparison",
+      "courseId": "selective-2",
+      "title": "地图教育资料与比例尺比较",
+      "summary": "比较不同地图教育资料时，要先判断地图的主题、年代、投影、比例尺和制图目的，再选择能够支持问题的图层。历史地图、专题地图和现代底图可能对同一地点采用不同符号与边界，读图者应区分真实空间变化、制图概括和资料缺失三类原因。",
+      "keywords": ["地图教育", "比例尺比较", "地图投影", "制图目的"],
+      "sourceIds": ["github-lmec-map-education-collections", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-lmec-map-education-collections",
+          "locator": "README / map collections, geographic images and educational discovery",
+          "note": "GitHub项目用于交叉核对地图资料检索、主题图比较和教育性空间阅读的边界；不复制图像、数据、代码或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域地图、空间尺度与区域比较章节",
+          "note": "回到教材核对地图判读、比例尺、区域比较和空间表达。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-energy-security-and-low-carbon-transition",
+      "courseId": "selective-3",
+      "title": "能源安全与低碳转型",
+      "summary": "能源安全评价要同时关注资源可获得性、供应来源、运输通道、价格波动、技术替代和生态环境代价。低碳转型不是简单替换能源名称，还要分析电力系统稳定性、储能、土地利用、产业就业和区域公平，形成从资源安全到国家安全的多目标判断。",
+      "keywords": ["能源安全", "低碳转型", "供应链", "区域公平"],
+      "sourceIds": ["web-nea-energy-security-information", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-nea-energy-security-information",
+          "locator": "National Energy Administration / energy security, energy transition and power-system information",
+          "note": "国家能源局入口用于交叉核对能源安全、能源转型和电力系统资料的指标边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源安全、能源安全与国家安全章节",
+          "note": "回到教材核对能源资源、供应安全、环境约束和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-marine-data-and-coastal-resource-governance",
+      "courseId": "selective-3",
+      "title": "海洋数据与海岸带资源治理",
+      "summary": "海岸带资源治理要把渔业、港口、旅游、海洋能源、湿地和生态保护放到同一空间单元中，先区分资源利用、生态服务和灾害风险，再讨论功能分区与冲突协调。海洋数据应说明观测深度、潮位基准、时间尺度和岸线变化口径，避免用单项资源优势替代综合承载力评价。",
+      "keywords": ["海洋数据", "海岸带治理", "资源利用", "生态承载力"],
+      "sourceIds": ["web-nmdis-marine-information", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-nmdis-marine-information",
+          "locator": "China Marine Information Network / marine resources, environment and coastal governance",
+          "note": "中国海洋信息网用于交叉核对海洋资源、环境、灾害和海岸带治理资料的边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：海洋资源、海洋环境与国家安全章节",
+          "note": "回到教材核对海洋资源开发、生态保护、海洋权益和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-accessible-mapping-and-spatial-inclusion",
+      "courseId": "selective-3",
+      "title": "无障碍制图与空间包容",
+      "summary": "空间治理不仅要问设施在哪里，还要问不同群体能否识别、到达和使用它们。无障碍地图可以通过符号简化、触觉高差、路径连续性和尺度转换表达空间障碍，但方案仍需结合人口结构、公共服务、交通可达性和实际使用反馈，避免把技术模型当成完整的公平评价。",
+      "keywords": ["无障碍制图", "空间包容", "公共服务", "可达性"],
+      "sourceIds": ["github-tactile-map-generator", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-tactile-map-generator",
+          "locator": "README / tactile maps, accessibility, urban planning and education",
+          "note": "GitHub项目用于交叉核对可触摸地图、无障碍表达、城市规划和教育使用的边界；不复制代码、数据、模型或图片。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源公平、公共服务与国家安全相关章节",
+          "note": "回到教材核对资源公平、公共服务、区域差异和安全治理。"
         }
       ],
       "licenseStatus": "citation-only",
