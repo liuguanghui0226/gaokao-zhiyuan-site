@@ -19,10 +19,10 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.23.18");
-assert.equal(site.sources.length, 129);
-assert.equal(site.items.length, 290);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 108);
+assert.equal(site.version, "geo-2026.08.23.19");
+assert.equal(site.sources.length, 136);
+assert.equal(site.items.length, 305);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 115);
 assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 21);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
@@ -54,6 +54,25 @@ for (const itemId of [
   "geo-s3-natural-resource-bulletin-and-security-indicators",
 ]) {
   assert.ok(site.items.some((item) => item.id === itemId), `missing v18 runtime item ${itemId}`);
+}
+for (const itemId of [
+  "geo-c1-national-geospatial-platform-map-scale",
+  "geo-c1-earthquake-catalogue-risk-evidence",
+  "geo-c1-forest-ecosystem-water-regulation",
+  "geo-c2-population-census-structure-and-demand",
+  "geo-c2-urbanization-statistical-indicator-chain",
+  "geo-c2-transport-and-regional-connectivity-indicators",
+  "geo-s1-global-circulation-seasonal-shift-model",
+  "geo-s1-solar-altitude-time-zone-cross-check",
+  "geo-s1-earthquake-plate-boundary-process",
+  "geo-s2-tianditu-layer-scale-and-regional-planning",
+  "geo-s2-forest-restoration-spatial-evidence",
+  "geo-s2-circulation-model-and-monsoon-regional-case",
+  "geo-s3-forest-resource-security-and-ecosystem-services",
+  "geo-s3-statistical-bulletin-resource-environment-indicators",
+  "geo-s3-earthquake-disaster-risk-and-resilience",
+]) {
+  assert.ok(site.items.some((item) => item.id === itemId), `missing v19 runtime item ${itemId}`);
 }
 for (const itemId of [
   "geo-c1-groundwater-overdraft-subsidence",
@@ -156,6 +175,17 @@ for (const sourceId of [
   "github-zero2geoquest",
 ]) {
   assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v18 runtime source ${sourceId}`);
+}
+for (const sourceId of [
+  "web-tianditu-national-geospatial-platform",
+  "web-nbs-national-statistical-yearbook",
+  "web-nbs-2022-statistical-bulletin",
+  "web-china-earthquake-data-center",
+  "web-national-forestry-grassland-administration",
+  "github-global-circulation-simulator",
+  "github-satv-geography-tool",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v19 runtime source ${sourceId}`);
 }
 for (const sourceId of [
   "github-secondary-geography-course",

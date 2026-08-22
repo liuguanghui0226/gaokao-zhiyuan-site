@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.18",
+  "version": "geo-2026.08.23.19",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1197,6 +1197,71 @@
       "commitSha": "ac44c990f34d6531a78c7ca030b2b646983d6da0",
       "accessedAt": "2026-08-23",
       "licenseNote": "仓库声明 GPL-3.0-or-later；本项目仅作 GIS 地理实践与课堂任务设计的 citation-only 方法来源，公开层发布原创高中地理方法，不复制代码、数据、图件或手册正文。"
+    },
+    {
+      "id": "web-tianditu-national-geospatial-platform",
+      "title": "国家地理信息公共服务平台：天地图",
+      "publisher": "国家基础地理信息中心／中华人民共和国自然资源部",
+      "editionNote": "公开国家地理信息公共服务平台首页；访问日期 2026-08-23；用于核对图层、定位、比例尺、空间数据来源与区域表达边界。",
+      "url": "https://www.tianditu.gov.cn/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "国家地理信息公共服务平台公共入口；仅作地图图层、比例尺和空间证据边界核对，公开层发布原创高中地理方法，不复制地图瓦片、数据或页面版式。"
+    },
+    {
+      "id": "web-nbs-national-statistical-yearbook",
+      "title": "国家统计局：国家数据与统计年鉴入口",
+      "publisher": "中华人民共和国国家统计局",
+      "editionNote": "公开统计年鉴与年度数据入口；访问日期 2026-08-23；用于核对人口、城镇、产业、交通和资源环境指标的时间序列与统计口径。",
+      "url": "https://www.stats.gov.cn/sj/ndsj/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "国家统计局公共统计资料入口；仅作指标口径、时间序列和区域比较方法核对，公开层发布原创高中地理方法，不复制统计表、图表或数据库内容。"
+    },
+    {
+      "id": "web-nbs-2022-statistical-bulletin",
+      "title": "国家统计局：2022年国民经济和社会发展统计公报",
+      "publisher": "中华人民共和国国家统计局",
+      "editionNote": "公开年度统计公报；访问日期 2026-08-23；用于核对人口结构、城镇化、产业、交通和资源环境统计指标的综合阅读方式。",
+      "url": "https://www.stats.gov.cn/sj/zxfb/202302/t20230228_1919011.html",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "国家统计局公共统计公报；仅作综合指标联读与证据边界核对，公开层发布原创高中地理方法，不复制公报正文、图表或数据。"
+    },
+    {
+      "id": "web-china-earthquake-data-center",
+      "title": "国家地震科学数据中心",
+      "publisher": "中国地震局",
+      "editionNote": "公开国家地震科学数据中心入口；访问日期 2026-08-23；用于核对地震目录、地震危险性、空间分布和灾害风险数据的使用边界。",
+      "url": "https://data.earthquake.cn/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "中国地震局公共科学数据入口；仅作地震空间证据、危险性与灾害风险方法核对，公开层发布原创高中地理方法，不复制数据表、图件或产品内容。"
+    },
+    {
+      "id": "web-national-forestry-grassland-administration",
+      "title": "国家林业和草原局政府网",
+      "publisher": "中华人民共和国国家林业和草原局",
+      "editionNote": "公开林业和草原管理信息入口；访问日期 2026-08-23；用于核对森林草原资源、生态修复、生物多样性与生态服务的治理证据链。",
+      "url": "https://www.forestry.gov.cn/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "国家林业和草原局公共信息入口；仅作森林草原资源、生态修复与生态安全方法核对，公开层发布原创高中地理方法，不复制正文、图表或数据。"
+    },
+    {
+      "id": "github-global-circulation-simulator",
+      "title": "全球大气环流与东亚季风交互模拟器",
+      "publisher": "Eason455/global-circulation-simulator（GitHub）",
+      "editionNote": "公开仓库提交 `ff76608f10acf33a5eaca5fd0568b237f91efede`；访问日期 2026-08-23；README 与模块目录覆盖太阳直射点、三圈环流、气压带风带、东亚季风、雨带移动和考试模式。",
+      "url": "https://github.com/Eason455/global-circulation-simulator",
+      "commitSha": "ff76608f10acf33a5eaca5fd0568b237f91efede",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作高中地理教学模型与可视化边界的 citation-only 参照，公开层发布原创方法，不复制代码、题目、图件或页面文字。"
+    },
+    {
+      "id": "github-satv-geography-tool",
+      "title": "SATV：高中地理太阳高度角与时区换算可视化工具",
+      "publisher": "jamekes355/SATV-Geography-Tool（GitHub）",
+      "editionNote": "公开仓库提交 `706bc6916d6706ac43ebfa84682e66b7fc07d1f5`；访问日期 2026-08-23；README 与源码目录覆盖太阳高度角、昼夜长短、晨昏线、地方时、区时和经纬度对比。",
+      "url": "https://github.com/jamekes355/SATV-Geography-Tool",
+      "commitSha": "706bc6916d6706ac43ebfa84682e66b7fc07d1f5",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库 README 声明 MIT；本项目仅作日地关系、地方时和可视化教学方法的 citation-only 参照，公开层发布原创高中地理方法，不复制代码、图件、题目或资源。"
     }
   ],
   "items": [
@@ -7570,6 +7635,336 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：资源安全、资源利用与国家安全章节",
           "note": "回到教材核对资源供给、利用效率、替代途径和风险防控。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-national-geospatial-platform-map-scale",
+      "courseId": "compulsory-1",
+      "title": "天地图图层与比例尺判读",
+      "summary": "使用在线地图时先确认底图、专题图层、坐标位置和比例尺，再判断图上距离能否支持地形、河网或灾害分布的结论。不同缩放级别会改变要素的概化程度，跨图层比较前还要统一时间、空间范围和数据来源，不能把地图显示的细节直接当成自然过程的全部证据。",
+      "keywords": ["天地图", "图层", "比例尺", "空间证据"],
+      "sourceIds": ["web-tianditu-national-geospatial-platform", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-tianditu-national-geospatial-platform",
+          "locator": "天地图国家地理信息公共服务平台首页 / map layers, location and scale-aware spatial display",
+          "note": "天地图用于交叉核对图层、比例尺和空间数据来源的使用边界；不复制地图瓦片、数据或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：地理信息技术与区域研究章节",
+          "note": "回到教材核对地图尺度、区域空间表达和地理信息技术的基本判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-earthquake-catalogue-risk-evidence",
+      "courseId": "compulsory-1",
+      "title": "地震目录与灾害风险证据",
+      "summary": "地震材料题要把震中位置、震源深度、震级、发生时间和人口设施分布分开读取，再由板块边界、断层活动和地形条件解释风险差异。目录记录适合说明事件的时空分布，不能单独推出未来必然发生或损失规模，还需要结合暴露度、脆弱性和防灾能力。",
+      "keywords": ["地震目录", "震中", "暴露度", "灾害风险"],
+      "sourceIds": ["web-china-earthquake-data-center", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-china-earthquake-data-center",
+          "locator": "国家地震科学数据中心 / earthquake catalogue, hazard and spatial data entry",
+          "note": "地震科学数据中心用于交叉核对地震事件记录、空间分布和危险性数据的证据边界；不复制数据表或图件。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地震、地质灾害与防灾减灾章节",
+          "note": "回到教材核对地震成因、灾害链和风险防御思路。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-forest-ecosystem-water-regulation",
+      "courseId": "compulsory-1",
+      "title": "森林生态系统与水分调节",
+      "summary": "分析森林变化时沿着植被覆盖、截留下渗、土壤保持、蒸散和径流响应建立过程链，并区分短期洪峰调节、长期水土保持与生物多样性维护等不同功能。读统计或遥感材料时应同时核对空间尺度和季节背景，避免把森林面积变化直接等同于所有生态功能同步改善。",
+      "keywords": ["森林生态", "下渗", "径流", "水土保持"],
+      "sourceIds": ["web-national-forestry-grassland-administration", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-national-forestry-grassland-administration",
+          "locator": "国家林业和草原局政府网 / forest, grassland, restoration and ecological service information",
+          "note": "林草主管部门入口用于交叉核对森林资源、生态修复和生态服务的治理证据边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：植被与土壤、水循环和自然环境整体性章节",
+          "note": "回到教材核对植被对水分循环、土壤保持和自然环境整体性的影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-census-structure-and-demand",
+      "courseId": "compulsory-2",
+      "title": "人口统计结构与公共需求",
+      "summary": "人口统计材料先区分总量、增长率、年龄结构、城乡结构和迁移变化，再把人口特征连接到教育、就业、养老、住房和交通需求。比较不同年份或地区时必须确认统计口径、行政边界和时间点，不能只凭人口总量判断发展压力或公共服务缺口。",
+      "keywords": ["人口统计", "年龄结构", "城乡结构", "公共服务"],
+      "sourceIds": ["web-nbs-2022-statistical-bulletin", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-nbs-2022-statistical-bulletin",
+          "locator": "2022年国民经济和社会发展统计公报 / population, urbanization and social development indicators",
+          "note": "国家统计局公报用于交叉核对人口、城镇化与社会发展指标的联读边界；不复制公报正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：人口数量、人口迁移与人口合理容量章节",
+          "note": "回到教材核对人口结构、人口变化与资源环境承载力之间的关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urbanization-statistical-indicator-chain",
+      "courseId": "compulsory-2",
+      "title": "城镇化指标链与城市问题",
+      "summary": "城镇化题不能只看城镇人口比重，还要联读人口流动、建设用地、产业就业、公共服务和生态环境等指标。先判断材料描述的是速度、规模、质量还是空间结构，再分析城市扩张、功能分化和城乡联系，最后提出紧凑发展、设施均衡和生态修复等有对应关系的措施。",
+      "keywords": ["城镇化", "人口比重", "建设用地", "城乡联系"],
+      "sourceIds": ["web-nbs-national-statistical-yearbook", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-nbs-national-statistical-yearbook",
+          "locator": "国家统计年鉴入口 / population, urban construction, employment and regional statistics",
+          "note": "统计年鉴入口用于交叉核对城镇化多指标、年度序列和区域比较的口径；不复制统计表或数据库内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：城镇化、城市空间结构与城乡发展一体化章节",
+          "note": "回到教材核对城镇化动力、城市功能分区和城乡协调发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-transport-and-regional-connectivity-indicators",
+      "courseId": "compulsory-2",
+      "title": "交通联系与区域可达性指标",
+      "summary": "交通材料先识别线路、节点、运输方式和服务对象，再用时间距离、通达范围、货运联系和产业分工判断交通建设的区域影响。线路变短不必然意味着所有地区都受益，还要考察站点布局、换装成本、人口与产业集聚以及生态约束，避免把交通流量直接当成区域发展质量。",
+      "keywords": ["交通运输", "可达性", "节点", "区域联系"],
+      "sourceIds": ["web-nbs-national-statistical-yearbook", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-nbs-national-statistical-yearbook",
+          "locator": "国家统计年鉴入口 / transport, logistics and regional development statistics",
+          "note": "统计年鉴入口用于交叉核对交通规模、运输结构和区域联系指标的时间与空间口径；不复制统计表或图表。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：交通运输布局与区域发展章节",
+          "note": "回到教材核对交通运输布局、区位因素和区域联系的分析框架。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-global-circulation-seasonal-shift-model",
+      "courseId": "selective-1",
+      "title": "全球环流季节移动模型",
+      "summary": "把交互模拟器当作理想化模型使用时，先观察太阳直射点移动，再追踪气压带、风带、ITCZ雨带和东亚季风的同步变化。答题时要把模型现象还原为海陆热力差异、纬度受热和大气环流机制，并明确模型未表达地形、海温和年际变化等真实世界因素。",
+      "keywords": ["三圈环流", "气压带风带", "季节移动", "理想模型"],
+      "sourceIds": ["github-global-circulation-simulator", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-global-circulation-simulator",
+          "locator": "README and modules / solar declination, pressure belts, three-cell circulation, monsoon and rain belt",
+          "note": "GitHub项目用于交叉核对高中环流可视化的模型变量与简化边界；不复制代码、题目、图件或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：大气环流、气压带风带与季风章节",
+          "note": "回到教材核对三圈环流、气压带风带季节移动和季风成因。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-solar-altitude-time-zone-cross-check",
+      "courseId": "selective-1",
+      "title": "太阳高度角与地方时交叉核对",
+      "summary": "处理太阳高度角、昼夜长短和地方时综合题时，先锁定日期、纬度和经度，再分别计算正午太阳高度、昼长和地方时，最后用晨昏线与昼夜分布检查结果。可视化工具适合发现方向或数量级错误，但不能替代公式、时区基准和题图条件的独立核验。",
+      "keywords": ["太阳高度角", "地方时", "昼夜长短", "晨昏线"],
+      "sourceIds": ["github-satv-geography-tool", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-satv-geography-tool",
+          "locator": "README and src/lib / solar altitude, daylight length, local time, timezone and terminator",
+          "note": "GitHub项目用于交叉核对日地关系可视化的输入、输出和检查边界；不复制代码、图件、题目或资源。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地球运动、太阳辐射与昼夜长短章节",
+          "note": "回到教材核对正午太阳高度、昼夜长短、地方时和区时的判读关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-earthquake-plate-boundary-process",
+      "courseId": "selective-1",
+      "title": "板块边界与地震空间证据",
+      "summary": "板块构造题先把地震点、火山带、海沟、洋中脊和山脉位置叠加起来，再判断边界类型及其地质过程。地震目录可以帮助识别活动带，但空间重合只是证据之一，还要结合岩石圈运动、震源深度和地形地貌解释成因，避免把所有地震都归结为同一种边界。",
+      "keywords": ["板块边界", "地震带", "海沟", "震源深度"],
+      "sourceIds": ["web-china-earthquake-data-center", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-china-earthquake-data-center",
+          "locator": "国家地震科学数据中心 / earthquake location, depth and hazard evidence",
+          "note": "地震科学数据中心用于交叉核对地震位置、深度与危险性数据的使用边界；不复制数据产品或图件。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地球的圈层结构、地表形态与内力作用章节",
+          "note": "回到教材核对板块运动、内力作用和地震火山带的空间联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-tianditu-layer-scale-and-regional-planning",
+      "courseId": "selective-2",
+      "title": "天地图图层尺度与区域规划",
+      "summary": "区域规划读图可按底图、土地利用、交通节点、人口设施和生态约束逐层建立证据链。先用小比例尺识别区域联系和总体格局，再放大到目标地块核对位置与冲突；规划建议必须说明适用尺度、数据时间和利益权衡，不能把单一图层的优势直接扩展为整个区域的结论。",
+      "keywords": ["区域规划", "图层叠加", "尺度转换", "空间冲突"],
+      "sourceIds": ["web-tianditu-national-geospatial-platform", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-tianditu-national-geospatial-platform",
+          "locator": "天地图国家地理信息公共服务平台首页 / multi-layer regional spatial evidence",
+          "note": "天地图用于交叉核对区域规划中的底图、图层、尺度和空间证据边界；不复制地图瓦片、数据或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域空间组织、区域发展与地理信息技术章节",
+          "note": "回到教材核对区域尺度、空间联系、土地利用和规划决策的分析方法。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-forest-restoration-spatial-evidence",
+      "courseId": "selective-2",
+      "title": "森林修复的空间证据链",
+      "summary": "评价森林修复项目时先区分退化原因、修复对象和目标功能，再比较植被覆盖、土壤保持、水源涵养、生物多样性和社区生计等空间证据。治理措施要与坡度、降水、土地利用和流域联系相匹配，并用连续监测验证效果，不能只用种植面积或短期变绿判断生态系统真正恢复。",
+      "keywords": ["森林修复", "生态治理", "水源涵养", "连续监测"],
+      "sourceIds": ["web-national-forestry-grassland-administration", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-national-forestry-grassland-administration",
+          "locator": "国家林业和草原局政府网 / forest restoration, ecological conservation and monitoring information",
+          "note": "林草主管部门入口用于交叉核对森林修复、生态保护和监测治理的证据边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域生态环境治理与区域可持续发展章节",
+          "note": "回到教材核对生态修复、区域协调和因地制宜治理措施。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-circulation-model-and-monsoon-regional-case",
+      "courseId": "selective-2",
+      "title": "环流模型与季风区域案例",
+      "summary": "把全球环流模拟器迁移到区域案例时，先确认模型中的太阳直射点、海陆热力差异和雨带移动，再补充地形、海温、下垫面和人类活动等区域条件。这样既能用大气环流解释季节性降水，又能避免把理想化动画中的箭头直接当成某地每年每个月的完整实况。",
+      "keywords": ["季风区", "区域案例", "海陆热力差异", "模型边界"],
+      "sourceIds": ["github-global-circulation-simulator", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-global-circulation-simulator",
+          "locator": "README and modules / East Asian monsoon, rain belt and simplified circulation model",
+          "note": "GitHub项目用于交叉核对季风教学模型的变量和理想化边界；不复制代码、题目、图件或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：大气环流、季风和气候形成章节",
+          "note": "回到教材核对季风成因、降水季节变化和区域气候分析。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-forest-resource-security-and-ecosystem-services",
+      "courseId": "selective-3",
+      "title": "森林资源安全与生态系统服务",
+      "summary": "森林资源安全评价要同时看资源数量、质量、空间连续性、恢复能力和社会需求，并区分木材供给、碳汇、水土保持、防风固沙和生物多样性等生态系统服务。提出利用方案时，应在资源供给、社区生计、生态红线和长期监测之间建立权衡，而不是把单一保护率指标当成全部安全水平。",
+      "keywords": ["森林资源安全", "生态系统服务", "碳汇", "生态红线"],
+      "sourceIds": ["web-national-forestry-grassland-administration", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-national-forestry-grassland-administration",
+          "locator": "国家林业和草原局政府网 / forest resources, carbon sink and ecological security information",
+          "note": "林草主管部门入口用于交叉核对森林资源、生态服务和生态安全治理边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源安全、生态安全与生态文明建设章节",
+          "note": "回到教材核对资源安全、生态系统服务和保护利用协调。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-statistical-bulletin-resource-environment-indicators",
+      "courseId": "selective-3",
+      "title": "统计公报中的资源环境指标",
+      "summary": "资源环境统计题先区分总量、强度、效率、结构和变化率，再判断指标对应资源供给、环境压力、治理投入还是生态结果。综合公报能够提供宏观背景，但提出国家安全方案还需回到空间分布、区域差异、产业链、替代技术和监测反馈，避免把全国平均值当成所有地区的实际状态。",
+      "keywords": ["资源环境", "统计公报", "指标口径", "国家安全"],
+      "sourceIds": ["web-nbs-2022-statistical-bulletin", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-nbs-2022-statistical-bulletin",
+          "locator": "2022年国民经济和社会发展统计公报 / resources, environment and development indicators",
+          "note": "国家统计局公报用于交叉核对资源环境指标的分类、时间窗口和综合联读边界；不复制公报正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源安全、环境安全与国家安全章节",
+          "note": "回到教材核对资源环境指标、风险判断和国家安全治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-earthquake-disaster-risk-and-resilience",
+      "courseId": "selective-3",
+      "title": "地震灾害风险与韧性治理",
+      "summary": "地震风险治理应把危险性、暴露度、脆弱性和应急能力分开评价，再按社区、城市和区域尺度安排监测预警、建筑设防、避难空间、交通冗余和灾后恢复。地震目录能帮助识别空间风险，但安全水平还取决于人口设施布局、工程标准、信息可达性和治理协同，不能只依据历史震情排名。",
+      "keywords": ["地震风险", "暴露度", "韧性治理", "应急能力"],
+      "sourceIds": ["web-china-earthquake-data-center", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-china-earthquake-data-center",
+          "locator": "国家地震科学数据中心 / earthquake hazard and disaster-risk evidence",
+          "note": "地震科学数据中心用于交叉核对危险性、空间风险和灾害数据的使用边界；不复制数据产品、图件或表格。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：自然灾害风险、环境安全与国家安全章节",
+          "note": "回到教材核对自然灾害风险、减灾能力和国家安全治理。"
         }
       ],
       "licenseStatus": "citation-only",

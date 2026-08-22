@@ -9,63 +9,54 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-mee-2025-ecological-environment-bulletin": {
-    url: "https://www.mee.gov.cn/hjzl/sthjzk/zghjzkgb/202606/P020260604583244574595.pdf",
+  "web-tianditu-national-geospatial-platform": {
+    url: "https://www.tianditu.gov.cn/",
     accessedAt: "2026-08-23",
   },
-  "web-mee-2023-marine-ecological-environment-bulletin": {
-    url: "https://www.mee.gov.cn/hjzl/sthjzk/jagb/202405/P020240522601361012621.pdf",
+  "web-nbs-national-statistical-yearbook": {
+    url: "https://www.stats.gov.cn/sj/ndsj/",
     accessedAt: "2026-08-23",
   },
-  "web-mnr-natural-resources-bulletins": {
-    url: "https://www.mnr.gov.cn/sj/tjgb/",
+  "web-nbs-2022-statistical-bulletin": {
+    url: "https://www.stats.gov.cn/sj/zxfb/202302/t20230228_1919011.html",
     accessedAt: "2026-08-23",
   },
-  "web-mnr-south-china-sea-island-ecosystem": {
-    url: "https://www.mnr.gov.cn/dt/ywbb/202608/t20260815_2936356.html",
+  "web-china-earthquake-data-center": {
+    url: "https://data.earthquake.cn/",
     accessedAt: "2026-08-23",
   },
-  "web-cma-meteorological-data": {
-    url: "https://data.cma.cn/",
+  "web-national-forestry-grassland-administration": {
+    url: "https://www.forestry.gov.cn/",
     accessedAt: "2026-08-23",
   },
-  "web-cma-satellite-remote-sensing": {
-    url: "https://www.cma.gov.cn/2011xwzx/2011xqxxw/202402/t20240226_6086025.html",
+  "github-global-circulation-simulator": {
+    url: "https://github.com/Eason455/global-circulation-simulator",
+    commitSha: "ff76608f10acf33a5eaca5fd0568b237f91efede",
     accessedAt: "2026-08-23",
   },
-  "github-felix-high-school-geography": {
-    url: "https://github.com/felixyu9722/high-school-geography",
-    commitSha: "048db7e7c1156fe50e1ceb0fcc542a19f6f42712",
-    accessedAt: "2026-08-23",
-  },
-  "github-clck-shanghai-high-school-knowledge": {
-    url: "https://github.com/CLCK0622/Shanghai-High-School-Knowledge",
-    commitSha: "2064cd3254bb3977defa4290f029da5b935ea622",
-    accessedAt: "2026-08-23",
-  },
-  "github-zero2geoquest": {
-    url: "https://github.com/YusufEminoglu/zero2geoquest",
-    commitSha: "ac44c990f34d6531a78c7ca030b2b646983d6da0",
+  "github-satv-geography-tool": {
+    url: "https://github.com/jamekes355/SATV-Geography-Tool",
+    commitSha: "706bc6916d6706ac43ebfa84682e66b7fc07d1f5",
     accessedAt: "2026-08-23",
   },
 };
 
 const expectedItems = {
-  "geo-c1-ecological-quality-indicator-reading": "compulsory-1",
-  "geo-c1-meteorological-observation-and-weather-process": "compulsory-1",
-  "geo-c1-high-school-natural-geography-knowledge-map": "compulsory-1",
-  "geo-c2-natural-resources-statistical-comparison": "compulsory-2",
-  "geo-c2-world-region-human-geography-knowledge-map": "compulsory-2",
-  "geo-c2-textbook-outline-and-regional-case": "compulsory-2",
-  "geo-s1-marine-ecosystem-and-sea-air-process": "selective-1",
-  "geo-s1-satellite-observation-and-atmospheric-process": "selective-1",
-  "geo-s1-natural-geography-knowledge-index": "selective-1",
-  "geo-s2-island-ecosystem-monitoring-and-spatial-protection": "selective-2",
-  "geo-s2-map-quest-and-spatial-reasoning": "selective-2",
-  "geo-s2-regional-development-textbook-comparison": "selective-2",
-  "geo-s3-ecological-quality-and-environmental-security": "selective-3",
-  "geo-s3-marine-ecosystem-status-and-governance": "selective-3",
-  "geo-s3-natural-resource-bulletin-and-security-indicators": "selective-3",
+  "geo-c1-national-geospatial-platform-map-scale": "compulsory-1",
+  "geo-c1-earthquake-catalogue-risk-evidence": "compulsory-1",
+  "geo-c1-forest-ecosystem-water-regulation": "compulsory-1",
+  "geo-c2-population-census-structure-and-demand": "compulsory-2",
+  "geo-c2-urbanization-statistical-indicator-chain": "compulsory-2",
+  "geo-c2-transport-and-regional-connectivity-indicators": "compulsory-2",
+  "geo-s1-global-circulation-seasonal-shift-model": "selective-1",
+  "geo-s1-solar-altitude-time-zone-cross-check": "selective-1",
+  "geo-s1-earthquake-plate-boundary-process": "selective-1",
+  "geo-s2-tianditu-layer-scale-and-regional-planning": "selective-2",
+  "geo-s2-forest-restoration-spatial-evidence": "selective-2",
+  "geo-s2-circulation-model-and-monsoon-regional-case": "selective-2",
+  "geo-s3-forest-resource-security-and-ecosystem-services": "selective-3",
+  "geo-s3-statistical-bulletin-resource-environment-indicators": "selective-3",
+  "geo-s3-earthquake-disaster-risk-and-resilience": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.23.19");
@@ -74,7 +65,7 @@ assert.equal(payload.items.length, 305);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v18 source ${sourceId}`);
+  assert.ok(source, `missing v19 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
   if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
@@ -84,7 +75,7 @@ for (const [sourceId, expected] of Object.entries(expectedSources)) {
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v18 item ${itemId}`);
+  assert.ok(item, `missing v19 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

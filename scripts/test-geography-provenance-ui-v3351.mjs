@@ -36,23 +36,23 @@ context.__gaokaoTest.state.query = "";
 context.__gaokaoTest.state.geographyCourse = "";
 const metrics = context.__gaokaoTest.geographySummaryMetrics(payload);
 assert.equal(metrics.courses, 5);
-assert.equal(metrics.items, 290);
-assert.equal(metrics.sources, 129);
+assert.equal(metrics.items, 305);
+assert.equal(metrics.sources, 136);
 assert.equal(metrics.authoredSummaries, 38);
-assert.equal(metrics.citationOnlyItems, 252);
+assert.equal(metrics.citationOnlyItems, 267);
 
 context.__gaokaoTest.renderGeography();
-assert.match(view.innerHTML, /data-geography-version="geo-2026\.08\.23\.18"/);
+assert.match(view.innerHTML, /data-geography-version="geo-2026\.08\.23\.19"/);
 assert.match(view.innerHTML, /资料边界与更新/);
-assert.match(view.innerHTML, /资料版本 geo-2026\.08\.23\.18/);
+assert.match(view.innerHTML, /资料版本 geo-2026\.08\.23\.19/);
 assert.match(view.innerHTML, /引文型方法卡/);
-assert.match(view.innerHTML, /全部课程 · 290/);
-assert.match(view.innerHTML, /地理必修第一册 · 49/);
-assert.match(view.innerHTML, /地理必修第二册 · 59/);
-assert.match(view.innerHTML, /选择性必修1 自然地理基础 · 64/);
-assert.match(view.innerHTML, /选择性必修2 区域发展 · 57/);
-assert.match(view.innerHTML, /选择性必修3 资源、环境与国家安全 · 61/);
-assert.match(view.innerHTML, /290 条摘要/);
+assert.match(view.innerHTML, /全部课程 · 305/);
+assert.match(view.innerHTML, /地理必修第一册 · 52/);
+assert.match(view.innerHTML, /地理必修第二册 · 62/);
+assert.match(view.innerHTML, /选择性必修1 自然地理基础 · 67/);
+assert.match(view.innerHTML, /选择性必修2 区域发展 · 60/);
+assert.match(view.innerHTML, /选择性必修3 资源、环境与国家安全 · 64/);
+assert.match(view.innerHTML, /305 条摘要/);
 
 console.log(JSON.stringify({
   ok: true,
