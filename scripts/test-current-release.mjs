@@ -176,6 +176,7 @@ const tests = [
   "test-filter-scope-status-v3355.mjs",
   "test-recommendation-draft-status-v3356.mjs",
   "test-geography-source-links-v3357.mjs",
+  "test-geography-source-directory-v3358.mjs",
 ];
 
 const results = tests.map((test) => {

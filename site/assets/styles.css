@@ -639,6 +639,56 @@ select {
   overflow-wrap: anywhere;
 }
 
+.geography-source-directory {
+  margin-top: 18px;
+}
+
+.geography-directory-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.geography-directory-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 100px;
+  gap: 12px;
+  align-items: start;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.geography-directory-row h4 {
+  margin: 0 0 5px;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.geography-directory-row p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.geography-directory-link,
+.geography-directory-local {
+  overflow-wrap: anywhere;
+}
+
+.geography-directory-link {
+  color: var(--leaf-dark);
+  text-decoration: none;
+}
+
+.geography-directory-link:hover,
+.geography-directory-link:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
 .status {
   font-size: 14px;
   border-radius: 8px;
@@ -1572,6 +1622,7 @@ select {
   }
 
   .source-row,
+  .geography-directory-row,
   .school-option {
     grid-template-columns: 1fr;
   }

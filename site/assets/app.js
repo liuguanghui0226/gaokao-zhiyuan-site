@@ -4125,6 +4125,49 @@ function renderGeographySource(source) {
   return `<span class="geography-source-local" title="本地索引或教材来源，无公开链接">${label}</span>`;
 }
 
+function renderGeographySourceDirectory(data) {
+  const query = normalizeText(state.query);
+  const sources = (data?.sources || []).filter((source) => {
+    if (!query) return true;
+    return normalizeText([
+      source.title,
+      source.publisher,
+      source.editionNote,
+      source.licenseNote,
+    ].join(" ")).includes(query);
+  });
+  if (!sources.length) return "";
+  const rows = sources.map((source) => {
+    const title = esc(source?.title || source?.id || "未命名来源");
+    const titleMarkup = source?.url
+      ? `<a class="geography-directory-link" href="${esc(source.url)}" target="_blank" rel="noreferrer">${title}</a>`
+      : `<span class="geography-directory-local" title="本地索引或教材来源，无公开链接">${title}</span>`;
+    const metadata = [
+      source?.publisher,
+      source?.commitSha ? `commit ${source.commitSha}` : "",
+      source?.accessedAt ? `访问 ${source.accessedAt}` : "",
+    ].filter(Boolean).join(" · ");
+    return `<article class="geography-directory-row">
+      <div>
+        <h4>${titleMarkup}</h4>
+        ${metadata ? `<p>${esc(metadata)}</p>` : ""}
+        ${source?.editionNote ? `<p>${esc(source.editionNote)}</p>` : ""}
+      </div>
+      <span class="status">${source?.url ? "公开链接" : "本地/教材"}</span>
+    </article>`;
+  }).join("");
+  return `<section class="band geography-source-directory">
+    <div class="data-summary-head">
+      <div>
+        <h3>高中地理来源目录</h3>
+        <p>集中查看地理摘要使用的教材、本地资料与公开网页；公开来源保留访问日期或固定提交版本。</p>
+      </div>
+      <span class="status">${fmtNumber(sources.length)} 条来源</span>
+    </div>
+    <div class="geography-directory-list">${rows}</div>
+  </section>`;
+}
+
 function renderGeography() {
   const data = state.geographyData;
   if (!data) {
@@ -5067,7 +5110,8 @@ function renderAudioQueue() {
 
 function renderSources() {
   const sources = filteredSources();
-  if (!sources.length) {
+  const geographyDirectory = renderGeographySourceDirectory(state.geographyData);
+  if (!sources.length && !geographyDirectory) {
     $("#view-sources").innerHTML = document.querySelector("#emptyTemplate").innerHTML;
     return;
   }
@@ -5088,8 +5132,8 @@ function renderSources() {
   }).join("");
 
   $("#view-sources").innerHTML = `
-    ${sectionHead("资料库", `${fmtNumber(sources.length)} 条`)}
-    <div class="source-list">${rows}</div>
+    ${sources.length ? `${sectionHead("资料库", `${fmtNumber(sources.length)} 条`)}<div class="source-list">${rows}</div>` : ""}
+    ${geographyDirectory}
   `;
 }
 
