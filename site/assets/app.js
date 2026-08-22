@@ -3885,10 +3885,32 @@ function hasActiveFilters() {
   return Boolean(state.query.trim() || state.discipline || state.domain);
 }
 
+function filterStatusText() {
+  const active = [];
+  const query = state.query.trim();
+  if (query) active.push(`检索“${query}”`);
+  const discipline = state.data?.disciplines?.find((item) => item.code === state.discipline);
+  if (discipline) {
+    active.push(`门类“${discipline.code} ${discipline.name}”`);
+  } else if (state.discipline) {
+    active.push(`门类“${state.discipline}”`);
+  }
+  const domain = state.data?.domains?.find((item) => item.id === state.domain);
+  if (domain) {
+    active.push(`主题“${domain.label}”`);
+  } else if (state.domain) {
+    active.push(`主题“${state.domain}”`);
+  }
+  if (!active.length) return "检索和筛选作用于资料库、专业门类和高中地理。";
+  return `当前${active.join("、")}；结果作用于资料库、专业门类和高中地理。`;
+}
+
 function syncClearFiltersControl() {
   const button = $("#clearFilters");
   if (!button) return;
   button.hidden = !hasActiveFilters();
+  const filterStatus = $("#filterStatus");
+  if (filterStatus) filterStatus.textContent = filterStatusText();
 }
 
 function clearSearchFilters() {

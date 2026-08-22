@@ -173,6 +173,7 @@ const tests = [
   "test-recommendation-shortlist-v3352.mjs",
   "test-clear-filters-v3353.mjs",
   "test-navigation-accessibility-v3354.mjs",
+  "test-filter-scope-status-v3355.mjs",
 ];
 
 const results = tests.map((test) => {
