@@ -170,6 +170,7 @@ const tests = [
   "test-recommendation-profile-persistence-v3347.mjs",
   "test-recommendation-export-v3348.mjs",
   "test-recommendation-evidence-links-v3349.mjs",
+  "test-overview-quick-start-v3380.mjs",
   "test-site-freshness-label-v3350.mjs",
   "test-geography-provenance-ui-v3351.mjs",
   "test-recommendation-shortlist-v3352.mjs",
@@ -196,6 +197,7 @@ const tests = [
   "test-geography-next-source-batch-v3375.mjs",
   "test-geography-next-source-batch-v3377.mjs",
   "test-geography-next-source-batch-v3378.mjs",
+  "test-geography-next-source-batch-v3379.mjs",
   "test-recommendation-validation-v3362.mjs",
 ];
 

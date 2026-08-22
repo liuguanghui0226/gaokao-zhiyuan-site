@@ -4003,6 +4003,12 @@ function sectionHead(title, text) {
   return `<div class="section-head"><div><h2>${esc(title)}</h2>${text ? `<p>${esc(text)}</p>` : ""}</div></div>`;
 }
 
+function startRecommendationFromOverview(render = renderView, navigate = updateView) {
+  state.prefillProfile = state.recommendation?.profile || state.prefillProfile || DEFAULT_PROFILE;
+  render("recommend", { force: true });
+  navigate("recommend");
+}
+
 function renderOverview() {
   const data = state.data;
   const stats = data.extractionStats;
@@ -4024,6 +4030,14 @@ function renderOverview() {
   }).join("");
   $("#view-overview").innerHTML = `
     ${sectionHead("填报总览")}
+    <section class="band overview-start" aria-labelledby="overviewStartTitle">
+      <div>
+        <span class="overview-eyebrow">下一步</span>
+        <h3 id="overviewStartTitle">从成绩与偏好开始建立候选清单</h3>
+        <p>填写省份、分数或位次、选科、专业兴趣和城市预算，系统会生成带证据、风险和官方复核项的院校专业候选清单。表单草稿只保存在本机浏览器。</p>
+      </div>
+      <button class="primary-action" id="startRecommendation" type="button">开始填写推荐</button>
+    </section>
     <div class="metric-grid">
       ${renderMetric("资料文件", stats.totalFiles)}
       ${renderMetric("已抽取正文", stats.textExtractedFiles)}
@@ -4044,6 +4058,13 @@ function renderOverview() {
       <div class="check-grid">${data.gaps.map((gap) => `<span>${esc(gap)}</span>`).join("")}</div>
     </details>
   `;
+  bindOverviewEvents();
+}
+
+function bindOverviewEvents() {
+  $("#startRecommendation")?.addEventListener("click", () => {
+    startRecommendationFromOverview();
+  });
 }
 
 function renderDisciplines() {

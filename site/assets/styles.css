@@ -249,6 +249,35 @@ select {
   font-size: 18px;
 }
 
+.overview-start {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: #edf7f1;
+  border-color: #c4ddcc;
+}
+
+.overview-start h3 {
+  margin-bottom: 6px;
+  color: var(--leaf-dark);
+}
+
+.overview-start p {
+  max-width: 780px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.overview-eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1672,6 +1701,7 @@ select {
   }
 
   .form-actions,
+  .overview-start,
   .discipline-detail > header,
   .data-summary-head,
   .model-summary,

@@ -9,54 +9,57 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-tianditu-national-geospatial-platform": {
-    url: "https://www.tianditu.gov.cn/",
+  "web-moa-agriculture-rural-development": {
+    url: "https://www.moa.gov.cn/",
     accessedAt: "2026-08-23",
   },
-  "web-nbs-national-statistical-yearbook": {
-    url: "https://www.stats.gov.cn/sj/ndsj/",
+  "web-mee-environmental-monitoring": {
+    url: "https://www.mee.gov.cn/ywgz/",
     accessedAt: "2026-08-23",
   },
-  "web-nbs-2022-statistical-bulletin": {
-    url: "https://www.stats.gov.cn/sj/zxfb/202302/t20230228_1919011.html",
+  "web-mnr-natural-resources-data": {
+    url: "https://www.mnr.gov.cn/sj/",
     accessedAt: "2026-08-23",
   },
-  "web-china-earthquake-data-center": {
-    url: "https://data.earthquake.cn/",
+  "web-unesco-global-geoparks": {
+    url: "https://www.unesco.org/en/iggp/geoparks/about",
     accessedAt: "2026-08-23",
   },
-  "web-national-forestry-grassland-administration": {
-    url: "https://www.forestry.gov.cn/",
+  "web-wmo-weather": {
+    url: "https://wmo.int/themes/weather",
     accessedAt: "2026-08-23",
   },
-  "github-global-circulation-simulator": {
-    url: "https://github.com/Eason455/global-circulation-simulator",
-    commitSha: "ff76608f10acf33a5eaca5fd0568b237f91efede",
+  "web-cma-weather-climate-observation": {
+    url: "https://www.cma.gov.cn/2011xwzx/2011xqxxw/2016/201603/t20160322_306543.html",
     accessedAt: "2026-08-23",
   },
-  "github-satv-geography-tool": {
-    url: "https://github.com/jamekes355/SATV-Geography-Tool",
-    commitSha: "706bc6916d6706ac43ebfa84682e66b7fc07d1f5",
+  "github-sems-sun-earth-moon-geography": {
+    url: "https://github.com/Thanhson1674/SEMSsimulator",
+    commitSha: "633373a8b869589f062aae5a575f664ade56f611",
     accessedAt: "2026-08-23",
+  },
+  "exam-guigang-2026-02-geography": {
+    accessedAt: "2026-08-23",
+    sha256: "db8633980741c185061d867b4549068271057daa7762a0f956f30f841058fa5c",
   },
 };
 
 const expectedItems = {
-  "geo-c1-national-geospatial-platform-map-scale": "compulsory-1",
-  "geo-c1-earthquake-catalogue-risk-evidence": "compulsory-1",
-  "geo-c1-forest-ecosystem-water-regulation": "compulsory-1",
-  "geo-c2-population-census-structure-and-demand": "compulsory-2",
-  "geo-c2-urbanization-statistical-indicator-chain": "compulsory-2",
-  "geo-c2-transport-and-regional-connectivity-indicators": "compulsory-2",
-  "geo-s1-global-circulation-seasonal-shift-model": "selective-1",
-  "geo-s1-solar-altitude-time-zone-cross-check": "selective-1",
-  "geo-s1-earthquake-plate-boundary-process": "selective-1",
-  "geo-s2-tianditu-layer-scale-and-regional-planning": "selective-2",
-  "geo-s2-forest-restoration-spatial-evidence": "selective-2",
-  "geo-s2-circulation-model-and-monsoon-regional-case": "selective-2",
-  "geo-s3-forest-resource-security-and-ecosystem-services": "selective-3",
-  "geo-s3-statistical-bulletin-resource-environment-indicators": "selective-3",
-  "geo-s3-earthquake-disaster-risk-and-resilience": "selective-3",
+  "geo-c1-permafrost-activity-layer-water-cycle": "compulsory-1",
+  "geo-c1-pm10-sand-dust-and-cold-air-observation": "compulsory-1",
+  "geo-c1-geopark-fieldwork-and-geological-process": "compulsory-1",
+  "geo-c2-mining-town-industrial-heritage-transition": "compulsory-2",
+  "geo-c2-agricultural-rural-resource-base": "compulsory-2",
+  "geo-c2-rural-revitalization-and-land-use-evidence": "compulsory-2",
+  "geo-s1-upwelling-seasonality-and-walker-circulation": "selective-1",
+  "geo-s1-sun-earth-moon-observation-model": "selective-1",
+  "geo-s1-weather-climate-observation-source-selection": "selective-1",
+  "geo-s2-geopark-conservation-and-regional-tourism": "selective-2",
+  "geo-s2-environmental-monitoring-indicator-chain": "selective-2",
+  "geo-s2-natural-resources-data-and-land-use-planning": "selective-2",
+  "geo-s3-agricultural-resource-security-and-food-system": "selective-3",
+  "geo-s3-environmental-monitoring-and-pollution-risk": "selective-3",
+  "geo-s3-weather-warning-and-climate-risk-governance": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.23.20");
@@ -65,9 +68,14 @@ assert.equal(payload.items.length, 320);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v19 source ${sourceId}`);
-  assert.equal(source.url, expected.url);
-  assert.equal(source.accessedAt, expected.accessedAt);
+  assert.ok(source, `missing v20 source ${sourceId}`);
+  if (expected.url) {
+    assert.equal(source.url, expected.url);
+    assert.equal(source.accessedAt, expected.accessedAt);
+  } else {
+    assert.equal(source.url, undefined);
+    assert.equal(source.editionNote.includes(expected.sha256), true);
+  }
   if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
   assert.match(source.licenseNote, /citation|原创|不复制|仅作/i);
 }
@@ -75,7 +83,7 @@ for (const [sourceId, expected] of Object.entries(expectedSources)) {
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v19 item ${itemId}`);
+  assert.ok(item, `missing v20 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

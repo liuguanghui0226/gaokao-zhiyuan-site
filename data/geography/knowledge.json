@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.19",
+  "version": "geo-2026.08.23.20",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1262,6 +1262,77 @@
       "commitSha": "706bc6916d6706ac43ebfa84682e66b7fc07d1f5",
       "accessedAt": "2026-08-23",
       "licenseNote": "仓库 README 声明 MIT；本项目仅作日地关系、地方时和可视化教学方法的 citation-only 参照，公开层发布原创高中地理方法，不复制代码、图件、题目或资源。"
+    },
+    {
+      "id": "web-moa-agriculture-rural-development",
+      "title": "农业农村部：农业、农村与资源环境信息入口",
+      "publisher": "中华人民共和国农业农村部",
+      "editionNote": "公开农业农村部政府信息入口；访问日期 2026-08-23；用于核对农业资源基础、农村发展、土地利用、农业生态与粮食生产的资料组织边界。",
+      "url": "https://www.moa.gov.cn/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "农业农村部公共信息入口；仅作农业资源、农村发展和生态治理方法边界核对，公开层发布原创高中地理方法，不复制正文、图表或数据。"
+    },
+    {
+      "id": "web-mee-environmental-monitoring",
+      "title": "生态环境部：业务工作与环境监测信息",
+      "publisher": "中华人民共和国生态环境部",
+      "editionNote": "公开生态环境部业务工作栏目；访问日期 2026-08-23；用于核对环境监测、污染防治、生态保护和治理成效的指标链与空间尺度。",
+      "url": "https://www.mee.gov.cn/ywgz/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "生态环境部公共业务信息栏目；仅作环境监测、污染风险和治理评价方法边界核对，公开层发布原创高中地理方法，不复制正文、图表或数据。"
+    },
+    {
+      "id": "web-mnr-natural-resources-data",
+      "title": "自然资源部：自然资源数据入口",
+      "publisher": "中华人民共和国自然资源部",
+      "editionNote": "公开自然资源部数据栏目；访问日期 2026-08-23；用于核对土地、海洋、矿产和国土空间数据的空间单元、时间口径与规划应用边界。",
+      "url": "https://www.mnr.gov.cn/sj/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "自然资源部公共数据栏目；仅作自然资源数据、空间单元和国土空间分析方法边界核对，公开层发布原创高中地理方法，不复制数据表、图件或产品内容。"
+    },
+    {
+      "id": "web-unesco-global-geoparks",
+      "title": "UNESCO Global Geoparks：地质遗产与可持续发展",
+      "publisher": "UNESCO",
+      "editionNote": "公开 UNESCO Global Geoparks 介绍页面；访问日期 2026-08-23；用于核对地质遗产、地貌保护、地方社区、科普教育和可持续旅游之间的联系。",
+      "url": "https://www.unesco.org/en/iggp/geoparks/about",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "UNESCO公共教育与地质遗产信息页面；仅作地质景观、保护利用和区域发展方法边界核对，公开层发布原创高中地理方法，不复制正文、图片或版式。"
+    },
+    {
+      "id": "web-wmo-weather",
+      "title": "WMO：Weather 天气主题入口",
+      "publisher": "World Meteorological Organization",
+      "editionNote": "公开 WMO Weather 主题页面；访问日期 2026-08-23；用于核对天气要素、观测、预报、预警和气象服务的任务边界。",
+      "url": "https://wmo.int/themes/weather",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "世界气象组织公共主题页面；仅作天气观测、预报预警和气候风险方法边界核对，公开层发布原创高中地理方法，不复制正文、图表或数据。"
+    },
+    {
+      "id": "web-cma-weather-climate-observation",
+      "title": "中国气象局：天气、气候与气象科普入口",
+      "publisher": "中国气象局",
+      "editionNote": "公开中国气象局政府门户页面；访问日期 2026-08-23；页面提供天气、气候、预警、气象数据与科普入口，用于核对气象观测和天气过程的证据来源。",
+      "url": "https://www.cma.gov.cn/2011xwzx/2011xqxxw/2016/201603/t20160322_306543.html",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "中国气象局公共信息页面；仅作天气气候观测、预警和气象科普方法边界核对，公开层发布原创高中地理方法，不复制正文、图表或产品内容。"
+    },
+    {
+      "id": "github-sems-sun-earth-moon-geography",
+      "title": "SEMS Simulator：太阳—地球—月球地理教学可视化",
+      "publisher": "Thanhson1674/SEMSsimulator（GitHub）",
+      "editionNote": "公开仓库提交 `633373a8b869589f062aae5a575f664ade56f611`；访问日期 2026-08-23；项目首页提供太阳—地球—月球系统的交互可视化、轨道周期、地轴倾角、语言切换和教学观察控制。",
+      "url": "https://github.com/Thanhson1674/SEMSsimulator",
+      "commitSha": "633373a8b869589f062aae5a575f664ade56f611",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作高中地理日地月系统可视化与模型边界的 citation-only 参照，公开层发布原创方法，不复制代码、图片、页面文字或资源。"
+    },
+    {
+      "id": "exam-guigang-2026-02-geography",
+      "title": "广西贵港市部分高中 2025—2026 学年高二上学期期末地理试卷",
+      "publisher": "广西贵港市部分高中（本地题库文件）",
+      "editionNote": "2026 年 2 月 PDF，6 页；SHA-256 db8633980741c185061d867b4549068271057daa7762a0f956f30f841058fa5c；覆盖选择性必修1与选择性必修2前两章的地貌、沙尘、洋流、资源城市、冻土水文、太阳高度、垂直地域分异与 ENSO 产业影响题型。",
+      "licenseNote": "仅作本地题型研究与来源标注；公开层只发布原创方法抽象，不复制题干、答案、解析、图表或版式。"
     }
   ],
   "items": [
@@ -7965,6 +8036,351 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：自然灾害风险、环境安全与国家安全章节",
           "note": "回到教材核对自然灾害风险、减灾能力和国家安全治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-permafrost-activity-layer-water-cycle",
+      "courseId": "compulsory-1",
+      "title": "冻土活动层与河流补给链",
+      "summary": "分析冻土变化时要把气候变暖、活动层厚度、下渗路径、冻土层上水和河流补给按时间顺序连接起来。冷季径流增加并不等于降水增加，必须判断地下水排泄、积雪融水和冰川融水的相对作用，再结合季节和流域尺度解释水文响应。",
+      "keywords": ["多年冻土", "活动层", "地下水补给", "河流径流"],
+      "sourceIds": ["exam-guigang-2026-02-geography", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "exam-guigang-2026-02-geography",
+          "locator": "第 3 页",
+          "note": "本地试卷用于交叉核对冻土活动层、下渗、壤中流和冷季径流题型；不公开题面、答案或图表。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：水循环、地下水与自然环境整体性章节",
+          "note": "回到教材核对水循环环节、地表水与地下水联系以及自然环境整体性。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-pm10-sand-dust-and-cold-air-observation",
+      "courseId": "compulsory-1",
+      "title": "PM10曲线与沙尘冷空气判读",
+      "summary": "读取颗粒物浓度曲线时先定位突增、峰值和滞后，再把冷空气路径、风向、湿度、地表沙源和边界层条件接成天气过程。监测曲线能说明污染物到达和变化时间，但要解释成因还需结合气象观测与区域输送，不能仅凭浓度峰值判断污染源位置。",
+      "keywords": ["PM10", "沙尘天气", "冷空气", "气象观测"],
+      "sourceIds": ["exam-guigang-2026-02-geography", "web-cma-weather-climate-observation", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "exam-guigang-2026-02-geography",
+          "locator": "第 1 页",
+          "note": "本地试卷用于交叉核对PM10时间曲线、冷空气、风向和空气湿度的综合判读方法；不公开题面、答案或图表。"
+        },
+        {
+          "sourceId": "web-cma-weather-climate-observation",
+          "locator": "中国气象局天气、气候、预警与气象科普入口",
+          "note": "中国气象局页面用于核对天气观测、预警和气象科普资料的证据来源边界；不复制正文、图表或产品内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：大气运动、天气系统与自然灾害章节",
+          "note": "回到教材核对冷空气活动、风向变化和天气过程分析。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-geopark-fieldwork-and-geological-process",
+      "courseId": "compulsory-1",
+      "title": "地质公园研学与地质过程",
+      "summary": "地质景观研学不能只记录景点名称，应把岩性、构造、内外力作用、地貌形态和保护状态对应起来。现场观察可从剖面、产状、侵蚀堆积和地貌组合寻找证据，再用区域位置和形成时间解释景观，最后区分科学教育、生态保护和旅游利用的边界。",
+      "keywords": ["地质公园", "野外研学", "地貌过程", "地质遗产"],
+      "sourceIds": ["web-unesco-global-geoparks", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-unesco-global-geoparks",
+          "locator": "UNESCO Global Geoparks / geological heritage, education and sustainable development",
+          "note": "UNESCO页面用于交叉核对地质遗产、科普教育、社区参与和可持续利用的边界；不复制正文、图片或版式。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地球的圈层、地表形态与地貌观察章节",
+          "note": "回到教材核对内外力作用、地貌形成和地理实践观察方法。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-mining-town-industrial-heritage-transition",
+      "courseId": "compulsory-2",
+      "title": "资源型城镇与工业遗产转型",
+      "summary": "资源型城镇转型题要先识别资源开采、加工、就业和环境压力形成的产业链，再分析资源枯竭后的人口、土地和财政约束。将旧矿区改造为工业遗产或旅游空间，关键在于盘活存量、培育新产业、修复环境并保持社区收益，而不是简单恢复原有开采规模。",
+      "keywords": ["资源型城镇", "工业遗产", "产业转型", "矿山修复"],
+      "sourceIds": ["exam-guigang-2026-02-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "exam-guigang-2026-02-geography",
+          "locator": "第 2 页",
+          "note": "本地试卷用于交叉核对资源枯竭型城市、旧矿区改造、矿山公园和旅游转型题型；不公开题面、答案或图表。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：工业区位、产业转型与区域发展章节",
+          "note": "回到教材核对资源、产业、就业和城镇发展的联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-agricultural-rural-resource-base",
+      "courseId": "compulsory-2",
+      "title": "农业与农村发展的资源基础",
+      "summary": "农业区位分析要同时看光热水土、地形、市场、交通、技术和政策，并区分自然资源基础与实际可利用资源。评价农村发展时，还要连接农户生计、产业链、生态承载力和基础设施，避免把单一作物优势或土地面积直接等同于农业现代化水平。",
+      "keywords": ["农业区位", "农村发展", "水土资源", "产业链"],
+      "sourceIds": ["web-moa-agriculture-rural-development", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-moa-agriculture-rural-development",
+          "locator": "农业农村部首页 / agriculture, rural development and resource information",
+          "note": "农业农村部入口用于交叉核对农业资源、农村发展和粮食生产资料的使用边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：农业区位因素与农业地域类型章节",
+          "note": "回到教材核对农业区位、农业生产与区域自然社会条件。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-rural-revitalization-and-land-use-evidence",
+      "courseId": "compulsory-2",
+      "title": "乡村振兴与土地利用证据",
+      "summary": "乡村振兴材料应把土地利用、人口流动、产业组织、公共服务和生态治理放在同一空间框架中。先判断变化是农业规模化、非农就业、旅游开发还是土地整治，再检查交通、市场和环境约束，提出兼顾生产、生活、生态和社区参与的方案。",
+      "keywords": ["乡村振兴", "土地利用", "人口流动", "生态治理"],
+      "sourceIds": ["web-moa-agriculture-rural-development", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-moa-agriculture-rural-development",
+          "locator": "农业农村部首页 / rural development, land use and agricultural governance information",
+          "note": "农业农村部入口用于交叉核对乡村发展、土地利用和农业治理的资料边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域发展、城乡联系与乡村振兴相关章节",
+          "note": "回到教材核对区域协调、城乡联系、土地利用和可持续发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-upwelling-seasonality-and-walker-circulation",
+      "courseId": "selective-1",
+      "title": "上升流季节性与沃克环流",
+      "summary": "洋流和渔场题要把风向、海水表层运动、离岸输送、深层补偿上升和营养盐联系起来，再用沃克环流或季风季节变化解释渔获旺季。厄尔尼诺发生时不能只改写海温，还要继续追踪上升流、降水、旅游、渔业和农业之间的区域传导。",
+      "keywords": ["上升流", "沃克环流", "渔场", "厄尔尼诺"],
+      "sourceIds": ["exam-guigang-2026-02-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "exam-guigang-2026-02-geography",
+          "locator": "第 2 页与第 6 页",
+          "note": "本地试卷用于交叉核对洋流、渔场季节性、沃克环流和厄尔尼诺产业影响题型；不公开题面、答案或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：海水运动、洋流与全球气候联系章节",
+          "note": "回到教材核对洋流成因、上升流、渔场和海气相互作用。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-sun-earth-moon-observation-model",
+      "courseId": "selective-1",
+      "title": "日地月系统可视化与观察模型",
+      "summary": "使用日地月交互模型时，先明确轨道周期、地轴倾角、观察视角和尺度是否为教学简化，再观察太阳直射、昼夜分布、月相或潮汐关联。模型适合建立空间关系和变化方向，计算题仍需回到日期、经纬度、地方时和公式条件进行独立验证。",
+      "keywords": ["日地月系统", "地轴倾角", "轨道周期", "可视化模型"],
+      "sourceIds": ["github-sems-sun-earth-moon-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-sems-sun-earth-moon-geography",
+          "locator": "index.html / interactive Sun-Earth-Moon system, orbital period, axial tilt and teaching controls",
+          "note": "GitHub项目用于交叉核对日地月教学模型的变量、交互控制和简化边界；不复制代码、图片或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地球运动、太阳辐射与月相潮汐相关章节",
+          "note": "回到教材核对地球运动、太阳辐射、昼夜变化和月相潮汐的空间关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-weather-climate-observation-source-selection",
+      "courseId": "selective-1",
+      "title": "天气与气候观测的来源选择",
+      "summary": "天气题先判断需要的是即时实况、天气图、雷达预警还是长期气候序列，再选择对应观测来源和时间尺度。短时天气变化不能直接证明气候趋势，站点观测、卫星产品和模型预报的空间分辨率也不同，综合判读必须保留数据时间、区域和不确定性。",
+      "keywords": ["天气观测", "气候序列", "预警", "数据尺度"],
+      "sourceIds": ["web-cma-weather-climate-observation", "web-wmo-weather", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-cma-weather-climate-observation",
+          "locator": "中国气象局天气、气候、预警与气象科普入口",
+          "note": "中国气象局页面用于核对天气服务、气象预警和观测资料的任务边界；不复制正文、图表或产品内容。"
+        },
+        {
+          "sourceId": "web-wmo-weather",
+          "locator": "WMO Weather / weather observations, forecasts and warnings",
+          "note": "WMO页面用于交叉核对天气要素、观测、预报与预警的概念边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：大气运动、天气系统与气候形成章节",
+          "note": "回到教材核对天气与气候的时间尺度、气象要素和天气系统。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-geopark-conservation-and-regional-tourism",
+      "courseId": "selective-2",
+      "title": "地质公园保护与区域旅游",
+      "summary": "地质公园开发要把地质遗产价值、生态承载力、游客容量、社区收益和交通设施放在同一评价框架中。旅游项目应围绕地貌科普和保护目标设计，避免景观过度建设、地质风险暴露或把短期客流增长当成区域可持续发展的唯一证据。",
+      "keywords": ["地质公园", "生态承载力", "地质旅游", "社区收益"],
+      "sourceIds": ["web-unesco-global-geoparks", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-unesco-global-geoparks",
+          "locator": "UNESCO Global Geoparks / conservation, education, community and sustainable tourism",
+          "note": "UNESCO页面用于交叉核对地质保护、科普教育、社区参与和可持续旅游的边界；不复制正文、图片或版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域生态保护、旅游发展与区域可持续发展章节",
+          "note": "回到教材核对资源保护、旅游开发、区域协调和环境承载力。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-environmental-monitoring-indicator-chain",
+      "courseId": "selective-2",
+      "title": "环境监测指标链与区域治理",
+      "summary": "区域环境治理要按压力、状态、影响和响应组织监测指标，并说明指标对应的空间单元、时间窗口和阈值。污染浓度变化只能描述状态，治理方案还要追踪排放来源、暴露人群、生态受体和措施反馈，避免用单项达标替代区域系统评价。",
+      "keywords": ["环境监测", "指标链", "区域治理", "压力状态响应"],
+      "sourceIds": ["web-mee-environmental-monitoring", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-mee-environmental-monitoring",
+          "locator": "生态环境部业务工作栏目 / environmental monitoring, pollution control and ecological governance",
+          "note": "生态环境部栏目用于交叉核对环境监测、污染防治和治理反馈的证据边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域生态环境治理与区域可持续发展章节",
+          "note": "回到教材核对区域环境问题、治理措施和可持续发展评价。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-natural-resources-data-and-land-use-planning",
+      "courseId": "selective-2",
+      "title": "自然资源数据与国土空间规划",
+      "summary": "自然资源数据用于规划时，先确认土地、矿产、海洋或生态保护数据的空间单元和时间版本，再与人口、交通、产业和灾害约束叠加。规划冲突应明确保护底线、开发强度和利益主体，不能把不同来源、不同尺度的数据直接拼接后当成同一时点的完整现实。",
+      "keywords": ["自然资源数据", "国土空间规划", "土地利用", "尺度一致"],
+      "sourceIds": ["web-mnr-natural-resources-data", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-mnr-natural-resources-data",
+          "locator": "自然资源部数据栏目 / natural resources data, land, marine and spatial planning information",
+          "note": "自然资源部数据栏目用于交叉核对资源数据、空间单元和规划应用的边界；不复制数据表、图件或产品内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域空间组织、区域发展与地理信息技术章节",
+          "note": "回到教材核对区域尺度、空间联系、土地利用和规划决策。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-agricultural-resource-security-and-food-system",
+      "courseId": "selective-3",
+      "title": "农业资源安全与食物系统",
+      "summary": "农业资源安全评价不能只看粮食产量，还要联读耕地质量、水资源、种植结构、投入品、储运体系、市场波动和生态代价。提出保障方案时，应同时考虑节水节肥、土壤保护、品种与区域多样化、风险储备和农户收益，形成从资源基础到食物系统的完整链条。",
+      "keywords": ["农业资源安全", "食物系统", "耕地质量", "粮食安全"],
+      "sourceIds": ["web-moa-agriculture-rural-development", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-moa-agriculture-rural-development",
+          "locator": "农业农村部首页 / agricultural resources, food production and rural governance information",
+          "note": "农业农村部入口用于交叉核对农业资源、粮食生产和农村治理资料的证据边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：粮食安全、资源安全与生态文明建设章节",
+          "note": "回到教材核对粮食安全、资源约束、农业可持续利用和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-environmental-monitoring-and-pollution-risk",
+      "courseId": "selective-3",
+      "title": "环境监测与污染风险治理",
+      "summary": "污染风险题要区分排放源、迁移介质、暴露路径、受影响人群和生态受体，再根据污染物的持久性、累积性和空间扩散方式设计监测与治理。环境质量改善需要连续数据和源头减排共同支撑，不能只依据一次监测达标或单个工程完成作出安全结论。",
+      "keywords": ["污染风险", "环境监测", "暴露路径", "源头减排"],
+      "sourceIds": ["web-mee-environmental-monitoring", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-mee-environmental-monitoring",
+          "locator": "生态环境部业务工作栏目 / environmental monitoring, pollution risk and pollution control",
+          "note": "生态环境部栏目用于交叉核对监测、污染防治和风险治理的指标边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：环境安全、污染防治与国家安全章节",
+          "note": "回到教材核对环境问题、污染治理、生态安全和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-weather-warning-and-climate-risk-governance",
+      "courseId": "selective-3",
+      "title": "天气预警与气候风险治理",
+      "summary": "极端天气治理要先区分天气预警、灾害危险性、暴露度和脆弱性，再将监测预警、工程防护、应急响应、保险和恢复重建连接成治理链。气候风险不是一次天气事件的同义词，长期规划还要考虑趋势、情景不确定性和不同群体的适应能力。",
+      "keywords": ["天气预警", "气候风险", "暴露度", "适应治理"],
+      "sourceIds": ["web-wmo-weather", "web-cma-weather-climate-observation", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-wmo-weather",
+          "locator": "WMO Weather / observations, forecasts, warnings and weather services",
+          "note": "WMO页面用于交叉核对天气观测、预报预警和气象服务的任务边界；不复制正文、图表或数据。"
+        },
+        {
+          "sourceId": "web-cma-weather-climate-observation",
+          "locator": "中国气象局天气、气候、预警与气象科普入口",
+          "note": "中国气象局页面用于补充天气预警、气象科普和本地服务的证据边界；不复制正文、图表或产品内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：自然灾害风险、环境安全与国家安全章节",
+          "note": "回到教材核对自然灾害风险、减灾能力、适应治理和国家安全。"
         }
       ],
       "licenseStatus": "citation-only",

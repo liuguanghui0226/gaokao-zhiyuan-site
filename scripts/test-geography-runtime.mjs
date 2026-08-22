@@ -19,11 +19,11 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.23.19");
-assert.equal(site.sources.length, 136);
-assert.equal(site.items.length, 305);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 115);
-assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 21);
+assert.equal(site.version, "geo-2026.08.23.20");
+assert.equal(site.sources.length, 144);
+assert.equal(site.items.length, 320);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 122);
+assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 22);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
 assert.ok(site.items.some((item) => item.id === "geo-s2-gis-remote-sensing-evidence"));
@@ -150,6 +150,25 @@ for (const itemId of [
 ]) {
   assert.ok(site.items.some((item) => item.id === itemId), `missing v15 runtime item ${itemId}`);
 }
+for (const itemId of [
+  "geo-c1-permafrost-activity-layer-water-cycle",
+  "geo-c1-pm10-sand-dust-and-cold-air-observation",
+  "geo-c1-geopark-fieldwork-and-geological-process",
+  "geo-c2-mining-town-industrial-heritage-transition",
+  "geo-c2-agricultural-rural-resource-base",
+  "geo-c2-rural-revitalization-and-land-use-evidence",
+  "geo-s1-upwelling-seasonality-and-walker-circulation",
+  "geo-s1-sun-earth-moon-observation-model",
+  "geo-s1-weather-climate-observation-source-selection",
+  "geo-s2-geopark-conservation-and-regional-tourism",
+  "geo-s2-environmental-monitoring-indicator-chain",
+  "geo-s2-natural-resources-data-and-land-use-planning",
+  "geo-s3-agricultural-resource-security-and-food-system",
+  "geo-s3-environmental-monitoring-and-pollution-risk",
+  "geo-s3-weather-warning-and-climate-risk-governance",
+]) {
+  assert.ok(site.items.some((item) => item.id === itemId), `missing v20 runtime item ${itemId}`);
+}
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-noaa-tides-education"));
@@ -234,6 +253,18 @@ for (const sourceId of [
   "github-biogeo-secondary-education",
 ]) {
   assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v15 runtime source ${sourceId}`);
+}
+for (const sourceId of [
+  "web-moa-agriculture-rural-development",
+  "web-mee-environmental-monitoring",
+  "web-mnr-natural-resources-data",
+  "web-unesco-global-geoparks",
+  "web-wmo-weather",
+  "web-cma-weather-climate-observation",
+  "github-sems-sun-earth-moon-geography",
+  "exam-guigang-2026-02-geography",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v20 runtime source ${sourceId}`);
 }
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 
