@@ -172,6 +172,7 @@ const tests = [
   "test-geography-provenance-ui-v3351.mjs",
   "test-recommendation-shortlist-v3352.mjs",
   "test-clear-filters-v3353.mjs",
+  "test-navigation-accessibility-v3354.mjs",
 ];
 
 const results = tests.map((test) => {
