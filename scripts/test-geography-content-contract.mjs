@@ -135,6 +135,9 @@ const REQUIRED_EXTERNAL_SOURCES = new Set([
   "github-shanghai-high-school-lab",
   "github-geo-teaching-workbench",
   "github-high-school-geography-notes",
+  "github-secondary-geography-course",
+  "github-opengis-curriculum",
+  "github-school-geography-maps",
 ]);
 const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-noaa-tides-education",
@@ -158,6 +161,11 @@ const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-nasa-carbon-cycle",
   "web-fao-land-resources",
   "web-fao-water-resources",
+  "web-unccd-desertification",
+  "web-nsidc-glaciers",
+  "web-fao-aquastat",
+  "web-un-climate-science",
+  "web-owid-population-growth",
 ]);
 const REQUIRED_V3_ITEMS = new Set([
   "geo-c1-water-cycle-observation",
@@ -241,6 +249,33 @@ const REQUIRED_V8_ITEMS = new Set([
   "geo-s3-land-degradation-food-security",
   "geo-s3-water-allocation-competing-uses",
 ]);
+const REQUIRED_V12_SOURCES = new Set([
+  "github-secondary-geography-course",
+  "github-opengis-curriculum",
+  "github-school-geography-maps",
+  "web-unccd-desertification",
+  "web-nsidc-glaciers",
+  "web-fao-aquastat",
+  "web-un-climate-science",
+  "web-owid-population-growth",
+]);
+const REQUIRED_V12_ITEMS = new Set([
+  "geo-c1-groundwater-overdraft-subsidence",
+  "geo-c1-glacier-runoff-seasonality",
+  "geo-c1-desertification-wind-water-erosion",
+  "geo-c2-population-growth-age-demand",
+  "geo-c2-rural-urban-service-access",
+  "geo-c2-map-atlas-scale-distortion",
+  "geo-s1-greenhouse-radiative-balance",
+  "geo-s1-glacier-mass-balance-climate-evidence",
+  "geo-s1-aquastat-water-balance-indicators",
+  "geo-s2-desertification-monitoring-restoration",
+  "geo-s2-open-gis-curriculum-evidence-chain",
+  "geo-s2-school-map-comparative-reading",
+  "geo-s3-water-withdrawal-accounting-security",
+  "geo-s3-climate-action-mitigation-adaptation",
+  "geo-s3-population-resource-pressure",
+]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
   "geo-s1-time-zone-and-date-line",
@@ -284,6 +319,9 @@ for (const sourceId of REQUIRED_EXPANSION_SOURCES) {
 for (const sourceId of REQUIRED_NEXT_EXPANSION_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing next geography source ${sourceId}`);
 }
+for (const sourceId of REQUIRED_V12_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing v12 geography source ${sourceId}`);
+}
 for (const sourceId of REQUIRED_EXTERNAL_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing external geography source ${sourceId}`);
 }
@@ -318,7 +356,7 @@ for (const item of payload.items) {
     assert.equal(sourceIds.has(evidence.sourceId), true, `${item.id} evidence references unknown source`);
     assert.match(
       String(evidence.locator),
-      /第?\s*\d+\s*页|章节|教材|项目描述|README|data\/|pages\/|docs\/|gallery|ontology|RDF|geography\.html|earthmotion|src\/curriculum|01高中世界地理|高中地理考点重点复习|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|Water Cycle|World of Change|JetStream|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming|sun-motion|SunMotion|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Hurricanes|National Hurricane Center|Climate change impacts|Urbanization|Urban Planning|Population Density|Plate Tectonics|Migration|IPCC|Farming and Agribusiness|Water Use and Stress|WMO|Climate|Carbon Cycle|carbon|land-water|water scarcity|competing uses|weather|radar|groundwater/,
+      /第?\s*\d+\s*页|章节|教材|项目描述|README|data\/|pages\/|docs\/|gallery|ontology|RDF|geography\.html|earthmotion|src\/curriculum|01高中世界地理|高中地理考点重点复习|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|Water Cycle|World of Change|JetStream|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming|sun-motion|SunMotion|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Hurricanes|National Hurricane Center|Climate change impacts|Urbanization|Urban Planning|Population Density|Plate Tectonics|Migration|IPCC|Farming and Agribusiness|Water Use and Stress|WMO|Climate|Carbon Cycle|carbon|land-water|water scarcity|competing uses|weather|radar|groundwater|AQUASTAT|NSIDC|UNCCD|glacier|desertification|evapotranspiration|greenhouse|radiative balance|Population|OpenGIS|map collection|geography curriculum/,
       `${item.id} evidence locator must be a page or stable web/repository section`,
     );
     assert.equal(typeof evidence.note, "string");
@@ -360,6 +398,9 @@ for (const itemId of REQUIRED_V7_ITEMS) {
 }
 for (const itemId of REQUIRED_V8_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing v8 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V12_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v12 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,

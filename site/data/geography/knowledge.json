@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.11",
+  "version": "geo-2026.08.22.12",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -665,6 +665,81 @@
       "url": "https://www.fao.org/land-water/water/en/",
       "accessedAt": "2026-08-22",
       "licenseNote": "FAO 公共政策与教育页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、图片、报告或数据。"
+    },
+    {
+      "id": "github-secondary-geography-course",
+      "title": "Secondary Geography Course：开放式中学地理课程",
+      "publisher": "OCTRYA/course_geography（GitHub）",
+      "editionNote": "公开仓库提交 `29b6670da7dfc3d3df87d553bc4b0ca70387258a`；访问日期 2026-08-22；README 将项目定位为覆盖中学地理课程的开放式课程起点。",
+      "url": "https://github.com/OCTRYA/course_geography",
+      "commitSha": "29b6670da7dfc3d3df87d553bc4b0ca70387258a",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库未声明统一许可证；仅作中学地理课程结构的 citation-only 研究来源，公开层发布原创学习方法，不复制课程正文、资源或页面内容。"
+    },
+    {
+      "id": "github-opengis-curriculum",
+      "title": "OpenGIS：开放地理信息科学课程",
+      "publisher": "opengisci/opengisci.github.io（GitHub）",
+      "editionNote": "公开仓库提交 `701bf47428310323fc3b851c837049e91abba6c2`；访问日期 2026-08-22；项目以开放地理信息科学课程和空间分析资源为组织入口。",
+      "url": "https://github.com/opengisci/opengisci.github.io",
+      "commitSha": "701bf47428310323fc3b851c837049e91abba6c2",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库未声明统一许可证；仅作 GIS 课程组织与空间证据链的 citation-only 研究来源，发布原创高中地理方法，不复制课程页面、代码或图件。"
+    },
+    {
+      "id": "github-school-geography-maps",
+      "title": "School Maps：按课程主题组织的地理地图集",
+      "publisher": "wlbirula/szkolnemapy（GitHub）",
+      "editionNote": "公开仓库提交 `98624095fe75ca617f5ce071460b2a9c2b2618bd`；访问日期 2026-08-22；项目说明按学校地理课程主题组织地图，适合作为图层、比例尺和区域比较的观察入口。",
+      "url": "https://github.com/wlbirula/szkolnemapy",
+      "commitSha": "98624095fe75ca617f5ce071460b2a9c2b2618bd",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库内容以地图与教育资源为主且未声明统一许可证；仅作地图读图与课程主题组织的 citation-only 研究来源，不复制地图、文字、数据或页面版式。"
+    },
+    {
+      "id": "web-unccd-desertification",
+      "title": "UNCCD：Desertification",
+      "publisher": "United Nations Convention to Combat Desertification",
+      "editionNote": "公开土地退化专题页；访问日期 2026-08-22；用于核对荒漠化、土地退化、干旱风险与恢复治理的关系。",
+      "url": "https://www.unccd.int/land-and-life/desertification",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "UNCCD 公共政策与教育页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、图片、报告或数据。"
+    },
+    {
+      "id": "web-nsidc-glaciers",
+      "title": "NSIDC：Glaciers and the Cryosphere",
+      "publisher": "National Snow and Ice Data Center",
+      "editionNote": "公开冰冻圈教育页面；访问日期 2026-08-22；用于核对冰川形成、物质平衡、消融、径流与气候证据。",
+      "url": "https://nsidc.org/learn/parts-cryosphere/glaciers",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NSIDC 公共科学教育页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、图片、动画或数据。"
+    },
+    {
+      "id": "web-fao-aquastat",
+      "title": "FAO AQUASTAT：全球水资源与农业用水数据库",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "editionNote": "公开水资源数据库入口；访问日期 2026-08-22；用于核对取水量、灌溉、地下水、水量平衡与跨区域比较的指标口径。",
+      "url": "https://www.fao.org/aquastat/en/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "FAO 公共数据库与教育入口；仅作指标口径与概念核对，公开层发布原创高中地理方法，不复制数据表、图表或页面内容。"
+    },
+    {
+      "id": "web-un-climate-science",
+      "title": "United Nations：Climate Change Science and Impacts",
+      "publisher": "United Nations",
+      "editionNote": "公开气候科学专题页；访问日期 2026-08-22；用于核对温室效应、气候变化影响、适应与减缓之间的概念边界。",
+      "url": "https://www.un.org/en/climatechange/science/climate-issues",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "联合国公共教育页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、图片、图表或页面版式。"
+    },
+    {
+      "id": "web-owid-population-growth",
+      "title": "Our World in Data：Population Growth",
+      "publisher": "Our World in Data",
+      "editionNote": "公开人口专题页；访问日期 2026-08-22；用于核对人口增长、出生死亡变化、人口转变与长期区域差异。",
+      "url": "https://ourworldindata.org/population-growth",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "Our World in Data 按其开放许可与数据归因说明处理；本项目仅作引用与概念核对，发布原创高中地理方法，不复制图表、数据或页面文字。"
     }
   ],
   "items": [
@@ -4648,6 +4723,336 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "水资源安全、生态流量与资源配置章节",
           "note": "回到教材核对水资源供需、生态约束、跨区域调配和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-groundwater-overdraft-subsidence",
+      "courseId": "compulsory-1",
+      "title": "地下水超采、补给与地面沉降",
+      "summary": "地下水题先区分降水入渗、河流补给和人工回灌等补给，再把取水量、含水层储量、生态需求与排泄联系起来。长期超采可能引起水位下降、地面沉降和海水入侵，评价措施要同时写节水、回补、分区管控与监测。",
+      "keywords": ["地下水", "超采", "含水层", "地面沉降"],
+      "sourceIds": ["web-fao-aquastat", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-aquastat",
+          "locator": "FAO AQUASTAT：groundwater / withdrawals / water scarcity / water balance indicators",
+          "note": "AQUASTAT 用于交叉核对地下水、取水量和水量平衡指标的口径；不复制数据库表格或图表。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "地理必修第一册：地下水补给、径流与人类用水章节",
+          "note": "回到教材核对补给、排泄、水循环与人类用水之间的过程关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-glacier-runoff-seasonality",
+      "courseId": "compulsory-1",
+      "title": "冰川融水补给与季节径流",
+      "summary": "冰川融水补给题要把固态积累、消融、融水汇流和下游用水季节错配连起来。先判断冰川分布和气温变化，再比较降水补给、冰雪融水与地下水补给的时间差，最后评价短期增流、长期退缩和水资源调度的不同影响。",
+      "keywords": ["冰川融水", "径流季节性", "固态降水", "水资源调度"],
+      "sourceIds": ["web-nsidc-glaciers", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nsidc-glaciers",
+          "locator": "NSIDC：Climate / glacier melt / runoff / seasonal water supply",
+          "note": "NSIDC 冰冻圈教育页用于交叉核对冰川消融、径流和季节供水的证据边界；不复制图片或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "地理必修第一册：冰川融水、河流补给与径流变化章节",
+          "note": "回到教材核对河流补给类型、径流季节变化和水循环联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-desertification-wind-water-erosion",
+      "courseId": "compulsory-1",
+      "title": "风沙与流水侵蚀的土地退化链",
+      "summary": "土地退化判读要先分清风蚀、风沙堆积、流水冲刷和沟蚀等过程，再把植被覆盖、土壤结构、坡度、降水强度与土地利用联系起来。治理措施应对应减少扰动、保持地表覆盖、拦截径流和恢复生产力，不能只写扩大灌溉。",
+      "keywords": ["风蚀", "水土流失", "土地退化", "地表覆盖"],
+      "sourceIds": ["web-unccd-desertification", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-unccd-desertification",
+          "locator": "UNCCD：soil / land degradation / Climate / restoration",
+          "note": "UNCCD 土地退化专题用于交叉核对侵蚀、干旱风险和恢复治理的分析入口；不复制报告或图件。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "地理必修第一册：风力作用、流水侵蚀与地表覆盖章节",
+          "note": "回到教材核对外力作用、地表形态和水土保持的过程链。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-growth-age-demand",
+      "courseId": "compulsory-2",
+      "title": "人口增长、年龄结构与公共服务需求",
+      "summary": "人口资料题要同时看出生率、死亡率、自然增长率、年龄结构和迁移，不能只用总人口判断发展阶段。年龄结构变化会通过抚养比、教育医疗、就业和养老需求影响区域规划，评价政策时还要注意人口变化与公共服务建设之间的时间滞后。",
+      "keywords": ["人口增长", "年龄结构", "抚养比", "公共服务"],
+      "sourceIds": ["web-owid-population-growth", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-owid-population-growth",
+          "locator": "Our World in Data：data/ population growth / demographic transition",
+          "note": "人口专题用于交叉核对长期人口增长、出生死亡变化和人口转变的比较维度；不复制图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "地理必修第二册：人口增长、年龄结构与人口政策章节",
+          "note": "回到教材核对自然增长、人口结构、人口容量和公共服务的分析边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-rural-urban-service-access",
+      "courseId": "compulsory-2",
+      "title": "乡村—城市联系与服务可达性",
+      "summary": "城乡联系题要把人口流动、就业通勤、教育医疗、交通网络和产业分工放在同一空间框架中，再判断服务集聚是否提高了可达性。比较城乡发展时既要看设施数量，也要看距离、频率、支付能力和实际使用人口，避免把城镇化简单等同于公共服务均等化。",
+      "keywords": ["城乡联系", "服务可达性", "人口流动", "公共服务"],
+      "sourceIds": ["github-secondary-geography-course", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-secondary-geography-course",
+          "locator": "README：secondary geography curriculum / rural-urban / population and settlement",
+          "note": "开放式中学地理课程项目用于交叉核对人口、聚落与城乡主题的课程组织入口；不复制课程正文或资源。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "地理必修第二册：城市乡村、人口流动与公共服务章节",
+          "note": "回到教材核对城镇化、城乡联系、服务范围和人地协调的概念边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-map-atlas-scale-distortion",
+      "courseId": "compulsory-2",
+      "title": "地图集、投影变形与区域比较尺度",
+      "summary": "地图比较前先确认投影、比例尺、图例、统计单位和空间范围，再判断面积、距离、方向或形状中哪一种信息更可靠。地图集适合建立区域位置和分布关系，但不同投影与概括程度会改变视觉印象，读图结论必须回到指标和尺度。",
+      "keywords": ["地图投影", "比例尺", "地图概括", "区域比较"],
+      "sourceIds": ["github-school-geography-maps", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-school-geography-maps",
+          "locator": "README / map collection / geography curriculum / map scale",
+          "note": "按课程主题组织的地图仓库用于交叉核对地图集、图层和区域比较的观察入口；不复制地图、数据或图件。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "地理必修第二册：地图基础、区域分布与统计图表章节",
+          "note": "回到教材核对地图表达、比例尺、空间分布和区域比较的方法边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-greenhouse-radiative-balance",
+      "courseId": "selective-1",
+      "title": "温室效应、辐射收支与气候反馈",
+      "summary": "气候变化材料题先区分太阳短波辐射、地表长波辐射和大气吸收再辐射，再判断温室气体变化如何影响能量收支。解释趋势时要把反馈、时间尺度和区域差异写清楚，不能把温室效应本身与所有极端天气直接画等号。",
+      "keywords": ["温室效应", "辐射收支", "长波辐射", "气候反馈"],
+      "sourceIds": ["web-un-climate-science", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-un-climate-science",
+          "locator": "United Nations Climate：greenhouse effect / radiative balance / climate impacts",
+          "note": "联合国气候科学专题用于交叉核对温室效应、气候影响和风险表达的概念边界；不复制页面内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：大气受热、辐射收支与气候变化章节",
+          "note": "回到教材核对太阳辐射、地面辐射、大气逆辐射和气候系统反馈。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-glacier-mass-balance-climate-evidence",
+      "courseId": "selective-1",
+      "title": "冰川物质平衡与气候变化证据",
+      "summary": "冰川变化判读要区分积累区、消融区、冰川前缘和冰体厚度，再用多年序列判断物质平衡是正还是负。遥感影像或面积变化只能提供一类证据，解释气候原因时还要核对气温、降雪、辐射、坡向和观测尺度。",
+      "keywords": ["冰川物质平衡", "消融", "气候证据", "时间序列"],
+      "sourceIds": ["web-nsidc-glaciers", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nsidc-glaciers",
+          "locator": "NSIDC Climate：glacier mass balance / accumulation / melt / time series",
+          "note": "NSIDC 用于交叉核对冰川积累、消融和长期变化证据；不复制原始图片、数据或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：冰川、自然环境整体性与气候变化章节",
+          "note": "回到教材核对冰川地貌、气候要素和自然环境整体性之间的联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-aquastat-water-balance-indicators",
+      "courseId": "selective-1",
+      "title": "蒸散发、水量平衡与指标口径",
+      "summary": "水量平衡题要把降水、地表径流、地下水补给、蒸发和蒸腾放在同一控制体内，再区分实际蒸散与潜在蒸散。比较区域或年份时必须核对流域边界、时间尺度、灌溉取水和生态需水，否则同一个水资源指标可能被误读成水量充足或利用效率高。",
+      "keywords": ["蒸散发", "水量平衡", "潜在蒸散", "指标口径"],
+      "sourceIds": ["web-fao-aquastat", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-aquastat",
+          "locator": "FAO AQUASTAT：water balance / evapotranspiration / irrigation / data scale",
+          "note": "AQUASTAT 用于交叉核对水量平衡、蒸散发、灌溉和统计尺度的指标边界；不复制数据库数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：水循环、蒸发蒸腾与水量平衡章节",
+          "note": "回到教材核对水循环环节、区域水量平衡和人类活动影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-desertification-monitoring-restoration",
+      "courseId": "selective-2",
+      "title": "荒漠化监测、恢复与土地承载边界",
+      "summary": "荒漠化治理评价不能只看植被变绿，还要同时看土壤含水量、风蚀水蚀、生产力、放牧压力和恢复后的稳定性。区域方案应把监测预警、减轻人为扰动、节水利用、生态修复和生计替代连接起来，并明确短期景观改善不等于长期土地恢复。",
+      "keywords": ["荒漠化监测", "生态恢复", "土地承载力", "生计替代"],
+      "sourceIds": ["web-unccd-desertification", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-unccd-desertification",
+          "locator": "UNCCD：land degradation / Climate / monitoring / restoration",
+          "note": "UNCCD 用于交叉核对土地退化中监测、恢复和治理能力的分析入口；不复制报告、数据或案例。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：荒漠化治理、生态修复与区域发展章节",
+          "note": "回到教材核对生态脆弱性、人地关系、治理措施和区域发展条件。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-open-gis-curriculum-evidence-chain",
+      "courseId": "selective-2",
+      "title": "开放 GIS 课程与区域证据链",
+      "summary": "GIS 综合题或项目题要先明确区域问题，再选择图层、空间尺度、分析方法和验证证据。开放 GIS 课程的组织思路可以迁移为“问题—数据—空间关系—结果—不确定性—归因”链条，但公开地图或代码只能作为方法参照，不能替代教材概念和区域实证。",
+      "keywords": ["开放 GIS", "空间证据链", "图层选择", "不确定性"],
+      "sourceIds": ["github-opengis-curriculum", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-opengis-curriculum",
+          "locator": "OpenGIS README / curriculum / spatial analysis / open geospatial science",
+          "note": "OpenGIS 课程仓库用于交叉核对 GIS 课程组织与空间分析方法入口；不复制课程页面、代码或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域信息、区域分析与综合治理章节",
+          "note": "回到教材核对区域尺度、要素联系、证据选择和综合治理的解释边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-school-map-comparative-reading",
+      "courseId": "selective-2",
+      "title": "专题地图集与区域比较读图",
+      "summary": "区域比较读图可先按地形、气候、人口、产业和交通建立共同指标，再观察不同地图图层之间的叠加关系。专题地图集适合训练位置、分布和联系证据，但比较前要统一投影、时间、统计单位和区域边界，避免把图面颜色差异直接当成因果结论。",
+      "keywords": ["专题地图", "图层叠加", "区域比较", "统计口径"],
+      "sourceIds": ["github-school-geography-maps", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-school-geography-maps",
+          "locator": "README / map collection / geography curriculum / thematic maps",
+          "note": "课程主题地图仓库用于交叉核对专题地图、图层比较和区域读图的训练入口；不复制地图、文字或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域比较、地图表达与区域联系章节",
+          "note": "回到教材核对区域尺度、空间分布、要素联系和图表证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-water-withdrawal-accounting-security",
+      "courseId": "selective-3",
+      "title": "取水量、耗水量与水安全核算",
+      "summary": "水安全材料题要区分取水量、实际耗水量、回用水量、生态需水和供水可靠性，再核对指标的空间范围与统计年份。某地取水量下降可能来自节水、产业转移或产量下降，评价政策必须结合水质、地下水、生态流量和用水结构判断是否真正降低风险。",
+      "keywords": ["取水量", "耗水量", "供水可靠性", "水安全"],
+      "sourceIds": ["web-fao-aquastat", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-aquastat",
+          "locator": "FAO AQUASTAT：water withdrawals / water scarcity / irrigation / data definitions",
+          "note": "AQUASTAT 用于交叉核对取水、灌溉、水资源压力和指标定义；不复制数据库记录或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：水资源安全、用水结构与生态流量章节",
+          "note": "回到教材核对水资源安全、部门竞争、生态约束和资源治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-climate-action-mitigation-adaptation",
+      "courseId": "selective-3",
+      "title": "气候行动中的减缓、适应与公平",
+      "summary": "气候治理题要先区分减缓与适应：前者针对排放和碳汇，后者针对暴露、脆弱性与适应能力。评价方案时还要看能源、土地、城市、粮食和就业之间的联动，以及成本、信息和基础设施是否公平可获得，不能把单项工程等同于完整气候行动。",
+      "keywords": ["气候行动", "减缓", "适应", "公平转型"],
+      "sourceIds": ["web-un-climate-science", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-un-climate-science",
+          "locator": "United Nations Climate：climate impacts / adaptation / mitigation / equity",
+          "note": "联合国气候科学专题用于交叉核对气候影响、适应、减缓和公平表达的概念边界；不复制页面文字或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：环境安全、气候变化与生态文明章节",
+          "note": "回到教材核对环境安全、气候风险、减缓适应和生态文明建设。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-population-resource-pressure",
+      "courseId": "selective-3",
+      "title": "人口增长、资源压力与安全边界",
+      "summary": "资源环境安全评价不能把人口总量直接等同于压力大小，应同时考察消费水平、技术效率、资源禀赋、空间分布、生态承载力和治理能力。人口增长可能放大水、粮食、能源与住房需求，也可能通过技术、制度和结构变化改变压力传导路径。",
+      "keywords": ["人口压力", "资源安全", "生态承载力", "技术效率"],
+      "sourceIds": ["web-owid-population-growth", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-owid-population-growth",
+          "locator": "Our World in Data：data/ population growth / long-term regional comparison",
+          "note": "人口专题用于交叉核对人口增长的长期趋势和区域差异；不复制图表、数据或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境承载、粮食安全与国家安全章节",
+          "note": "回到教材核对人口、资源环境压力、承载边界和安全治理的评价框架。"
         }
       ],
       "licenseStatus": "citation-only",

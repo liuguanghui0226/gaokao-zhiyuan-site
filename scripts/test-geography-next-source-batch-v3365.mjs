@@ -78,9 +78,9 @@ const expectedItems = new Set([
   "geo-s2-agriculture-regional-resilience",
 ]);
 
-assert.equal(payload.version, "geo-2026.08.22.11");
-assert.equal(payload.sources.length, 72);
-assert.equal(payload.items.length, 185);
+assert.match(payload.version, /^geo-2026\.08\.22\.\d+$/);
+assert.ok(payload.sources.length >= 72);
+assert.ok(payload.items.length >= 185);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);

@@ -19,7 +19,11 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.22.11");
+assert.equal(site.version, "geo-2026.08.22.12");
+assert.equal(site.sources.length, 80);
+assert.equal(site.items.length, 200);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 59);
+assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 21);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
 assert.ok(site.items.some((item) => item.id === "geo-s2-gis-remote-sensing-evidence"));
@@ -32,6 +36,25 @@ assert.ok(site.items.some((item) => item.id === "geo-s2-copernicus-multisource-m
 assert.ok(site.items.some((item) => item.id === "geo-s3-soil-carbon-and-food-security"));
 assert.ok(site.items.some((item) => item.id === "geo-s3-carbon-cycle-reservoir-feedback"));
 assert.ok(site.items.some((item) => item.id === "geo-s3-water-allocation-competing-uses"));
+for (const itemId of [
+  "geo-c1-groundwater-overdraft-subsidence",
+  "geo-c1-glacier-runoff-seasonality",
+  "geo-c1-desertification-wind-water-erosion",
+  "geo-c2-population-growth-age-demand",
+  "geo-c2-rural-urban-service-access",
+  "geo-c2-map-atlas-scale-distortion",
+  "geo-s1-greenhouse-radiative-balance",
+  "geo-s1-glacier-mass-balance-climate-evidence",
+  "geo-s1-aquastat-water-balance-indicators",
+  "geo-s2-desertification-monitoring-restoration",
+  "geo-s2-open-gis-curriculum-evidence-chain",
+  "geo-s2-school-map-comparative-reading",
+  "geo-s3-water-withdrawal-accounting-security",
+  "geo-s3-climate-action-mitigation-adaptation",
+  "geo-s3-population-resource-pressure",
+]) {
+  assert.ok(site.items.some((item) => item.id === itemId), `missing v12 runtime item ${itemId}`);
+}
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-noaa-tides-education"));
@@ -45,6 +68,18 @@ assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-opengu
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-shanghai-high-school-lab"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-high-school-geography-notes"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-wmo-climate"));
+for (const sourceId of [
+  "github-secondary-geography-course",
+  "github-opengis-curriculum",
+  "github-school-geography-maps",
+  "web-unccd-desertification",
+  "web-nsidc-glaciers",
+  "web-fao-aquastat",
+  "web-un-climate-science",
+  "web-owid-population-growth",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v12 runtime source ${sourceId}`);
+}
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 
 const index = fs.readFileSync(indexPath, "utf8");
