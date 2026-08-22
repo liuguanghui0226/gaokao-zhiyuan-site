@@ -18,6 +18,8 @@ assert.match(workflow, /schedule:\s*\n\s*-\s*cron:\s*"0 2 \* \* \*"/);
 assert.match(workflow, /app_asset_version=/);
 assert.match(workflow, /assets\/app\.js\?v=\$\{app_asset_version\}/);
 assert.match(workflow, /fetch "\$\{base\}assets\/app\.js\?v=\$\{app_asset_version\}"/);
+const unsafeAssetExtractor = String.raw`html.match(/assets\/app\.js\?v=([^"']+)/)`;
+assert.equal(workflow.includes(unsafeAssetExtractor), false, "single-quoted shell scripts must not contain an unescaped apostrophe");
 assert.doesNotMatch(workflow, /app\.js\?v=3\.346\.4/);
 
 console.log(JSON.stringify({
