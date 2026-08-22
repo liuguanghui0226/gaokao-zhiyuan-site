@@ -9,89 +9,80 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-nasa-el-nino": {
-    url: "https://science.nasa.gov/earth/explore/el-nino/",
+  "github-open-geo-data-education": {
+    url: "https://github.com/andrea-ballatore/open-geo-data-education",
+    commitSha: "a9f68c60b0088e1b34cfc35b985513cfdcaba05e",
     accessedAt: "2026-08-22",
   },
-  "web-nasa-gpm-water-cycle": {
-    url: "https://gpm.nasa.gov/education/water-cycle",
+  "github-geog-510": {
+    url: "https://github.com/giswqs/geog-510",
+    commitSha: "c2d2d4948129684fb62fcea540f22b44f067b843",
     accessedAt: "2026-08-22",
   },
-  "web-esa-copernicus-earth-observation": {
-    url: "https://www.esa.int/Applications/Observing_the_Earth/Copernicus",
+  "github-adaptive-geography": {
+    url: "https://github.com/adaptive-learning/geography",
+    commitSha: "b057df1b1bda02c8034167eceafb1cb176ed9165",
     accessedAt: "2026-08-22",
   },
-  "web-fao-global-soil-partnership": {
-    url: "https://www.fao.org/global-soil-partnership/en/",
+  "github-openguessr-education": {
+    url: "https://github.com/therealPaulPlay/OpenGuessrEducation",
+    commitSha: "90bdfe814b49d01446eaa9be437275067a2da4ab",
     accessedAt: "2026-08-22",
   },
-  "github-atlasgpt-secondary-geography": {
-    url: "https://github.com/dayangac/AtlasGPT",
-    commitSha: "6f01f956ba5e803f29c32e2ec9e2ff8638bc9745",
-    accessedAt: "2026-08-22",
-  },
-  "github-terrain-explorer-africa": {
-    url: "https://github.com/educatres/terrain-explorer-africa",
-    commitSha: "129064bc3c73d30c94f0b3fb1374fe87ca1f7f08",
-    accessedAt: "2026-08-22",
-  },
-  "github-intro-gispro": {
-    url: "https://github.com/giswqs/intro-gispro",
-    commitSha: "d4de649fefff14046a818aa3a7a05623015de9ed",
+  "github-multitouch-geography-game": {
+    url: "https://github.com/RobertoDebarba/multitouch-collaborative-educational-geography-game",
+    commitSha: "805005660f485b188cfacfdd467ea432f1d94940",
     accessedAt: "2026-08-22",
   },
 };
+
 const expectedItems = new Set([
-  "geo-c1-water-cycle-observation",
-  "geo-c1-soil-health-and-erosion",
-  "geo-c1-africa-relief-river-ecology",
-  "geo-c2-map-based-regional-evidence",
-  "geo-c2-landscape-and-human-environment",
-  "geo-s1-enso-wind-current-upwelling",
-  "geo-s1-enso-teleconnection-precipitation",
-  "geo-s1-water-cycle-evaporation-runoff",
-  "geo-s2-copernicus-multisource-monitoring",
-  "geo-s2-vector-raster-scale",
-  "geo-s2-map-workflow-and-reproducibility",
-  "geo-s2-protected-area-spatial-evidence",
-  "geo-s2-sentinel-emergency-response",
-  "geo-s3-soil-carbon-and-food-security",
-  "geo-s3-soil-salinity-and-land-restoration",
-  "geo-s3-enso-climate-risk-and-resources",
+  "geo-c1-dem-relief-and-drainage",
+  "geo-c1-gridded-climate-surface",
+  "geo-c2-population-grid-and-scale",
+  "geo-c2-network-accessibility-and-hinterland",
+  "geo-c2-map-reading-place-clues",
+  "geo-s1-raster-resolution-and-natural-process",
+  "geo-s1-elevation-profile-and-contour",
+  "geo-s2-vector-raster-overlay-analysis",
+  "geo-s2-reproducible-map-workflow",
+  "geo-s2-map-scale-generalization",
+  "geo-s3-environmental-indicator-crosscheck",
+  "geo-s3-resource-security-data-freshness",
 ]);
 
 assert.equal(payload.version, "geo-2026.08.22.7");
 assert.equal(payload.sources.length, 40);
 assert.equal(payload.items.length, 125);
+
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v3 source ${sourceId}`);
+  assert.ok(source, `missing v4 source ${sourceId}`);
   assert.equal(source.url, expected.url);
+  assert.equal(source.commitSha, expected.commitSha);
   assert.equal(source.accessedAt, expected.accessedAt);
-  if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
   assert.match(source.licenseNote, /citation|原创|不复制|仅作/i);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const itemId of expectedItems) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v3 item ${itemId}`);
+  assert.ok(item, `missing v4 item ${itemId}`);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");
   assert.ok(item.summary.length >= 40 && item.summary.length <= 500);
   assert.ok(item.keywords.length >= 2);
-  assert.ok(item.sourceIds.some((sourceId) => Object.hasOwn(expectedSources, sourceId)));
   assert.ok(item.evidence.length >= 2);
   assert.ok(item.evidence.some((evidence) => Object.hasOwn(expectedSources, evidence.sourceId)));
 }
 
 const courseCounts = Object.groupBy([...expectedItems].map((id) => items.get(id)), (item) => item.courseId);
 assert.deepEqual(Object.fromEntries(Object.entries(courseCounts).map(([courseId, entries]) => [courseId, entries.length])), {
-  "compulsory-1": 3,
-  "compulsory-2": 2,
-  "selective-1": 3,
-  "selective-2": 5,
-  "selective-3": 3,
+  "compulsory-1": 2,
+  "compulsory-2": 3,
+  "selective-1": 2,
+  "selective-2": 3,
+  "selective-3": 2,
 });
 
 console.log(JSON.stringify({

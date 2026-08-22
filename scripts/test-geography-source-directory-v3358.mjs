@@ -59,11 +59,12 @@ context.__gaokaoTest.renderSources();
 
 assert.match(view.innerHTML, /class="band geography-source-directory"/);
 assert.match(view.innerHTML, /高中地理来源目录/);
-assert.match(view.innerHTML, /14 个公开链接/);
+assert.match(view.innerHTML, /19 个公开链接/);
 assert.match(view.innerHTML, /21 个本地\/教材/);
 assert.match(view.innerHTML, /class="geography-directory-link" href="https:\/\/oceanservice\.noaa\.gov\/education\/tutorial_tides\/tides01_intro\.html"/);
 assert.match(view.innerHTML, /访问 2026-08-22/);
 assert.match(view.innerHTML, /commit 0198f84c3552bf20df90124e1c18dc412f0cf0fd/);
+assert.match(view.innerHTML, /github\.com\/giswqs\/geog-510/);
 assert.match(view.innerHTML, /class="geography-directory-local"/);
 assert.doesNotMatch(view.innerHTML, /class="geography-directory-link"[^>]*>普通高中教科书/);
 

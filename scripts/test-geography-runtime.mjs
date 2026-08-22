@@ -19,7 +19,7 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.22.6");
+assert.equal(site.version, "geo-2026.08.22.7");
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
 assert.ok(site.items.some((item) => item.id === "geo-s2-gis-remote-sensing-evidence"));
@@ -37,6 +37,9 @@ assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-nasa-remo
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-nasa-el-nino"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-esa-copernicus-earth-observation"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-atlasgpt-secondary-geography"));
+assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-open-geo-data-education"));
+assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-geog-510"));
+assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-openguessr-education"));
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 
 const index = fs.readFileSync(indexPath, "utf8");

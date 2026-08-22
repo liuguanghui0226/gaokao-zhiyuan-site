@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.6",
+  "version": "geo-2026.08.22.7",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -314,6 +314,56 @@
       "commitSha": "d4de649fefff14046a818aa3a7a05623015de9ed",
       "accessedAt": "2026-08-22",
       "licenseNote": "仓库说明代码示例为 CC BY 4.0，文字、图件与图片受版权保护；本项目只作高中 GIS 方法交叉核对，不复制代码、文字、图件或数据。"
+    },
+    {
+      "id": "github-open-geo-data-education",
+      "title": "Open Geospatial Datasets for GIS Education：开放地理数据教育仓库",
+      "publisher": "andrea-ballatore/open-geo-data-education（GitHub）",
+      "editionNote": "公开仓库提交 `a9f68c60b0088e1b34cfc35b985513cfdcaba05e`；访问日期 2026-08-22；README 列出数字高程、全球气温降水、人口密度、交通网络、空气质量等教育数据及其原始来源说明。",
+      "url": "https://github.com/andrea-ballatore/open-geo-data-education",
+      "commitSha": "a9f68c60b0088e1b34cfc35b985513cfdcaba05e",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库未声明统一的仓库许可证；README 说明原始数据分别遵循其开放数据许可并保留归因边界；本项目仅作 citation-only 方法研究，不复制数据、图件、文字或处理结果。"
+    },
+    {
+      "id": "github-geog-510",
+      "title": "Geographic Software Design：地理软件设计课程",
+      "publisher": "giswqs/geog-510（University of Tennessee 课程仓库）",
+      "editionNote": "公开仓库提交 `c2d2d4948129684fb62fcea540f22b44f067b843`；访问日期 2026-08-22；README 与课程书目录覆盖 GeoPandas、Rasterio、地图制作、数据处理、版本记录和地理软件工作流。",
+      "url": "https://github.com/giswqs/geog-510",
+      "commitSha": "c2d2d4948129684fb62fcea540f22b44f067b843",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明 Creative Commons Attribution 4.0 International；本项目仍仅作高中地理 GIS 方法交叉核对，不复制课程文字、代码、图件、视频或作业。"
+    },
+    {
+      "id": "github-adaptive-geography",
+      "title": "Geography：地图轮廓练习应用",
+      "publisher": "adaptive-learning/geography（GitHub）",
+      "editionNote": "公开仓库提交 `b057df1b1bda02c8034167eceafb1cb176ed9165`；访问日期 2026-08-22；README 和应用数据体现地图轮廓、河流、区域与地理闪卡的练习组织方式。",
+      "url": "https://github.com/adaptive-learning/geography",
+      "commitSha": "b057df1b1bda02c8034167eceafb1cb176ed9165",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明 MIT License；本项目只吸收地图练习与空间定位的教学方法，不复制闪卡文本、地图、图片、代码或数据。"
+    },
+    {
+      "id": "github-openguessr-education",
+      "title": "OpenGuessr Education：地理教育与地图识别项目",
+      "publisher": "therealPaulPlay/OpenGuessrEducation（GitHub）",
+      "editionNote": "公开仓库提交 `90bdfe814b49d01446eaa9be437275067a2da4ab`；访问日期 2026-08-22；README 说明以互动地图、国家资料和地理指南训练位置线索与区域识别。",
+      "url": "https://github.com/therealPaulPlay/OpenGuessrEducation",
+      "commitSha": "90bdfe814b49d01446eaa9be437275067a2da4ab",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库代码采用 MIT 加 Commons Clause，且地图、资料与图片可能有分别的来源政策；本项目仅作 citation-only 教学结构研究，不复制文章、题目、地图、图片或页面代码。"
+    },
+    {
+      "id": "github-multitouch-geography-game",
+      "title": "Onde Estou?：协作式互动地理游戏",
+      "publisher": "RobertoDebarba/multitouch-collaborative-educational-geography-game（GitHub）",
+      "editionNote": "公开仓库提交 `805005660f485b188cfacfdd467ea432f1d94940`；访问日期 2026-08-22；README 以拖放州域到国家地图的分层难度展示位置、轮廓与名称的空间识别练习。",
+      "url": "https://github.com/RobertoDebarba/multitouch-collaborative-educational-geography-game",
+      "commitSha": "805005660f485b188cfacfdd467ea432f1d94940",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库代码声明 GPL v3.0；本项目只吸收协作式地图定位与难度递进方法，不复制游戏资源、图片、代码、地图或版式。"
     }
   ],
   "items": [
@@ -2658,6 +2708,320 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "第 58-113 页",
           "note": "回到教材核对自然灾害、资源安全、气候变化与适应治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-dem-relief-and-drainage",
+      "courseId": "compulsory-1",
+      "title": "数字高程、地形起伏与排水方向",
+      "summary": "地形材料要先把高程、坡度、分水岭和汇水方向连成过程链，再判断河谷、盆地、坡面与聚落的空间关系。数字高程模型只是连续地表的表达，读图时还要检查分辨率、投影和等高距，不能把栅格颜色直接当成地貌名称或水流速度。",
+      "keywords": ["数字高程模型", "地形起伏", "分水岭", "排水"],
+      "sourceIds": ["github-open-geo-data-education", "github-geog-510", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-open-geo-data-education",
+          "locator": "README：digital elevation models / open geospatial datasets",
+          "note": "公开仓库用于交叉核对 DEM 教育数据的对象与来源边界；不复制数据文件、图件或处理结果。"
+        },
+        {
+          "sourceId": "github-geog-510",
+          "locator": "README / book/geospatial/rasterio.md：raster data and geospatial analysis",
+          "note": "地理软件课程用于交叉核对栅格地形数据的分析流程；不复制课程文字或代码。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 66-80 页",
+          "note": "回到教材核对地貌形态、外力作用、侵蚀堆积与流域地形关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-gridded-climate-surface",
+      "courseId": "compulsory-1",
+      "title": "气温降水栅格与空间场判读",
+      "summary": "气温或降水栅格图要先看变量、单位、时间平均和空间分辨率，再沿纬度、海拔、距海远近、地形抬升与下垫面解释分布。比较两个区域时应统一时间段和统计口径，并把连续空间场与站点观测、季节过程区分开。",
+      "keywords": ["气温栅格", "降水栅格", "空间场", "统计口径"],
+      "sourceIds": ["github-open-geo-data-education", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-open-geo-data-education",
+          "locator": "README：global air temperature / global precipitation / raster formats",
+          "note": "公开仓库用于交叉核对气温、降水栅格的变量、分辨率和时间范围表达；不复制数据或统计结果。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 34-60 页",
+          "note": "回到教材核对大气受热、水汽、降水和气候要素空间差异。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-grid-and-scale",
+      "courseId": "compulsory-2",
+      "title": "人口栅格、行政单元与尺度效应",
+      "summary": "人口分布图要先分清栅格人口密度、行政区统计和城市建成区范围，再比较面积、人口总量、密度与增长率。换用空间单元可能改变区域排序，因此解释人口分布时还要结合地形、交通、就业、公共服务和统计年份，避免把行政边界当作自然分区。",
+      "keywords": ["人口栅格", "行政单元", "人口密度", "尺度效应"],
+      "sourceIds": ["github-open-geo-data-education", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-open-geo-data-education",
+          "locator": "README：GPW global population density / polygons / spatial scope",
+          "note": "公开仓库用于交叉核对人口栅格与区域边界的表达差异；不复制人口数据、图件或数值。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 2-23 页",
+          "note": "回到教材核对人口分布、人口变化、人口迁移与人口容量。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-network-accessibility-and-hinterland",
+      "courseId": "compulsory-2",
+      "title": "交通网络、可达性与经济腹地",
+      "summary": "交通网络题不能只数道路或线路长度，应观察节点等级、连接方向、换乘成本、通达时间和人口产业分布。判断城市腹地时，要把网络可达性与市场、资源、服务功能和行政边界结合，说明交通改善可能扩大联系范围，也可能加剧中心集聚。",
+      "keywords": ["交通网络", "可达性", "经济腹地", "节点"],
+      "sourceIds": ["github-open-geo-data-education", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-open-geo-data-education",
+          "locator": "README：transport networks / global trade network / London travel origin destination",
+          "note": "公开仓库用于交叉核对线网络、网络联系与 OD 数据的分析对象；不复制网络数据或地图。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 80-95 页",
+          "note": "回到教材核对交通运输布局、区域联系、城市辐射与产业分工。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-map-reading-place-clues",
+      "courseId": "compulsory-2",
+      "title": "地图识别中的位置线索与区域特征",
+      "summary": "区域识别题先用海陆位置、纬度、地形、道路、聚落和土地利用建立候选解释，再用多个独立线索互相验证。地图游戏的定位训练可以帮助形成空间记忆，但高中地理作答仍要回到自然条件、人类活动和区域联系的机制说明，不能以地名记忆替代证据。",
+      "keywords": ["区域识别", "位置线索", "空间记忆", "区域特征"],
+      "sourceIds": ["github-adaptive-geography", "github-openguessr-education", "github-multitouch-geography-game", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-adaptive-geography",
+          "locator": "README：map outlines / geography flashcards",
+          "note": "地图练习项目用于交叉核对轮廓、河流和区域识别的练习结构；不复制闪卡文本、地图或图片。"
+        },
+        {
+          "sourceId": "github-openguessr-education",
+          "locator": "README：interactive guides / country data / geography skills",
+          "note": "地理教育项目用于交叉核对位置线索与区域特征训练；不复制指南文章、地图或项目资源。"
+        },
+        {
+          "sourceId": "github-multitouch-geography-game",
+          "locator": "README：Goal / drag and drop the state over the country map",
+          "note": "互动游戏用于交叉核对轮廓、位置和难度递进的教学结构；不复制游戏资源或代码。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 24-53 页",
+          "note": "回到教材核对城镇、地域文化、土地利用和城乡联系中的区域证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-raster-resolution-and-natural-process",
+      "courseId": "selective-1",
+      "title": "栅格分辨率与自然过程尺度",
+      "summary": "自然地理栅格图要先确认像元大小、覆盖范围、时间分辨率和变量定义，再判断它能支持何种尺度的结论。粗分辨率适合识别区域格局，细分辨率才可能讨论局地差异；重采样、平滑和分类会改变边界与极值，必须在解释中保留不确定性。",
+      "keywords": ["栅格分辨率", "自然过程", "像元", "尺度"],
+      "sourceIds": ["github-open-geo-data-education", "github-geog-510", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-open-geo-data-education",
+          "locator": "README：raster formats / global temperature / precipitation",
+          "note": "公开数据仓库用于交叉核对栅格变量、空间分辨率与时间范围的说明边界；不复制数据或图件。"
+        },
+        {
+          "sourceId": "github-geog-510",
+          "locator": "README / book/geospatial/rasterio.md：raster data processing",
+          "note": "地理软件课程用于交叉核对栅格处理与尺度意识；不复制课程代码或文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 80-106 页",
+          "note": "回到教材核对地域分异、土壤植被、自然环境差异与尺度分析。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-elevation-profile-and-contour",
+      "courseId": "selective-1",
+      "title": "高程剖面、等高线与地貌证据",
+      "summary": "等高线或高程剖面题要先判断高程变化、坡度变化、山脊与山谷，再结合岩性、构造和流水侵蚀解释地貌形态。剖面图可以揭示相对高低和坡面连续性，但不能单独证明地质年代、地下水流向或灾害发生概率。",
+      "keywords": ["高程剖面", "等高线", "坡度", "地貌证据"],
+      "sourceIds": ["github-geog-510", "github-open-geo-data-education", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geog-510",
+          "locator": "README / book/geospatial/rasterio.md：elevation and raster analysis",
+          "note": "地理软件课程用于交叉核对高程栅格与剖面分析的证据边界；不复制教程内容。"
+        },
+        {
+          "sourceId": "github-open-geo-data-education",
+          "locator": "README：digital elevation models / global spatial scope",
+          "note": "公开数据仓库用于交叉核对 DEM 的空间覆盖和数据来源说明；不复制高程数据或图件。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 18-41 页",
+          "note": "回到教材核对内外力作用、地貌形成、地形剖面与地质过程。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-vector-raster-overlay-analysis",
+      "courseId": "selective-2",
+      "title": "矢量栅格叠加与区域问题拆解",
+      "summary": "区域空间分析可先用矢量图层表达行政区、道路、河流和保护地，再用栅格表达高程、温度、降水或覆盖度，最后检查坐标系、尺度与时间是否一致。叠加结果只是空间共现证据，还要结合因果机制、样本范围和实地资料避免过度解释。",
+      "keywords": ["矢量栅格叠加", "空间分析", "区域问题", "坐标系"],
+      "sourceIds": ["github-geog-510", "github-open-geo-data-education", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-geog-510",
+          "locator": "README / book/geospatial/geopandas.md / book/geospatial/rasterio.md：vector and raster workflows",
+          "note": "地理软件课程用于交叉核对矢量、栅格与空间分析流程；不复制代码、图件或课程文字。"
+        },
+        {
+          "sourceId": "github-open-geo-data-education",
+          "locator": "README：GeoJSON / GeoPackage / GeoTIFF formats",
+          "note": "公开数据仓库用于交叉核对不同空间数据格式及其对象边界；不复制数据文件。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 2-22 页",
+          "note": "回到教材核对区域整体性、区域关联性、空间联系和地理信息技术应用。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-reproducible-map-workflow",
+      "courseId": "selective-2",
+      "title": "可复现地图工作流与证据链",
+      "summary": "制作区域专题图时应依次记录问题、数据来源、时间范围、坐标系统、处理步骤、符号化规则和异常检查，再解释空间格局及其机制。版本控制和课程实验的价值在于让他人可以复核过程；它们不能替代对指标含义、尺度效应和现实条件的地理判断。",
+      "keywords": ["可复现地图", "证据链", "数据来源", "版本记录"],
+      "sourceIds": ["github-geog-510", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-geog-510",
+          "locator": "README：version control / documentation / open-source geospatial packages",
+          "note": "地理软件课程用于交叉核对版本记录、文档和可复现空间分析流程；不复制课程材料或代码。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 2-17 页",
+          "note": "回到教材核对区域分析、尺度意识、空间联系和地理信息技术使用。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-map-scale-generalization",
+      "courseId": "selective-2",
+      "title": "地图比例尺、概括与区域比较",
+      "summary": "区域图比较前要先判断比例尺、投影、符号和概括程度是否相近。小比例尺地图适合观察宏观分布，大比例尺地图才能呈现局部道路、聚落和土地利用；地图识别训练可以建立位置感，但区域发展结论仍需回到要素联系、过程机制和尺度转换。",
+      "keywords": ["地图比例尺", "地图概括", "区域比较", "尺度转换"],
+      "sourceIds": ["github-adaptive-geography", "github-openguessr-education", "github-multitouch-geography-game", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-adaptive-geography",
+          "locator": "README：practicing geography / map outlines / map regions",
+          "note": "地图练习项目用于交叉核对轮廓、区域和地图识别的训练结构；不复制地图、闪卡或代码。"
+        },
+        {
+          "sourceId": "github-openguessr-education",
+          "locator": "README：map component / zoom / labels / regions",
+          "note": "地理教育项目用于交叉核对地图缩放、标签、区域和位置线索的教学边界；不复制页面或地图资源。"
+        },
+        {
+          "sourceId": "github-multitouch-geography-game",
+          "locator": "README：three difficulties / country map",
+          "note": "互动游戏用于交叉核对从轮廓到名称的难度递进；不复制游戏图片、地图或代码。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 2-17 页",
+          "note": "回到教材核对区域尺度、区域整体性和区域关联性。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-environmental-indicator-crosscheck",
+      "courseId": "selective-3",
+      "title": "资源环境指标的交叉核验",
+      "summary": "资源环境图表要先区分指标含义、空间单位、时间范围和观测方式，再把空气质量、夜间灯光、人口、温度或土地覆盖等指标进行交叉核验。单一指标只能提供线索，判断环境压力、资源利用或治理成效时还要说明替代解释、数据缺口和尺度限制。",
+      "keywords": ["环境指标", "交叉核验", "数据口径", "尺度限制"],
+      "sourceIds": ["github-open-geo-data-education", "github-geog-510", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-open-geo-data-education",
+          "locator": "README：air quality / nighttime lights / population density / world bank indicators",
+          "note": "公开数据仓库用于交叉核对资源环境指标的类型、时间和空间表达；不复制指标数值、数据文件或图件。"
+        },
+        {
+          "sourceId": "github-geog-510",
+          "locator": "README / book/geospatial/geopandas.md：data processing and mapping",
+          "note": "地理软件课程用于交叉核对数据处理、空间比较和专题制图的证据边界；不复制课程内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 58-113 页",
+          "note": "回到教材核对资源环境承载力、环境安全、生态保护和治理评价。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-resource-security-data-freshness",
+      "courseId": "selective-3",
+      "title": "资源安全判断中的时间与尺度",
+      "summary": "资源安全材料不能只看资源总量，还要核对数据年份、更新频率、空间分辨率、可获得性和供需路径。评价水、粮食、能源或土地安全时，应把储量、产能、运输、价格、生态代价、灾害扰动和替代能力放在同一框架中，区分静态存量与动态保障能力。",
+      "keywords": ["资源安全", "数据时效", "空间尺度", "供需保障"],
+      "sourceIds": ["github-open-geo-data-education", "github-geog-510", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-open-geo-data-education",
+          "locator": "README：dataset dates / original data sources / global and regional scope",
+          "note": "公开仓库用于交叉核对数据时效、来源归因和空间覆盖的限制；不把历史数据当作当前统计结论。"
+        },
+        {
+          "sourceId": "github-geog-510",
+          "locator": "README：data sources / documentation / geospatial software design",
+          "note": "地理软件课程用于交叉核对数据来源、文档和复核流程；不复制课程文字或代码。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 2-45 页",
+          "note": "回到教材核对资源类型、资源安全、粮食安全、能源安全和保障能力。"
         }
       ],
       "licenseStatus": "citation-only",

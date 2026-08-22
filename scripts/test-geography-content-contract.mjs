@@ -120,6 +120,11 @@ const REQUIRED_EXTERNAL_SOURCES = new Set([
   "github-atlasgpt-secondary-geography",
   "github-terrain-explorer-africa",
   "github-intro-gispro",
+  "github-open-geo-data-education",
+  "github-geog-510",
+  "github-adaptive-geography",
+  "github-openguessr-education",
+  "github-multitouch-geography-game",
 ]);
 const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-noaa-tides-education",
@@ -147,6 +152,20 @@ const REQUIRED_V3_ITEMS = new Set([
   "geo-s3-soil-carbon-and-food-security",
   "geo-s3-soil-salinity-and-land-restoration",
   "geo-s3-enso-climate-risk-and-resources",
+]);
+const REQUIRED_V4_ITEMS = new Set([
+  "geo-c1-dem-relief-and-drainage",
+  "geo-c1-gridded-climate-surface",
+  "geo-c2-population-grid-and-scale",
+  "geo-c2-network-accessibility-and-hinterland",
+  "geo-c2-map-reading-place-clues",
+  "geo-s1-raster-resolution-and-natural-process",
+  "geo-s1-elevation-profile-and-contour",
+  "geo-s2-vector-raster-overlay-analysis",
+  "geo-s2-reproducible-map-workflow",
+  "geo-s2-map-scale-generalization",
+  "geo-s3-environmental-indicator-crosscheck",
+  "geo-s3-resource-security-data-freshness",
 ]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
@@ -255,6 +274,9 @@ for (const itemId of REQUIRED_EXTERNAL_ITEMS) {
 }
 for (const itemId of REQUIRED_V3_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing v3 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V4_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v4 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,
