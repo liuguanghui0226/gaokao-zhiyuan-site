@@ -9,65 +9,53 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-qgis-training-manual": {
-    url: "https://docs.qgis.org/latest/en/docs/training_manual/",
+  "github-yuta-edu-3d-terrain": {
+    url: "https://github.com/YutaOzawaTU/edu-3d-terrain",
+    commitSha: "34b7ecd7a1cb6a0948e26869ea56b08c55935a28",
     accessedAt: "2026-08-23",
   },
-  "web-arcgis-learn-geography": {
-    url: "https://learn.arcgis.com/en/",
+  "github-vrautenbach-isprs-catalogue": {
+    url: "https://github.com/vrautenbach/isprs_catalogue",
+    commitSha: "9825eda0b70f33860ba4e0e8ba018685da8098cc",
     accessedAt: "2026-08-23",
   },
-  "web-nasa-worldview-earth-observation": {
-    url: "https://worldview.earthdata.nasa.gov/",
+  "github-yujinnee-worldhunter": {
+    url: "https://github.com/yujinnee/WorldHunter",
+    commitSha: "84dcc3a76132e73dfe6f29572f8723c7d6a1d791",
     accessedAt: "2026-08-23",
   },
-  "web-protected-planet-conservation-data": {
-    url: "https://www.protectedplanet.net/en",
+  "github-mukombradon-globeguesser": {
+    url: "https://github.com/mukombradon/GlobeGuesser",
+    commitSha: "f0129d7b41a8519361472adae686cd6d2fc292f3",
     accessedAt: "2026-08-23",
   },
-  "github-qgis-training-data": {
-    url: "https://github.com/qgis/QGIS-Training-Data",
-    commitSha: "fd26dd88e39b9aec550eea450cec18d02b1de3b5",
+  "github-gisphere-kg-chatbot": {
+    url: "https://github.com/GIS-Info/GISphereKG-ChatBot",
+    commitSha: "a59ae1ae927344f2fa75058b91b79f819a76e455",
     accessedAt: "2026-08-23",
   },
-  "github-qgis-documentation": {
-    url: "https://github.com/qgis/QGIS-Documentation",
-    commitSha: "a33d48826a2673b58a66adc12b0aa1895cecaec6",
-    accessedAt: "2026-08-23",
-  },
-  "github-spatialthoughts-open-courseware": {
-    url: "https://github.com/spatialthoughts/courses",
-    commitSha: "a627b988b54b9dd0fe879d3a4b0c8148564c42be",
-    accessedAt: "2026-08-23",
-  },
-  "github-geography-teaching-tools": {
-    url: "https://github.com/geo-dan/Geography_teaching_tools",
-    commitSha: "c6721a440e4f1dcb2dc8c2c87115d5af1fd15285",
-    accessedAt: "2026-08-23",
-  },
-  "github-geography-teaching-plugin": {
-    url: "https://github.com/1Mengjin/GeographyTeachingPlugin",
-    commitSha: "0ea592460b04452e7e761343113f1092968b1b2b",
+  "web-noaa-education-resource-collections": {
+    url: "https://www.noaa.gov/education/resource-collections",
     accessedAt: "2026-08-23",
   },
 };
 
 const expectedItems = {
-  "geo-c1-qgis-training-data-and-relief-reading": "compulsory-1",
-  "geo-c1-satellite-time-series-land-cover-observation": "compulsory-1",
-  "geo-c1-atmospheric-circulation-interactive-model": "compulsory-1",
-  "geo-c2-open-map-place-and-service-accessibility": "compulsory-2",
-  "geo-c2-spatial-visualization-and-regional-comparison": "compulsory-2",
-  "geo-c2-teacher-dataset-and-local-field-evidence": "compulsory-2",
-  "geo-s1-raster-vector-and-natural-process-scale": "selective-1",
-  "geo-s1-protected-area-ecosystem-and-natural-integrity": "selective-1",
-  "geo-s1-satellite-weather-and-hazard-timeline": "selective-1",
-  "geo-s2-qgis-coordinate-reference-and-overlay": "selective-2",
-  "geo-s2-spatial-analysis-and-regional-planning": "selective-2",
-  "geo-s2-open-courseware-data-workflow": "selective-2",
-  "geo-s3-protected-area-governance-and-connectivity": "selective-3",
-  "geo-s3-geography-teaching-tools-and-resource-security": "selective-3",
-  "geo-s3-disaster-risk-map-and-inclusive-decision": "selective-3",
+  "geo-c1-terrain-relief-and-vertical-exaggeration": "compulsory-1",
+  "geo-c1-3d-model-viewpoint-and-scale": "compulsory-1",
+  "geo-c1-ocean-weather-resource-collection": "compulsory-1",
+  "geo-c2-continent-country-neighbor-clues": "compulsory-2",
+  "geo-c2-global-flag-information-and-regional-hierarchy": "compulsory-2",
+  "geo-c2-geography-resource-catalogue-metadata": "compulsory-2",
+  "geo-s1-terrain-dem-map-layer-and-attribution": "selective-1",
+  "geo-s1-ocean-atmosphere-resource-path": "selective-1",
+  "geo-s1-terrain-viewpoint-and-landform-evidence": "selective-1",
+  "geo-s2-geospatial-resource-catalogue-and-reproducibility": "selective-2",
+  "geo-s2-knowledge-graph-entity-relation-region": "selective-2",
+  "geo-s2-country-region-spatial-comparison-game": "selective-2",
+  "geo-s3-ocean-climate-resource-evidence": "selective-3",
+  "geo-s3-geospatial-data-standardization-and-provenance": "selective-3",
+  "geo-s3-geography-game-data-scope-and-fairness": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.23.25");
@@ -76,7 +64,7 @@ assert.equal(payload.items.length, 395);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v22 source ${sourceId}`);
+  assert.ok(source, `missing v25 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
   if (expected.commitSha) {
@@ -89,7 +77,7 @@ for (const [sourceId, expected] of Object.entries(expectedSources)) {
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v22 item ${itemId}`);
+  assert.ok(item, `missing v25 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");
