@@ -144,6 +144,9 @@ const REQUIRED_EXTERNAL_SOURCES = new Set([
   "github-biogeo-secondary-education",
   "github-gis-oer-works",
   "github-apa-urban-planning-resources",
+  "github-walkerke-education-map",
+  "github-gdsl-teaching-links",
+  "github-sshuair-awesome-gis",
 ]);
 const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-noaa-tides-education",
@@ -186,6 +189,11 @@ const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-unhabitat-world-cities-report",
   "web-unep-global-resources-outlook",
   "web-fao-biodiversity",
+  "web-usgs-landsat-missions",
+  "web-usgs-volcano-hazards",
+  "web-fao-forestry",
+  "web-unesco-world-water-development",
+  "web-unep-global-environment-outlook-7",
   "web-nasa-earth-energy-budget",
   "web-world-bank-migration",
   "web-world-bank-transport",
@@ -408,6 +416,33 @@ const REQUIRED_V16_ITEMS = new Set([
   "geo-s3-biodiversity-ecosystem-services-and-food-security",
   "geo-s3-urban-resilience-and-equity-governance",
 ]);
+const REQUIRED_V17_SOURCES = new Set([
+  "web-usgs-landsat-missions",
+  "web-usgs-volcano-hazards",
+  "web-fao-forestry",
+  "web-unesco-world-water-development",
+  "web-unep-global-environment-outlook-7",
+  "github-walkerke-education-map",
+  "github-gdsl-teaching-links",
+  "github-sshuair-awesome-gis",
+]);
+const REQUIRED_V17_ITEMS = new Set([
+  "geo-c1-landsat-land-cover-change-evidence",
+  "geo-c1-volcanic-risk-and-lava-landform",
+  "geo-c1-forest-soil-water-cycle",
+  "geo-c2-forest-products-and-rural-industry",
+  "geo-c2-urban-water-supply-and-service",
+  "geo-c2-education-map-and-local-place-evidence",
+  "geo-s1-volcanic-plume-and-atmosphere",
+  "geo-s1-forest-evapotranspiration-and-climate",
+  "geo-s1-global-water-cycle-and-water-storage",
+  "geo-s2-landsat-resolution-and-change-detection",
+  "geo-s2-education-map-projection-and-scale",
+  "geo-s2-gis-teaching-sequence-and-field-verification",
+  "geo-s3-forest-carbon-and-land-security",
+  "geo-s3-water-security-sdgs-and-equity",
+  "geo-s3-environmental-outlook-and-policy-scenario",
+]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
   "geo-s1-time-zone-and-date-line",
@@ -465,6 +500,9 @@ for (const sourceId of REQUIRED_V15_SOURCES) {
 }
 for (const sourceId of REQUIRED_V16_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing v16 geography source ${sourceId}`);
+}
+for (const sourceId of REQUIRED_V17_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing v17 geography source ${sourceId}`);
 }
 for (const sourceId of REQUIRED_EXTERNAL_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing external geography source ${sourceId}`);
@@ -557,6 +595,9 @@ for (const itemId of REQUIRED_V15_ITEMS) {
 }
 for (const itemId of REQUIRED_V16_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing v16 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V17_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v17 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,

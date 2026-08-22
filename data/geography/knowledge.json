@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.16",
+  "version": "geo-2026.08.22.17",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1038,6 +1038,81 @@
       "commitSha": "b9234b6708ceb64511b63d3b14de2dacd7443d19",
       "accessedAt": "2026-08-22",
       "licenseNote": "仓库 README 标注 CC0-1.0，具体外链资源仍按各自声明处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制正文、图表、代码或数据。"
+    },
+    {
+      "id": "web-usgs-landsat-missions",
+      "title": "USGS Landsat Missions：地球观测与土地覆盖变化",
+      "publisher": "U.S. Geological Survey",
+      "editionNote": "公开 Landsat missions 专题入口；访问日期 2026-08-22；用于核对卫星遥感、土地覆盖、地表变化和时间序列证据的适用边界。",
+      "url": "https://www.usgs.gov/landsat-missions",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "USGS 公共科学与地球观测页面；仅作概念与证据边界核对，公开层发布原创高中地理方法，不复制原文、图表、图片或数据。"
+    },
+    {
+      "id": "web-usgs-volcano-hazards",
+      "title": "USGS Volcano Hazards Program：火山危险性",
+      "publisher": "U.S. Geological Survey",
+      "editionNote": "公开火山危险性专题；访问日期 2026-08-22；用于核对火山活动、监测、危险性识别、风险沟通和预测边界。",
+      "url": "https://www.usgs.gov/programs/volcano-hazards",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "USGS 公共科学与防灾页面；仅作概念与证据边界核对，公开层发布原创高中地理方法，不复制原文、图表、图片或数据。"
+    },
+    {
+      "id": "web-fao-forestry",
+      "title": "FAO Forestry：森林资源与可持续经营",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "editionNote": "公开森林专题；访问日期 2026-08-22；用于核对森林资源、生态系统服务、林产品、生计和可持续经营之间的联系。",
+      "url": "https://www.fao.org/forestry/en/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "联合国粮农组织公共知识页面；仅作概念与证据边界核对，公开层发布原创高中地理方法，不复制页面文字、图表、案例或数据。"
+    },
+    {
+      "id": "web-unesco-world-water-development",
+      "title": "UNESCO World Water Development Report：世界水资源发展报告",
+      "publisher": "UNESCO World Water Assessment Programme",
+      "editionNote": "公开世界水资源发展报告入口；访问日期 2026-08-22；用于核对水资源、供水服务、治理、公平、气候压力和可持续发展目标之间的关系。",
+      "url": "https://www.unesco.org/reports/wwdr",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "UNESCO 公共报告与知识页面；仅作指标和概念边界核对，公开层发布原创高中地理方法，不复制报告、图表、案例或页面文字。"
+    },
+    {
+      "id": "web-unep-global-environment-outlook-7",
+      "title": "UNEP Global Environment Outlook 7：全球环境展望",
+      "publisher": "UN Environment Programme",
+      "editionNote": "公开全球环境展望第七版专题入口；访问日期 2026-08-22；用于核对环境变化驱动、状态、影响、情景与政策响应的分析链。",
+      "url": "https://www.unep.org/resources/global-environment-outlook-7",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "联合国环境规划署公共报告页面；仅作环境安全概念与证据边界核对，公开层发布原创高中地理方法，不复制报告、图表或数据。"
+    },
+    {
+      "id": "github-walkerke-education-map",
+      "title": "Educational Attainment in America：教育程度点密度地图",
+      "publisher": "walkerke/education_map（GitHub）",
+      "editionNote": "公开仓库提交 `bb9d96aca424a06477ceab0fbb678c0faddd1f8c`；访问日期 2026-08-22；README 展示点密度制图、人口统计聚合、缩放层级、误差边界与交互式地图表达。",
+      "url": "https://github.com/walkerke/education_map",
+      "commitSha": "bb9d96aca424a06477ceab0fbb678c0faddd1f8c",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库代码、数据和地图按原仓库声明处理；本项目仅作 citation-only 制图方法来源，公开层发布原创高中地理方法，不复制代码、图表、数据或页面文字。"
+    },
+    {
+      "id": "github-gdsl-teaching-links",
+      "title": "GDSL Big List of Teaching Links：GIS 与空间数据科学教学资源",
+      "publisher": "GDSL-UL/Teaching_Links（GitHub）",
+      "editionNote": "公开仓库提交 `fe41d44d9ef89ada8d4f38c5f1a30ba7e603f0ba`；访问日期 2026-08-22；README 组织地图、空间分析、网络分析、统计和可复现地理教学入口。",
+      "url": "https://github.com/GDSL-UL/Teaching_Links",
+      "commitSha": "fe41d44d9ef89ada8d4f38c5f1a30ba7e603f0ba",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库及其外链教学资源按原声明处理；本项目仅作 citation-only 教学方法来源，公开层发布原创高中地理方法，不复制课程正文、代码、图表或数据。"
+    },
+    {
+      "id": "github-sshuair-awesome-gis",
+      "title": "Awesome GIS：开放 GIS、遥感与地图资源索引",
+      "publisher": "sshuair/awesome-gis（GitHub）",
+      "editionNote": "公开仓库提交 `0f21c1f6aa9fcefb044456827e9eb8363135f392`；访问日期 2026-08-22；README 按开放书籍、遥感软件、地图工具、数据、在线课程和地理社区组织资源入口。",
+      "url": "https://github.com/sshuair/awesome-gis",
+      "commitSha": "0f21c1f6aa9fcefb044456827e9eb8363135f392",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库索引和所链接资源按原仓库及外链声明处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制索引正文、代码、图件或数据。"
     }
   ],
   "items": [
@@ -6716,6 +6791,356 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：环境安全、灾害风险与国家安全章节",
           "note": "回到教材核对风险识别、适应能力、公共安全和治理措施。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-landsat-land-cover-change-evidence",
+      "courseId": "compulsory-1",
+      "title": "Landsat 土地覆盖变化与遥感证据",
+      "summary": "遥感判读题先明确传感器、空间分辨率、时间分辨率和波段信息，再用同季节、多时相影像比较土地覆盖变化。影像色调或分类结果只能提出变化线索，还要结合地形、气候、土地利用和现场或统计资料核验，避免把分类误差当成真实变化。",
+      "keywords": ["Landsat", "土地覆盖", "遥感判读", "多时相"],
+      "sourceIds": ["web-usgs-landsat-missions", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-usgs-landsat-missions",
+          "locator": "USGS Landsat Missions / satellite remote sensing, land cover and change detection",
+          "note": "USGS Landsat 专题用于交叉核对卫星遥感、土地覆盖和时间序列变化的证据边界；不复制原文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：地理信息技术、土地覆盖与自然环境章节",
+          "note": "回到教材核对遥感信息获取、图像判读和人类活动对地表的影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-volcanic-risk-and-lava-landform",
+      "courseId": "compulsory-1",
+      "title": "火山危险性、熔岩地貌与聚落暴露",
+      "summary": "火山材料题先区分岩浆、熔岩、火山灰和火山气体等过程证据，再联系板块边界、火山口、熔岩流向和地形坡度判断影响范围。风险评价还要叠加聚落、交通、农业和避险能力，提出分区管控、监测预警和疏散路线等措施。",
+      "keywords": ["火山", "熔岩地貌", "危险性", "暴露度"],
+      "sourceIds": ["web-usgs-volcano-hazards", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-usgs-volcano-hazards",
+          "locator": "USGS Volcano Hazards Program / volcano monitoring, hazard and risk communication",
+          "note": "USGS 火山危险性专题用于交叉核对火山监测、危险性识别和风险沟通边界；不复制页面文字、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：板块运动、火山地貌与地质灾害章节",
+          "note": "回到教材核对火山成因、地貌过程、灾害影响和防灾减灾。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-forest-soil-water-cycle",
+      "courseId": "compulsory-1",
+      "title": "森林覆盖、土壤保持与水循环",
+      "summary": "森林环境题要沿冠层截留、枯落物、根系固土、入渗、蒸散发和径流响应建立过程链，并区分增加植被覆盖对洪峰、土壤侵蚀和旱季水分的不同影响。林地变化还受坡度、土壤、降水强度和经营方式共同制约，不能把植树直接等同于所有水文指标改善。",
+      "keywords": ["森林覆盖", "土壤保持", "入渗", "水循环"],
+      "sourceIds": ["web-fao-forestry", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-forestry",
+          "locator": "FAO Forestry / forest resources, ecosystem services and sustainable management",
+          "note": "FAO 森林专题用于交叉核对森林资源、生态系统服务和可持续经营的联系；不复制页面文字、图表或案例。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：植被、土壤、水循环与自然环境整体性章节",
+          "note": "回到教材核对森林对水文过程、土壤侵蚀和自然环境的反馈。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-forest-products-and-rural-industry",
+      "courseId": "compulsory-2",
+      "title": "森林产品、农村产业与区域分工",
+      "summary": "林业地域题要同时看森林资源类型、采集加工、市场、交通和生态红线，分析林产品如何形成产业链并影响就业与乡村发展。只追求采伐量可能带来水土流失、栖息地破碎和供应波动，评价应把延伸加工、循环利用、认证经营和社区收益结合起来。",
+      "keywords": ["林业地域", "产业链", "乡村发展", "生态红线"],
+      "sourceIds": ["web-fao-forestry", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-forestry",
+          "locator": "FAO Forestry / forest products, livelihoods and sustainable forest management",
+          "note": "FAO 森林专题用于交叉核对林产品、生计、资源经营和生态约束；不复制页面文字、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：农业、工业、产业链与区域发展章节",
+          "note": "回到教材核对产业区位、地域分工、资源利用和乡村发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urban-water-supply-and-service",
+      "courseId": "compulsory-2",
+      "title": "城市供水、服务可达性与区域联系",
+      "summary": "城市供水题先区分水源、输配水、处理能力、用水结构和服务覆盖，再分析城市增长如何改变取水距离、基础设施投资与上下游关系。评价供水方案时要同时考虑人口公平、季节波动、水质风险、漏损和生态用水，不能只比较工程规模。",
+      "keywords": ["城市供水", "服务可达性", "水资源", "区域联系"],
+      "sourceIds": ["web-unesco-world-water-development", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-unesco-world-water-development",
+          "locator": "UNESCO World Water Development Report / water services, governance and equity",
+          "note": "UNESCO 世界水资源发展报告用于交叉核对供水服务、水治理和公平边界；不复制报告、图表或案例。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：城市化、公共服务与区域联系章节",
+          "note": "回到教材核对城市功能、公共服务、城乡联系和区域协调。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-education-map-and-local-place-evidence",
+      "courseId": "compulsory-2",
+      "title": "教育地图、人口统计与地方证据",
+      "summary": "人口或公共服务地图题要先明确统计对象、调查年份、空间单元和点密度含义，再比较教育、就业、交通或服务设施的空间分布。聚合数据能揭示区域差异，却不能直接代表每个个体的位置或需求，结论还要说明误差、尺度和可达性限制。",
+      "keywords": ["人口统计", "点密度图", "公共服务", "空间尺度"],
+      "sourceIds": ["github-walkerke-education-map", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-walkerke-education-map",
+          "locator": "education_map README / dot-density mapping, aggregation, zoom levels and margin of error",
+          "note": "公开教育地图项目用于交叉核对点密度图、统计聚合、缩放层级和误差边界；不复制代码、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：人口、城市与公共服务空间差异章节",
+          "note": "回到教材核对人口分布、城市服务、统计图表和区域差异。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-volcanic-plume-and-atmosphere",
+      "courseId": "selective-1",
+      "title": "火山喷发物、气溶胶与大气环境",
+      "summary": "火山大气材料题要区分火山灰、气溶胶、气体和熔岩等不同物质及其影响时间尺度，再判断它们对能见度、辐射收支、空气质量和降水过程的可能作用。短期异常不能直接推出长期气候变化，需检查排放量、输送高度、风场和观测证据。",
+      "keywords": ["火山喷发", "气溶胶", "辐射收支", "大气环境"],
+      "sourceIds": ["web-usgs-volcano-hazards", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-usgs-volcano-hazards",
+          "locator": "USGS Volcano Hazards Program / volcanic activity, ash and monitoring evidence",
+          "note": "USGS 火山专题用于交叉核对火山活动、喷发物和监测证据边界；不复制页面文字、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：大气组成、辐射收支与自然环境变化章节",
+          "note": "回到教材核对大气成分、辐射过程、气溶胶影响和尺度。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-forest-evapotranspiration-and-climate",
+      "courseId": "selective-1",
+      "title": "森林蒸散发、能量交换与局地气候",
+      "summary": "森林气候题要把冠层截留、蒸腾、土壤水分、地表反照率和感热交换放在同一能量—水分系统中分析。森林变化可能影响近地面湿度、温度、径流和碳循环，但效果受纬度、季节、水分限制、林分结构和土地利用背景共同控制。",
+      "keywords": ["森林蒸散发", "能量交换", "局地气候", "水分限制"],
+      "sourceIds": ["web-fao-forestry", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-forestry",
+          "locator": "FAO Forestry / forests, ecosystem services and climate-related functions",
+          "note": "FAO 森林专题用于交叉核对森林生态功能和气候联系的概念边界；不复制页面文字、图表或案例。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：水循环、能量交换、植被与气候章节",
+          "note": "回到教材核对蒸散发、热量平衡、植被反馈和自然地理整体性。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-global-water-cycle-and-water-storage",
+      "courseId": "selective-1",
+      "title": "全球水循环、储水变化与时间尺度",
+      "summary": "全球水循环题要区分大气水、河湖水、土壤水、地下水、冰雪和海洋储水，并统一降水、蒸发、径流和储量变化的时间尺度。不同区域水量增加或减少可能由季节、冰冻圈、地下水开采或气候变率造成，单一指标不能代表整个水循环状态。",
+      "keywords": ["全球水循环", "储水变化", "时间尺度", "水资源"],
+      "sourceIds": ["web-unesco-world-water-development", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-unesco-world-water-development",
+          "locator": "UNESCO World Water Development Report / water resources, climate pressure and governance",
+          "note": "UNESCO 水资源报告用于交叉核对水资源状态、气候压力和治理尺度；不复制报告、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：全球水循环、储水与水资源章节",
+          "note": "回到教材核对水循环环节、水量平衡、储水变化和尺度。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-landsat-resolution-and-change-detection",
+      "courseId": "selective-2",
+      "title": "Landsat 分辨率、变化检测与区域规划",
+      "summary": "遥感变化检测题先检查空间、时间、光谱和辐射分辨率是否满足问题尺度，再统一投影、季节、云量和分类标准。两期影像的差异需要经过配准、阈值或分类精度核验，才能作为区域规划、生态修复或灾害评估的证据。",
+      "keywords": ["Landsat", "分辨率", "变化检测", "区域规划"],
+      "sourceIds": ["web-usgs-landsat-missions", "github-sshuair-awesome-gis", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-usgs-landsat-missions",
+          "locator": "USGS Landsat Missions / satellite data, land cover and time-series observation",
+          "note": "USGS Landsat 专题用于交叉核对卫星观测、土地覆盖和多时相证据边界；不复制原文、图表或数据。"
+        },
+        {
+          "sourceId": "github-sshuair-awesome-gis",
+          "locator": "Awesome GIS README / remote sensing, data, map tools and open books",
+          "note": "Awesome GIS 资源索引用于交叉核对遥感、地图工具和开放学习入口；不复制索引正文、代码或外链资料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：遥感、地理信息技术与区域规划章节",
+          "note": "回到教材核对分辨率、图层分析、区域变化和规划应用。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-education-map-projection-and-scale",
+      "courseId": "selective-2",
+      "title": "教育地图、投影选择与比例尺证据",
+      "summary": "专题地图题要先判断数据是点、线、面还是栅格，再根据比较对象选择合适投影、比例尺和符号化方式。点密度图适合表达总体分布和类别差异，却可能受到聚合单元、随机点位、缩放层级和调查误差影响，不能把图面精度等同于事实精度。",
+      "keywords": ["专题地图", "投影", "比例尺", "点密度图"],
+      "sourceIds": ["github-walkerke-education-map", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-walkerke-education-map",
+          "locator": "education_map README / dasymetric dot-density mapping, zoom-dependent styling and uncertainty",
+          "note": "教育地图项目用于交叉核对点密度制图、聚合尺度、缩放表达和误差边界；不复制代码、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：地图投影、比例尺与区域比较章节",
+          "note": "回到教材核对地图表达、比例尺、投影变形和区域比较。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-gis-teaching-sequence-and-field-verification",
+      "courseId": "selective-2",
+      "title": "GIS 教学序列、空间分析与野外核验",
+      "summary": "区域探究可按问题提出、数据目录、图层处理、空间分析、地图表达和现场核验组织。开放 GIS 教学资源能帮助安排由简单制图到叠加分析的学习梯度，但最终结论仍需检查数据时间、比例尺、分类误差和现场条件，不能把软件输出直接当作地理规律。",
+      "keywords": ["GIS 教学", "空间分析", "地理实践", "现场核验"],
+      "sourceIds": ["github-gdsl-teaching-links", "github-sshuair-awesome-gis", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-gdsl-teaching-links",
+          "locator": "GDSL Teaching Links README / mapping, spatial analysis, network analysis and reproducible teaching",
+          "note": "GDSL 教学资源索引用于交叉核对 GIS、空间分析和可复现教学的组织链；不复制课程正文、代码或图表。"
+        },
+        {
+          "sourceId": "github-sshuair-awesome-gis",
+          "locator": "Awesome GIS README / open books, remote sensing, data and map tools",
+          "note": "Awesome GIS 索引用于补充开放书籍、遥感、数据和地图工具的学习入口；不复制索引内容或外链资料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：地理信息技术、地理实践与区域分析章节",
+          "note": "回到教材核对资料分析、空间表达、实践调查和区域结论。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-forest-carbon-and-land-security",
+      "courseId": "selective-3",
+      "title": "森林碳储存、土地安全与资源治理",
+      "summary": "森林资源安全题要把碳储存、生物多样性、水土保持、木材供给和社区生计放到土地系统中权衡。增加森林覆盖不等于所有土地安全指标同步改善，还要核对树种、年龄、经营方式、火灾虫害和土地竞争，提出保护、恢复、可持续利用与监测并行的方案。",
+      "keywords": ["森林碳", "土地安全", "资源治理", "生态系统服务"],
+      "sourceIds": ["web-fao-forestry", "web-unep-global-environment-outlook-7", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-forestry",
+          "locator": "FAO Forestry / forest resources, carbon, livelihoods and sustainable management",
+          "note": "FAO 森林专题用于交叉核对森林资源、碳功能、生计和可持续经营边界；不复制页面文字、图表或数据。"
+        },
+        {
+          "sourceId": "web-unep-global-environment-outlook-7",
+          "locator": "UNEP Global Environment Outlook 7 / environmental drivers, impacts and policy responses",
+          "note": "UNEP 全球环境展望用于补充环境变化驱动、影响和政策响应的系统框架；不复制报告、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源安全、生态安全与土地利用章节",
+          "note": "回到教材核对资源环境承载力、生态保护、土地安全和治理措施。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-water-security-sdgs-and-equity",
+      "courseId": "selective-3",
+      "title": "水安全、可持续发展目标与供水公平",
+      "summary": "水安全评价要同时考虑水量、水质、生态流量、供水可靠性、灾害风险和不同群体的服务可及性，并区分资源总量改善与实际获得服务。治理措施应连接流域调度、节水、污水处理、生态保护、基础设施维护和公平参与，不能只增加取水工程。",
+      "keywords": ["水安全", "可持续发展目标", "供水公平", "生态流量"],
+      "sourceIds": ["web-unesco-world-water-development", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-unesco-world-water-development",
+          "locator": "UNESCO World Water Development Report / water security, SDGs, governance and equity",
+          "note": "UNESCO 水资源报告用于交叉核对水安全、可持续发展目标、治理和公平边界；不复制报告、图表或案例。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：水资源安全、生态安全与国家安全章节",
+          "note": "回到教材核对水资源承载力、水安全、生态流量和区域治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-environmental-outlook-and-policy-scenario",
+      "courseId": "selective-3",
+      "title": "环境展望、情景分析与政策响应",
+      "summary": "环境安全材料题可按驱动因素—环境状态—影响—风险—政策响应建立链条，并区分观测事实、模型情景和治理目标。不同情景不是确定预言，评价方案时要说明时间尺度、区域差异、利益权衡、实施成本和监测反馈，避免只罗列口号式措施。",
+      "keywords": ["环境展望", "情景分析", "政策响应", "环境安全"],
+      "sourceIds": ["web-unep-global-environment-outlook-7", "github-gdsl-teaching-links", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-unep-global-environment-outlook-7",
+          "locator": "UNEP Global Environment Outlook 7 / drivers, state, impacts, scenarios and responses",
+          "note": "UNEP 全球环境展望用于交叉核对环境状态、情景和政策响应的分析链；不复制报告、图表或数据。"
+        },
+        {
+          "sourceId": "github-gdsl-teaching-links",
+          "locator": "GDSL Teaching Links README / statistics, mapping, spatial analysis and reproducible learning",
+          "note": "GDSL 教学资源索引用于补充资料组织、空间表达和可复现分析的方法入口；不复制课程正文或代码。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：环境安全、情景分析与国家安全章节",
+          "note": "回到教材核对环境问题、风险评价、治理措施和国家安全边界。"
         }
       ],
       "licenseStatus": "citation-only",

@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const tests = [
+  "test-deploy-workflow-action-contract-v3376.mjs",
   "test-geography-content-contract.mjs",
   "test-geography-runtime.mjs",
   "test-recommendation-boundaries-v3271.mjs",
@@ -191,6 +192,7 @@ const tests = [
   "test-geography-next-source-batch-v3372.mjs",
   "test-geography-next-source-batch-v3373.mjs",
   "test-geography-next-source-batch-v3374.mjs",
+  "test-geography-next-source-batch-v3375.mjs",
   "test-recommendation-validation-v3362.mjs",
 ];
 
