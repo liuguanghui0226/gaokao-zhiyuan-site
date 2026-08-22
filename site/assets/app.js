@@ -1,4 +1,18 @@
-import { formatFilterResultCount } from "./filter-state.mjs";
+// filter-result-count-contract:start
+const FILTER_RESULT_LABELS = {
+  sources: "资料来源",
+  disciplines: "相关资料",
+  geography: "地理摘要",
+};
+
+function formatFilterResultCount(view, count) {
+  const label = FILTER_RESULT_LABELS[view];
+  if (count === null || count === undefined || count === "") return "";
+  const numericCount = Number(count);
+  if (!label || !Number.isFinite(numericCount)) return "";
+  return `当前显示 ${Math.max(0, Math.trunc(numericCount))} 条${label}。`;
+}
+// filter-result-count-contract:end
 
 const state = {
   data: null,
@@ -3945,7 +3959,7 @@ function filteredDisciplineSources() {
 
 function filteredGeographyItems(courseMap = new Map((state.geographyData?.courses || []).map((course) => [course.id, course]))) {
   const data = state.geographyData;
-  if (!data) return [];
+  if (!data || !Array.isArray(data.items)) return [];
   const query = normalizeText(state.query);
   return data.items.filter((item) => {
     const courseOk = !state.geographyCourse || item.courseId === state.geographyCourse;
@@ -3960,9 +3974,14 @@ function filteredGeographyItems(courseMap = new Map((state.geographyData?.course
 }
 
 function currentFilterResultCount() {
-  if (state.view === "sources") return filteredSources().length;
-  if (state.view === "geography") return filteredGeographyItems().length;
+  if (state.view === "sources") return Array.isArray(state.data?.sourceFiles)
+    ? filteredSources().length
+    : null;
+  if (state.view === "geography") return Array.isArray(state.geographyData?.items)
+    ? filteredGeographyItems().length
+    : null;
   if (state.view === "disciplines") {
+    if (!Array.isArray(state.data?.sourceFiles)) return null;
     const selectedCode = state.discipline || state.disciplineBrowse || state.data?.disciplines?.[0]?.code;
     return filteredDisciplineSources().filter((source) => source.disciplines.some((item) => item.code === selectedCode)).length;
   }

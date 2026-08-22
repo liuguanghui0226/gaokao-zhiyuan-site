@@ -19,10 +19,10 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.23.21");
-assert.equal(site.sources.length, 152);
-assert.equal(site.items.length, 335);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 130);
+assert.equal(site.version, "geo-2026.08.23.22");
+assert.equal(site.sources.length, 161);
+assert.equal(site.items.length, 350);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 139);
 assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 22);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
@@ -188,6 +188,25 @@ for (const itemId of [
 ]) {
   assert.ok(site.items.some((item) => item.id === itemId), `missing v21 runtime item ${itemId}`);
 }
+for (const itemId of [
+  "geo-c1-qgis-training-data-and-relief-reading",
+  "geo-c1-satellite-time-series-land-cover-observation",
+  "geo-c1-atmospheric-circulation-interactive-model",
+  "geo-c2-open-map-place-and-service-accessibility",
+  "geo-c2-spatial-visualization-and-regional-comparison",
+  "geo-c2-teacher-dataset-and-local-field-evidence",
+  "geo-s1-raster-vector-and-natural-process-scale",
+  "geo-s1-protected-area-ecosystem-and-natural-integrity",
+  "geo-s1-satellite-weather-and-hazard-timeline",
+  "geo-s2-qgis-coordinate-reference-and-overlay",
+  "geo-s2-spatial-analysis-and-regional-planning",
+  "geo-s2-open-courseware-data-workflow",
+  "geo-s3-protected-area-governance-and-connectivity",
+  "geo-s3-geography-teaching-tools-and-resource-security",
+  "geo-s3-disaster-risk-map-and-inclusive-decision",
+]) {
+  assert.ok(site.items.some((item) => item.id === itemId), `missing v22 runtime item ${itemId}`);
+}
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-noaa-tides-education"));
@@ -296,6 +315,19 @@ for (const sourceId of [
   "github-tactile-map-generator",
 ]) {
   assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v21 runtime source ${sourceId}`);
+}
+for (const sourceId of [
+  "web-qgis-training-manual",
+  "web-arcgis-learn-geography",
+  "web-nasa-worldview-earth-observation",
+  "web-protected-planet-conservation-data",
+  "github-qgis-training-data",
+  "github-qgis-documentation",
+  "github-spatialthoughts-open-courseware",
+  "github-geography-teaching-tools",
+  "github-geography-teaching-plugin",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v22 runtime source ${sourceId}`);
 }
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 

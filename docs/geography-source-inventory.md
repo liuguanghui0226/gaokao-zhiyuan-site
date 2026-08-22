@@ -1,12 +1,28 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026.08.23.21
+盘点日期：2026-08-23；扩展轮次：geo-2026.08.23.22
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.21`：152 个来源、335 条卡片，其中 38 条 `authored-summary`、297 条 `citation-only`；五个课程族分别为 58、68、73、66、70 条。本轮新增 5 个中国官方公开入口、3 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖流域水资源观测、地质调查图、交通走廊、能源转型、历史地图、海岸变化、地球系统数据、GIS 图层叠加、地图尺度和无障碍空间表达。
+当前发布版本 `geo-2026.08.23.22`：161 个来源、350 条卡片，其中 38 条 `authored-summary`、312 条 `citation-only`；五个课程族分别为 61、71、76、69、73 条。本轮新增 4 个公开网站、5 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖 QGIS/ArcGIS 空间分析、NASA 遥感时间序列、保护地生态治理、开放课程数据工作流、教师地理实践和大气环流交互模型。
 
-本轮累计新增 61 条 citation-only 方法卡：在上一轮 46 条的基础上，继续吸收国家地理信息、统计、地震、林草与环流可视化来源，补齐地图比例尺、人口统计、灾害风险、森林生态、全球环流和太阳高度角等专题。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 76 条 citation-only 方法卡：在上一轮 61 条的基础上，本轮继续吸收 GIS 教学、遥感时间序列、保护地空间数据、开放课程和教师工具来源，补齐图层尺度、区域规划、生态连通性、灾害风险和资源安全等专题。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.23.22 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `web-qgis-training-manual` | [QGIS Training Manual：GIS 图层、栅格与空间分析](https://docs.qgis.org/latest/en/docs/training_manual/) | 在线文档入口；访问日期 2026-08-23 | 核对矢量/栅格、坐标参考、空间分析、制图和地理实践教学组织；不复制正文、图件、数据或代码。 |
+| `web-arcgis-learn-geography` | [ArcGIS Learn：地图与 GIS 学习课程](https://learn.arcgis.com/en/) | 在线学习入口；访问日期 2026-08-23 | 核对地图图层、空间分析、现场数据、制图表达和区域问题探究；不复制课程正文、图件或软件资源。 |
+| `web-nasa-worldview-earth-observation` | [NASA Worldview：动态地球遥感观测](https://worldview.earthdata.nasa.gov/) | 在线观测入口；访问日期 2026-08-23 | 核对每日卫星影像、历史时间序列、植被、尘暴和洪水观测的任务边界；不复制影像、数据或页面文字。 |
+| `web-protected-planet-conservation-data` | [Protected Planet：全球保护地与保护成效空间数据](https://www.protectedplanet.net/en) | 在线数据入口；访问日期 2026-08-23 | 核对保护地、生物多样性、空间覆盖和保护治理数据边界；不复制数据库记录、地图图层或页面文字。 |
+| `github-qgis-training-data` | [QGIS Training Data：GIS 练习数据](https://github.com/qgis/QGIS-Training-Data) | commit `fd26dd88e39b9aec550eea450cec18d02b1de3b5`；访问日期 2026-08-23 | 参照 GIS 练习数据、图层操作和地理实践流程；仓库声明 GPL-2.0，不复制数据文件、代码或练习正文。 |
+| `github-qgis-documentation` | [QGIS Documentation：开源 GIS 官方文档](https://github.com/qgis/QGIS-Documentation) | commit `a33d48826a2673b58a66adc12b0aa1895cecaec6`；访问日期 2026-08-23 | 参照栅格/矢量、坐标参考和空间处理方法；不复制文档正文、图片、代码或数据。 |
+| `github-spatialthoughts-open-courseware` | [Spatial Thoughts OpenCourseWare：空间分析与 GIS 课程](https://github.com/spatialthoughts/courses) | commit `a627b988b54b9dd0fe879d3a4b0c8148564c42be`；访问日期 2026-08-23 | 参照空间可视化、QGIS 自动化、Python 空间分析和 Earth Engine 工作流；不复制课程正文、notebook、代码或数据。 |
+| `github-geography-teaching-tools` | [Geography Teaching Tools：地理教师工具与数据集](https://github.com/geo-dan/Geography_teaching_tools) | commit `c6721a440e4f1dcb2dc8c2c87115d5af1fd15285`；访问日期 2026-08-23 | 参照教师工具、数据集组织和课堂工作坊；仓库声明 CC0-1.0，不复制图片、数据、代码或教学正文。 |
+| `github-geography-teaching-plugin` | [GeographyTeachingPlugin：大气环流交互教学模型](https://github.com/1Mengjin/GeographyTeachingPlugin) | commit `0ea592460b04452e7e761343113f1092968b1b2b`；访问日期 2026-08-23 | 参照地转偏向力、三圈环流和交互观察模型；不复制 HTML、代码、图片或页面文字。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每个课程族 3 条。外部来源只用于方法边界与资料组织交叉核对，公开层继续保留人民教育出版社教材证据和原创表述。
 
 ## geo-2026.08.23.21 新增公开来源
 

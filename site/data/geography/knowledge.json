@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.21",
+  "version": "geo-2026.08.23.22",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1408,6 +1408,92 @@
       "commitSha": "623966ce1963b41472ea667fbae62dc24b97f90a",
       "accessedAt": "2026-08-23",
       "licenseNote": "仓库声明 MIT；本项目仅作地图比例尺、空间简化、无障碍表达和城市空间建模的 citation-only 参照，不复制代码、数据、模型或图片。"
+    },
+    {
+      "id": "web-qgis-training-manual",
+      "title": "QGIS Training Manual：GIS 图层、栅格与空间分析",
+      "publisher": "QGIS Documentation",
+      "editionNote": "公开 QGIS Training Manual；访问日期 2026-08-23；用于核对矢量与栅格图层、坐标参考、空间分析、制图和地理实践的教学组织。",
+      "url": "https://docs.qgis.org/latest/en/docs/training_manual/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "QGIS 公共培训文档入口；仅作 GIS 方法和教学结构的 citation-only 参照，公开层发布原创高中地理方法，不复制正文、图件、数据或代码。"
+    },
+    {
+      "id": "web-arcgis-learn-geography",
+      "title": "ArcGIS Learn：地图与 GIS 学习课程",
+      "publisher": "Esri",
+      "editionNote": "公开 ArcGIS Learn 学习入口；访问日期 2026-08-23；用于核对地图图层、空间分析、现场数据、制图表达与区域问题探究的学习任务边界。",
+      "url": "https://learn.arcgis.com/en/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "Esri 公共学习入口；仅作地图、GIS 和空间分析方法的 citation-only 参照，公开层发布原创高中地理方法，不复制课程正文、图件或软件资源。"
+    },
+    {
+      "id": "web-nasa-worldview-earth-observation",
+      "title": "NASA Worldview：动态地球遥感观测",
+      "publisher": "NASA Earth Science Data and Information System",
+      "editionNote": "公开 NASA Worldview；访问日期 2026-08-23；用于核对每日卫星影像、历史时间序列、植被、尘暴、洪水和其他自然环境观测的任务边界。",
+      "url": "https://worldview.earthdata.nasa.gov/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "NASA 公共地球观测入口；仅作遥感时间序列、灾害观测和图层判读的 citation-only 参照，公开层发布原创高中地理方法，不复制影像、数据或页面文字。"
+    },
+    {
+      "id": "web-protected-planet-conservation-data",
+      "title": "Protected Planet：全球保护地与保护成效空间数据",
+      "publisher": "UNEP-WCMC / Protected Planet",
+      "editionNote": "公开 Protected Planet 入口；访问日期 2026-08-23；用于核对保护地、其他有效区域保护措施、生物多样性、空间覆盖和保护治理数据的更新边界。",
+      "url": "https://www.protectedplanet.net/en",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "保护地公共数据与地图入口；仅作生物多样性、保护地空间关系和治理方法的 citation-only 参照，不复制数据库记录、地图图层或页面文字。"
+    },
+    {
+      "id": "github-qgis-training-data",
+      "title": "QGIS Training Data：GIS 培训练习数据",
+      "publisher": "qgis/QGIS-Training-Data（GitHub）",
+      "editionNote": "公开仓库提交 `fd26dd88e39b9aec550eea450cec18d02b1de3b5`；访问日期 2026-08-23；README 将其定位为 QGIS Training Manual 练习使用的示例数据仓库。",
+      "url": "https://github.com/qgis/QGIS-Training-Data",
+      "commitSha": "fd26dd88e39b9aec550eea450cec18d02b1de3b5",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 GPL-2.0；本项目仅作 GIS 练习数据、图层操作和地理实践流程的 citation-only 参照，不复制数据文件、代码或练习正文。"
+    },
+    {
+      "id": "github-qgis-documentation",
+      "title": "QGIS Documentation：开源 GIS 官方文档",
+      "publisher": "qgis/QGIS-Documentation（GitHub）",
+      "editionNote": "公开仓库提交 `a33d48826a2673b58a66adc12b0aa1895cecaec6`；访问日期 2026-08-23；README 将项目定位为 QGIS 官方文档的编写与维护仓库。",
+      "url": "https://github.com/qgis/QGIS-Documentation",
+      "commitSha": "a33d48826a2673b58a66adc12b0aa1895cecaec6",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库页面未显示统一许可证；本项目仅作 QGIS 图层、栅格矢量、坐标参考和处理流程的 citation-only 参照，不复制文档正文、图片、代码或数据。"
+    },
+    {
+      "id": "github-spatialthoughts-open-courseware",
+      "title": "Spatial Thoughts OpenCourseWare：空间分析与 GIS 课程",
+      "publisher": "spatialthoughts/courses（GitHub）",
+      "editionNote": "公开仓库提交 `a627b988b54b9dd0fe879d3a4b0c8148564c42be`；访问日期 2026-08-23；README 列出空间数据可视化、QGIS 自动化、Python 空间分析和 Google Earth Engine 等课程。",
+      "url": "https://github.com/spatialthoughts/courses",
+      "commitSha": "a627b988b54b9dd0fe879d3a4b0c8148564c42be",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库页面未显示统一许可证；本项目仅作空间可视化、GIS 工作流和多源数据分析的 citation-only 参照，不复制课程正文、notebook、代码或数据。"
+    },
+    {
+      "id": "github-geography-teaching-tools",
+      "title": "Geography Teaching Tools：地理教师工具与数据集",
+      "publisher": "geo-dan/Geography_teaching_tools（GitHub）",
+      "editionNote": "公开仓库提交 `c6721a440e4f1dcb2dc8c2c87115d5af1fd15285`；访问日期 2026-08-23；README 将项目定位为地理教师使用的工具与数据集，并包含工作坊式教学材料。",
+      "url": "https://github.com/geo-dan/Geography_teaching_tools",
+      "commitSha": "c6721a440e4f1dcb2dc8c2c87115d5af1fd15285",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 CC0-1.0；本项目仅作地理教学工具、数据集组织和课堂探究流程的 citation-only 参照，不复制图片、数据、代码或教学正文。"
+    },
+    {
+      "id": "github-geography-teaching-plugin",
+      "title": "GeographyTeachingPlugin：大气环流交互教学模型",
+      "publisher": "1Mengjin/GeographyTeachingPlugin（GitHub）",
+      "editionNote": "公开仓库提交 `0ea592460b04452e7e761343113f1092968b1b2b`；访问日期 2026-08-23；README 介绍一个无需联网的前端教学演示，用滑动交互观察地转偏向力与三圈环流演变。",
+      "url": "https://github.com/1Mengjin/GeographyTeachingPlugin",
+      "commitSha": "0ea592460b04452e7e761343113f1092968b1b2b",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作高中地理大气环流模型、交互观察和课堂演示边界的 citation-only 参照，不复制 HTML、代码、图片或页面文字。"
     }
   ],
   "items": [
@@ -8786,6 +8872,336 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：资源公平、公共服务与国家安全相关章节",
           "note": "回到教材核对资源公平、公共服务、区域差异和安全治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-qgis-training-data-and-relief-reading",
+      "courseId": "compulsory-1",
+      "title": "QGIS 练习数据与地形读图",
+      "summary": "使用 GIS 练习数据读地形时，应先确认图层的坐标、比例尺、时间和数据类型，再从等高线、河网、坡向与地表覆盖判断地形结构。示例数据适合训练操作和证据链，不应被误当成某一地区的最新测量成果；结论仍要回到图例、尺度和教材地貌过程核对。",
+      "keywords": ["QGIS练习数据", "等高线", "地形判读", "图层尺度"],
+      "sourceIds": ["github-qgis-training-data", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-qgis-training-data",
+          "locator": "QGIS Training Data README / QGIS Training Manual exercise data, vector and raster layers",
+          "note": "GitHub仓库用于交叉核对 GIS 练习数据、矢量栅格图层和训练任务的组织边界；不复制数据文件、代码或练习正文。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地形图、等高线与地貌观察章节",
+          "note": "回到教材核对等高线、地形特征、河流地貌和地理实践观察方法。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-satellite-time-series-land-cover-observation",
+      "courseId": "compulsory-1",
+      "title": "卫星时间序列与地表覆盖观测",
+      "summary": "判读卫星时间序列时，要先统一影像日期、空间分辨率、云量和图层含义，再比较植被、水体、积雪、尘暴或洪水的变化。影像变化是观测证据而不是自动成因解释，还需结合降水、地形、土地利用和现场资料，区分季节波动、灾害扰动与长期变化。",
+      "keywords": ["卫星遥感", "时间序列", "地表覆盖", "影像判读"],
+      "sourceIds": ["web-nasa-worldview-earth-observation", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-worldview-earth-observation",
+          "locator": "NASA Worldview / daily satellite imagery, vegetation, dust and flood time series",
+          "note": "NASA Worldview用于交叉核对卫星影像、历史时间序列和自然环境观测的任务边界；不复制影像、数据或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：遥感观测、自然环境变化与地理实践章节",
+          "note": "回到教材核对遥感信息、自然环境整体性和地理图像判读方法。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-atmospheric-circulation-interactive-model",
+      "courseId": "compulsory-1",
+      "title": "交互模型中的大气环流证据",
+      "summary": "用交互模型学习大气环流时，应把模型参数、理想化假设和真实大气观测分开记录。观察地转偏向力如何改变气流路径后，还要回到受热差异、气压带风带、海陆分布和季节变化解释现实天气，不能把动画轨迹直接当成任何地区的实况风场。",
+      "keywords": ["大气环流", "地转偏向力", "理想模型", "风场判读"],
+      "sourceIds": ["github-geography-teaching-plugin", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geography-teaching-plugin",
+          "locator": "README / geography curriculum and interactive atmosphere circulation model",
+          "note": "GitHub项目用于交叉核对大气环流交互模型、参数观察和课堂演示的边界；不复制 HTML、代码、图片或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：大气运动、气压带风带与全球气候章节",
+          "note": "回到教材核对大气受热、气压带风带、地转偏向力和天气气候过程。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-open-map-place-and-service-accessibility",
+      "courseId": "compulsory-2",
+      "title": "开放地图中的场所与服务可达性",
+      "summary": "分析居民点和公共服务可达性时，应先明确人口、道路、设施和行政边界的空间单元，再比较距离、时间、换乘和服务等级。在线地图可以帮助发现空间关系，却不能替代人口需求、设施容量和实地核验；评价城乡联系时还要说明数据遗漏和尺度效应。",
+      "keywords": ["开放地图", "服务可达性", "城乡联系", "空间单元"],
+      "sourceIds": ["web-arcgis-learn-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-arcgis-learn-geography",
+          "locator": "ArcGIS Learn / GIS lessons, map layers, spatial analysis and field data",
+          "note": "ArcGIS Learn用于交叉核对地图图层、空间分析、现场数据和问题探究的学习边界；不复制课程正文、图件或软件资源。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：城镇体系、城乡联系与公共服务章节",
+          "note": "回到教材核对城镇等级、服务范围、城乡联系和人口需求。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-spatial-visualization-and-regional-comparison",
+      "courseId": "compulsory-2",
+      "title": "空间可视化与区域比较",
+      "summary": "做区域比较时，应先把指标定义、统计单位、时间段和地图投影统一，再选择分级设色、点密度、流向或图表表达差异。可视化负责揭示模式，不负责自动证明因果；解释产业、人口和交通差异时，仍要把自然基础、政策、市场和历史过程放到同一证据链中。",
+      "keywords": ["空间可视化", "区域比较", "指标口径", "地图表达"],
+      "sourceIds": ["github-spatialthoughts-open-courseware", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-spatialthoughts-open-courseware",
+          "locator": "Spatial Thoughts OpenCourseWare / spatial data visualization, QGIS and geospatial workflows",
+          "note": "GitHub课程仓库用于交叉核对空间可视化、GIS工作流和多源区域比较的方法边界；不复制课程正文、notebook、代码或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：区域差异、产业活动与人地关系章节",
+          "note": "回到教材核对区域比较、产业区位、人口分布和人地关系解释。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-teacher-dataset-and-local-field-evidence",
+      "courseId": "compulsory-2",
+      "title": "教师数据集与地方地理实践",
+      "summary": "把教师工具或示例数据转为地方地理探究时，要先说明数据来源、采集时间、空间范围和可复用许可，再设计观察、访谈、测量与地图表达步骤。课堂数据适合训练提出问题和交叉验证，不应未经核验直接代表整个城市、乡村或产业区域。",
+      "keywords": ["教师数据集", "地方调查", "地理实践力", "证据核验"],
+      "sourceIds": ["github-geography-teaching-tools", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-geography-teaching-tools",
+          "locator": "Geography Teaching Tools README / geography curriculum, teacher tools and data workshops",
+          "note": "GitHub项目用于交叉核对教师工具、数据集组织和地理课堂工作坊的证据边界；不复制图片、数据、代码或教学正文。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：地理实践、区域调查与人地协调章节",
+          "note": "回到教材核对区域调查、资料整理、地理实践力和人地关系分析。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-raster-vector-and-natural-process-scale",
+      "courseId": "selective-1",
+      "title": "栅格矢量与自然过程尺度",
+      "summary": "用 GIS 表达自然过程时，要先判断现象适合点、线、面还是栅格表达，并记录分辨率、坐标参考、时间步长和重采样方法。河网、断层、等值线和连续地表变量的图层逻辑不同，叠加结果只能说明空间关系，还要结合过程机制和尺度转换解释自然现象。",
+      "keywords": ["栅格矢量", "自然过程", "空间分辨率", "尺度转换"],
+      "sourceIds": ["github-qgis-documentation", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-qgis-documentation",
+          "locator": "QGIS Documentation / vector vs raster, coordinate reference systems and processing",
+          "note": "QGIS官方文档仓库用于交叉核对栅格矢量、坐标参考和空间处理的技术边界；不复制文档正文、图片、代码或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：自然地理过程、尺度与地理信息技术章节",
+          "note": "回到教材核对自然过程的空间尺度、地理信息技术和整体性解释。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-protected-area-ecosystem-and-natural-integrity",
+      "courseId": "selective-1",
+      "title": "保护地数据与生态系统整体性",
+      "summary": "阅读保护地空间数据时，应先区分保护地边界、保护对象、管理类别和有效保护措施，再分析破碎化、连通性、生态服务与自然环境整体性。保护地覆盖率本身不能代表保护成效，还需结合生境质量、物种压力、社区利用和时间变化进行综合判断。",
+      "keywords": ["保护地", "生态系统整体性", "生物多样性", "空间连通性"],
+      "sourceIds": ["web-protected-planet-conservation-data", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-protected-planet-conservation-data",
+          "locator": "Protected Planet / protected areas, biodiversity and ecosystem conservation data",
+          "note": "Protected Planet用于交叉核对保护地、生物多样性、生态系统和空间覆盖数据的解释边界；不复制数据库记录、地图图层或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：生态系统服务、生物多样性与自然环境整体性章节",
+          "note": "回到教材核对生态系统结构、生态服务、生物多样性和自然环境整体性。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-satellite-weather-and-hazard-timeline",
+      "courseId": "selective-1",
+      "title": "卫星影像中的天气与灾害时间线",
+      "summary": "建立天气或灾害影像时间线时，应把影像时间、观测平台、云层遮挡、空间分辨率和事件阶段标在同一表中，再连接降水、风场、地形和灾害响应资料。连续影像有助于识别过程演变，但不能单独给出灾害成因、损失规模或预警等级。",
+      "keywords": ["卫星影像", "天气过程", "灾害时间线", "观测不确定性"],
+      "sourceIds": ["web-nasa-worldview-earth-observation", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-worldview-earth-observation",
+          "locator": "NASA Worldview / satellite imagery, natural hazards, dust storms and daily time series",
+          "note": "NASA Worldview用于交叉核对卫星观测、自然灾害图像和时间序列阅读的证据边界；不复制影像、数据或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：天气系统、自然灾害与地理信息技术章节",
+          "note": "回到教材核对天气过程、自然灾害、观测资料和地理信息技术判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-qgis-coordinate-reference-and-overlay",
+      "courseId": "selective-2",
+      "title": "坐标参考与区域图层叠加",
+      "summary": "区域图层叠加前，必须统一坐标参考、投影、边界版本和空间单位，并检查图层是否具有相同的时间口径。叠加结果可以帮助定位交通、人口、生态或灾害的空间交集，但规划建议还要比较不同尺度下的影响对象、利益冲突和数据缺口。",
+      "keywords": ["坐标参考", "图层叠加", "区域规划", "空间交集"],
+      "sourceIds": ["web-qgis-training-manual", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-qgis-training-manual",
+          "locator": "QGIS Training Manual / coordinate reference systems, vector overlays and spatial analysis",
+          "note": "QGIS培训手册用于交叉核对坐标参考、图层叠加和空间分析的教学边界；不复制正文、图件、数据或代码。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域规划、空间组织与地理信息技术章节",
+          "note": "回到教材核对区域尺度、空间组织、规划决策和 GIS 应用。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-spatial-analysis-and-regional-planning",
+      "courseId": "selective-2",
+      "title": "空间分析与区域规划证据链",
+      "summary": "区域规划中的空间分析应从问题、指标、图层、尺度和决策对象逐步展开，明确每一步如何影响结论。距离、邻近、叠加和网络分析揭示的是不同类型的空间关系，不能混用；规划方案还要通过统计、访谈、实地调查和情景比较检验可行性与公平性。",
+      "keywords": ["空间分析", "区域规划", "指标体系", "情景比较"],
+      "sourceIds": ["web-arcgis-learn-geography", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-arcgis-learn-geography",
+          "locator": "ArcGIS Learn / GIS mapping, spatial analysis, field data and planning scenarios",
+          "note": "ArcGIS Learn用于交叉核对 GIS 空间分析、现场数据和规划情景的学习任务边界；不复制课程正文、图件或软件资源。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域规划、区域协调与综合决策章节",
+          "note": "回到教材核对区域规划、区域协调、综合分析和决策评价。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-open-courseware-data-workflow",
+      "courseId": "selective-2",
+      "title": "开放课程中的多源数据工作流",
+      "summary": "使用开放课程学习空间数据工作流时，要把原始数据、处理步骤、参数、输出图层和引用信息分开保存，并说明哪些结果来自计算、哪些来自解释。可复现流程有助于区域比较和规划复核，但仍需检查数据许可、版本更新、尺度错配和模型假设。",
+      "keywords": ["开放课程", "多源数据", "可复现工作流", "区域复核"],
+      "sourceIds": ["github-spatialthoughts-open-courseware", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-spatialthoughts-open-courseware",
+          "locator": "Spatial Thoughts OpenCourseWare / QGIS, Python, Google Earth Engine and geospatial workflows",
+          "note": "GitHub课程仓库用于交叉核对多源空间数据、GIS工作流和可复现分析的证据边界；不复制课程正文、notebook、代码或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域研究、地理信息技术与规划实践章节",
+          "note": "回到教材核对区域研究、资料处理、地理信息技术和规划实践。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-protected-area-governance-and-connectivity",
+      "courseId": "selective-3",
+      "title": "保护地治理与生态连通性",
+      "summary": "评价保护地治理时，应把边界面积、生态连通性、保护对象、管理能力、社区生计和跨区域协同一起考虑。空间数据可以揭示保护地之间的断裂和潜在廊道，但治理成效还要结合监测时间序列、物种压力、资源利用和政策执行，不把面积增长直接等同于安全水平提高。",
+      "keywords": ["保护地治理", "生态连通性", "社区生计", "资源安全"],
+      "sourceIds": ["web-protected-planet-conservation-data", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-protected-planet-conservation-data",
+          "locator": "Protected Planet / conservation areas, biodiversity, connectivity and governance data",
+          "note": "Protected Planet用于交叉核对保护地空间覆盖、生物多样性和治理数据的解释边界；不复制数据库记录、地图图层或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：生态安全、生物多样性保护与国家安全章节",
+          "note": "回到教材核对生态安全、资源利用、保护治理和国家安全联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geography-teaching-tools-and-resource-security",
+      "courseId": "selective-3",
+      "title": "地理教学工具与资源安全探究",
+      "summary": "把课堂工具和数据集用于资源安全探究时，应先明确资源类型、供需关系、空间分异、时间变化和环境约束，再选择统计、地图、观察或情景模拟方法。工具只能帮助组织证据，不能替代资源承载力、利益相关者和政策边界的综合判断。",
+      "keywords": ["资源安全", "教学工具", "供需关系", "承载力"],
+      "sourceIds": ["github-geography-teaching-tools", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-geography-teaching-tools",
+          "locator": "Geography Teaching Tools README / geography curriculum, teacher tools, data and resource workshops",
+          "note": "GitHub项目用于交叉核对地理教学工具、数据工作坊和资源环境探究的组织边界；不复制图片、数据、代码或教学正文。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源安全、环境承载力与国家安全章节",
+          "note": "回到教材核对资源安全、供需关系、环境承载力和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-disaster-risk-map-and-inclusive-decision",
+      "courseId": "selective-3",
+      "title": "灾害风险地图与包容性决策",
+      "summary": "灾害风险地图要分别表达危险性、暴露度、脆弱性和应对能力，再比较不同群体、设施和区域在预警、疏散、恢复中的差异。空间分析可以支持资源配置和情景推演，但决策还要吸收社区经验、基础设施容量、信息可达性和公平性，避免只按危险性颜色排序。",
+      "keywords": ["灾害风险", "暴露度", "脆弱性", "包容性决策"],
+      "sourceIds": ["web-arcgis-learn-geography", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-arcgis-learn-geography",
+          "locator": "ArcGIS Learn / GIS mapping, disaster risk, exposure and spatial decision-making",
+          "note": "ArcGIS Learn用于交叉核对灾害 GIS 制图、暴露度表达和空间决策的学习边界；不复制课程正文、图件或软件资源。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：自然灾害风险、防灾减灾与国家安全章节",
+          "note": "回到教材核对灾害风险、暴露度、脆弱性、防灾减灾和安全治理。"
         }
       ],
       "licenseStatus": "citation-only",
