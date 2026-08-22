@@ -9,56 +9,60 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-noaa-climate-enso": {
-    url: "https://www.climate.gov/enso",
+  "web-nasa-earth-energy-budget": {
+    url: "https://earthobservatory.nasa.gov/features/EnergyBalance",
     accessedAt: "2026-08-22",
   },
-  "web-eia-energy-explained": {
-    url: "https://www.eia.gov/energyexplained/",
+  "web-world-bank-migration": {
+    url: "https://www.worldbank.org/en/topic/migration",
     accessedAt: "2026-08-22",
   },
-  "web-fao-soil-portal": {
-    url: "https://www.fao.org/soils-portal/en/",
+  "web-world-bank-transport": {
+    url: "https://www.worldbank.org/en/topic/transport",
     accessedAt: "2026-08-22",
   },
-  "web-unesco-ocean-literacy": {
-    url: "https://oceanliteracy.unesco.org/",
+  "web-owid-urbanization": {
+    url: "https://ourworldindata.org/urbanization",
     accessedAt: "2026-08-22",
   },
-  "web-bgs-discovering-geology": {
-    url: "https://www.bgs.ac.uk/discovering-geology/",
+  "github-cielo-geoscience-k12": {
+    url: "https://github.com/CIELO-G/geoscience-lesson-plans-k12",
+    commitSha: "a858f8bd212a588a624b9aaf2ce6202ae6a8250c",
     accessedAt: "2026-08-22",
   },
-  "web-world-bank-urban-development": {
-    url: "https://www.worldbank.org/en/topic/urbandevelopment",
+  "github-ghist-high-school-geology": {
+    url: "https://github.com/astaghitsa/ghist",
+    commitSha: "26c29961ef4cd3b2a4df05db5efe378a83ebb29e",
     accessedAt: "2026-08-22",
   },
-  "web-world-bank-water": {
-    url: "https://www.worldbank.org/en/topic/water",
+  "github-transport-geography-resources": {
+    url: "https://github.com/paezha/Transport-Geography-Teaching-Resources",
+    commitSha: "bfb40297ec7e05a0c42fc0015b66a368761ab7d7",
     accessedAt: "2026-08-22",
   },
-  "web-world-bank-disaster-risk": {
-    url: "https://www.worldbank.org/en/topic/disasterriskmanagement",
+  "github-biogeo-secondary-education": {
+    url: "https://github.com/magdasmat/biogeo-logia",
+    commitSha: "5bb58fb51fbe2b0cdd8a276d3172272cb770dbec",
     accessedAt: "2026-08-22",
   },
 };
 
 const expectedItems = {
-  "geo-c1-enso-ocean-atmosphere-observation": "compulsory-1",
-  "geo-c1-soil-profile-carbon-and-water": "compulsory-1",
-  "geo-c1-geological-map-hazard-evidence": "compulsory-1",
-  "geo-c2-urban-development-and-service-equity": "compulsory-2",
-  "geo-c2-water-security-and-city-growth": "compulsory-2",
-  "geo-c2-energy-industry-spatial-chain": "compulsory-2",
-  "geo-s1-enso-seasonal-evidence": "selective-1",
-  "geo-s1-geology-process-and-hazard-scale": "selective-1",
-  "geo-s1-ocean-literacy-system-boundaries": "selective-1",
-  "geo-s2-urban-resilience-and-regional-planning": "selective-2",
-  "geo-s2-water-governance-and-cross-scale-evidence": "selective-2",
-  "geo-s2-disaster-risk-map-and-exposure": "selective-2",
-  "geo-s3-energy-transition-security-tradeoff": "selective-3",
-  "geo-s3-soil-carbon-and-land-security": "selective-3",
-  "geo-s3-disaster-risk-adaptation-capacity": "selective-3",
+  "geo-c1-earth-energy-budget-system": "compulsory-1",
+  "geo-c1-eco-hydrology-soil-plant-atmosphere": "compulsory-1",
+  "geo-c1-seismic-wave-and-earthquake-evidence": "compulsory-1",
+  "geo-c2-migration-labor-mobility-and-region": "compulsory-2",
+  "geo-c2-urbanization-rate-and-spatial-scale": "compulsory-2",
+  "geo-c2-transport-infrastructure-and-regional-links": "compulsory-2",
+  "geo-s1-earth-energy-budget-feedback-boundary": "selective-1",
+  "geo-s1-eco-hydrology-evapotranspiration-evidence": "selective-1",
+  "geo-s1-plate-tectonics-seismic-wave-interpretation": "selective-1",
+  "geo-s2-transport-network-accessibility-indicator": "selective-2",
+  "geo-s2-secondary-geography-course-problem-chain": "selective-2",
+  "geo-s2-school-geology-map-and-field-evidence": "selective-2",
+  "geo-s3-migration-development-resource-security": "selective-3",
+  "geo-s3-urbanization-resource-environment-security": "selective-3",
+  "geo-s3-geoscience-hazard-community-resilience": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.22.15");
@@ -67,16 +71,17 @@ assert.equal(payload.items.length, 245);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v13 source ${sourceId}`);
+  assert.ok(source, `missing v15 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
+  if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
   assert.match(source.licenseNote, /citation|原创|不复制|仅作/i);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v13 item ${itemId}`);
+  assert.ok(item, `missing v15 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

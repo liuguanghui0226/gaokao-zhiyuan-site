@@ -138,6 +138,10 @@ const REQUIRED_EXTERNAL_SOURCES = new Set([
   "github-secondary-geography-course",
   "github-opengis-curriculum",
   "github-school-geography-maps",
+  "github-cielo-geoscience-k12",
+  "github-ghist-high-school-geology",
+  "github-transport-geography-resources",
+  "github-biogeo-secondary-education",
 ]);
 const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-noaa-tides-education",
@@ -174,6 +178,10 @@ const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-world-bank-urban-development",
   "web-world-bank-water",
   "web-world-bank-disaster-risk",
+  "web-nasa-earth-energy-budget",
+  "web-world-bank-migration",
+  "web-world-bank-transport",
+  "web-owid-urbanization",
 ]);
 const REQUIRED_V3_ITEMS = new Set([
   "geo-c1-water-cycle-observation",
@@ -338,6 +346,33 @@ const REQUIRED_V14_ITEMS = new Set([
   "geo-s3-faostat-definition-time-series",
   "geo-s3-geospatial-reproducibility-attribution",
 ]);
+const REQUIRED_V15_SOURCES = new Set([
+  "web-nasa-earth-energy-budget",
+  "web-world-bank-migration",
+  "web-world-bank-transport",
+  "web-owid-urbanization",
+  "github-cielo-geoscience-k12",
+  "github-ghist-high-school-geology",
+  "github-transport-geography-resources",
+  "github-biogeo-secondary-education",
+]);
+const REQUIRED_V15_ITEMS = new Set([
+  "geo-c1-earth-energy-budget-system",
+  "geo-c1-eco-hydrology-soil-plant-atmosphere",
+  "geo-c1-seismic-wave-and-earthquake-evidence",
+  "geo-c2-migration-labor-mobility-and-region",
+  "geo-c2-urbanization-rate-and-spatial-scale",
+  "geo-c2-transport-infrastructure-and-regional-links",
+  "geo-s1-earth-energy-budget-feedback-boundary",
+  "geo-s1-eco-hydrology-evapotranspiration-evidence",
+  "geo-s1-plate-tectonics-seismic-wave-interpretation",
+  "geo-s2-transport-network-accessibility-indicator",
+  "geo-s2-secondary-geography-course-problem-chain",
+  "geo-s2-school-geology-map-and-field-evidence",
+  "geo-s3-migration-development-resource-security",
+  "geo-s3-urbanization-resource-environment-security",
+  "geo-s3-geoscience-hazard-community-resilience",
+]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
   "geo-s1-time-zone-and-date-line",
@@ -390,6 +425,9 @@ for (const sourceId of REQUIRED_V13_SOURCES) {
 for (const sourceId of REQUIRED_V14_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing v14 geography source ${sourceId}`);
 }
+for (const sourceId of REQUIRED_V15_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing v15 geography source ${sourceId}`);
+}
 for (const sourceId of REQUIRED_EXTERNAL_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing external geography source ${sourceId}`);
 }
@@ -424,7 +462,7 @@ for (const item of payload.items) {
     assert.equal(sourceIds.has(evidence.sourceId), true, `${item.id} evidence references unknown source`);
     assert.match(
       String(evidence.locator),
-      /第?\s*\d+\s*页|章节|教材|项目描述|README|data\/|pages\/|docs\/|gallery|ontology|RDF|geography\.html|earthmotion|src\/curriculum|01高中世界地理|高中地理考点重点复习|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|ENSO|Water Cycle|World of Change|JetStream|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming|sun-motion|SunMotion|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Hurricanes|National Hurricane Center|Climate change impacts|Urbanization|Urban Planning|Population Density|Plate Tectonics|Migration|IPCC|Farming and Agribusiness|Water Use and Stress|WMO|Climate|Carbon Cycle|carbon|land-water|water scarcity|competing uses|weather|radar|groundwater|AQUASTAT|NSIDC|UNCCD|glacier|desertification|evapotranspiration|greenhouse|radiative balance|Population|OpenGIS|map collection|geography curriculum|NOAA|EIA|FAO|UNESCO|BGS|World Bank|geological|hazard|urbanization|infrastructure|inclusion|resilience|water services|governance|ocean system|stewardship|disaster risk|exposure|vulnerability|preparedness|recovery/,
+      /第?\s*\d+\s*页|章节|教材|项目描述|README|data\/|pages\/|docs\/|gallery|ontology|RDF|geography\.html|earthmotion|src\/curriculum|01高中世界地理|高中地理考点重点复习|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|ENSO|Water Cycle|World of Change|JetStream|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming|sun-motion|SunMotion|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Hurricanes|National Hurricane Center|Climate change impacts|Urbanization|Urban Planning|Population Density|Plate Tectonics|Migration|IPCC|Farming and Agribusiness|Water Use and Stress|WMO|Climate|Carbon Cycle|carbon|land-water|water scarcity|competing uses|weather|radar|groundwater|AQUASTAT|NSIDC|UNCCD|glacier|desertification|evapotranspiration|greenhouse|radiative balance|Population|OpenGIS|map collection|geography curriculum|NOAA|EIA|FAO|UNESCO|BGS|World Bank|geological|hazard|urbanization|infrastructure|inclusion|resilience|water services|governance|ocean system|stewardship|disaster risk|exposure|vulnerability|preparedness|recovery|EnergyBalance|High_School|Secondary Education|niveles\.html|recursos\.html|Transport/,
       `${item.id} evidence locator must be a page or stable web/repository section`,
     );
     assert.equal(typeof evidence.note, "string");
@@ -475,6 +513,9 @@ for (const itemId of REQUIRED_V13_ITEMS) {
 }
 for (const itemId of REQUIRED_V14_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing v14 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V15_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v15 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,

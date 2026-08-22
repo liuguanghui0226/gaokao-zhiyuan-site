@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.14",
+  "version": "geo-2026.08.22.15",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -888,6 +888,82 @@
       "commitSha": "18df7ee48cb27a194d89568c389a3f98443b8e8b",
       "accessedAt": "2026-08-22",
       "licenseNote": "仓库代码与示例按原仓库声明处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制代码、图件、数据或教程正文。"
+    },
+    {
+      "id": "web-nasa-earth-energy-budget",
+      "title": "NASA Earth Observatory：地球气候与能量收支",
+      "publisher": "NASA Earth Observatory",
+      "editionNote": "公开地球能量收支专题；访问日期 2026-08-22；用于核对太阳短波、地表与大气长波、反射、净辐射和地球系统能量平衡的关系。",
+      "url": "https://earthobservatory.nasa.gov/features/EnergyBalance",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NASA Science 公共教育页面；仅作概念与证据边界核对，公开层发布原创高中地理方法，不复制原文、图表、图片或数据。"
+    },
+    {
+      "id": "web-world-bank-migration",
+      "title": "世界银行：Migration and Labor Mobility",
+      "publisher": "World Bank Group",
+      "editionNote": "公开迁移与劳动力流动专题；访问日期 2026-08-22；用于核对迁移驱动、劳动力流动、发展影响、人口与区域联系的指标边界。",
+      "url": "https://www.worldbank.org/en/topic/migration",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "世界银行公共政策与知识页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制报告、图表、案例或页面文字。"
+    },
+    {
+      "id": "web-world-bank-transport",
+      "title": "世界银行：Transport 交通运输",
+      "publisher": "World Bank Group",
+      "editionNote": "公开交通运输专题；访问日期 2026-08-22；用于核对交通基础设施、可达性、物流联系、区域发展和包容性运输的分析边界。",
+      "url": "https://www.worldbank.org/en/topic/transport",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "世界银行公共交通与发展知识页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制报告、图表、案例或页面文字。"
+    },
+    {
+      "id": "web-owid-urbanization",
+      "title": "Our World in Data：Urbanization 城市化",
+      "publisher": "Our World in Data",
+      "editionNote": "公开城市化专题与数据入口；访问日期 2026-08-22；用于核对城市人口、城市化率、时间序列、国家比较和城市增长的统计口径。",
+      "url": "https://ourworldindata.org/urbanization",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "Our World in Data 公共数据与解释页面；仅作指标定义和概念核对，公开层发布原创高中地理方法，不复制图表、数据集或页面文字。"
+    },
+    {
+      "id": "github-cielo-geoscience-k12",
+      "title": "CIELO-G：K–12 地球科学与高中地球科学课例",
+      "publisher": "CIELO-G（GitHub）",
+      "editionNote": "公开仓库提交 `a858f8bd212a588a624b9aaf2ce6202ae6a8250c`；访问日期 2026-08-22；High_School 目录包含地球能量收支、板块构造、地震波、生态水文、遥感与地学探究课例。",
+      "url": "https://github.com/CIELO-G/geoscience-lesson-plans-k12",
+      "commitSha": "a858f8bd212a588a624b9aaf2ce6202ae6a8250c",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库课例和资源按原仓库声明处理；本项目仅作 citation-only 教学方法来源，公开层发布原创高中地理方法，不复制课件、图片、代码或数据。"
+    },
+    {
+      "id": "github-ghist-high-school-geology",
+      "title": "Ghist：面向高中生的地质学教育网站",
+      "publisher": "astaghitsa/ghist（GitHub）",
+      "editionNote": "公开仓库提交 `26c29961ef4cd3b2a4df05db5efe378a83ebb29e`；访问日期 2026-08-22；网站入口与 gallery 组织岩石、地貌、地球结构和火山等高中地质学习素材。",
+      "url": "https://github.com/astaghitsa/ghist",
+      "commitSha": "26c29961ef4cd3b2a4df05db5efe378a83ebb29e",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库网站素材按原仓库声明处理；本项目仅作 citation-only 学习方法来源，公开层发布原创高中地理方法，不复制网页正文、图片、视频或素材。"
+    },
+    {
+      "id": "github-transport-geography-resources",
+      "title": "Transport Geography Teaching Resources：交通地理教学资源",
+      "publisher": "paezha/Transport-Geography-Teaching-Resources（GitHub）",
+      "editionNote": "公开仓库提交 `bfb40297ec7e05a0c42fc0015b66a368761ab7d7`；访问日期 2026-08-22；README 以交通地理教学资源组织交通网络、可达性、空间联系和区域结构的学习入口。",
+      "url": "https://github.com/paezha/Transport-Geography-Teaching-Resources",
+      "commitSha": "bfb40297ec7e05a0c42fc0015b66a368761ab7d7",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库教学资源按原仓库声明处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制课文、图表、代码或数据。"
+    },
+    {
+      "id": "github-biogeo-secondary-education",
+      "title": "Biogeo-logia：中学教育生物与地质开放教育资源",
+      "publisher": "magdasmat/biogeo-logia（GitHub）",
+      "editionNote": "公开仓库提交 `5bb58fb51fbe2b0cdd8a276d3172272cb770dbec`；访问日期 2026-08-22；面向西班牙中学教育阶段，入口页和 recursos/niveles 页面组织地质、生物地理与环境学习资源。",
+      "url": "https://github.com/magdasmat/biogeo-logia",
+      "commitSha": "5bb58fb51fbe2b0cdd8a276d3172272cb770dbec",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明含 MIT 许可，但具体教育资源仍按原页面标注处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制页面正文、图片或资源文件。"
     }
   ],
   "items": [
@@ -5866,6 +5942,351 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：资源环境地图、环境安全与国家安全章节",
           "note": "回到教材核对资源环境证据、环境风险和安全评价边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-earth-energy-budget-system",
+      "courseId": "compulsory-1",
+      "title": "地球系统能量收支与辐射平衡",
+      "summary": "自然地理综合题遇到能量收支图，先区分太阳短波、地表吸收、地表和大气长波、反射与向外辐射，再判断系统净收支。不同纬度、海陆和云量会改变能量分配，读图时要把热量差异与气温、环流和水循环联系起来，不能只看某一箭头大小。",
+      "keywords": ["能量收支", "短波辐射", "长波辐射", "净辐射"],
+      "sourceIds": ["web-nasa-earth-energy-budget", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-earth-energy-budget",
+          "locator": "NASA Earth Observatory：features/EnergyBalance / Climate and Earth’s Energy Budget / radiative balance",
+          "note": "NASA 地球能量收支专题用于交叉核对短波、长波、反射和净能量流的概念边界；不复制原文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：太阳辐射、大气受热和自然地理过程章节",
+          "note": "回到教材核对太阳辐射、地表受热和自然环境整体性。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-eco-hydrology-soil-plant-atmosphere",
+      "courseId": "compulsory-1",
+      "title": "生态水文与土壤—植物—大气连续体",
+      "summary": "分析植被、土壤和水分关系时，要把降水入渗、土壤储水、根系吸水、蒸腾和大气交换串成连续过程。植被变化可能改善地表覆盖和保水，也可能受土壤质地、坡度、干旱与人类用水共同限制，读图不能把绿色覆盖直接等同于水资源充足。",
+      "keywords": ["生态水文", "土壤水分", "植物蒸腾", "地表覆盖"],
+      "sourceIds": ["github-cielo-geoscience-k12", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-cielo-geoscience-k12",
+          "locator": "CIELO-G README / High_School/Ecohydrology/Lesson 01 Transpiration and the Soil-Plant-Atmosphere Continuum.md",
+          "note": "CIELO-G 高中生态水文课例用于交叉核对土壤—植物—大气水分传递的学习组织；不复制课例、图片或课件。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：水循环、土壤、植被与自然环境整体性章节",
+          "note": "回到教材核对水分循环、土壤水分和植被对地理环境的反馈。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-seismic-wave-and-earthquake-evidence",
+      "courseId": "compulsory-1",
+      "title": "地震波、地震传播与地质证据",
+      "summary": "地震材料题先区分震源、震中、震级、烈度和地震波，再结合传播速度、到时差、地表形变与建筑分布判断影响。地震波信息能帮助识别地下结构和灾害范围，但风险评价还要叠加断层位置、人口暴露、工程抗震与应急能力。",
+      "keywords": ["地震波", "震源震中", "烈度", "风险证据"],
+      "sourceIds": ["github-cielo-geoscience-k12", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-cielo-geoscience-k12",
+          "locator": "CIELO-G README / High_School/Geophysics/Lesson 03 Understanding Seismic Waves Using a Slinky.md",
+          "note": "CIELO-G 高中地球物理课例用于交叉核对地震波传播和探究活动的证据链；不复制课件、图片或实验文本。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：地震、地质灾害与防灾减灾章节",
+          "note": "回到教材核对地震构造、灾害影响和防灾减灾措施。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-migration-labor-mobility-and-region",
+      "courseId": "compulsory-2",
+      "title": "迁移、劳动力流动与区域联系",
+      "summary": "人口迁移题要同时看就业、教育、收入、环境、家庭和政策等驱动因素，再分析迁出地与迁入地在人口结构、劳动力、公共服务和文化联系上的变化。短期流动、长期迁移和跨国流动的统计口径不同，区域评价还要说明收益、成本与治理需求。",
+      "keywords": ["人口迁移", "劳动力流动", "推拉因素", "区域联系"],
+      "sourceIds": ["web-world-bank-migration", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-migration",
+          "locator": "World Bank：Migration / labor mobility / drivers and impacts",
+          "note": "世界银行迁移专题用于交叉核对迁移驱动、劳动力流动和发展影响的分析边界；不复制报告、图表或案例。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：人口迁移、人口合理容量和区域联系章节",
+          "note": "回到教材核对人口流动的原因、影响和区域联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urbanization-rate-and-spatial-scale",
+      "courseId": "compulsory-2",
+      "title": "城市化率、城市人口与空间尺度",
+      "summary": "城市化图表题先确认城市人口、城市化率、城市数量和建成区面积分别表示什么，再统一年份、统计边界和城乡划分标准。城市化率上升不必然意味着所有居民都获得同等服务，比较区域时还要结合就业、交通、住房、公共设施和生态压力判断质量。",
+      "keywords": ["城市化率", "城市人口", "统计口径", "空间尺度"],
+      "sourceIds": ["web-owid-urbanization", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-owid-urbanization",
+          "locator": "Our World in Data：Urbanization / urban population / city growth",
+          "note": "Our World in Data 城市化专题用于交叉核对城市人口、城市化率和时间序列比较的指标口径；不复制图表或数据集。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：城市化、城乡发展和公共服务章节",
+          "note": "回到教材核对城市化过程、城乡联系和区域差异。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-transport-infrastructure-and-regional-links",
+      "courseId": "compulsory-2",
+      "title": "交通基础设施与区域联系",
+      "summary": "交通区位题要拆分运输对象、线路方向、节点功能、运输方式和服务范围，再判断交通建设如何改变时间距离、市场范围、产业布局与人口流动。基础设施改善可能扩大联系，也可能带来土地占用、生态破碎和区域分化，评价时要同时写出收益与代价。",
+      "keywords": ["交通基础设施", "时间距离", "区域联系", "区位变化"],
+      "sourceIds": ["web-world-bank-transport", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-transport",
+          "locator": "World Bank：Transport / infrastructure / accessibility / regional links",
+          "note": "世界银行交通专题用于交叉核对交通基础设施、可达性和区域发展的联系；不复制项目报告、图表或案例。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：交通运输、产业布局与区域联系章节",
+          "note": "回到教材核对交通方式、区位因素、产业联系和区域发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-earth-energy-budget-feedback-boundary",
+      "courseId": "selective-1",
+      "title": "地球能量收支、反馈与系统边界",
+      "summary": "气候系统能量题先明确研究边界和时间尺度，再沿短波输入、反射、地表—大气长波交换、海洋储热和向外辐射判断净能量变化。反照率、水汽、云和海陆热容量会形成不同反馈，材料若只给相关变化，不能直接当作唯一机制证据。",
+      "keywords": ["能量收支", "气候反馈", "系统边界", "海洋储热"],
+      "sourceIds": ["web-nasa-earth-energy-budget", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-earth-energy-budget",
+          "locator": "NASA Earth Observatory：features/EnergyBalance / Climate and Earth’s Energy Budget / radiative balance",
+          "note": "NASA 能量收支专题用于交叉核对气候系统边界、辐射流和净能量变化；不复制原文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：辐射收支、海气作用和气候反馈章节",
+          "note": "回到教材核对气候系统、能量传递和自然环境反馈。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-eco-hydrology-evapotranspiration-evidence",
+      "courseId": "selective-1",
+      "title": "生态水文、蒸散发与水分平衡证据",
+      "summary": "水分平衡题遇到蒸散发或植被变化时，要区分潜在蒸散、实际蒸散、土壤储水和径流损失，并说明能量、植被、土壤和大气条件如何共同作用。树轮、叶片、土壤和流量等证据的时间尺度不同，综合判断时要检查空间代表性和季节错位。",
+      "keywords": ["蒸散发", "水分平衡", "土壤储水", "生态水文"],
+      "sourceIds": ["github-cielo-geoscience-k12", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-cielo-geoscience-k12",
+          "locator": "CIELO-G README / High_School/Ecohydrology/Lesson 04 Dendrochronology - Reading Climate History in Tree Rings.md",
+          "note": "CIELO-G 高中生态水文课例用于交叉核对植被水分过程、树轮气候证据和时间尺度；不复制课例或图片。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：水循环、蒸散发、土壤水分和自然地理过程章节",
+          "note": "回到教材核对水分收支、自然地理要素相互作用和尺度。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-plate-tectonics-seismic-wave-interpretation",
+      "courseId": "selective-1",
+      "title": "板块构造与地震波的地球内部证据",
+      "summary": "地球内部结构材料题可把板块边界、地震波速度、传播路径和地表构造联合起来判断。先识别波的类型与介质变化，再用震中分布、火山带、海沟或山系等空间证据验证构造解释，不能把单一地震点或单一波形直接等同于板块边界。",
+      "keywords": ["板块构造", "地震波", "地球内部", "空间证据"],
+      "sourceIds": ["github-cielo-geoscience-k12", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-cielo-geoscience-k12",
+          "locator": "CIELO-G README / High_School/Geophysics/Lesson 02 Understanding Plate Tectonics.md / Lesson 03 Understanding Seismic Waves Using a Slinky.md",
+          "note": "CIELO-G 高中地球物理课例用于交叉核对板块构造、地震波和探究证据链；不复制课件、实验或图像。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地球内部圈层、板块运动和地质作用章节",
+          "note": "回到教材核对圈层结构、板块边界、地震火山和地表形态。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-transport-network-accessibility-indicator",
+      "courseId": "selective-2",
+      "title": "交通网络、可达性指标与区域结构",
+      "summary": "区域交通网络题先明确节点、边、方向、容量和时间成本，再用通达时间、连接度、中心性或服务范围比较区域联系。指标只能描述网络结构，解释区域发展还要叠加产业、人口、资源和政策条件，并检查网络数据的年份与尺度。",
+      "keywords": ["交通网络", "可达性", "中心性", "区域结构"],
+      "sourceIds": ["web-world-bank-transport", "github-transport-geography-resources", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-transport",
+          "locator": "World Bank：Transport / infrastructure / accessibility / regional links",
+          "note": "世界银行交通专题用于交叉核对基础设施、可达性和区域联系的政策边界；不复制报告或图表。"
+        },
+        {
+          "sourceId": "github-transport-geography-resources",
+          "locator": "Transport Geography Teaching Resources README.md / transport geography / accessibility / network",
+          "note": "交通地理教学仓库用于交叉核对交通网络、空间联系和教学资源的组织方式；不复制正文、图表或代码。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域联系、交通网络与区域规划章节",
+          "note": "回到教材核对区域尺度、交通联系、可达性和规划评价。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-secondary-geography-course-problem-chain",
+      "courseId": "selective-2",
+      "title": "中学地理课程的资料—问题—表达链",
+      "summary": "区域学习或探究题可按“课程目标—地理问题—资料选择—空间表达—结论核验”组织。中学地理开放资源能够提供跨章节的任务线索，但读图和作答仍要回到材料的时间、空间、指标和证据边界，避免把活动设计当成现成结论。",
+      "keywords": ["中学地理课程", "问题链", "资料选择", "结论核验"],
+      "sourceIds": ["github-biogeo-secondary-education", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-biogeo-secondary-education",
+          "locator": "Biogeo-logia：Secondary Education / niveles.html / recursos.html / environmental learning",
+          "note": "中学教育开放资源用于交叉核对课程层级、资源组织和探究任务的学习入口；不复制页面正文或资源文件。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域分析、区域联系、区域规划与地理实践章节",
+          "note": "回到教材核对区域问题、资料证据、空间表达和规划结论。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-school-geology-map-and-field-evidence",
+      "courseId": "selective-2",
+      "title": "学校地质地图与野外证据联读",
+      "summary": "地质或地貌区域判读可先从地图定位岩性、构造、海拔和水系，再用岩石、地貌、照片或现场观察验证空间推断。不同证据的比例尺、分辨率和观察条件不同，结论应说明哪些是直接观测、哪些是基于空间关系的推断。",
+      "keywords": ["地质地图", "野外证据", "地貌判读", "比例尺"],
+      "sourceIds": ["github-ghist-high-school-geology", "github-cielo-geoscience-k12", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-ghist-high-school-geology",
+          "locator": "Ghist index.html / gallery / high school geology / rocks and landforms",
+          "note": "Ghist 高中地质网站用于交叉核对岩石、地貌和地质观察素材的组织入口；不复制网页、图片或视频。"
+        },
+        {
+          "sourceId": "github-cielo-geoscience-k12",
+          "locator": "CIELO-G README / High_School/Geophysics/Lesson 02 Understanding Plate Tectonics.md",
+          "note": "CIELO-G 高中地球物理课例用于补充板块构造和地学探究的证据链；不复制课件或实验文本。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域地图、地理实践和区域比较章节",
+          "note": "回到教材核对地图尺度、区域证据和地理实践方法。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-migration-development-resource-security",
+      "courseId": "selective-3",
+      "title": "迁移、发展与资源环境安全",
+      "summary": "资源环境安全题涉及人口流动时，要同时分析迁移对劳动力、收入、公共服务、住房、土地和资源需求的影响。迁移可能缓解局部就业压力，也可能加大目的地基础设施和生态承载压力，治理措施应区分流动权利、公共服务供给与资源安全边界。",
+      "keywords": ["迁移发展", "资源安全", "公共服务", "承载力"],
+      "sourceIds": ["web-world-bank-migration", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-migration",
+          "locator": "World Bank：Migration / labor mobility / development impacts / demographic trends",
+          "note": "世界银行迁移专题用于交叉核对迁移、发展、人口与公共服务影响的概念边界；不复制报告、图表或案例。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：人口、资源环境承载力与国家安全章节",
+          "note": "回到教材核对人口压力、资源约束、公共服务和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-urbanization-resource-environment-security",
+      "courseId": "selective-3",
+      "title": "城市化与资源环境安全",
+      "summary": "城市化评价不能只看城市人口比重，还要把用水、能源、粮食供应、土地扩张、交通排放、热岛和生态服务放在城市—区域系统中分析。城市增长可能提高服务和集聚效率，也可能把资源环境压力转移到周边，答题应说明压力来源、空间传导和治理尺度。",
+      "keywords": ["城市化", "资源环境", "城市—区域系统", "安全治理"],
+      "sourceIds": ["web-owid-urbanization", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-owid-urbanization",
+          "locator": "Our World in Data：Urbanization / urban population / city growth / time series",
+          "note": "Our World in Data 城市化专题用于交叉核对城市人口、城市增长和跨区域比较口径；不复制图表或数据集。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境承载力、生态安全与国家安全章节",
+          "note": "回到教材核对资源环境压力、区域协调和安全治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geoscience-hazard-community-resilience",
+      "courseId": "selective-3",
+      "title": "地学灾害、社区韧性与恢复能力",
+      "summary": "地学灾害安全评价要把致灾过程、暴露人口、建筑和基础设施脆弱性、预警信息、避险能力与恢复资源分层分析。课堂或社区课例可以帮助组织证据，但真正提出治理方案时还要说明空间差异、群体公平、工程适配和长期恢复的约束。",
+      "keywords": ["地学灾害", "社区韧性", "预警", "恢复能力"],
+      "sourceIds": ["github-cielo-geoscience-k12", "github-ghist-high-school-geology", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-cielo-geoscience-k12",
+          "locator": "CIELO-G README / High_School/Geophysics/Lesson 05 Earthquakes_classroom.pdf / community action",
+          "note": "CIELO-G 高中地球物理与社区行动资源用于交叉核对灾害探究、预警和韧性学习入口；不复制课件、图片或活动文本。"
+        },
+        {
+          "sourceId": "github-ghist-high-school-geology",
+          "locator": "Ghist index.html / gallery / high school geology / volcano and earth structure",
+          "note": "Ghist 高中地质网站用于补充地质过程与灾害空间证据的学习入口；不复制网页、图片或视频。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：环境安全、灾害风险、韧性治理与国家安全章节",
+          "note": "回到教材核对灾害风险、适应能力、恢复公平和国家安全。"
         }
       ],
       "licenseStatus": "citation-only",

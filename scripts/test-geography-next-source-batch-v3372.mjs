@@ -65,9 +65,9 @@ const expectedItems = {
   "geo-s3-geospatial-reproducibility-attribution": "selective-3",
 };
 
-assert.equal(payload.version, "geo-2026.08.22.14");
-assert.equal(payload.sources.length, 96);
-assert.equal(payload.items.length, 230);
+assert.equal(payload.version, "geo-2026.08.22.15");
+assert.equal(payload.sources.length, 104);
+assert.equal(payload.items.length, 245);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);

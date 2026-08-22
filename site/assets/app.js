@@ -4174,8 +4174,11 @@ function renderGeographySource(source) {
 }
 
 function renderGeographySourceDirectory(data) {
+  const sourceRecords = data?.sources || [];
+  if (!sourceRecords.length) return "";
   const query = normalizeText(state.query);
-  const querySources = (data?.sources || []).filter((source) => {
+  const queryLabel = state.query.trim();
+  const querySources = sourceRecords.filter((source) => {
     if (!query) return true;
     return normalizeText([
       source.title,
@@ -4184,7 +4187,6 @@ function renderGeographySourceDirectory(data) {
       source.licenseNote,
     ].join(" ")).includes(query);
   });
-  if (!querySources.length) return "";
   const sourceFilter = ["all", "public", "local"].includes(state.geographySourceFilter)
     ? state.geographySourceFilter
     : "all";
@@ -4227,6 +4229,9 @@ function renderGeographySourceDirectory(data) {
       <span class="status">${source?.url ? "公开链接" : "本地/教材"}</span>
     </article>`;
   }).join("");
+  const emptyState = queryLabel
+    ? `<div class="empty-state"><p>当前检索“${esc(queryLabel)}”没有匹配的地理来源，请清空检索或换一个关键词。</p></div>`
+    : `<div class="empty-state"><p>当前来源类型筛选没有匹配项。</p></div>`;
   return `<section class="band geography-source-directory">
     <div class="data-summary-head">
       <div>
@@ -4236,7 +4241,7 @@ function renderGeographySourceDirectory(data) {
       </div>
       <span class="status">${sourceSummary}</span>
     </div>
-    <div class="geography-directory-list">${rows || `<div class="empty-state"><p>当前来源类型筛选没有匹配项。</p></div>`}</div>
+    <div class="geography-directory-list">${rows || emptyState}</div>
   </section>`;
 }
 

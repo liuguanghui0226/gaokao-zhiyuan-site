@@ -59,7 +59,7 @@ context.__gaokaoTest.renderSources();
 
 assert.match(view.innerHTML, /class="band geography-source-directory"/);
 assert.match(view.innerHTML, /高中地理来源目录/);
-assert.match(view.innerHTML, /75 个公开链接/);
+assert.match(view.innerHTML, /83 个公开链接/);
 assert.match(view.innerHTML, /21 个本地\/教材/);
 assert.match(view.innerHTML, /class="geography-directory-link" href="https:\/\/oceanservice\.noaa\.gov\/education\/tutorial_tides\/tides01_intro\.html"/);
 assert.match(view.innerHTML, /访问 2026-08-22/);
@@ -74,9 +74,17 @@ assert.match(view.innerHTML, /高中地理来源目录/);
 assert.match(view.innerHTML, /NOAA Tides and Water Levels Education/);
 assert.doesNotMatch(view.innerHTML, /普通高中教科书 地理 必修 第一册/);
 
+context.__gaokaoTest.state.query = "没有此来源";
+context.__gaokaoTest.renderSources();
+assert.match(view.innerHTML, /高中地理来源目录/);
+assert.match(view.innerHTML, /当前检索“没有此来源”没有匹配的地理来源/);
+assert.match(view.innerHTML, /0 条来源 · 0 个公开链接 · 0 个本地\/教材/);
+assert.doesNotMatch(view.innerHTML, /class="empty-state"><h2>没有匹配结果<\/h2>/);
+
 console.log(JSON.stringify({
   ok: true,
   geographySourcesVisible: geographyData.sources.length,
   publicSourcesLinked: true,
   localSourcesRemainUnlinked: true,
+  queryEmptyStateRetained: true,
 }, null, 2));

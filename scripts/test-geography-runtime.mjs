@@ -19,10 +19,10 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.22.14");
-assert.equal(site.sources.length, 96);
-assert.equal(site.items.length, 230);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 75);
+assert.equal(site.version, "geo-2026.08.22.15");
+assert.equal(site.sources.length, 104);
+assert.equal(site.items.length, 245);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 83);
 assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 21);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
@@ -93,6 +93,25 @@ for (const itemId of [
 ]) {
   assert.ok(site.items.some((item) => item.id === itemId), `missing v14 runtime item ${itemId}`);
 }
+for (const itemId of [
+  "geo-c1-earth-energy-budget-system",
+  "geo-c1-eco-hydrology-soil-plant-atmosphere",
+  "geo-c1-seismic-wave-and-earthquake-evidence",
+  "geo-c2-migration-labor-mobility-and-region",
+  "geo-c2-urbanization-rate-and-spatial-scale",
+  "geo-c2-transport-infrastructure-and-regional-links",
+  "geo-s1-earth-energy-budget-feedback-boundary",
+  "geo-s1-eco-hydrology-evapotranspiration-evidence",
+  "geo-s1-plate-tectonics-seismic-wave-interpretation",
+  "geo-s2-transport-network-accessibility-indicator",
+  "geo-s2-secondary-geography-course-problem-chain",
+  "geo-s2-school-geology-map-and-field-evidence",
+  "geo-s3-migration-development-resource-security",
+  "geo-s3-urbanization-resource-environment-security",
+  "geo-s3-geoscience-hazard-community-resilience",
+]) {
+  assert.ok(site.items.some((item) => item.id === itemId), `missing v15 runtime item ${itemId}`);
+}
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-noaa-tides-education"));
@@ -141,6 +160,18 @@ for (const sourceId of [
   "github-leafmap",
 ]) {
   assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v14 runtime source ${sourceId}`);
+}
+for (const sourceId of [
+  "web-nasa-earth-energy-budget",
+  "web-world-bank-migration",
+  "web-world-bank-transport",
+  "web-owid-urbanization",
+  "github-cielo-geoscience-k12",
+  "github-ghist-high-school-geology",
+  "github-transport-geography-resources",
+  "github-biogeo-secondary-education",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v15 runtime source ${sourceId}`);
 }
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 
