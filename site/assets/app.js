@@ -5060,10 +5060,22 @@ function render() {
   renderView(state.view, { force: true });
 }
 
+function syncNavigationState(nextView) {
+  $$(".nav-btn").forEach((btn) => {
+    const active = btn.dataset.view === nextView;
+    btn.classList.toggle("active", active);
+    if (active) {
+      btn.setAttribute("aria-current", "page");
+    } else {
+      btn.removeAttribute("aria-current");
+    }
+  });
+}
+
 function updateView(nextView) {
   renderView(nextView);
   state.view = nextView;
-  $$(".nav-btn").forEach((btn) => btn.classList.toggle("active", btn.dataset.view === nextView));
+  syncNavigationState(nextView);
   $$(".view").forEach((view) => view.classList.remove("active-view"));
   $(`#view-${nextView}`).classList.add("active-view");
 }
