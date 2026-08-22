@@ -19,10 +19,10 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.23.25");
-assert.equal(site.sources.length, 178);
-assert.equal(site.items.length, 395);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 156);
+assert.equal(site.version, "geo-2026.08.23.26");
+assert.equal(site.sources.length, 184);
+assert.equal(site.items.length, 410);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 162);
 assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 22);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));

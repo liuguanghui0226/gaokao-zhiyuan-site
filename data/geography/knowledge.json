@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.25",
+  "version": "geo-2026.08.23.26",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1662,6 +1662,64 @@
       "url": "https://www.noaa.gov/education/resource-collections",
       "accessedAt": "2026-08-23",
       "licenseNote": "NOAA 教育资源入口；本项目仅作地球系统主题检索、资源类型识别和海洋—大气—淡水概念边界的 citation-only 参照，不复制页面正文、图片、活动材料或数据。"
+    },
+    {
+      "id": "github-lurea-geography-teaching-lecture",
+      "title": "高中地理教学讲座：从教会答题到学会解决问题",
+      "publisher": "lurea-git/geography-teaching-lecture（GitHub）",
+      "editionNote": "公开仓库提交 `3f23a8662cec3e55f8656bbeb2cb7f2e859d5d01`；访问日期 2026-08-23；README 与讲座材料围绕田纳西河、青藏地区和澳大利亚热浪课例，讨论证据、关系、过程、迁移和教学诊断。",
+      "url": "https://github.com/lurea-git/geography-teaching-lecture",
+      "commitSha": "3f23a8662cec3e55f8656bbeb2cb7f2e859d5d01",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作高中地理问题解决、课例反思和证据组织的 citation-only 参照，不复制讲稿、课件、文档或页面文字。"
+    },
+    {
+      "id": "github-geography-study-react",
+      "title": "高中地理动画教学：日地运动交互模型",
+      "publisher": "swingboat/geography-study-react（GitHub）",
+      "editionNote": "公开仓库提交 `ca94e23989de595560189c3d1463f249639260d5`；访问日期 2026-08-23；README 将项目定位为中国高中地理交互式动画教学，并以黄赤交角模块示范参数化观察；README 还同时出现必修一与选修一标签，需回教材确认课程位置。",
+      "url": "https://github.com/swingboat/geography-study-react",
+      "commitSha": "ca94e23989de595560189c3d1463f249639260d5",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "README 声明 MIT License；本项目仅作日地运动模型、参数观察和课程标签核验的 citation-only 参照，不复制代码、图片、组件或页面文字。"
+    },
+    {
+      "id": "github-geographical-education-qa-hallucination",
+      "title": "地理教育多轮问答与幻觉分析数据集",
+      "publisher": "7tigersniffstherose7（GitHub）",
+      "editionNote": "公开仓库提交 `5dc19bc3c429907868aad9cbbdb569f283ec5fb6`；访问日期 2026-08-23；README 标注 ICIC 2025 长文，仓库包含地理教育多轮问答、知识点及有幻觉/无幻觉对照数据文件。",
+      "url": "https://github.com/7tigersniffstherose7/Geographical-Education-Multi-round-QA-Dataset",
+      "commitSha": "5dc19bc3c429907868aad9cbbdb569f283ec5fb6",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作地理问答证据核验、置信度边界和多轮对话风险的 citation-only 研究参照，不复制 CSV 记录、压缩包或论文正文。"
+    },
+    {
+      "id": "github-mizmay-web-map-quickstart",
+      "title": "Web-Mapping Quickstart：三次课的网络制图教学",
+      "publisher": "mizmay/web-map-quickstart（GitHub）",
+      "editionNote": "gh-pages 提交 `e71b11067fc820a9ef4df546b15b5b193ed4695b`；访问日期 2026-08-23；入口页将材料组织为 2014 年秋季三次课和春季四次课，按 session 展示网络制图教学流程。",
+      "url": "https://github.com/mizmay/web-map-quickstart",
+      "commitSha": "e71b11067fc820a9ef4df546b15b5b193ed4695b",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作网络制图任务分段、图层表达和地图叙事流程的 citation-only 参照，不复制幻灯片、图片、代码或页面文字。"
+    },
+    {
+      "id": "web-rgs-schools-geography-resources",
+      "title": "Royal Geographical Society Schools：学校地理教育与实地考察资源",
+      "publisher": "Royal Geographical Society (with IBG)",
+      "editionNote": "学校教育入口；访问日期 2026-08-23；页面列出学校资源、教师活动、学生活动、学校实地考察、竞赛、项目合作、教学资助和课程支持等入口。",
+      "url": "https://www.rgs.org/schools",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "RGS-IBG 官方教育入口；本项目仅作学校地理资源类型、实地考察与课程支持的 citation-only 参照，不复制页面正文、图片、活动材料或会员资源。"
+    },
+    {
+      "id": "web-geographical-association-teaching-resources",
+      "title": "Geographical Association：在线地理教学资源",
+      "publisher": "Geographical Association",
+      "editionNote": "在线教学资源入口；访问日期 2026-08-23；页面标注 2026-08-06 更新，按气候变化、海岸与河流、野外调查、地理技能、地图制图、自然景观、城市和资源等主题与学段筛选。",
+      "url": "https://geography.org.uk/online-teaching-resources/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "Geographical Association 官方资源目录；部分材料需要会员权限，本项目仅作主题分类、学段筛选、地理调查和资源访问边界的 citation-only 参照，不复制受限内容、活动材料或页面文字。"
     }
   ],
   "items": [
@@ -10365,6 +10423,336 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：资源环境问题、风险治理、国家安全与综合评价章节",
           "note": "回到教材核对资源环境证据、风险治理、评价标准和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-problem-solving-evidence-and-transfer",
+      "courseId": "compulsory-1",
+      "title": "从证据链到陌生情境迁移",
+      "summary": "面对陌生地理情境时，先从材料中提取可核对的事实，再把事实组织成要素关系和过程链，最后用新情境检验能否迁移。固定模板只能提醒漏项，不能替代证据选择；答案中的每个结论都应能指出依据、关系和适用条件。",
+      "keywords": ["问题解决", "证据链", "过程解释", "迁移"],
+      "sourceIds": ["github-lurea-geography-teaching-lecture", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-lurea-geography-teaching-lecture",
+          "locator": "README / 从“教会答题”到“学会解决问题”；系统1.0—3.0与实践—诊断—醒悟—再实践",
+          "note": "高中地理讲座用于交叉核对从模板转向证据、关系、过程和迁移的教学方法；不复制讲稿、课件或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：自然地理过程、圈层相互作用、地理问题探究与综合思维章节",
+          "note": "回到教材核对自然地理事实、过程链、要素联系和综合解释。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-fieldwork-question-observation-and-reflection",
+      "courseId": "compulsory-1",
+      "title": "实地考察中的问题、观察与反思",
+      "summary": "设计地理实践时先写清问题和观察指标，再决定记录位置、时间、样本和安全边界；回收材料后比较现场证据与原有假设，说明哪些现象被观察到、哪些仍不能判断。实地考察的价值不在于拍照数量，而在于形成可复核的观察—解释—反思链。",
+      "keywords": ["地理实践", "实地考察", "观察指标", "反思"],
+      "sourceIds": ["web-rgs-schools-geography-resources", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-rgs-schools-geography-resources",
+          "locator": "web page / resources for schools、fieldwork in schools、curriculum and professional support",
+          "note": "RGS学校入口用于交叉核对学校资源、实地考察和课程支持的组织边界；不复制页面正文、图片或活动材料。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地理实践、自然环境观察、地貌水文过程与灾害防护章节",
+          "note": "回到教材核对观察对象、自然过程、证据记录和安全防护。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-physical-process-animation-observation",
+      "courseId": "compulsory-1",
+      "title": "交互动画中的模型、参数与现实过程",
+      "summary": "使用地理动画时，应先区分模型变量、画面效果和现实过程：改变一个参数，记录哪些量随之变化，再用教材概念或观测资料核对解释。项目 README 同时出现必修一与选修一标签，正好提醒学习者不能把仓库目录直接当作课程标准。",
+      "keywords": ["交互动画", "模型变量", "参数控制", "课程核对"],
+      "sourceIds": ["github-geography-study-react", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geography-study-react",
+          "locator": "README / 面向中国高中地理必修一的交互式动画教学；黄赤交角模块与必修一/选修一标签",
+          "note": "GitHub项目用于交叉核对动画模型、参数观察和课程标签歧义；不复制代码、图片或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地球宇宙环境、太阳辐射与自然地理现象章节",
+          "note": "回到教材核对日地关系、太阳辐射和动画中可观察现象的概念边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-geography-lesson-from-place-to-region",
+      "courseId": "compulsory-2",
+      "title": "从具体地点走向区域联系",
+      "summary": "人文地理课例可以从一个具体地点或真实问题开始，先描述人口、产业、交通和环境事实，再逐步提升到区域联系与发展条件。学习者应区分案例中的特殊背景和可迁移的方法，不能把单个地区的结论直接套用到所有区域。",
+      "keywords": ["地点", "区域联系", "人文地理", "案例迁移"],
+      "sourceIds": ["github-lurea-geography-teaching-lecture", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-lurea-geography-teaching-lecture",
+          "locator": "README / 田纳西课例、青藏课例与真实问题中的系统建构",
+          "note": "高中地理讲座用于交叉核对从具体课例提炼问题结构和迁移条件的方法；不复制讲稿、课件或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：人口、城镇、产业、交通与区域联系章节",
+          "note": "回到教材核对人文要素、区域联系、发展条件和人地协调。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-web-map-layer-to-story",
+      "courseId": "compulsory-2",
+      "title": "网络地图从图层到地理叙事",
+      "summary": "网络地图学习不应停留在按钮操作：先确定问题和空间单元，再选择底图、专题图层、符号和文字说明，最后检查比例尺、投影、时间和数据来源。一个地图故事只有把图层变化与人口、产业、交通或区域联系对应起来，才具有地理解释价值。",
+      "keywords": ["网络地图", "图层", "地图叙事", "空间单元"],
+      "sourceIds": ["github-mizmay-web-map-quickstart", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-mizmay-web-map-quickstart",
+          "locator": "gh-pages index.html / Web-Mapping Quickstart、Fall 2014 Session 1—3、Spring 2014 Session 1—4",
+          "note": "网络制图课程入口用于交叉核对任务分段、图层表达和地图叙事流程；不复制幻灯片、图片、代码或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：人口、城镇、产业、交通、区域联系与地理信息技术章节",
+          "note": "回到教材核对人文要素分布、空间联系、地图表达和尺度。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-rgs-locational-knowledge-and-people",
+      "courseId": "compulsory-2",
+      "title": "区位知识与人口社会材料的联合判读",
+      "summary": "判读区域材料时，可先用定位知识确定地点、尺度和相邻关系，再把人口、社会、聚落和产业资料放入同一空间框架比较。资源目录的主题标签只能帮助检索，不能替代对数据年份、统计口径和区域边界的核对。",
+      "keywords": ["区位知识", "人口社会", "聚落", "统计口径"],
+      "sourceIds": ["web-rgs-schools-geography-resources", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-rgs-schools-geography-resources",
+          "locator": "web page / resources for schools、school student events、fieldwork in schools",
+          "note": "RGS学校入口用于交叉核对学校地理资源、学生活动和实地材料的入口边界；不复制页面正文、图片或活动材料。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：人口、城镇、产业区位、交通与区域比较章节",
+          "note": "回到教材核对区位条件、人口社会要素、聚落体系和区域尺度。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-sun-earth-moon-model-parameter-check",
+      "courseId": "selective-1",
+      "title": "日地运动模型的参数—现象核验",
+      "summary": "观察日地运动动画时，先列出黄赤交角、太阳直射位置、季节或太阳高度等变量，再一次只改变一个参数并记录现象。动画可帮助建立空间直觉，但结论仍要用轨道关系、时间尺度和教材图示复核，避免把视觉效果当作物理规律。",
+      "keywords": ["日地运动", "黄赤交角", "太阳高度", "参数实验"],
+      "sourceIds": ["github-geography-study-react", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geography-study-react",
+          "locator": "README / 黄赤交角交互动画模块、ObliquityOfEclipticDemo",
+          "note": "GitHub项目用于交叉核对参数化动画、空间直觉和模型验证边界；不复制代码、图片或组件。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地球运动、太阳直射点、正午太阳高度和四季变化章节",
+          "note": "回到教材核对黄赤交角、太阳直射点移动、时间尺度和太阳高度变化。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-multi-view-evidence-before-conclusion",
+      "courseId": "selective-1",
+      "title": "多种视角与证据稳定性",
+      "summary": "自然地理综合题中，先把同一现象放在平面图、剖面图、时间序列或现场照片中交叉观察，再寻找在不同表达中都成立的特征。若结论只依赖一张最醒目的图，应补充尺度、时间和观测条件，明确哪些是稳定规律、哪些可能是表达方式造成的错觉。",
+      "keywords": ["多源证据", "视角变化", "时间序列", "稳定特征"],
+      "sourceIds": ["github-lurea-geography-teaching-lecture", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-lurea-geography-teaching-lecture",
+          "locator": "README / 青藏课例、澳大利亚热浪真实问题与陌生情境解释",
+          "note": "高中地理讲座用于交叉核对真实问题、多证据解释和迁移判断的边界；不复制讲稿、课件或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：大气运动、地貌过程、水体运动与自然环境整体性章节",
+          "note": "回到教材核对过程证据、时间尺度、空间尺度和自然地理整体性。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-map-scale-and-projection-in-web-mapping",
+      "courseId": "selective-1",
+      "title": "网络制图中的比例尺与投影核对",
+      "summary": "使用网络地图表达自然地理现象时，要先核对投影、比例尺、底图范围和数据分辨率，再判断地形、水体或气候空间差异。放大地图不会自动增加数据精度；跨区域比较还要说明投影变形、分类方法和时间口径。",
+      "keywords": ["比例尺", "地图投影", "分辨率", "自然地理制图"],
+      "sourceIds": ["github-mizmay-web-map-quickstart", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-mizmay-web-map-quickstart",
+          "locator": "gh-pages index.html / Web-Mapping Quickstart 的 session 分段与地图制作流程",
+          "note": "网络制图课程入口用于交叉核对地图制作步骤、图层表达和复核顺序；不复制幻灯片、图片、代码或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地图判读、地形剖面、遥感与地理信息技术章节",
+          "note": "回到教材核对比例尺、投影、分辨率、图层和自然地理判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-web-mapping-from-question-to-layer",
+      "courseId": "selective-2",
+      "title": "区域研究从问题到图层",
+      "summary": "开展区域研究时，把大问题拆成可以由一个空间图层或一组指标回答的小问题：先确定区域边界和时间，再选择底图、专题图层、分类方法与验证资料。地图完成后还要回到原始来源检查数据处理，避免把漂亮的图面直接当成区域发展结论。",
+      "keywords": ["区域研究", "空间图层", "问题拆解", "数据验证"],
+      "sourceIds": ["github-mizmay-web-map-quickstart", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-mizmay-web-map-quickstart",
+          "locator": "gh-pages index.html / Fall 2014 与 Spring 2014 多 session 网络制图课程入口",
+          "note": "网络制图课程用于交叉核对从任务分段到图层表达的工作流；不复制幻灯片、图片、代码或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域研究、地理信息技术、区域比较与规划实践章节",
+          "note": "回到教材核对区域问题、空间尺度、资料评价、地图表达和规划决策。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-teaching-system-as-problem-solving-structure",
+      "courseId": "selective-2",
+      "title": "把教学系统理解为问题解决结构",
+      "summary": "区域发展学习中的“系统”不只是完整笔记或固定答题框架，而应表现为面对新区域时能提出问题、组织要素关系、解释过程并检验方案。复习时可用案例检查自己是否能从地点事实迁移到区域联系，而不是只复述熟悉案例的结论。",
+      "keywords": ["区域发展", "问题结构", "要素关系", "案例迁移"],
+      "sourceIds": ["github-lurea-geography-teaching-lecture", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-lurea-geography-teaching-lecture",
+          "locator": "README / 从“教会答题”到“学会解决问题”；三次课例与系统定义变化",
+          "note": "高中地理讲座用于交叉核对问题结构、课例迁移和教学系统的边界；不复制讲稿、课件或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域发展、区域联系、综合治理与规划实践章节",
+          "note": "回到教材核对区域要素关系、发展条件、治理路径和综合评价。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-fieldwork-and-enquiry-design",
+      "courseId": "selective-2",
+      "title": "地理调查的学段、主题与探究设计",
+      "summary": "从公开教学资源目录选择区域调查材料时，应先按学段和问题类型筛选，再区分案例、视频、活动、野外调查和地理技能资源。真正的探究还要补上研究问题、样本边界、资料质量、伦理安全和成果评价，不能把资源标签当成完整研究方案。",
+      "keywords": ["地理调查", "学段筛选", "探究设计", "资料评价"],
+      "sourceIds": ["web-geographical-association-teaching-resources", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-geographical-association-teaching-resources",
+          "locator": "web page / resources / case studies、videos、activities、content units；fieldwork、geographical skills、maps and mapping filters",
+          "note": "Geographical Association目录用于交叉核对资源类型、学段和主题筛选边界；不复制受限内容、活动材料或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：地理实践、区域调查、资料评价与规划实践章节",
+          "note": "回到教材核对调查问题、资料质量、区域尺度和成果评价。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geography-qa-source-evidence-and-hallucination",
+      "courseId": "selective-3",
+      "title": "地理问答中的来源证据与幻觉识别",
+      "summary": "使用地理问答工具时，不要把语言流畅或答案完整当成正确证据。先要求回答给出地点、时间、指标和来源，再逐项回到教材、统计资料或权威页面核验；若无法核实，就把结论标为待查，而不是用自信语气掩盖证据缺口。",
+      "keywords": ["地理问答", "来源核验", "幻觉识别", "证据缺口"],
+      "sourceIds": ["github-geographical-education-qa-hallucination", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-geographical-education-qa-hallucination",
+          "locator": "README / Multi-Round Q&A Hallucination Analysis of LLMs in Geographical Education；有幻觉与无幻觉多轮问答数据",
+          "note": "地理教育问答数据集用于交叉核对多轮问答中的幻觉分析与证据核验边界；不复制 CSV 记录、压缩包或论文正文。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境数据、风险判断、国家安全与资料评价章节",
+          "note": "回到教材核对资源环境证据、指标口径、风险结论和国家安全判断。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-multi-round-qa-uncertainty-check",
+      "courseId": "selective-3",
+      "title": "多轮地理问答的追问与不确定性",
+      "summary": "多轮问答可以帮助拆解资源环境问题，但每次追问都可能把未经核实的前提带入下一轮。应保留原问题、关键假设、证据链接和未决项，遇到地点同名、年份变化、统计口径不同或因果跳跃时暂停生成，先做事实核对。",
+      "keywords": ["多轮对话", "不确定性", "前提检查", "因果边界"],
+      "sourceIds": ["github-geographical-education-qa-hallucination", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-geographical-education-qa-hallucination",
+          "locator": "README / multi-round Q&A、knowledge points、hallucination and non-hallucination comparison files",
+          "note": "地理教育问答数据集用于交叉核对多轮追问、知识点对齐和幻觉风险的边界；不复制数据记录或论文正文。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境问题、风险治理、资料评价与国家安全章节",
+          "note": "回到教材核对资源环境问题的事实前提、因果链和治理边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-teaching-resource-license-and-access-boundary",
+      "courseId": "selective-3",
+      "title": "地理教学资源的许可与访问边界",
+      "summary": "整理资源环境和国家安全学习资料时，要把公开可见、需要登录、会员限定、可下载和可再利用分别记录。能打开页面不等于可以复制内容；公开摘要只保留原创方法、来源链接和核验提示，并在结论中说明资料版本、许可和访问限制。",
+      "keywords": ["资源许可", "访问边界", "资料版本", "原创摘要"],
+      "sourceIds": ["web-geographical-association-teaching-resources", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-geographical-association-teaching-resources",
+          "locator": "web page / resources / member-only access 与登录提示，并按资源主题与学段筛选",
+          "note": "Geographical Association目录用于交叉核对访问权限、资源版本和公开摘要边界；不复制受限内容、活动材料或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境资料评价、生态文明与国家安全章节",
+          "note": "回到教材核对资源环境资料的可靠性、证据边界、治理判断和国家安全。"
         }
       ],
       "licenseStatus": "citation-only",
