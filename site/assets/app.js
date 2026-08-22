@@ -3881,6 +3881,31 @@ function filteredSources() {
   });
 }
 
+function hasActiveFilters() {
+  return Boolean(state.query.trim() || state.discipline || state.domain);
+}
+
+function syncClearFiltersControl() {
+  const button = $("#clearFilters");
+  if (!button) return;
+  button.hidden = !hasActiveFilters();
+}
+
+function clearSearchFilters() {
+  state.query = "";
+  state.discipline = "";
+  state.domain = "";
+  state.disciplineBrowse = "08";
+  state.disciplineFamily = "";
+  $("#searchInput").value = "";
+  $("#disciplineFilter").value = "";
+  $("#domainFilter").value = "";
+  for (const view of ["sources", "disciplines", "geography"]) {
+    state.renderedViews.delete(view);
+  }
+  syncClearFiltersControl();
+}
+
 function renderMetric(label, value) {
   return `<div class="metric"><strong>${fmtNumber(value)}</strong><span>${esc(label)}</span></div>`;
 }
@@ -5049,6 +5074,7 @@ function bindEvents() {
   });
   $("#searchInput").addEventListener("input", (event) => {
     state.query = event.target.value;
+    syncClearFiltersControl();
     if (state.view === "sources") renderView("sources", { force: true });
     if (state.view === "disciplines") renderView("disciplines", { force: true });
     if (state.view === "geography") renderView("geography", { force: true });
@@ -5057,14 +5083,23 @@ function bindEvents() {
     state.discipline = event.target.value;
     if (state.discipline) state.disciplineBrowse = state.discipline;
     state.disciplineFamily = "";
+    syncClearFiltersControl();
     if (state.view === "sources") renderView("sources", { force: true });
     if (state.view === "disciplines") renderView("disciplines", { force: true });
   });
   $("#domainFilter").addEventListener("change", (event) => {
     state.domain = event.target.value;
+    syncClearFiltersControl();
     if (state.view === "sources") renderView("sources", { force: true });
     if (state.view === "disciplines") renderView("disciplines", { force: true });
   });
+  $("#clearFilters").addEventListener("click", () => {
+    clearSearchFilters();
+    if (["sources", "disciplines", "geography"].includes(state.view)) {
+      renderView(state.view, { force: true });
+    }
+  });
+  syncClearFiltersControl();
 }
 
 function populateFilters() {
