@@ -188,6 +188,8 @@
       "publisher": "uau9/orange-geography-coach（GitHub）",
       "editionNote": "公开仓库提交 `0198f84c3552bf20df90124e1c18dc412f0cf0fd`；访问日期 2026-08-22；涵盖地转偏向力、地方时、晨昏线、气压带、潮汐等交互实验的课程组织与理想模型说明。",
       "url": "https://github.com/uau9/orange-geography-coach",
+      "commitSha": "0198f84c3552bf20df90124e1c18dc412f0cf0fd",
+      "accessedAt": "2026-08-22",
       "licenseNote": "仓库未声明可复用许可证；仅作外部结构与方法研究来源，公开层只发布重新组织的原创摘要，不复制题目、答案、解析、页面代码或资源。"
     },
     {
@@ -196,6 +198,8 @@
       "publisher": "EricTwins/shanghai-knowledge-cards（GitHub Pages/GitHub）",
       "editionNote": "公开仓库提交 `4f6575871b0ea4518450e6b32418b2bac5177f2b`；访问日期 2026-08-22；用于对照自然、人文、区域与资源环境的卡片组织方式。",
       "url": "https://github.com/EricTwins/shanghai-knowledge-cards",
+      "commitSha": "4f6575871b0ea4518450e6b32418b2bac5177f2b",
+      "accessedAt": "2026-08-22",
       "licenseNote": "仓库未声明可复用许可证；仅作外部课程结构研究来源，公开层只发布原创方法摘要，不复制卡片正文、年度考情、图件或页面版式。"
     },
     {
@@ -204,6 +208,8 @@
       "publisher": "nju-websoft/CKGG（GitHub/Zenodo）",
       "editionNote": "公开仓库提交 `1c8bf48b11d0864440ceccef95c81afae3d483c7`；关联 Zenodo DOI 10.5281/zenodo.4668711；用于核对地理实体、空间关系与多源属性组织方式。",
       "url": "https://github.com/nju-websoft/CKGG",
+      "commitSha": "1c8bf48b11d0864440ceccef95c81afae3d483c7",
+      "accessedAt": "2026-08-22",
       "licenseNote": "仓库页面未声明可复用许可证；仅作知识图谱结构与地理证据组织研究来源，公开层不复制 RDF、数据转储、图片或代码。"
     }
   ],
