@@ -4402,6 +4402,32 @@ function renderEvidenceLinks(evidence, css = "") {
   }).join("")}</div>`;
 }
 
+function renderRecommendationShortlist() {
+  const items = state.recommendationShortlist?.items || [];
+  if (!items.length) return "";
+  return `<section class="band recommendation-shortlist" id="recommendationShortlistPanel">
+    <div class="shortlist-panel-head">
+      <div>
+        <h3>我的核验清单</h3>
+        <p>先把愿意继续核对的院校专业集中在这里，再逐项确认当年计划、专业组、选科、收费和招生章程。</p>
+      </div>
+      <strong>${fmtNumber(items.length)} 项</strong>
+    </div>
+    <div class="shortlist-panel-list">
+      ${items.map((item) => `
+        <article class="shortlist-panel-row">
+          <div>
+            <strong>${esc(item.schoolName || "院校待核")} · ${esc(item.majorName || "专业待核")}</strong>
+            ${renderTags([item.tierLabel, item.readinessLabel].filter(Boolean))}
+            ${item.sourceUrl ? `<a class="shortlist-panel-source" href="${esc(item.sourceUrl)}" target="_blank" rel="noreferrer">${esc(item.sourceLabel || "证据来源")}</a>` : ""}
+          </div>
+          <button class="ghost-action shortlist-panel-remove" type="button" data-shortlist-remove-key="${esc(item.key)}">移出清单</button>
+        </article>
+      `).join("")}
+    </div>
+  </section>`;
+}
+
 function renderRecommendationResults() {
   const rec = state.recommendation;
   if (!rec) {
@@ -4498,6 +4524,7 @@ function renderRecommendationResults() {
       <span id="copyRecommendationStatus" class="copy-status" role="status" aria-live="polite"></span>
     </div>
     ${renderDataFreshnessPanel(rec.profile)}
+    ${renderRecommendationShortlist()}
     ${belowVocationalLine ? belowLinePanel : limitedOnly ? limitedQualificationPanel : vocationalQualificationUnknown ? unknownQualificationPanel : vocationalLinePending ? pendingQualificationPanel : renderAdmissionHitPanel(rec.profile)}
     ${belowVocationalLine || vocationalQualificationUnknown || vocationalLinePending ? "" : renderApplicationPlan(rec.results)}
     <div class="grid-2">${resultCards}</div>
@@ -4694,6 +4721,12 @@ function bindRecommendationResultEvents() {
   $$("[data-shortlist-key]").forEach((button) => {
     button.addEventListener("click", () => {
       toggleRecommendationShortlist(button.dataset.shortlistKey || "");
+      refreshRecommendationResults();
+    });
+  });
+  $$("[data-shortlist-remove-key]").forEach((button) => {
+    button.addEventListener("click", () => {
+      toggleRecommendationShortlist(button.dataset.shortlistRemoveKey || "");
       refreshRecommendationResults();
     });
   });

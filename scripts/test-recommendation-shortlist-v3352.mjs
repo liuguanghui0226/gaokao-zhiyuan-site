@@ -14,11 +14,13 @@ if (bootIndex < 0) throw new Error("Could not isolate app.js boot call");
 
 const instrumented = `${source.slice(0, bootIndex)}
 globalThis.__gaokaoTest = {
+  state,
   RECOMMEND_SHORTLIST_STORAGE_KEY,
   shortlistProfileKey,
   loadRecommendationShortlist,
   saveRecommendationShortlist,
   clearRecommendationShortlist,
+  renderRecommendationShortlist,
   recommendationExportText,
 };`;
 const storage = new Map();
@@ -103,6 +105,18 @@ assert.match(exported, /计算机科学与技术/);
 assert.match(exported, /不等于录取概率/);
 assert.ok(source.includes("加入核验清单"), "application-plan shortlist action missing");
 assert.ok(source.includes("data-shortlist-key"), "shortlist action must expose a stable candidate key");
+assert.ok(source.includes("data-shortlist-remove-key"), "shortlist panel removal action missing");
+
+api.state.recommendationShortlist = { profileKey: "", items: [items[0]] };
+const panel = api.renderRecommendationShortlist();
+assert.match(panel, /我的核验清单/);
+assert.match(panel, /示例大学/);
+assert.match(panel, /计算机科学与技术/);
+assert.match(panel, /2026计划已佐证/);
+assert.match(panel, /移出清单/);
+assert.match(panel, /https:\/\/example\.com\/source/);
+api.state.recommendationShortlist = { profileKey: "", items: [] };
+assert.equal(api.renderRecommendationShortlist(), "");
 
 console.log(JSON.stringify({
   ok: true,
@@ -110,4 +124,5 @@ console.log(JSON.stringify({
   deduplicated: true,
   malformedStorageIgnored: true,
   exportIncludesShortlist: true,
+  consolidatedPanel: true,
 }, null, 2));
