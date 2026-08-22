@@ -78,6 +78,7 @@ assert.equal(
 
 assert.ok(source.includes('id="recommendStatus"'), "recommendation status region missing");
 assert.ok(source.includes("recommendationValidationIssues"), "recommendation validation is not wired");
+assert.ok(source.includes("$(`#${fieldId}`)"), "validation must resolve field IDs as document selectors");
 assert.ok(!source.includes("window.alert("), "recommendation errors must remain in the accessible status region");
 
 console.log(JSON.stringify({

@@ -4944,9 +4944,9 @@ function bindRecommendEvents() {
     form.querySelectorAll('[aria-invalid="true"]').forEach((field) => field.removeAttribute("aria-invalid"));
     const validationIssues = recommendationValidationIssues(profileFromForm());
     if (validationIssues.length) {
-      validationIssues.forEach(({ fieldId }) => $(fieldId)?.setAttribute("aria-invalid", "true"));
+      validationIssues.forEach(({ fieldId }) => $(`#${fieldId}`)?.setAttribute("aria-invalid", "true"));
       if (status) status.textContent = validationIssues.map((issue) => issue.message).join("；");
-      $(validationIssues[0].fieldId)?.focus();
+      $(`#${validationIssues[0].fieldId}`)?.focus();
       return;
     }
     saveCurrentRecommendationDraft();
