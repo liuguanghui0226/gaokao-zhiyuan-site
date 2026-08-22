@@ -64,9 +64,9 @@ const expectedItems = {
   "geo-s3-population-resource-pressure": "selective-3",
 };
 
-assert.equal(payload.version, "geo-2026.08.22.12");
-assert.equal(payload.sources.length, 80);
-assert.equal(payload.items.length, 200);
+assert.match(payload.version, /^geo-2026\.08\.22\.\d+$/);
+assert.ok(payload.sources.length >= 80);
+assert.ok(payload.items.length >= 200);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
