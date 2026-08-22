@@ -1,6 +1,6 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-22；扩展轮次：geo-2026.08.22.4
+盘点日期：2026-08-22；扩展轮次：geo-2026.08.22.5
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
@@ -55,6 +55,17 @@
 | `github-ckgg-high-school-geography` | [nju-websoft/CKGG](https://github.com/nju-websoft/CKGG) / [Zenodo DOI](https://doi.org/10.5281/zenodo.4668711) | commit `1c8bf48b11d0864440ceccef95c81afae3d483c7`；访问日期 2026-08-22 | 参照知识图谱中的地理实体、空间关系和位置/气候/人口等属性组织，补充多源区域证据联读；不复制 RDF、数据转储、图片或代码；仓库页面未声明可复用许可证 |
 
 本轮将 GitHub 项目当作研究与结构参照，不把第三方仓库的题库、答案、页面代码或年度考情直接并入本站。公开卡片均为重新组织的原创摘要，并保留教材页码作为学习者回查的主证据；外部仓库只作为方法来源或交叉核对来源。
+
+## 本轮新增公开网站与 GitHub 来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `web-noaa-tides-education` | [NOAA Tides and Water Levels Education](https://oceanservice.noaa.gov/education/tutorial_tides/tides01_intro.html) | 页面访问日期 2026-08-22 | 用于核对潮汐长周期波、涨潮流、落潮流、潮差与河口水体交换的概念；只发布原创高中地理方法，不复制原文、动画或版式。 |
+| `web-noaa-ocean-acidification` | [NOAA National Ocean Service：What is Ocean Acidification?](https://oceanservice.noaa.gov/facts/acidification.html) | 页面访问日期 2026-08-22 | 用于核对海洋吸收二氧化碳、pH、碳酸根、钙化生物与沿海食物系统的关系；只发布原创方法，不复制原文、视频或图片。 |
+| `web-nasa-remote-sensing-earth-observatory` | [NASA Earth Observatory：Remote Sensing](https://science.nasa.gov/earth/earth-observatory/remote-sensing/) | 页面访问日期 2026-08-22 | 用于核对遥感、波段、像元、空间分辨率及主动/被动传感器的任务匹配；只发布原创遥感判读方法，不复制原文、图片或代码。 |
+| `github-geospatial-data-analysis-cn` | [findyourmagic/geospatial-data-analysis-cn](https://github.com/findyourmagic/geospatial-data-analysis-cn) | commit `fbd8f4e1f7e169add8d2601f7636b68d3054c3f3`；访问日期 2026-08-22；BSD-3-Clause | 用于交叉核对矢量/栅格、空间关系、空间连接与地图可视化的高中 GIS 方法边界；不复制 notebook、数据、代码或图件。 |
+
+本轮新增 16 条原创方法卡，分别覆盖大气水汽与降水、风化侵蚀、火山地震风险、人口转变、城乡联系、服务业与数字联系、季风降水、水量平衡、冰川冻土、潮流河口、区域规划、遥感分辨率、水安全、生物多样性、碳收支和海洋酸化。新增卡片均回到五册教材保留课程归属与页码证据；NOAA、NASA 与 GitHub 仅作为概念交叉核对来源，外部内容仍按 `citation-only` 边界处理。
 
 盘点方法为 PDF 元数据检查、目录页文本抽取和章节页码人工核对。五册均有可读取文本层；当前发布数据使用章节页码范围作为证据定位，学习者仍应回到纸质或合法电子教材核对完整图表、定义和案例。
 

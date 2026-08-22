@@ -62,6 +62,10 @@ const REQUIRED_NEXT_EXPANSION_SOURCES = new Set([
   "marine-survey-reference-2017",
   "marine-island-reference-2017",
   "marine-weather-reference-2017",
+  "web-noaa-tides-education",
+  "web-noaa-ocean-acidification",
+  "web-nasa-remote-sensing-earth-observatory",
+  "github-geospatial-data-analysis-cn",
 ]);
 const REQUIRED_NEXT_EXPANSION_ITEMS = new Set([
   "geo-c1-water-resource-balance",
@@ -91,11 +95,33 @@ const REQUIRED_NEXT_EXPANSION_ITEMS = new Set([
   "geo-s3-island-use-ecological-protection",
   "geo-s3-marine-weather-coastal-warning",
   "geo-s3-ocean-acidification-carbon-cycle",
+  "geo-c1-atmospheric-moisture-precipitation",
+  "geo-c1-weathering-and-soil-erosion",
+  "geo-c1-volcanic-earthquake-risk",
+  "geo-c2-demographic-transition-and-policy",
+  "geo-c2-urbanization-and-rural-urban-integration",
+  "geo-c2-service-industry-and-digital-connectivity",
+  "geo-s1-monsoon-seasonal-precipitation",
+  "geo-s1-water-balance-evapotranspiration",
+  "geo-s1-glacier-permafrost-and-climate",
+  "geo-s1-tidal-current-estuary-dynamics",
+  "geo-s2-regional-planning-land-use",
+  "geo-s2-remote-sensing-spectral-resolution",
+  "geo-s3-water-security-ecological-flow",
+  "geo-s3-biodiversity-connectivity-conservation",
+  "geo-s3-carbon-budget-low-carbon-transition",
+  "geo-s3-ocean-acidification-food-security",
 ]);
 const REQUIRED_EXTERNAL_SOURCES = new Set([
   "github-orange-geography-coach",
   "github-shanghai-knowledge-cards",
   "github-ckgg-high-school-geography",
+  "github-geospatial-data-analysis-cn",
+]);
+const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
+  "web-noaa-tides-education",
+  "web-noaa-ocean-acidification",
+  "web-nasa-remote-sensing-earth-observatory",
 ]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
@@ -148,6 +174,10 @@ for (const source of payload.sources.filter((item) => REQUIRED_EXTERNAL_SOURCES.
   assert.match(String(source.commitSha), /^[a-f0-9]{40}$/i, `${source.id} must retain an immutable commit SHA`);
   assert.match(String(source.accessedAt), /^2026-08-22$/, `${source.id} must retain an access date`);
 }
+for (const source of payload.sources.filter((item) => REQUIRED_PUBLIC_WEB_SOURCES.has(item.id))) {
+  assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.accessedAt), /^2026-08-22$/, `${source.id} must retain an access date`);
+}
 const itemIds = new Set();
 for (const item of payload.items) {
   assert.equal(typeof item.id, "string");
@@ -170,7 +200,7 @@ for (const item of payload.items) {
     assert.equal(sourceIds.has(evidence.sourceId), true, `${item.id} evidence references unknown source`);
     assert.match(
       String(evidence.locator),
-      /第?\s*\d+\s*页|README|data\/|docs\/|ontology|RDF|geography\.html/,
+      /第?\s*\d+\s*页|README|data\/|docs\/|ontology|RDF|geography\.html|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster/,
       `${item.id} evidence locator must be a page or stable web/repository section`,
     );
     assert.equal(typeof evidence.note, "string");

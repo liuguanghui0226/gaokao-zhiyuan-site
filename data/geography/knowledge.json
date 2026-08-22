@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.4",
+  "version": "geo-2026.08.22.5",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -211,6 +211,43 @@
       "commitSha": "1c8bf48b11d0864440ceccef95c81afae3d483c7",
       "accessedAt": "2026-08-22",
       "licenseNote": "仓库页面未声明可复用许可证；仅作知识图谱结构与地理证据组织研究来源，公开层不复制 RDF、数据转储、图片或代码。"
+    },
+    {
+      "id": "web-noaa-tides-education",
+      "title": "NOAA Tides and Water Levels Education：What are Tides?",
+      "publisher": "NOAA National Ocean Service",
+      "editionNote": "公开教育页面；访问日期 2026-08-22；说明潮汐作为长周期波、月球与太阳作用、潮差及涨落潮流的关系。",
+      "url": "https://oceanservice.noaa.gov/education/tutorial_tides/tides01_intro.html",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "美国政府公共教育网页；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、动画或版式。"
+    },
+    {
+      "id": "web-noaa-ocean-acidification",
+      "title": "NOAA National Ocean Service：What is Ocean Acidification?",
+      "publisher": "NOAA National Ocean Service",
+      "editionNote": "公开事实页；访问日期 2026-08-22；说明海洋吸收二氧化碳、pH变化、碳酸根与钙化生物及海洋食物系统的联系。",
+      "url": "https://oceanservice.noaa.gov/facts/acidification.html",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "美国政府公共教育网页；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、视频或图片。"
+    },
+    {
+      "id": "web-nasa-remote-sensing-earth-observatory",
+      "title": "NASA Earth Observatory：Remote Sensing",
+      "publisher": "NASA Science / Earth Observatory",
+      "editionNote": "公开地球观测教程；访问日期 2026-08-22；说明遥感、波段、像元、空间分辨率、主动与被动传感器及专题制图。",
+      "url": "https://science.nasa.gov/earth/earth-observatory/remote-sensing/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NASA 公共科学教育页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、图片或代码。"
+    },
+    {
+      "id": "github-geospatial-data-analysis-cn",
+      "title": "Python地理信息数据分析介绍：GeoPandas、GIS",
+      "publisher": "findyourmagic/geospatial-data-analysis-cn（GitHub）",
+      "editionNote": "公开仓库提交 `fbd8f4e1f7e169add8d2601f7636b68d3054c3f3`；访问日期 2026-08-22；README 与 notebook 目录涉及矢量/栅格、空间关系、空间连接和地图可视化。",
+      "url": "https://github.com/findyourmagic/geospatial-data-analysis-cn",
+      "commitSha": "fbd8f4e1f7e169add8d2601f7636b68d3054c3f3",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明 BSD-3-Clause；本项目仅作高中地理 GIS 方法的交叉核对，不复制 notebook、数据、代码或图件。"
     }
   ],
   "items": [
@@ -1886,6 +1923,313 @@
           "sourceId": "pep-geography-selective-2",
           "locator": "第 2-22 页",
           "note": "回到教材核对区域边界、空间联系和尺度变化对结论的影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-atmospheric-moisture-precipitation",
+      "courseId": "compulsory-1",
+      "title": "大气水汽、云与降水形成",
+      "summary": "大气水汽题先判断蒸发、输送、凝结和降水的先后，再结合温度、气压、上升运动和凝结条件解释云雨分布。比较不同地点时要区分水汽多寡与抬升机制，不能把“湿度大”直接等同于“降水多”。",
+      "keywords": ["水汽", "凝结", "降水", "上升运动"],
+      "sourceIds": ["pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 34-60 页",
+          "note": "回到教材核对水汽来源、凝结条件、上升运动与降水形成过程。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-weathering-and-soil-erosion",
+      "courseId": "compulsory-1",
+      "title": "风化、侵蚀与土壤流失链条",
+      "summary": "地表物质变化要先区分原地风化、外力侵蚀、搬运和堆积，再判断坡度、降水、植被、土壤结构与人类扰动怎样改变过程强度。治理措施应对应裸露、径流增强或风蚀等具体环节，避免把所有退化都简化为植树。",
+      "keywords": ["风化", "侵蚀", "搬运", "土壤流失"],
+      "sourceIds": ["pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 66-80 页",
+          "note": "回到教材核对外力作用、地貌演化与地表物质迁移。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-volcanic-earthquake-risk",
+      "courseId": "compulsory-1",
+      "title": "火山地震过程与风险链",
+      "summary": "火山和地震材料先判构造背景与能量释放方式，再把震源或喷发中心、传播过程、地形条件和人口设施连接起来。风险评价不能只写震级或喷发强度，还要分析暴露度、脆弱性、预警能力与避险空间。",
+      "keywords": ["火山", "地震", "构造运动", "风险"],
+      "sourceIds": ["pep-geography-compulsory-1", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 4-27 页",
+          "note": "回到教材核对地球内部作用、地质过程与灾害风险基础。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 44-61 页",
+          "note": "回到教材核对地震波、板块边界和构造地貌证据。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-demographic-transition-and-policy",
+      "courseId": "compulsory-2",
+      "title": "人口转变、年龄结构与政策时滞",
+      "summary": "人口转变题要把出生率、死亡率、自然增长、机械增长和年龄结构分开，再判断政策、教育、就业和公共服务如何在不同时间尺度上产生影响。评价人口政策时要同时看总量、结构、区域差异与代际成本。",
+      "keywords": ["人口转变", "年龄结构", "自然增长", "人口政策"],
+      "sourceIds": ["pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 2-23 页",
+          "note": "回到教材核对人口数量、年龄结构、人口迁移和人口容量。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urbanization-and-rural-urban-integration",
+      "courseId": "compulsory-2",
+      "title": "城镇化、城乡联系与空间治理",
+      "summary": "城镇化材料要区分人口城镇化、土地城镇化、产业集聚和公共服务扩散，再分析交通、就业、住房、生态和乡村发展之间的联系。判断治理成效时不能只看城市规模，还要看城乡要素流动与生活质量是否协调。",
+      "keywords": ["城镇化", "城乡联系", "公共服务", "空间治理"],
+      "sourceIds": ["pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 28-53 页",
+          "note": "回到教材核对城镇内部空间、城市等级、服务范围与城乡联系。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-service-industry-and-digital-connectivity",
+      "courseId": "compulsory-2",
+      "title": "服务业区位与数字联系",
+      "summary": "服务业区位分析要同时看人口密度、消费需求、交通可达性、信息联系、专业人才和集聚效应。数字平台可以降低部分空间距离成本，却不能消除线下服务、劳动力质量、基础设施和区域需求差异。",
+      "keywords": ["服务业", "数字联系", "可达性", "消费需求"],
+      "sourceIds": ["pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 63-95 页",
+          "note": "回到教材核对产业区位、交通联系、市场和城市服务功能。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-monsoon-seasonal-precipitation",
+      "courseId": "selective-1",
+      "title": "季风形成与季节降水转换",
+      "summary": "季风题先比较海陆热力差异、气压中心和风向季节变化，再沿水汽来源、辐合抬升、地形阻挡与雨带移动解释降水。不能把季风等同于单一风向，还要说明年际变化和局地地形可能造成的偏差。",
+      "keywords": ["季风", "海陆热力差异", "雨带", "水汽输送"],
+      "sourceIds": ["pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 42-63 页",
+          "note": "回到教材核对气压带风带、季风环流、锋面和降水形成。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-water-balance-evapotranspiration",
+      "courseId": "selective-1",
+      "title": "水量平衡与蒸散发判读",
+      "summary": "水量平衡题先列降水、蒸发蒸腾、径流、下渗和储存的收支，再判断气候、植被、土壤、地形和人类用水改变了哪一项。比较区域时要区分总量、季节分配和可利用水量，避免只用年降水量作结论。",
+      "keywords": ["水量平衡", "蒸散发", "径流", "储存"],
+      "sourceIds": ["pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 64-79 页",
+          "note": "回到教材核对陆地水体、海气作用与水分收支联系。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-glacier-permafrost-and-climate",
+      "courseId": "selective-1",
+      "title": "冰川、冻土与气候变化证据",
+      "summary": "冰川和冻土材料要把热量条件、海拔或纬度、地表物质、季节冻融和水文响应联系起来。评价变化时既要看冰雪储量、径流时序和地表稳定性，也要区分短期天气波动与长期气候趋势。",
+      "keywords": ["冰川", "冻土", "冻融", "气候变化"],
+      "sourceIds": ["pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 18-41 页",
+          "note": "回到教材核对地表形态、地质过程、热量条件和自然环境变化。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-tidal-current-estuary-dynamics",
+      "courseId": "selective-1",
+      "title": "涨落潮流与河口动力",
+      "summary": "潮流题要把海面升降与水平水流分开，沿涨潮流、落潮流、潮差和河口形态判断水体交换与泥沙输运。狭窄河口、海湾和海峡可能放大局地流速，港口与养殖布局还要考虑潮时、航道和污染扩散。",
+      "keywords": ["潮流", "涨潮流", "落潮流", "河口"],
+      "sourceIds": ["web-noaa-tides-education", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-tides-education",
+          "locator": "What are Tides?：long-period waves / flood and ebb currents",
+          "note": "NOAA 教育页用于核对潮汐波、涨落潮流、高潮低潮和潮差的关系；不复制原文。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 64-79 页",
+          "note": "回到教材核对海水运动、海岸过程和人类利用影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-regional-planning-land-use",
+      "courseId": "selective-2",
+      "title": "区域规划与土地用途协同",
+      "summary": "区域规划题先统一空间尺度和时间目标，再识别生态保护、农业、居住、交通、产业与公共服务之间的用途冲突。方案评价要同时考虑资源环境承载力、要素流动、居民收益和实施成本，不能只按单个项目的短期产值判断。",
+      "keywords": ["区域规划", "土地利用", "用途冲突", "承载力"],
+      "sourceIds": ["pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 2-17 页",
+          "note": "回到教材核对区域整体性、关联性、尺度与空间组织。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 79-102 页",
+          "note": "回到教材核对区域发展、产业融合与规划评价。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-remote-sensing-spectral-resolution",
+      "courseId": "selective-2",
+      "title": "遥感波段、像元与分辨率证据",
+      "summary": "遥感判读要先明确被测对象和任务，再区分光谱、空间、时间和辐射分辨率。波段差异可以帮助区分植被、水体、裸地或温度特征，但像元大小、混合像元、成像时间和分类方法会影响结论，不能把影像颜色直接当成地物名称。",
+      "keywords": ["遥感", "波段", "像元", "分辨率"],
+      "sourceIds": ["web-nasa-remote-sensing-earth-observatory", "github-geospatial-data-analysis-cn", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-remote-sensing-earth-observatory",
+          "locator": "Remote Sensing：spectral bands / pixels / resolution",
+          "note": "NASA 地球观测教程用于核对传感器、波段、像元和空间分辨率的区别；不复制原文或图片。"
+        },
+        {
+          "sourceId": "github-geospatial-data-analysis-cn",
+          "locator": "README：vector vs raster data / 04-more-on-visualization.ipynb",
+          "note": "GitHub 教程用于交叉核对栅格表达、地图可视化和空间数据处理边界；不复制 notebook 或代码。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 1-10 页",
+          "note": "回到教材核对地理信息技术的任务匹配和区域证据使用。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-water-security-ecological-flow",
+      "courseId": "selective-3",
+      "title": "水安全、用水结构与生态流量",
+      "summary": "水安全题要把总量、时序、空间、水质和供水可靠性分开，再比较生活、农业、工业、生态和应急用水的优先级。工程调配不能只写增加供水，还要说明下游生态流量、区域公平、污染风险和长期维护成本。",
+      "keywords": ["水安全", "生态流量", "用水结构", "供水可靠性"],
+      "sourceIds": ["pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 2-21 页",
+          "note": "回到教材核对自然资源、资源安全、供需约束和生态保护。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-biodiversity-connectivity-conservation",
+      "courseId": "selective-3",
+      "title": "生物多样性、栖息地连通与保护",
+      "summary": "生物多样性保护要同时看物种、遗传和生态系统层次，沿栖息地破碎化、廊道阻断、外来干扰和环境梯度判断风险。保护方案应结合分区管控、生态廊道、恢复治理、社区收益与长期监测，而不是只扩大单个保护地面积。",
+      "keywords": ["生物多样性", "栖息地", "生态廊道", "保护地"],
+      "sourceIds": ["pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 2-21 页",
+          "note": "回到教材核对生态系统服务、资源环境承载力和保护利用关系。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 58-113 页",
+          "note": "回到教材核对环境安全、生态保护与治理协同。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-carbon-budget-low-carbon-transition",
+      "courseId": "selective-3",
+      "title": "碳收支、碳汇与低碳转型",
+      "summary": "碳排放材料要先区分能源、土地利用、工业过程和生态系统等来源，再判断森林、土壤、湿地、海洋与技术设施的碳汇作用。低碳转型评价要同时看减排量、供能稳定性、生命周期成本、区域就业和生态协同，避免只比较单一能源的名义排放。",
+      "keywords": ["碳收支", "碳汇", "低碳转型", "生命周期"],
+      "sourceIds": ["pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 58-113 页",
+          "note": "回到教材核对气候变化、生态系统服务、资源安全与生态文明。"
+        }
+      ],
+      "licenseStatus": "authored-summary",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-ocean-acidification-food-security",
+      "courseId": "selective-3",
+      "title": "海洋酸化、钙化生物与沿海食物安全",
+      "summary": "海洋酸化材料要沿大气二氧化碳增加、海洋吸收、pH下降和碳酸根减少建立过程链，再判断贝类、珊瑚、浮游生物、渔业和沿海生计的脆弱环节。治理应把减排、监测、生态保护、养殖调整和食物系统适应结合起来。",
+      "keywords": ["海洋酸化", "钙化生物", "食物安全", "沿海生计"],
+      "sourceIds": ["web-noaa-ocean-acidification", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-ocean-acidification",
+          "locator": "What is Ocean Acidification?：pH / carbon dioxide / carbonate ions",
+          "note": "NOAA 事实页用于核对二氧化碳吸收、pH、碳酸根和钙化生物影响；不复制原文或视频。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 58-82 页",
+          "note": "回到教材核对气候变化、海洋生态、环境安全与适应治理。"
         }
       ],
       "licenseStatus": "citation-only",
