@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.13",
+  "version": "geo-2026.08.22.14",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -812,6 +812,82 @@
       "url": "https://www.worldbank.org/en/topic/disasterriskmanagement",
       "accessedAt": "2026-08-22",
       "licenseNote": "世界银行公共政策与知识页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制报告、图表或案例文字。"
+    },
+    {
+      "id": "web-noaa-climate-at-a-glance",
+      "title": "NOAA NCEI：Climate at a Glance 全球气候时间序列",
+      "publisher": "National Centers for Environmental Information, NOAA",
+      "editionNote": "公开全球气候时间序列入口；访问日期 2026-08-22；用于核对气候指数、时间序列、异常值、基准期与区域比较的指标边界。",
+      "url": "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NOAA NCEI 公共气候数据入口；仅作引用与指标口径核对，公开层发布原创高中地理方法，不复制数据表、图表或页面内容。"
+    },
+    {
+      "id": "web-nasa-climate-global-temperature",
+      "title": "NASA Climate：Global Temperature",
+      "publisher": "NASA Climate",
+      "editionNote": "公开全球温度变化专题页；访问日期 2026-08-22；用于核对温度异常、长期趋势、观测资料与气候系统能量变化的联系。",
+      "url": "https://climate.nasa.gov/vital-signs/global-temperature/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NASA 公共气候科学页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、图表、数据或页面版式。"
+    },
+    {
+      "id": "web-fao-food-systems",
+      "title": "FAO：Food Systems 食物系统",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "editionNote": "公开食物系统专题入口；访问日期 2026-08-22；用于核对生产、加工、运输、消费、营养、资源环境和韧性之间的系统联系。",
+      "url": "https://www.fao.org/food-systems/en/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "FAO 公共食物系统与政策教育页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制报告、图表、案例或页面文字。"
+    },
+    {
+      "id": "web-fao-faostat",
+      "title": "FAOSTAT：农业、粮食与资源环境统计",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "editionNote": "公开统计数据库入口；访问日期 2026-08-22；用于核对农业、土地、水、人口与粮食指标的定义、时间序列和空间单元。",
+      "url": "https://www.fao.org/faostat/en/#data",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "FAO 公共统计数据库入口；仅作指标定义与统计口径核对，公开层发布原创高中地理方法，不复制数据表、图表或数据库内容。"
+    },
+    {
+      "id": "github-geocompr",
+      "title": "Geocomputation with R：开放地理计算教材",
+      "publisher": "geocompx/geocompr（GitHub）",
+      "editionNote": "公开仓库提交 `8af05b03088b99c9415ae61b1c46be2b0915a03a`；访问日期 2026-08-22；以开放教材方式组织矢量、栅格、空间关系、可视化与可复现地理计算。",
+      "url": "https://github.com/geocompx/geocompr",
+      "commitSha": "8af05b03088b99c9415ae61b1c46be2b0915a03a",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库及其子资源按原仓库声明处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制教材章节、代码、图表或数据。"
+    },
+    {
+      "id": "github-geo-python-course",
+      "title": "Geo-Python：开放地理编程课程",
+      "publisher": "geo-python/site（GitHub）",
+      "editionNote": "公开仓库提交 `760ec36314cbaf5f7257feee23281b2eece261e7`；访问日期 2026-08-22；课程材料覆盖地理数据、坐标、空间分析、可视化和计算实验的组织入口。",
+      "url": "https://github.com/geo-python/site",
+      "commitSha": "760ec36314cbaf5f7257feee23281b2eece261e7",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库课程材料按原仓库声明处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制课文、代码、图表或数据。"
+    },
+    {
+      "id": "github-geemap",
+      "title": "geemap：Google Earth Engine 地理空间分析工具",
+      "publisher": "giswqs/geemap（GitHub）",
+      "editionNote": "公开仓库提交 `32cd563d38089d344d91accc4273900d02777ac6`；访问日期 2026-08-22；提供遥感、地理数据、交互地图和 Google Earth Engine 分析的开源工具入口。",
+      "url": "https://github.com/giswqs/geemap",
+      "commitSha": "32cd563d38089d344d91accc4273900d02777ac6",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库代码与示例按原仓库声明处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制代码、图件、数据或教程正文。"
+    },
+    {
+      "id": "github-leafmap",
+      "title": "leafmap：交互式地理地图与图层分析",
+      "publisher": "giswqs/leafmap（GitHub）",
+      "editionNote": "公开仓库提交 `18df7ee48cb27a194d89568c389a3f98443b8e8b`；访问日期 2026-08-22；提供交互式地图、栅格矢量图层和空间探索的开源方法入口。",
+      "url": "https://github.com/giswqs/leafmap",
+      "commitSha": "18df7ee48cb27a194d89568c389a3f98443b8e8b",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库代码与示例按原仓库声明处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制代码、图件、数据或教程正文。"
     }
   ],
   "items": [
@@ -5455,6 +5531,341 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：环境安全、灾害风险、气候适应与国家安全章节",
           "note": "回到教材核对环境风险、适应措施、资源公平和生态文明治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-climate-observation-scale",
+      "courseId": "compulsory-1",
+      "title": "气候观测、时间序列与空间尺度",
+      "summary": "气候资料题先确认观测变量、基准期、时间分辨率和空间单元，再判断异常值、趋势或年际波动。站点记录、区域平均和全球序列回答的问题不同，读图时要把数据覆盖范围与自然过程尺度对应起来，避免把短期天气事件当作长期气候趋势。",
+      "keywords": ["气候观测", "时间序列", "基准期", "空间尺度"],
+      "sourceIds": ["web-noaa-climate-at-a-glance", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-climate-at-a-glance",
+          "locator": "NOAA Climate at a Glance：pages/global/time-series / climate variability / data scale",
+          "note": "NOAA NCEI 时间序列入口用于交叉核对气候指数、异常和时间空间尺度的表达边界；不复制图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：天气与气候、气候要素和自然地理过程章节",
+          "note": "回到教材核对天气与气候的时间尺度、气候要素和区域差异。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-global-temperature-process-chain",
+      "courseId": "compulsory-1",
+      "title": "全球温度变化与能量过程链",
+      "summary": "全球温度变化材料要从太阳辐射、地表吸收、大气长波辐射、海陆热容量和水循环等环节解释，再区分观测到的温度变化与可能机制。区域温度并不完全同步，分析时还要考虑纬度、海陆位置、环流和下垫面差异，不能把全球平均直接套到局地。",
+      "keywords": ["全球温度", "能量过程", "海陆热容量", "区域差异"],
+      "sourceIds": ["web-nasa-climate-global-temperature", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-climate-global-temperature",
+          "locator": "NASA Climate：Climate / global temperature / time series / observations",
+          "note": "NASA 气候专题用于交叉核对全球温度趋势、观测证据和气候系统解释的边界；不复制图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：大气受热、海陆热力差异和水循环章节",
+          "note": "回到教材核对能量收支、海陆差异和自然地理要素之间的传递链。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-food-system-natural-base",
+      "courseId": "compulsory-1",
+      "title": "食物系统的自然基础与环境反馈",
+      "summary": "农业和食物系统题不能只写耕地或热量条件，还要把水资源、土壤、气候、生态系统、灾害和人类管理放在同一链条中。生产扩大可能带来供给，也可能增加水土压力、污染和生物多样性风险，评价时要说明自然基础如何被利用、反馈和修复。",
+      "keywords": ["食物系统", "自然基础", "水土资源", "环境反馈"],
+      "sourceIds": ["web-fao-food-systems", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-food-systems",
+          "locator": "FAO Food Systems：pages/food-systems / land-water-energy / environmental feedback",
+          "note": "FAO 食物系统专题用于交叉核对生产与资源环境之间的系统联系；不复制报告、图表或案例。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：土壤、水循环、生态系统和自然环境整体性章节",
+          "note": "回到教材核对水土资源、生态过程和人类活动的自然环境反馈。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-food-system-value-chain",
+      "courseId": "compulsory-2",
+      "title": "食物系统价值链与农业地域联系",
+      "summary": "农业区位和产业链题要把生产、加工、储运、批发、零售与消费环节拆开，再比较各环节对原料、市场、冷链、交通、技术和劳动力的要求。区域发展评价不能只看产量，还要看价值增值、就业、粮食安全、环境成本与抗风险能力。",
+      "keywords": ["食物系统", "农业价值链", "冷链运输", "区域联系"],
+      "sourceIds": ["web-fao-food-systems", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-food-systems",
+          "locator": "FAO Food Systems：pages/food-systems / production-processing-consumption / resilience",
+          "note": "FAO 食物系统专题用于交叉核对农业生产、加工、流通和消费的链条关系；不复制案例或图表。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：农业区位、工业区位、交通运输与产业联系章节",
+          "note": "回到教材核对自然和社会经济区位、产业分工及区域联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-faostat-indicator-comparison",
+      "courseId": "compulsory-2",
+      "title": "农业统计指标与区域比较口径",
+      "summary": "农业和人口统计图表题先查清指标是总量、强度、比率还是人均值，再统一年份、行政边界、统计对象和单位。产量上升不一定代表效率提高，农业用地增加也不一定代表生态改善，区域比较要把指标定义与区位条件、技术和市场联系起来。",
+      "keywords": ["农业统计", "指标口径", "区域比较", "人均值"],
+      "sourceIds": ["web-fao-faostat", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-faostat",
+          "locator": "FAOSTAT：data/ definitions / time series / geographic units",
+          "note": "FAOSTAT 入口用于交叉核对农业统计指标、时间序列和空间单元；不复制数据库表或图表。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：农业地域类型、人口和区域比较章节",
+          "note": "回到教材核对农业生产条件、人口需求和区域比较的解释边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-open-geospatial-map-workflow",
+      "courseId": "compulsory-2",
+      "title": "开放地理数据与专题地图工作流",
+      "summary": "专题地图题或项目题可按“问题—数据—空间单元—表达—核验”组织。开放地理课程适合训练坐标、属性表、图层叠加和可视化，但读图时仍要核对投影、比例尺、统计口径和数据时间，不能把地图符号直接当作因果关系。",
+      "keywords": ["开放地理数据", "专题地图", "图层叠加", "统计口径"],
+      "sourceIds": ["github-geo-python-course", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-geo-python-course",
+          "locator": "Geo-Python README / data / spatial analysis / visualization",
+          "note": "Geo-Python 课程仓库用于交叉核对地理数据、空间分析和可视化的学习组织；不复制课文或代码。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：地图表达、人口产业分布和区域联系章节",
+          "note": "回到教材核对人口、产业、交通和人地关系的地图证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-climate-time-series-variability",
+      "courseId": "selective-1",
+      "title": "气候时间序列、变率与异常识别",
+      "summary": "气候时间序列分析先区分平均状态、趋势、周期、年际变率和极端异常，再检查基准期、平滑方法和缺测情况。不同时间尺度可能得到不同结论，解释温度或降水变化时还要回到太阳辐射、环流、海陆位置和下垫面寻找机制证据。",
+      "keywords": ["气候时间序列", "气候变率", "异常识别", "基准期"],
+      "sourceIds": ["web-noaa-climate-at-a-glance", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-climate-at-a-glance",
+          "locator": "NOAA Climate at a Glance：pages/global/time-series / anomalies / climate variability",
+          "note": "NOAA NCEI 时间序列入口用于交叉核对气候平均、异常和变率的证据层级；不复制图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：气候系统、大气环流和气候变化章节",
+          "note": "回到教材核对气候要素、环流机制和时间尺度。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-temperature-anomaly-energy-balance",
+      "courseId": "selective-1",
+      "title": "温度异常、辐射收支与气候反馈",
+      "summary": "温度异常题要先说明异常相对于什么基准，再沿辐射收支、海洋热容量、水汽、冰雪反照率和大气环流分析反馈。全球平均异常是综合指标，不能直接代替某地实测气温；材料若给出多种证据，应区分相关现象与机制证据。",
+      "keywords": ["温度异常", "辐射收支", "反照率", "气候反馈"],
+      "sourceIds": ["web-nasa-climate-global-temperature", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-climate-global-temperature",
+          "locator": "NASA Climate：Climate / global temperature / observations / time series",
+          "note": "NASA 全球温度专题用于交叉核对温度异常、长期趋势和观测证据；不复制原始图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：太阳辐射、能量收支、海气作用和气候反馈章节",
+          "note": "回到教材核对辐射收支、海气相互作用和自然环境反馈。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-geocomputation-raster-vector-evidence",
+      "courseId": "selective-1",
+      "title": "栅格、矢量与自然过程证据",
+      "summary": "自然地理空间数据题要先判断现象适合用栅格还是矢量表达，再匹配分辨率、邻域、叠加或距离分析。栅格像元适合连续的温度、高程和植被场，矢量适合河流、断层、行政界线和观测点；模型结果仍要回到地理过程和误差范围核验。",
+      "keywords": ["栅格", "矢量", "空间分析", "分辨率"],
+      "sourceIds": ["github-geocompr", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geocompr",
+          "locator": "geocompr README / raster / vector / spatial analysis",
+          "note": "Geocomputation with R 开放教材用于交叉核对栅格、矢量和空间分析的概念组织；不复制章节、代码或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地形、气候、水体和自然环境整体性章节",
+          "note": "回到教材核对连续自然场、线状地理事物和过程证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-geopython-reproducible-analysis",
+      "courseId": "selective-2",
+      "title": "Geo-Python 与区域分析的可复现流程",
+      "summary": "区域分析项目可按数据读取、坐标统一、空间筛选、指标计算、地图表达和结果复核组织，并记录数据版本与参数。可复现流程有助于发现区域边界、投影、缺测和单位转换造成的误差，但计算输出仍需结合区位、联系和区域发展机制解释。",
+      "keywords": ["Geo-Python", "可复现分析", "坐标系统", "区域指标"],
+      "sourceIds": ["github-geo-python-course", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-geo-python-course",
+          "locator": "Geo-Python README / data / spatial analysis / reproducible workflow",
+          "note": "Geo-Python 课程仓库用于交叉核对地理计算流程、空间数据和可复现记录的组织方式；不复制课程正文或代码。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域分析、区域联系与区域规划章节",
+          "note": "回到教材核对区域边界、尺度、要素联系和规划评价。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-geemap-remote-sensing-workflow",
+      "courseId": "selective-2",
+      "title": "geemap、遥感图层与区域变化监测",
+      "summary": "遥感区域变化题要先明确观测对象、影像日期、波段或指数，再比较土地覆盖、植被、水体和灾害前后的空间差异。交互式工具可以帮助叠加图层和检查样本，但仍要披露云量、分辨率、分类误差和时间错位，不能把可视化结果直接当作因果证明。",
+      "keywords": ["geemap", "遥感", "土地覆盖", "变化监测"],
+      "sourceIds": ["github-geemap", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-geemap",
+          "locator": "geemap README / Google Earth Engine / remote sensing / map layers",
+          "note": "geemap 仓库用于交叉核对遥感图层、Google Earth Engine 和交互式变化分析的方法入口；不复制代码、图件或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：遥感、区域变化和土地利用规划章节",
+          "note": "回到教材核对遥感证据、区域变化和规划反馈。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-leafmap-interactive-layer-scale",
+      "courseId": "selective-2",
+      "title": "交互式地图、图层尺度与区域比较",
+      "summary": "交互式地图适合探索图层、缩放和空间关系，但不同缩放级别可能改变概括程度和可见对象。区域比较时要固定地图投影、年份、图层定义和统计单元，再判断位置、分布、联系与差异，避免把地图交互的视觉变化误认为现实变化。",
+      "keywords": ["交互式地图", "图层尺度", "区域比较", "地图投影"],
+      "sourceIds": ["github-leafmap", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-leafmap",
+          "locator": "leafmap README / interactive maps / layers / scale",
+          "note": "leafmap 仓库用于交叉核对交互式地图、图层和空间探索的学习入口；不复制代码、图件或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：地图表达、区域比较和空间尺度章节",
+          "note": "回到教材核对比例尺、地图表达、区域差异和尺度效应。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-food-systems-resource-resilience",
+      "courseId": "selective-3",
+      "title": "食物系统、资源安全与韧性",
+      "summary": "粮食安全评价要把耕地、水、能源、种子、交通、储备、贸易、营养和生态约束放在同一食物系统中分析。单纯提高产量可能增加资源消耗或供应链脆弱性，韧性措施应同时覆盖多元供给、减损、储运、生态保护和风险应急。",
+      "keywords": ["食物系统", "粮食安全", "资源韧性", "供应链"],
+      "sourceIds": ["web-fao-food-systems", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-food-systems",
+          "locator": "FAO Food Systems：pages/food-systems / food security / resource resilience",
+          "note": "FAO 食物系统专题用于交叉核对粮食、资源、营养和供应链韧性的系统关系；不复制报告、图表或案例。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：耕地、粮食安全、资源环境和国家安全章节",
+          "note": "回到教材核对粮食安全、资源约束、生态保护和风险治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-faostat-definition-time-series",
+      "courseId": "selective-3",
+      "title": "FAOSTAT 指标定义、时间序列与安全判断",
+      "summary": "资源环境安全图表题要先核对统计指标的定义、单位、覆盖范围、年份和是否经过标准化，再判断资源压力或治理成效。跨国或跨区域比较时，行政边界、人口基数、生产口径和数据缺失都可能改变结论，不能只按数值大小规律作答。",
+      "keywords": ["FAOSTAT", "指标定义", "时间序列", "资源安全"],
+      "sourceIds": ["web-fao-faostat", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-faostat",
+          "locator": "FAOSTAT：data/ definitions / time series / resource and food indicators",
+          "note": "FAOSTAT 入口用于交叉核对资源、农业和粮食指标的定义与时间序列；不复制数据库数据或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境指标、粮食安全和国家安全章节",
+          "note": "回到教材核对资源压力、指标解释、承载边界和安全治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geospatial-reproducibility-attribution",
+      "courseId": "selective-3",
+      "title": "资源环境地图的可复现性与数据归因",
+      "summary": "资源环境地图或遥感项目要记录数据来源、版本、空间范围、指标定义、处理步骤和许可归因，再判断结果能否支持环境安全结论。可复现并不等于绝对正确，仍需检查分辨率、分类误差、时间错位和尺度效应，并把不确定性写入评价。",
+      "keywords": ["可复现性", "数据归因", "环境地图", "不确定性"],
+      "sourceIds": ["github-geocompr", "github-leafmap", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-geocompr",
+          "locator": "geocompr README / reproducible workflow / raster / vector",
+          "note": "Geocomputation with R 开放教材用于交叉核对空间数据处理、可复现工作流和栅格矢量边界；不复制章节、代码或图件。"
+        },
+        {
+          "sourceId": "github-leafmap",
+          "locator": "leafmap README / interactive maps / layers / attribution",
+          "note": "leafmap 仓库用于交叉核对图层展示、空间探索和数据归因的实现入口；不复制代码、图件或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境地图、环境安全与国家安全章节",
+          "note": "回到教材核对资源环境证据、环境风险和安全评价边界。"
         }
       ],
       "licenseStatus": "citation-only",

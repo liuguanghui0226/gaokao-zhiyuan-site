@@ -9,56 +9,60 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-noaa-climate-enso": {
-    url: "https://www.climate.gov/enso",
+  "web-noaa-climate-at-a-glance": {
+    url: "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series",
     accessedAt: "2026-08-22",
   },
-  "web-eia-energy-explained": {
-    url: "https://www.eia.gov/energyexplained/",
+  "web-nasa-climate-global-temperature": {
+    url: "https://climate.nasa.gov/vital-signs/global-temperature/",
     accessedAt: "2026-08-22",
   },
-  "web-fao-soil-portal": {
-    url: "https://www.fao.org/soils-portal/en/",
+  "web-fao-food-systems": {
+    url: "https://www.fao.org/food-systems/en/",
     accessedAt: "2026-08-22",
   },
-  "web-unesco-ocean-literacy": {
-    url: "https://oceanliteracy.unesco.org/",
+  "web-fao-faostat": {
+    url: "https://www.fao.org/faostat/en/#data",
     accessedAt: "2026-08-22",
   },
-  "web-bgs-discovering-geology": {
-    url: "https://www.bgs.ac.uk/discovering-geology/",
+  "github-geocompr": {
+    url: "https://github.com/geocompx/geocompr",
+    commitSha: "8af05b03088b99c9415ae61b1c46be2b0915a03a",
     accessedAt: "2026-08-22",
   },
-  "web-world-bank-urban-development": {
-    url: "https://www.worldbank.org/en/topic/urbandevelopment",
+  "github-geo-python-course": {
+    url: "https://github.com/geo-python/site",
+    commitSha: "760ec36314cbaf5f7257feee23281b2eece261e7",
     accessedAt: "2026-08-22",
   },
-  "web-world-bank-water": {
-    url: "https://www.worldbank.org/en/topic/water",
+  "github-geemap": {
+    url: "https://github.com/giswqs/geemap",
+    commitSha: "32cd563d38089d344d91accc4273900d02777ac6",
     accessedAt: "2026-08-22",
   },
-  "web-world-bank-disaster-risk": {
-    url: "https://www.worldbank.org/en/topic/disasterriskmanagement",
+  "github-leafmap": {
+    url: "https://github.com/giswqs/leafmap",
+    commitSha: "18df7ee48cb27a194d89568c389a3f98443b8e8b",
     accessedAt: "2026-08-22",
   },
 };
 
 const expectedItems = {
-  "geo-c1-enso-ocean-atmosphere-observation": "compulsory-1",
-  "geo-c1-soil-profile-carbon-and-water": "compulsory-1",
-  "geo-c1-geological-map-hazard-evidence": "compulsory-1",
-  "geo-c2-urban-development-and-service-equity": "compulsory-2",
-  "geo-c2-water-security-and-city-growth": "compulsory-2",
-  "geo-c2-energy-industry-spatial-chain": "compulsory-2",
-  "geo-s1-enso-seasonal-evidence": "selective-1",
-  "geo-s1-geology-process-and-hazard-scale": "selective-1",
-  "geo-s1-ocean-literacy-system-boundaries": "selective-1",
-  "geo-s2-urban-resilience-and-regional-planning": "selective-2",
-  "geo-s2-water-governance-and-cross-scale-evidence": "selective-2",
-  "geo-s2-disaster-risk-map-and-exposure": "selective-2",
-  "geo-s3-energy-transition-security-tradeoff": "selective-3",
-  "geo-s3-soil-carbon-and-land-security": "selective-3",
-  "geo-s3-disaster-risk-adaptation-capacity": "selective-3",
+  "geo-c1-climate-observation-scale": "compulsory-1",
+  "geo-c1-global-temperature-process-chain": "compulsory-1",
+  "geo-c1-food-system-natural-base": "compulsory-1",
+  "geo-c2-food-system-value-chain": "compulsory-2",
+  "geo-c2-faostat-indicator-comparison": "compulsory-2",
+  "geo-c2-open-geospatial-map-workflow": "compulsory-2",
+  "geo-s1-climate-time-series-variability": "selective-1",
+  "geo-s1-temperature-anomaly-energy-balance": "selective-1",
+  "geo-s1-geocomputation-raster-vector-evidence": "selective-1",
+  "geo-s2-geopython-reproducible-analysis": "selective-2",
+  "geo-s2-geemap-remote-sensing-workflow": "selective-2",
+  "geo-s2-leafmap-interactive-layer-scale": "selective-2",
+  "geo-s3-food-systems-resource-resilience": "selective-3",
+  "geo-s3-faostat-definition-time-series": "selective-3",
+  "geo-s3-geospatial-reproducibility-attribution": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.22.14");
@@ -67,16 +71,17 @@ assert.equal(payload.items.length, 230);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v13 source ${sourceId}`);
+  assert.ok(source, `missing v14 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
+  if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
   assert.match(source.licenseNote, /citation|原创|不复制|仅作/i);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v13 item ${itemId}`);
+  assert.ok(item, `missing v14 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

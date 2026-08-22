@@ -187,6 +187,8 @@ const tests = [
   "test-geography-next-source-batch-v3367.mjs",
   "test-geography-source-filter-clear-scope-v3368.mjs",
   "test-geography-next-source-batch-v3370.mjs",
+  "test-geography-course-filter-clear-scope-v3371.mjs",
+  "test-geography-next-source-batch-v3372.mjs",
   "test-recommendation-validation-v3362.mjs",
 ];
 

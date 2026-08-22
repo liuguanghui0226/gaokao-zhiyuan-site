@@ -311,6 +311,33 @@ const REQUIRED_V13_ITEMS = new Set([
   "geo-s3-soil-carbon-and-land-security",
   "geo-s3-disaster-risk-adaptation-capacity",
 ]);
+const REQUIRED_V14_SOURCES = new Set([
+  "web-noaa-climate-at-a-glance",
+  "web-nasa-climate-global-temperature",
+  "web-fao-food-systems",
+  "web-fao-faostat",
+  "github-geocompr",
+  "github-geo-python-course",
+  "github-geemap",
+  "github-leafmap",
+]);
+const REQUIRED_V14_ITEMS = new Set([
+  "geo-c1-climate-observation-scale",
+  "geo-c1-global-temperature-process-chain",
+  "geo-c1-food-system-natural-base",
+  "geo-c2-food-system-value-chain",
+  "geo-c2-faostat-indicator-comparison",
+  "geo-c2-open-geospatial-map-workflow",
+  "geo-s1-climate-time-series-variability",
+  "geo-s1-temperature-anomaly-energy-balance",
+  "geo-s1-geocomputation-raster-vector-evidence",
+  "geo-s2-geopython-reproducible-analysis",
+  "geo-s2-geemap-remote-sensing-workflow",
+  "geo-s2-leafmap-interactive-layer-scale",
+  "geo-s3-food-systems-resource-resilience",
+  "geo-s3-faostat-definition-time-series",
+  "geo-s3-geospatial-reproducibility-attribution",
+]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
   "geo-s1-time-zone-and-date-line",
@@ -359,6 +386,9 @@ for (const sourceId of REQUIRED_V12_SOURCES) {
 }
 for (const sourceId of REQUIRED_V13_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing v13 geography source ${sourceId}`);
+}
+for (const sourceId of REQUIRED_V14_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing v14 geography source ${sourceId}`);
 }
 for (const sourceId of REQUIRED_EXTERNAL_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing external geography source ${sourceId}`);
@@ -442,6 +472,9 @@ for (const itemId of REQUIRED_V12_ITEMS) {
 }
 for (const itemId of REQUIRED_V13_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing v13 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V14_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v14 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,

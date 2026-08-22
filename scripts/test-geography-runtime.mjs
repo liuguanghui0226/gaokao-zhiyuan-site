@@ -19,10 +19,10 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.22.13");
-assert.equal(site.sources.length, 88);
-assert.equal(site.items.length, 215);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 67);
+assert.equal(site.version, "geo-2026.08.22.14");
+assert.equal(site.sources.length, 96);
+assert.equal(site.items.length, 230);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 75);
 assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 21);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
@@ -74,6 +74,25 @@ for (const itemId of [
 ]) {
   assert.ok(site.items.some((item) => item.id === itemId), `missing v13 runtime item ${itemId}`);
 }
+for (const itemId of [
+  "geo-c1-climate-observation-scale",
+  "geo-c1-global-temperature-process-chain",
+  "geo-c1-food-system-natural-base",
+  "geo-c2-food-system-value-chain",
+  "geo-c2-faostat-indicator-comparison",
+  "geo-c2-open-geospatial-map-workflow",
+  "geo-s1-climate-time-series-variability",
+  "geo-s1-temperature-anomaly-energy-balance",
+  "geo-s1-geocomputation-raster-vector-evidence",
+  "geo-s2-geopython-reproducible-analysis",
+  "geo-s2-geemap-remote-sensing-workflow",
+  "geo-s2-leafmap-interactive-layer-scale",
+  "geo-s3-food-systems-resource-resilience",
+  "geo-s3-faostat-definition-time-series",
+  "geo-s3-geospatial-reproducibility-attribution",
+]) {
+  assert.ok(site.items.some((item) => item.id === itemId), `missing v14 runtime item ${itemId}`);
+}
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-noaa-tides-education"));
@@ -110,6 +129,18 @@ for (const sourceId of [
   "web-world-bank-disaster-risk",
 ]) {
   assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v13 runtime source ${sourceId}`);
+}
+for (const sourceId of [
+  "web-noaa-climate-at-a-glance",
+  "web-nasa-climate-global-temperature",
+  "web-fao-food-systems",
+  "web-fao-faostat",
+  "github-geocompr",
+  "github-geo-python-course",
+  "github-geemap",
+  "github-leafmap",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v14 runtime source ${sourceId}`);
 }
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 

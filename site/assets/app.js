@@ -3935,7 +3935,8 @@ function filteredSources() {
 
 function hasActiveFilters() {
   const geographySourceFilterActive = state.view === "sources" && state.geographySourceFilter !== "all";
-  return Boolean(state.query.trim() || state.discipline || state.domain || geographySourceFilterActive);
+  const geographyCourseFilterActive = state.view === "geography" && state.geographyCourse;
+  return Boolean(state.query.trim() || state.discipline || state.domain || geographySourceFilterActive || geographyCourseFilterActive);
 }
 
 function filterStatusText() {
@@ -3956,6 +3957,10 @@ function filterStatusText() {
   }
   if (state.view === "sources" && state.geographySourceFilter === "public") active.push("地理来源“公开链接”");
   if (state.view === "sources" && state.geographySourceFilter === "local") active.push("地理来源“本地/教材”");
+  if (state.view === "geography" && state.geographyCourse) {
+    const course = state.geographyData?.courses?.find((item) => item.id === state.geographyCourse);
+    active.push(`高中地理课程“${course?.name || state.geographyCourse}”`);
+  }
   if (!active.length) return "检索和筛选作用于资料库、专业门类和高中地理。";
   return `当前${active.join("、")}；结果作用于资料库、专业门类和高中地理。`;
 }
@@ -3973,6 +3978,7 @@ function clearSearchFilters() {
   state.discipline = "";
   state.domain = "";
   state.geographySourceFilter = "all";
+  state.geographyCourse = "";
   state.disciplineBrowse = "08";
   state.disciplineFamily = "";
   $("#searchInput").value = "";
@@ -4333,6 +4339,7 @@ function renderGeography() {
   $$('[data-geography-course]').forEach((button) => {
     button.addEventListener("click", () => {
       state.geographyCourse = button.dataset.geographyCourse || "";
+      syncClearFiltersControl();
       renderGeography();
     });
   });
