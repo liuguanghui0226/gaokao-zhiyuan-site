@@ -177,6 +177,7 @@ const tests = [
   "test-recommendation-draft-status-v3356.mjs",
   "test-geography-source-links-v3357.mjs",
   "test-geography-source-directory-v3358.mjs",
+  "test-geography-source-filter-v3360.mjs",
   "test-geography-next-source-batch-v3361.mjs",
 ];
 

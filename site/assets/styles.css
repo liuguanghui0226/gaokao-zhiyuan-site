@@ -337,6 +337,35 @@ select {
   font-weight: 800;
 }
 
+.geography-directory-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.geography-source-filter {
+  border: 1px solid #cbd7cf;
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: var(--ink);
+  background: #fff;
+  cursor: pointer;
+}
+
+.geography-source-filter:hover,
+.geography-source-filter:focus-visible,
+.geography-source-filter.active {
+  border-color: var(--leaf);
+  color: var(--leaf-dark);
+  background: #edf7f1;
+  outline: none;
+}
+
+.geography-source-filter.active {
+  font-weight: 800;
+}
+
 .geography-card-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

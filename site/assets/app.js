@@ -3,6 +3,7 @@ const state = {
   provinceManifest: null,
   geographyData: null,
   geographyCourse: "",
+  geographySourceFilter: "all",
   loadedProvince: "",
   provinceShardCache: new Map(),
   view: "overview",
@@ -3896,7 +3897,7 @@ function filteredSources() {
 }
 
 function hasActiveFilters() {
-  return Boolean(state.query.trim() || state.discipline || state.domain);
+  return Boolean(state.query.trim() || state.discipline || state.domain || state.geographySourceFilter !== "all");
 }
 
 function filterStatusText() {
@@ -3915,6 +3916,8 @@ function filterStatusText() {
   } else if (state.domain) {
     active.push(`主题“${state.domain}”`);
   }
+  if (state.geographySourceFilter === "public") active.push("地理来源“公开链接”");
+  if (state.geographySourceFilter === "local") active.push("地理来源“本地/教材”");
   if (!active.length) return "检索和筛选作用于资料库、专业门类和高中地理。";
   return `当前${active.join("、")}；结果作用于资料库、专业门类和高中地理。`;
 }
@@ -3931,6 +3934,7 @@ function clearSearchFilters() {
   state.query = "";
   state.discipline = "";
   state.domain = "";
+  state.geographySourceFilter = "all";
   state.disciplineBrowse = "08";
   state.disciplineFamily = "";
   $("#searchInput").value = "";
@@ -4127,7 +4131,7 @@ function renderGeographySource(source) {
 
 function renderGeographySourceDirectory(data) {
   const query = normalizeText(state.query);
-  const sources = (data?.sources || []).filter((source) => {
+  const querySources = (data?.sources || []).filter((source) => {
     if (!query) return true;
     return normalizeText([
       source.title,
@@ -4136,7 +4140,18 @@ function renderGeographySourceDirectory(data) {
       source.licenseNote,
     ].join(" ")).includes(query);
   });
-  if (!sources.length) return "";
+  if (!querySources.length) return "";
+  const sourceFilter = ["all", "public", "local"].includes(state.geographySourceFilter)
+    ? state.geographySourceFilter
+    : "all";
+  const sourceCounts = {
+    all: querySources.length,
+    public: querySources.filter((source) => source?.url).length,
+    local: querySources.filter((source) => !source?.url).length,
+  };
+  const sources = querySources.filter((source) => (
+    sourceFilter === "all" || (sourceFilter === "public" ? source?.url : !source?.url)
+  ));
   const publicSourceCount = sources.filter((source) => source?.url).length;
   const localSourceCount = sources.length - publicSourceCount;
   const sourceSummary = [
@@ -4144,6 +4159,11 @@ function renderGeographySourceDirectory(data) {
     `${fmtNumber(publicSourceCount)} 个公开链接`,
     `${fmtNumber(localSourceCount)} 个本地/教材`,
   ].join(" · ");
+  const sourceFilterButtons = [
+    ["all", "全部来源"],
+    ["public", "公开链接"],
+    ["local", "本地/教材"],
+  ].map(([value, label]) => `<button class="geography-source-filter ${sourceFilter === value ? "active" : ""}" type="button" data-geography-source-filter="${value}" aria-pressed="${sourceFilter === value}">${label} · ${fmtNumber(sourceCounts[value])}</button>`).join("");
   const rows = sources.map((source) => {
     const title = esc(source?.title || source?.id || "未命名来源");
     const titleMarkup = source?.url
@@ -4168,11 +4188,22 @@ function renderGeographySourceDirectory(data) {
       <div>
         <h3>高中地理来源目录</h3>
         <p>集中查看地理摘要使用的教材、本地资料与公开网页；公开来源保留访问日期或固定提交版本。</p>
+        <div class="geography-directory-controls" role="group" aria-label="地理来源类型">${sourceFilterButtons}</div>
       </div>
       <span class="status">${sourceSummary}</span>
     </div>
-    <div class="geography-directory-list">${rows}</div>
+    <div class="geography-directory-list">${rows || `<div class="empty-state"><p>当前来源类型筛选没有匹配项。</p></div>`}</div>
   </section>`;
+}
+
+function bindGeographySourceFilterEvents() {
+  $$(".geography-source-filter").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.geographySourceFilter = button.dataset.geographySourceFilter || "all";
+      syncClearFiltersControl();
+      renderView("sources", { force: true });
+    });
+  });
 }
 
 function renderGeography() {
@@ -5142,6 +5173,7 @@ function renderSources() {
     ${sources.length ? `${sectionHead("资料库", `${fmtNumber(sources.length)} 条`)}<div class="source-list">${rows}</div>` : ""}
     ${geographyDirectory}
   `;
+  bindGeographySourceFilterEvents();
 }
 
 function renderView(view, { force = false } = {}) {
