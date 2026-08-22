@@ -19,10 +19,10 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.22.12");
-assert.equal(site.sources.length, 80);
-assert.equal(site.items.length, 200);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 59);
+assert.equal(site.version, "geo-2026.08.22.13");
+assert.equal(site.sources.length, 88);
+assert.equal(site.items.length, 215);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 67);
 assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 21);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
@@ -55,6 +55,25 @@ for (const itemId of [
 ]) {
   assert.ok(site.items.some((item) => item.id === itemId), `missing v12 runtime item ${itemId}`);
 }
+for (const itemId of [
+  "geo-c1-enso-ocean-atmosphere-observation",
+  "geo-c1-soil-profile-carbon-and-water",
+  "geo-c1-geological-map-hazard-evidence",
+  "geo-c2-urban-development-and-service-equity",
+  "geo-c2-water-security-and-city-growth",
+  "geo-c2-energy-industry-spatial-chain",
+  "geo-s1-enso-seasonal-evidence",
+  "geo-s1-geology-process-and-hazard-scale",
+  "geo-s1-ocean-literacy-system-boundaries",
+  "geo-s2-urban-resilience-and-regional-planning",
+  "geo-s2-water-governance-and-cross-scale-evidence",
+  "geo-s2-disaster-risk-map-and-exposure",
+  "geo-s3-energy-transition-security-tradeoff",
+  "geo-s3-soil-carbon-and-land-security",
+  "geo-s3-disaster-risk-adaptation-capacity",
+]) {
+  assert.ok(site.items.some((item) => item.id === itemId), `missing v13 runtime item ${itemId}`);
+}
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-noaa-tides-education"));
@@ -79,6 +98,18 @@ for (const sourceId of [
   "web-owid-population-growth",
 ]) {
   assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v12 runtime source ${sourceId}`);
+}
+for (const sourceId of [
+  "web-noaa-climate-enso",
+  "web-eia-energy-explained",
+  "web-fao-soil-portal",
+  "web-unesco-ocean-literacy",
+  "web-bgs-discovering-geology",
+  "web-world-bank-urban-development",
+  "web-world-bank-water",
+  "web-world-bank-disaster-risk",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v13 runtime source ${sourceId}`);
 }
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 

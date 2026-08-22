@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.12",
+  "version": "geo-2026.08.22.13",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -740,6 +740,78 @@
       "url": "https://ourworldindata.org/population-growth",
       "accessedAt": "2026-08-22",
       "licenseNote": "Our World in Data 按其开放许可与数据归因说明处理；本项目仅作引用与概念核对，发布原创高中地理方法，不复制图表、数据或页面文字。"
+    },
+    {
+      "id": "web-noaa-climate-enso",
+      "title": "NOAA Climate.gov：ENSO",
+      "publisher": "National Oceanic and Atmospheric Administration",
+      "editionNote": "公开 ENSO 专题入口；访问日期 2026-08-22；用于核对海温、信风、海气相互作用、季节预测与区域气候异常的联系。",
+      "url": "https://www.climate.gov/enso",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NOAA 公共气候教育与信息页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、图表或预测产品。"
+    },
+    {
+      "id": "web-eia-energy-explained",
+      "title": "U.S. EIA：Energy Explained",
+      "publisher": "U.S. Energy Information Administration",
+      "editionNote": "公开能源知识入口；访问日期 2026-08-22；用于核对能源来源、转换、消费结构、效率与能源安全的指标边界。",
+      "url": "https://www.eia.gov/energyexplained/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "美国能源信息署公共教育页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、图表或数据。"
+    },
+    {
+      "id": "web-fao-soil-portal",
+      "title": "FAO Soil Portal：土壤资源与土壤健康",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "editionNote": "公开土壤专题入口；访问日期 2026-08-22；用于核对土壤功能、土壤有机质、退化风险、盐碱化与可持续土地管理。",
+      "url": "https://www.fao.org/soils-portal/en/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "FAO 公共土壤教育与政策页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、图片、报告或数据。"
+    },
+    {
+      "id": "web-unesco-ocean-literacy",
+      "title": "UNESCO：Ocean Literacy 海洋素养",
+      "publisher": "United Nations Educational, Scientific and Cultural Organization",
+      "editionNote": "公开海洋素养专题入口；访问日期 2026-08-22；用于核对海洋系统边界、海洋与人类相互作用、观测证据和海洋保护意识。",
+      "url": "https://oceanliteracy.unesco.org/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "UNESCO 公共教育页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制页面文字、图片或课程材料。"
+    },
+    {
+      "id": "web-bgs-discovering-geology",
+      "title": "British Geological Survey：Discovering Geology",
+      "publisher": "British Geological Survey",
+      "editionNote": "公开地学教育入口；访问日期 2026-08-22；用于核对岩石、地质构造、地质图、地质灾害与地质过程证据。",
+      "url": "https://www.bgs.ac.uk/discovering-geology/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "英国地质调查局公共地学教育页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、地图、图片或数据。"
+    },
+    {
+      "id": "web-world-bank-urban-development",
+      "title": "World Bank：Urban Development",
+      "publisher": "World Bank",
+      "editionNote": "公开城市发展专题入口；访问日期 2026-08-22；用于核对城镇化、城市服务、空间包容、基础设施与韧性之间的关系。",
+      "url": "https://www.worldbank.org/en/topic/urbandevelopment",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "世界银行公共政策与知识页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制报告、图表或案例文字。"
+    },
+    {
+      "id": "web-world-bank-water",
+      "title": "World Bank：Water",
+      "publisher": "World Bank",
+      "editionNote": "公开水资源专题入口；访问日期 2026-08-22；用于核对水安全、供水服务、水资源治理、气候风险与公平可及性。",
+      "url": "https://www.worldbank.org/en/topic/water",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "世界银行公共政策与知识页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制报告、图表或案例文字。"
+    },
+    {
+      "id": "web-world-bank-disaster-risk",
+      "title": "World Bank：Disaster Risk Management",
+      "publisher": "World Bank",
+      "editionNote": "公开灾害风险管理专题入口；访问日期 2026-08-22；用于核对灾害风险、暴露度、脆弱性、预警、适应能力与恢复重建。",
+      "url": "https://www.worldbank.org/en/topic/disasterriskmanagement",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "世界银行公共政策与知识页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制报告、图表或案例文字。"
     }
   ],
   "items": [
@@ -5053,6 +5125,336 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：资源环境承载、粮食安全与国家安全章节",
           "note": "回到教材核对人口、资源环境压力、承载边界和安全治理的评价框架。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-enso-ocean-atmosphere-observation",
+      "courseId": "compulsory-1",
+      "title": "ENSO 海气观测与自然过程证据",
+      "summary": "ENSO 材料题要把海表温度、信风、上升流、降水和气压变化放在同一条海气过程链中，再区分观测事实、统计相关和机制解释。判断区域影响时还要标明时间尺度与空间范围，不能把一次海温异常直接等同于所有地区的灾害结论。",
+      "keywords": ["ENSO", "海气相互作用", "上升流", "观测证据"],
+      "sourceIds": ["web-noaa-climate-enso", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-climate-enso",
+          "locator": "NOAA Climate.gov ENSO：海温、信风、海气相互作用与区域气候异常",
+          "note": "NOAA ENSO 专题用于交叉核对海气异常、观测证据和区域影响的表达边界；不复制预测产品或图表。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：大气、水体、洋流与自然环境整体性章节",
+          "note": "回到教材核对海气交换、自然要素联系和过程链的高中课程表达。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-soil-profile-carbon-and-water",
+      "courseId": "compulsory-1",
+      "title": "土壤剖面、碳储量与水分保持",
+      "summary": "土壤题先按剖面层次判断有机质、孔隙、质地和水分条件，再解释植被覆盖、耕作、侵蚀或压实如何改变入渗、蓄水和碳储存。比较土壤质量时要同时看肥力、抗侵蚀能力、生态功能与利用方式，不能只用颜色或有机质单项下结论。",
+      "keywords": ["土壤剖面", "土壤有机质", "入渗", "水分保持"],
+      "sourceIds": ["web-fao-soil-portal", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-soil-portal",
+          "locator": "FAO Soil Portal：soil functions / soil organic matter / degradation / sustainable soil management",
+          "note": "FAO 土壤专题用于交叉核对土壤功能、碳储存和退化风险的概念边界；不复制报告、图片或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：土壤、植被、下渗与地表过程章节",
+          "note": "回到教材核对成土因素、土壤剖面、植被覆盖和水循环的联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-geological-map-hazard-evidence",
+      "courseId": "compulsory-1",
+      "title": "地质图、岩性与地质灾害证据",
+      "summary": "地质图判读先识别图例、岩性、构造线和地层关系，再把坡度、断层、岩性差异与滑坡、崩塌或地震风险联系起来。材料中出现灾害点时要区分致灾过程、孕灾地质条件、暴露对象和防护能力，不能只按地名或颜色判断危险程度。",
+      "keywords": ["地质图", "岩性", "构造线", "地质灾害"],
+      "sourceIds": ["web-bgs-discovering-geology", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-bgs-discovering-geology",
+          "locator": "BGS Discovering Geology：pages/earth-hazards / pages/maps-and-resources / geological processes",
+          "note": "BGS 地学教育入口用于交叉核对岩性、地质图和灾害过程证据；不复制地图、图片或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：岩石、地貌、地质灾害与防灾减灾章节",
+          "note": "回到教材核对内外力作用、地貌形成和灾害风险链条。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urban-development-and-service-equity",
+      "courseId": "compulsory-2",
+      "title": "城市发展、公共服务与空间公平",
+      "summary": "城市发展评价要把人口集聚、土地利用、住房、交通、教育、医疗和就业放在同一空间尺度上，比较不同群体的服务可达性。城市扩张可能提高总量供给，也可能造成通勤距离、基础设施成本和公共服务不均衡，措施应同时关注效率、包容与长期财政能力。",
+      "keywords": ["城市发展", "公共服务", "空间公平", "可达性"],
+      "sourceIds": ["web-world-bank-urban-development", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-urban-development",
+          "locator": "World Bank Urban Development：pages/urban-development / Urbanization / infrastructure / inclusion",
+          "note": "世界银行城市发展专题用于交叉核对城市服务、空间包容和韧性评价维度；不复制报告或案例。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：城镇化、城市功能与城乡联系章节",
+          "note": "回到教材核对人口集聚、城市空间结构、服务功能和人地协调。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-water-security-and-city-growth",
+      "courseId": "compulsory-2",
+      "title": "城市增长与水安全约束",
+      "summary": "城市扩张题要把供水来源、取水距离、管网损耗、污水处理、生态用水和极端干旱风险一起分析。人口和产业增长可能增加需求，也可能通过节水、再生水和分区管控降低压力；评价方案要区分增加供给、减少需求和提高系统韧性三类作用。",
+      "keywords": ["城市增长", "水安全", "供水系统", "再生水"],
+      "sourceIds": ["web-world-bank-water", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-water",
+          "locator": "World Bank Water：pages/water / water scarcity / water services / governance",
+          "note": "世界银行水资源专题用于交叉核对供水服务、水安全和治理能力的评价边界；不复制报告或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：城市、产业、资源利用与人地协调章节",
+          "note": "回到教材核对城市功能、资源约束、产业布局和可持续发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-energy-industry-spatial-chain",
+      "courseId": "compulsory-2",
+      "title": "能源消费、产业布局与空间联系",
+      "summary": "能源产业区位题要先区分一次能源、二次能源、转换损耗和终端消费，再比较资源地、加工地、市场地与运输通道的关系。产业转移或能源结构变化可能改变成本、就业、污染和区域分工，回答时要把企业效率与区域长期发展分开评价。",
+      "keywords": ["能源消费", "产业布局", "能源转换", "区域分工"],
+      "sourceIds": ["web-eia-energy-explained", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-eia-energy-explained",
+          "locator": "EIA Energy Explained：pages/energy-explained / energy sources / energy use / efficiency",
+          "note": "EIA 能源知识入口用于交叉核对能源来源、转换、消费和效率的指标口径；不复制图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：工业区位、交通运输和产业地域联系章节",
+          "note": "回到教材核对资源、市场、交通、技术和环境约束下的产业布局。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-enso-seasonal-evidence",
+      "courseId": "selective-1",
+      "title": "ENSO、季节预测与区域气候证据",
+      "summary": "ENSO 综合题应先判断海温异常、信风变化和赤道上升流的方向，再说明它如何通过环流和水汽输送影响降水、气温或渔业。预测信息只能作为概率性证据，作答时要写清预测时段、区域差异和不确定性，不能把气候预测当成确定天气。",
+      "keywords": ["ENSO", "季节预测", "水汽输送", "不确定性"],
+      "sourceIds": ["web-noaa-climate-enso", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-climate-enso",
+          "locator": "NOAA Climate.gov ENSO：ENSO monitoring / outlook / teleconnection context",
+          "note": "NOAA ENSO 专题用于交叉核对监测、预测和区域影响之间的证据层级；不复制预测图或产品。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：海气作用、气候系统和大气环流章节",
+          "note": "回到教材核对海温、环流、水汽和区域气候之间的机制链。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-geology-process-and-hazard-scale",
+      "courseId": "selective-1",
+      "title": "地质过程、灾害尺度与证据强度",
+      "summary": "地质过程题要把板块运动、岩浆活动、风化侵蚀和地层变形放到对应时间尺度中，再判断证据能支持的是形成机制、历史事件还是当前风险。地质灾害评价还要区分局地触发因素与区域背景条件，不能用一次观测替代长期地质记录。",
+      "keywords": ["地质过程", "时间尺度", "灾害尺度", "证据强度"],
+      "sourceIds": ["web-bgs-discovering-geology", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-bgs-discovering-geology",
+          "locator": "BGS Discovering Geology：pages/geological-processes / earth hazards / maps and resources",
+          "note": "BGS 地学教育入口用于交叉核对地质过程、灾害和地图证据的尺度边界；不复制地质图或案例。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地球内部、地质构造、外力作用与灾害章节",
+          "note": "回到教材核对内外力作用、地貌演化和地质灾害判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-ocean-literacy-system-boundaries",
+      "courseId": "selective-1",
+      "title": "海洋系统边界与海洋观测素养",
+      "summary": "海洋材料题先明确研究对象是海水、海底、海岸、生物系统还是人类活动，再匹配温盐、海流、潮位、水色或生态观测证据。跨圈层解释时要指出海洋与大气、陆地、生物和社会之间的交换路径，并说明观测尺度与结论边界。",
+      "keywords": ["海洋系统", "海洋观测", "圈层联系", "尺度"],
+      "sourceIds": ["web-unesco-ocean-literacy", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-unesco-ocean-literacy",
+          "locator": "UNESCO Ocean Literacy：pages/ocean-literacy / ocean system / observation and stewardship",
+          "note": "UNESCO 海洋素养入口用于交叉核对海洋系统边界、人与海洋联系和科学证据意识；不复制课程材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：海洋水体、洋流、海气作用与海岸过程章节",
+          "note": "回到教材核对海洋要素、海气相互作用和自然环境整体性。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-urban-resilience-and-regional-planning",
+      "courseId": "selective-2",
+      "title": "城市韧性与区域规划协同",
+      "summary": "区域规划题要把城市增长、基础设施、住房、交通、生态空间和灾害风险放在同一网络中评价。韧性不是单纯增加工程强度，还包括冗余联系、公共服务可达性、社区参与、应急治理和恢复能力；不同尺度的规划目标必须相互衔接。",
+      "keywords": ["城市韧性", "区域规划", "基础设施", "空间协同"],
+      "sourceIds": ["web-world-bank-urban-development", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-urban-development",
+          "locator": "World Bank Urban Development：pages/urban-development / resilient cities / inclusive planning",
+          "note": "世界银行城市发展专题用于交叉核对韧性、包容和基础设施协同的规划评价维度；不复制项目案例。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域规划、城市体系与区域协调发展章节",
+          "note": "回到教材核对区域尺度、功能联系、规划协同和发展权衡。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-water-governance-and-cross-scale-evidence",
+      "courseId": "selective-2",
+      "title": "水治理、流域尺度与跨区域证据",
+      "summary": "水治理题先确定流域、行政区、供水系统和生态单元的边界，再区分水量、水质、用水权和工程调度问题。跨区域比较时要说明上游下游、城市乡村和不同部门的利益传导，并用同一时间尺度和指标口径判断治理成效。",
+      "keywords": ["水治理", "流域尺度", "跨区域协调", "指标口径"],
+      "sourceIds": ["web-world-bank-water", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-water",
+          "locator": "World Bank Water：pages/water / water governance / water security / basin scale",
+          "note": "世界银行水资源专题用于交叉核对水治理、供水服务和跨尺度协调的分析入口；不复制报告或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：流域治理、资源调配与区域协调章节",
+          "note": "回到教材核对上下游外部性、资源跨区域调配和区域整体性。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-disaster-risk-map-and-exposure",
+      "courseId": "selective-2",
+      "title": "灾害风险地图、暴露度与区域规划",
+      "summary": "灾害风险地图不能只看危险等级，还要叠加人口、道路、学校、产业和防护设施判断暴露度与脆弱性。区域规划措施应分别降低致灾危险、减少暴露、提升应急能力或加快恢复，并核对地图年份、空间分辨率和统计单元。",
+      "keywords": ["灾害风险地图", "暴露度", "脆弱性", "区域规划"],
+      "sourceIds": ["web-world-bank-disaster-risk", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-disaster-risk",
+          "locator": "World Bank Disaster Risk Management：pages/disaster-risk / weather / exposure / vulnerability",
+          "note": "世界银行灾害风险专题用于交叉核对风险、暴露度、脆弱性和韧性措施的分析框架；不复制报告或地图。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域规划、空间治理与综合防灾章节",
+          "note": "回到教材核对区域差异、空间证据、规划措施和综合治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-energy-transition-security-tradeoff",
+      "courseId": "selective-3",
+      "title": "能源转型、能源安全与系统权衡",
+      "summary": "能源安全评价要同时看资源来源、转换效率、储能、输配网络、价格波动、关键矿产和生态代价。能源转型不等于简单替换一种能源，答题应区分供给稳定、技术成熟、空间适配和公平转型，并说明不同时间尺度下的风险变化。",
+      "keywords": ["能源转型", "能源安全", "转换效率", "公平转型"],
+      "sourceIds": ["web-eia-energy-explained", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-eia-energy-explained",
+          "locator": "EIA Energy Explained：pages/energy-explained / energy sources / electricity generation / efficiency",
+          "note": "EIA 能源入口用于交叉核对能源系统、转换效率和消费结构的基本口径；不复制数据或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：能源安全、资源利用与国家安全章节",
+          "note": "回到教材核对能源供需、运输通道、生态约束和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-soil-carbon-and-land-security",
+      "courseId": "selective-3",
+      "title": "土壤碳、土地安全与粮食生产",
+      "summary": "土地安全题要把土壤有机碳、肥力、侵蚀、盐碱化、保水能力和粮食产量放在同一系统中评价。增加短期产量的措施若消耗土壤碳、地下水或生物多样性，可能扩大长期风险；治理应同时关注土壤恢复、投入效率和农户收益。",
+      "keywords": ["土壤碳", "土地安全", "粮食生产", "盐碱化"],
+      "sourceIds": ["web-fao-soil-portal", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-soil-portal",
+          "locator": "FAO Soil Portal：pages/soil / soil organic carbon / soil health / salinity",
+          "note": "FAO 土壤专题用于交叉核对土壤碳、土壤健康和土地退化的安全边界；不复制数据、图片或报告。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：耕地保护、粮食安全、土壤与资源环境安全章节",
+          "note": "回到教材核对耕地质量、资源约束、土地退化和粮食安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-disaster-risk-adaptation-capacity",
+      "courseId": "selective-3",
+      "title": "灾害风险、适应能力与恢复公平",
+      "summary": "资源环境安全题要把灾害危险性、暴露度、脆弱性和适应能力分开，再判断监测预警、工程防护、保险、避险转移和恢复重建分别作用于哪一环。不同群体的资源、信息和基础设施条件不一样，评价治理成效时还要看风险是否被公平地降低。",
+      "keywords": ["灾害风险", "适应能力", "恢复重建", "风险公平"],
+      "sourceIds": ["web-world-bank-disaster-risk", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-disaster-risk",
+          "locator": "World Bank Disaster Risk Management：pages/disaster-risk / weather / preparedness / resilience",
+          "note": "世界银行灾害风险专题用于交叉核对适应能力、韧性和恢复治理的评价边界；不复制项目报告或案例。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：环境安全、灾害风险、气候适应与国家安全章节",
+          "note": "回到教材核对环境风险、适应措施、资源公平和生态文明治理。"
         }
       ],
       "licenseStatus": "citation-only",
