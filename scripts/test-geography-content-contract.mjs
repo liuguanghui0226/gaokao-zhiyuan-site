@@ -128,6 +128,10 @@ const REQUIRED_EXTERNAL_SOURCES = new Set([
   "github-sun-motion-visualization",
   "github-geowiki-high-school-geography",
   "github-k12-gis-resources",
+  "github-geography-viz-kit",
+  "github-interactive-geography-web-workflow",
+  "github-ocean-currents-map",
+  "github-geology-high-school-website",
 ]);
 const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-noaa-tides-education",
@@ -140,6 +144,13 @@ const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-noaa-jetstream-weather-school",
   "web-national-geographic-water-cycle",
   "web-nasa-world-of-change",
+  "web-noaa-national-hurricane-center",
+  "web-national-geographic-plate-tectonics",
+  "web-national-geographic-population-density",
+  "web-national-geographic-migration",
+  "web-national-geographic-urban-planning",
+  "web-ipcc-ar6-synthesis-report",
+  "web-world-bank-farming-agribusiness",
 ]);
 const REQUIRED_V3_ITEMS = new Set([
   "geo-c1-water-cycle-observation",
@@ -192,6 +203,24 @@ const REQUIRED_V5_ITEMS = new Set([
   "geo-s3-remote-sensing-environmental-change",
   "geo-s3-extreme-weather-adaptation-chain",
   "geo-s3-resource-environment-map-attribution",
+]);
+const REQUIRED_V7_ITEMS = new Set([
+  "geo-s1-three-cell-circulation-visual-model",
+  "geo-s1-day-length-heatmap-latitude",
+  "geo-s1-ocean-current-map-flow",
+  "geo-s1-karst-landform-evidence",
+  "geo-s2-geography-lesson-design-review",
+  "geo-c1-hurricane-formation-structure",
+  "geo-s3-hurricane-risk-coastal-preparedness",
+  "geo-c1-plate-boundary-landform-process",
+  "geo-c2-population-density-map-scale",
+  "geo-c2-migration-push-pull-network",
+  "geo-c2-urban-planning-land-use-infrastructure",
+  "geo-s3-climate-risk-adaptation-equity",
+  "geo-s2-climate-adaptation-pathways",
+  "geo-c2-agricultural-productivity-value-chain",
+  "geo-s3-agriculture-water-soil-security",
+  "geo-s2-agriculture-regional-resilience",
 ]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
@@ -270,7 +299,7 @@ for (const item of payload.items) {
     assert.equal(sourceIds.has(evidence.sourceId), true, `${item.id} evidence references unknown source`);
     assert.match(
       String(evidence.locator),
-      /第?\s*\d+\s*页|章节|教材|项目描述|README|data\/|pages\/|docs\/|ontology|RDF|geography\.html|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|Water Cycle|World of Change|JetStream|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming|sun-motion|SunMotion|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Climate change impacts|Urbanization|Water Use and Stress|weather|radar|groundwater/,
+      /第?\s*\d+\s*页|章节|教材|项目描述|README|data\/|pages\/|docs\/|gallery|ontology|RDF|geography\.html|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|Water Cycle|World of Change|JetStream|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming|sun-motion|SunMotion|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Hurricanes|National Hurricane Center|Climate change impacts|Urbanization|Urban Planning|Population Density|Plate Tectonics|Migration|IPCC|Farming and Agribusiness|Water Use and Stress|weather|radar|groundwater/,
       `${item.id} evidence locator must be a page or stable web/repository section`,
     );
     assert.equal(typeof evidence.note, "string");
@@ -306,6 +335,9 @@ for (const itemId of REQUIRED_V4_ITEMS) {
 }
 for (const itemId of REQUIRED_V5_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing v5 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V7_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v7 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,

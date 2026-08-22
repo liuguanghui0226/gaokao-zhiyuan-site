@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.9",
+  "version": "geo-2026.08.22.10",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -459,7 +459,7 @@
       "editionNote": "公开教育资源；访问日期 2026-08-22；围绕龙卷风形成条件、观测预警、天气安全与风险应对组织科普内容。",
       "url": "https://www.noaa.gov/education/resource-collections/weather-atmosphere/tornadoes",
       "accessedAt": "2026-08-22",
-      "licenseNote": "NOAA 公共教育页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、图片、图表或页面版式。"
+      "licenseNote": "NOAA 官方公共业务与教育页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、图片、图表或页面版式。"
     },
     {
       "id": "web-noaa-climate-change-impacts",
@@ -496,6 +496,109 @@
       "url": "https://education.nationalgeographic.org/resource/urbanization/",
       "accessedAt": "2026-08-22",
       "licenseNote": "National Geographic 教育页面受其版权与使用条款约束；本项目仅作引用与概念核对，发布原创高中地理方法，不复制文字、图片、互动内容或版式。"
+    },
+    {
+      "id": "github-geography-viz-kit",
+      "title": "地理与天文·3D交互教学工具集",
+      "publisher": "edu-ai-builders/geography-viz-kit（GitHub）",
+      "editionNote": "公开仓库提交 `b20d01c1739bc9a1aff14d1873da1f1d23b8ddbb`；访问日期 2026-08-22；README 列出面向高中地理的地球运动、大气环流、洋流与昼夜长短交互模块。",
+      "url": "https://github.com/edu-ai-builders/geography-viz-kit",
+      "commitSha": "b20d01c1739bc9a1aff14d1873da1f1d23b8ddbb",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明 MIT；本项目仅吸收高中地理模块主题与交互教学结构，发布原创方法摘要，不复制代码、模型、纹理或页面版式。"
+    },
+    {
+      "id": "github-interactive-geography-web-workflow",
+      "title": "初高中地理互动网页开发工作流",
+      "publisher": "Deledy/Interactive-Webpage-for-Geography-Teaching（GitHub）",
+      "editionNote": "公开仓库提交 `13eb4bafabe3abd5a383f38bae8a61dd2c321d51`；访问日期 2026-08-22；README 说明按课程、单课元数据、教学设计、交互实现与复习闭环组织地理网页。",
+      "url": "https://github.com/Deledy/Interactive-Webpage-for-Geography-Teaching",
+      "commitSha": "13eb4bafabe3abd5a383f38bae8a61dd2c321d51",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库未声明统一许可证；仅作高中地理课程工程化组织的 citation-only 研究来源，公开层发布原创方法摘要，不复制课程正文、资源、代码或页面版式。"
+    },
+    {
+      "id": "github-ocean-currents-map",
+      "title": "Ocean Currents & Marine Geography Visualization",
+      "publisher": "zzz081129/ocean-currents-map（GitHub）",
+      "editionNote": "公开仓库提交 `6990d88506cf91c81447f9360f7c029449435bda`；访问日期 2026-08-22；README 说明用互动地图展示主要洋流、海域名称与基础海洋地理知识。",
+      "url": "https://github.com/zzz081129/ocean-currents-map",
+      "commitSha": "6990d88506cf91c81447f9360f7c029449435bda",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明 MIT，并保留第三方地图组件许可说明；本项目仅作洋流地图读图方法交叉核对，不复制代码、地图、图片或页面内容。"
+    },
+    {
+      "id": "github-geology-high-school-website",
+      "title": "Ghist：高中生地质科普教育网站",
+      "publisher": "astaghitsa/ghist（GitHub）",
+      "editionNote": "公开仓库提交 `26c29961ef4cd3b2a4df05db5efe378a83ebb29e`；访问日期 2026-08-22；项目描述面向喜欢地质学的高中生，文件包含地球结构、喀斯特岩石与火山主题素材。",
+      "url": "https://github.com/astaghitsa/ghist",
+      "commitSha": "26c29961ef4cd3b2a4df05db5efe378a83ebb29e",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库未声明统一许可证；仅作地质教育主题与观察线索的 citation-only 研究来源，公开层发布原创高中地理方法摘要，不复制图片、视频、代码或页面内容。"
+    },
+    {
+      "id": "web-noaa-national-hurricane-center",
+      "title": "NOAA National Hurricane Center：Tropical Cyclone Forecasts and Hazards",
+      "publisher": "NOAA National Hurricane Center",
+      "editionNote": "公开官方业务与教育入口；访问日期 2026-08-22；用于核对热带气旋预报、风暴潮、危险信息与沿海准备。",
+      "url": "https://www.nhc.noaa.gov/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NOAA 公共教育页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、图片、图表或页面版式。"
+    },
+    {
+      "id": "web-national-geographic-plate-tectonics",
+      "title": "National Geographic Education：Plate Tectonics",
+      "publisher": "National Geographic Society",
+      "editionNote": "公开教育条目；访问日期 2026-08-22；用于核对板块边界、地震、火山与地表形态变化的基础联系。",
+      "url": "https://education.nationalgeographic.org/resource/plate-tectonics/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "National Geographic 教育页面受其版权与使用条款约束；本项目仅作引用与概念核对，发布原创高中地理方法，不复制文字、图片、互动内容或版式。"
+    },
+    {
+      "id": "web-national-geographic-population-density",
+      "title": "National Geographic Education：Population Density",
+      "publisher": "National Geographic Society",
+      "editionNote": "公开教育条目；访问日期 2026-08-22；用于核对人口密度的统计含义、空间分布表达与区域比较边界。",
+      "url": "https://education.nationalgeographic.org/resource/population-density/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "National Geographic 教育页面受其版权与使用条款约束；本项目仅作引用与概念核对，发布原创高中地理方法，不复制文字、图片、互动内容或版式。"
+    },
+    {
+      "id": "web-national-geographic-migration",
+      "title": "National Geographic Education：Migration",
+      "publisher": "National Geographic Society",
+      "editionNote": "公开教育条目；访问日期 2026-08-22；用于核对迁移的推拉因素、迁移流与人口空间变化。",
+      "url": "https://education.nationalgeographic.org/resource/migration/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "National Geographic 教育页面受其版权与使用条款约束；本项目仅作引用与概念核对，发布原创高中地理方法，不复制文字、图片、互动内容或版式。"
+    },
+    {
+      "id": "web-national-geographic-urban-planning",
+      "title": "National Geographic Education：Urban Planning",
+      "publisher": "National Geographic Society",
+      "editionNote": "公开教育条目；访问日期 2026-08-22；用于核对土地利用、基础设施、公共服务与城市治理的规划联系。",
+      "url": "https://education.nationalgeographic.org/resource/urban-planning/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "National Geographic 教育页面受其版权与使用条款约束；本项目仅作引用与概念核对，发布原创高中地理方法，不复制文字、图片、互动内容或版式。"
+    },
+    {
+      "id": "web-ipcc-ar6-synthesis-report",
+      "title": "IPCC：AR6 Synthesis Report",
+      "publisher": "Intergovernmental Panel on Climate Change",
+      "editionNote": "公开报告入口；访问日期 2026-08-22；用于核对气候影响、风险、适应、减缓、区域差异与不确定性表达。",
+      "url": "https://www.ipcc.ch/report/ar6/syr/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "IPCC 报告受其版权与使用条款约束；本项目仅作 citation-only 证据入口，发布原创高中地理方法摘要，不复制报告正文、图表或图件。"
+    },
+    {
+      "id": "web-world-bank-farming-agribusiness",
+      "title": "World Bank：Farming and Agribusiness",
+      "publisher": "World Bank Group",
+      "editionNote": "公开农业与发展专题页；访问日期 2026-08-22；用于核对农业生产率、价值链、基础设施、市场联系与气候韧性。",
+      "url": "https://www.worldbank.org/ext/en/topic/farming-and-agribusiness",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "World Bank 公共专题页面按其版权与开放资料说明处理；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、数据、图表或案例。"
     }
   ],
   "items": [
@@ -3907,6 +4010,358 @@
           "sourceId": "pep-geography-compulsory-2",
           "locator": "城镇化、农业地域与人地协调章节",
           "note": "回到教材核对土地利用变化、城乡联系、产业转移和可持续发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-three-cell-circulation-visual-model",
+      "courseId": "selective-1",
+      "title": "三圈环流、气压带风带与模型读图",
+      "summary": "三圈环流题先固定纬度带、上升下沉区和近地面风向，再把气压带风带的季节移动与太阳直射点变化联系起来。交互模型适合观察参数变化，但答题仍要回到受热差异、气压梯度和地转偏向力的过程链。",
+      "keywords": ["三圈环流", "气压带风带", "参数模型", "季节移动"],
+      "sourceIds": ["github-geography-viz-kit", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geography-viz-kit",
+          "locator": "README：模块 07 Atmospheric Circulation / 教学设计亮点",
+          "note": "开源课件用于交叉核对三圈环流、气压带风带和参数化观察的教学入口；不复制代码、模型或纹理。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "大气环流、气压带风带与季节移动章节",
+          "note": "回到教材核对三圈环流的受热、气压梯度和风向关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-day-length-heatmap-latitude",
+      "courseId": "selective-1",
+      "title": "昼夜长短热力图与纬度—日期联判",
+      "summary": "昼夜长短图表要先读取横轴日期、纵轴纬度和极昼极夜边界，再判断同一日期不同纬度或同一纬度不同日期的变化。热力图适合发现规律，解释时要把太阳直射点、黄赤交角和地球公转方向写完整。",
+      "keywords": ["昼夜长短", "纬度", "日期", "热力图"],
+      "sourceIds": ["github-geography-viz-kit", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geography-viz-kit",
+          "locator": "README：模块 06 Day Length / 全年全纬度热力图",
+          "note": "开源课件用于交叉核对昼夜长短可视化的变量、坐标与边界读法；不复制页面或图像。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "地球公转、太阳直射点与昼夜长短章节",
+          "note": "回到教材核对昼夜长短随纬度、日期和季节的变化规律。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-ocean-current-map-flow",
+      "courseId": "selective-1",
+      "title": "洋流地图、方向符号与流动证据",
+      "summary": "洋流图判读要先核对图例、箭头方向、海域名称和纬度位置，再把风带、海陆轮廓、暖流寒流与上升流联系起来。互动地图能帮助建立空间关系，但不能把示意流线直接当成任意时刻的实测海流速度。",
+      "keywords": ["洋流地图", "方向符号", "暖流寒流", "上升流"],
+      "sourceIds": ["github-ocean-currents-map", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-ocean-currents-map",
+          "locator": "README：Ocean Currents & Marine Geography Visualization / major ocean currents",
+          "note": "开源洋流地图用于交叉核对海域、洋流方向和图例阅读的空间入口；不复制地图、代码或图片。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "洋流、海气作用与海洋资源章节",
+          "note": "回到教材核对洋流成因、性质及其对气候、渔场和航运的影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-karst-landform-evidence",
+      "courseId": "selective-1",
+      "title": "喀斯特地貌、岩石性质与过程证据",
+      "summary": "喀斯特地貌判断不能只看洞穴或峰丛外形，还要结合可溶性岩石、裂隙、地下水循环、溶蚀与沉积过程。图像或视频只能提供形态线索，完整解释还要补上气候、水文、岩性和时间尺度。",
+      "keywords": ["喀斯特地貌", "岩石性质", "地下水", "溶蚀"],
+      "sourceIds": ["github-geology-high-school-website", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geology-high-school-website",
+          "locator": "项目文件：gallery/image/karst-rock.jpg / gallery/image/rock-beach.jpg",
+          "note": "高中地质科普项目用于交叉核对喀斯特岩石与地貌观察的视觉入口；不复制图片、视频或页面内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "岩石圈物质循环、地貌过程与地下水章节",
+          "note": "回到教材核对岩性、裂隙、水文和溶蚀沉积的过程关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-geography-lesson-design-review",
+      "courseId": "selective-2",
+      "title": "地理互动课程的元数据、探究与复习闭环",
+      "summary": "地理学习内容组织时，应先给每课标明册别、章节、顺序和学习目标，再把空间观察、过程解释、练习反馈和复习节点连起来。网页或工具只是载体，课程评价仍要检查概念准确性、材料边界和能否迁移到区域问题。",
+      "keywords": ["课程元数据", "互动探究", "复习闭环", "迁移"],
+      "sourceIds": ["github-interactive-geography-web-workflow", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-interactive-geography-web-workflow",
+          "locator": "README：三层体系 / lessons / lesson.json / docs",
+          "note": "开源课程工程用于交叉核对课程元数据、单课组织、教学设计和复习模块的结构边界；不复制课程正文、资源或代码。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "区域发展、区域规划与综合分析章节",
+          "note": "回到教材核对区域问题中的对象、尺度、过程和评价迁移。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-hurricane-formation-structure",
+      "courseId": "compulsory-1",
+      "title": "热带气旋形成、结构与天气过程",
+      "summary": "热带气旋材料要先判断暖海面、水汽、低层辐合和旋转条件，再分析中心气压、风雨分布、移动路径与登陆后变化。成因、天气影响和灾害损失是不同层次，不能用一张云图直接替代完整过程链。",
+      "keywords": ["热带气旋", "暖海面", "风雨结构", "移动路径"],
+      "sourceIds": ["web-noaa-national-hurricane-center", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-national-hurricane-center",
+          "locator": "National Hurricane Center：tropical cyclone forecast / storm surge / hazards",
+          "note": "NOAA 国家飓风中心用于交叉核对热带气旋预报、风暴潮和危险信息的官方入口；不复制原文、图片或图表。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "大气运动、天气系统与自然灾害章节",
+          "note": "回到教材核对气压场、水汽、风场和气象灾害的过程关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-hurricane-risk-coastal-preparedness",
+      "courseId": "selective-3",
+      "title": "热带气旋风险、风暴潮与沿海准备",
+      "summary": "沿海热带气旋风险评价要把强风、暴雨、风暴潮和内涝等危险过程分开，再叠加低洼地形、人口设施、港口产业、预警覆盖和避险能力。防灾措施应对应监测预警、空间管控、工程防护、转移安置和灾后恢复。",
+      "keywords": ["热带气旋风险", "风暴潮", "沿海暴露", "防灾准备"],
+      "sourceIds": ["web-noaa-national-hurricane-center", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-national-hurricane-center",
+          "locator": "National Hurricane Center：forecasting / preparedness / coastal risk",
+          "note": "NOAA 国家飓风中心用于交叉核对预报、沿海风险与安全准备的联系；不复制页面材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "自然灾害风险、环境安全与国土安全章节",
+          "note": "回到教材核对危险性、暴露度、脆弱性和防灾减灾措施。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-plate-boundary-landform-process",
+      "courseId": "compulsory-1",
+      "title": "板块边界、地震火山与地表形态",
+      "summary": "板块构造题先判断边界类型和板块相对运动，再把俯冲、张裂或错动与地震、火山、海沟、洋中脊和山脉等地貌证据对应起来。区域灾害解释还要补充岩性、地形、人口和防护条件。",
+      "keywords": ["板块边界", "俯冲张裂", "地震火山", "地貌证据"],
+      "sourceIds": ["web-national-geographic-plate-tectonics", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-plate-tectonics",
+          "locator": "Plate Tectonics：plate boundaries / earthquakes / volcanoes",
+          "note": "National Geographic 教育条目用于交叉核对板块边界与地震、火山的概念入口；不复制文字、图片或互动内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "地球内部圈层、地质作用与自然灾害章节",
+          "note": "回到教材核对内力作用、地貌形成和灾害风险的过程链。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-density-map-scale",
+      "courseId": "compulsory-2",
+      "title": "人口密度地图、统计单位与尺度",
+      "summary": "人口密度比较前要核对人口与面积的统计口径、空间单元、时间点和地图表达方式，再解释自然条件、就业、交通与公共服务造成的分布差异。高密度不等于拥挤或发展水平高，结论必须说明分母和尺度。",
+      "keywords": ["人口密度", "统计口径", "空间单元", "地图尺度"],
+      "sourceIds": ["web-national-geographic-population-density", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-population-density",
+          "locator": "Population Density：map units / spatial distribution / density calculation",
+          "note": "National Geographic 教育条目用于交叉核对人口密度的统计含义与地图表达边界；不复制页面文字或图件。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "人口分布、人口容量与城市地域联系章节",
+          "note": "回到教材核对人口分布的自然、社会经济因素和尺度效应。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-migration-push-pull-network",
+      "courseId": "compulsory-2",
+      "title": "人口迁移的推拉因素与网络效应",
+      "summary": "人口迁移题要区分迁出地推力、迁入地拉力、中介障碍和已有社会网络，再判断迁移规模、方向、选择性及其对劳动力、家庭和公共服务的影响。推拉因素会随政策、产业和交通变化，不能机械套用固定清单。",
+      "keywords": ["人口迁移", "推拉因素", "中介障碍", "社会网络"],
+      "sourceIds": ["web-national-geographic-migration", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-migration",
+          "locator": "Migration：push and pull factors / flows / impacts",
+          "note": "National Geographic 教育条目用于交叉核对迁移流、推拉因素和影响分析的概念入口；不复制页面内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "人口迁移、人口容量与城乡联系章节",
+          "note": "回到教材核对迁移原因、区域影响和人口流动的地理尺度。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urban-planning-land-use-infrastructure",
+      "courseId": "compulsory-2",
+      "title": "城市规划、土地利用与基础设施协同",
+      "summary": "城市规划题应把土地用途、道路交通、住房、公共服务、产业布局和生态空间放在同一张空间关系图中，再评价集中、分散或多中心布局的效率、公平和环境代价。规划方案要说明对象、尺度、时序与治理主体。",
+      "keywords": ["城市规划", "土地利用", "基础设施", "空间治理"],
+      "sourceIds": ["web-national-geographic-urban-planning", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-urban-planning",
+          "locator": "Urban Planning：land use / infrastructure / governance",
+          "note": "National Geographic 教育条目用于交叉核对城市规划与土地、设施和治理的关系；不复制页面文字或图件。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "城市空间结构、城市功能与地域联系章节",
+          "note": "回到教材核对城市布局、服务范围、交通联系和人地协调。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-climate-risk-adaptation-equity",
+      "courseId": "selective-3",
+      "title": "气候风险、适应能力与公平",
+      "summary": "气候风险判断要把危险性、暴露度、脆弱性和适应能力分开，并说明不同群体、区域和时间尺度上的分配差异。评价适应措施时既看降低风险的效果，也看信息、资金、基础设施和治理能力是否可获得。",
+      "keywords": ["气候风险", "适应能力", "脆弱性", "公平"],
+      "sourceIds": ["web-ipcc-ar6-synthesis-report", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-ipcc-ar6-synthesis-report",
+          "locator": "IPCC：AR6 Synthesis Report：climate impacts / adaptation / mitigation",
+          "note": "IPCC 综合报告入口用于交叉核对气候风险、适应、减缓和区域差异的证据边界；不复制报告正文或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "环境安全、气候变化与国家安全章节",
+          "note": "回到教材核对危险性、暴露度、脆弱性、适应与治理能力。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-climate-adaptation-pathways",
+      "courseId": "selective-2",
+      "title": "区域气候适应路径与发展权衡",
+      "summary": "区域气候适应不能只列工程措施，应先识别水、粮食、能源、城市和生态系统之间的联动，再比较不同路径的短期收益、长期锁定、维护成本和公平影响。规划结论要标明不确定性与可调整节点。",
+      "keywords": ["气候适应路径", "区域规划", "发展权衡", "不确定性"],
+      "sourceIds": ["web-ipcc-ar6-synthesis-report", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-ipcc-ar6-synthesis-report",
+          "locator": "IPCC：AR6 Synthesis Report：regional pathways / risk / adaptation",
+          "note": "IPCC 综合报告用于交叉核对区域路径、风险联动和适应不确定性的分析入口；不复制报告内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "区域规划、协调发展与综合治理章节",
+          "note": "回到教材核对区域整体性、规划时序、利益权衡和治理协同。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-agricultural-productivity-value-chain",
+      "courseId": "compulsory-2",
+      "title": "农业生产率、价值链与市场联系",
+      "summary": "农业区位与产业升级分析要把单产、投入、技术、加工、储运、市场和风险管理连成价值链，区分扩大面积、提高效率和提高附加值的不同路径。评价农业项目还要同时看农户收益、资源消耗和供应链稳定性。",
+      "keywords": ["农业生产率", "价值链", "农产品加工", "市场联系"],
+      "sourceIds": ["web-world-bank-farming-agribusiness", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-farming-agribusiness",
+          "locator": "Farming and Agribusiness：productivity / value chains / markets",
+          "note": "World Bank 农业专题用于交叉核对生产率、价值链和市场联系的分析维度；不复制原文、数据或案例。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "农业区位、农业地域与产业融合章节",
+          "note": "回到教材核对自然条件、社会经济条件和农业现代化路径。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-agriculture-water-soil-security",
+      "courseId": "selective-3",
+      "title": "农业、水土资源与粮食安全",
+      "summary": "粮食安全评价不能只看产量，还要把耕地质量、水资源、土壤退化、投入效率、储运能力、气候风险和贸易替代放在同一框架中。增产措施若加剧耗水、侵蚀或污染，短期收益可能转化为长期安全风险。",
+      "keywords": ["粮食安全", "农业用水", "土壤质量", "资源约束"],
+      "sourceIds": ["web-world-bank-farming-agribusiness", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-farming-agribusiness",
+          "locator": "Farming and Agribusiness：water / soil / resilience / food security",
+          "note": "World Bank 农业专题用于交叉核对农业韧性、资源约束与食物系统的联系；不复制页面材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "耕地保护、粮食安全与资源环境承载章节",
+          "note": "回到教材核对耕地、水土、灾害和国家粮食安全的评价边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-agriculture-regional-resilience",
+      "courseId": "selective-2",
+      "title": "农业区域韧性与基础设施协同",
+      "summary": "农业区域发展题要把生产条件、道路仓储、灌溉能源、加工市场、金融信息和灾害应对作为相互连接的系统，再判断单一产业、短链供应或多样化经营的韧性。区域方案要说明上下游、城乡和不同主体之间的利益联系。",
+      "keywords": ["农业区域发展", "基础设施", "供应链韧性", "城乡联系"],
+      "sourceIds": ["web-world-bank-farming-agribusiness", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-world-bank-farming-agribusiness",
+          "locator": "Farming and Agribusiness：rural development / infrastructure / climate resilience",
+          "note": "World Bank 农业专题用于交叉核对农村基础设施、农业供应链和韧性建设的分析入口；不复制原文、数据或案例。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "区域农业、城乡联系与产业融合章节",
+          "note": "回到教材核对区域分工、产业融合、交通联系和发展条件。"
         }
       ],
       "licenseStatus": "citation-only",

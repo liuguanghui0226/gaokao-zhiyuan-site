@@ -65,9 +65,9 @@ const expectedItems = new Set([
   "geo-c2-urbanization-land-use-and-livelihoods",
 ]);
 
-assert.equal(payload.version, "geo-2026.08.22.9");
-assert.equal(payload.sources.length, 54);
-assert.equal(payload.items.length, 159);
+assert.equal(payload.version, "geo-2026.08.22.10");
+assert.equal(payload.sources.length, 65);
+assert.equal(payload.items.length, 175);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
