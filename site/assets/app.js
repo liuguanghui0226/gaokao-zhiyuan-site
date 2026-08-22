@@ -1,3 +1,5 @@
+import { formatFilterResultCount } from "./filter-state.mjs";
+
 const state = {
   data: null,
   provinceManifest: null,
@@ -3933,6 +3935,40 @@ function filteredSources() {
   });
 }
 
+function filteredDisciplineSources() {
+  const query = state.query.trim().toLowerCase();
+  return knowledgeSourceFiles().filter((source) => {
+    const text = [source.title, source.relativePath, source.excerpt, ...(source.domains || []).map((item) => item.label)].join(" ").toLowerCase();
+    return (!query || text.includes(query)) && (!state.domain || (source.domains || []).some((item) => item.id === state.domain));
+  });
+}
+
+function filteredGeographyItems(courseMap = new Map((state.geographyData?.courses || []).map((course) => [course.id, course]))) {
+  const data = state.geographyData;
+  if (!data) return [];
+  const query = normalizeText(state.query);
+  return data.items.filter((item) => {
+    const courseOk = !state.geographyCourse || item.courseId === state.geographyCourse;
+    const searchText = normalizeText([
+      item.title,
+      item.summary,
+      ...(item.keywords || []),
+      courseMap.get(item.courseId)?.name || "",
+    ].join(" "));
+    return courseOk && (!query || searchText.includes(query));
+  });
+}
+
+function currentFilterResultCount() {
+  if (state.view === "sources") return filteredSources().length;
+  if (state.view === "geography") return filteredGeographyItems().length;
+  if (state.view === "disciplines") {
+    const selectedCode = state.discipline || state.disciplineBrowse || state.data?.disciplines?.[0]?.code;
+    return filteredDisciplineSources().filter((source) => source.disciplines.some((item) => item.code === selectedCode)).length;
+  }
+  return null;
+}
+
 function hasActiveFilters() {
   const geographySourceFilterActive = state.view === "sources" && state.geographySourceFilter !== "all";
   const geographyCourseFilterActive = state.view === "geography" && state.geographyCourse;
@@ -3961,8 +3997,11 @@ function filterStatusText() {
     const course = state.geographyData?.courses?.find((item) => item.id === state.geographyCourse);
     active.push(`高中地理课程“${course?.name || state.geographyCourse}”`);
   }
-  if (!active.length) return "检索和筛选作用于资料库、专业门类和高中地理。";
-  return `当前${active.join("、")}；结果作用于资料库、专业门类和高中地理。`;
+  const base = active.length
+    ? `当前${active.join("、")}；结果作用于资料库、专业门类和高中地理。`
+    : "检索和筛选作用于资料库、专业门类和高中地理。";
+  const resultCount = formatFilterResultCount(state.view, currentFilterResultCount());
+  return resultCount ? `${base} ${resultCount}` : base;
 }
 
 function syncClearFiltersControl() {
@@ -4068,11 +4107,7 @@ function bindOverviewEvents() {
 }
 
 function renderDisciplines() {
-  const query = state.query.trim().toLowerCase();
-  const sources = knowledgeSourceFiles().filter((source) => {
-    const text = [source.title, source.relativePath, source.excerpt, ...(source.domains || []).map((item) => item.label)].join(" ").toLowerCase();
-    return (!query || text.includes(query)) && (!state.domain || (source.domains || []).some((item) => item.id === state.domain));
-  });
+  const sources = filteredDisciplineSources();
   const selectedCode = state.discipline || state.disciplineBrowse || "08";
   const selected = state.data.disciplines.find((discipline) => discipline.code === selectedCode) || state.data.disciplines[0];
   const families = DISCIPLINE_MAJOR_CATALOG[selected.code] || [];
@@ -4284,18 +4319,8 @@ function renderGeography() {
   }
 
   const metrics = geographySummaryMetrics(data);
-  const query = normalizeText(state.query);
   const courseMap = new Map(data.courses.map((course) => [course.id, course]));
-  const visibleItems = data.items.filter((item) => {
-    const courseOk = !state.geographyCourse || item.courseId === state.geographyCourse;
-    const searchText = normalizeText([
-      item.title,
-      item.summary,
-      ...(item.keywords || []),
-      courseMap.get(item.courseId)?.name || "",
-    ].join(" "));
-    return courseOk && (!query || searchText.includes(query));
-  });
+  const visibleItems = filteredGeographyItems(courseMap);
   const courseButtons = [
     `<button class="geography-course-btn ${state.geographyCourse ? "" : "active"}" type="button" data-geography-course="">全部课程 · ${fmtNumber(metrics.items)}</button>`,
     ...data.courses.map((course) => {
