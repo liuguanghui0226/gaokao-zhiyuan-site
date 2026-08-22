@@ -5362,6 +5362,26 @@ async function boot() {
   render();
 }
 
-boot().catch((error) => {
-  document.body.innerHTML = `<div class="empty-state"><h2>数据载入失败</h2><p>${esc(error.message)}</p></div>`;
-});
+function renderBootFailure(error) {
+  const message = error instanceof Error ? error.message : String(error || "未知错误");
+  const markup = `<div class="empty-state app-load-error" role="alert">
+    <h2>数据载入失败</h2>
+    <p>${esc(message)}</p>
+    <button class="primary-action" id="retryBoot" type="button">重新加载资料</button>
+    <p class="boot-retry-note">如果网络或 GitHub Pages 暂时不可用，可以重新尝试载入最新资料。</p>
+  </div>`;
+  const overview = $("#view-overview");
+  if (overview) {
+    overview.innerHTML = markup;
+  } else if (document.body) {
+    document.body.innerHTML = markup;
+  }
+  const retryButton = $("#retryBoot");
+  retryButton?.addEventListener("click", () => {
+    retryButton.disabled = true;
+    retryButton.setAttribute("aria-busy", "true");
+    globalThis.location?.reload();
+  });
+}
+
+boot().catch(renderBootFailure);

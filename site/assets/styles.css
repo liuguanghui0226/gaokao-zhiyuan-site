@@ -810,6 +810,26 @@ select {
   font-size: 20px;
 }
 
+.app-load-error {
+  display: grid;
+  gap: 10px;
+  max-width: 720px;
+}
+
+.app-load-error p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.app-load-error .primary-action {
+  justify-self: start;
+}
+
+.boot-retry-note {
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .detail-drawer {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);

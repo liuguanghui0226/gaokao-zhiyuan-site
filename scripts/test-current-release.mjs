@@ -171,6 +171,7 @@ const tests = [
   "test-recommendation-export-v3348.mjs",
   "test-recommendation-evidence-links-v3349.mjs",
   "test-overview-quick-start-v3380.mjs",
+  "test-boot-recovery-v3381.mjs",
   "test-site-freshness-label-v3350.mjs",
   "test-geography-provenance-ui-v3351.mjs",
   "test-recommendation-shortlist-v3352.mjs",
