@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.7",
+  "version": "geo-2026.08.22.8",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -364,6 +364,63 @@
       "commitSha": "805005660f485b188cfacfdd467ea432f1d94940",
       "accessedAt": "2026-08-22",
       "licenseNote": "仓库代码声明 GPL v3.0；本项目只吸收协作式地图定位与难度递进方法，不复制游戏资源、图片、代码、地图或版式。"
+    },
+    {
+      "id": "github-sun-motion-visualization",
+      "title": "太阳视运动可视化：高中地理参数化实验",
+      "publisher": "ErnestThePoet/SunMotionVisualization（GitHub）",
+      "editionNote": "公开仓库提交 `4081f94e260cfcb562bc014d44bd09b425919cb1`；访问日期 2026-08-22；项目说明可调节地理参数并在 3D 场景观察太阳视运动，适合作为太阳高度、方位与影子图的交互式方法参照。",
+      "url": "https://github.com/ErnestThePoet/SunMotionVisualization",
+      "commitSha": "4081f94e260cfcb562bc014d44bd09b425919cb1",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明 GPL-3.0；本项目只作高中地理太阳视运动方法交叉核对，不复制代码、模型、图像或页面版式。"
+    },
+    {
+      "id": "github-geowiki-high-school-geography",
+      "title": "GeoWiki：面向高中地理的教材知识索引",
+      "publisher": "aeilot/GeoWiki（GitHub）",
+      "editionNote": "公开仓库提交 `b89306acda2c70743434af61ecf1afae895bef0d`；访问日期 2026-08-22；README 说明项目梳理上海教材与高中课内地理知识，页面结构区分自然、人文、天文学与地理信息技术索引。",
+      "url": "https://github.com/aeilot/GeoWiki",
+      "commitSha": "b89306acda2c70743434af61ecf1afae895bef0d",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作高中地理知识组织方式的 citation-only 参照，回到教材核对概念，不复制页面文字、题目、代码或版式。"
+    },
+    {
+      "id": "github-k12-gis-resources",
+      "title": "K-12 GIS Resources：中小学地理信息资源索引",
+      "publisher": "kevinbhaynes/K-12_GIS_Resources（GitHub）",
+      "editionNote": "公开仓库提交 `9e3eea5060ec04fb96af2aa807577fd6583d6cc2`；访问日期 2026-08-22；仓库以 CC0 资源索引、GeoFestResources.docx 与无许可证链接清单整理 K-12 GIS 教学入口。",
+      "url": "https://github.com/kevinbhaynes/K-12_GIS_Resources",
+      "commitSha": "9e3eea5060ec04fb96af2aa807577fd6583d6cc2",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明 CC0-1.0，但链接清单中的第三方资源各有许可边界；本项目只吸收 K-12 GIS 资源核验与归因方法，不复制文档、链接目标内容、地图或代码。"
+    },
+    {
+      "id": "web-noaa-jetstream-weather-school",
+      "title": "NOAA JetStream：在线天气学校",
+      "publisher": "NOAA / National Weather Service",
+      "editionNote": "公开在线天气学校；访问日期 2026-08-22；面向教师、应急管理者和学习者，组织天气、气候、天气安全与观测相关教学模块。",
+      "url": "https://www.noaa.gov/jetstream",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NOAA 公共教育页面；本项目仅作 citation-only 概念与方法核对，发布原创高中地理摘要，不复制原文、图片、图表或页面版式。"
+    },
+    {
+      "id": "web-national-geographic-water-cycle",
+      "title": "National Geographic Education：Water Cycle",
+      "publisher": "National Geographic Society",
+      "editionNote": "公开教育条目；访问日期 2026-08-22；页面标注 Grades 5-8、Conservation、Earth Science、Meteorology，覆盖海洋、陆地与大气之间的水循环及相变过程。",
+      "url": "https://education.nationalgeographic.org/resource/water-cycle/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "National Geographic 教育页面受其版权与使用条款约束；本项目仅作引用与概念核对，发布原创高中地理方法，不复制文字、图片、互动内容或版式。"
+    },
+    {
+      "id": "web-nasa-world-of-change",
+      "title": "NASA Earth Observatory：World of Change",
+      "publisher": "NASA Science / Earth Observatory",
+      "editionNote": "公开地球观测专题；访问日期 2026-08-22；说明 NASA 卫星如何记录森林、海洋、人类景观和太阳在月份、季节与多年尺度上的变化。",
+      "url": "https://science.nasa.gov/earth/earth-observatory/world-of-change/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NASA 公共科学教育页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制文章、图片、动画、数据或版式。"
     }
   ],
   "items": [
@@ -3022,6 +3079,402 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "第 2-45 页",
           "note": "回到教材核对资源类型、资源安全、粮食安全、能源安全和保障能力。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-weather-radar-precipitation",
+      "courseId": "compulsory-1",
+      "title": "天气雷达、降水回波与观测证据",
+      "summary": "天气雷达图先看回波强度、范围、移动方向和时间间隔，再把降水回波与地面雨量、地形抬升、锋面或对流系统联系起来。雷达是观测证据，不等同于未来降水量；跨图比较还要统一色标、时间和观测范围。",
+      "keywords": ["天气雷达", "降水回波", "对流", "观测证据"],
+      "sourceIds": ["web-noaa-jetstream-weather-school", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-jetstream-weather-school",
+          "locator": "weather observation / radar / weather safety modules",
+          "note": "NOAA 在线天气学校用于交叉核对天气观测、雷达与安全信息的证据边界；不复制页面内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 34-60 页",
+          "note": "回到教材核对水汽、降水、天气系统与大气运动的概念链。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-groundwater-recharge-discharge",
+      "courseId": "compulsory-1",
+      "title": "地下水补给、储存与排泄",
+      "summary": "地下水题要沿降水入渗、土壤储存、含水层补给、地下径流与泉水或河流排泄建立水量链，再判断抽取、硬化地表和植被变化的影响。地下水变化有时间滞后，不能只用一次降雨或一张河流照片推断补给能力。",
+      "keywords": ["地下水", "入渗", "含水层", "水量链"],
+      "sourceIds": ["web-national-geographic-water-cycle", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-water-cycle",
+          "locator": "Water Cycle：precipitation / groundwater / evaporation / condensation",
+          "note": "公开教育条目用于交叉核对地表水、地下水与大气水之间的循环关系；不复制原文或图片。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "水循环与陆地水体章节",
+          "note": "回到教材核对水循环环节、陆地水体补给关系与人类用水影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-solar-surface-heating-and-energy",
+      "courseId": "compulsory-1",
+      "title": "太阳辐射、地表受热与能量去向",
+      "summary": "地表受热题要先区分太阳短波辐射、地面长波辐射和大气逆辐射，再结合太阳高度、下垫面反射率、云量与水热条件解释地表温度差异。可视化实验能帮助观察参数变化，但不能替代教材中的能量收支和实测资料。",
+      "keywords": ["太阳辐射", "地表受热", "能量收支", "下垫面"],
+      "sourceIds": ["github-sun-motion-visualization", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-sun-motion-visualization",
+          "locator": "项目描述：可调节地理参数并在 3D 场景观察太阳视运动",
+          "note": "开源项目用于交叉核对太阳参数化观察的实验结构；不复制代码、模型或界面。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "大气受热过程章节",
+          "note": "回到教材核对太阳辐射、地面辐射、大气辐射和热量传递。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-land-cover-surface-feedback",
+      "courseId": "compulsory-1",
+      "title": "土地覆盖变化与地表过程反馈",
+      "summary": "土地覆盖变化图要先确认时间、传感器、分类口径和空间范围，再解释森林、裸地、湿地、农田或城市扩张对蒸散、径流、反照率和局地热环境的可能影响。图像变化提供线索，因果判断仍需结合降水、地形和人类活动资料。",
+      "keywords": ["土地覆盖", "地表过程", "蒸散", "遥感变化"],
+      "sourceIds": ["web-nasa-world-of-change", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-world-of-change",
+          "locator": "World of Change：satellite observations of forests, oceans and human landscapes",
+          "note": "NASA 专题用于交叉核对多时相卫星影像记录地表变化的证据边界；不复制图片、动画或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "地表形态、大气与水循环相关章节",
+          "note": "回到教材核对下垫面、蒸散、径流和自然环境过程之间的联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urban-expansion-and-land-use",
+      "courseId": "compulsory-2",
+      "title": "城市扩张、土地利用与公共服务",
+      "summary": "城市扩张材料要比较建设用地增长方向、人口与就业变化、交通可达性和公共服务覆盖，再判断外延扩张、填充式更新或多中心发展带来的收益与代价。卫星影像能显示空间变化，但不能单独证明居民生活质量或规划成效。",
+      "keywords": ["城市扩张", "土地利用", "公共服务", "多中心"],
+      "sourceIds": ["web-nasa-world-of-change", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-world-of-change",
+          "locator": "World of Change：human landscapes and change over months, seasons and years",
+          "note": "NASA 多时相观测用于交叉核对人类景观变化的空间证据；不复制影像或说明文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "城镇化、城市空间结构与地域联系章节",
+          "note": "回到教材核对城市化、城市功能、土地利用和公共服务的区位联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-digital-map-evidence-for-community",
+      "courseId": "compulsory-2",
+      "title": "社区 GIS 证据与公共问题定位",
+      "summary": "社区尺度地图题可以把设施点、人口、道路、灾害暴露或环境指标叠加起来，先明确对象、单位和时间，再判断服务缺口与空间不均衡。公共地图适合提出问题和比较区域，不能把一个图层的相关性直接写成因果关系。",
+      "keywords": ["社区 GIS", "公共服务", "空间不均衡", "图层叠加"],
+      "sourceIds": ["github-k12-gis-resources", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-k12-gis-resources",
+          "locator": "GeoFestResources.docx / K-12 GIS resources index",
+          "note": "K-12 资源索引用于交叉核对从社区地图、开放数据到公共问题的教学入口；不复制文档或链接目标内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "地域联系、城镇化与人地协调章节",
+          "note": "回到教材核对人口、交通、服务功能与城乡空间联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-geography-wiki-knowledge-navigation",
+      "courseId": "compulsory-2",
+      "title": "高中地理知识索引与人地关系导航",
+      "summary": "面对综合题，先把自然条件、人类活动、空间联系和环境反馈分成可核对的知识节点，再回到材料建立因果链。知识索引能降低检索成本，但不能替代教材定义、图表证据和题目限定；作答仍要把抽象概念落到区域位置与过程。",
+      "keywords": ["知识索引", "人地关系", "综合题", "因果链"],
+      "sourceIds": ["github-geowiki-high-school-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-geowiki-high-school-geography",
+          "locator": "README：梳理上海教材与高中课内地理知识",
+          "note": "高中地理知识 wiki 用于交叉核对章节索引和检索导航的组织方式；不复制页面内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "人地关系、地域联系与可持续发展章节",
+          "note": "回到教材核对自然、人类活动、区域联系与环境反馈的概念边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-sun-path-latitude-season",
+      "courseId": "selective-1",
+      "title": "太阳视运动、纬度与季节变化",
+      "summary": "太阳视运动题先固定观察地点和日期，再比较太阳高度、方位、昼夜长短与直射点位置的联动。调节纬度、时间或日期的可视化实验有助于发现规律，但最终仍要用地球公转、自转、太阳直射点和正午太阳高度的教材关系解释。",
+      "keywords": ["太阳视运动", "纬度", "昼夜长短", "季节"],
+      "sourceIds": ["github-sun-motion-visualization", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-sun-motion-visualization",
+          "locator": "项目描述 / 3D sun-motion visualization：可调节地理参数",
+          "note": "项目用于交叉核对太阳视运动参数实验的观察路径；不复制代码、模型或界面。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "地球运动与太阳辐射章节",
+          "note": "回到教材核对太阳直射点、正午太阳高度、昼夜长短与季节变化。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-air-mass-front-weather-map",
+      "courseId": "selective-1",
+      "title": "气团、锋面与天气图联判",
+      "summary": "天气图判读先识别气压场、风向、温度湿度差异和锋线位置，再沿气团性质、抬升方式、云雨区与天气变化建立过程链。锋面符号只是提示，不能脱离季节、地形和观测时间直接套用固定天气结论。",
+      "keywords": ["气团", "锋面", "天气图", "抬升"],
+      "sourceIds": ["web-noaa-jetstream-weather-school", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-jetstream-weather-school",
+          "locator": "online weather school：weather systems / fronts / observation modules",
+          "note": "NOAA 教学入口用于交叉核对天气系统、锋面和观测材料的学习组织；不复制原文、图表或图片。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "天气系统与大气环流章节",
+          "note": "回到教材核对气团、锋面、气旋反气旋与天气变化。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-weather-radar-and-convective-risk",
+      "courseId": "selective-1",
+      "title": "天气雷达与强对流风险识别",
+      "summary": "强对流风险题要把雷达回波的强度、形态、移动和持续时间，与水汽条件、热力不稳定、辐合抬升和地形触发结合起来。观测图能够支持风险识别，却不能单独给出灾害损失；还要考虑人口、建筑和预警响应。",
+      "keywords": ["强对流", "雷达回波", "水汽", "风险"],
+      "sourceIds": ["web-noaa-jetstream-weather-school", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-jetstream-weather-school",
+          "locator": "weather observation / weather safety modules",
+          "note": "NOAA 教学页面用于交叉核对天气观测与安全响应的关系；不复制页面材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "大气运动、天气系统与自然灾害相关章节",
+          "note": "回到教材核对水汽、对流、气压场与天气变化机制。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-land-cover-change-and-regional-planning",
+      "courseId": "selective-2",
+      "title": "土地覆盖变化与区域规划反馈",
+      "summary": "区域规划中的土地覆盖变化要先按时间序列识别森林、农田、湿地、裸地和建设用地的转换，再分析生态功能、产业布局、交通联系与居民收益的反馈。多时相影像能显示变化位置和范围，但规划评价仍需补充统计、调查和政策背景。",
+      "keywords": ["土地覆盖变化", "区域规划", "时间序列", "生态功能"],
+      "sourceIds": ["web-nasa-world-of-change", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-world-of-change",
+          "locator": "World of Change：forests, oceans and human landscapes over time",
+          "note": "NASA 多时相专题用于交叉核对区域变化影像的时间序列思路；不复制图片、动画或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "区域发展、空间联系与规划评价章节",
+          "note": "回到教材核对区域整体性、土地利用、产业布局与规划协调。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-k12-gis-layer-and-scale",
+      "courseId": "selective-2",
+      "title": "K-12 GIS 图层、尺度与问题导向",
+      "summary": "GIS 区域分析要先把问题拆成可定位的图层，再检查点、线、面和栅格的空间尺度、时间范围与坐标系统。中小学 GIS 资源适合作为问题导向的入口，但叠加图层只提供空间关系线索，仍需回到区域机制和材料证据。",
+      "keywords": ["K-12 GIS", "图层", "空间尺度", "问题导向"],
+      "sourceIds": ["github-k12-gis-resources", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-k12-gis-resources",
+          "locator": "GeoFestResources.docx / K-12 GIS resources index",
+          "note": "K-12 资源索引用于交叉核对从问题提出到地图图层的教学入口；不复制文档或链接目标资源。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "地理信息技术、区域尺度与规划章节",
+          "note": "回到教材核对 GIS、遥感、区域尺度和空间联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-k12-gis-source-attribution",
+      "courseId": "selective-2",
+      "title": "GIS 资源的来源、许可与归因边界",
+      "summary": "使用开放地图或教育 GIS 资源前，要记录数据提供者、许可、更新时间、空间范围和可再分发边界，再决定能否下载、改编或只作链接引用。来源清单本身是证据管理工具，不能把第三方链接的许可自动扩展到链接目标。",
+      "keywords": ["GIS 许可", "来源归因", "数据边界", "可再分发"],
+      "sourceIds": ["github-k12-gis-resources", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-k12-gis-resources",
+          "locator": "LICENSE / No_License_Geospatial_Links",
+          "note": "仓库同时展示 CC0 资源索引与无统一许可证的链接清单，用于核对归因和许可边界；不复制链接目标内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "地理信息技术与区域规划章节",
+          "note": "回到教材核对地理信息技术在区域分析中的用途和局限。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-geowiki-cross-course-concept-map",
+      "courseId": "selective-2",
+      "title": "跨章节知识索引与区域图表联读",
+      "summary": "综合区域题可先用自然、人文、天文和地理信息技术四类索引定位概念，再把图表中的位置、过程和联系串成区域解释。知识导航帮助减少漏项，但区域结论必须由材料中的尺度、时间、要素联系和因果证据支撑。",
+      "keywords": ["知识索引", "区域图表", "跨章节", "证据链"],
+      "sourceIds": ["github-geowiki-high-school-geography", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-geowiki-high-school-geography",
+          "locator": "pages/physical.mdx / pages/human.mdx / pages/misc.mdx",
+          "note": "项目页面结构用于交叉核对跨章节索引和知识导航的组织方式；不复制页面内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "区域整体性、区域关联性与地理信息技术章节",
+          "note": "回到教材核对区域要素联系、尺度转换和图表证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-water-cycle-and-resource-security",
+      "courseId": "selective-3",
+      "title": "水循环环节与水资源安全",
+      "summary": "水资源安全评价要把蒸发、降水、地表径流、地下水、冰雪储存和人类取用放在同一水量框架中，再比较总量、时序、空间、水质和供水可靠性。增加工程供水不等于自动提高安全，还要核对生态流量和下游影响。",
+      "keywords": ["水循环", "水资源安全", "地下水", "生态流量"],
+      "sourceIds": ["web-national-geographic-water-cycle", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-water-cycle",
+          "locator": "Water Cycle：ocean, land, atmosphere, groundwater and phase changes",
+          "note": "公开教育条目用于交叉核对水循环的环节和储存位置；不复制文字、图片或互动内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "水资源、资源安全与生态保护章节",
+          "note": "回到教材核对水资源供需、水安全、生态约束与治理评价。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-remote-sensing-environmental-change",
+      "courseId": "selective-3",
+      "title": "遥感变化证据与环境安全评价",
+      "summary": "环境安全材料中的遥感变化图要先确认波段、分类、时间序列和空间分辨率，再判断植被、水体、冰雪、城市或土地退化的变化方向。影像变化可以提示风险和治理成效，但还要结合现场监测、统计数据与环境阈值。",
+      "keywords": ["遥感", "环境安全", "变化检测", "时间序列"],
+      "sourceIds": ["web-nasa-world-of-change", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-world-of-change",
+          "locator": "World of Change：satellite records of forests, oceans and human landscapes",
+          "note": "NASA 专题用于交叉核对卫星时间序列作为环境变化证据的适用边界；不复制图片、动画或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "环境安全、生态保护与资源环境监测章节",
+          "note": "回到教材核对资源环境问题、治理成效和环境安全评价。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-extreme-weather-adaptation-chain",
+      "courseId": "selective-3",
+      "title": "极端天气风险与适应链条",
+      "summary": "极端天气题要把危险性、暴露度、脆弱性和应急能力分开，再沿监测预警、工程防护、土地利用、社区响应和恢复重建评价适应措施。气象观测只能说明事件或趋势，不能单独推出损失规模和治理成效。",
+      "keywords": ["极端天气", "暴露度", "脆弱性", "适应"],
+      "sourceIds": ["web-noaa-jetstream-weather-school", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-jetstream-weather-school",
+          "locator": "weather safety / observation / emergency management teaching modules",
+          "note": "NOAA 在线天气学校用于交叉核对天气风险、观测与安全响应的教学框架；不复制页面材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "环境安全、灾害风险与国家安全章节",
+          "note": "回到教材核对自然灾害、风险管理、适应措施和资源环境安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-resource-environment-map-attribution",
+      "courseId": "selective-3",
+      "title": "资源环境地图的来源与归因核验",
+      "summary": "资源环境地图使用前要核对数据提供者、指标定义、许可、年份、空间单元和制图处理，再判断它能否支持资源安全或环境治理结论。对多个公开图层进行比较时，许可和尺度不一致本身就是需要披露的证据限制。",
+      "keywords": ["资源环境地图", "指标定义", "来源归因", "证据限制"],
+      "sourceIds": ["github-k12-gis-resources", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-k12-gis-resources",
+          "locator": "LICENSE / No_License_Geospatial_Links / GeoFestResources.docx",
+          "note": "K-12 GIS 资源索引用于交叉核对资源来源、许可和链接目标边界；不复制文档或第三方数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "资源环境监测、环境安全与治理评价章节",
+          "note": "回到教材核对资源环境指标、尺度和治理评价的证据要求。"
         }
       ],
       "licenseStatus": "citation-only",

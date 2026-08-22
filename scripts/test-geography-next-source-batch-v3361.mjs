@@ -51,9 +51,9 @@ const expectedItems = new Set([
   "geo-s3-resource-security-data-freshness",
 ]);
 
-assert.equal(payload.version, "geo-2026.08.22.7");
-assert.equal(payload.sources.length, 40);
-assert.equal(payload.items.length, 125);
+assert.equal(payload.version, "geo-2026.08.22.8");
+assert.equal(payload.sources.length, 46);
+assert.equal(payload.items.length, 143);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);

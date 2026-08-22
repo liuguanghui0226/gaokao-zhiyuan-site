@@ -125,6 +125,9 @@ const REQUIRED_EXTERNAL_SOURCES = new Set([
   "github-adaptive-geography",
   "github-openguessr-education",
   "github-multitouch-geography-game",
+  "github-sun-motion-visualization",
+  "github-geowiki-high-school-geography",
+  "github-k12-gis-resources",
 ]);
 const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-noaa-tides-education",
@@ -134,6 +137,9 @@ const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-nasa-gpm-water-cycle",
   "web-esa-copernicus-earth-observation",
   "web-fao-global-soil-partnership",
+  "web-noaa-jetstream-weather-school",
+  "web-national-geographic-water-cycle",
+  "web-nasa-world-of-change",
 ]);
 const REQUIRED_V3_ITEMS = new Set([
   "geo-c1-water-cycle-observation",
@@ -166,6 +172,26 @@ const REQUIRED_V4_ITEMS = new Set([
   "geo-s2-map-scale-generalization",
   "geo-s3-environmental-indicator-crosscheck",
   "geo-s3-resource-security-data-freshness",
+]);
+const REQUIRED_V5_ITEMS = new Set([
+  "geo-c1-weather-radar-precipitation",
+  "geo-c1-groundwater-recharge-discharge",
+  "geo-c1-solar-surface-heating-and-energy",
+  "geo-c1-land-cover-surface-feedback",
+  "geo-c2-urban-expansion-and-land-use",
+  "geo-c2-digital-map-evidence-for-community",
+  "geo-c2-geography-wiki-knowledge-navigation",
+  "geo-s1-sun-path-latitude-season",
+  "geo-s1-air-mass-front-weather-map",
+  "geo-s1-weather-radar-and-convective-risk",
+  "geo-s2-land-cover-change-and-regional-planning",
+  "geo-s2-k12-gis-layer-and-scale",
+  "geo-s2-k12-gis-source-attribution",
+  "geo-s2-geowiki-cross-course-concept-map",
+  "geo-s3-water-cycle-and-resource-security",
+  "geo-s3-remote-sensing-environmental-change",
+  "geo-s3-extreme-weather-adaptation-chain",
+  "geo-s3-resource-environment-map-attribution",
 ]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
@@ -244,7 +270,7 @@ for (const item of payload.items) {
     assert.equal(sourceIds.has(evidence.sourceId), true, `${item.id} evidence references unknown source`);
     assert.match(
       String(evidence.locator),
-      /第?\s*\d+\s*页|README|data\/|docs\/|ontology|RDF|geography\.html|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|Water Cycle|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming/,
+      /第?\s*\d+\s*页|章节|教材|项目描述|README|data\/|pages\/|docs\/|ontology|RDF|geography\.html|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|Water Cycle|World of Change|JetStream|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming|sun-motion|SunMotion|GeoWiki|K-12|GeoFest|No_License|weather|radar|groundwater/,
       `${item.id} evidence locator must be a page or stable web/repository section`,
     );
     assert.equal(typeof evidence.note, "string");
@@ -253,7 +279,7 @@ for (const item of payload.items) {
 }
 
 assert.ok(payload.items.length >= 65, "the comprehensive geography slice must cover the planned next expansion");
-assert.ok(payload.items.length >= 113, "the public-source geography slice must include the v3 batch");
+assert.ok(payload.items.length >= 143, "the public-source geography slice must include the v5 batch");
 for (const courseId of REQUIRED_COURSES) {
   assert.ok(
     payload.items.filter((item) => item.courseId === courseId).length >= 8,
@@ -277,6 +303,9 @@ for (const itemId of REQUIRED_V3_ITEMS) {
 }
 for (const itemId of REQUIRED_V4_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing v4 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V5_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v5 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,

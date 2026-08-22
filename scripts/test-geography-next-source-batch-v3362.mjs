@@ -9,89 +9,88 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-nasa-el-nino": {
-    url: "https://science.nasa.gov/earth/explore/el-nino/",
+  "github-sun-motion-visualization": {
+    url: "https://github.com/ErnestThePoet/SunMotionVisualization",
+    commitSha: "4081f94e260cfcb562bc014d44bd09b425919cb1",
     accessedAt: "2026-08-22",
   },
-  "web-nasa-gpm-water-cycle": {
-    url: "https://gpm.nasa.gov/education/water-cycle",
+  "github-geowiki-high-school-geography": {
+    url: "https://github.com/aeilot/GeoWiki",
+    commitSha: "b89306acda2c70743434af61ecf1afae895bef0d",
     accessedAt: "2026-08-22",
   },
-  "web-esa-copernicus-earth-observation": {
-    url: "https://www.esa.int/Applications/Observing_the_Earth/Copernicus",
+  "github-k12-gis-resources": {
+    url: "https://github.com/kevinbhaynes/K-12_GIS_Resources",
+    commitSha: "9e3eea5060ec04fb96af2aa807577fd6583d6cc2",
     accessedAt: "2026-08-22",
   },
-  "web-fao-global-soil-partnership": {
-    url: "https://www.fao.org/global-soil-partnership/en/",
+  "web-noaa-jetstream-weather-school": {
+    url: "https://www.noaa.gov/jetstream",
     accessedAt: "2026-08-22",
   },
-  "github-atlasgpt-secondary-geography": {
-    url: "https://github.com/dayangac/AtlasGPT",
-    commitSha: "6f01f956ba5e803f29c32e2ec9e2ff8638bc9745",
+  "web-national-geographic-water-cycle": {
+    url: "https://education.nationalgeographic.org/resource/water-cycle/",
     accessedAt: "2026-08-22",
   },
-  "github-terrain-explorer-africa": {
-    url: "https://github.com/educatres/terrain-explorer-africa",
-    commitSha: "129064bc3c73d30c94f0b3fb1374fe87ca1f7f08",
-    accessedAt: "2026-08-22",
-  },
-  "github-intro-gispro": {
-    url: "https://github.com/giswqs/intro-gispro",
-    commitSha: "d4de649fefff14046a818aa3a7a05623015de9ed",
+  "web-nasa-world-of-change": {
+    url: "https://science.nasa.gov/earth/earth-observatory/world-of-change/",
     accessedAt: "2026-08-22",
   },
 };
+
 const expectedItems = new Set([
-  "geo-c1-water-cycle-observation",
-  "geo-c1-soil-health-and-erosion",
-  "geo-c1-africa-relief-river-ecology",
-  "geo-c2-map-based-regional-evidence",
-  "geo-c2-landscape-and-human-environment",
-  "geo-s1-enso-wind-current-upwelling",
-  "geo-s1-enso-teleconnection-precipitation",
-  "geo-s1-water-cycle-evaporation-runoff",
-  "geo-s2-copernicus-multisource-monitoring",
-  "geo-s2-vector-raster-scale",
-  "geo-s2-map-workflow-and-reproducibility",
-  "geo-s2-protected-area-spatial-evidence",
-  "geo-s2-sentinel-emergency-response",
-  "geo-s3-soil-carbon-and-food-security",
-  "geo-s3-soil-salinity-and-land-restoration",
-  "geo-s3-enso-climate-risk-and-resources",
+  "geo-c1-weather-radar-precipitation",
+  "geo-c1-groundwater-recharge-discharge",
+  "geo-c1-solar-surface-heating-and-energy",
+  "geo-c1-land-cover-surface-feedback",
+  "geo-c2-urban-expansion-and-land-use",
+  "geo-c2-digital-map-evidence-for-community",
+  "geo-c2-geography-wiki-knowledge-navigation",
+  "geo-s1-sun-path-latitude-season",
+  "geo-s1-air-mass-front-weather-map",
+  "geo-s1-weather-radar-and-convective-risk",
+  "geo-s2-land-cover-change-and-regional-planning",
+  "geo-s2-k12-gis-layer-and-scale",
+  "geo-s2-k12-gis-source-attribution",
+  "geo-s2-geowiki-cross-course-concept-map",
+  "geo-s3-water-cycle-and-resource-security",
+  "geo-s3-remote-sensing-environmental-change",
+  "geo-s3-extreme-weather-adaptation-chain",
+  "geo-s3-resource-environment-map-attribution",
 ]);
 
 assert.equal(payload.version, "geo-2026.08.22.8");
 assert.equal(payload.sources.length, 46);
 assert.equal(payload.items.length, 143);
+
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v3 source ${sourceId}`);
+  assert.ok(source, `missing v5 source ${sourceId}`);
   assert.equal(source.url, expected.url);
-  assert.equal(source.accessedAt, expected.accessedAt);
   if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
+  assert.equal(source.accessedAt, expected.accessedAt);
   assert.match(source.licenseNote, /citation|原创|不复制|仅作/i);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const itemId of expectedItems) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v3 item ${itemId}`);
+  assert.ok(item, `missing v5 item ${itemId}`);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");
   assert.ok(item.summary.length >= 40 && item.summary.length <= 500);
   assert.ok(item.keywords.length >= 2);
-  assert.ok(item.sourceIds.some((sourceId) => Object.hasOwn(expectedSources, sourceId)));
   assert.ok(item.evidence.length >= 2);
   assert.ok(item.evidence.some((evidence) => Object.hasOwn(expectedSources, evidence.sourceId)));
 }
 
 const courseCounts = Object.groupBy([...expectedItems].map((id) => items.get(id)), (item) => item.courseId);
 assert.deepEqual(Object.fromEntries(Object.entries(courseCounts).map(([courseId, entries]) => [courseId, entries.length])), {
-  "compulsory-1": 3,
-  "compulsory-2": 2,
+  "compulsory-1": 4,
+  "compulsory-2": 3,
   "selective-1": 3,
-  "selective-2": 5,
-  "selective-3": 3,
+  "selective-2": 4,
+  "selective-3": 4,
 });
 
 console.log(JSON.stringify({

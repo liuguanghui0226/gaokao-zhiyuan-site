@@ -2490,6 +2490,43 @@ function admissionScoreStatus() {
   };
 }
 
+function recommendationValidationIssues(profile = {}) {
+  const issues = [];
+  const provinceInput = String(profile.province || "").trim();
+  const province = normalizeProvince(provinceInput);
+  if (!provinceInput) {
+    issues.push({ fieldId: "provinceInput", message: "请填写考生所在省份" });
+  } else if (!ALL_PROVINCES.includes(province)) {
+    issues.push({ fieldId: "provinceInput", message: "请从省份列表中选择有效省份" });
+  }
+
+  const scoreInput = String(profile.score || "").trim();
+  const score = Number(scoreInput);
+  if (!scoreInput) {
+    issues.push({ fieldId: "scoreInput", message: "请填写高考总分" });
+  } else if (!Number.isFinite(score) || score < 0 || score > 1000) {
+    issues.push({ fieldId: "scoreInput", message: "高考总分应在0至1000之间" });
+  }
+
+  const validateOptionalNumber = (value, fieldId, message, { min = 0, max = Infinity, integer = false } = {}) => {
+    const input = String(value || "").trim();
+    if (!input) return;
+    const number = Number(input);
+    const valid = Number.isFinite(number) && number >= min && number <= max && (!integer || Number.isInteger(number));
+    if (!valid) issues.push({ fieldId, message });
+  };
+
+  validateOptionalNumber(profile.rank, "rankInput", "位次应为不小于1的整数", { min: 1, integer: true });
+  if (province === "广西") {
+    validateOptionalNumber(profile.guangxiLocalScore, "guangxiLocalScoreInput", "广西区内院校投档分应在0至750之间", { max: 750 });
+    validateOptionalNumber(profile.guangxiLocalRank, "guangxiLocalRankInput", "广西区内院校位次应为不小于1的整数", { min: 1, integer: true });
+  }
+  if (province === "北京") {
+    validateOptionalNumber(profile.vocationalScore, "vocationalScoreInput", "北京专科语数外三科总分应在0至450之间", { max: 450 });
+  }
+  return issues;
+}
+
 function profileFromForm() {
   const rankUsageParts = ($("#rankUsageInput")?.value || "ordinary||").split("|");
   const profile = {
@@ -4902,9 +4939,17 @@ function bindRecommendEvents() {
   if (!form) return;
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    saveCurrentRecommendationDraft();
     const submit = form.querySelector('button[type="submit"]');
     const status = $("#recommendStatus");
+    form.querySelectorAll('[aria-invalid="true"]').forEach((field) => field.removeAttribute("aria-invalid"));
+    const validationIssues = recommendationValidationIssues(profileFromForm());
+    if (validationIssues.length) {
+      validationIssues.forEach(({ fieldId }) => $(fieldId)?.setAttribute("aria-invalid", "true"));
+      if (status) status.textContent = validationIssues.map((issue) => issue.message).join("；");
+      $(validationIssues[0].fieldId)?.focus();
+      return;
+    }
+    saveCurrentRecommendationDraft();
     const originalLabel = submit?.textContent || "生成推荐";
     form.setAttribute("aria-busy", "true");
     if (submit) {
@@ -4917,8 +4962,7 @@ function bindRecommendEvents() {
       await new Promise((resolve) => setTimeout(resolve, 0));
       await runRecommendation();
     } catch (error) {
-      if (status) status.textContent = "载入失败，请检查输入后重试。";
-      window.alert(error.message || String(error));
+      if (status) status.textContent = `载入失败：${error.message || "请检查输入后重试。"}`;
     } finally {
       form.removeAttribute("aria-busy");
       if (submit) {

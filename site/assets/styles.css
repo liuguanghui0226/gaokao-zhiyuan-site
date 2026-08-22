@@ -948,6 +948,13 @@ select {
   outline: none;
 }
 
+.recommend-form input[aria-invalid="true"],
+.recommend-form select[aria-invalid="true"],
+.recommend-form textarea[aria-invalid="true"] {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(179, 76, 82, 0.14);
+}
+
 .form-actions {
   display: flex;
   gap: 10px;
