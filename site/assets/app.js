@@ -5253,8 +5253,8 @@ function syncNavigationState(nextView) {
 }
 
 function updateView(nextView) {
-  renderView(nextView);
   state.view = nextView;
+  renderView(nextView);
   syncNavigationState(nextView);
   $$(".view").forEach((view) => view.classList.remove("active-view"));
   $(`#view-${nextView}`).classList.add("active-view");

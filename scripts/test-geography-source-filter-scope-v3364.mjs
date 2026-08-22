@@ -12,6 +12,15 @@ const appSource = fs.readFileSync(appFile, "utf8");
 const bootIndex = appSource.lastIndexOf("\nboot().catch");
 if (bootIndex < 0) throw new Error("Could not isolate app.js boot call");
 
+const updateViewStart = appSource.indexOf("function updateView(nextView)");
+const updateViewEnd = appSource.indexOf("\nfunction bindEvents", updateViewStart);
+const updateViewSource = appSource.slice(updateViewStart, updateViewEnd);
+assert.ok(updateViewStart >= 0 && updateViewEnd > updateViewStart, "updateView implementation must remain discoverable");
+assert.ok(
+  updateViewSource.indexOf("state.view = nextView") < updateViewSource.indexOf("renderView(nextView)"),
+  "navigation must update view state before rendering the next view",
+);
+
 const instrumented = `${appSource.slice(0, bootIndex)}
 globalThis.__gaokaoTest = { filterStatusText, hasActiveFilters, state };`;
 const context = vm.createContext({ console });
@@ -40,4 +49,5 @@ console.log(JSON.stringify({
   ok: true,
   filterScope: "sources-only",
   unrelatedViewStatusIsNeutral: true,
+  navigationUpdatesStateBeforeRender: true,
 }, null, 2));
