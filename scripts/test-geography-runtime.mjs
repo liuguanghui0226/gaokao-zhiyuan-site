@@ -19,7 +19,7 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.22.5");
+assert.equal(site.version, "geo-2026.08.22.6");
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
 assert.ok(site.items.some((item) => item.id === "geo-s2-gis-remote-sensing-evidence"));
@@ -27,10 +27,16 @@ assert.ok(site.items.some((item) => item.id === "geo-s3-ocean-acidification-carb
 assert.ok(site.items.some((item) => item.id === "geo-s1-tidal-current-estuary-dynamics"));
 assert.ok(site.items.some((item) => item.id === "geo-s2-remote-sensing-spectral-resolution"));
 assert.ok(site.items.some((item) => item.id === "geo-s3-ocean-acidification-food-security"));
+assert.ok(site.items.some((item) => item.id === "geo-s1-enso-wind-current-upwelling"));
+assert.ok(site.items.some((item) => item.id === "geo-s2-copernicus-multisource-monitoring"));
+assert.ok(site.items.some((item) => item.id === "geo-s3-soil-carbon-and-food-security"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-noaa-tides-education"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-nasa-remote-sensing-earth-observatory"));
+assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-nasa-el-nino"));
+assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-esa-copernicus-earth-observation"));
+assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-atlasgpt-secondary-geography"));
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 
 const index = fs.readFileSync(indexPath, "utf8");

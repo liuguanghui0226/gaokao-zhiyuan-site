@@ -4137,6 +4137,13 @@ function renderGeographySourceDirectory(data) {
     ].join(" ")).includes(query);
   });
   if (!sources.length) return "";
+  const publicSourceCount = sources.filter((source) => source?.url).length;
+  const localSourceCount = sources.length - publicSourceCount;
+  const sourceSummary = [
+    `${fmtNumber(sources.length)} 条来源`,
+    `${fmtNumber(publicSourceCount)} 个公开链接`,
+    `${fmtNumber(localSourceCount)} 个本地/教材`,
+  ].join(" · ");
   const rows = sources.map((source) => {
     const title = esc(source?.title || source?.id || "未命名来源");
     const titleMarkup = source?.url
@@ -4162,7 +4169,7 @@ function renderGeographySourceDirectory(data) {
         <h3>高中地理来源目录</h3>
         <p>集中查看地理摘要使用的教材、本地资料与公开网页；公开来源保留访问日期或固定提交版本。</p>
       </div>
-      <span class="status">${fmtNumber(sources.length)} 条来源</span>
+      <span class="status">${sourceSummary}</span>
     </div>
     <div class="geography-directory-list">${rows}</div>
   </section>`;

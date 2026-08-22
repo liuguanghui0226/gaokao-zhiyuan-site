@@ -1,8 +1,10 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-22；扩展轮次：geo-2026.08.22.5
+盘点日期：2026-08-22；扩展轮次：geo-2026.08.22.6
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
+
+当前发布版本 `geo-2026.08.22.6`：35 个来源、113 条卡片，其中 38 条 `authored-summary`、75 条 `citation-only`；五个课程族分别为 17、22、28、23、23 条。本轮新增 7 个公开来源与 16 条原创 `citation-only` 方法卡，覆盖水循环观测、土壤健康、非洲地形河流、ENSO、GIS、Copernicus/Sentinel、土壤安全与气候风险。
 
 本轮累计新增 46 条 citation-only 方法卡：在上一轮 19 条的基础上，继续吸收 3 份 2026 年高二地理试卷、5 份海洋生态与观测参考资料，以及用户其他工作树中的历史高中地理模块，补齐人口、城市、农业、GIS、区域生态、海洋生态与海洋观测等专题。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
 
@@ -68,6 +70,20 @@
 本轮新增 16 条原创方法卡，分别覆盖大气水汽与降水、风化侵蚀、火山地震风险、人口转变、城乡联系、服务业与数字联系、季风降水、水量平衡、冰川冻土、潮流河口、区域规划、遥感分辨率、水安全、生物多样性、碳收支和海洋酸化。新增卡片均回到五册教材保留课程归属与页码证据；NOAA、NASA 与 GitHub 仅作为概念交叉核对来源，外部内容仍按 `citation-only` 边界处理。
 
 盘点方法为 PDF 元数据检查、目录页文本抽取和章节页码人工核对。五册均有可读取文本层；当前发布数据使用章节页码范围作为证据定位，学习者仍应回到纸质或合法电子教材核对完整图表、定义和案例。
+
+## geo-2026.08.22.6 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `web-nasa-el-nino` | [NASA Science：El Niño](https://science.nasa.gov/earth/explore/el-nino/) | 页面访问日期 2026-08-22 | 核对赤道太平洋海温、信风、Walker 环流、上升流与全球天气联系；只发布原创 ENSO 方法，不复制原文、图片或视频。 |
+| `web-nasa-gpm-water-cycle` | [NASA GPM：The Water Cycle](https://gpm.nasa.gov/education/water-cycle) | 页面访问日期 2026-08-22 | 核对蒸发、蒸腾、降水、径流、储存与降水观测的联系；只发布原创水循环方法，不复制教学材料。 |
+| `web-esa-copernicus-earth-observation` | [ESA Copernicus](https://www.esa.int/Applications/Observing_the_Earth/Copernicus) | 页面访问日期 2026-08-22 | 核对 Sentinel 任务、陆地/海洋/大气监测、灾害响应与环境治理的多源证据；不复制图片、数据或版式。 |
+| `web-fao-global-soil-partnership` | [FAO Global Soil Partnership](https://www.fao.org/global-soil-partnership/en/) | 页面访问日期 2026-08-22 | 核对土壤健康、侵蚀、盐碱化、土壤有机碳与粮食安全的治理联系；不复制原文或报告版式。 |
+| `github-atlasgpt-secondary-geography` | [dayangac/AtlasGPT](https://github.com/dayangac/AtlasGPT) | commit `6f01f956ba5e803f29c32e2ec9e2ff8638bc9745`；访问日期 2026-08-22 | 参照提示生成地图与中学地理教育的结构，不复制代码、数据、地图或项目页面。 |
+| `github-terrain-explorer-africa` | [educatres/terrain-explorer-africa](https://github.com/educatres/terrain-explorer-africa) | commit `129064bc3c73d30c94f0b3fb1374fe87ca1f7f08`；访问日期 2026-08-22 | 参照山脉、河流、湖泊、特殊地形、国家公园的空间组织，不复制数据、照片、代码或版式。 |
+| `github-intro-gispro` | [giswqs/intro-gispro](https://github.com/giswqs/intro-gispro) | commit `d4de649fefff14046a818aa3a7a05623015de9ed`；访问日期 2026-08-22 | 交叉核对 GeoPandas 矢量、Rasterio 栅格、空间分析与开放地理数据处理边界，不复制代码、文字、图件或数据。 |
+
+本轮 16 条卡片均保留至少一条五册教材页码证据和至少一条新增公开来源证据；公开仓库与网站只作为概念交叉核对或方法参照，发布层继续使用 `citation-only` 边界。不可读取的 `/Volumes/mac_2T` 目录仍未被声称已经吸收。
 
 ## 其他机器与同步目录
 

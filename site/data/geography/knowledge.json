@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.5",
+  "version": "geo-2026.08.22.6",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -248,6 +248,72 @@
       "commitSha": "fbd8f4e1f7e169add8d2601f7636b68d3054c3f3",
       "accessedAt": "2026-08-22",
       "licenseNote": "仓库声明 BSD-3-Clause；本项目仅作高中地理 GIS 方法的交叉核对，不复制 notebook、数据、代码或图件。"
+    },
+    {
+      "id": "web-nasa-el-nino",
+      "title": "NASA Science：El Niño",
+      "publisher": "NASA Science / Earth Observatory",
+      "editionNote": "公开地球科学专题；访问日期 2026-08-22；围绕赤道太平洋海温、信风、Walker 环流、上升流与全球天气联系。",
+      "url": "https://science.nasa.gov/earth/explore/el-nino/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NASA 公共科学教育页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、图片、视频或版式。"
+    },
+    {
+      "id": "web-nasa-gpm-water-cycle",
+      "title": "NASA GPM：The Water Cycle",
+      "publisher": "NASA Global Precipitation Measurement",
+      "editionNote": "公开水循环教育页面；访问日期 2026-08-22；用于核对蒸发、蒸腾、降水、径流、储存与降水观测的联系。",
+      "url": "https://gpm.nasa.gov/education/water-cycle",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NASA 公共教育页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、图片或教学材料。"
+    },
+    {
+      "id": "web-esa-copernicus-earth-observation",
+      "title": "ESA Copernicus：地球观测与 Sentinel",
+      "publisher": "European Space Agency",
+      "editionNote": "公开地球观测项目页；访问日期 2026-08-22；用于核对 Sentinel 任务、陆地/海洋/大气监测、灾害响应与环境治理的多源证据。",
+      "url": "https://www.esa.int/Applications/Observing_the_Earth/Copernicus",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "ESA 公共科学与项目页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制图片、数据或版式。"
+    },
+    {
+      "id": "web-fao-global-soil-partnership",
+      "title": "FAO Global Soil Partnership：全球土壤伙伴关系",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "editionNote": "公开土壤治理与信息页面；访问日期 2026-08-22；用于核对土壤健康、侵蚀、盐碱化、土壤有机碳、生物多样性与粮食安全联系。",
+      "url": "https://www.fao.org/global-soil-partnership/en/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "FAO 公共政策与教育页面；仅作引用与概念核对，公开层发布原创高中地理方法，不复制原文、图片或报告版式。"
+    },
+    {
+      "id": "github-atlasgpt-secondary-geography",
+      "title": "AtlasGPT：中学地理数据与制图教育项目",
+      "publisher": "dayangac/AtlasGPT（GitHub）",
+      "editionNote": "公开仓库提交 `6f01f956ba5e803f29c32e2ec9e2ff8638bc9745`；访问日期 2026-08-22；README 说明面向中学地理教育的提示生成地图与数据操作项目。",
+      "url": "https://github.com/dayangac/AtlasGPT",
+      "commitSha": "6f01f956ba5e803f29c32e2ec9e2ff8638bc9745",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明 MIT；本项目仍只作外部结构与方法研究来源，公开层发布原创摘要，不复制代码、数据、地图或项目页面。"
+    },
+    {
+      "id": "github-terrain-explorer-africa",
+      "title": "Terrain Explorer Africa：非洲互动式地理教材",
+      "publisher": "educatres/terrain-explorer-africa（GitHub Pages/GitHub）",
+      "editionNote": "公开仓库提交 `129064bc3c73d30c94f0b3fb1374fe87ca1f7f08`；访问日期 2026-08-22；README 介绍以卫星地图探索山脉、河流、湖泊、特殊地形、国家公园与代表性动植物。",
+      "url": "https://github.com/educatres/terrain-explorer-africa",
+      "commitSha": "129064bc3c73d30c94f0b3fb1374fe87ca1f7f08",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库代码声明 MIT，项目另有地图、资料与图片来源政策；本项目只作教学结构与空间方法参照，不复制数据、照片、代码或版式。"
+    },
+    {
+      "id": "github-intro-gispro",
+      "title": "Introduction to GIS Programming：开放地理信息编程教程",
+      "publisher": "giswqs/intro-gispro（GitHub）",
+      "editionNote": "公开仓库提交 `d4de649fefff14046a818aa3a7a05623015de9ed`；访问日期 2026-08-22；README 目录覆盖 GeoPandas 矢量、Rasterio 栅格、交互可视化与开放地理数据处理。",
+      "url": "https://github.com/giswqs/intro-gispro",
+      "commitSha": "d4de649fefff14046a818aa3a7a05623015de9ed",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库说明代码示例为 CC BY 4.0，文字、图件与图片受版权保护；本项目只作高中 GIS 方法交叉核对，不复制代码、文字、图件或数据。"
     }
   ],
   "items": [
@@ -2230,6 +2296,368 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "第 58-82 页",
           "note": "回到教材核对气候变化、海洋生态、环境安全与适应治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-water-cycle-observation",
+      "courseId": "compulsory-1",
+      "title": "水循环观测与地表径流判读",
+      "summary": "水循环材料要先分清降水、蒸发蒸腾、下渗、径流和储存，再根据观测时段判断水量变化发生在哪个环节。比较流域或季节时，应同时关注降水强度、地表覆盖、土壤入渗和汇流速度，避免把一次降水量直接等同于径流量。",
+      "keywords": ["水循环", "径流", "蒸发蒸腾", "降水观测"],
+      "sourceIds": ["web-nasa-gpm-water-cycle", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-gpm-water-cycle",
+          "locator": "The Water Cycle：Water Cycle Essentials / precipitation / evaporation",
+          "note": "NASA GPM 教育页用于核对降水、蒸发、径流与储存的水循环联系；不复制原文或教学材料。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 46-49 页",
+          "note": "回到教材核对水循环环节、陆地水体转化和地表径流判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-soil-health-and-erosion",
+      "courseId": "compulsory-1",
+      "title": "土壤健康、侵蚀风险与地表覆盖",
+      "summary": "土壤侵蚀题要把降水冲刷、风力搬运、坡面汇流、植被覆盖和人为扰动放进同一条过程链，再判断土壤有机质、团粒结构和保水能力怎样改变风险。治理措施应对应坡面、沟道、耕作和覆盖等环节，并评价恢复时间与后续维护。",
+      "keywords": ["土壤健康", "水土流失", "地表覆盖", "侵蚀治理"],
+      "sourceIds": ["web-fao-global-soil-partnership", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-global-soil-partnership",
+          "locator": "Global Soil Partnership：soil erosion / soil organic carbon",
+          "note": "FAO 土壤伙伴关系页面用于核对侵蚀、土壤有机碳和土壤健康之间的联系；不复制原文或报告版式。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 66-80 页",
+          "note": "回到教材核对外力作用、土壤形成、侵蚀过程与地表治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-africa-relief-river-ecology",
+      "courseId": "compulsory-1",
+      "title": "非洲地形、河流与生态梯度",
+      "summary": "区域地形图要先沿山地、高原、盆地和河谷建立高程与坡度关系，再追踪分水岭、河流方向、流域汇水和植被变化。解释非洲河流生态时，应把纬度、海拔、降水季节性、河流补给和人类利用叠加分析，不能只按国家边界归纳自然环境。",
+      "keywords": ["地形", "流域", "生态梯度", "非洲地理"],
+      "sourceIds": ["github-terrain-explorer-africa", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-terrain-explorer-africa",
+          "locator": "README：山脉、河流、湖泊、特殊地形、国家公园 / data/places.json",
+          "note": "公开项目用于交叉核对地形要素、河流与保护地的空间组织；不复制数据、照片、代码或版式。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第 46-49 页",
+          "note": "回到教材核对地表形态、水循环、流域补给和自然环境要素相互作用。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-map-based-regional-evidence",
+      "courseId": "compulsory-2",
+      "title": "地图证据、区域比较与人地关系",
+      "summary": "区域比较题要先统一地图投影、指标口径、时间截面和空间尺度，再用位置、交通、人口、产业与生态数据解释差异。读图结论应写成“空间证据—过程机制—人地影响”的链条，并说明哪些信息来自图面、哪些只是合理推断。",
+      "keywords": ["地图证据", "区域比较", "指标口径", "人地关系"],
+      "sourceIds": ["github-atlasgpt-secondary-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-atlasgpt-secondary-geography",
+          "locator": "README：creates maps from prompts / Secondary School geography education",
+          "note": "公开项目用于交叉核对提示驱动制图、数据表达与中学地理教学场景；不复制代码、数据或地图。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 24-53 页",
+          "note": "回到教材核对人口、城镇、产业和交通等人文地理要素的区域联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-landscape-and-human-environment",
+      "courseId": "compulsory-2",
+      "title": "地理景观、人类活动与环境反馈",
+      "summary": "景观材料不能只描述“看到了什么”，还要识别地形、水文、植被、聚落、道路和土地利用之间的组合关系。分析人类活动影响时，应区分资源利用、景观改造和环境反馈，结合生产方式、人口分布与公共服务判断变化是否改善了人地协调。",
+      "keywords": ["地理景观", "人类活动", "土地利用", "环境反馈"],
+      "sourceIds": ["github-terrain-explorer-africa", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-terrain-explorer-africa",
+          "locator": "README：山脉、河流、湖泊、特殊地形、国家公园",
+          "note": "公开项目用于交叉核对自然景观要素与保护地空间展示的组织方式；不复制图片、资料或页面结构。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 80-95 页",
+          "note": "回到教材核对地域文化、土地利用、城乡联系与人地协调发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-enso-wind-current-upwelling",
+      "courseId": "selective-1",
+      "title": "ENSO、信风与赤道上升流",
+      "summary": "厄尔尼诺材料要先比较赤道太平洋东西部海温和气压，再沿信风强弱、暖水堆积、温跃层深浅与上升流变化建立海气过程链。解释渔业或沿岸生态影响时，应把营养盐、初级生产力和季节背景接起来，而不是只记“海温升高”。",
+      "keywords": ["ENSO", "信风", "上升流", "海气相互作用"],
+      "sourceIds": ["web-nasa-el-nino", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-el-nino",
+          "locator": "El Niño：What is an El Niño? / trade winds / upwelling",
+          "note": "NASA 专题页用于核对海温、信风、上升流和 Walker 环流的联系；不复制原文、图片或视频。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 42-63 页",
+          "note": "回到教材核对大气环流、海气作用、洋流和自然环境要素联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-enso-teleconnection-precipitation",
+      "courseId": "selective-1",
+      "title": "ENSO 遥相关与区域降水异常",
+      "summary": "全球天气影响题要把“海温异常”转换成环流异常，再追踪气压、风向、水汽输送、辐合抬升和降水变化。比较不同地区时要说明遥相关的空间差异、季节背景和其他环流叠加，不能把一次 ENSO 事件当作所有区域的同向结果。",
+      "keywords": ["ENSO", "遥相关", "降水异常", "环流"],
+      "sourceIds": ["web-nasa-el-nino", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-el-nino",
+          "locator": "El Niño：global weather patterns / Walker circulation",
+          "note": "NASA 专题页用于核对 ENSO 对全球天气联系的过程背景；不复制原文、图表或视频。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 42-63 页",
+          "note": "回到教材核对气压带风带、季风、降水机制和区域差异。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-water-cycle-evaporation-runoff",
+      "courseId": "selective-1",
+      "title": "蒸发、降水与径流的水量平衡",
+      "summary": "水量平衡综合题要先列出降水、蒸发蒸腾、径流、下渗和储存的收支，再判断植被、土壤、地形、温度与用水如何改变各项比例。遇到卫星降水或流域资料时，还要区分观测量、估算量和可利用水量，避免把数据精度当成自然过程本身。",
+      "keywords": ["蒸发", "径流", "水量平衡", "流域"],
+      "sourceIds": ["web-nasa-gpm-water-cycle", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-gpm-water-cycle",
+          "locator": "The Water Cycle：precipitation / evaporation / runoff",
+          "note": "NASA GPM 教育页用于核对水循环观测要素和水量转化关系；不复制原文或教学材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 64-79 页",
+          "note": "回到教材核对陆地水体、水分收支、径流和人类用水影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-copernicus-multisource-monitoring",
+      "courseId": "selective-2",
+      "title": "Copernicus 多源监测与区域变化",
+      "summary": "多源监测题要先明确问题，再把卫星影像、时间序列、地面观测和专题产品按空间尺度与时间尺度配对。判断区域变化时应交叉验证地表覆盖、海岸线、灾害影响或大气状况，说明不同数据的优势、误差和互补关系。",
+      "keywords": ["Copernicus", "多源监测", "时间序列", "区域变化"],
+      "sourceIds": ["web-esa-copernicus-earth-observation", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-esa-copernicus-earth-observation",
+          "locator": "Copernicus：Discover Copernicus / Introducing the Sentinels",
+          "note": "ESA 项目页用于核对陆地、海洋、大气监测和 Sentinel 多任务证据的互补性；不复制图片、数据或版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 1-10 页",
+          "note": "回到教材核对地理信息技术、区域证据和尺度匹配。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-vector-raster-scale",
+      "courseId": "selective-2",
+      "title": "矢量、栅格与地图尺度选择",
+      "summary": "GIS 资料题先按对象选择表达方式：点线面适合表达离散要素及边界，栅格适合表达连续场和像元变化。随后检查坐标系、分辨率、地图比例尺、空间连接和重采样方法，解释结论为何可能因尺度变化而不同。",
+      "keywords": ["矢量数据", "栅格数据", "地图尺度", "GIS"],
+      "sourceIds": ["github-intro-gispro", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-intro-gispro",
+          "locator": "README：Vector Data Analysis with GeoPandas / Raster Data using Rasterio",
+          "note": "公开教程用于交叉核对矢量、栅格及其分析工具的任务边界；不复制代码、文字、图件或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 1-10 页",
+          "note": "回到教材核对地理信息技术、地图表达和不同尺度下的空间分析。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-map-workflow-and-reproducibility",
+      "courseId": "selective-2",
+      "title": "地图分析流程与可复现证据",
+      "summary": "地图分析应形成可复核流程：明确问题、记录数据来源、统一坐标和指标、制作图层、检查异常、解释机制并保留版本信息。无论是提示生成地图还是代码教程，都不能跳过原始数据、处理步骤和尺度说明，否则图面漂亮也不足以支撑区域结论。",
+      "keywords": ["地图工作流", "可复现性", "数据来源", "空间分析"],
+      "sourceIds": ["github-atlasgpt-secondary-geography", "github-intro-gispro", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-atlasgpt-secondary-geography",
+          "locator": "README：creates maps from prompts",
+          "note": "AtlasGPT 用于交叉核对从问题到地图表达的教学流程；不复制项目代码、数据或地图。"
+        },
+        {
+          "sourceId": "github-intro-gispro",
+          "locator": "README：GIS Programming / data processing",
+          "note": "GIS 编程教程用于交叉核对数据处理、分析步骤与结果复核边界；不复制教程内容或代码。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 2-22 页",
+          "note": "回到教材核对区域分析、空间联系、尺度意识和地理信息技术应用。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-protected-area-spatial-evidence",
+      "courseId": "selective-2",
+      "title": "保护地空间证据与区域协同",
+      "summary": "保护地题要把山脉、河流、湖泊、栖息地和人类活动图层叠加，再判断核心保护、缓冲利用、廊道连接和社区发展之间的空间关系。评价方案时要同时看生态连通性、边界尺度、交通可达性与治理协同，不能只比较保护地数量。",
+      "keywords": ["保护地", "生态廊道", "空间叠加", "区域协同"],
+      "sourceIds": ["github-terrain-explorer-africa", "web-esa-copernicus-earth-observation", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-terrain-explorer-africa",
+          "locator": "README：国家公园 / data/places.json",
+          "note": "公开项目用于交叉核对地形、河流与国家公园的空间对象组织；不复制数据、照片或代码。"
+        },
+        {
+          "sourceId": "web-esa-copernicus-earth-observation",
+          "locator": "Copernicus：land monitoring / Sentinel",
+          "note": "ESA 页面用于交叉核对保护地变化监测和多源地球观测证据；不复制图片或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 79-102 页",
+          "note": "回到教材核对区域生态治理、空间联系和区域协同发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-sentinel-emergency-response",
+      "courseId": "selective-2",
+      "title": "Sentinel 监测与灾害应急响应",
+      "summary": "灾害遥感题要按“灾前基线—灾中识别—灾后评估—恢复治理”组织证据，再依据灾害类型选择合适的空间、时间和光谱信息。应急响应不仅是找出受灾范围，还要结合道路、居民点、资源和风险暴露判断救援优先级及恢复顺序。",
+      "keywords": ["Sentinel", "灾害响应", "遥感监测", "风险暴露"],
+      "sourceIds": ["web-esa-copernicus-earth-observation", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-esa-copernicus-earth-observation",
+          "locator": "Copernicus：Introducing the Sentinels / emergency response",
+          "note": "ESA 项目页用于核对 Sentinel 任务和灾害应急监测的证据链；不复制图片、数据或项目版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 1-10 页",
+          "note": "回到教材核对遥感、地理信息技术和区域灾害信息服务。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-soil-carbon-and-food-security",
+      "courseId": "selective-3",
+      "title": "土壤有机碳、耕地质量与粮食安全",
+      "summary": "粮食安全题要把耕地面积、土壤有机碳、保水保肥能力、产量稳定性和投入成本联系起来，区分短期增产与长期地力。治理方案可从覆盖、轮作、减少扰动、提高有机质和监测评价入手，并说明生态收益与农户收益如何兼顾。",
+      "keywords": ["土壤有机碳", "耕地质量", "粮食安全", "地力恢复"],
+      "sourceIds": ["web-fao-global-soil-partnership", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-global-soil-partnership",
+          "locator": "Global Soil Partnership：soil organic carbon / food security",
+          "note": "FAO 页面用于核对土壤有机碳、土壤健康和粮食安全的治理联系；不复制原文或报告版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 22-45 页",
+          "note": "回到教材核对耕地资源、粮食安全、资源承载力和可持续利用。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-soil-salinity-and-land-restoration",
+      "courseId": "selective-3",
+      "title": "土壤盐碱化与土地恢复",
+      "summary": "盐碱化材料要先判断盐分来源、地下水埋深、蒸发强度、排水条件和灌溉方式，再解释盐分为何在表层积累。恢复措施应把节水灌溉、排盐排水、耐盐作物、土壤改良和后续监测配套起来，评价投入、生态风险和农户可持续使用。",
+      "keywords": ["土壤盐碱化", "排盐排水", "土地恢复", "节水灌溉"],
+      "sourceIds": ["web-fao-global-soil-partnership", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-global-soil-partnership",
+          "locator": "Global Soil Partnership：soil salinity / land restoration",
+          "note": "FAO 页面用于核对土壤盐碱化、土地退化与恢复治理的关系；不复制原文或政策材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 22-45 页",
+          "note": "回到教材核对土地资源、农业水资源约束、环境治理和可持续发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-enso-climate-risk-and-resources",
+      "courseId": "selective-3",
+      "title": "ENSO、气候风险与资源安全",
+      "summary": "气候风险题要把 ENSO 的海气异常转译为降水、温度、径流、农业、渔业或能源供给的风险链，再区分暴露度、脆弱性和适应能力。资源安全评价应比较预警、储备、调度、保险、生态保护和跨区域协作的组合效果。",
+      "keywords": ["ENSO", "气候风险", "资源安全", "适应治理"],
+      "sourceIds": ["web-nasa-el-nino", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-el-nino",
+          "locator": "El Niño：global weather patterns / climate impacts",
+          "note": "NASA 专题页用于核对 ENSO 与区域天气、气候影响的联系；不复制原文、图表或视频。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "第 58-113 页",
+          "note": "回到教材核对自然灾害、资源安全、气候变化与适应治理。"
         }
       ],
       "licenseStatus": "citation-only",

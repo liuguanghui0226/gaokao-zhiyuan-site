@@ -117,11 +117,36 @@ const REQUIRED_EXTERNAL_SOURCES = new Set([
   "github-shanghai-knowledge-cards",
   "github-ckgg-high-school-geography",
   "github-geospatial-data-analysis-cn",
+  "github-atlasgpt-secondary-geography",
+  "github-terrain-explorer-africa",
+  "github-intro-gispro",
 ]);
 const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-noaa-tides-education",
   "web-noaa-ocean-acidification",
   "web-nasa-remote-sensing-earth-observatory",
+  "web-nasa-el-nino",
+  "web-nasa-gpm-water-cycle",
+  "web-esa-copernicus-earth-observation",
+  "web-fao-global-soil-partnership",
+]);
+const REQUIRED_V3_ITEMS = new Set([
+  "geo-c1-water-cycle-observation",
+  "geo-c1-soil-health-and-erosion",
+  "geo-c1-africa-relief-river-ecology",
+  "geo-c2-map-based-regional-evidence",
+  "geo-c2-landscape-and-human-environment",
+  "geo-s1-enso-wind-current-upwelling",
+  "geo-s1-enso-teleconnection-precipitation",
+  "geo-s1-water-cycle-evaporation-runoff",
+  "geo-s2-copernicus-multisource-monitoring",
+  "geo-s2-vector-raster-scale",
+  "geo-s2-map-workflow-and-reproducibility",
+  "geo-s2-protected-area-spatial-evidence",
+  "geo-s2-sentinel-emergency-response",
+  "geo-s3-soil-carbon-and-food-security",
+  "geo-s3-soil-salinity-and-land-restoration",
+  "geo-s3-enso-climate-risk-and-resources",
 ]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
@@ -200,7 +225,7 @@ for (const item of payload.items) {
     assert.equal(sourceIds.has(evidence.sourceId), true, `${item.id} evidence references unknown source`);
     assert.match(
       String(evidence.locator),
-      /第?\s*\d+\s*页|README|data\/|docs\/|ontology|RDF|geography\.html|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster/,
+      /第?\s*\d+\s*页|README|data\/|docs\/|ontology|RDF|geography\.html|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|Water Cycle|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming/,
       `${item.id} evidence locator must be a page or stable web/repository section`,
     );
     assert.equal(typeof evidence.note, "string");
@@ -209,6 +234,7 @@ for (const item of payload.items) {
 }
 
 assert.ok(payload.items.length >= 65, "the comprehensive geography slice must cover the planned next expansion");
+assert.ok(payload.items.length >= 113, "the public-source geography slice must include the v3 batch");
 for (const courseId of REQUIRED_COURSES) {
   assert.ok(
     payload.items.filter((item) => item.courseId === courseId).length >= 8,
@@ -226,6 +252,9 @@ for (const itemId of REQUIRED_NEXT_EXPANSION_ITEMS) {
 }
 for (const itemId of REQUIRED_EXTERNAL_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing external geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V3_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v3 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,
