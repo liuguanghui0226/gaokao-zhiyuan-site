@@ -9,60 +9,58 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-noaa-climate-at-a-glance": {
-    url: "https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series",
+  "web-usgs-water-cycle": {
+    url: "https://www.usgs.gov/special-topics/water-science-school/science/water-cycle",
     accessedAt: "2026-08-22",
   },
-  "web-nasa-climate-global-temperature": {
-    url: "https://climate.nasa.gov/vital-signs/global-temperature/",
+  "web-usgs-groundwater": {
+    url: "https://www.usgs.gov/special-topics/water-science-school/science/groundwater",
     accessedAt: "2026-08-22",
   },
-  "web-fao-food-systems": {
-    url: "https://www.fao.org/food-systems/en/",
+  "web-usgs-earthquake-hazards": {
+    url: "https://www.usgs.gov/programs/earthquake-hazards",
     accessedAt: "2026-08-22",
   },
-  "web-fao-faostat": {
-    url: "https://www.fao.org/faostat/en/#data",
+  "web-unhabitat-world-cities-report": {
+    url: "https://unhabitat.org/wcr/",
     accessedAt: "2026-08-22",
   },
-  "github-geocompr": {
-    url: "https://github.com/geocompx/geocompr",
-    commitSha: "8af05b03088b99c9415ae61b1c46be2b0915a03a",
+  "web-unep-global-resources-outlook": {
+    url: "https://www.unep.org/resources/Global-Resources-Outlook-2024",
     accessedAt: "2026-08-22",
   },
-  "github-geo-python-course": {
-    url: "https://github.com/geo-python/site",
-    commitSha: "760ec36314cbaf5f7257feee23281b2eece261e7",
+  "web-fao-biodiversity": {
+    url: "https://www.fao.org/biodiversity/en/",
     accessedAt: "2026-08-22",
   },
-  "github-geemap": {
-    url: "https://github.com/giswqs/geemap",
-    commitSha: "32cd563d38089d344d91accc4273900d02777ac6",
+  "github-gis-oer-works": {
+    url: "https://github.com/gis-oer/works",
+    commitSha: "db253fe9cece5fe4ba0570c6d901468911f0adac",
     accessedAt: "2026-08-22",
   },
-  "github-leafmap": {
-    url: "https://github.com/giswqs/leafmap",
-    commitSha: "18df7ee48cb27a194d89568c389a3f98443b8e8b",
+  "github-apa-urban-planning-resources": {
+    url: "https://github.com/APA-Technology-Division/urban-and-regional-planning-resources",
+    commitSha: "b9234b6708ceb64511b63d3b14de2dacd7443d19",
     accessedAt: "2026-08-22",
   },
 };
 
 const expectedItems = {
-  "geo-c1-climate-observation-scale": "compulsory-1",
-  "geo-c1-global-temperature-process-chain": "compulsory-1",
-  "geo-c1-food-system-natural-base": "compulsory-1",
-  "geo-c2-food-system-value-chain": "compulsory-2",
-  "geo-c2-faostat-indicator-comparison": "compulsory-2",
-  "geo-c2-open-geospatial-map-workflow": "compulsory-2",
-  "geo-s1-climate-time-series-variability": "selective-1",
-  "geo-s1-temperature-anomaly-energy-balance": "selective-1",
-  "geo-s1-geocomputation-raster-vector-evidence": "selective-1",
-  "geo-s2-geopython-reproducible-analysis": "selective-2",
-  "geo-s2-geemap-remote-sensing-workflow": "selective-2",
-  "geo-s2-leafmap-interactive-layer-scale": "selective-2",
-  "geo-s3-food-systems-resource-resilience": "selective-3",
-  "geo-s3-faostat-definition-time-series": "selective-3",
-  "geo-s3-geospatial-reproducibility-attribution": "selective-3",
+  "geo-c1-water-cycle-pathway-and-runoff": "compulsory-1",
+  "geo-c1-groundwater-recharge-and-landform": "compulsory-1",
+  "geo-c1-earthquake-hazard-exposure-and-intensity": "compulsory-1",
+  "geo-c2-urban-network-and-urban-rural-flow": "compulsory-2",
+  "geo-c2-regional-industry-and-logistics-choice": "compulsory-2",
+  "geo-c2-agricultural-landscape-and-biodiversity": "compulsory-2",
+  "geo-s1-global-circulation-and-seasonal-precipitation": "selective-1",
+  "geo-s1-karst-landscape-water-rock-interaction": "selective-1",
+  "geo-s1-ecosystem-services-and-natural-geography-integrity": "selective-1",
+  "geo-s2-urban-land-use-conflict-and-planning-scale": "selective-2",
+  "geo-s2-gis-hazard-map-and-community-evidence": "selective-2",
+  "geo-s2-regional-data-catalog-and-scale-traceability": "selective-2",
+  "geo-s3-circular-resource-use-and-material-security": "selective-3",
+  "geo-s3-biodiversity-ecosystem-services-and-food-security": "selective-3",
+  "geo-s3-urban-resilience-and-equity-governance": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.22.16");
@@ -71,7 +69,7 @@ assert.equal(payload.items.length, 260);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v14 source ${sourceId}`);
+  assert.ok(source, `missing v16 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
   if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
@@ -81,7 +79,7 @@ for (const [sourceId, expected] of Object.entries(expectedSources)) {
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v14 item ${itemId}`);
+  assert.ok(item, `missing v16 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

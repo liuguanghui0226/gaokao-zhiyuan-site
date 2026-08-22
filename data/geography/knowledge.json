@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.15",
+  "version": "geo-2026.08.22.16",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -964,6 +964,80 @@
       "commitSha": "5bb58fb51fbe2b0cdd8a276d3172272cb770dbec",
       "accessedAt": "2026-08-22",
       "licenseNote": "仓库声明含 MIT 许可，但具体教育资源仍按原页面标注处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制页面正文、图片或资源文件。"
+    },
+    {
+      "id": "web-usgs-water-cycle",
+      "title": "USGS Water Science School：Water Cycle 水循环",
+      "publisher": "U.S. Geological Survey",
+      "editionNote": "公开 Water Science School 水循环专题；访问日期 2026-08-22；用于核对蒸发、凝结、降水、入渗、地下水与径流的过程关系。",
+      "url": "https://www.usgs.gov/special-topics/water-science-school/science/water-cycle",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "USGS 公共科学教育页面；仅作概念与证据边界核对，公开层发布原创高中地理方法，不复制原文、图表、图片或数据。"
+    },
+    {
+      "id": "web-usgs-groundwater",
+      "title": "USGS Water Science School：Groundwater 地下水",
+      "publisher": "U.S. Geological Survey",
+      "editionNote": "公开 Water Science School 地下水专题；访问日期 2026-08-22；用于核对含水层、地下水位、补给、排泄与井泉变化的证据边界。",
+      "url": "https://www.usgs.gov/special-topics/water-science-school/science/groundwater",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "USGS 公共科学教育页面；仅作概念与证据边界核对，公开层发布原创高中地理方法，不复制原文、图表、图片或数据。"
+    },
+    {
+      "id": "web-usgs-earthquake-hazards",
+      "title": "USGS Earthquake Hazards Program：地震危险性",
+      "publisher": "U.S. Geological Survey",
+      "editionNote": "公开地震危险性专题；访问日期 2026-08-22；用于核对震动危险性、地震风险、监测证据和预测边界。",
+      "url": "https://www.usgs.gov/programs/earthquake-hazards",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "USGS 公共科学与防灾页面；仅作概念与证据边界核对，公开层发布原创高中地理方法，不复制原文、图表、图片或数据。"
+    },
+    {
+      "id": "web-unhabitat-world-cities-report",
+      "title": "UN-Habitat：World Cities Report 世界城市报告",
+      "publisher": "UN-Habitat",
+      "editionNote": "公开世界城市报告与城市化专题入口；访问日期 2026-08-22；用于核对城市增长、空间不平等、基础设施、韧性和规划尺度。",
+      "url": "https://unhabitat.org/wcr/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "联合国人居署公共知识与报告页面；仅作指标和概念边界核对，公开层发布原创高中地理方法，不复制报告、图表、案例或页面文字。"
+    },
+    {
+      "id": "web-unep-global-resources-outlook",
+      "title": "UNEP：Global Resources Outlook 2024 全球资源展望",
+      "publisher": "UN Environment Programme",
+      "editionNote": "公开全球资源展望专题；访问日期 2026-08-22；用于核对资源开采、消费、环境压力、效率与循环利用的系统关系。",
+      "url": "https://www.unep.org/resources/Global-Resources-Outlook-2024",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "联合国环境规划署公共报告页面；仅作资源环境安全的概念与证据边界核对，公开层发布原创高中地理方法，不复制报告、图表或数据。"
+    },
+    {
+      "id": "web-fao-biodiversity",
+      "title": "FAO：Biodiversity 生物多样性",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "editionNote": "公开农业与生物多样性专题；访问日期 2026-08-22；用于核对生态系统服务、农业生产、土地利用与生物多样性之间的联系。",
+      "url": "https://www.fao.org/biodiversity/en/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "联合国粮农组织公共知识页面；仅作概念与证据边界核对，公开层发布原创高中地理方法，不复制页面文字、图表、案例或数据。"
+    },
+    {
+      "id": "github-gis-oer-works",
+      "title": "GIS OER Works：地理教育 GIS 开放教材与灾害风险教学",
+      "publisher": "gis-oer/works（GitHub）",
+      "editionNote": "公开仓库提交 `db253fe9cece5fe4ba0570c6d901468911f0adac`；访问日期 2026-08-22；README 与相关条目覆盖中高中 GIS、地形教育、灾害风险地图和空间信息开放教材。",
+      "url": "https://github.com/gis-oer/works",
+      "commitSha": "db253fe9cece5fe4ba0570c6d901468911f0adac",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库及所链接资源按原仓库和外链声明处理；本项目仅作 citation-only 教学方法来源，公开层发布原创高中地理方法，不复制教材、图表、代码或数据。"
+    },
+    {
+      "id": "github-apa-urban-planning-resources",
+      "title": "APA Technology Division：城市与区域规划资源",
+      "publisher": "American Planning Association Technology Division（GitHub）",
+      "editionNote": "公开仓库提交 `b9234b6708ceb64511b63d3b14de2dacd7443d19`；访问日期 2026-08-22；README 按建成环境、人口、气候、土地利用、韧性、交通和教育资源组织规划资料入口。",
+      "url": "https://github.com/APA-Technology-Division/urban-and-regional-planning-resources",
+      "commitSha": "b9234b6708ceb64511b63d3b14de2dacd7443d19",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库 README 标注 CC0-1.0，具体外链资源仍按各自声明处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制正文、图表、代码或数据。"
     }
   ],
   "items": [
@@ -6287,6 +6361,361 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：环境安全、灾害风险、韧性治理与国家安全章节",
           "note": "回到教材核对灾害风险、适应能力、恢复公平和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-water-cycle-pathway-and-runoff",
+      "courseId": "compulsory-1",
+      "title": "水循环路径、下渗与地表径流",
+      "summary": "水循环材料题先把降水分解为截留、下渗、土壤储水、地下水补给和地表径流，再结合坡度、土壤、植被与地面硬化判断比例变化。题目给出流量或水位时，还要区分短时过程响应与长期水量储存，不能只凭降水量大小下结论。",
+      "keywords": ["水循环", "下渗", "地表径流", "下垫面"],
+      "sourceIds": ["web-usgs-water-cycle", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-usgs-water-cycle",
+          "locator": "USGS Water Science School / Water Cycle / precipitation, infiltration, groundwater and runoff",
+          "note": "USGS 水循环专题用于交叉核对水循环环节和水量路径；不复制原文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：水循环与人类活动章节",
+          "note": "回到教材核对下渗、径流、地下水补给和人类活动对水循环的影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-groundwater-recharge-and-landform",
+      "courseId": "compulsory-1",
+      "title": "地下水补给、泉水与地貌联系",
+      "summary": "地下水题先识别含水层、地下水位、补给区和排泄区，再联系降水入渗、岩性裂隙、地形坡度与人类开采解释井水或泉水变化。喀斯特等地区还要注意地表水和地下水转换快、污染通道隐蔽，评价时不能把地下水当作无限稳定的储量。",
+      "keywords": ["地下水", "含水层", "补给排泄", "喀斯特"],
+      "sourceIds": ["web-usgs-groundwater", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-usgs-groundwater",
+          "locator": "USGS Water Science School / groundwater / aquifer, recharge, discharge and water table",
+          "note": "USGS 地下水专题用于交叉核对含水层、地下水位、补给和排泄的概念边界；不复制页面文字或图表。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：地下水、水循环与地貌过程章节",
+          "note": "回到教材核对地下水参与水循环、岩性与地貌条件及人类用水影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-earthquake-hazard-exposure-and-intensity",
+      "courseId": "compulsory-1",
+      "title": "地震烈度、暴露度与风险分区",
+      "summary": "地震灾害题要区分震级、烈度、危险性、暴露度和风险：震级描述地震释放能量，烈度反映地点震动影响，风险还取决于人口、建筑、交通和防灾能力。读风险图时应把断层或震源位置与承灾体分布叠加，提出分区设防、预警和应急疏散等有空间针对性的措施。",
+      "keywords": ["地震烈度", "危险性", "暴露度", "风险分区"],
+      "sourceIds": ["web-usgs-earthquake-hazards", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-usgs-earthquake-hazards",
+          "locator": "USGS Earthquake Hazards Program / earthquake hazard, risk and monitoring",
+          "note": "USGS 地震危险性专题用于交叉核对危险性、监测证据和预测边界；不复制页面文字、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：地震灾害与防灾减灾章节",
+          "note": "回到教材核对地震影响因素、灾害风险和防灾减灾措施。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urban-network-and-urban-rural-flow",
+      "courseId": "compulsory-2",
+      "title": "城市网络、城乡流动与公共服务",
+      "summary": "城市与区域题先看城市等级、功能分工和交通联系，再分析通勤、就学、就医、商品和信息流动如何形成城市网络。城市人口增加不等于服务均等，应结合住房、就业、基础设施和城乡差异判断集聚收益、拥堵压力与公共服务补短板方向。",
+      "keywords": ["城市网络", "城乡联系", "公共服务", "空间差异"],
+      "sourceIds": ["web-unhabitat-world-cities-report", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-unhabitat-world-cities-report",
+          "locator": "UN-Habitat / World Cities Report / urban growth, infrastructure and inequality",
+          "note": "联合国人居署城市报告用于交叉核对城市增长、基础设施和空间不平等的分析边界；不复制报告或案例。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：城市、城乡联系与公共服务章节",
+          "note": "回到教材核对城市功能、等级体系、城乡联系和公共服务配置。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-regional-industry-and-logistics-choice",
+      "courseId": "compulsory-2",
+      "title": "产业区位、物流成本与区域分工",
+      "summary": "产业区位题要把原料、市场、劳动力、能源、技术、交通和环境容量放到同一空间尺度比较，并区分运输成本、时间成本与供应链稳定性。产业转移或园区建设既可能形成专业化分工和就业，也可能造成污染集中、资源消耗和区域依赖，评价要写出联系条件与治理边界。",
+      "keywords": ["产业区位", "物流成本", "区域分工", "供应链"],
+      "sourceIds": ["github-apa-urban-planning-resources", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-apa-urban-planning-resources",
+          "locator": "APA Technology Division README / built environment, employment, land use, transportation and planning data",
+          "note": "规划资源目录用于交叉核对产业、土地利用、交通和规划数据的组织维度；不复制链接正文、数据或图表。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：工业区位、产业联系与区域发展章节",
+          "note": "回到教材核对工业区位因素、产业分工、交通联系与环境影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-agricultural-landscape-and-biodiversity",
+      "courseId": "compulsory-2",
+      "title": "农业地域、土地利用与生物多样性",
+      "summary": "农业地域题不能只比较单产或产值，还要识别耕地、水资源、气候、市场和技术条件对土地利用的约束，并分析农业集约化、单一化或扩张对土壤、水体和生物多样性的影响。措施应把稳产增收、生态缓冲带、轮作和适地利用结合起来。",
+      "keywords": ["农业地域", "土地利用", "生物多样性", "生态服务"],
+      "sourceIds": ["web-fao-biodiversity", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-biodiversity",
+          "locator": "FAO / Biodiversity / agriculture, ecosystem services and land use",
+          "note": "FAO 生物多样性专题用于交叉核对农业生产、生态系统服务和土地利用之间的关系；不复制页面文字或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：农业区位、农业地域类型与可持续发展章节",
+          "note": "回到教材核对农业区位、地域类型、土地利用和农业可持续发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-global-circulation-and-seasonal-precipitation",
+      "courseId": "selective-1",
+      "title": "全球大气环流、季节位移与降水",
+      "summary": "全球环流题先定位气压带、风带和季节移动，再沿水汽来源、上升运动、凝结条件与下沉控制解释降水季节差异。材料若同时出现海温、风向和降水异常，应先统一时间尺度，再判断是环流变化、海气相互作用还是局地地形共同作用。",
+      "keywords": ["全球环流", "气压带风带", "季节位移", "降水"],
+      "sourceIds": ["web-wmo-climate", "web-usgs-water-cycle", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-wmo-climate",
+          "locator": "WMO Climate / climate system, circulation and variability",
+          "note": "WMO 气候专题用于交叉核对气候系统与变率的尺度边界；不复制页面文字、图表或数据。"
+        },
+        {
+          "sourceId": "web-usgs-water-cycle",
+          "locator": "USGS Water Science School / Water Cycle / precipitation and atmospheric water",
+          "note": "USGS 水循环专题用于补充降水在水循环中的过程位置；不复制页面文字或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：大气环流、气候类型与水循环章节",
+          "note": "回到教材核对气压带风带、季节移动、降水形成和区域气候差异。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-karst-landscape-water-rock-interaction",
+      "courseId": "selective-1",
+      "title": "喀斯特地貌中的水—岩相互作用",
+      "summary": "喀斯特地貌题要把可溶性岩石、裂隙发育、降水入渗、地下水流动与溶蚀沉积过程连起来，解释峰丛、溶洞、地下河或地表塌陷等现象。开发利用既要看到旅游与供水价值，也要关注地下水污染易扩散、地质灾害和生态脆弱性。",
+      "keywords": ["喀斯特地貌", "溶蚀", "地下河", "水岩作用"],
+      "sourceIds": ["web-usgs-groundwater", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-usgs-groundwater",
+          "locator": "USGS Water Science School / groundwater / groundwater flow and aquifers",
+          "note": "USGS 地下水专题用于交叉核对地下水流动、含水层和污染传播的证据边界；不复制页面文字或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：喀斯特地貌、流水作用与自然环境整体性章节",
+          "note": "回到教材核对溶蚀地貌、水岩作用、地表地下水联系和开发保护。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-ecosystem-services-and-natural-geography-integrity",
+      "courseId": "selective-1",
+      "title": "生态系统服务与自然地理整体性",
+      "summary": "自然地理综合题可把植被、土壤、水文、生物多样性和人类利用看成相互反馈的系统，分别识别供给、调节、支持和文化等生态系统服务。材料出现单项增产或工程收益时，要继续追踪水土保持、授粉、碳储存和景观连通性等可能变化，避免只写短期产出。",
+      "keywords": ["生态系统服务", "生物多样性", "自然地理整体性", "反馈"],
+      "sourceIds": ["web-fao-biodiversity", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-biodiversity",
+          "locator": "FAO / Biodiversity / ecosystem services, agriculture and resilient landscapes",
+          "note": "FAO 生物多样性专题用于交叉核对生态系统服务、农业系统与生物多样性的联系；不复制页面文字、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：自然环境整体性与生态系统章节",
+          "note": "回到教材核对自然地理要素相互作用、整体性和人地关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-urban-land-use-conflict-and-planning-scale",
+      "courseId": "selective-2",
+      "title": "城市用地冲突、规划尺度与空间公平",
+      "summary": "区域规划题先确定规划对象和尺度，再识别居住、产业、交通、生态保护和公共服务之间的用地竞争。方案评价不能只看土地利用效率，还要比较不同群体的可达性、环境风险和长期韧性，并说明市域、都市圈与社区尺度之间如何衔接。",
+      "keywords": ["城市规划", "土地利用", "空间公平", "规划尺度"],
+      "sourceIds": ["web-unhabitat-world-cities-report", "github-apa-urban-planning-resources", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-unhabitat-world-cities-report",
+          "locator": "UN-Habitat / World Cities Report / urbanization, inclusion and resilience",
+          "note": "联合国人居署城市报告用于交叉核对城市规划、包容性和韧性边界；不复制报告、图表或案例。"
+        },
+        {
+          "sourceId": "github-apa-urban-planning-resources",
+          "locator": "APA Technology Division README / land use, equity, resilience and transportation resources",
+          "note": "规划资源目录用于交叉核对土地利用、交通、韧性和公平分析的资料组织；不复制仓库正文或外链资料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域规划、土地利用与区域协调章节",
+          "note": "回到教材核对规划目标、空间尺度、土地利用冲突和区域协调。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-gis-hazard-map-and-community-evidence",
+      "courseId": "selective-2",
+      "title": "GIS 灾害风险地图与社区证据",
+      "summary": "灾害风险地图题可按危险源、暴露人口、脆弱设施和应急资源建立图层，再检查投影、比例尺、时间和分类方法是否一致。GIS 只能帮助叠加与定位，结论仍需用现场观察、统计资料或预警信息交叉验证，并把地图结果翻译成避险路线和规划措施。",
+      "keywords": ["GIS", "风险地图", "图层叠加", "社区韧性"],
+      "sourceIds": ["github-gis-oer-works", "web-usgs-earthquake-hazards", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-gis-oer-works",
+          "locator": "GIS OER Works README / GIS education, geomorphology and disaster risk reduction teaching materials",
+          "note": "GIS OER 目录用于交叉核对地理教育、灾害风险地图和空间证据的组织方法；不复制教材、图表、代码或数据。"
+        },
+        {
+          "sourceId": "web-usgs-earthquake-hazards",
+          "locator": "USGS Earthquake Hazards Program / hazard and risk evidence",
+          "note": "USGS 地震危险性专题用于核对危险性与风险证据边界；不复制页面文字、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：地理信息技术、区域风险与规划章节",
+          "note": "回到教材核对 GIS 图层、空间分析、灾害风险和区域规划。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-regional-data-catalog-and-scale-traceability",
+      "courseId": "selective-2",
+      "title": "区域数据目录、尺度转换与证据可追溯",
+      "summary": "区域比较或专题制图时，先记录数据来源、年份、空间单位、指标定义和处理步骤，再判断不同数据能否直接叠加。行政区统计、栅格数据、调查样本和遥感影像的尺度不同，不能用精细地图制造虚假精度；结论应标明观测事实、计算结果和推断范围。",
+      "keywords": ["区域数据", "空间尺度", "指标口径", "可追溯"],
+      "sourceIds": ["github-gis-oer-works", "github-apa-urban-planning-resources", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-gis-oer-works",
+          "locator": "GIS OER Works README / open GIS materials, spatial information and reproducible teaching",
+          "note": "GIS 开放教材目录用于交叉核对空间数据、地图表达和教学证据链；不复制正文、代码或数据。"
+        },
+        {
+          "sourceId": "github-apa-urban-planning-resources",
+          "locator": "APA Technology Division README / public data, planning specifications and geospatial resources",
+          "note": "规划数据资源目录用于交叉核对数据目录、规划指标和地理空间资料的来源边界；不复制仓库内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域比较、地理信息技术与地理实践章节",
+          "note": "回到教材核对区域尺度、资料分析、地图表达和地理实践。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-circular-resource-use-and-material-security",
+      "courseId": "selective-3",
+      "title": "资源循环利用、消费结构与物质安全",
+      "summary": "资源安全题要区分资源开采、加工、消费、废弃和再利用环节，分析总量、效率、替代性、供应链和环境代价。循环利用不是简单把废物回收，而要结合减量、延寿、再制造、清洁生产和区域协作判断能否降低资源压力与外部环境风险。",
+      "keywords": ["资源安全", "循环利用", "消费结构", "供应链"],
+      "sourceIds": ["web-unep-global-resources-outlook", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-unep-global-resources-outlook",
+          "locator": "UNEP / Global Resources Outlook 2024 / resource extraction, consumption, efficiency and circularity",
+          "note": "UNEP 全球资源展望用于交叉核对资源流、消费压力、效率和循环利用的系统关系；不复制报告、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源安全、环境安全与可持续利用章节",
+          "note": "回到教材核对资源供需、环境代价、资源安全和可持续发展。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-biodiversity-ecosystem-services-and-food-security",
+      "courseId": "selective-3",
+      "title": "生物多样性、生态系统服务与粮食安全",
+      "summary": "粮食安全评价不能只看耕地面积和产量，还要把遗传多样性、授粉、土壤保持、水源涵养和农业系统抗扰动能力纳入。单一化生产可能短期提高效率，却会放大病虫害、气候异常和市场波动风险，措施应兼顾产能、生态服务与农户生计。",
+      "keywords": ["生物多样性", "生态系统服务", "粮食安全", "农业韧性"],
+      "sourceIds": ["web-fao-biodiversity", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-biodiversity",
+          "locator": "FAO / Biodiversity / ecosystem services, genetic resources and resilient agrifood systems",
+          "note": "FAO 生物多样性专题用于交叉核对生态系统服务、农业韧性和粮食系统的联系；不复制页面文字、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：粮食安全、生态安全与资源环境承载力章节",
+          "note": "回到教材核对粮食供给、资源环境约束、生态安全和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-urban-resilience-and-equity-governance",
+      "courseId": "selective-3",
+      "title": "城市韧性、环境公平与安全治理",
+      "summary": "城市安全评价要把热浪、洪涝、地震或供水中断等风险与人口暴露、基础设施脆弱性和应急能力叠加，进一步比较不同社区承担风险和获得服务的差异。治理方案应同时考虑绿色基础设施、关键设施冗余、预警避险、公共参与和长期维护，避免只提出单一工程。",
+      "keywords": ["城市韧性", "环境公平", "灾害风险", "安全治理"],
+      "sourceIds": ["web-unhabitat-world-cities-report", "github-apa-urban-planning-resources", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-unhabitat-world-cities-report",
+          "locator": "UN-Habitat / World Cities Report / resilience, infrastructure and inclusion",
+          "note": "联合国人居署城市报告用于交叉核对城市韧性、基础设施和包容性治理边界；不复制报告、图表或案例。"
+        },
+        {
+          "sourceId": "github-apa-urban-planning-resources",
+          "locator": "APA Technology Division README / resilience and natural hazards, equity and environmental justice",
+          "note": "规划资源目录用于补充灾害、韧性、公平和规划数据的资料组织入口；不复制仓库正文或外链资料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：环境安全、灾害风险与国家安全章节",
+          "note": "回到教材核对风险识别、适应能力、公共安全和治理措施。"
         }
       ],
       "licenseStatus": "citation-only",
