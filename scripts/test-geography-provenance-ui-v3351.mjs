@@ -36,19 +36,19 @@ context.__gaokaoTest.state.query = "";
 context.__gaokaoTest.state.geographyCourse = "";
 const metrics = context.__gaokaoTest.geographySummaryMetrics(payload);
 assert.equal(metrics.courses, 5);
-assert.equal(metrics.items, 71);
-assert.equal(metrics.sources, 21);
+assert.equal(metrics.items, 81);
+assert.equal(metrics.sources, 24);
 assert.equal(metrics.authoredSummaries, 25);
-assert.equal(metrics.citationOnlyItems, 46);
+assert.equal(metrics.citationOnlyItems, 56);
 
 context.__gaokaoTest.renderGeography();
-assert.match(view.innerHTML, /data-geography-version="geo-2026\.08\.22\.3"/);
+assert.match(view.innerHTML, /data-geography-version="geo-2026\.08\.22\.4"/);
 assert.match(view.innerHTML, /资料边界与更新/);
-assert.match(view.innerHTML, /资料版本 geo-2026\.08\.22\.3/);
+assert.match(view.innerHTML, /资料版本 geo-2026\.08\.22\.4/);
 assert.match(view.innerHTML, /引文型方法卡/);
-assert.match(view.innerHTML, /全部课程 · 71/);
+assert.match(view.innerHTML, /全部课程 · 81/);
 assert.match(view.innerHTML, /地理必修第一册 · 11/);
-assert.match(view.innerHTML, /71 条摘要/);
+assert.match(view.innerHTML, /81 条摘要/);
 
 console.log(JSON.stringify({
   ok: true,

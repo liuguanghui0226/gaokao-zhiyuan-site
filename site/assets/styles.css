@@ -947,6 +947,13 @@ select {
   font-size: 14px;
 }
 
+.draft-status {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--leaf-dark);
+  font-size: 14px;
+}
+
 .primary-action,
 .ghost-action {
   border-radius: 8px;

@@ -2582,7 +2582,21 @@ function recommendationDraftFromForm() {
 }
 
 function saveCurrentRecommendationDraft() {
-  saveRecommendationProfile(recommendationDraftFromForm());
+  const draft = recommendationDraftFromForm();
+  saveRecommendationProfile(draft);
+  state.prefillProfile = draft;
+  syncRecommendationDraftStatus("已保存本机草稿；仅保存在此浏览器。");
+}
+
+function recommendationDraftStatusText() {
+  return state.prefillProfile
+    ? "已载入本机草稿；修改会自动保存在本机浏览器。"
+    : "当前使用示例资料；修改后会自动保存在本机浏览器。";
+}
+
+function syncRecommendationDraftStatus(message = "") {
+  const status = $("#recommendDraftStatus");
+  if (status) status.textContent = message || recommendationDraftStatusText();
 }
 
 function hasTextHit(text, keywords) {
@@ -4311,10 +4325,11 @@ function renderRecommendForm(profile) {
     </label>
     <div class="form-actions">
       <button class="primary-action" type="submit" aria-controls="recommendResultRegion">生成推荐</button>
-      <button class="ghost-action" id="resetRecommend" type="button">恢复示例</button>
+      <button class="ghost-action" id="resetRecommend" type="button">清除草稿并恢复示例</button>
     </div>
     <p id="recommendStatus" class="form-status" role="status" aria-live="polite"></p>
-    <p class="form-hint">表单草稿仅保存在本机浏览器，点击“恢复示例”可清除。</p>
+    <p id="recommendDraftStatus" class="draft-status" role="status" aria-live="polite">${esc(recommendationDraftStatusText())}</p>
+    <p class="form-hint">表单草稿仅保存在本机浏览器；清除后不会影响已发布数据。</p>
   </form>`;
 }
 

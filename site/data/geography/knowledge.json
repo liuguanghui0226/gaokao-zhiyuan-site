@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.3",
+  "version": "geo-2026.08.22.4",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -181,6 +181,30 @@
       "publisher": "本地海洋竞赛参考资料",
       "editionNote": "DOC 文件；Word 元数据标示 5 页；SHA-256 45e7c6c8dc4b7931882c9965aada7967ab087408b32eb8ecf1a7e97363c3e454。",
       "licenseNote": "原始发布许可未核验；仅作 citation-only 研究来源，公开层只发布原创高中地理方法摘要，不复制原文或知识点清单。"
+    },
+    {
+      "id": "github-orange-geography-coach",
+      "title": "橙子地理教练：高中地理诊断与交互实验项目",
+      "publisher": "uau9/orange-geography-coach（GitHub）",
+      "editionNote": "公开仓库提交 `0198f84c3552bf20df90124e1c18dc412f0cf0fd`；访问日期 2026-08-22；涵盖地转偏向力、地方时、晨昏线、气压带、潮汐等交互实验的课程组织与理想模型说明。",
+      "url": "https://github.com/uau9/orange-geography-coach",
+      "licenseNote": "仓库未声明可复用许可证；仅作外部结构与方法研究来源，公开层只发布重新组织的原创摘要，不复制题目、答案、解析、页面代码或资源。"
+    },
+    {
+      "id": "github-shanghai-knowledge-cards",
+      "title": "上海知识卡片：高中地理知识卡片 PWA",
+      "publisher": "EricTwins/shanghai-knowledge-cards（GitHub Pages/GitHub）",
+      "editionNote": "公开仓库提交 `4f6575871b0ea4518450e6b32418b2bac5177f2b`；访问日期 2026-08-22；用于对照自然、人文、区域与资源环境的卡片组织方式。",
+      "url": "https://github.com/EricTwins/shanghai-knowledge-cards",
+      "licenseNote": "仓库未声明可复用许可证；仅作外部课程结构研究来源，公开层只发布原创方法摘要，不复制卡片正文、年度考情、图件或页面版式。"
+    },
+    {
+      "id": "github-ckgg-high-school-geography",
+      "title": "CKGG：面向高中地理教育的中文地理知识图谱",
+      "publisher": "nju-websoft/CKGG（GitHub/Zenodo）",
+      "editionNote": "公开仓库提交 `1c8bf48b11d0864440ceccef95c81afae3d483c7`；关联 Zenodo DOI 10.5281/zenodo.4668711；用于核对地理实体、空间关系与多源属性组织方式。",
+      "url": "https://github.com/nju-websoft/CKGG",
+      "licenseNote": "仓库页面未声明可复用许可证；仅作知识图谱结构与地理证据组织研究来源，公开层不复制 RDF、数据转储、图片或代码。"
     }
   ],
   "items": [
@@ -1631,6 +1655,231 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "第 58-82 页",
           "note": "回到教材核对气候变化、生态系统服务和环境安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-coriolis-force-direction",
+      "courseId": "selective-1",
+      "title": "地转偏向力与水平运动方向",
+      "summary": "地转偏向力题先以运动方向为基准判断北半球右偏、南半球左偏，赤道附近偏转弱，再说明它主要改变水平运动方向而不直接创造运动。把偏转与气压梯度、河岸侵蚀或洋流联系时，要先标出观察者和运动物体的相对方向，避免把地图左右直接当成南北半球规律。",
+      "keywords": ["地转偏向力", "北右南左", "水平运动", "观察视角"],
+      "sourceIds": ["github-orange-geography-coach", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-orange-geography-coach",
+          "locator": "README：v0.21.0「地转偏向力实验室」",
+          "note": "外部项目用于核对北右南左、赤道附近和大尺度运动的训练边界；不复制其题目或交互代码。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 42-63 页",
+          "note": "回到教材核对大气运动、风向和环流的基本概念。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-time-zone-and-date-line",
+      "courseId": "selective-1",
+      "title": "地方时、区时与日期界线",
+      "summary": "时间计算先区分地方时与法定区时，再统一经度、时刻和日期的参照。地方时按经度差换算时要确认向东时间较早、向西较晚；跨越日期界线时先算时间差再处理日期增减，不能把时区边界、180°经线和实际国际日界线简单视为同一条线。",
+      "keywords": ["地方时", "区时", "日期界线", "经度换算"],
+      "sourceIds": ["github-orange-geography-coach", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-orange-geography-coach",
+          "locator": "README：v0.3「时区与地方时」与 v0.13「全球日期范围实验室」",
+          "note": "外部项目用于核对时间计算的步骤化组织和理想模型边界。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 2-17 页",
+          "note": "回到教材核对地球自转、公转及地方时相关地理意义。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-terminator-time-chain",
+      "courseId": "selective-1",
+      "title": "晨昏线、直射经线与地方时联判",
+      "summary": "晨昏线综合题先确定日期和太阳直射点，再由昼夜分布判断晨线、昏线与直射经线的相对位置，最后回到目标地点的纬度、地方时和昼夜状态。赤道交点可作为约 6 时或 18 时的参照，但其他纬度的日出日落时刻还受昼长影响，不能机械套用。",
+      "keywords": ["晨昏线", "直射经线", "昼长", "地方时"],
+      "sourceIds": ["github-orange-geography-coach", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-orange-geography-coach",
+          "locator": "README：v0.11.0「晨昏线综合联动实验室」",
+          "note": "外部项目用于核对直射经线、晨昏状态和纬度差异的联动步骤。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 2-17 页",
+          "note": "回到教材核对昼夜长短、太阳直射点和地球运动地理意义。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-pressure-belt-seasonal-migration",
+      "courseId": "selective-1",
+      "title": "气压带风带与季节移动",
+      "summary": "气压带风带题先由受热差异和环流结构判断垂直运动，再沿纬度带解释盛行风、降水和气候。季节变化要追踪太阳直射点及热力带的整体移动，东亚和南亚季风还需加入海陆热力差异、地形与水汽来源，不能只凭风向记忆结论。",
+      "keywords": ["气压带", "风带", "季节移动", "季风"],
+      "sourceIds": ["github-orange-geography-coach", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-orange-geography-coach",
+          "locator": "README：v0.25「气压带和风带」与 data/atmosphere_reasoning_labs.json",
+          "note": "外部项目用于核对三圈环流、季风和水汽来源的推理链；不复制原题和数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 42-63 页",
+          "note": "回到教材核对大气环流、天气系统和气候形成机制。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-tidal-cycle-and-coastal-impact",
+      "courseId": "selective-1",
+      "title": "潮汐周期与海岸影响",
+      "summary": "潮汐题先判断月球和太阳引潮作用的相对方向：日月地大致成线时潮差较大，方向近似垂直时潮差较小。再把理想周期与海湾形态、水深、摩擦、风暴和当地预报区分开，评价港口、养殖或滩涂利用时不能用大潮小潮直接替代具体潮时潮高。",
+      "keywords": ["潮汐", "大潮", "小潮", "海岸利用"],
+      "sourceIds": ["github-orange-geography-coach", "github-shanghai-knowledge-cards", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-orange-geography-coach",
+          "locator": "README：v0.20.0「潮汐周期与月相实验室」与 data/tide_lab.json",
+          "note": "外部项目用于核对大潮、小潮和当地潮汐预报的区分。"
+        },
+        {
+          "sourceId": "github-shanghai-knowledge-cards",
+          "locator": "geography.html：自然地理卡片与资源环境卡片",
+          "note": "外部站点用于交叉核对潮汐、海岸过程和资源环境的课程组织；不复制卡片正文。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 64-79 页",
+          "note": "回到教材核对水体运动、海岸过程和地理环境影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-moon-phase-and-tidal-link",
+      "courseId": "selective-1",
+      "title": "月相变化与大潮小潮联动",
+      "summary": "月相材料要先按日月地相对位置判断盈亏，再把新月、满月附近的引潮方向叠加起来解释大潮，把上弦、下弦附近的部分抵消解释为小潮。月相名称描述观测到的明暗形态，不等于当地潮高；真实潮差仍需结合海盆、地形和天气资料。",
+      "keywords": ["月相", "朔望月", "潮差", "日月地"],
+      "sourceIds": ["github-orange-geography-coach", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-orange-geography-coach",
+          "locator": "README：v0.18.0「月相位置」与 v0.20.0「潮汐周期」",
+          "note": "外部项目用于核对月相、潮型和理想模型限制。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "第 64-79 页",
+          "note": "回到教材核对水体运动与海气作用相关概念。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-rural-space-and-industry-transformation",
+      "courseId": "compulsory-2",
+      "title": "乡村空间结构与产业转型",
+      "summary": "乡村发展题要把居民点、耕地、道路、公共服务和产业空间放在同一尺度观察，再解释人口流动、土地利用和产业融合如何改变空间结构。评价乡村转型时同时看就业与收入、服务可达性、生态承载力和社区参与，不能把单个项目数量等同于发展质量。",
+      "keywords": ["乡村空间", "产业转型", "公共服务", "人地协调"],
+      "sourceIds": ["github-shanghai-knowledge-cards", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-shanghai-knowledge-cards",
+          "locator": "geography.html：乡村空间结构与区域发展卡片",
+          "note": "外部站点用于识别乡村空间、城镇化和产业转型的复习组织方式；不复制年度考情或卡片正文。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 24-53 页",
+          "note": "回到教材核对城镇化、地域文化与人地协调的基础概念。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-regional-culture-and-environment",
+      "courseId": "compulsory-2",
+      "title": "地域文化与地理环境互构",
+      "summary": "地域文化材料不能只用单一自然因素解释。先识别建筑、聚落、生产方式或景观符号，再从水热、地形、资源、历史迁移和社会制度等方面寻找适应与改造证据，同时说明文化也会反过来影响土地利用和区域发展，避免把文化标签当作固定结论。",
+      "keywords": ["地域文化", "文化景观", "地理环境", "聚落"],
+      "sourceIds": ["github-shanghai-knowledge-cards", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-shanghai-knowledge-cards",
+          "locator": "geography.html：地域文化与地理环境卡片",
+          "note": "外部站点用于交叉核对地域文化案例的分析维度，不复制案例文本。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第 24-53 页",
+          "note": "回到教材核对地域文化、聚落与人地关系内容。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-multisource-regional-evidence",
+      "courseId": "selective-2",
+      "title": "区域判读的多源证据联读",
+      "summary": "区域判读要把位置、行政边界、海拔、气候、水热、人口、交通和距海等证据按同一空间尺度对齐，再判断哪些是背景条件、哪些是机制变量、哪些只是结果指标。不同来源的时间、分辨率和定义不一致时，应先标出不确定性，不能把一张属性表直接当成完整区域结论。",
+      "keywords": ["区域判读", "多源证据", "空间尺度", "属性联读"],
+      "sourceIds": ["github-ckgg-high-school-geography", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-ckgg-high-school-geography",
+          "locator": "README：RDF Dumps / How to Access / RDF example",
+          "note": "知识图谱项目用于核对位置、气候、人口、太阳辐射、距海和时区等属性的多源组织方式；不复制 RDF 或数据转储。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 2-22 页",
+          "note": "回到教材核对区域整体性、关联性和尺度意识。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-geographic-knowledge-graph-evidence",
+      "courseId": "selective-2",
+      "title": "空间关系、行政层级与功能尺度",
+      "summary": "空间关系题要先区分点位、包含关系、相邻关系、交通联系和功能辐射，再判断行政边界与经济或生态边界是否重合。使用知识图谱或地图数据时，应保留实体的时间、来源和空间尺度，避免把行政名称、自然区域和功能区混为同一个区域对象。",
+      "keywords": ["空间关系", "行政层级", "功能区", "尺度"],
+      "sourceIds": ["github-ckgg-high-school-geography", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-ckgg-high-school-geography",
+          "locator": "README：RDF example / Namespaces",
+          "note": "知识图谱项目用于核对实体、包含关系、同一性链接和属性来源的区分。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "第 2-22 页",
+          "note": "回到教材核对区域边界、空间联系和尺度变化对结论的影响。"
         }
       ],
       "licenseStatus": "citation-only",

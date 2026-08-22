@@ -174,6 +174,7 @@ const tests = [
   "test-clear-filters-v3353.mjs",
   "test-navigation-accessibility-v3354.mjs",
   "test-filter-scope-status-v3355.mjs",
+  "test-recommendation-draft-status-v3356.mjs",
 ];
 
 const results = tests.map((test) => {

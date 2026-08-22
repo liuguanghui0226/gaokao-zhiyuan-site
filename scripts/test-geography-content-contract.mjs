@@ -92,6 +92,23 @@ const REQUIRED_NEXT_EXPANSION_ITEMS = new Set([
   "geo-s3-marine-weather-coastal-warning",
   "geo-s3-ocean-acidification-carbon-cycle",
 ]);
+const REQUIRED_EXTERNAL_SOURCES = new Set([
+  "github-orange-geography-coach",
+  "github-shanghai-knowledge-cards",
+  "github-ckgg-high-school-geography",
+]);
+const REQUIRED_EXTERNAL_ITEMS = new Set([
+  "geo-s1-coriolis-force-direction",
+  "geo-s1-time-zone-and-date-line",
+  "geo-s1-terminator-time-chain",
+  "geo-s1-pressure-belt-seasonal-migration",
+  "geo-s1-tidal-cycle-and-coastal-impact",
+  "geo-s1-moon-phase-and-tidal-link",
+  "geo-c2-rural-space-and-industry-transformation",
+  "geo-c2-regional-culture-and-environment",
+  "geo-s2-multisource-regional-evidence",
+  "geo-s2-geographic-knowledge-graph-evidence",
+]);
 const ALLOWED_LICENSE_STATES = new Set(["authored-summary", "citation-only"]);
 
 assert.equal(typeof payload.version, "string");
@@ -123,6 +140,14 @@ for (const sourceId of REQUIRED_EXPANSION_SOURCES) {
 for (const sourceId of REQUIRED_NEXT_EXPANSION_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing next geography source ${sourceId}`);
 }
+for (const sourceId of REQUIRED_EXTERNAL_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing external geography source ${sourceId}`);
+}
+for (const source of payload.sources.filter((item) => REQUIRED_EXTERNAL_SOURCES.has(item.id))) {
+  assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.commitSha), /^[a-f0-9]{40}$/i, `${source.id} must retain an immutable commit SHA`);
+  assert.match(String(source.accessedAt), /^2026-08-22$/, `${source.id} must retain an access date`);
+}
 const itemIds = new Set();
 for (const item of payload.items) {
   assert.equal(typeof item.id, "string");
@@ -143,7 +168,11 @@ for (const item of payload.items) {
   }
   for (const evidence of item.evidence) {
     assert.equal(sourceIds.has(evidence.sourceId), true, `${item.id} evidence references unknown source`);
-    assert.match(String(evidence.locator), /第?\s*\d+\s*页/);
+    assert.match(
+      String(evidence.locator),
+      /第?\s*\d+\s*页|README|data\/|docs\/|ontology|RDF|geography\.html/,
+      `${item.id} evidence locator must be a page or stable web/repository section`,
+    );
     assert.equal(typeof evidence.note, "string");
     assert.ok(evidence.note.length > 0);
   }
@@ -164,6 +193,9 @@ for (const itemId of REQUIRED_EXPANSION_ITEMS) {
 }
 for (const itemId of REQUIRED_NEXT_EXPANSION_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing next expanded geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_EXTERNAL_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing external geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,
