@@ -846,6 +846,79 @@ select {
   font-size: 14px;
 }
 
+.recommendation-shortlist {
+  background: #fffaf0;
+  border-color: #e4d5b6;
+}
+
+.shortlist-panel-head,
+.shortlist-panel-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.shortlist-panel-head h3 {
+  margin: 0;
+}
+
+.shortlist-panel-head p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.shortlist-panel-head > strong {
+  flex: 0 0 auto;
+  border: 1px solid #e4d5b6;
+  border-radius: 8px;
+  padding: 5px 8px;
+  color: #8a5a12;
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.shortlist-panel-list {
+  display: grid;
+  margin-top: 14px;
+}
+
+.shortlist-panel-row {
+  padding: 12px 0;
+  border-top: 1px solid #eadfc9;
+}
+
+.shortlist-panel-row strong {
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.shortlist-panel-source {
+  display: inline-block;
+  margin-top: 9px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.shortlist-panel-source:hover,
+.shortlist-panel-source:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+.shortlist-panel-remove {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+
 .form-status {
   grid-column: 1 / -1;
   min-height: 1.5em;
@@ -1469,7 +1542,9 @@ select {
   .recommend-card header,
   .application-plan-head,
   .application-plan-group header,
-  .application-plan-row {
+  .application-plan-row,
+  .shortlist-panel-head,
+  .shortlist-panel-row {
     display: grid;
     justify-content: stretch;
   }
