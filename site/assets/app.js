@@ -3932,6 +3932,7 @@ async function runRecommendation() {
   };
   state.recommendationInvalidated = false;
   renderRecommend();
+  focusRecommendationResults();
 }
 
 function filteredSources() {
@@ -5016,6 +5017,15 @@ function refreshRecommendationResults() {
   bindRecommendationResultEvents();
 }
 
+function focusRecommendationResults() {
+  const region = $("#recommendResultRegion");
+  const status = $("#recommendStatus");
+  if (status) status.textContent = "推荐结果已生成，已跳转到结果区域。";
+  if (!region || typeof region.focus !== "function") return false;
+  region.focus({ preventScroll: false });
+  return true;
+}
+
 function bindRecommendationResultEvents() {
   const copyButton = $("#copyRecommendation");
   const downloadButton = $("#downloadRecommendation");
@@ -5236,7 +5246,7 @@ function renderRecommend() {
       <h3>成绩与偏好</h3>
       ${renderRecommendForm(profile)}
     </section>
-    <div id="recommendResultRegion">${renderRecommendationResults()}</div>
+    <div id="recommendResultRegion" role="region" aria-live="polite" aria-label="推荐结果区域" tabindex="-1">${renderRecommendationResults()}</div>
     <details class="detail-drawer">
       <summary>排序口径</summary>
       <p>${esc(policy.reliabilityDefinition)}</p>
