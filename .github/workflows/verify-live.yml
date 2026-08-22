@@ -129,7 +129,8 @@ jobs:
           ! grep -q '<small>${fmtNumber(matched.length)} 条资料</small>' "$work/app.js"
           fetch "${base}assets/styles.css" "$work/styles.css"
           ! grep -Eq 'font-size:[[:space:]]*([0-9]|1[0-3])px' "$work/styles.css"
-          grep -q 'data-view="sources">数据来源' "$work/index.html"
+          grep -q 'data-view="sources"' "$work/index.html"
+          grep -q '数据来源' "$work/index.html"
           ! grep -q 'data-view="rounds"' "$work/index.html"
           ! grep -q 'data-view="audio"' "$work/index.html"
 

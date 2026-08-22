@@ -20,6 +20,9 @@ assert.match(workflow, /assets\/app\.js\?v=\$\{app_asset_version\}/);
 assert.match(workflow, /fetch "\$\{base\}assets\/app\.js\?v=\$\{app_asset_version\}"/);
 const unsafeAssetExtractor = String.raw`html.match(/assets\/app\.js\?v=([^"']+)/)`;
 assert.equal(workflow.includes(unsafeAssetExtractor), false, "single-quoted shell scripts must not contain an unescaped apostrophe");
+assert.doesNotMatch(workflow, /data-view="sources">数据来源/, "the sources navigation check must match the actual markup structure");
+assert.match(workflow, /grep -q 'data-view="sources"/);
+assert.match(workflow, /grep -q '数据来源'/);
 assert.doesNotMatch(workflow, /app\.js\?v=3\.346\.4/);
 
 console.log(JSON.stringify({
