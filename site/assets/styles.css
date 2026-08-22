@@ -133,10 +133,15 @@ select {
 
 .toolbar {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(160px, 230px) minmax(160px, 230px);
+  grid-template-columns: minmax(220px, 1fr) minmax(160px, 230px) minmax(160px, 230px) auto;
   gap: 12px;
   align-items: end;
   margin-bottom: 22px;
+}
+
+.toolbar-clear {
+  align-self: end;
+  white-space: nowrap;
 }
 
 .search-box,

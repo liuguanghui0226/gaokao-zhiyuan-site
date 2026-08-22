@@ -171,6 +171,7 @@ const tests = [
   "test-site-freshness-label-v3350.mjs",
   "test-geography-provenance-ui-v3351.mjs",
   "test-recommendation-shortlist-v3352.mjs",
+  "test-clear-filters-v3353.mjs",
 ];
 
 const results = tests.map((test) => {
