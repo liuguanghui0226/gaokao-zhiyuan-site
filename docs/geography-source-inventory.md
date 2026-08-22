@@ -1,10 +1,10 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-22；扩展轮次：geo-2026.08.22.6
+盘点日期：2026-08-23；扩展轮次：geo-2026.08.23.18
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.22.6`：35 个来源、113 条卡片，其中 38 条 `authored-summary`、75 条 `citation-only`；五个课程族分别为 17、22、28、23、23 条。本轮新增 7 个公开来源与 16 条原创 `citation-only` 方法卡，覆盖水循环观测、土壤健康、非洲地形河流、ENSO、GIS、Copernicus/Sentinel、土壤安全与气候风险。
+当前发布版本 `geo-2026.08.23.18`：129 个来源、290 条卡片，其中 38 条 `authored-summary`、252 条 `citation-only`；五个课程族分别为 49、59、64、57、61 条。本轮新增 6 个中国官方公开来源、3 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖生态环境公报、自然资源统计、气象观测、风云卫星遥感、岛礁生态监测、中文高中地理知识索引、教材版本回查与 QGIS 地理实践。
 
 本轮累计新增 46 条 citation-only 方法卡：在上一轮 19 条的基础上，继续吸收 3 份 2026 年高二地理试卷、5 份海洋生态与观测参考资料，以及用户其他工作树中的历史高中地理模块，补齐人口、城市、农业、GIS、区域生态、海洋生态与海洋观测等专题。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
 
@@ -84,6 +84,22 @@
 | `github-intro-gispro` | [giswqs/intro-gispro](https://github.com/giswqs/intro-gispro) | commit `d4de649fefff14046a818aa3a7a05623015de9ed`；访问日期 2026-08-22 | 交叉核对 GeoPandas 矢量、Rasterio 栅格、空间分析与开放地理数据处理边界，不复制代码、文字、图件或数据。 |
 
 本轮 16 条卡片均保留至少一条五册教材页码证据和至少一条新增公开来源证据；公开仓库与网站只作为概念交叉核对或方法参照，发布层继续使用 `citation-only` 边界。不可读取的 `/Volumes/mac_2T` 目录仍未被声称已经吸收。
+
+## geo-2026.08.23.18 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `web-mee-2025-ecological-environment-bulletin` | [生态环境部：2025 中国生态环境状况公报](https://www.mee.gov.cn/hjzl/sthjzk/zghjzkgb/202606/P020260604583244574595.pdf) | 公报 PDF；访问日期 2026-08-23 | 核对环境质量、生态状况、污染治理与环境变化指标边界；只发布原创高中地理方法，不复制公报正文、图表或数据。 |
+| `web-mee-2023-marine-ecological-environment-bulletin` | [生态环境部：2023 中国海洋生态环境状况公报](https://www.mee.gov.cn/hjzl/sthjzk/jagb/202405/P020240522601361012621.pdf) | 公报 PDF；访问日期 2026-08-23 | 核对近岸海域、海洋生态质量、污染压力与海洋治理证据；只发布原创方法，不复制公报正文、图表或数据。 |
+| `web-mnr-natural-resources-bulletins` | [自然资源部：自然资源公报](https://www.mnr.gov.cn/sj/tjgb/) | 公报栏目；访问日期 2026-08-23 | 核对土地、海洋和自然资源统计的空间单元、年度比较与指标口径；不复制公报正文、图表或数据。 |
+| `web-mnr-south-china-sea-island-ecosystem` | [自然资源部：西中南沙岛礁生态系统状况](https://www.mnr.gov.cn/dt/ywbb/202608/t20260815_2936356.html) | 新闻与公报说明页；访问日期 2026-08-23 | 核对岛礁生态监测、珊瑚礁与海草床、生态差异和分类保护；不复制正文、图片、图表或数据。 |
+| `web-cma-meteorological-data` | [中国气象数据网](https://data.cma.cn/) | 国家气象科学数据中心入口；访问日期 2026-08-23 | 核对地面、海洋、卫星、气候标准值和实况产品的观测要素与时间尺度；不复制数据表或产品内容。 |
+| `web-cma-satellite-remote-sensing` | [中国气象局：风云卫星遥感支撑地理观测](https://www.cma.gov.cn/2011xwzx/2011xqxxw/202402/t20240226_6086025.html) | 新闻页；访问日期 2026-08-23 | 核对卫星遥感、天气监测、地表观测与灾害服务的任务匹配；不复制正文、图片、图表或数据。 |
+| `github-felix-high-school-geography` | [高中地理学习网站：自然、人文与世界地理知识索引](https://github.com/felixyu9722/high-school-geography) | commit `048db7e7c1156fe50e1ceb0fcc542a19f6f42712`；访问日期 2026-08-23 | 参照中文高中自然、人文、世界地理与考点复习的跨章节索引；不复制页面文字、题目、代码、图片或版式。 |
+| `github-clck-shanghai-high-school-knowledge` | [上海高中课本知识整理](https://github.com/CLCK0622/Shanghai-High-School-Knowledge) | commit `2064cd3254bb3977defa4290f029da5b935ea622`；访问日期 2026-08-23 | 参照按教材版本组织知识、章节和案例回查的方式；不复制页面正文、图片、代码或版式。 |
+| `github-zero2geoquest` | [02GeoQuest：QGIS 地理地图挑战与课堂探究工具](https://github.com/YusufEminoglu/zero2geoquest) | commit `ac44c990f34d6531a78c7ca030b2b646983d6da0`；访问日期 2026-08-23 | 参照地图定位、属性比较、距离估计、邻近分析和课堂任务设计；不复制代码、数据、图件或手册正文。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每门课程 3 条。所有卡片均保留至少一条五册人民教育出版社教材证据和至少一条新增来源证据；中国官方公报、数据入口和新闻页只用于指标与方法边界核对，GitHub 项目只用于知识组织或地理实践方法参照。
 
 ## 其他机器与同步目录
 

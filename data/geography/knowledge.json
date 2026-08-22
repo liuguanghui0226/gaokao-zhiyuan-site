@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.17",
+  "version": "geo-2026.08.23.18",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1113,6 +1113,90 @@
       "commitSha": "0f21c1f6aa9fcefb044456827e9eb8363135f392",
       "accessedAt": "2026-08-22",
       "licenseNote": "仓库索引和所链接资源按原仓库及外链声明处理；本项目仅作 citation-only 方法来源，公开层发布原创高中地理方法，不复制索引正文、代码、图件或数据。"
+    },
+    {
+      "id": "web-mee-2025-ecological-environment-bulletin",
+      "title": "生态环境部：2025 中国生态环境状况公报",
+      "publisher": "中华人民共和国生态环境部",
+      "editionNote": "公开公报 PDF；访问日期 2026-08-23；用于核对全国环境质量、生态状况、污染治理与环境变化证据的指标组织方式。",
+      "url": "https://www.mee.gov.cn/hjzl/sthjzk/zghjzkgb/202606/P020260604583244574595.pdf",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "中华人民共和国生态环境部公共公报；仅作指标口径与证据边界核对，公开层发布原创高中地理方法，不复制公报正文、图表、图片或数据。"
+    },
+    {
+      "id": "web-mee-2023-marine-ecological-environment-bulletin",
+      "title": "生态环境部：2023 中国海洋生态环境状况公报",
+      "publisher": "中华人民共和国生态环境部",
+      "editionNote": "公开海洋生态环境公报 PDF；访问日期 2026-08-23；用于核对近岸海域、海洋生态质量、污染压力与海洋治理证据的组织方式。",
+      "url": "https://www.mee.gov.cn/hjzl/sthjzk/jagb/202405/P020240522601361012621.pdf",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "中华人民共和国生态环境部公共公报；仅作海洋环境指标与证据边界核对，公开层发布原创高中地理方法，不复制公报正文、图表、图片或数据。"
+    },
+    {
+      "id": "web-mnr-natural-resources-bulletins",
+      "title": "自然资源部：自然资源公报",
+      "publisher": "中华人民共和国自然资源部",
+      "editionNote": "公开自然资源公报栏目；访问日期 2026-08-23；栏目提供自然资源、土地、海洋和资源统计公报入口，用于核对资源数量、空间分布和年度比较的指标边界。",
+      "url": "https://www.mnr.gov.cn/sj/tjgb/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "中华人民共和国自然资源部公共数据与公报栏目；仅作指标口径与证据边界核对，公开层发布原创高中地理方法，不复制公报正文、图表或数据。"
+    },
+    {
+      "id": "web-mnr-south-china-sea-island-ecosystem",
+      "title": "自然资源部：西中南沙岛礁生态系统状况",
+      "publisher": "中华人民共和国自然资源部",
+      "editionNote": "公开新闻与公报说明页面；访问日期 2026-08-23；用于核对岛礁生态监测、珊瑚礁与海草床、生态差异和分类保护管理的证据链。",
+      "url": "https://www.mnr.gov.cn/dt/ywbb/202608/t20260815_2936356.html",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "中华人民共和国自然资源部公共信息页面；仅作生态监测与空间治理方法核对，公开层发布原创高中地理方法，不复制正文、图片、图表或数据。"
+    },
+    {
+      "id": "web-cma-meteorological-data",
+      "title": "中国气象数据网：地面、海洋与卫星气象资料",
+      "publisher": "国家气象信息中心／中国气象局",
+      "editionNote": "公开国家气象科学数据中心入口；访问日期 2026-08-23；提供地面、高空、海洋、风云卫星、气候标准值和实况产品目录，用于核对观测要素、时间尺度与数据适用边界。",
+      "url": "https://data.cma.cn/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "中国气象局公共科学数据入口；仅作观测要素、时间尺度与数据边界核对，公开层发布原创高中地理方法，不复制数据表、图件或产品内容。"
+    },
+    {
+      "id": "web-cma-satellite-remote-sensing",
+      "title": "中国气象局：风云卫星遥感支撑地理观测",
+      "publisher": "中国气象局",
+      "editionNote": "公开气象新闻页面；访问日期 2026-08-23；用于核对卫星遥感、天气监测、地表观测与灾害服务之间的任务匹配。",
+      "url": "https://www.cma.gov.cn/2011xwzx/2011xqxxw/202402/t20240226_6086025.html",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "中国气象局公共信息页面；仅作卫星遥感应用边界核对，公开层发布原创高中地理方法，不复制正文、图片、图表或数据。"
+    },
+    {
+      "id": "github-felix-high-school-geography",
+      "title": "高中地理学习网站：自然、人文与世界地理知识索引",
+      "publisher": "felixyu9722/high-school-geography（GitHub）",
+      "editionNote": "公开仓库提交 `048db7e7c1156fe50e1ceb0fcc542a19f6f42712`；访问日期 2026-08-23；目录覆盖高中自然地理、人文地理、世界地理和考点复习页面，用于核对跨章节知识组织方式。",
+      "url": "https://github.com/felixyu9722/high-school-geography",
+      "commitSha": "048db7e7c1156fe50e1ceb0fcc542a19f6f42712",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作高中地理知识组织与检索方法的 citation-only 参照，公开层发布原创摘要，不复制页面文字、题目、代码、图片或版式。"
+    },
+    {
+      "id": "github-clck-shanghai-high-school-knowledge",
+      "title": "上海高中课本知识整理：按教材组织的学科知识库",
+      "publisher": "CLCK0622/Shanghai-High-School-Knowledge（GitHub）",
+      "editionNote": "公开仓库提交 `2064cd3254bb3977defa4290f029da5b935ea622`；访问日期 2026-08-23；README 与 pages 目录按上海高中标准课本组织多学科知识，用于核对教材版本、章节索引和区域案例回查方式。",
+      "url": "https://github.com/CLCK0622/Shanghai-High-School-Knowledge",
+      "commitSha": "2064cd3254bb3977defa4290f029da5b935ea622",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 MIT；本项目仅作教材知识组织与回查方法的 citation-only 参照，公开层发布原创高中地理摘要，不复制页面正文、图片、代码或版式。"
+    },
+    {
+      "id": "github-zero2geoquest",
+      "title": "02GeoQuest：QGIS 地理地图挑战与课堂探究工具",
+      "publisher": "YusufEminoglu/zero2geoquest（GitHub）",
+      "editionNote": "公开仓库提交 `ac44c990f34d6531a78c7ca030b2b646983d6da0`；访问日期 2026-08-23；README 与参考手册覆盖地图定位、属性比较、距离估计、邻近分析、排序和课堂模式。",
+      "url": "https://github.com/YusufEminoglu/zero2geoquest",
+      "commitSha": "ac44c990f34d6531a78c7ca030b2b646983d6da0",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 GPL-3.0-or-later；本项目仅作 GIS 地理实践与课堂任务设计的 citation-only 方法来源，公开层发布原创高中地理方法，不复制代码、数据、图件或手册正文。"
     }
   ],
   "items": [
@@ -7141,6 +7225,351 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：环境安全、情景分析与国家安全章节",
           "note": "回到教材核对环境问题、风险评价、治理措施和国家安全边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-ecological-quality-indicator-reading",
+      "courseId": "compulsory-1",
+      "title": "生态环境质量指标与自然地理过程",
+      "summary": "阅读生态环境公报时，先区分环境质量现状、生态状况、污染排放和治理成效，再把指标对应到大气、水体、土壤、生物与人类活动过程。不同指标的统计范围、时间段和评价标准可能不同，不能仅凭单项上升或下降判断整个区域生态系统已经改善或恶化。",
+      "keywords": ["生态环境质量", "指标口径", "自然地理过程", "环境评价"],
+      "sourceIds": ["web-mee-2025-ecological-environment-bulletin", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-mee-2025-ecological-environment-bulletin",
+          "locator": "2025中国生态环境状况公报 / environmental quality, ecological condition and pollution control",
+          "note": "生态环境部公报用于交叉核对环境质量、生态状况和治理指标的区分方式；不复制公报正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：自然环境的组成、整体性与人类影响章节",
+          "note": "回到教材核对自然地理要素联系、过程变化和人地作用。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-meteorological-observation-and-weather-process",
+      "courseId": "compulsory-1",
+      "title": "气象观测资料与天气过程判读",
+      "summary": "天气材料题先确认观测要素、站点位置、时间分辨率和数据单位，再把气温、降水、风、气压或卫星云图放回天气系统中解释。不同时间尺度适合回答不同问题，短时实况不能直接代表气候平均，单站资料也不能替代对区域差异的判断。",
+      "keywords": ["气象观测", "天气过程", "时间尺度", "资料判读"],
+      "sourceIds": ["web-cma-meteorological-data", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-cma-meteorological-data",
+          "locator": "中国气象数据网共享目录 / surface, ocean, satellite and climate datasets",
+          "note": "中国气象数据网用于交叉核对观测要素、数据产品和时间尺度的适用边界；不复制数据表、图件或产品内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：大气运动、常见天气系统与气候章节",
+          "note": "回到教材核对气压、风、降水和天气系统的因果链。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-high-school-natural-geography-knowledge-map",
+      "courseId": "compulsory-1",
+      "title": "自然地理知识索引与过程链",
+      "summary": "自然地理复习可把地球运动、大气、水、地貌、土壤和生物分成知识节点，再用能量、物质循环和空间差异把节点串成过程链。索引的作用是快速定位概念与图表，不是把页面标题当成结论；遇到材料题仍要回到位置、尺度、时段和过程证据。",
+      "keywords": ["自然地理索引", "过程链", "知识节点", "读图复习"],
+      "sourceIds": ["github-felix-high-school-geography", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-felix-high-school-geography",
+          "locator": "01高中自然地理 / 01高中世界地理 / 高中地理考点重点复习",
+          "note": "高中地理学习网站用于交叉核对自然地理、世界地理与考点索引的组织方式；不复制页面文字、题目或代码。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：地球运动、大气、水、地貌、土壤与生物章节",
+          "note": "回到教材核对自然地理过程、要素联系和图表证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-natural-resources-statistical-comparison",
+      "courseId": "compulsory-2",
+      "title": "自然资源公报与人类活动空间比较",
+      "summary": "比较资源统计资料时，先统一资源类别、统计年份、空间单元和计量口径，再分析资源禀赋如何影响农业、工业、交通与居民活动。总量大不等于开发条件优，材料还要检查质量、可达性、技术成本、生态约束和供需联系，避免把统计排名直接写成区位结论。",
+      "keywords": ["自然资源", "统计比较", "空间单元", "人类活动"],
+      "sourceIds": ["web-mnr-natural-resources-bulletins", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-mnr-natural-resources-bulletins",
+          "locator": "自然资源公报栏目 / land, ocean and resource statistics",
+          "note": "自然资源部公报栏目用于交叉核对资源统计、年度比较和空间单元的指标边界；不复制公报正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：农业、工业、交通与地域联系章节",
+          "note": "回到教材核对资源条件、区位因素、空间联系与人地协调。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-world-region-human-geography-knowledge-map",
+      "courseId": "compulsory-2",
+      "title": "世界区域人文地理知识索引",
+      "summary": "世界区域题可按人口、聚落、农业、工业、服务业和区域联系建立索引，再用位置、自然条件、历史过程和政策环境解释差异。知识清单只能帮助检查是否漏掉要素，不能替代地图上的空间证据，也不能把某一地区的典型特征套用于所有国家。",
+      "keywords": ["世界区域", "人文地理", "知识索引", "区域差异"],
+      "sourceIds": ["github-felix-high-school-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-felix-high-school-geography",
+          "locator": "01高中世界地理 / 01高中人文地理 / 高中地理考点重点复习",
+          "note": "项目目录用于交叉核对世界地理与人文地理专题的检索组织方式；不复制页面文字、题目、图片或版式。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：人口、聚落、产业与地域联系章节",
+          "note": "回到教材核对人口分布、城镇发展、产业区位和区域联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-textbook-outline-and-regional-case",
+      "courseId": "compulsory-2",
+      "title": "教材章节索引与区域案例回查",
+      "summary": "复习人文地理时，先用教材章节定位人口、聚落、产业或交通主题，再把区域案例拆成区位条件、发展变化、问题和措施四层。不同教材版本的章节顺序和案例名称可能不同，答题时应以题目材料和本地课程要求为准，不能把网络目录当成统一考试大纲。",
+      "keywords": ["教材索引", "区域案例", "人文地理", "版本边界"],
+      "sourceIds": ["github-clck-shanghai-high-school-knowledge", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-clck-shanghai-high-school-knowledge",
+          "locator": "README / pages/books and textbook knowledge organization",
+          "note": "上海高中课本知识整理项目用于交叉核对按教材版本组织知识和回查章节的方式；不复制页面正文、图片或代码。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：人口、城镇、产业、交通与人地协调章节",
+          "note": "回到教材核对人文地理主题、案例结构和区域分析边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-marine-ecosystem-and-sea-air-process",
+      "courseId": "selective-1",
+      "title": "海洋生态环境与海气过程联读",
+      "summary": "海洋材料题要把水温、盐度、海流、海气交换和生态状况放在同一系统中判断，先区分自然波动、污染压力与监测指标，再解释其对渔业、沿岸气候和生态服务的影响。海洋环境质量的区域差异不能只由一个污染物或一张分布图概括。",
+      "keywords": ["海洋生态", "海气过程", "水温盐度", "环境监测"],
+      "sourceIds": ["web-mee-2023-marine-ecological-environment-bulletin", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-mee-2023-marine-ecological-environment-bulletin",
+          "locator": "2023年中国海洋生态环境状况公报 / marine environment and coastal quality",
+          "note": "海洋生态环境公报用于交叉核对近岸环境、生态质量和压力指标的联读边界；不复制公报正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：海水性质、海水运动与海气相互作用章节",
+          "note": "回到教材核对水温盐度、洋流、海气交换和自然环境联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-satellite-observation-and-atmospheric-process",
+      "courseId": "selective-1",
+      "title": "卫星遥感观测与大气过程证据",
+      "summary": "使用卫星资料解释天气或环境过程时，要先说明传感器观测的是云、温度、降水还是地表反射，再核对时间分辨率、空间分辨率和产品反演方法。遥感图像是过程证据的一部分，需要与地面站、雷达、统计资料或现场信息交叉验证。",
+      "keywords": ["卫星遥感", "大气过程", "观测证据", "多源验证"],
+      "sourceIds": ["web-cma-satellite-remote-sensing", "web-cma-meteorological-data", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-cma-satellite-remote-sensing",
+          "locator": "风云地球十四冬版 / satellite remote sensing support and weather monitoring",
+          "note": "中国气象局页面用于交叉核对卫星遥感在天气监测和地表观测中的任务匹配；不复制正文、图片或数据。"
+        },
+        {
+          "sourceId": "web-cma-meteorological-data",
+          "locator": "中国气象数据网共享目录 / satellite, radar and surface observation products",
+          "note": "气象数据目录用于补充遥感产品与地面观测的资料边界；不复制数据产品内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：大气运动、天气系统与自然环境观测章节",
+          "note": "回到教材核对大气过程、观测资料和尺度判断。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-natural-geography-knowledge-index",
+      "courseId": "selective-1",
+      "title": "自然地理基础索引与规律判读",
+      "summary": "选择性必修1的规律复习可围绕地球运动、大气环流、水体运动、地貌过程、土壤和地域分异建立主线，再把每个规律落实到方向、尺度、季节和反馈。索引能够帮助串联章节，但材料题必须由图表数据和区域位置决定结论，不能用孤立口诀替代推理。",
+      "keywords": ["自然地理基础", "规律判读", "地球运动", "地域分异"],
+      "sourceIds": ["github-felix-high-school-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-felix-high-school-geography",
+          "locator": "01高中自然地理 / 01高中世界地理 / 高中地理考点重点复习",
+          "note": "项目目录用于交叉核对自然地理规律、世界区域和考点复习的索引方式；不复制页面内容。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地球运动、大气、水体、地貌与地域分异章节",
+          "note": "回到教材核对自然地理规律、空间差异和过程证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-island-ecosystem-monitoring-and-spatial-protection",
+      "courseId": "selective-2",
+      "title": "岛礁生态监测与分类保护空间",
+      "summary": "岛礁生态治理题可按生态系统类型、监测指标、变化原因、空间差异和管理措施展开。珊瑚覆盖、海草床、生物多样性与人类活动需要放在同一张空间关系图中比较，保护方案还要区分自然恢复、污染控制、工程扰动和长期监测，避免把单一指标当成整体生态结论。",
+      "keywords": ["岛礁生态", "生态监测", "分类保护", "空间治理"],
+      "sourceIds": ["web-mnr-south-china-sea-island-ecosystem", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-mnr-south-china-sea-island-ecosystem",
+          "locator": "正文 / island ecosystem monitoring, coral reef, seagrass and classified protection",
+          "note": "自然资源部页面用于交叉核对岛礁生态差异、珊瑚礁监测和分类保护的证据链；不复制正文、图片、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：海岸带、生态保护修复与区域规划章节",
+          "note": "回到教材核对区域生态问题、空间分异、保护修复和规划尺度。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-map-quest-and-spatial-reasoning",
+      "courseId": "selective-2",
+      "title": "地图挑战任务与空间推理",
+      "summary": "地理实践可以把地图定位、属性比较、距离估计、邻近分析和排序任务组合成一条探究链：先明确问题，再检查图层字段、坐标、比例尺和数据质量，最后用地图与实地信息解释结果。软件交互能训练空间推理，但不能把游戏得分当作区域规律或真实测量结论。",
+      "keywords": ["地图实践", "空间推理", "邻近分析", "数据质量"],
+      "sourceIds": ["github-zero2geoquest", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-zero2geoquest",
+          "locator": "02GeoQuest README / Map Hunt, Value Duel, Distance Guess and Nearest Neighbour",
+          "note": "QGIS 地理任务工具用于交叉核对地图定位、属性比较、距离和邻近关系等课堂任务结构；不复制代码、数据或手册正文。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：地理信息技术、区域分析与地理实践章节",
+          "note": "回到教材核对图层信息、区域比较、空间尺度和实践验证。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-regional-development-textbook-comparison",
+      "courseId": "selective-2",
+      "title": "区域发展教材框架与案例比较",
+      "summary": "区域发展复习可用问题链组织：区域条件是什么，联系如何形成，发展带来哪些收益与代价，治理如何分尺度推进。比较不同教材或知识库时，应只把它们当作章节导航和案例入口，最终仍以课程标准、教材定义、地图证据和题目材料确定区域发展判断。",
+      "keywords": ["区域发展", "教材框架", "案例比较", "问题链"],
+      "sourceIds": ["github-clck-shanghai-high-school-knowledge", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-clck-shanghai-high-school-knowledge",
+          "locator": "README / pages/books and textbook knowledge organization",
+          "note": "上海高中课本知识整理项目用于交叉核对按教材组织章节和案例回查的方法；不复制页面正文、图片、代码或版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域发展、区域联系、生态治理与规划章节",
+          "note": "回到教材核对区域条件、发展路径、空间联系和治理措施。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-ecological-quality-and-environmental-security",
+      "courseId": "selective-3",
+      "title": "生态环境质量与环境安全评价",
+      "summary": "环境安全评价要先分清压力、状态、影响、风险和响应，再判断生态环境质量指标是否支持题目结论。治理成效需要同时看污染控制、生态恢复、资源利用和社会承受能力，并明确数据年份、区域尺度和评价标准，避免用单项达标或单一工程替代系统性安全判断。",
+      "keywords": ["环境安全", "生态质量", "压力状态响应", "治理评价"],
+      "sourceIds": ["web-mee-2025-ecological-environment-bulletin", "web-mnr-natural-resources-bulletins", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-mee-2025-ecological-environment-bulletin",
+          "locator": "2025中国生态环境状况公报 / environmental quality, ecological condition and pollution control",
+          "note": "生态环境部公报用于交叉核对环境压力、状态和治理成效的指标边界；不复制公报正文、图表或数据。"
+        },
+        {
+          "sourceId": "web-mnr-natural-resources-bulletins",
+          "locator": "自然资源公报栏目 / land, ocean and resource statistics",
+          "note": "自然资源部公报栏目用于补充资源基础、空间单元和年度统计的证据边界；不复制公报正文或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源安全、生态安全、环境问题与国家安全章节",
+          "note": "回到教材核对环境安全评价、资源约束和治理措施。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-marine-ecosystem-status-and-governance",
+      "courseId": "selective-3",
+      "title": "海洋生态状况与分区治理",
+      "summary": "海洋资源环境安全题应把生态系统状况、海洋污染、岸线利用、生物多样性和治理能力放到分区管理框架中。评价保护方案时要说明监测指标、空间边界、时间尺度、利益冲突和反馈机制，既不能因整体状况较好忽略局部退化，也不能因局部问题否定全部生态功能。",
+      "keywords": ["海洋生态安全", "分区治理", "海洋监测", "生态修复"],
+      "sourceIds": ["web-mee-2023-marine-ecological-environment-bulletin", "web-mnr-south-china-sea-island-ecosystem", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-mee-2023-marine-ecological-environment-bulletin",
+          "locator": "2023年中国海洋生态环境状况公报 / marine environment and coastal quality",
+          "note": "海洋生态环境公报用于交叉核对海洋环境质量、污染压力和生态状况指标；不复制公报正文、图表或数据。"
+        },
+        {
+          "sourceId": "web-mnr-south-china-sea-island-ecosystem",
+          "locator": "正文 / island ecosystem monitoring, coral reef, seagrass and classified protection",
+          "note": "自然资源部页面用于补充岛礁生态差异、监测和分类保护的空间治理证据；不复制正文、图片或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：海洋资源、海洋生态保护与国家安全章节",
+          "note": "回到教材核对海洋资源环境安全、生态保护和分区治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-natural-resource-bulletin-and-security-indicators",
+      "courseId": "selective-3",
+      "title": "自然资源公报与资源安全指标",
+      "summary": "资源安全材料题先判断指标反映的是储量、产量、供给能力、消费压力还是生态代价，再分析资源的空间分布、运输联系、替代技术和国际或区域依赖。公报中的年度变化只能说明一个时间窗口，提出安全方案还要连接节约利用、循环替代、储备调度、生态保护和风险监测。",
+      "keywords": ["资源安全", "公报指标", "供给能力", "风险监测"],
+      "sourceIds": ["web-mnr-natural-resources-bulletins", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-mnr-natural-resources-bulletins",
+          "locator": "自然资源公报栏目 / land, ocean and resource statistics",
+          "note": "自然资源部公报栏目用于交叉核对资源统计、年度变化和安全指标的口径；不复制公报正文、图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源安全、资源利用与国家安全章节",
+          "note": "回到教材核对资源供给、利用效率、替代途径和风险防控。"
         }
       ],
       "licenseStatus": "citation-only",

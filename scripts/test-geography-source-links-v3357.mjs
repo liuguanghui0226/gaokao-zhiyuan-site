@@ -36,15 +36,14 @@ const context = vm.createContext({
 vm.runInContext(instrumented, context, { filename: appFile });
 
 context.__gaokaoTest.state.geographyData = payload;
-context.__gaokaoTest.state.query = "地转偏向力";
+context.__gaokaoTest.state.query = "自然资源公报";
 context.__gaokaoTest.state.geographyCourse = "";
 context.__gaokaoTest.renderGeography();
 
 assert.match(view.innerHTML, /class="geography-source-list"/);
-assert.match(view.innerHTML, /class="geography-source-link" href="https:\/\/github\.com\/uau9\/orange-geography-coach"/);
+assert.match(view.innerHTML, /class="geography-source-link" href="https:\/\/www\.mnr\.gov\.cn\/sj\/tjgb\//);
 assert.match(view.innerHTML, /target="_blank" rel="noreferrer"/);
-assert.match(view.innerHTML, /commit 0198f84c3552bf20df90124e1c18dc412f0cf0fd/);
-assert.match(view.innerHTML, /访问 2026-08-22/);
+assert.match(view.innerHTML, /访问 2026-08-23/);
 
 context.__gaokaoTest.state.query = "大气受热";
 context.__gaokaoTest.renderGeography();

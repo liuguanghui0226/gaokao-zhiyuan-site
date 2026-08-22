@@ -19,10 +19,10 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.22.17");
-assert.equal(site.sources.length, 120);
-assert.equal(site.items.length, 275);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 99);
+assert.equal(site.version, "geo-2026.08.23.18");
+assert.equal(site.sources.length, 129);
+assert.equal(site.items.length, 290);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 108);
 assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 21);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
@@ -36,6 +36,25 @@ assert.ok(site.items.some((item) => item.id === "geo-s2-copernicus-multisource-m
 assert.ok(site.items.some((item) => item.id === "geo-s3-soil-carbon-and-food-security"));
 assert.ok(site.items.some((item) => item.id === "geo-s3-carbon-cycle-reservoir-feedback"));
 assert.ok(site.items.some((item) => item.id === "geo-s3-water-allocation-competing-uses"));
+for (const itemId of [
+  "geo-c1-ecological-quality-indicator-reading",
+  "geo-c1-meteorological-observation-and-weather-process",
+  "geo-c1-high-school-natural-geography-knowledge-map",
+  "geo-c2-natural-resources-statistical-comparison",
+  "geo-c2-world-region-human-geography-knowledge-map",
+  "geo-c2-textbook-outline-and-regional-case",
+  "geo-s1-marine-ecosystem-and-sea-air-process",
+  "geo-s1-satellite-observation-and-atmospheric-process",
+  "geo-s1-natural-geography-knowledge-index",
+  "geo-s2-island-ecosystem-monitoring-and-spatial-protection",
+  "geo-s2-map-quest-and-spatial-reasoning",
+  "geo-s2-regional-development-textbook-comparison",
+  "geo-s3-ecological-quality-and-environmental-security",
+  "geo-s3-marine-ecosystem-status-and-governance",
+  "geo-s3-natural-resource-bulletin-and-security-indicators",
+]) {
+  assert.ok(site.items.some((item) => item.id === itemId), `missing v18 runtime item ${itemId}`);
+}
 for (const itemId of [
   "geo-c1-groundwater-overdraft-subsidence",
   "geo-c1-glacier-runoff-seasonality",
@@ -125,6 +144,19 @@ assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-opengu
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-shanghai-high-school-lab"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-high-school-geography-notes"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-wmo-climate"));
+for (const sourceId of [
+  "web-mee-2025-ecological-environment-bulletin",
+  "web-mee-2023-marine-ecological-environment-bulletin",
+  "web-mnr-natural-resources-bulletins",
+  "web-mnr-south-china-sea-island-ecosystem",
+  "web-cma-meteorological-data",
+  "web-cma-satellite-remote-sensing",
+  "github-felix-high-school-geography",
+  "github-clck-shanghai-high-school-knowledge",
+  "github-zero2geoquest",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v18 runtime source ${sourceId}`);
+}
 for (const sourceId of [
   "github-secondary-geography-course",
   "github-opengis-curriculum",

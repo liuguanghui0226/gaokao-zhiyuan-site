@@ -2,6 +2,8 @@ name: Verify live nationwide site
 
 on:
   workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"
 
 permissions:
   contents: read
@@ -28,7 +30,15 @@ jobs:
           fetch "$base" "$work/index.html"
           grep -q "全国高考志愿填报" "$work/index.html"
           grep -q "__GAOKAO_RUNTIME_RELEASE_BASE__" "$work/index.html"
-          grep -q 'app.js?v=3.346.4' "$work/index.html"
+
+          app_asset_version="$(node -e '
+            const html = require("node:fs").readFileSync(process.argv[1], "utf8");
+            const match = html.match(/assets\/app\.js\?v=([^"']+)/);
+            if (!match) process.exit(1);
+            process.stdout.write(match[1]);
+          ' "$work/index.html")"
+          test -n "$app_asset_version"
+          grep -q "assets/app.js?v=${app_asset_version}" "$work/index.html"
 
           release_path="$(node -e '
             const html = require("node:fs").readFileSync(process.argv[1], "utf8");
@@ -37,7 +47,7 @@ jobs:
             process.stdout.write(match[1]);
           ' "$work/index.html")"
 
-          fetch "${base}assets/app.js" "$work/app.js"
+          fetch "${base}assets/app.js?v=${app_asset_version}" "$work/app.js"
           grep -q "buildApplicationPlan" "$work/app.js"
           grep -q "electiveRequirement" "$work/app.js"
           grep -q "vocationalScoreInput" "$work/app.js"
