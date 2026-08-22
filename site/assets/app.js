@@ -5254,6 +5254,7 @@ function syncNavigationState(nextView) {
 
 function updateView(nextView) {
   state.view = nextView;
+  syncClearFiltersControl();
   renderView(nextView);
   syncNavigationState(nextView);
   $$(".view").forEach((view) => view.classList.remove("active-view"));
