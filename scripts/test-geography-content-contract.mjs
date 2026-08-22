@@ -166,6 +166,14 @@ const REQUIRED_PUBLIC_WEB_SOURCES = new Set([
   "web-fao-aquastat",
   "web-un-climate-science",
   "web-owid-population-growth",
+  "web-noaa-climate-enso",
+  "web-eia-energy-explained",
+  "web-fao-soil-portal",
+  "web-unesco-ocean-literacy",
+  "web-bgs-discovering-geology",
+  "web-world-bank-urban-development",
+  "web-world-bank-water",
+  "web-world-bank-disaster-risk",
 ]);
 const REQUIRED_V3_ITEMS = new Set([
   "geo-c1-water-cycle-observation",
@@ -276,6 +284,33 @@ const REQUIRED_V12_ITEMS = new Set([
   "geo-s3-climate-action-mitigation-adaptation",
   "geo-s3-population-resource-pressure",
 ]);
+const REQUIRED_V13_SOURCES = new Set([
+  "web-noaa-climate-enso",
+  "web-eia-energy-explained",
+  "web-fao-soil-portal",
+  "web-unesco-ocean-literacy",
+  "web-bgs-discovering-geology",
+  "web-world-bank-urban-development",
+  "web-world-bank-water",
+  "web-world-bank-disaster-risk",
+]);
+const REQUIRED_V13_ITEMS = new Set([
+  "geo-c1-enso-ocean-atmosphere-observation",
+  "geo-c1-soil-profile-carbon-and-water",
+  "geo-c1-geological-map-hazard-evidence",
+  "geo-c2-urban-development-and-service-equity",
+  "geo-c2-water-security-and-city-growth",
+  "geo-c2-energy-industry-spatial-chain",
+  "geo-s1-enso-seasonal-evidence",
+  "geo-s1-geology-process-and-hazard-scale",
+  "geo-s1-ocean-literacy-system-boundaries",
+  "geo-s2-urban-resilience-and-regional-planning",
+  "geo-s2-water-governance-and-cross-scale-evidence",
+  "geo-s2-disaster-risk-map-and-exposure",
+  "geo-s3-energy-transition-security-tradeoff",
+  "geo-s3-soil-carbon-and-land-security",
+  "geo-s3-disaster-risk-adaptation-capacity",
+]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
   "geo-s1-time-zone-and-date-line",
@@ -322,6 +357,9 @@ for (const sourceId of REQUIRED_NEXT_EXPANSION_SOURCES) {
 for (const sourceId of REQUIRED_V12_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing v12 geography source ${sourceId}`);
 }
+for (const sourceId of REQUIRED_V13_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing v13 geography source ${sourceId}`);
+}
 for (const sourceId of REQUIRED_EXTERNAL_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing external geography source ${sourceId}`);
 }
@@ -356,7 +394,7 @@ for (const item of payload.items) {
     assert.equal(sourceIds.has(evidence.sourceId), true, `${item.id} evidence references unknown source`);
     assert.match(
       String(evidence.locator),
-      /第?\s*\d+\s*页|章节|教材|项目描述|README|data\/|pages\/|docs\/|gallery|ontology|RDF|geography\.html|earthmotion|src\/curriculum|01高中世界地理|高中地理考点重点复习|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|Water Cycle|World of Change|JetStream|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming|sun-motion|SunMotion|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Hurricanes|National Hurricane Center|Climate change impacts|Urbanization|Urban Planning|Population Density|Plate Tectonics|Migration|IPCC|Farming and Agribusiness|Water Use and Stress|WMO|Climate|Carbon Cycle|carbon|land-water|water scarcity|competing uses|weather|radar|groundwater|AQUASTAT|NSIDC|UNCCD|glacier|desertification|evapotranspiration|greenhouse|radiative balance|Population|OpenGIS|map collection|geography curriculum/,
+      /第?\s*\d+\s*页|章节|教材|项目描述|README|data\/|pages\/|docs\/|gallery|ontology|RDF|geography\.html|earthmotion|src\/curriculum|01高中世界地理|高中地理考点重点复习|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|ENSO|Water Cycle|World of Change|JetStream|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming|sun-motion|SunMotion|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Hurricanes|National Hurricane Center|Climate change impacts|Urbanization|Urban Planning|Population Density|Plate Tectonics|Migration|IPCC|Farming and Agribusiness|Water Use and Stress|WMO|Climate|Carbon Cycle|carbon|land-water|water scarcity|competing uses|weather|radar|groundwater|AQUASTAT|NSIDC|UNCCD|glacier|desertification|evapotranspiration|greenhouse|radiative balance|Population|OpenGIS|map collection|geography curriculum|NOAA|EIA|FAO|UNESCO|BGS|World Bank|geological|hazard|urbanization|infrastructure|inclusion|resilience|water services|governance|ocean system|stewardship|disaster risk|exposure|vulnerability|preparedness|recovery/,
       `${item.id} evidence locator must be a page or stable web/repository section`,
     );
     assert.equal(typeof evidence.note, "string");
@@ -401,6 +439,9 @@ for (const itemId of REQUIRED_V8_ITEMS) {
 }
 for (const itemId of REQUIRED_V12_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing v12 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V13_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v13 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,
