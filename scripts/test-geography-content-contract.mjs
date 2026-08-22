@@ -598,6 +598,47 @@ const REQUIRED_V21_ITEMS = new Set([
   "geo-s3-marine-data-and-coastal-resource-governance",
   "geo-s3-accessible-mapping-and-spatial-inclusion",
 ]);
+const REQUIRED_V22_SOURCES = new Set([
+  "web-qgis-training-manual",
+  "web-arcgis-learn-geography",
+  "web-nasa-worldview-earth-observation",
+  "web-protected-planet-conservation-data",
+  "github-qgis-training-data",
+  "github-qgis-documentation",
+  "github-spatialthoughts-open-courseware",
+  "github-geography-teaching-tools",
+  "github-geography-teaching-plugin",
+]);
+const REQUIRED_V22_EXTERNAL_SOURCES = new Set([
+  "github-qgis-training-data",
+  "github-qgis-documentation",
+  "github-spatialthoughts-open-courseware",
+  "github-geography-teaching-tools",
+  "github-geography-teaching-plugin",
+]);
+const REQUIRED_V22_PUBLIC_WEB_SOURCES = new Set([
+  "web-qgis-training-manual",
+  "web-arcgis-learn-geography",
+  "web-nasa-worldview-earth-observation",
+  "web-protected-planet-conservation-data",
+]);
+const REQUIRED_V22_ITEMS = new Set([
+  "geo-c1-qgis-training-data-and-relief-reading",
+  "geo-c1-satellite-time-series-land-cover-observation",
+  "geo-c1-atmospheric-circulation-interactive-model",
+  "geo-c2-open-map-place-and-service-accessibility",
+  "geo-c2-spatial-visualization-and-regional-comparison",
+  "geo-c2-teacher-dataset-and-local-field-evidence",
+  "geo-s1-raster-vector-and-natural-process-scale",
+  "geo-s1-protected-area-ecosystem-and-natural-integrity",
+  "geo-s1-satellite-weather-and-hazard-timeline",
+  "geo-s2-qgis-coordinate-reference-and-overlay",
+  "geo-s2-spatial-analysis-and-regional-planning",
+  "geo-s2-open-courseware-data-workflow",
+  "geo-s3-protected-area-governance-and-connectivity",
+  "geo-s3-geography-teaching-tools-and-resource-security",
+  "geo-s3-disaster-risk-map-and-inclusive-decision",
+]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
   "geo-s1-time-zone-and-date-line",
@@ -671,6 +712,9 @@ for (const sourceId of REQUIRED_V20_SOURCES) {
 for (const sourceId of REQUIRED_V21_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing v21 geography source ${sourceId}`);
 }
+for (const sourceId of REQUIRED_V22_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing v22 geography source ${sourceId}`);
+}
 for (const sourceId of REQUIRED_EXTERNAL_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing external geography source ${sourceId}`);
 }
@@ -719,6 +763,15 @@ for (const source of payload.sources.filter((item) => REQUIRED_V21_PUBLIC_WEB_SO
   assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
   assert.match(String(source.accessedAt), /^2026-08-23$/, `${source.id} must retain an access date`);
 }
+for (const source of payload.sources.filter((item) => REQUIRED_V22_EXTERNAL_SOURCES.has(item.id))) {
+  assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.commitSha), /^[a-f0-9]{40}$/i, `${source.id} must retain an immutable commit SHA`);
+  assert.match(String(source.accessedAt), /^2026-08-23$/, `${source.id} must retain an access date`);
+}
+for (const source of payload.sources.filter((item) => REQUIRED_V22_PUBLIC_WEB_SOURCES.has(item.id))) {
+  assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.accessedAt), /^2026-08-23$/, `${source.id} must retain an access date`);
+}
 const itemIds = new Set();
 for (const item of payload.items) {
   assert.equal(typeof item.id, "string");
@@ -741,7 +794,7 @@ for (const item of payload.items) {
     assert.equal(sourceIds.has(evidence.sourceId), true, `${item.id} evidence references unknown source`);
     assert.match(
       String(evidence.locator),
-      /第?\s*\d+\s*页|章节|教材|项目描述|README|data\/|pages\/|docs\/|gallery|ontology|RDF|geography\.html|earthmotion|src\/curriculum|01高中世界地理|高中地理考点重点复习|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|ENSO|Water Cycle|World of Change|JetStream|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming|sun-motion|SunMotion|Sun-Earth-Moon|index\.html|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Hurricanes|National Hurricane Center|Climate change impacts|Urbanization|Urban Planning|Population Density|Plate Tectonics|Migration|IPCC|Farming and Agribusiness|Water Use and Stress|WMO|Climate|Carbon Cycle|carbon|land-water|water scarcity|competing uses|weather|Weather|weather observations|agriculture|agricultural|rural development|food production|environmental monitoring|natural resources data|spatial planning|resources|environment|geography curriculum|NOAA|EIA|FAO|UNESCO|Global Geoparks|BGS|World Bank|geological|geological survey|hazard|urbanization|infrastructure|inclusion|resilience|water services|governance|ocean system|stewardship|disaster risk|exposure|vulnerability|preparedness|recovery|EnergyBalance|energy|power-system|geospatial data|data center|High_School|Secondary Education|niveles\.html|recursos\.html|Transport|USGS|UN-Habitat|UNEP|Biodiversity|Global Resources|GIS OER|APA Technology|公报|自然资源|气象|风云|卫星|地理信息技术|区域研究|meteorological|satellite|marine|island|coral|ecosystem|天地图|统计|地震|森林|环流|季风|太阳高度角|地方时|Tianditu|earthquake|forest|forestry|circulation|monsoon|time zone|solar altitude|SATV/,
+      /第?\s*\d+\s*页|章节|教材|项目描述|README|data\/|pages\/|docs\/|gallery|ontology|RDF|geography\.html|earthmotion|src\/curriculum|01高中世界地理|高中地理考点重点复习|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|ENSO|Water Cycle|World of Change|JetStream|Copernicus|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Raster Data|GIS Programming|sun-motion|SunMotion|Sun-Earth-Moon|index\.html|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Hurricanes|National Hurricane Center|Climate change impacts|Urbanization|Urban Planning|Population Density|Plate Tectonics|Migration|IPCC|Farming and Agribusiness|Water Use and Stress|WMO|Climate|Carbon Cycle|carbon|land-water|water scarcity|competing uses|weather|Weather|weather observations|agriculture|agricultural|rural development|food production|environmental monitoring|natural resources data|spatial planning|resources|environment|geography curriculum|NOAA|EIA|FAO|UNESCO|Global Geoparks|BGS|World Bank|geological|geological survey|hazard|urbanization|infrastructure|inclusion|resilience|water services|governance|ocean system|stewardship|disaster risk|exposure|vulnerability|preparedness|recovery|EnergyBalance|energy|power-system|geospatial data|data center|High_School|Secondary Education|niveles\.html|recursos\.html|Transport|USGS|UN-Habitat|UNEP|Biodiversity|Global Resources|GIS OER|APA Technology|ArcGIS|QGIS|Protected Planet|Worldview|Spatial Thoughts|Training Data|QGIS Documentation|Geography Teaching Tools|公报|自然资源|气象|风云|卫星|地理信息技术|区域研究|meteorological|satellite|marine|island|coral|ecosystem|天地图|统计|地震|森林|环流|季风|太阳高度角|地方时|Tianditu|earthquake|forest|forestry|circulation|monsoon|time zone|solar altitude|SATV/,
       `${item.id} evidence locator must be a page or stable web/repository section`,
     );
     assert.equal(typeof evidence.note, "string");
@@ -813,6 +866,9 @@ for (const itemId of REQUIRED_V20_ITEMS) {
 }
 for (const itemId of REQUIRED_V21_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing v21 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V22_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v22 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,
