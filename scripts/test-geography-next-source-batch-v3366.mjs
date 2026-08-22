@@ -9,60 +9,50 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "github-geographic-interactive-teaching": {
-    url: "https://github.com/swingboat/geographic-interactive-teaching",
-    commitSha: "afb85fda5672bc4b50a446a2ffab3f4e8cc12c2f",
+  "github-shanghai-high-school-lab": {
+    url: "https://github.com/wuhy80/shanghai-high-school-lab",
+    commitSha: "a2a05482c66267b611cda67ca960b03feefbf811",
     accessedAt: "2026-08-22",
   },
-  "github-geography-education-solar-earth": {
-    url: "https://github.com/xiangyun14159/geography-education",
-    commitSha: "3048e18233774268f39c57a06b559597980d4d01",
+  "github-geo-teaching-workbench": {
+    url: "https://github.com/SUNhui918/geo-teaching-workbench",
+    commitSha: "301564e3e8f731b97478b71b1f859479cac53b5d",
     accessedAt: "2026-08-22",
   },
-  "github-geo-rag-high-school-geography": {
-    url: "https://github.com/NanNingmalou/geo-rag",
-    commitSha: "e7a479bfccac0246847654955c3e28e86296f761",
+  "github-high-school-geography-notes": {
+    url: "https://github.com/felixyu9722/high-school-geography",
+    commitSha: "048db7e7c1156fe50e1ceb0fcc542a19f6f42712",
     accessedAt: "2026-08-22",
   },
-  "web-noaa-tornadoes": {
-    url: "https://www.noaa.gov/education/resource-collections/weather-atmosphere/tornadoes",
+  "web-wmo-climate": {
+    url: "https://wmo.int/themes/climate",
     accessedAt: "2026-08-22",
   },
-  "web-noaa-climate-change-impacts": {
-    url: "https://www.noaa.gov/education/resource-collections/climate/climate-change-impacts",
+  "web-nasa-carbon-cycle": {
+    url: "https://science.nasa.gov/earth/earth-observatory/the-carbon-cycle/",
     accessedAt: "2026-08-22",
   },
-  "web-our-world-in-data-urbanization": {
-    url: "https://ourworldindata.org/urbanization",
+  "web-fao-land-resources": {
+    url: "https://www.fao.org/land-water/land/en/",
     accessedAt: "2026-08-22",
   },
-  "web-our-world-in-data-water-use-stress": {
-    url: "https://ourworldindata.org/water-use-stress",
-    accessedAt: "2026-08-22",
-  },
-  "web-national-geographic-urbanization": {
-    url: "https://education.nationalgeographic.org/resource/urbanization/",
+  "web-fao-water-resources": {
+    url: "https://www.fao.org/land-water/water/en/",
     accessedAt: "2026-08-22",
   },
 };
 
 const expectedItems = new Set([
-  "geo-s1-earth-rotation-and-linear-speed",
-  "geo-s1-obliquity-and-solar-declination",
-  "geo-s1-solar-altitude-azimuth-model",
-  "geo-s1-solar-model-observation-boundaries",
-  "geo-c2-textbook-grounded-geography-qa",
-  "geo-s3-self-testing-and-evidence-boundary",
-  "geo-c1-tornado-formation-and-updraft",
-  "geo-s3-tornado-exposure-and-response",
-  "geo-s3-climate-impact-chain",
-  "geo-s2-climate-adaptation-regional-planning",
-  "geo-c2-urbanization-transition-and-land",
-  "geo-c2-urbanization-data-and-spatial-scale",
-  "geo-c1-water-withdrawal-and-basin-balance",
-  "geo-s3-water-stress-and-resource-security",
-  "geo-c2-urban-services-and-spatial-inequality",
-  "geo-c2-urbanization-land-use-and-livelihoods",
+  "geo-c1-natural-geography-process-unit-map",
+  "geo-c2-human-geography-unit-map",
+  "geo-s1-solar-motion-polar-day-boundary",
+  "geo-s1-climate-observation-variability-evidence",
+  "geo-s2-world-region-comparison-evidence",
+  "geo-s2-map-chart-region-comparison",
+  "geo-s3-globalization-resource-environment-security",
+  "geo-s3-carbon-cycle-reservoir-feedback",
+  "geo-s3-land-degradation-food-security",
+  "geo-s3-water-allocation-competing-uses",
 ]);
 
 assert.equal(payload.version, "geo-2026.08.22.11");
@@ -71,7 +61,7 @@ assert.equal(payload.items.length, 185);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v6 source ${sourceId}`);
+  assert.ok(source, `missing v8 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
   assert.equal(source.accessedAt, expected.accessedAt);
@@ -81,7 +71,7 @@ for (const [sourceId, expected] of Object.entries(expectedSources)) {
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const itemId of expectedItems) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v6 item ${itemId}`);
+  assert.ok(item, `missing v8 item ${itemId}`);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");
   assert.ok(item.summary.length >= 40 && item.summary.length <= 500);
@@ -92,10 +82,10 @@ for (const itemId of expectedItems) {
 
 const courseCounts = Object.groupBy([...expectedItems].map((id) => items.get(id)), (item) => item.courseId);
 assert.deepEqual(Object.fromEntries(Object.entries(courseCounts).map(([courseId, entries]) => [courseId, entries.length])), {
-  "compulsory-1": 2,
-  "compulsory-2": 5,
-  "selective-1": 4,
-  "selective-2": 1,
+  "compulsory-1": 1,
+  "compulsory-2": 1,
+  "selective-1": 2,
+  "selective-2": 2,
   "selective-3": 4,
 });
 

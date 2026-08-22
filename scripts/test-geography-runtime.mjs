@@ -19,7 +19,7 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.22.10");
+assert.equal(site.version, "geo-2026.08.22.11");
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
 assert.ok(site.items.some((item) => item.id === "geo-s2-gis-remote-sensing-evidence"));
@@ -30,6 +30,8 @@ assert.ok(site.items.some((item) => item.id === "geo-s3-ocean-acidification-food
 assert.ok(site.items.some((item) => item.id === "geo-s1-enso-wind-current-upwelling"));
 assert.ok(site.items.some((item) => item.id === "geo-s2-copernicus-multisource-monitoring"));
 assert.ok(site.items.some((item) => item.id === "geo-s3-soil-carbon-and-food-security"));
+assert.ok(site.items.some((item) => item.id === "geo-s3-carbon-cycle-reservoir-feedback"));
+assert.ok(site.items.some((item) => item.id === "geo-s3-water-allocation-competing-uses"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-noaa-tides-education"));
@@ -40,6 +42,9 @@ assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-atlasg
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-open-geo-data-education"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-geog-510"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-openguessr-education"));
+assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-shanghai-high-school-lab"));
+assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "github-high-school-geography-notes"));
+assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-wmo-climate"));
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 
 const index = fs.readFileSync(indexPath, "utf8");

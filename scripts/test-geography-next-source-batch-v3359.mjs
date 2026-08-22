@@ -60,9 +60,9 @@ const expectedItems = new Set([
   "geo-s3-enso-climate-risk-and-resources",
 ]);
 
-assert.equal(payload.version, "geo-2026.08.22.10");
-assert.equal(payload.sources.length, 65);
-assert.equal(payload.items.length, 175);
+assert.equal(payload.version, "geo-2026.08.22.11");
+assert.equal(payload.sources.length, 72);
+assert.equal(payload.items.length, 185);
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
   assert.ok(source, `missing v3 source ${sourceId}`);

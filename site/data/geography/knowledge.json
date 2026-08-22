@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.10",
+  "version": "geo-2026.08.22.11",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -599,6 +599,72 @@
       "url": "https://www.worldbank.org/ext/en/topic/farming-and-agribusiness",
       "accessedAt": "2026-08-22",
       "licenseNote": "World Bank 公共专题页面按其版权与开放资料说明处理；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、数据、图表或案例。"
+    },
+    {
+      "id": "github-shanghai-high-school-lab",
+      "title": "沪知高中：上海高中课程知识库与互动学习实验",
+      "publisher": "wuhy80/shanghai-high-school-lab（GitHub）",
+      "editionNote": "公开仓库提交 `a2a05482c66267b611cda67ca960b03feefbf811`；访问日期 2026-08-22；README 与课程数据覆盖高中地理必修第一册、第二册的单元化知识组织。",
+      "url": "https://github.com/wuhy80/shanghai-high-school-lab",
+      "commitSha": "a2a05482c66267b611cda67ca960b03feefbf811",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明 MIT；本项目仅作课程结构与地理知识组织交叉核对，发布原创摘要，不复制课文、互动图解、代码或页面版式。"
+    },
+    {
+      "id": "github-geo-teaching-workbench",
+      "title": "地理教师智能化教学工作台：太阳视运动模拟器",
+      "publisher": "SUNhui918/geo-teaching-workbench（GitHub）",
+      "editionNote": "公开仓库提交 `301564e3e8f731b97478b71b1f859479cac53b5d`；访问日期 2026-08-22；earthmotion.html 提供纬度、太阳赤纬、昼长、太阳高度角与极昼极夜的参数化观察入口。",
+      "url": "https://github.com/SUNhui918/geo-teaching-workbench",
+      "commitSha": "301564e3e8f731b97478b71b1f859479cac53b5d",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "页面声明为课堂教学原创资源并限制非商业使用；本项目仅作 citation-only 教学方法核对，发布原创摘要，不复制页面代码、图形或资源。"
+    },
+    {
+      "id": "github-high-school-geography-notes",
+      "title": "高中地理考点重点复习与世界区域资料",
+      "publisher": "felixyu9722/high-school-geography（GitHub）",
+      "editionNote": "公开仓库提交 `048db7e7c1156fe50e1ceb0fcc542a19f6f42712`；访问日期 2026-08-22；目录包含高中自然地理、人文地理、世界地理及图表地图判读复习资料。",
+      "url": "https://github.com/felixyu9722/high-school-geography",
+      "commitSha": "048db7e7c1156fe50e1ceb0fcc542a19f6f42712",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库未声明统一许可证；仅作 citation-only 主题核对，不复制 HTML、PDF、题库、图片、代码或页面内容。"
+    },
+    {
+      "id": "web-wmo-climate",
+      "title": "WMO：Climate",
+      "publisher": "World Meteorological Organization",
+      "editionNote": "公开气候主题页；访问日期 2026-08-22；用于核对气候系统、气候变率、观测资料与气候服务之间的关系。",
+      "url": "https://wmo.int/themes/climate",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "WMO 公共主题页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、图表或页面版式。"
+    },
+    {
+      "id": "web-nasa-carbon-cycle",
+      "title": "NASA Earth Observatory：The Carbon Cycle",
+      "publisher": "NASA Earth Observatory",
+      "editionNote": "公开地球观测教育页面；访问日期 2026-08-22；用于核对碳库、碳通量、陆地—海洋—大气交换与气候反馈。",
+      "url": "https://science.nasa.gov/earth/earth-observatory/the-carbon-cycle/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NASA 公共科学教育页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、图片、动画或数据。"
+    },
+    {
+      "id": "web-fao-land-resources",
+      "title": "FAO Land and Water：Land",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "editionNote": "公开土地资源专题页；访问日期 2026-08-22；用于核对土地退化、土地管理、土壤保护与生产—生态权衡。",
+      "url": "https://www.fao.org/land-water/land/en/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "FAO 公共政策与教育页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、图片、报告或数据。"
+    },
+    {
+      "id": "web-fao-water-resources",
+      "title": "FAO Land and Water：Water",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "editionNote": "公开水资源专题页；访问日期 2026-08-22；用于核对农业用水、不同部门竞争用水、水资源治理与可持续配置。",
+      "url": "https://www.fao.org/land-water/water/en/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "FAO 公共政策与教育页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、图片、报告或数据。"
     }
   ],
   "items": [
@@ -4362,6 +4428,226 @@
           "sourceId": "pep-geography-selective-2",
           "locator": "区域农业、城乡联系与产业融合章节",
           "note": "回到教材核对区域分工、产业融合、交通联系和发展条件。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-natural-geography-process-unit-map",
+      "courseId": "compulsory-1",
+      "title": "自然地理过程的单元化与综合串联",
+      "summary": "自然地理复习可按宇宙环境、地质圈层、大气过程、水体循环、地貌生物与灾害串联起来：先找能量或物质来源，再追踪运动、交换和反馈，最后落到区域差异与风险防护。这样能把分散考点还原成可迁移的过程链。",
+      "keywords": ["自然地理过程", "圈层联系", "过程链", "灾害防护"],
+      "sourceIds": ["github-shanghai-high-school-lab", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-shanghai-high-school-lab",
+          "locator": "README：课程结构与教材依据 / src/curriculum.ts geography units",
+          "note": "开源高中课程库用于交叉核对自然地理单元的连续组织方式；不复制课文、互动图解或代码。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "地理必修第一册：宇宙、圈层、大气、水体、地貌生物与灾害章节",
+          "note": "回到教材核对自然地理过程、圈层相互作用和灾害防护的课程边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-human-geography-unit-map",
+      "courseId": "compulsory-2",
+      "title": "人口、聚落、产业与区域联系的单元串联",
+      "summary": "人文地理综合题可按人口变化与流动、城乡聚落、产业区位、交通联系、人地协调五个层次组织。分析时要把人口和土地作为基础，把产业与交通作为联系，把资源环境约束和治理目标作为评价条件，避免只罗列区位因素。",
+      "keywords": ["人口聚落", "产业区位", "交通联系", "人地协调"],
+      "sourceIds": ["github-shanghai-high-school-lab", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-shanghai-high-school-lab",
+          "locator": "README：课程结构与教材依据 / src/curriculumSeeds.ts geography units",
+          "note": "开源高中课程库用于交叉核对人口、城市乡村、产业、交通和发展单元的组织顺序；不复制正文或页面资源。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "地理必修第二册：人口、城市乡村、产业区位、交通与人地协调章节",
+          "note": "回到教材核对人口、聚落、产业、交通和区域联系的概念边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-solar-motion-polar-day-boundary",
+      "courseId": "selective-1",
+      "title": "太阳视运动、正午高度与极昼极夜边界",
+      "summary": "太阳视运动题要同时固定观测纬度、太阳直射纬度和地方太阳时，再判断正午太阳高度、昼长、日出日落方位以及是否进入极昼或极夜。参数化演示适合检查边界条件，作答仍要写出纬度、日期与太阳直射点之间的推导链。",
+      "keywords": ["太阳视运动", "正午太阳高度", "极昼极夜", "边界条件"],
+      "sourceIds": ["github-geo-teaching-workbench", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geo-teaching-workbench",
+          "locator": "earthmotion.html：太阳视运动模拟器 / 纬度、太阳赤纬、昼长与极昼极夜",
+          "note": "教师工作台用于交叉核对太阳视运动参数、极昼极夜分支和正午太阳高度的观察入口；不复制页面代码或图形。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "地球运动、太阳直射点、正午太阳高度与昼夜长短章节",
+          "note": "回到教材核对太阳高度、昼长、方位和极昼极夜的计算与判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-climate-observation-variability-evidence",
+      "courseId": "selective-1",
+      "title": "气候观测、变率与证据尺度",
+      "summary": "气候资料题要区分天气状态、气候平均、年际变率和长期变化，再核对观测站、遥感、再分析或模型资料的时间长度与空间分辨率。看到异常值时先问基准期和指标口径，再判断趋势、周期或极端事件。",
+      "keywords": ["气候观测", "气候变率", "基准期", "证据尺度"],
+      "sourceIds": ["web-wmo-climate", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-wmo-climate",
+          "locator": "WMO：Climate change impacts / climate variability / observations and services",
+          "note": "WMO 气候主题页用于交叉核对气候观测、变率和气候服务的证据入口；不复制页面文字或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "气候类型、气候资料判读与自然环境整体性章节",
+          "note": "回到教材核对气候要素、资料时间尺度和区域差异的判读方法。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-world-region-comparison-evidence",
+      "courseId": "selective-2",
+      "title": "世界区域比较中的位置、气候与产业证据",
+      "summary": "世界区域比较题先用经纬度、海陆位置和地形确定区域，再沿气候—水资源—植被土壤—人口聚落—产业交通链条解释差异。区域结论必须区分自然基础、历史路径和现实政策，不能用单一气候标签替代综合比较。",
+      "keywords": ["世界区域", "区域比较", "气候证据", "产业联系"],
+      "sourceIds": ["github-high-school-geography-notes", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-high-school-geography-notes",
+          "locator": "项目目录：01高中世界地理 / 亚洲、非洲、欧洲、美洲区域资料",
+          "note": "高中地理资料仓库用于交叉核对世界区域比较的空间线索与专题组织；不复制 HTML、PDF、题库或图片。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "区域特征、区域联系与区域发展条件章节",
+          "note": "回到教材核对区域差异、区域整体性和发展条件的综合解释。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-map-chart-region-comparison",
+      "courseId": "selective-2",
+      "title": "图表、地图与区域比较的证据排序",
+      "summary": "区域图表题先读图例、比例尺、坐标、时间和统计单位，再分别提取位置、分布、变化与联系证据。比较多个区域时应先写共同尺度和差异方向，再解释主导因素与限制条件，避免把视觉显著性误当成因果关系。",
+      "keywords": ["地图判读", "图表证据", "区域比较", "统计尺度"],
+      "sourceIds": ["github-high-school-geography-notes", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-high-school-geography-notes",
+          "locator": "高中地理考点重点复习/高中地理统考重点复习_15_图表与地图判读.html",
+          "note": "高中地理复习资料用于交叉核对图表、地图与区域比较的读图顺序；不复制页面文字、题目或图件。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "区域地图、统计图表与综合判读章节",
+          "note": "回到教材核对地图证据、区域尺度和人地关系的解释边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-globalization-resource-environment-security",
+      "courseId": "selective-3",
+      "title": "全球化、资源环境与安全边界",
+      "summary": "资源环境安全题要把全球生产网络、资源流动、环境外部性和国家或区域治理能力放在同一框架中。判断某项发展是否安全，既要看当前供给和收益，也要看资源依赖、生态代价、供应链中断与替代能力。",
+      "keywords": ["全球化", "资源安全", "环境外部性", "供应链"],
+      "sourceIds": ["github-high-school-geography-notes", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-high-school-geography-notes",
+          "locator": "高中地理考点重点复习/高中地理统考重点复习_08_全球化资源环境与永续发展.html",
+          "note": "高中地理复习资料用于交叉核对全球化、资源环境和永续发展主题的组织入口；不复制页面内容或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "资源安全、环境安全与国家安全章节",
+          "note": "回到教材核对资源供给、环境代价、风险传导和安全保障能力。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-carbon-cycle-reservoir-feedback",
+      "courseId": "selective-3",
+      "title": "碳循环中的碳库、通量与反馈",
+      "summary": "碳循环材料题要先区分大气、海洋、植被、土壤和岩石等碳库，再判断燃烧、光合作用、呼吸、分解、海气交换和沉积等通量变化。评价减排或增汇措施时要同时考虑时间尺度、饱和效应、空间转移和与水土生态系统的联动。",
+      "keywords": ["碳循环", "碳库", "碳通量", "反馈"],
+      "sourceIds": ["web-nasa-carbon-cycle", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-carbon-cycle",
+          "locator": "The Carbon Cycle：carbon reservoirs / fluxes / land-ocean-atmosphere exchange",
+          "note": "NASA Earth Observatory 用于交叉核对碳库、碳通量和地球系统交换的概念入口；不复制原文、图片或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "碳循环、生态安全与低碳转型章节",
+          "note": "回到教材核对碳收支、生态系统服务、减排增汇和资源环境安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-land-degradation-food-security",
+      "courseId": "selective-3",
+      "title": "土地退化、土壤保护与粮食安全",
+      "summary": "土地退化评价要区分侵蚀、盐碱化、污染、压实、植被退化和生产力下降等过程，再判断土地利用方式、气候水文和管理制度的共同作用。治理措施应把土壤保持、节水、植被恢复、耕作制度和粮食供给稳定性一起评价。",
+      "keywords": ["土地退化", "土壤保护", "粮食安全", "土地治理"],
+      "sourceIds": ["web-fao-land-resources", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-land-resources",
+          "locator": "FAO Land and Water：land degradation / soil / sustainable land management",
+          "note": "FAO 土地资源专题用于交叉核对土地退化、土壤保护和可持续土地管理的概念入口；不复制原文、图片或报告。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "土地退化、耕地保护与粮食安全章节",
+          "note": "回到教材核对土壤质量、耕地保护、生态修复和粮食安全的评价链。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-water-allocation-competing-uses",
+      "courseId": "selective-3",
+      "title": "水资源配置与部门竞争用水",
+      "summary": "水资源安全题要先区分生活、农业、工业、生态和能源等用水部门，再结合水量、水质、季节变化、基础设施和治理规则判断竞争关系。调水或增供方案不能只看新增水量，还要评价生态流量、成本、风险转移和长期节水。",
+      "keywords": ["水资源配置", "竞争用水", "生态流量", "水安全"],
+      "sourceIds": ["web-fao-water-resources", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-fao-water-resources",
+          "locator": "FAO Land and Water：water scarcity / competing uses / water governance",
+          "note": "FAO 水资源专题用于交叉核对农业、生活、工业和生态用水之间的配置与治理问题；不复制原文、图片或报告。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "水资源安全、生态流量与资源配置章节",
+          "note": "回到教材核对水资源供需、生态约束、跨区域调配和国家安全。"
         }
       ],
       "licenseStatus": "citation-only",
