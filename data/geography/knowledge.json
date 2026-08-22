@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.23",
+  "version": "geo-2026.08.23.24",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1544,6 +1544,65 @@
       "commitSha": "bb36d465c05fadf768e4ca21fbfa0eeee419b8ce",
       "accessedAt": "2026-08-23",
       "licenseNote": "仓库声明 MIT；本项目仅作 GIS 环境、可复现分析和多源空间工作流的 citation-only 参照，公开层发布原创高中地理方法，不复制代码、notebook、图片或数据。"
+    },
+    {
+      "id": "web-globe-program-clouds-api",
+      "title": "GLOBE Program：云观测协议与开放数据 API",
+      "publisher": "NASA / NSF GLOBE Program",
+      "editionNote": "公开 GLOBE 数据 API 与 Clouds protocol 入口；访问日期 2026-08-23；用于核对地面云观测、协议字段、时间位置和卫星匹配的资料边界。",
+      "url": "https://www.globe.gov/globe-data/globe-api",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "GLOBE 公共数据与协议入口；本项目仅作高中地理云观测、公民科学和资料判读的 citation-only 参照，不复制页面正文、数据记录、照片或接口返回内容。"
+    },
+    {
+      "id": "github-ruddro-globe-cloud-insights",
+      "title": "GLOBE Cloud Insights：云观测交互分析",
+      "publisher": "ruddro-roy/globe-cloud-insights（GitHub）",
+      "editionNote": "公开仓库提交 `b956e24ac5f41ece2e3e4b7d096c06d76df79cc5`；访问日期 2026-08-23；README 说明项目将 GLOBE Observer 云观测、时间序列、世界地图和卫星匹配组织为可探索的数据管线。",
+      "url": "https://github.com/ruddro-roy/globe-cloud-insights",
+      "commitSha": "b956e24ac5f41ece2e3e4b7d096c06d76df79cc5",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 MIT；本项目仅作公民科学云观测、数据清洗、空间时间可视化和质量筛选的 citation-only 参照，不复制代码、数据、图表或 notebook。"
+    },
+    {
+      "id": "github-ccosse-colormyworld",
+      "title": "ColorMyWorld：地理地图寻宝与区域识别",
+      "publisher": "ccosse/colormyworld（GitHub）",
+      "editionNote": "公开仓库提交 `6a17d2ccd12503e31344ab6050eef86f9985d3d6`；访问日期 2026-08-23；README 将项目定位为 Geography Scavenger Hunt，并说明地图着色、国家点击和空间识别活动。",
+      "url": "https://github.com/ccosse/colormyworld",
+      "commitSha": "6a17d2ccd12503e31344ab6050eef86f9985d3d6",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 Apache-2.0；本项目仅作地图寻宝、区域识别和地图颜色表达的 citation-only 参照，不复制代码、地图、图片、题目或页面文字。"
+    },
+    {
+      "id": "github-ayushishukla-geography",
+      "title": "Geography：地貌、气候与 GIS 地理教育网站",
+      "publisher": "ayushishukla-geo/Geography（GitHub）",
+      "editionNote": "公开仓库提交 `3769f9c88270450ae6a930d40dc761590fb8b6cc`；访问日期 2026-08-23；README 将项目定位为覆盖 landforms、climate 和 GIS 的 geography education website。",
+      "url": "https://github.com/ayushishukla-geo/Geography",
+      "commitSha": "3769f9c88270450ae6a930d40dc761590fb8b6cc",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作地貌、气候和 GIS 学习路径的 citation-only 参照，公开层发布原创高中地理方法，不复制页面文字、图片、代码或资源。"
+    },
+    {
+      "id": "github-bhagyashree-geography-lesson-plans",
+      "title": "Geography ICSE Lesson Plans：中学地理课例计划",
+      "publisher": "bhagyashree21289/Geography-ICSE-Lesson-Plans（GitHub）",
+      "editionNote": "公开仓库提交 `ff0c43a86f756574180acfc59f68a3e3ea9693a4`；访问日期 2026-08-23；README 将项目定位为 Grade 9 Geography lesson plans，用于参照目标、活动、资料和课堂评价的组织方式。",
+      "url": "https://github.com/bhagyashree21289/Geography-ICSE-Lesson-Plans",
+      "commitSha": "ff0c43a86f756574180acfc59f68a3e3ea9693a4",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库页面未声明统一许可证；本项目仅作中学地理课例结构和活动设计的 citation-only 参照，不复制教案正文、图片、题目或课件。"
+    },
+    {
+      "id": "github-osgeo-geospatial-education",
+      "title": "OSGeo：开源地理空间教育与治理生态",
+      "publisher": "OSGeo/osgeo（GitHub）",
+      "editionNote": "公开仓库提交 `ba9b9f1228451dc717b95289e82c9d36ba67a954`；访问日期 2026-08-23；README 说明 OSGeo 通过开放软件、标准、数据和教育支持地理空间社区，并列出 CC BY、CC BY-SA 与 CC0 的资料边界。",
+      "url": "https://github.com/OSGeo/osgeo",
+      "commitSha": "ba9b9f1228451dc717b95289e82c9d36ba67a954",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库说明不同材料具有 CC BY、CC BY-SA、CC0 或不可改编的不同许可；本项目仅作开源地理空间教育、标准和资料治理的 citation-only 参照，不复制文档、图片、代码或品牌材料。"
     }
   ],
   "items": [
@@ -9587,6 +9646,336 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：资源环境资料、生态治理与国家安全章节",
           "note": "回到教材核对资源环境证据、治理判断和国家安全分析。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-cloud-observation-and-weather-evidence",
+      "courseId": "compulsory-1",
+      "title": "云观测与天气过程证据",
+      "summary": "判读云观测资料时，先记录观测时间、地点、云状、天空状况和观测方法，再与气温、气压、湿度、降水和天气系统资料对照。云图像能提供过程线索，却不能单独证明降水成因或灾害强度；要把地面观察、卫星资料和天气图放到同一时间轴中复核。",
+      "keywords": ["云观测", "天气过程", "时间轴", "证据复核"],
+      "sourceIds": ["web-globe-program-clouds-api", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-globe-program-clouds-api",
+          "locator": "GLOBE API / Clouds protocol, observation fields, date and location context",
+          "note": "GLOBE官方入口用于交叉核对云观测协议、时间位置字段和公民科学资料边界；不复制页面正文、数据记录、照片或接口返回内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：大气受热、天气系统、降水与气象观测章节",
+          "note": "回到教材核对云、降水、天气过程和气象资料判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-field-observation-sampling-and-bias",
+      "courseId": "compulsory-1",
+      "title": "地理观察的抽样与偏差",
+      "summary": "开展校园或社区自然观察时，应先规定观察点、时间间隔、记录字段和缺测处理，再讨论样本能否代表更大区域。参与者集中在容易到达的地点会造成空间偏差，晴天集中观测会造成时间偏差；观察结果适合提出问题和比较过程，不能未经说明直接替代规范监测。",
+      "keywords": ["地理观察", "抽样", "空间偏差", "缺测"],
+      "sourceIds": ["github-ruddro-globe-cloud-insights", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-ruddro-globe-cloud-insights",
+          "locator": "README / GLOBE Observer citizen observations, world map, timeline and quality filters",
+          "note": "GitHub项目用于交叉核对公民科学观察、坐标时间筛选和数据质量控制的边界；不复制代码、数据、图表或 notebook。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地理实践、气象观测、自然环境调查与资料处理章节",
+          "note": "回到教材核对观察设计、资料整理、自然过程和地理实践力。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-landform-climate-gis-learning-path",
+      "courseId": "compulsory-1",
+      "title": "地貌、气候与 GIS 的学习路径",
+      "summary": "学习自然地理综合问题时，可先从地貌形态和气候要素入手，再用 GIS 图层表达空间差异，最后回到侵蚀、沉积、水热组合或灾害过程解释原因。交互网页适合建立概念联系和观察顺序，不能把示意图的颜色、边界或动画直接当作真实测量结果。",
+      "keywords": ["地貌", "气候", "GIS", "示意图边界"],
+      "sourceIds": ["github-ayushishukla-geography", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-ayushishukla-geography",
+          "locator": "README / geography education website featuring landforms, climate and GIS topics",
+          "note": "GitHub教育网站用于交叉核对地貌、气候和 GIS 的学习路径边界；不复制页面文字、图片、代码或资源。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "第一册：地貌、气候、地理信息技术与自然环境整体性章节",
+          "note": "回到教材核对地貌过程、气候要素、GIS 判读和自然地理整体性。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-geography-scavenger-hunt-place-clues",
+      "courseId": "compulsory-2",
+      "title": "地图寻宝中的区域识别线索",
+      "summary": "做地图寻宝或地点识别活动时，应把经纬度、海陆位置、地形、交通、聚落和产业等线索分层记录，再用比例尺、图例和第二资料核验。游戏能训练从局部线索定位区域，但不能把熟悉的图形或颜色当成唯一证据，更不能用记忆中的国家边界替代当前地图版本。",
+      "keywords": ["地图寻宝", "区域识别", "位置线索", "图例核验"],
+      "sourceIds": ["github-ccosse-colormyworld", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-ccosse-colormyworld",
+          "locator": "README / Geography Scavenger Hunt, map country interaction and place identification",
+          "note": "GitHub项目用于交叉核对地图寻宝、国家点击和空间识别活动的边界；不复制代码、地图、图片、题目或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：人口聚落、区域差异、地图判读与地理实践章节",
+          "note": "回到教材核对位置、聚落、产业、区域特征和地图判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-map-color-and-data-meaning",
+      "courseId": "compulsory-2",
+      "title": "地图颜色与统计含义",
+      "summary": "地图着色并不自动代表数据大小。读图时要先检查颜色是否对应图例、分类阈值、数值单位和时间范围，再判断颜色表达的是统计变量、土地覆盖还是纯粹的交互装饰。只有在图例和数据定义清楚时，才能用颜色比较人口、产业或区域发展差异。",
+      "keywords": ["地图颜色", "图例", "分类阈值", "统计变量"],
+      "sourceIds": ["github-ccosse-colormyworld", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-ccosse-colormyworld",
+          "locator": "README / color profiles, coloring mode and explicit distinction from choropleth data maps",
+          "note": "GitHub项目用于交叉核对交互着色与统计专题图的区别；不复制代码、地图、图片或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：专题地图、人口产业统计与区域比较章节",
+          "note": "回到教材核对图例、统计口径、专题地图和区域差异解释。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-lesson-plan-from-place-to-region",
+      "courseId": "compulsory-2",
+      "title": "从地方观察到区域问题链",
+      "summary": "设计人文地理学习活动时，可按地方观察、资料比较、提出区域问题、解释要素联系和评价方案组织任务。课例计划能帮助安排目标、材料和活动顺序，但高中地理结论仍要回到人口、城镇、产业、交通与人地协调的教材框架，避免把活动完成度等同于地理解释质量。",
+      "keywords": ["课例设计", "问题链", "地方观察", "区域解释"],
+      "sourceIds": ["github-bhagyashree-geography-lesson-plans", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-bhagyashree-geography-lesson-plans",
+          "locator": "README / Geography Lesson Plans for Grade 9 ICSE",
+          "note": "GitHub课例仓库用于交叉核对目标、活动、资料和课堂评价的组织边界；不复制教案正文、图片、题目或课件。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "第二册：区域调查、人地关系、城镇与产业活动章节",
+          "note": "回到教材核对地方地理实践、区域问题链和人地协调分析。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-cloud-cover-and-radiation-observation",
+      "courseId": "selective-1",
+      "title": "云量观测与辐射收支",
+      "summary": "云量资料应与太阳高度、地表反照率、短波入射和长波辐射一起分析，而不是把云多简单等同于降温或降水。比较不同地点和日期时，要统一观测时段、云状分类和天空状况记录，并区分云的即时影响、天气过程影响与长期气候信号。",
+      "keywords": ["云量", "辐射收支", "反照率", "观测时段"],
+      "sourceIds": ["web-globe-program-clouds-api", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-globe-program-clouds-api",
+          "locator": "GLOBE Clouds protocol / sky conditions and ground observation categories",
+          "note": "GLOBE官方入口用于交叉核对云状、天空状况和地面观测分类的边界；不复制页面正文或观测数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：太阳辐射、地表受热、云与降水、能量收支章节",
+          "note": "回到教材核对云量、辐射收支、太阳辐射和天气气候过程。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-ground-observation-satellite-match",
+      "courseId": "selective-1",
+      "title": "地面观测与卫星匹配的尺度核对",
+      "summary": "把地面云观测与卫星影像匹配时，要先检查观测时间差、空间位置、卫星像元大小、云层遮挡和分类标准。匹配成功只说明两类资料可以对照，不代表它们测量的是同一个尺度或同一物理量；解释天气过程时还应加入天气图、雷达或站点资料。",
+      "keywords": ["地面观测", "卫星匹配", "空间分辨率", "尺度核对"],
+      "sourceIds": ["github-ruddro-globe-cloud-insights", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-ruddro-globe-cloud-insights",
+          "locator": "README / cloud observations, satellite matches, world map and timeline views",
+          "note": "GitHub项目用于交叉核对地面云观测、卫星匹配和时空可视化的证据边界；不复制代码、数据、图表或 notebook。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：遥感观测、天气系统、尺度与资料判读章节",
+          "note": "回到教材核对遥感、天气过程、空间尺度和多源资料交叉验证。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-landform-climate-gis-concept-integration",
+      "courseId": "selective-1",
+      "title": "地貌—气候—GIS 的综合联读",
+      "summary": "自然地理综合联读可按地貌结构、气候要素、水文过程和生态响应逐层展开，再用 GIS 表达空间梯度和区域边界。学习网站提供概念入口，但实际判读还要检查图层的投影、时间、分辨率和分类方法，区分自然分异规律与制图或数据处理造成的视觉差异。",
+      "keywords": ["地貌气候", "GIS 联读", "自然分异", "图层尺度"],
+      "sourceIds": ["github-ayushishukla-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-ayushishukla-geography",
+          "locator": "README / landforms, climate and GIS geography education topics",
+          "note": "GitHub教育网站用于交叉核对地貌、气候和 GIS 概念联读的组织边界；不复制页面文字、图片、代码或资源。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：自然环境整体性、地域分异与地理信息技术章节",
+          "note": "回到教材核对地貌、气候、水文、生态响应和自然地理整体性。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-citizen-science-spatial-sampling",
+      "courseId": "selective-2",
+      "title": "公民科学的空间抽样与区域比较",
+      "summary": "把公民科学观测用于区域研究时，应先画出采样点和覆盖空白，再比较不同区域的观测强度、环境条件和参与者结构。点多不一定代表现象强，点少也不一定代表现象弱；必须记录可达性、参与热度、时间窗口和数据质量，避免把观测分布误判为自然现象分布。",
+      "keywords": ["公民科学", "空间抽样", "覆盖空白", "区域比较"],
+      "sourceIds": ["github-ruddro-globe-cloud-insights", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-ruddro-globe-cloud-insights",
+          "locator": "README / GLOBE API pipeline, valid coordinates, timestamps, world map and country distributions",
+          "note": "GitHub项目用于交叉核对公民科学空间数据、质量过滤和区域比较的边界；不复制代码、数据、图表或 notebook。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域研究、空间尺度、地理信息技术与资料评价章节",
+          "note": "回到教材核对区域比较、空间尺度、数据质量和综合研究。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-open-source-geospatial-education-stack",
+      "courseId": "selective-2",
+      "title": "开源地理空间教育工具链",
+      "summary": "选择开源地理工具开展区域研究时，应把软件、标准、数据、文档和许可分别记录，先明确问题和空间单元，再决定使用地图、遥感、空间分析或数据服务。开源不等于没有质量门槛；版本、投影、元数据、可复现步骤和结果复核仍是区域规划结论的必要组成部分。",
+      "keywords": ["开源 GIS", "地理标准", "元数据", "区域规划"],
+      "sourceIds": ["github-osgeo-geospatial-education", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-osgeo-geospatial-education",
+          "locator": "README / open-source geospatial software, standards, data and education; CC BY, CC BY-SA and CC0 boundaries",
+          "note": "OSGeo仓库用于交叉核对开源地理空间软件、标准、数据、教育和许可治理的边界；不复制文档、图片、代码或品牌材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：地理信息技术、区域研究、规划实践与资料评价章节",
+          "note": "回到教材核对 GIS、区域规划、资料质量、尺度和综合决策。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-map-color-classification-and-legend",
+      "courseId": "selective-2",
+      "title": "地图颜色分类与图例设计",
+      "summary": "制作区域专题图时，要先决定颜色表达类别、顺序还是强度，再设置分类阈值、色阶方向和图例文字。交互地图中的随机着色可以用于识别国家和位置，却不能代替统计制图；只有把颜色与变量、单位、时间和空间单元绑定，地图才具备区域比较和规划分析意义。",
+      "keywords": ["颜色分类", "图例设计", "专题制图", "统计口径"],
+      "sourceIds": ["github-ccosse-colormyworld", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-ccosse-colormyworld",
+          "locator": "README / color profiles, coloring mode and distinction between aesthetic colorization and choropleth data",
+          "note": "GitHub项目用于交叉核对交互着色、专题图和图例含义的边界；不复制代码、地图、图片或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：专题地图、区域比较、比例尺与地理信息技术章节",
+          "note": "回到教材核对图例、分级设色、区域比较、比例尺和规划制图。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-cloud-data-and-climate-risk-boundary",
+      "courseId": "selective-3",
+      "title": "云观测数据与气候风险边界",
+      "summary": "云观测可以帮助认识天气和辐射过程，但短期云量记录不能直接代表气候变化或灾害风险。评价气候风险时，要把危险性、暴露度、脆弱性和适应能力分开，并注明观测时段、空间覆盖和数据质量；公民科学资料适合补充证据，不应替代长期规范监测。",
+      "keywords": ["云观测", "气候风险", "暴露度", "适应能力"],
+      "sourceIds": ["web-globe-program-clouds-api", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-globe-program-clouds-api",
+          "locator": "GLOBE API / cloud observations, protocol fields and temporal-spatial coverage",
+          "note": "GLOBE官方入口用于交叉核对云观测数据、时间空间覆盖和资料解释边界；不复制页面正文、数据记录或照片。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：气候变化、自然灾害风险、资源环境安全与适应治理章节",
+          "note": "回到教材核对危险性、暴露度、脆弱性、适应能力和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-citizen-observation-ethics-and-location-privacy",
+      "courseId": "selective-3",
+      "title": "公民观测的伦理与位置隐私",
+      "summary": "使用公开地理观测时，既要检查坐标、时间和协议质量，也要考虑个人位置、敏感地点和群体隐私风险。公开数据不等于可以进行个体推断；资源环境研究应尽量聚合空间单元、隐藏不必要的精细位置，并在结论中说明数据用途、许可和伦理边界。",
+      "keywords": ["公民观测", "位置隐私", "数据伦理", "空间聚合"],
+      "sourceIds": ["github-ruddro-globe-cloud-insights", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-ruddro-globe-cloud-insights",
+          "locator": "README / data provenance, public coordinates and ethics note on location privacy",
+          "note": "GitHub项目用于交叉核对公开坐标、数据归因和位置隐私的伦理边界；不复制代码、数据、图表或 notebook。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境资料、生态治理、公共安全与国家安全章节",
+          "note": "回到教材核对资源环境证据、公共安全、治理责任和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-open-geospatial-governance-and-resource-security",
+      "courseId": "selective-3",
+      "title": "开源地理治理与资源安全",
+      "summary": "资源安全分析不仅需要资源量和供需数据，也需要稳定的软件、开放标准、数据许可和可追溯的治理流程。使用开源地理工具时，应区分可共享、需署名、需同许可和不可改编的材料，保留版本与来源记录，防止因数据不可复核或许可不清削弱资源环境决策的可靠性。",
+      "keywords": ["资源安全", "开源治理", "数据许可", "可追溯性"],
+      "sourceIds": ["github-osgeo-geospatial-education", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-osgeo-geospatial-education",
+          "locator": "README / open geospatial outreach, standards, data, education and differentiated license families",
+          "note": "OSGeo仓库用于交叉核对开源地理治理、标准、教育和许可分类的边界；不复制文档、图片、代码或品牌材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源安全、环境治理、生态文明与国家安全章节",
+          "note": "回到教材核对资源安全、环境约束、治理能力和国家安全。"
         }
       ],
       "licenseStatus": "citation-only",

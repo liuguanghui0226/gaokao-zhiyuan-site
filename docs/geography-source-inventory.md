@@ -1,12 +1,25 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026.08.23.23
+盘点日期：2026-08-23；扩展轮次：geo-2026.08.23.24
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.23`：166 个来源、365 条卡片，其中 38 条 `authored-summary`、327 条 `citation-only`；五个课程族分别为 64、74、79、72、76 条。本轮新增 5 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖地图距离与投影、专题地图符号、欧洲与北美区域比较、地理案例复习、QGIS 任务序列和 GIS 环境可复现性。
+当前发布版本 `geo-2026.08.23.24`：172 个来源、380 条卡片，其中 38 条 `authored-summary`、342 条 `citation-only`；五个课程族分别为 67、77、82、75、79 条。本轮新增 1 个公开网站、5 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖云观测、公民科学、地图寻宝、地貌气候 GIS、课例设计、开源地理治理和资料伦理。
 
-本轮累计新增 91 条 citation-only 方法卡：在上一轮 76 条的基础上，本轮继续吸收地图投影、区域比较、复习案例、QGIS 教学和 GIS 环境工作流来源，补齐专题地图选择、证据尺度、资料归因和可复现性等专题。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 106 条 citation-only 方法卡：在上一轮 91 条的基础上，本轮继续吸收云观测、公民科学、地图交互、地貌气候教育和开源地理治理来源，补齐观测抽样、云量辐射、位置隐私、图例语义和数据伦理等专题。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.23.24 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `web-globe-program-clouds-api` | [GLOBE Program：云观测协议与开放数据 API](https://www.globe.gov/globe-data/globe-api) | 官方 API 与 Clouds protocol 入口；访问日期 2026-08-23 | 核对云观测协议、时间位置字段、公民科学数据和卫星匹配的资料边界；不复制正文、数据记录、照片或接口返回。 |
+| `github-ruddro-globe-cloud-insights` | [GLOBE Cloud Insights：云观测交互分析](https://github.com/ruddro-roy/globe-cloud-insights) | commit `b956e24ac5f41ece2e3e4b7d096c06d76df79cc5`；访问日期 2026-08-23 | 参照云观测数据清洗、时间序列、世界地图、卫星匹配和位置隐私；仓库声明 MIT，不复制代码、数据、图表或 notebook。 |
+| `github-ccosse-colormyworld` | [ColorMyWorld：地理地图寻宝与区域识别](https://github.com/ccosse/colormyworld) | commit `6a17d2ccd12503e31344ab6050eef86f9985d3d6`；访问日期 2026-08-23 | 参照地图寻宝、国家识别、交互着色与统计专题图的区别；仓库声明 Apache-2.0，不复制代码、地图、图片或题目。 |
+| `github-ayushishukla-geography` | [Geography：地貌、气候与 GIS 地理教育网站](https://github.com/ayushishukla-geo/Geography) | commit `3769f9c88270450ae6a930d40dc761590fb8b6cc`；访问日期 2026-08-23 | 参照地貌、气候和 GIS 的学习路径；未声明统一许可证，不复制页面文字、图片、代码或资源。 |
+| `github-bhagyashree-geography-lesson-plans` | [Geography ICSE Lesson Plans：中学地理课例计划](https://github.com/bhagyashree21289/Geography-ICSE-Lesson-Plans) | commit `ff0c43a86f756574180acfc59f68a3e3ea9693a4`；访问日期 2026-08-23 | 参照目标、活动、资料和课堂评价的课例结构；未声明统一许可证，不复制教案正文、图片、题目或课件。 |
+| `github-osgeo-geospatial-education` | [OSGeo：开源地理空间教育与治理生态](https://github.com/OSGeo/osgeo) | commit `ba9b9f1228451dc717b95289e82c9d36ba67a954`；访问日期 2026-08-23 | 参照开放软件、标准、数据、教育和 CC BY/CC BY-SA/CC0 等许可边界；不复制文档、图片、代码或品牌材料。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每个课程族 3 条。外部资料只用于方法、教学组织和证据边界交叉核对，公开层继续以人民教育出版社教材页码为主证据；没有把第三方题目、答案、页面代码或图件并入站点。
 
 ## geo-2026.08.23.23 新增公开 GitHub 来源
 

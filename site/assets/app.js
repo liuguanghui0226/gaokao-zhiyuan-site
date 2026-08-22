@@ -1356,13 +1356,15 @@ function latestRecordYear(records) {
   return latest || null;
 }
 
-function currentChinaDate() {
+function currentChinaDate(now = new Date()) {
+  const date = new Date(now);
+  const safeDate = Number.isNaN(date.getTime()) ? new Date() : date;
   const parts = Object.fromEntries(new Intl.DateTimeFormat("en", {
     timeZone: "Asia/Shanghai",
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
-  }).formatToParts(new Date()).filter((part) => part.type !== "literal").map((part) => [part.type, part.value]));
+  }).formatToParts(safeDate).filter((part) => part.type !== "literal").map((part) => [part.type, part.value]));
   return `${parts.year}-${parts.month}-${parts.day}`;
 }
 
@@ -4627,6 +4629,45 @@ function recommendationExportText(recommendation) {
   return lines.join("\n");
 }
 
+function recommendationExportFilename(profile = {}, generatedAt = "") {
+  const province = String(profile.province || "本省")
+    .trim()
+    .replace(/[\\/:*?"<>|]+/g, "-")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "") || "本省";
+  return `gaokao-志愿核验清单-${province}-${currentChinaDate(generatedAt || new Date())}.txt`;
+}
+
+function downloadRecommendationText(text, filename) {
+  if (
+    typeof document === "undefined" ||
+    typeof document.createElement !== "function" ||
+    !document.body ||
+    typeof Blob === "undefined" ||
+    !globalThis.URL?.createObjectURL
+  ) return false;
+  let link = null;
+  let objectUrl = "";
+  try {
+    const blob = new Blob([String(text || "")], { type: "text/plain;charset=utf-8" });
+    objectUrl = globalThis.URL.createObjectURL(blob);
+    link = document.createElement("a");
+    link.href = objectUrl;
+    link.download = String(filename || "gaokao-志愿核验清单.txt");
+    link.rel = "noopener";
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    return true;
+  } catch {
+    return false;
+  } finally {
+    link?.remove();
+    if (objectUrl && globalThis.URL.revokeObjectURL) globalThis.URL.revokeObjectURL(objectUrl);
+  }
+}
+
 async function copyTextToClipboard(text) {
   try {
     if (globalThis.navigator?.clipboard?.writeText) {
@@ -4794,6 +4835,7 @@ function renderRecommendationResults() {
     </div>
     <div class="recommendation-actions">
       <button class="ghost-action" id="copyRecommendation" type="button">复制核验清单</button>
+      <button class="ghost-action" id="downloadRecommendation" type="button">下载核验清单</button>
       <span id="copyRecommendationStatus" class="copy-status" role="status" aria-live="polite"></span>
     </div>
     ${renderDataFreshnessPanel(rec.profile)}
@@ -4976,6 +5018,7 @@ function refreshRecommendationResults() {
 
 function bindRecommendationResultEvents() {
   const copyButton = $("#copyRecommendation");
+  const downloadButton = $("#downloadRecommendation");
   const copyStatus = $("#copyRecommendationStatus");
   copyButton?.addEventListener("click", async () => {
     copyButton.disabled = true;
@@ -4990,6 +5033,23 @@ function bindRecommendationResultEvents() {
       : "复制失败，请手动选择页面内容。";
     copyButton.disabled = false;
     copyButton.removeAttribute("aria-busy");
+  });
+  downloadButton?.addEventListener("click", () => {
+    downloadButton.disabled = true;
+    downloadButton.setAttribute("aria-busy", "true");
+    if (copyStatus) copyStatus.textContent = "正在准备下载文件…";
+    const downloaded = downloadRecommendationText(
+      recommendationExportText({
+        ...state.recommendation,
+        shortlist: state.recommendationShortlist?.items || [],
+      }),
+      recommendationExportFilename(state.recommendation?.profile, state.recommendation?.generatedAt),
+    );
+    if (copyStatus) copyStatus.textContent = downloaded
+      ? "已下载 TXT 核验清单，可保存或打印。"
+      : "下载失败，请改用复制核验清单。";
+    downloadButton.disabled = false;
+    downloadButton.removeAttribute("aria-busy");
   });
   $$("[data-shortlist-key]").forEach((button) => {
     button.addEventListener("click", () => {

@@ -9,59 +9,53 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-cgs-geological-survey": {
-    url: "https://www.cgs.gov.cn/",
+  "web-globe-program-clouds-api": {
+    url: "https://www.globe.gov/globe-data/globe-api",
     accessedAt: "2026-08-23",
   },
-  "web-mot-transport-geography-data": {
-    url: "https://www.mot.gov.cn/",
+  "github-ruddro-globe-cloud-insights": {
+    url: "https://github.com/ruddro-roy/globe-cloud-insights",
+    commitSha: "b956e24ac5f41ece2e3e4b7d096c06d76df79cc5",
     accessedAt: "2026-08-23",
   },
-  "web-nea-energy-security-information": {
-    url: "https://www.nea.gov.cn/",
+  "github-ccosse-colormyworld": {
+    url: "https://github.com/ccosse/colormyworld",
+    commitSha: "6a17d2ccd12503e31344ab6050eef86f9985d3d6",
     accessedAt: "2026-08-23",
   },
-  "web-nmdis-marine-information": {
-    url: "https://www.nmdis.org.cn/",
+  "github-ayushishukla-geography": {
+    url: "https://github.com/ayushishukla-geo/Geography",
+    commitSha: "3769f9c88270450ae6a930d40dc761590fb8b6cc",
     accessedAt: "2026-08-23",
   },
-  "web-geodata-earth-system-data": {
-    url: "https://www.geodata.cn/",
+  "github-bhagyashree-geography-lesson-plans": {
+    url: "https://github.com/bhagyashree21289/Geography-ICSE-Lesson-Plans",
+    commitSha: "ff0c43a86f756574180acfc59f68a3e3ea9693a4",
     accessedAt: "2026-08-23",
   },
-  "github-lmec-map-education-collections": {
-    url: "https://github.com/boston-library/lmec_collections",
-    commitSha: "1d2f104a2a5a8b186bfd06a45dde7fd1af25279f",
-    accessedAt: "2026-08-23",
-  },
-  "github-qgis-lesson-geography": {
-    url: "https://github.com/sagesteppe/QGIS_Lesson",
-    commitSha: "baccacf5893cf02d545258c0d3ceacab35430a62",
-    accessedAt: "2026-08-23",
-  },
-  "github-tactile-map-generator": {
-    url: "https://github.com/jesse-flores/Tactile-Map-Generator",
-    commitSha: "623966ce1963b41472ea667fbae62dc24b97f90a",
+  "github-osgeo-geospatial-education": {
+    url: "https://github.com/OSGeo/osgeo",
+    commitSha: "ba9b9f1228451dc717b95289e82c9d36ba67a954",
     accessedAt: "2026-08-23",
   },
 };
 
 const expectedItems = {
-  "geo-c1-river-basin-water-resource-observation": "compulsory-1",
-  "geo-c1-geological-survey-map-and-landform-evidence": "compulsory-1",
-  "geo-c1-tactile-map-scale-and-spatial-orientation": "compulsory-1",
-  "geo-c2-transport-corridor-and-accessibility": "compulsory-2",
-  "geo-c2-energy-industry-location-and-transition": "compulsory-2",
-  "geo-c2-historical-map-and-regional-change": "compulsory-2",
-  "geo-s1-river-basin-process-and-runoff-seasonality": "selective-1",
-  "geo-s1-geological-map-and-plate-process-evidence": "selective-1",
-  "geo-s1-marine-observation-and-coastal-change": "selective-1",
-  "geo-s2-national-geospatial-data-and-regional-planning": "selective-2",
-  "geo-s2-qgis-layer-overlay-and-field-verification": "selective-2",
-  "geo-s2-map-education-collection-and-scale-comparison": "selective-2",
-  "geo-s3-energy-security-and-low-carbon-transition": "selective-3",
-  "geo-s3-marine-data-and-coastal-resource-governance": "selective-3",
-  "geo-s3-accessible-mapping-and-spatial-inclusion": "selective-3",
+  "geo-c1-cloud-observation-and-weather-evidence": "compulsory-1",
+  "geo-c1-field-observation-sampling-and-bias": "compulsory-1",
+  "geo-c1-landform-climate-gis-learning-path": "compulsory-1",
+  "geo-c2-geography-scavenger-hunt-place-clues": "compulsory-2",
+  "geo-c2-map-color-and-data-meaning": "compulsory-2",
+  "geo-c2-lesson-plan-from-place-to-region": "compulsory-2",
+  "geo-s1-cloud-cover-and-radiation-observation": "selective-1",
+  "geo-s1-ground-observation-satellite-match": "selective-1",
+  "geo-s1-landform-climate-gis-concept-integration": "selective-1",
+  "geo-s2-citizen-science-spatial-sampling": "selective-2",
+  "geo-s2-open-source-geospatial-education-stack": "selective-2",
+  "geo-s2-map-color-classification-and-legend": "selective-2",
+  "geo-s3-cloud-data-and-climate-risk-boundary": "selective-3",
+  "geo-s3-citizen-observation-ethics-and-location-privacy": "selective-3",
+  "geo-s3-open-geospatial-governance-and-resource-security": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.23.24");
@@ -70,17 +64,20 @@ assert.equal(payload.items.length, 380);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v21 source ${sourceId}`);
+  assert.ok(source, `missing v24 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
-  if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
+  if (expected.commitSha) {
+    assert.equal(source.commitSha, expected.commitSha);
+    assert.ok(source.editionNote.includes(expected.commitSha), `${sourceId} edition note must repeat its commit SHA`);
+  }
   assert.match(source.licenseNote, /citation|原创|不复制|仅作/i);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v21 item ${itemId}`);
+  assert.ok(item, `missing v24 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

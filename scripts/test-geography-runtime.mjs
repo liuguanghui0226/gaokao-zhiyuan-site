@@ -19,10 +19,10 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.23.23");
-assert.equal(site.sources.length, 166);
-assert.equal(site.items.length, 365);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 144);
+assert.equal(site.version, "geo-2026.08.23.24");
+assert.equal(site.sources.length, 172);
+assert.equal(site.items.length, 380);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 150);
 assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 22);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
@@ -226,6 +226,25 @@ for (const itemId of [
 ]) {
   assert.ok(site.items.some((item) => item.id === itemId), `missing v23 runtime item ${itemId}`);
 }
+for (const itemId of [
+  "geo-c1-cloud-observation-and-weather-evidence",
+  "geo-c1-field-observation-sampling-and-bias",
+  "geo-c1-landform-climate-gis-learning-path",
+  "geo-c2-geography-scavenger-hunt-place-clues",
+  "geo-c2-map-color-and-data-meaning",
+  "geo-c2-lesson-plan-from-place-to-region",
+  "geo-s1-cloud-cover-and-radiation-observation",
+  "geo-s1-ground-observation-satellite-match",
+  "geo-s1-landform-climate-gis-concept-integration",
+  "geo-s2-citizen-science-spatial-sampling",
+  "geo-s2-open-source-geospatial-education-stack",
+  "geo-s2-map-color-classification-and-legend",
+  "geo-s3-cloud-data-and-climate-risk-boundary",
+  "geo-s3-citizen-observation-ethics-and-location-privacy",
+  "geo-s3-open-geospatial-governance-and-resource-security",
+]) {
+  assert.ok(site.items.some((item) => item.id === itemId), `missing v24 runtime item ${itemId}`);
+}
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-disaster-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "marine-survey-reference-2017"));
 assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === "web-noaa-tides-education"));
@@ -356,6 +375,16 @@ for (const sourceId of [
   "github-opengeos-pygis",
 ]) {
   assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v23 runtime source ${sourceId}`);
+}
+for (const sourceId of [
+  "web-globe-program-clouds-api",
+  "github-ruddro-globe-cloud-insights",
+  "github-ccosse-colormyworld",
+  "github-ayushishukla-geography",
+  "github-bhagyashree-geography-lesson-plans",
+  "github-osgeo-geospatial-education",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v24 runtime source ${sourceId}`);
 }
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 
