@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.22.8",
+  "version": "geo-2026.08.22.9",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -421,6 +421,81 @@
       "url": "https://science.nasa.gov/earth/earth-observatory/world-of-change/",
       "accessedAt": "2026-08-22",
       "licenseNote": "NASA 公共科学教育页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制文章、图片、动画、数据或版式。"
+    },
+    {
+      "id": "github-geographic-interactive-teaching",
+      "title": "地理学习：交互式高中地理教学项目",
+      "publisher": "swingboat/geographic-interactive-teaching（GitHub）",
+      "editionNote": "公开仓库提交 `afb85fda5672bc4b50a446a2ffab3f4e8cc12c2f`；访问日期 2026-08-22；README 组织地球自转、黄赤交角、太阳直射点与节气的三维动画教学。",
+      "url": "https://github.com/swingboat/geographic-interactive-teaching",
+      "commitSha": "afb85fda5672bc4b50a446a2ffab3f4e8cc12c2f",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明 MIT；本项目仅吸收高中地理交互演示的观察路径，发布原创方法摘要，不复制代码、模型、纹理或页面版式。"
+    },
+    {
+      "id": "github-geography-education-solar-earth",
+      "title": "日地天文教学工具：中学地理三维教学",
+      "publisher": "xiangyun14159/geography-education（GitHub）",
+      "editionNote": "公开仓库提交 `3048e18233774268f39c57a06b559597980d4d01`；访问日期 2026-08-22；README 说明三维日地系统、晨昏线、太阳高度角、方位角与纬度剖面等教学功能。",
+      "url": "https://github.com/xiangyun14159/geography-education",
+      "commitSha": "3048e18233774268f39c57a06b559597980d4d01",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库声明 MIT；本项目仅作太阳—地球关系的教学方法交叉核对，不复制应用代码、模型、安装包或页面资源。"
+    },
+    {
+      "id": "github-geo-rag-high-school-geography",
+      "title": "基于 RAG 的高中地理知识问答系统",
+      "publisher": "NanNingmalou/geo-rag（GitHub）",
+      "editionNote": "公开仓库提交 `e7a479bfccac0246847654955c3e28e86296f761`；访问日期 2026-08-22；README 说明以教材文档为知识库，组织问答、自测练习与学情分析。",
+      "url": "https://github.com/NanNingmalou/geo-rag",
+      "commitSha": "e7a479bfccac0246847654955c3e28e86296f761",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作教材锚定、问答边界与学习闭环的 citation-only 研究来源，不复制教材、模型、代码、题目或页面内容。"
+    },
+    {
+      "id": "web-noaa-tornadoes",
+      "title": "NOAA Education：Tornadoes",
+      "publisher": "NOAA / National Oceanic and Atmospheric Administration",
+      "editionNote": "公开教育资源；访问日期 2026-08-22；围绕龙卷风形成条件、观测预警、天气安全与风险应对组织科普内容。",
+      "url": "https://www.noaa.gov/education/resource-collections/weather-atmosphere/tornadoes",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NOAA 公共教育页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、图片、图表或页面版式。"
+    },
+    {
+      "id": "web-noaa-climate-change-impacts",
+      "title": "NOAA Education：Climate change impacts",
+      "publisher": "NOAA / National Oceanic and Atmospheric Administration",
+      "editionNote": "公开气候教育资源；访问日期 2026-08-22；按生态系统、水资源、海岸与社会影响组织气候变化影响的证据入口。",
+      "url": "https://www.noaa.gov/education/resource-collections/climate/climate-change-impacts",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "NOAA 公共教育页面；本项目仅作引用与概念核对，发布原创高中地理方法，不复制原文、图片、图表或教学材料。"
+    },
+    {
+      "id": "web-our-world-in-data-urbanization",
+      "title": "Our World in Data：Urbanization",
+      "publisher": "Our World in Data",
+      "editionNote": "公开数据解释页；访问日期 2026-08-22；用于核对城市人口变化、城乡划分、时间序列与跨区域比较的定义边界。",
+      "url": "https://ourworldindata.org/urbanization",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "页面与图表按 Our World in Data 标注的 CC BY 4.0 及第三方数据许可分别处理；本项目仅作引用与数据口径核对，不复制图表、数据转储或页面文字。"
+    },
+    {
+      "id": "web-our-world-in-data-water-use-stress",
+      "title": "Our World in Data：Water Use and Stress",
+      "publisher": "Our World in Data",
+      "editionNote": "公开水资源数据解释页；访问日期 2026-08-22；用于核对淡水取用、可更新水资源、水资源压力与跨区域比较的指标口径。",
+      "url": "https://ourworldindata.org/water-use-stress",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "页面与图表按 Our World in Data 标注的 CC BY 4.0 及第三方数据许可分别处理；本项目仅作引用与指标核对，不复制图表、数据转储或页面文字。"
+    },
+    {
+      "id": "web-national-geographic-urbanization",
+      "title": "National Geographic Education：Urbanization",
+      "publisher": "National Geographic Society",
+      "editionNote": "公开教育条目；访问日期 2026-08-22；用于核对城市化的基本概念、人口集聚、土地利用变化与社会环境联系。",
+      "url": "https://education.nationalgeographic.org/resource/urbanization/",
+      "accessedAt": "2026-08-22",
+      "licenseNote": "National Geographic 教育页面受其版权与使用条款约束；本项目仅作引用与概念核对，发布原创高中地理方法，不复制文字、图片、互动内容或版式。"
     }
   ],
   "items": [
@@ -3475,6 +3550,363 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "资源环境监测、环境安全与治理评价章节",
           "note": "回到教材核对资源环境指标、尺度和治理评价的证据要求。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-earth-rotation-and-linear-speed",
+      "courseId": "selective-1",
+      "title": "地球自转、角速度与线速度判读",
+      "summary": "地球自转题先统一观察视角、转动方向和时间尺度，再区分角速度与线速度。除极点外，同一时刻各地角速度基本一致，线速度随纬度升高而减小；把纬度、周期和观察方向对应起来，才能解释地方时、偏向和昼夜变化。",
+      "keywords": ["地球自转", "角速度", "线速度", "纬度"],
+      "sourceIds": ["github-geographic-interactive-teaching", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geographic-interactive-teaching",
+          "locator": "README：Earth Rotation / solar day / sidereal day / latitude line speed",
+          "note": "交互项目用于交叉核对地球自转的观察角度、周期和纬度比较；不复制代码、模型或知识卡片。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "地球运动与地方时相关章节",
+          "note": "回到教材核对自转、公转、地方时、地转偏向力与太阳辐射的概念边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-obliquity-and-solar-declination",
+      "courseId": "selective-1",
+      "title": "黄赤交角、太阳直射点与季节",
+      "summary": "黄赤交角题要先确定地球公转位置和太阳直射点，再推导回归线范围、昼夜长短与正午太阳高度。春分、夏至、秋分、冬至是判断直射点移动方向的参照，不能把季节变化简单归因于地日距离远近。",
+      "keywords": ["黄赤交角", "太阳直射点", "回归线", "季节"],
+      "sourceIds": ["github-geographic-interactive-teaching", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geographic-interactive-teaching",
+          "locator": "README：obliquity of ecliptic / solstices / equinoxes / direct solar point",
+          "note": "交互项目用于交叉核对黄赤交角与节气演示的参数关系；不复制动画、纹理或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "地球运动与太阳直射点章节",
+          "note": "回到教材核对黄赤交角、回归线、极圈、昼夜长短和季节成因。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-solar-altitude-azimuth-model",
+      "courseId": "selective-1",
+      "title": "太阳高度角、方位角与观测条件",
+      "summary": "太阳高度角和方位角判读要同时固定地点纬度、日期、地方时与观测方向，再区分正午太阳高度和任意时刻太阳高度。模型输出适合发现规律，答题时还要检查单位、北半球或南半球视角以及太阳直射点的位置。",
+      "keywords": ["太阳高度角", "方位角", "地方时", "观测条件"],
+      "sourceIds": ["github-geography-education-solar-earth", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geography-education-solar-earth",
+          "locator": "README：太阳高度角与方位角计算 / 纬度剖面视图",
+          "note": "日地工具用于交叉核对输入纬度、日期、时间与太阳位置输出的实验结构；不复制应用代码或构建产物。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "太阳高度、昼夜长短与地方时章节",
+          "note": "回到教材核对太阳直射点、正午太阳高度和地方时的推导关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-solar-model-observation-boundaries",
+      "courseId": "selective-1",
+      "title": "日地模型的观察路径与证据边界",
+      "summary": "使用日地三维模型时，应先说明改变了哪个参数、观察到了哪个变量，再把现象翻译成教材中的太阳辐射、晨昏线、昼夜长短或季节规律。可视化能帮助建立空间关系，但不能单独证明真实大气、云量、地形和局地天气条件。",
+      "keywords": ["日地模型", "参数实验", "空间关系", "证据边界"],
+      "sourceIds": ["github-geography-education-solar-earth", "github-geographic-interactive-teaching", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-geography-education-solar-earth",
+          "locator": "README：三维日地系统 / 晨昏线 / 昼夜范围",
+          "note": "日地工具用于交叉核对参数化观察与课堂演示的边界；不复制应用内容。"
+        },
+        {
+          "sourceId": "github-geographic-interactive-teaching",
+          "locator": "README：交互式知识卡片 / 多视角地球与太阳运动",
+          "note": "交互项目用于交叉核对多视角观察的教学路径；不复制代码、模型或纹理。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "地球运动、太阳辐射与自然环境章节",
+          "note": "回到教材核对模型现象与地理概念之间的转换条件。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-textbook-grounded-geography-qa",
+      "courseId": "compulsory-2",
+      "title": "教材锚定的高中地理问答证据链",
+      "summary": "地理问答应先定位教材章节和材料中的空间对象，再给出概念、过程与区域证据，最后标明哪些结论只是推断。检索系统可以降低找资料的成本，但回答不能把相似关键词、模型生成或未核验网页当作教材事实。",
+      "keywords": ["教材锚定", "地理问答", "证据链", "区域对象"],
+      "sourceIds": ["github-geo-rag-high-school-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-geo-rag-high-school-geography",
+          "locator": "README：教材文档知识库 / 智能问答 / 精确页码",
+          "note": "高中地理问答项目用于交叉核对教材锚定、页码证据和问答边界；不复制教材、模型或代码。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "人口、城镇、产业与人地关系章节",
+          "note": "回到教材核对自然条件、人类活动、区域联系和环境反馈的概念边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-self-testing-and-evidence-boundary",
+      "courseId": "selective-3",
+      "title": "地理自测、错因分析与证据边界",
+      "summary": "地理自测不能只统计答对率，还要记录错在概念、过程、图表读取、尺度口径还是证据不足。错题复盘应回到教材定义和材料限定，区分“不会推导”“看错图”“条件遗漏”和“结论超出证据”，再安排针对性练习。",
+      "keywords": ["地理自测", "错因分析", "教材证据", "学习闭环"],
+      "sourceIds": ["github-geo-rag-high-school-geography", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-geo-rag-high-school-geography",
+          "locator": "README：自测练习 / 错题模式 / 学情分析",
+          "note": "高中地理学习系统用于交叉核对自测、错题和学情反馈的闭环；不复制题库、答案或模型实现。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "资源环境、国家安全与治理评价章节",
+          "note": "回到教材核对资源环境判断所需的条件、尺度、数据口径和治理边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-tornado-formation-and-updraft",
+      "courseId": "compulsory-1",
+      "title": "龙卷风形成、对流与观测证据",
+      "summary": "龙卷风材料应先判断强对流环境、水汽、热力不稳定和风向风速随高度变化，再分析上升气流、旋转结构和移动路径。雷达、卫星与地面观测提供不同尺度的证据，不能把一次回波或灾后照片直接等同于完整成因。",
+      "keywords": ["龙卷风", "强对流", "上升气流", "观测证据"],
+      "sourceIds": ["web-noaa-tornadoes", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-tornadoes",
+          "locator": "Tornadoes：formation / observation / safety education",
+          "note": "NOAA 教育资源用于交叉核对龙卷风形成、观测与安全信息的概念边界；不复制原文或图表。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "大气运动、天气系统与自然灾害章节",
+          "note": "回到教材核对水汽、对流、气压场和灾害风险的过程链。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-tornado-exposure-and-response",
+      "courseId": "selective-3",
+      "title": "龙卷风暴露度、脆弱性与响应",
+      "summary": "龙卷风风险评价要把危险性与暴露人口、建筑质量、避难条件、预警覆盖和响应速度分开。灾害强度相近时，土地利用、人口时空分布和防护能力可能造成完全不同的损失；措施应对应监测预警、避险转移和恢复重建环节。",
+      "keywords": ["龙卷风风险", "暴露度", "脆弱性", "应急响应"],
+      "sourceIds": ["web-noaa-tornadoes", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-tornadoes",
+          "locator": "Tornadoes：forecasting / preparedness / safety guidance",
+          "note": "NOAA 教育资源用于交叉核对天气危险、预警和安全响应的关系；不复制页面材料。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "灾害风险、环境安全与国家安全章节",
+          "note": "回到教材核对危险性、暴露度、脆弱性和防灾减灾措施。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-climate-impact-chain",
+      "courseId": "selective-3",
+      "title": "气候变化影响的区域传导链",
+      "summary": "气候变化影响题要沿着气候因子变化、自然系统响应、资源条件变化、产业与健康影响以及适应措施建立传导链。不同区域的暴露度、脆弱性和适应能力不同，不能把全球趋势直接套成每个地方的同一结论。",
+      "keywords": ["气候变化", "影响链", "区域差异", "适应能力"],
+      "sourceIds": ["web-noaa-climate-change-impacts", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-climate-change-impacts",
+          "locator": "Climate change impacts：ecosystems / water / coasts / society",
+          "note": "NOAA 气候教育资源用于交叉核对影响对象和区域传导路径；不复制原文、图片或图表。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "环境安全、气候变化与生态文明章节",
+          "note": "回到教材核对气候风险、环境安全、适应与减缓的概念边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-climate-adaptation-regional-planning",
+      "courseId": "selective-2",
+      "title": "气候适应与区域规划协同",
+      "summary": "区域规划中的气候适应不能只增加工程数量，应先识别热浪、洪涝、干旱、海岸风险与土地利用、产业和人口分布的耦合关系，再组合空间管控、基础设施、生态缓冲、预警和公共服务。规划评价要看长期公平与维护成本。",
+      "keywords": ["气候适应", "区域规划", "土地利用", "生态缓冲"],
+      "sourceIds": ["web-noaa-climate-change-impacts", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-noaa-climate-change-impacts",
+          "locator": "Climate change impacts：water / coastal / community impacts",
+          "note": "NOAA 页面用于交叉核对气候影响与区域适应议题；不复制页面文字或案例。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "区域规划、土地利用与综合治理章节",
+          "note": "回到教材核对区域整体性、规划协调、土地用途和发展评价。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urbanization-transition-and-land",
+      "courseId": "compulsory-2",
+      "title": "城镇化转型与土地利用变化",
+      "summary": "城镇化题要同时观察人口比例、建设用地、就业结构、交通联系和公共服务变化，区分外延扩张、内部更新、郊区化与多中心发展。城市人口增长不必然等于土地无序扩张，评价时要联系土地效率、生态约束和居民获得感。",
+      "keywords": ["城镇化", "土地利用", "人口集聚", "空间转型"],
+      "sourceIds": ["web-our-world-in-data-urbanization", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-our-world-in-data-urbanization",
+          "locator": "Urbanization：urban population / urban share / definitions and time series",
+          "note": "公开数据解释页用于交叉核对城镇化指标、时间序列和城乡定义；不复制图表或数据转储。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "城镇化、城市空间结构与人地协调章节",
+          "note": "回到教材核对人口集聚、土地利用、城市功能和公共服务联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urbanization-data-and-spatial-scale",
+      "courseId": "compulsory-2",
+      "title": "城镇化数据、城乡口径与尺度效应",
+      "summary": "比较城镇化水平时要先核对城乡划分、统计单位、人口口径、时间范围和行政边界，再判断区域差异。不同国家或时期的“城市”定义可能不同，图表中的比例变化不能脱离口径直接解释为生活方式、密度或经济发展程度。",
+      "keywords": ["城镇化数据", "城乡口径", "行政边界", "尺度效应"],
+      "sourceIds": ["web-our-world-in-data-urbanization", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-our-world-in-data-urbanization",
+          "locator": "Urbanization：definitions / urban-rural classification / cross-country comparison",
+          "note": "公开数据页用于交叉核对城镇化跨区域比较中的定义和指标限制；不复制图表或数据。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "人口、城市等级与地域联系章节",
+          "note": "回到教材核对人口分布、城市功能、区域尺度和统计口径。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-water-withdrawal-and-basin-balance",
+      "courseId": "compulsory-1",
+      "title": "淡水取用、流域水量与更新能力",
+      "summary": "水资源图表要把降水、径流、地下水补给、取水、回用和生态需求放在同一流域水量框架中，再判断短缺是总量不足、季节错配、空间分布不均还是水质限制。取水量增加不一定代表用水效率提高，还要看更新能力和生态影响。",
+      "keywords": ["淡水取用", "流域水量", "更新能力", "用水效率"],
+      "sourceIds": ["web-our-world-in-data-water-use-stress", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-our-world-in-data-water-use-stress",
+          "locator": "Water Use and Stress：freshwater withdrawals / renewable water / water stress",
+          "note": "公开数据解释页用于交叉核对取水、水资源更新和水压力指标的口径；不复制图表或数据转储。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "水循环、陆地水体与流域章节",
+          "note": "回到教材核对水循环、径流、地下水补给和人类取用的过程关系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-water-stress-and-resource-security",
+      "courseId": "selective-3",
+      "title": "水资源压力与安全保障",
+      "summary": "水安全评价不能只看人均水量，应同时看取水压力、供水可靠性、水质、生态流量、基础设施、跨区域调配和旱涝风险。不同指标的空间单位和时间尺度可能不同，结论要明确是资源禀赋、利用强度还是治理能力。",
+      "keywords": ["水资源压力", "水安全", "生态流量", "供水可靠性"],
+      "sourceIds": ["web-our-world-in-data-water-use-stress", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-our-world-in-data-water-use-stress",
+          "locator": "Water Use and Stress：water stress indicators / renewable freshwater / withdrawals",
+          "note": "公开数据页用于交叉核对水压力指标与资源安全判断的证据边界；不复制图表或原始数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "水资源安全、生态流量与国家安全章节",
+          "note": "回到教材核对资源安全、供需平衡、生态约束和保障能力。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urban-services-and-spatial-inequality",
+      "courseId": "compulsory-2",
+      "title": "城市服务功能与空间不均衡",
+      "summary": "城市服务题要区分设施数量、可达性、服务质量和实际使用人口，再结合道路、人口密度、收入、年龄结构与行政边界判断空间不均衡。城市化带来服务集聚，也可能造成中心与边缘、正规与非正规空间之间的差异。",
+      "keywords": ["城市服务", "可达性", "空间不均衡", "人口集聚"],
+      "sourceIds": ["web-national-geographic-urbanization", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-urbanization",
+          "locator": "Urbanization：population concentration / city growth / social-environment connections",
+          "note": "公开教育条目用于交叉核对城市化与社会空间变化的概念入口；不复制文字、图片或互动内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "城市等级、服务范围与公共服务章节",
+          "note": "回到教材核对中心地、城市功能、人口迁移和公共服务差异。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urbanization-land-use-and-livelihoods",
+      "courseId": "compulsory-2",
+      "title": "城市化、土地利用与居民生计",
+      "summary": "城市化综合题要把建设用地扩张、农业空间变化、就业迁移、住房交通和生态环境放在同一链条中，分别评价中心城市、郊区、乡村与流动人口的收益和压力。土地用途转换不是单向进步，必须说明机会成本和治理条件。",
+      "keywords": ["城市化", "土地用途", "居民生计", "机会成本"],
+      "sourceIds": ["web-national-geographic-urbanization", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-urbanization",
+          "locator": "Urbanization：urban growth / land use / human-environment relationships",
+          "note": "公开教育资源用于交叉核对城市增长与人地关系的分析入口；不复制页面内容。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "城镇化、农业地域与人地协调章节",
+          "note": "回到教材核对土地利用变化、城乡联系、产业转移和可持续发展。"
         }
       ],
       "licenseStatus": "citation-only",

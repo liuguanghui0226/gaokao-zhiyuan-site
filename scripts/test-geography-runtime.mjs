@@ -19,7 +19,7 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.22.8");
+assert.equal(site.version, "geo-2026.08.22.9");
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
 assert.ok(site.items.some((item) => item.id === "geo-s2-gis-remote-sensing-evidence"));

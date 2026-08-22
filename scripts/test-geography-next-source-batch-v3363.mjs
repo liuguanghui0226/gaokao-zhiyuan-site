@@ -9,54 +9,60 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "github-sun-motion-visualization": {
-    url: "https://github.com/ErnestThePoet/SunMotionVisualization",
-    commitSha: "4081f94e260cfcb562bc014d44bd09b425919cb1",
+  "github-geographic-interactive-teaching": {
+    url: "https://github.com/swingboat/geographic-interactive-teaching",
+    commitSha: "afb85fda5672bc4b50a446a2ffab3f4e8cc12c2f",
     accessedAt: "2026-08-22",
   },
-  "github-geowiki-high-school-geography": {
-    url: "https://github.com/aeilot/GeoWiki",
-    commitSha: "b89306acda2c70743434af61ecf1afae895bef0d",
+  "github-geography-education-solar-earth": {
+    url: "https://github.com/xiangyun14159/geography-education",
+    commitSha: "3048e18233774268f39c57a06b559597980d4d01",
     accessedAt: "2026-08-22",
   },
-  "github-k12-gis-resources": {
-    url: "https://github.com/kevinbhaynes/K-12_GIS_Resources",
-    commitSha: "9e3eea5060ec04fb96af2aa807577fd6583d6cc2",
+  "github-geo-rag-high-school-geography": {
+    url: "https://github.com/NanNingmalou/geo-rag",
+    commitSha: "e7a479bfccac0246847654955c3e28e86296f761",
     accessedAt: "2026-08-22",
   },
-  "web-noaa-jetstream-weather-school": {
-    url: "https://www.noaa.gov/jetstream",
+  "web-noaa-tornadoes": {
+    url: "https://www.noaa.gov/education/resource-collections/weather-atmosphere/tornadoes",
     accessedAt: "2026-08-22",
   },
-  "web-national-geographic-water-cycle": {
-    url: "https://education.nationalgeographic.org/resource/water-cycle/",
+  "web-noaa-climate-change-impacts": {
+    url: "https://www.noaa.gov/education/resource-collections/climate/climate-change-impacts",
     accessedAt: "2026-08-22",
   },
-  "web-nasa-world-of-change": {
-    url: "https://science.nasa.gov/earth/earth-observatory/world-of-change/",
+  "web-our-world-in-data-urbanization": {
+    url: "https://ourworldindata.org/urbanization",
+    accessedAt: "2026-08-22",
+  },
+  "web-our-world-in-data-water-use-stress": {
+    url: "https://ourworldindata.org/water-use-stress",
+    accessedAt: "2026-08-22",
+  },
+  "web-national-geographic-urbanization": {
+    url: "https://education.nationalgeographic.org/resource/urbanization/",
     accessedAt: "2026-08-22",
   },
 };
 
 const expectedItems = new Set([
-  "geo-c1-weather-radar-precipitation",
-  "geo-c1-groundwater-recharge-discharge",
-  "geo-c1-solar-surface-heating-and-energy",
-  "geo-c1-land-cover-surface-feedback",
-  "geo-c2-urban-expansion-and-land-use",
-  "geo-c2-digital-map-evidence-for-community",
-  "geo-c2-geography-wiki-knowledge-navigation",
-  "geo-s1-sun-path-latitude-season",
-  "geo-s1-air-mass-front-weather-map",
-  "geo-s1-weather-radar-and-convective-risk",
-  "geo-s2-land-cover-change-and-regional-planning",
-  "geo-s2-k12-gis-layer-and-scale",
-  "geo-s2-k12-gis-source-attribution",
-  "geo-s2-geowiki-cross-course-concept-map",
-  "geo-s3-water-cycle-and-resource-security",
-  "geo-s3-remote-sensing-environmental-change",
-  "geo-s3-extreme-weather-adaptation-chain",
-  "geo-s3-resource-environment-map-attribution",
+  "geo-s1-earth-rotation-and-linear-speed",
+  "geo-s1-obliquity-and-solar-declination",
+  "geo-s1-solar-altitude-azimuth-model",
+  "geo-s1-solar-model-observation-boundaries",
+  "geo-c2-textbook-grounded-geography-qa",
+  "geo-s3-self-testing-and-evidence-boundary",
+  "geo-c1-tornado-formation-and-updraft",
+  "geo-s3-tornado-exposure-and-response",
+  "geo-s3-climate-impact-chain",
+  "geo-s2-climate-adaptation-regional-planning",
+  "geo-c2-urbanization-transition-and-land",
+  "geo-c2-urbanization-data-and-spatial-scale",
+  "geo-c1-water-withdrawal-and-basin-balance",
+  "geo-s3-water-stress-and-resource-security",
+  "geo-c2-urban-services-and-spatial-inequality",
+  "geo-c2-urbanization-land-use-and-livelihoods",
 ]);
 
 assert.equal(payload.version, "geo-2026.08.22.9");
@@ -65,7 +71,7 @@ assert.equal(payload.items.length, 159);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v5 source ${sourceId}`);
+  assert.ok(source, `missing v6 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
   assert.equal(source.accessedAt, expected.accessedAt);
@@ -75,7 +81,7 @@ for (const [sourceId, expected] of Object.entries(expectedSources)) {
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const itemId of expectedItems) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v5 item ${itemId}`);
+  assert.ok(item, `missing v6 item ${itemId}`);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");
   assert.ok(item.summary.length >= 40 && item.summary.length <= 500);
@@ -86,10 +92,10 @@ for (const itemId of expectedItems) {
 
 const courseCounts = Object.groupBy([...expectedItems].map((id) => items.get(id)), (item) => item.courseId);
 assert.deepEqual(Object.fromEntries(Object.entries(courseCounts).map(([courseId, entries]) => [courseId, entries.length])), {
-  "compulsory-1": 4,
-  "compulsory-2": 3,
-  "selective-1": 3,
-  "selective-2": 4,
+  "compulsory-1": 2,
+  "compulsory-2": 5,
+  "selective-1": 4,
+  "selective-2": 1,
   "selective-3": 4,
 });
 
