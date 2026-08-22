@@ -3934,7 +3934,8 @@ function filteredSources() {
 }
 
 function hasActiveFilters() {
-  return Boolean(state.query.trim() || state.discipline || state.domain || state.geographySourceFilter !== "all");
+  const geographySourceFilterActive = state.view === "sources" && state.geographySourceFilter !== "all";
+  return Boolean(state.query.trim() || state.discipline || state.domain || geographySourceFilterActive);
 }
 
 function filterStatusText() {
@@ -3953,8 +3954,8 @@ function filterStatusText() {
   } else if (state.domain) {
     active.push(`主题“${state.domain}”`);
   }
-  if (state.geographySourceFilter === "public") active.push("地理来源“公开链接”");
-  if (state.geographySourceFilter === "local") active.push("地理来源“本地/教材”");
+  if (state.view === "sources" && state.geographySourceFilter === "public") active.push("地理来源“公开链接”");
+  if (state.view === "sources" && state.geographySourceFilter === "local") active.push("地理来源“本地/教材”");
   if (!active.length) return "检索和筛选作用于资料库、专业门类和高中地理。";
   return `当前${active.join("、")}；结果作用于资料库、专业门类和高中地理。`;
 }
