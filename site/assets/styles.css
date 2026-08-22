@@ -144,6 +144,14 @@ select {
   white-space: nowrap;
 }
 
+.filter-status {
+  grid-column: 1 / -1;
+  margin: -2px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
 .search-box,
 .select-box {
   display: grid;
