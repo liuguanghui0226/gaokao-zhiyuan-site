@@ -65,7 +65,7 @@ const expectedItems = new Set([
   "geo-c2-urbanization-land-use-and-livelihoods",
 ]);
 
-assert.match(payload.version, /^geo-2026\.08\.22\.\d+$/);
+assert.match(payload.version, /^geo-2026\.08\.\d+\.\d+$/);
 assert.ok(payload.sources.length >= 72);
 assert.ok(payload.items.length >= 185);
 

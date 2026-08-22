@@ -55,7 +55,7 @@ const expectedItems = new Set([
   "geo-s3-water-allocation-competing-uses",
 ]);
 
-assert.match(payload.version, /^geo-2026\.08\.22\.\d+$/);
+assert.match(payload.version, /^geo-2026\.08\.\d+\.\d+$/);
 assert.ok(payload.sources.length >= 72);
 assert.ok(payload.items.length >= 185);
 

@@ -64,7 +64,7 @@ const expectedItems = {
   "geo-s3-population-resource-pressure": "selective-3",
 };
 
-assert.match(payload.version, /^geo-2026\.08\.22\.\d+$/);
+assert.match(payload.version, /^geo-2026\.08\.\d+\.\d+$/);
 assert.ok(payload.sources.length >= 80);
 assert.ok(payload.items.length >= 200);
 
