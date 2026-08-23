@@ -182,6 +182,7 @@ const tests = [
   "test-navigation-focus-accessibility-v3393.mjs",
   "test-navigation-view-name-accessibility-v3394.mjs",
   "test-geography-next-source-batch-v3395.mjs",
+  "test-geography-external-link-accessibility-v3396.mjs",
   "test-toggle-control-accessibility.mjs",
   "test-filter-scope-status-v3355.mjs",
   "test-recommendation-draft-status-v3356.mjs",
