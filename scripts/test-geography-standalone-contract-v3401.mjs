@@ -67,14 +67,14 @@ api.state.course = "";
 const metrics = api.geographySummaryMetrics(payload);
 assert.deepEqual(JSON.parse(JSON.stringify(metrics)), {
   courses: 5,
-  items: 530,
-  sources: 232,
+  items: 545,
+  sources: 239,
   authoredSummaries: 38,
-  citationOnlyItems: 492,
+  citationOnlyItems: 507,
 });
-assert.equal(api.filteredItems().length, 530);
+assert.equal(api.filteredItems().length, 545);
 api.state.course = "compulsory-1";
-assert.equal(api.filteredItems().length, 97);
+assert.equal(api.filteredItems().length, 100);
 api.state.course = "";
 api.state.query = "大气受热";
 assert.ok(api.filteredItems().some((item) => item.title === "大气受热与近地面运动"));
@@ -82,8 +82,8 @@ assert.ok(api.filteredItems().some((item) => item.title === "大气受热与近�
 api.state.query = "";
 api.renderGeography();
 assert.match(view.innerHTML, /高中地理知识库/);
-assert.match(view.innerHTML, /资料版本 geo-2026\.08\.23\.34/);
-assert.match(view.innerHTML, /地理必修第一册 · 97/);
+assert.match(view.innerHTML, /资料版本 geo-2026\.08\.24\.35/);
+assert.match(view.innerHTML, /地理必修第一册 · 100/);
 assert.match(view.innerHTML, /class="geography-source-link"/);
 assert.match(view.innerHTML, /class="geography-source-local"/);
 

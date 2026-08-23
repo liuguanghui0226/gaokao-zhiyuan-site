@@ -1,0 +1,176 @@
+{
+  "version": "geo-visuals-2026.08.24.01",
+  "description": "面向高中地理复习的原创视觉故事：用一张图、三步观察和一个权威入口，把空间关系讲清楚。",
+  "cards": [
+    {
+      "id": "visual-compulsory-1-earth-system-observation",
+      "courseId": "compulsory-1",
+      "title": "一滴水的天气旅程",
+      "caption": "从太阳加热海面，到水汽上升、凝结成云，再回到地表：用观测视角串起大气与水循环。",
+      "scene": "water-cycle",
+      "steps": [
+        {
+          "label": "① 加热",
+          "detail": "太阳短波辐射到达地表，海面和陆地获得能量，蒸发把水分送入近地面空气。"
+        },
+        {
+          "label": "② 上升与凝结",
+          "detail": "湿空气上升后膨胀降温，达到露点，水汽凝结成云；气温、气压和风共同改变云的形态。"
+        },
+        {
+          "label": "③ 降水与汇流",
+          "detail": "云滴长大后形成降水，沿地形汇入河流、湖泊和海洋，水循环把不同圈层连接起来。"
+        }
+      ],
+      "sourceIds": ["web-nasa-gpm-water-cycle", "web-cma-meteorological-data"],
+      "mediaLinks": [
+        {
+          "url": "https://gpm.nasa.gov/education/water-cycle",
+          "label": "水循环动画与课堂入口",
+          "mediaType": "视频入口"
+        },
+        {
+          "url": "https://data.cma.cn/",
+          "label": "中国气象观测数据入口",
+          "mediaType": "数据图层"
+        }
+      ]
+    },
+    {
+      "id": "visual-compulsory-2-population-access",
+      "courseId": "compulsory-2",
+      "title": "一座城市，怎样服务更远的人？",
+      "caption": "把人口、聚落和交通放进同一张图：服务半径越大，中心地的等级与联系强度越值得比较。",
+      "scene": "population-service",
+      "steps": [
+        {
+          "label": "① 人口聚集",
+          "detail": "就业、教育和医疗等机会吸引人口向节点集聚，节点的人口规模与功能会逐渐分化。"
+        },
+        {
+          "label": "② 交通连线",
+          "detail": "道路和轨道降低出行时间成本，把大小聚落连接成网络；联系强度不仅取决于直线距离。"
+        },
+        {
+          "label": "③ 服务分层",
+          "detail": "高等级中心提供更稀缺、更专业的服务，服务范围更广，但到达成本也可能更高。"
+        }
+      ],
+      "sourceIds": ["web-unhabitat-urban-data", "web-sdg11-sustainable-cities"],
+      "mediaLinks": [
+        {
+          "url": "https://data.unhabitat.org/",
+          "label": "全球城市数据探索入口",
+          "mediaType": "互动地图"
+        },
+        {
+          "url": "https://sdgs.un.org/goals/goal11",
+          "label": "可持续城市指标入口",
+          "mediaType": "数据图层"
+        }
+      ]
+    },
+    {
+      "id": "visual-selective-1-climate-circulation",
+      "courseId": "selective-1",
+      "title": "风从哪里来：把气候画成一张力的地图",
+      "caption": "气压差制造水平气压梯度力，地转偏向力与摩擦力再共同塑造风向、风速和环流格局。",
+      "scene": "climate-circulation",
+      "steps": [
+        {
+          "label": "① 能量不均",
+          "detail": "不同纬度和下垫面接收、反射与储存热量的方式不同，温度差最终转化为气压差。"
+        },
+        {
+          "label": "② 力的合成",
+          "detail": "空气从高压趋向低压；地球自转带来的偏向效应和近地面摩擦会改变理想风向。"
+        },
+        {
+          "label": "③ 环流落地",
+          "detail": "环流与地形、海陆分布相遇后，形成季风、锋面和降水带，成为区域气候差异的线索。"
+        }
+      ],
+      "sourceIds": ["web-noaa-ocean-currents", "web-noaa-climate-enso", "web-esa-climate-change-initiative"],
+      "mediaLinks": [
+        {
+          "url": "https://www.climate.gov/enso",
+          "label": "ENSO 气候过程观测入口",
+          "mediaType": "互动地图"
+        },
+        {
+          "url": "https://climate.esa.int/en/",
+          "label": "卫星气候数据记录入口",
+          "mediaType": "数据图层"
+        }
+      ]
+    },
+    {
+      "id": "visual-selective-2-gis-planning",
+      "courseId": "selective-2",
+      "title": "把区域规划拆成三层 GIS 图",
+      "caption": "先看底图，再叠加人口与交通，最后放入生态约束：区域发展不是一条线，而是多层空间证据的叠加。",
+      "scene": "gis-planning",
+      "steps": [
+        {
+          "label": "① 底图定位",
+          "detail": "地形、水系和行政边界回答‘在哪里’，也是判断坡度、汇水与区位条件的空间底板。"
+        },
+        {
+          "label": "② 叠加需求",
+          "detail": "人口密度、产业节点、道路和公共服务图层回答‘谁需要什么’，可用于比较可达性与发展梯度。"
+        },
+        {
+          "label": "③ 约束决策",
+          "detail": "保护地、灾害风险和资源承载力图层回答‘哪里不能随意开发’，让规划从扩张转向协调。"
+        }
+      ],
+      "sourceIds": ["web-qgis-training-manual", "web-protected-planet-conservation-data", "web-nasa-worldview-earth-observation"],
+      "mediaLinks": [
+        {
+          "url": "https://docs.qgis.org/latest/en/docs/training_manual/",
+          "label": "QGIS 图层与空间分析教程",
+          "mediaType": "互动"
+        },
+        {
+          "url": "https://worldview.earthdata.nasa.gov/",
+          "label": "NASA Worldview 地球遥感入口",
+          "mediaType": "数据图层"
+        }
+      ]
+    },
+    {
+      "id": "visual-selective-3-forest-security",
+      "courseId": "selective-3",
+      "title": "森林资源：一片绿色如何守住安全底线？",
+      "caption": "森林既是资源，也是生态安全屏障；把覆盖率、碳汇、生物多样性和治理方式放在同一张图上权衡。",
+      "scene": "forest-security",
+      "steps": [
+        {
+          "label": "① 资源底盘",
+          "detail": "森林提供木材、食物和生计，也通过涵养水源、保持水土与固碳支撑区域发展的长期底盘。"
+        },
+        {
+          "label": "② 风险叠加",
+          "detail": "过度采伐、火灾、破碎化与气候变化会削弱生态系统韧性，单看面积增长并不等于质量提升。"
+        },
+        {
+          "label": "③ 协同治理",
+          "detail": "保护地、可持续经营、监测预警和社区参与共同组成治理闭环，在利用与保护之间寻找可持续边界。"
+        }
+      ],
+      "sourceIds": ["web-fao-global-forest-resources-assessment", "web-fao-forestry", "web-protected-planet-conservation-data"],
+      "mediaLinks": [
+        {
+          "url": "https://www.fao.org/interactive/forest-resources-assessment/2020/en/",
+          "label": "全球森林资源评估互动入口",
+          "mediaType": "互动地图"
+        },
+        {
+          "url": "https://www.protectedplanet.net/en",
+          "label": "全球保护地空间数据入口",
+          "mediaType": "数据图层"
+        }
+      ]
+    }
+  ]
+}

@@ -1,12 +1,26 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.34
+盘点日期：2026-08-24；扩展轮次：geo-2026.08.24.35
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.34`：232 个来源、530 条卡片，其中 38 条 `authored-summary`、492 条 `citation-only`；五个课程族分别为 97、107、112、105、109 条。本轮新增 4 个 GitHub 地理教育/地球科学项目、4 个公开机构/教育/海岸数据入口与 15 条原创 `citation-only` 方法卡，覆盖海岸过程、防灾实地观察、地球系统模型、迁移统计、城市空间公平、开源地理教育、供应链、气候迁移和海岸生态韧性。
+当前发布版本 `geo-2026.08.24.35`：239 个来源、545 条卡片，其中 38 条 `authored-summary`、507 条 `citation-only`；五个课程族分别为 100、110、115、108、112 条。本轮新增 5 个 GitHub 高中地理/教育地图项目、2 个公共科学数据与评估入口，以及 15 条原创 `citation-only` 方法卡，继续覆盖天气气候证据、地理实践尺度、公共服务可达性、教育空间差异、区域层级、森林资源与生态安全。
 
 本轮累计新增 256 条 citation-only 方法卡：在上一轮 241 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收 IOM 世界移民报告、UN-Habitat 城市数据、美国人口普查局教育入口、NOAA 海岸带教育入口，以及四个 GitHub 地理教育/地球科学项目，补齐海岸过程—风险链、灾害实地核验—图层、迁移存量—流量、城市指标—空间公平、模型不确定性、商业地理—供应链和气候迁移—安全等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.24.35 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-yvki-secondary-geography-quiz` | [Secondary School Geography Quiz](https://github.com/yvki/quiz) | commit `db8f3174b18cd984a7d1822e1c13b9a4bd71afed`；MIT；访问日期 2026-08-24 | 参照中学地理概念练习、作答和反馈结构；不复制题目、答案、代码或页面文字。 |
+| `github-jeanextreme-geography-game` | [Geography-Game](https://github.com/JeanExtreme002/Geography-Game) | commit `e8a2f19fa24468a80263ef7e55497bfd5ae298b2`；BSD-3-Clause；访问日期 2026-08-24 | 参照学校地理问答、地图线索和区域识别任务；不复制题目、代码、素材或页面文字。 |
+| `github-felipe-access-to-education-map` | [Mapa do Ensino Médio](https://github.com/felipehlvo/access_to_education_map) | commit `b509c7f7cfb9ef3d1088c07c893ad194f515fc34`；未声明统一许可证；访问日期 2026-08-24 | 参照公立高中空间可达性、人口需求和公共服务公平；不复制代码、数据或地图。 |
+| `github-poc-unesco-education-planning` | [UNESCO Hacking ED Planning / Athena](https://github.com/PoCInnovation/UNESCO-Hacking-ED-Planning) | commit `b52497e31ff77635be37338d00fe65a99004eb0c`；MIT；访问日期 2026-08-24 | 参照教育质量空间差异、文本指标与区域治理；不复制报告文本、数据、代码或地图。 |
+| `github-romina-high-school-geography-quiz` | [AndroidQuiz](https://github.com/rominacarabathampi/AndroidQuiz) | commit `5d3440282e1cdf03cd3ae369828f22645bbe0ead`；未声明统一许可证；访问日期 2026-08-24 | 参照高中地理考试练习与即时反馈边界；不复制题目、答案、APK、代码或页面文字。 |
+| `web-fao-global-forest-resources-assessment` | [FAO Global Forest Resources Assessment 2020](https://www.fao.org/interactive/forest-resources-assessment/2020/en/) | 公开互动评估入口；访问日期 2026-08-24 | 核对森林资源、碳储量、生物多样性与生态治理指标；不复制正文、图表或数据。 |
+| `web-esa-climate-change-initiative` | [ESA Climate Change Initiative](https://climate.esa.int/en/) | 公开气候观测与数据记录入口；访问日期 2026-08-24 | 核对气候变量、长期观测记录、异常判读与观测—模型边界；不复制数据、图表或页面内容。 |
+
+本轮 15 条卡片仍全部保留至少一条人民教育出版社五册教材证据和至少一条新增来源证据，课程分配为每门 3 条。GitHub 项目和公共科学入口只作结构、概念与数据边界的研究来源；公开层继续发布原创摘要，不把第三方题目、答案、代码、地图、数据或报告原文并入站点。`/Volumes/mac_2T` 仍不可读取，本轮没有声称吸收其他机器目录内容。
 
 ## geo-2026.08.23.34 新增公开来源
 
