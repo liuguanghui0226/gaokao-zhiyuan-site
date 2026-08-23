@@ -19,10 +19,10 @@ assert.deepEqual(
   source,
   "site geography data must match the canonical source data",
 );
-assert.equal(site.version, "geo-2026.08.23.34");
-assert.equal(site.sources.length, 232);
-assert.equal(site.items.length, 530);
-assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 210);
+assert.equal(site.version, "geo-2026.08.24.38");
+assert.equal(site.sources.length, 263);
+assert.equal(site.items.length, 590);
+assert.equal(site.sources.filter((sourceRecord) => /^https:\/\//.test(String(sourceRecord.url))).length, 241);
 assert.equal(site.sources.filter((sourceRecord) => !/^https:\/\//.test(String(sourceRecord.url))).length, 22);
 assert.ok(site.items.some((item) => item.id === "geo-s3-marine-pollution-governance"));
 assert.ok(site.items.some((item) => item.id === "geo-c2-city-radiation-and-economic-hinterland"));
@@ -414,6 +414,18 @@ for (const sourceId of [
   "web-noaa-education-resource-collections",
 ]) {
   assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v25 runtime source ${sourceId}`);
+}
+for (const sourceId of [
+  "github-hocbigg-human-geography",
+  "github-giswqs-i-guide-geoai-education",
+  "github-carpentries-geospatial-python",
+  "github-cielo-geoscience-lesson-plans-k12",
+  "web-nasa-learning-resources",
+  "web-national-geographic-gis",
+  "web-osgeo-geo-for-all",
+  "web-nps-geology-education",
+]) {
+  assert.ok(site.sources.some((sourceRecord) => sourceRecord.id === sourceId), `missing v26 runtime source ${sourceId}`);
 }
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 

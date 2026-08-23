@@ -1,5 +1,6 @@
 const state = {
   data: null,
+  visuals: null,
   query: "",
   course: "",
   sourceFilter: "all",
@@ -47,6 +48,22 @@ function filteredItems(courseMap = new Map((state.data?.courses || []).map((cour
       item.summary,
       ...(item.keywords || []),
       courseMap.get(item.courseId)?.name || "",
+    ].join(" "));
+    return text.includes(query);
+  });
+}
+
+function filteredVisuals() {
+  if (!Array.isArray(state.visuals?.cards)) return [];
+  const query = normalizeText(state.query);
+  return state.visuals.cards.filter((card) => {
+    if (state.course && card.courseId !== state.course) return false;
+    if (!query) return true;
+    const text = normalizeText([
+      card.title,
+      card.caption,
+      card.scene,
+      ...(card.steps || []).flatMap((step) => [step.label, step.detail]),
     ].join(" "));
     return text.includes(query);
   });
@@ -123,6 +140,39 @@ function renderMetric(label, value) {
   return `<div class="metric"><strong>${fmtNumber(value)}</strong><span>${esc(label)}</span></div>`;
 }
 
+function renderVisualScene(card) {
+  const titleId = `visual-${card.id}`;
+  const common = `role="img" aria-labelledby="${esc(titleId)}" viewBox="0 0 720 300" focusable="false"`;
+  const scenes = {
+    "water-cycle": `<defs><linearGradient id="sky-${esc(card.id)}" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#bde8f2"/><stop offset="1" stop-color="#eef8f5"/></linearGradient><linearGradient id="sea-${esc(card.id)}" x1="0" x2="1"><stop stop-color="#2387a2"/><stop offset="1" stop-color="#0d5b78"/></linearGradient></defs><rect width="720" height="300" fill="url(#sky-${esc(card.id)})"/><circle cx="94" cy="72" r="34" fill="#f6bd4b"/><g fill="none" stroke="#f6bd4b" stroke-width="4" stroke-linecap="round"><path d="M94 20v-12M94 124v12M42 72H30M158 72h12M57 35 48 26M131 109l9 9M131 35l9-9M57 109l-9 9"/></g><path d="M0 226C120 196 214 250 332 220s236-22 388 4v76H0Z" fill="url(#sea-${esc(card.id)})"/><path d="M0 226C120 196 214 250 332 220s236-22 388 4" fill="none" stroke="#a9e2df" stroke-width="4"/><path d="M188 216c-26-40-12-80 24-102 29-18 83-13 104 14 18 24-4 51-36 51-25 0-47 13-50 37" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-dasharray="12 12"/><path d="M318 180c20-47 66-48 92-18 21 24 10 55-17 65-36 13-68-13-51-47" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-dasharray="12 12"/><path d="M494 114c-32-23-73-7-80 26-8 35 28 46 64 34 42-14 76 15 62 50" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-dasharray="12 12"/><g fill="#fff"><ellipse cx="272" cy="92" rx="58" ry="22"/><ellipse cx="324" cy="96" rx="48" ry="24"/><ellipse cx="228" cy="104" rx="36" ry="18"/></g><path d="M245 126v42m34-47v56m32-54v46" stroke="#31849a" stroke-width="4" stroke-linecap="round"/><text x="42" y="270" fill="#e8ffff" font-size="16">蒸发</text><text x="270" y="62" fill="#185c6c" font-size="16">凝结成云</text><text x="500" y="270" fill="#e8ffff" font-size="16">降水 · 汇流</text>`,
+    "population-service": `<defs><linearGradient id="city-${esc(card.id)}" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#f6dfb1"/><stop offset="1" stop-color="#fff8e8"/></linearGradient></defs><rect width="720" height="300" fill="url(#city-${esc(card.id)})"/><path d="M35 238h650" stroke="#8a9b9c" stroke-width="5"/><path d="M86 236V184h42v52m12 0v-88h58v88m16 0v-53h41v53m12 0v-126h68v126m18 0v-72h47v72m14 0v-101h55v101" fill="#3d6871" stroke="#28535e" stroke-width="3"/><path d="M38 244c104-105 230-121 324-42 92 78 173-25 320-60" fill="none" stroke="#d67b45" stroke-width="7" stroke-linecap="round"/><path d="M38 244c104-105 230-121 324-42 92 78 173-25 320-60" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="9 9"/><circle cx="360" cy="181" r="25" fill="#e77658" stroke="#fff" stroke-width="5"/><circle cx="114" cy="217" r="13" fill="#49a48e" stroke="#fff" stroke-width="5"/><circle cx="612" cy="163" r="18" fill="#f2b84b" stroke="#fff" stroke-width="5"/><circle cx="522" cy="215" r="11" fill="#49a48e" stroke="#fff" stroke-width="5"/><circle cx="360" cy="181" r="48" fill="none" stroke="#e77658" stroke-opacity=".35" stroke-width="3" stroke-dasharray="7 8"/><circle cx="360" cy="181" r="96" fill="none" stroke="#e77658" stroke-opacity=".22" stroke-width="3" stroke-dasharray="7 8"/><text x="330" y="145" fill="#8f3d31" font-size="16">高等级中心</text><text x="74" y="278" fill="#28535e" font-size="16">小聚落</text><text x="550" y="278" fill="#28535e" font-size="16">服务半径</text>`,
+    "climate-circulation": `<defs><linearGradient id="climate-${esc(card.id)}" x1="0" x2="1"><stop stop-color="#f7d8aa"/><stop offset=".48" stop-color="#fff8e8"/><stop offset="1" stop-color="#b8e1ec"/></linearGradient></defs><rect width="720" height="300" fill="url(#climate-${esc(card.id)})"/><path d="M360 20v260" stroke="#8aa9ad" stroke-width="2" stroke-dasharray="5 7"/><path d="M64 80C164 28 270 36 340 92s-55 116-141 85S98 184 64 80" fill="none" stroke="#d36d47" stroke-width="9" stroke-linecap="round"/><path d="M656 220c-100 52-206 44-276-12s55-116 141-85 101-7 135 77" fill="none" stroke="#3f8eaa" stroke-width="9" stroke-linecap="round"/><path d="M104 73l-18 4 13 13m504 137 18-4-13-13" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M206 132c44-18 90-17 136 4m172 32c-44 18-90 17-136-4" fill="none" stroke="#6f9c9d" stroke-width="5" stroke-linecap="round" stroke-dasharray="10 10"/><text x="70" y="44" fill="#9a432d" font-size="18">高压 · 暖</text><text x="570" y="264" fill="#2c6b83" font-size="18">低压 · 冷</text><text x="294" y="282" fill="#476d72" font-size="16">气压梯度力 + 地转偏向力</text>`,
+    "gis-planning": `<defs><linearGradient id="map-${esc(card.id)}" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#d8efdf"/><stop offset="1" stop-color="#f8edce"/></linearGradient></defs><rect width="720" height="300" fill="url(#map-${esc(card.id)})"/><path d="M0 74c96 16 112-45 195-5s111 9 173-18 97 68 165 37 125-23 187 7v205H0Z" fill="#b7d9b7" opacity=".7"/><path d="M18 235c87-88 167-88 238-34 67 52 100-66 184-71 91-5 122 75 262 44" fill="none" stroke="#3693ac" stroke-width="5"/><path d="M78 63 628 258M128 285 606 42" stroke="#fff" stroke-width="7" opacity=".75"/><path d="M78 63 628 258M128 285 606 42" stroke="#d36d47" stroke-width="2" stroke-dasharray="12 9"/><circle cx="188" cy="157" r="18" fill="#d36d47" stroke="#fff" stroke-width="5"/><circle cx="417" cy="146" r="13" fill="#e7aa3d" stroke="#fff" stroke-width="5"/><circle cx="557" cy="207" r="16" fill="#3f8eaa" stroke="#fff" stroke-width="5"/><path d="M55 44h150" stroke="#447c70" stroke-width="14" opacity=".55"/><path d="M55 44h150" stroke="#d36d47" stroke-width="5" stroke-dasharray="12 8"/><text x="56" y="31" fill="#386d60" font-size="16">生态约束层</text><text x="245" y="285" fill="#2b6977" font-size="16">交通 · 人口 · 公共服务图层</text>`,
+    "forest-security": `<defs><linearGradient id="forest-${esc(card.id)}" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#dff1da"/><stop offset="1" stop-color="#f8edcf"/></linearGradient></defs><rect width="720" height="300" fill="url(#forest-${esc(card.id)})"/><circle cx="580" cy="68" r="34" fill="#f5bf4e" opacity=".9"/><path d="M0 232c92-52 162-40 238-8 83 35 144-42 236-9 91 33 149-9 246-5v90H0Z" fill="#8dbb79"/><g stroke="#356b50" stroke-width="5" stroke-linecap="round"><path d="M90 236v-82m0 22-30-27m30 8 34-35m76 114v-116m0 32-38-34m38 9 39-44m88 153v-92m0 34-32-29m32 13 35-41m88 113v-126m0 36-42-29m42 15 37-40"/></g><g fill="#4c9b63"><circle cx="58" cy="154" r="25"/><circle cx="122" cy="114" r="31"/><circle cx="168" cy="138" r="27"/><circle cx="208" cy="96" r="36"/><circle cx="254" cy="144" r="29"/><circle cx="326" cy="142" r="32"/><circle cx="382" cy="114" r="28"/><circle cx="416" cy="147" r="34"/><circle cx="480" cy="101" r="37"/><circle cx="532" cy="139" r="32"/></g><path d="M42 70c100-42 195-15 283 23s176-4 327-24" fill="none" stroke="#2b8890" stroke-width="5" stroke-dasharray="12 10"/><path d="M592 176c28-20 59-1 57 27-2 27-43 31-62 13-20-19-11-28 5-40" fill="none" stroke="#d36d47" stroke-width="5"/><text x="48" y="48" fill="#287470" font-size="17">碳汇 · 水土保持 · 生物多样性</text><text x="572" y="238" fill="#a64e38" font-size="16">风险</text><text x="284" y="278" fill="#356b50" font-size="16">保护 · 监测 · 可持续经营</text>`
+  };
+  return `<svg class="visual-scene visual-scene-${esc(card.scene)}" ${common}><title id="${esc(titleId)}">${esc(card.title)}示意图</title>${scenes[card.scene] || scenes["water-cycle"]}</svg>`;
+}
+
+function renderVisualLearning(data = state.data, visuals = state.visuals) {
+  const cards = filteredVisuals();
+  if (!data || !Array.isArray(visuals?.cards) || !visuals.cards.length) return "";
+  const sourceMap = new Map((data.sources || []).map((source) => [source.id, source]));
+  const cardMarkup = cards.map((card) => {
+    const sources = (card.sourceIds || []).map((sourceId) => sourceMap.get(sourceId) || { id: sourceId });
+    const steps = (card.steps || []).map((step) => `<li><strong>${esc(step.label)}</strong><span>${esc(step.detail)}</span></li>`).join("");
+    const media = (card.mediaLinks || []).map((link) => `<a class="visual-media-link" href="${esc(link.url)}" target="_blank" rel="noreferrer"><span>${esc(link.mediaType)}</span>${esc(link.label)} ↗</a>`).join("");
+    const evidence = sources.map((source) => source.url
+      ? `<a href="${esc(source.url)}" target="_blank" rel="noreferrer">${esc(source.title || source.id)}</a>`
+      : `<span>${esc(source.title || source.id)}</span>`).join("");
+    return `<article class="visual-story-card" data-visual-course="${esc(card.courseId)}"><div class="visual-story-copy"><p class="visual-kicker">三步看懂 · ${esc(card.scene)}</p><h3>${esc(card.title)}</h3><p class="visual-caption">${esc(card.caption)}</p><ol class="visual-steps">${steps}</ol><div class="visual-media" aria-label="${esc(card.title)}媒体与数据入口">${media}</div><div class="visual-evidence"><span>证据入口</span>${evidence}</div></div><figure class="visual-figure">${renderVisualScene(card)}<figcaption>原创示意图：${esc(card.caption)}</figcaption></figure></article>`;
+  }).join("");
+  const empty = `<div class="empty-state visual-empty">当前课程或检索条件下没有匹配的视觉故事。</div>`;
+  const markup = `<section class="visual-learning" aria-labelledby="visual-learning-title"><div class="section-heading"><div><p class="eyebrow">看图 · 读过程 · 点开数据</p><h2 id="visual-learning-title">视觉学习：把地理过程变成可观察的故事</h2><p>每张卡片用原创 SVG 拆成三步，再连接视频入口、互动地图或公开数据图层；外部资源负责展示原始证据，本站只保留学习路径。</p></div><span class="status">${fmtNumber(cards.length)} 张视觉故事</span></div><div class="visual-story-list">${cardMarkup || empty}</div></section>`;
+  const app = $("#geographyApp");
+  if (app) app.innerHTML = markup;
+  return markup;
+}
+
 function renderGeography() {
   const app = $("#geographyApp");
   const data = state.data;
@@ -146,7 +196,7 @@ function renderGeography() {
     });
     return `<article class="geography-card"><header><div><span class="course-label">${esc(course?.name || item.courseId)}</span><h3>${esc(item.title)}</h3></div><span class="status">${esc(item.reviewStatus === "reviewed" ? "已复核摘要" : "待复核")}</span></header><p>${esc(item.summary)}</p><div class="tags">${(item.keywords || []).map((keyword) => `<span>${esc(keyword)}</span>`).join("")}</div><details><summary>教材证据与来源</summary><div class="evidence">${evidence.map((entry) => `<span>${esc(entry)}</span>`).join("")}</div><p class="license-note">${esc(item.licenseStatus === "authored-summary" ? "本站为原创摘要；请回到教材原页核对完整定义、图表与案例。" : "本站仅提供来源索引，不复制原文。")}</p><div class="source-links" aria-label="来源列表">${sources.map(renderSource).join("")}</div></details></article>`;
   }).join("");
-  app.innerHTML = `<section class="hero"><p class="eyebrow">课程化整理 · 来源可追溯</p><h2>高中地理知识库：按课程复习自然地理、人文地理与资源环境</h2><p>${esc(data.description || "")}</p><div class="course-filters" role="group" aria-label="地理课程筛选">${courseButtons}</div></section><section class="panel provenance" data-geography-version="${esc(data.version)}"><div class="section-heading"><div><h2>资料边界与更新</h2><p>资料版本 ${esc(data.version)} · 来源索引与原创摘要分开标识。</p></div><span class="status">${fmtNumber(metrics.sources)} 条来源</span></div><div class="metrics">${renderMetric("课程", metrics.courses)}${renderMetric("知识摘要", metrics.items)}${renderMetric("原创摘要", metrics.authoredSummaries)}${renderMetric("引文型方法卡", metrics.citationOnlyItems)}</div><p class="boundary-note">引文型方法卡只用于概念与题型交叉核对，不复制题面、答案或竞赛知识点清单；原始许可未核验的本地资料不提供公开链接。</p></section>${cards ? `<section class="card-list" aria-label="地理知识摘要">${cards}</section>` : `<div class="empty-state">没有匹配的地理摘要，请换一个关键词或切换课程范围。</div>`}${renderSourceDirectory(data)}`;
+  app.innerHTML = `<section class="hero"><p class="eyebrow">课程化整理 · 来源可追溯</p><h2>高中地理知识库：按课程复习自然地理、人文地理与资源环境</h2><p>${esc(data.description || "")}</p><div class="course-filters" role="group" aria-label="地理课程筛选">${courseButtons}</div></section><section class="panel provenance" data-geography-version="${esc(data.version)}"><div class="section-heading"><div><h2>资料边界与更新</h2><p>资料版本 ${esc(data.version)} · 来源索引与原创摘要分开标识。</p></div><span class="status">${fmtNumber(metrics.sources)} 条来源</span></div><div class="metrics">${renderMetric("课程", metrics.courses)}${renderMetric("知识摘要", metrics.items)}${renderMetric("原创摘要", metrics.authoredSummaries)}${renderMetric("引文型方法卡", metrics.citationOnlyItems)}</div><p class="boundary-note">引文型方法卡只用于概念与题型交叉核对，不复制题面、答案或竞赛知识点清单；原始许可未核验的本地资料不提供公开链接。</p></section>${renderVisualLearning(data)}${cards ? `<section class="card-list" aria-label="地理知识摘要">${cards}</section>` : `<div class="empty-state">没有匹配的地理摘要，请换一个关键词或切换课程范围。</div>`}${renderSourceDirectory(data)}`;
   $$('[data-geography-course]').forEach((button) => {
     button.addEventListener("click", () => {
       state.course = button.dataset.geographyCourse || "";
@@ -194,6 +244,12 @@ async function fetchKnowledge() {
   return response.json();
 }
 
+async function fetchVisuals() {
+  const response = await fetch("../data/geography/visuals.json", { cache: "no-store" });
+  if (!response.ok) throw new Error(`地理视觉学习资料载入失败（HTTP ${response.status}）`);
+  return response.json();
+}
+
 function formatFreshness(version) {
   const match = /^geo-(\d{4})\.(\d{1,2})\.(\d{1,2})(?:\.\d+)?$/.exec(String(version || ""));
   return match ? `资料版本 ${match[1]}/${Number(match[2])}/${Number(match[3])}` : "资料版本待核";
@@ -209,7 +265,7 @@ function bindEvents() {
 }
 
 async function boot() {
-  state.data = await fetchKnowledge();
+  [state.data, state.visuals] = await Promise.all([fetchKnowledge(), fetchVisuals()]);
   $("#freshness").textContent = formatFreshness(state.data.version);
   bindEvents();
   syncControls();

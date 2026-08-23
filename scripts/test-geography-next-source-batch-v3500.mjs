@@ -9,45 +9,57 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "github-cicada-high-school-geography-notes": {
-    url: "https://github.com/Cicada000/Geography-Notes",
-    commitSha: "d0e91a407ed3768907eb39e09aecfd8116703fcc",
-    accessedAt: "2026-08-23",
+  "github-yvki-secondary-geography-quiz": {
+    url: "https://github.com/yvki/quiz",
+    commitSha: "db8f3174b18cd984a7d1822e1c13b9a4bd71afed",
+    accessedAt: "2026-08-24",
   },
-  "web-national-geographic-flood": {
-    url: "https://education.nationalgeographic.org/resource/flood/",
-    accessedAt: "2026-08-23",
+  "github-jeanextreme-geography-game": {
+    url: "https://github.com/JeanExtreme002/Geography-Game",
+    commitSha: "e8a2f19fa24468a80263ef7e55497bfd5ae298b2",
+    accessedAt: "2026-08-24",
   },
-  "web-national-geographic-landslide": {
-    url: "https://education.nationalgeographic.org/resource/landslide/",
-    accessedAt: "2026-08-23",
+  "github-felipe-access-to-education-map": {
+    url: "https://github.com/felipehlvo/access_to_education_map",
+    commitSha: "b509c7f7cfb9ef3d1088c07c893ad194f515fc34",
+    accessedAt: "2026-08-24",
   },
-  "web-national-geographic-renewable-energy": {
-    url: "https://education.nationalgeographic.org/resource/renewable-energy/",
-    accessedAt: "2026-08-23",
+  "github-poc-unesco-education-planning": {
+    url: "https://github.com/PoCInnovation/UNESCO-Hacking-ED-Planning",
+    commitSha: "b52497e31ff77635be37338d00fe65a99004eb0c",
+    accessedAt: "2026-08-24",
   },
-  "web-nasa-earthdata-learn": {
-    url: "https://www.earthdata.nasa.gov/learn",
-    accessedAt: "2026-08-23",
+  "github-romina-high-school-geography-quiz": {
+    url: "https://github.com/rominacarabathampi/AndroidQuiz",
+    commitSha: "5d3440282e1cdf03cd3ae369828f22645bbe0ead",
+    accessedAt: "2026-08-24",
+  },
+  "web-fao-global-forest-resources-assessment": {
+    url: "https://www.fao.org/interactive/forest-resources-assessment/2020/en/",
+    accessedAt: "2026-08-24",
+  },
+  "web-esa-climate-change-initiative": {
+    url: "https://climate.esa.int/en/",
+    accessedAt: "2026-08-24",
   },
 };
 
 const expectedItems = {
-  "geo-c1-flood-runoff-and-land-use-process": "compulsory-1",
-  "geo-c1-landslide-slope-water-and-geology": "compulsory-1",
-  "geo-c1-earth-data-observation-and-process": "compulsory-1",
-  "geo-c2-floodplain-settlement-and-land-use": "compulsory-2",
-  "geo-c2-renewable-energy-location-and-land-use": "compulsory-2",
-  "geo-c2-textbook-variant-and-concept-mapping": "compulsory-2",
-  "geo-s1-landslide-slope-geology-and-water-evidence": "selective-1",
-  "geo-s1-earth-observation-scale-and-process": "selective-1",
-  "geo-s1-renewable-energy-natural-conditions": "selective-1",
-  "geo-s2-flood-risk-and-regional-planning": "selective-2",
-  "geo-s2-renewable-energy-spatial-comparison": "selective-2",
-  "geo-s2-multi-edition-regional-case-crosswalk": "selective-2",
-  "geo-s3-landslide-risk-exposure-and-vulnerability": "selective-3",
-  "geo-s3-renewable-energy-security-and-tradeoffs": "selective-3",
-  "geo-s3-earth-data-provenance-and-uncertainty": "selective-3",
+  "geo-c1-geography-field-observation-and-scale": "compulsory-1",
+  "geo-c1-weather-quiz-concept-and-evidence": "compulsory-1",
+  "geo-c1-climate-record-and-time-scale": "compulsory-1",
+  "geo-c2-school-access-and-service-area": "compulsory-2",
+  "geo-c2-education-quality-and-spatial-disparity": "compulsory-2",
+  "geo-c2-population-and-place-evidence": "compulsory-2",
+  "geo-s1-climate-observation-record-and-anomaly": "selective-1",
+  "geo-s1-region-clues-and-map-verification": "selective-1",
+  "geo-s1-surface-model-and-scale-selection": "selective-1",
+  "geo-s2-public-service-access-and-regional-equity": "selective-2",
+  "geo-s2-education-data-and-spatial-unit": "selective-2",
+  "geo-s2-map-game-and-regional-hierarchy": "selective-2",
+  "geo-s3-forest-resource-carbon-and-security": "selective-3",
+  "geo-s3-education-resilience-and-governance": "selective-3",
+  "geo-s3-geography-quiz-data-boundary-and-fairness": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.24.38");
@@ -56,7 +68,7 @@ assert.equal(payload.items.length, 590);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v28 source ${sourceId}`);
+  assert.ok(source, `missing v35 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
   if (expected.commitSha) {
@@ -69,7 +81,7 @@ for (const [sourceId, expected] of Object.entries(expectedSources)) {
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v28 item ${itemId}`);
+  assert.ok(item, `missing v35 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

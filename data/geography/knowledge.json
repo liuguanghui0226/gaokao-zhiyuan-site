@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.34",
+  "version": "geo-2026.08.24.39",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -2173,6 +2173,380 @@
       "url": "https://oceanservice.noaa.gov/education/tutorial_coastal_issues/welcome.html",
       "accessedAt": "2026-08-23",
       "licenseNote": "NOAA 公共教育入口；具体图示、活动和数据产品按页面说明处理，本项目仅作海岸过程、风险和治理方法的 citation-only 参照，不复制正文、图片、活动或数据。"
+    },
+    {
+      "id": "github-yvki-secondary-geography-quiz",
+      "title": "Secondary School Geography Quiz：中学地理概念练习项目",
+      "publisher": "yvki/quiz（GitHub）",
+      "editionNote": "公开仓库提交 `db8f3174b18cd984a7d1822e1c13b9a4bd71afed`；访问日期 2026-08-24；项目描述覆盖 Secondary School GCE O Levels 的 Geography 等学科 CLI quiz，README 说明选择题、作答和反馈结构。",
+      "url": "https://github.com/yvki/quiz",
+      "commitSha": "db8f3174b18cd984a7d1822e1c13b9a4bd71afed",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 MIT；本项目仅作中学地理练习结构、概念辨析与反馈边界的 citation-only 参照，不复制题目、答案、代码或页面文字。"
+    },
+    {
+      "id": "github-jeanextreme-geography-game",
+      "title": "Geography-Game：学校地理问答游戏",
+      "publisher": "JeanExtreme002/Geography-Game（GitHub）",
+      "editionNote": "公开仓库提交 `e8a2f19fa24468a80263ef7e55497bfd5ae298b2`；访问日期 2026-08-24；项目描述为学校作业中的地理问答游戏，用于观察地图线索、区域识别和学习反馈的组织方式。",
+      "url": "https://github.com/JeanExtreme002/Geography-Game",
+      "commitSha": "e8a2f19fa24468a80263ef7e55497bfd5ae298b2",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 BSD-3-Clause；本项目仅作地理问答、区域线索和学习反馈的 citation-only 参照，不复制题目、答案、代码、素材或页面文字。"
+    },
+    {
+      "id": "github-felipe-access-to-education-map",
+      "title": "Mapa do Ensino Médio：公立高中空间可达性地图",
+      "publisher": "felipehlvo/access_to_education_map（GitHub）",
+      "editionNote": "公开仓库提交 `b509c7f7cfb9ef3d1088c07c893ad194f515fc34`；访问日期 2026-08-24；README 说明以巴西公立高中为对象制作空间可达性互动地图，并使用学校普查与人口空间数据。",
+      "url": "https://github.com/felipehlvo/access_to_education_map",
+      "commitSha": "b509c7f7cfb9ef3d1088c07c893ad194f515fc34",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库未声明统一可复用许可证；本项目仅作公共服务区位、可达性和空间公平的 citation-only 参照，不复制代码、数据、地图、截图或页面文字。"
+    },
+    {
+      "id": "github-poc-unesco-education-planning",
+      "title": "Athena：教育质量地理地图与文本分析",
+      "publisher": "PoCInnovation/UNESCO-Hacking-ED-Planning（GitHub）",
+      "editionNote": "公开仓库提交 `b52497e31ff77635be37338d00fe65a99004eb0c`；访问日期 2026-08-24；项目描述以学校检查报告文本和地理地图探索教育质量改进线索。",
+      "url": "https://github.com/PoCInnovation/UNESCO-Hacking-ED-Planning",
+      "commitSha": "b52497e31ff77635be37338d00fe65a99004eb0c",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 MIT；本项目仅作教育质量空间差异、文本指标和区域治理的 citation-only 参照，不复制代码、数据、报告文本、地图或页面内容。"
+    },
+    {
+      "id": "github-romina-high-school-geography-quiz",
+      "title": "AndroidQuiz：高中地理考试练习应用",
+      "publisher": "rominacarabathampi/AndroidQuiz（GitHub）",
+      "editionNote": "公开仓库提交 `5d3440282e1cdf03cd3ae369828f22645bbe0ead`；访问日期 2026-08-24；仓库描述为面向高中生地理考试学习的 Android quiz，用于观察章节练习与即时反馈的边界。",
+      "url": "https://github.com/rominacarabathampi/AndroidQuiz",
+      "commitSha": "5d3440282e1cdf03cd3ae369828f22645bbe0ead",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库未声明统一可复用许可证；本项目仅作高中地理练习、概念反馈和资料边界的 citation-only 参照，不复制题目、答案、APK、代码或页面文字。"
+    },
+    {
+      "id": "web-fao-global-forest-resources-assessment",
+      "title": "FAO Global Forest Resources Assessment 2020：全球森林资源评估",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "editionNote": "公开互动评估入口；访问日期 2026-08-24；用于核对森林面积变化、森林资源、碳储量、生物多样性与可持续治理的指标和时间序列边界。",
+      "url": "https://www.fao.org/interactive/forest-resources-assessment/2020/en/",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "FAO 公共评估与数据入口；具体图表、数据和报告按页面许可与署名要求处理，本项目仅作森林资源、碳循环和生态安全的 citation-only 参照，不复制正文、图表、数据或页面版式。"
+    },
+    {
+      "id": "web-esa-climate-change-initiative",
+      "title": "ESA Climate Change Initiative：气候变化观测与气候数据记录",
+      "publisher": "European Space Agency Climate Office",
+      "editionNote": "公开气候观测与数据记录入口；访问日期 2026-08-24；用于核对地球观测、气候变量、长期数据记录、观测与模型结合及训练资源的证据边界。",
+      "url": "https://climate.esa.int/en/",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "ESA 公共科学与数据入口；具体产品按数据集许可、署名和使用条件处理，本项目仅作气候观测、异常判读和时间尺度的 citation-only 参照，不复制数据、图表、图片或页面内容。"
+    },
+    {
+      "id": "github-junyilee7-geography-ai-teaching",
+      "title": "Geography AI Teaching：地理与水文可复现教学笔记",
+      "publisher": "junyilee7/geography-ai-teaching（GitHub）",
+      "editionNote": "公开仓库提交 `48076c91943bf52d614a69ceae90a565595bb522`；访问日期 2026-08-24；项目描述为使用真实数据、可解释 AI 和计算方法开展 geography 与 hydrology teaching 的可复现 notebook 集合，并配置自动执行工作流。",
+      "url": "https://github.com/junyilee7/geography-ai-teaching",
+      "commitSha": "48076c91943bf52d614a69ceae90a565595bb522",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 MIT；本项目仅作真实数据、可复现 notebook、模型解释和地理水文教学边界的 citation-only 参照，不复制 notebook、代码、数据或图表。"
+    },
+    {
+      "id": "github-wal33d-school-districts-api",
+      "title": "US School Districts Service：学校行政区边界查询",
+      "publisher": "Wal33D/us-school-districts-api（GitHub）",
+      "editionNote": "公开仓库提交 `76e32482c58645aa86ac066b60b7996926a763c6`；访问日期 2026-08-24；README 说明使用 NCES 官方学校行政区 shapefile、空间索引和坐标查询，展示学校边界、空间单元与服务区匹配方法。",
+      "url": "https://github.com/Wal33D/us-school-districts-api",
+      "commitSha": "76e32482c58645aa86ac066b60b7996926a763c6",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 MIT；NCES 边界数据仍按原始数据政策处理；本项目仅作学校行政区、空间查询和公共服务区位的 citation-only 参照，不复制代码、数据库、边界文件或页面文字。"
+    },
+    {
+      "id": "github-geomoer-remote-sensing",
+      "title": "MOER Remote Sensing：物理地理遥感开放课程",
+      "publisher": "GeoMOER/moer-mpg-remote-sensing（GitHub）",
+      "editionNote": "公开仓库提交 `08db1cccd531a487749cda4b87855f5783a8412d`；访问日期 2026-08-24；项目主题包含 physical geography、remote sensing、自然保护和开放教育资源，用于对照遥感课程、地表特征与环境变化的学习组织。",
+      "url": "https://github.com/GeoMOER/moer-mpg-remote-sensing",
+      "commitSha": "08db1cccd531a487749cda4b87855f5783a8412d",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 CC BY-SA 4.0；本项目仅作物理地理遥感、开放课程和自然保护方法的 citation-only 参照，不复制课程正文、代码、图片或数据。"
+    },
+    {
+      "id": "github-leosolar-deforestation-detection",
+      "title": "Satellite Deforestation Detection：卫星影像森林变化分析",
+      "publisher": "LEOSOLAR8/Satellite-Deforestation-Detection（GitHub）",
+      "editionNote": "公开仓库提交 `26689bf2983e8c250d6cebccfffd0daff6f220b4`；访问日期 2026-08-24；README 说明以卫星或航空影像进行植被分割、绿色覆盖率、直方图和多时相森林变化比较。",
+      "url": "https://github.com/LEOSOLAR8/Satellite-Deforestation-Detection",
+      "commitSha": "26689bf2983e8c250d6cebccfffd0daff6f220b4",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库未声明统一可复用许可证；本项目仅作植被指数替代方法、影像分类、多时相比较和生态监测边界的 citation-only 参照，不复制代码、影像、输出图或页面文字。"
+    },
+    {
+      "id": "web-wri-aqueduct-water-risk",
+      "title": "WRI Aqueduct：全球水风险地图与情景工具",
+      "publisher": "World Resources Institute",
+      "editionNote": "公开水风险工具入口；访问日期 2026-08-24；页面说明可用多层空间数据测量和制图全球水风险，并比较当前风险与不同气候、增长情景下的未来趋势。",
+      "url": "https://www.wri.org/aqueduct",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "WRI 公共工具与数据入口；具体图层和数据按其许可、署名与方法说明处理，本项目仅作水风险指标、情景比较和区域规划的 citation-only 参照，不复制数据、地图或页面内容。"
+    },
+    {
+      "id": "web-nasa-firms-active-fire",
+      "title": "NASA FIRMS：全球主动火点与火灾监测",
+      "publisher": "NASA LANCE Fire Information for Resource Management System",
+      "editionNote": "公开火灾地图与数据入口；访问日期 2026-08-24；页面说明提供 MODIS 和 VIIRS 的近实时主动火点数据、地图查看和下载，用于火灾空间分布与时间变化判读。",
+      "url": "https://firms.modaps.eosdis.nasa.gov/",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "NASA 公共科学数据入口；具体产品按数据集、署名与使用条件处理，本项目仅作主动火点、传感器观测和灾害监测的 citation-only 参照，不复制数据、地图或页面资源。"
+    },
+    {
+      "id": "web-noaa-sea-level-rise-viewer",
+      "title": "NOAA Sea Level Rise Viewer：海平面上升与沿海淹没影响",
+      "publisher": "NOAA Office for Coastal Management",
+      "editionNote": "公开 Sea Level Rise Viewer；访问日期 2026-08-24；工具按海平面上升情景展示低洼区和沿海洪涝影响，用于比较海岸暴露、空间尺度和情景不确定性。",
+      "url": "https://coast.noaa.gov/slr/",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "NOAA 公共海岸风险工具；具体图层、模型和数据按页面说明处理，本项目仅作海平面上升、沿海暴露与适应规划的 citation-only 参照，不复制地图、数据或页面版式。"
+    },
+    {
+      "id": "web-un-sdg13-climate-action",
+      "title": "United Nations SDG 13：气候行动与适应治理",
+      "publisher": "United Nations Sustainable Development Goals",
+      "editionNote": "公开可持续发展目标 13 入口；访问日期 2026-08-24；用于核对气候适应、减灾、教育、制度能力和气候行动指标之间的治理联系。",
+      "url": "https://sdgs.un.org/goals/goal13",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "联合国公共目标与指标入口；具体指标、图表和报告按页面版权与署名条件处理，本项目仅作气候治理、适应能力和国家安全的 citation-only 参照，不复制正文、数据或图表。"
+    },
+    {
+      "id": "github-hocbigg-human-geography",
+      "title": "Human Geography：开放式人文地理课程路径",
+      "publisher": "hocbigg/human-geography（GitHub）",
+      "editionNote": "公开仓库提交 `889f15761b3333abf8d24c92bdc5b61a132f2cb5`；访问日期 2026-08-24；README 将人文地理组织为基础概念、研究方法与空间证据、核心领域以及区域和系统地理，并允许按先修关系学习。",
+      "url": "https://github.com/hocbigg/human-geography",
+      "commitSha": "889f15761b3333abf8d24c92bdc5b61a132f2cb5",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 CC BY-SA 4.0；本项目仅作人文地理课程结构、空间尺度、人口/城市/区域方法的 citation-only 参照，不复制课程正文、书目、链接清单或页面文字。"
+    },
+    {
+      "id": "github-giswqs-i-guide-geoai-education",
+      "title": "I-GUIDE GeoAI Education：地理人工智能教学材料",
+      "publisher": "giswqs/I-GUIDE-GeoAI-Education（GitHub）",
+      "editionNote": "公开仓库提交 `114a5d687c5a4443cfa35926c40586a7c2c74d31`；访问日期 2026-08-24；README 按数据下载、交互制图、训练数据、影像识别、语义分割、变化检测和像元回归组织 GeoAI notebook 教学。",
+      "url": "https://github.com/giswqs/I-GUIDE-GeoAI-Education",
+      "commitSha": "114a5d687c5a4443cfa35926c40586a7c2c74d31",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 MIT；本项目仅作地理人工智能、训练数据、遥感影像、土地覆盖变化和结果验证的 citation-only 参照，不复制 notebook、代码、数据、模型或图像。"
+    },
+    {
+      "id": "github-carpentries-geospatial-python",
+      "title": "Geospatial Python：栅格与矢量数据开放教学",
+      "publisher": "The Carpentries Incubator（GitHub）",
+      "editionNote": "公开仓库提交 `36832e58858b808a95f89a03e025807f1c3c7854`；访问日期 2026-08-24；README 说明课程覆盖 geospatial raster/vector data、工作坊教学、贡献流程与数据来源致谢。",
+      "url": "https://github.com/carpentries-incubator/geospatial-python",
+      "commitSha": "36832e58858b808a95f89a03e025807f1c3c7854",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库未在 API 元数据中声明统一 SPDX 许可证；本项目仅作栅格/矢量概念、地理数据教学流程和可复现实践的 citation-only 参照，不复制课程正文、代码、数据或图表。"
+    },
+    {
+      "id": "github-cielo-geoscience-lesson-plans-k12",
+      "title": "CIELO-G：K–12 地球科学与遥感课例",
+      "publisher": "CIELO-G Geoscience Education & Transformation（GitHub）",
+      "editionNote": "公开仓库提交 `a858f8bd212a588a624b9aaf2ce6202ae6a8250c`；访问日期 2026-08-24；项目描述覆盖地球科学教育、地球物理、地质、生态水文和遥感课例，并强调社区参与。",
+      "url": "https://github.com/CIELO-G/geoscience-lesson-plans-k12",
+      "commitSha": "a858f8bd212a588a624b9aaf2ce6202ae6a8250c",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库未声明统一可复用许可证；本项目仅作 K–12 地球科学课例、遥感、生态水文和现场探究边界的 citation-only 参照，不复制课件、代码、图像、数据或活动正文。"
+    },
+    {
+      "id": "web-nasa-learning-resources",
+      "title": "NASA Learning Resources：地球与空间科学学习入口",
+      "publisher": "NASA",
+      "editionNote": "公开学习资源入口；访问日期 2026-08-24；页面按科学主题、学习阶段和教育资源组织地球与空间科学材料，适合核对观测、模型和学习活动的来源边界。",
+      "url": "https://www.nasa.gov/learning-resources/",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "NASA 公共教育入口；具体页面、图片、数据和媒体按 NASA 使用政策及第三方权利处理，本项目仅作地球系统、空间观测和科学探究的 citation-only 参照，不复制正文、图片、视频或活动材料。"
+    },
+    {
+      "id": "web-national-geographic-gis",
+      "title": "National Geographic Education：GIS 地理信息系统",
+      "publisher": "National Geographic Society Education",
+      "editionNote": "公开教育条目；访问日期 2026-08-24；页面以 GIS 为主题说明地理数据、图层、空间问题与地图表达的学习入口。",
+      "url": "https://education.nationalgeographic.org/resource/geographic-information-system-gis/",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "National Geographic Education 公开教育入口；页面正文、图片和活动按其版权与署名条件处理，本项目仅作 GIS、图层、空间分析和地图表达的 citation-only 参照，不复制页面内容或图件。"
+    },
+    {
+      "id": "web-osgeo-geo-for-all",
+      "title": "OSGeo Geo for All：开放地理空间教育网络",
+      "publisher": "Open Source Geospatial Foundation",
+      "editionNote": "公开 Geo for All 入口；访问日期 2026-08-24；页面介绍开放地理空间软件、教育合作、实验室和包容性地理信息科学学习网络。",
+      "url": "https://www.osgeo.org/initiatives/geo-for-all/",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "OSGeo 公共教育与社区入口；各项目、软件和材料按各自许可证处理，本项目仅作开放 GIS、空间思维、教育公平与可复现工具链的 citation-only 参照，不复制代码、课程、图件或页面文字。"
+    },
+    {
+      "id": "web-nps-geology-education",
+      "title": "National Park Service：Geology 地质教育入口",
+      "publisher": "U.S. National Park Service",
+      "editionNote": "公开地质主题入口；访问日期 2026-08-24；页面汇集地质过程、地貌、地质公园/保护地与现场观察相关的教育信息。",
+      "url": "https://www.nps.gov/subjects/geology/index.htm",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "美国国家公园管理局公共教育入口；具体公园、图片和解释材料按页面版权与署名要求处理，本项目仅作地质过程、地貌观察、保护地和现场证据的 citation-only 参照，不复制正文、图片或案例。"
+    },
+    {
+      "id": "github-deephydro-gisrs",
+      "title": "GISRS：地理信息系统与遥感应用课程资源",
+      "publisher": "DeepHydro/GISRS（GitHub）",
+      "editionNote": "公开仓库提交 `e5d6fa243a91c7d8e17dbf3b85615ed2d97ad88e`；访问日期 2026-08-24；仓库描述为地理信息系统与遥感应用课程资源，目录包含课程代码、空间分析和遥感实践入口。",
+      "url": "https://github.com/DeepHydro/GISRS",
+      "commitSha": "e5d6fa243a91c7d8e17dbf3b85615ed2d97ad88e",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 GPL-3.0；本项目仅作 GIS/遥感课程结构、空间分析和观测流程的 citation-only 参照，不复制代码、课件、数据、图像或页面文字。"
+    },
+    {
+      "id": "github-cumt-gis",
+      "title": "CUMT-GIS：地理信息科学课程资料整理",
+      "publisher": "lovelydayss/CUMT-GIS（GitHub）",
+      "editionNote": "公开仓库提交 `76a57dd8c308a1d0668602074d22898a241361eb`；访问日期 2026-08-24；README 按 GIS、数据库设计、GNSS、测量平差和软件开发实习组织课程设计入口。",
+      "url": "https://github.com/lovelydayss/CUMT-GIS",
+      "commitSha": "76a57dd8c308a1d0668602074d22898a241361eb",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库未声明统一可复用许可证；本项目仅作地理信息科学课程模块、空间数据库和定位数据方法的 citation-only 参照，不复制源码、报告、数据或页面文字。"
+    },
+    {
+      "id": "github-geovisualization-tutorial",
+      "title": "Geovisualization Tutorial：地理数据可视化实践教程",
+      "publisher": "sshuair/Geovisualization-Tutorial（GitHub）",
+      "editionNote": "公开仓库提交 `576762f83f1edb26a786f315b41f8a0e31e7cc3e`；访问日期 2026-08-24；README 按地理数据、可视化方法、地图投影、地图注意事项和案例实践组织教程。",
+      "url": "https://github.com/sshuair/Geovisualization-Tutorial",
+      "commitSha": "576762f83f1edb26a786f315b41f8a0e31e7cc3e",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库未声明统一可复用许可证；本项目仅作专题地图、投影、符号化和地图叙事的 citation-only 参照，不复制幻灯片、素材、案例地图或页面文字。"
+    },
+    {
+      "id": "github-spatialdb-nnu",
+      "title": "SpatialDB_NNU：空间数据库实验手册",
+      "publisher": "solidjerryc/SpatialDB_NNU（GitHub）",
+      "editionNote": "公开仓库提交 `d5379cc4f8434a9528bb4ceafe2720845fbebf83`；访问日期 2026-08-24；README 按实验序列组织数据库查询、空间数据查询、空间数据创建、安全性和导入导出。",
+      "url": "https://github.com/solidjerryc/SpatialDB_NNU",
+      "commitSha": "d5379cc4f8434a9528bb4ceafe2720845fbebf83",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库未声明统一可复用许可证；本项目仅作空间数据库查询、属性—空间联合证据和数据安全边界的 citation-only 参照，不复制实验手册、SQL、数据或页面文字。"
+    },
+    {
+      "id": "github-gis-rs-2024fall",
+      "title": "2024Fall GIS&RS：GIS 与遥感课程资料包",
+      "publisher": "es-palloc/GIS-RS-2024Fall（GitHub）",
+      "editionNote": "公开仓库提交 `ce360267826bdf8e9037ac0a4db5a4df1eb91374`；访问日期 2026-08-24；README 将课程资料按每节 Tutorial、作业图表和报告实践组织，用于核对 GIS/遥感的任务链和结果表达。",
+      "url": "https://github.com/es-palloc/GIS-RS-2024Fall",
+      "commitSha": "ce360267826bdf8e9037ac0a4db5a4df1eb91374",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 MIT，但其中第三方资料和图表仍需分别核验；本项目仅作 GIS/遥感任务分解、图表表达和复核边界的 citation-only 参照，不复制教程、作业、图表、代码或数据。"
+    },
+    {
+      "id": "web-openstreetmap-map-features",
+      "title": "OpenStreetMap Wiki：Map features 地图要素",
+      "publisher": "OpenStreetMap Foundation community wiki",
+      "editionNote": "公开地图要素文档入口；访问日期 2026-08-24；用于核对点、线、面要素、属性标签、要素分类和开放协作地图的空间表达边界。",
+      "url": "https://wiki.openstreetmap.org/wiki/Map_features",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "OpenStreetMap Wiki 与地图数据按各自版权、ODbL 和页面许可说明处理；本项目仅作地图要素、属性标签和开放数据归因的 citation-only 参照，不复制页面文字、地图数据或图件。"
+    },
+    {
+      "id": "web-us-census-geographic-areas",
+      "title": "U.S. Census Bureau：Geographic Areas 地理统计单元",
+      "publisher": "U.S. Census Bureau",
+      "editionNote": "公开地理统计单元说明入口；访问日期 2026-08-24；用于核对州、县、普查区、块组等统计单元的定义、层级和跨尺度比较边界。",
+      "url": "https://www.census.gov/programs-surveys/geography/guidance/geo-areas.html",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "美国人口普查局公共统计地理入口；具体边界文件、表格和数据按其使用说明处理，本项目仅作统计单元、空间尺度和人口比较的 citation-only 参照，不复制数据、地图或页面正文。"
+    },
+    {
+      "id": "web-usgs-national-map",
+      "title": "USGS The National Map：国家地理空间数据入口",
+      "publisher": "U.S. Geological Survey",
+      "editionNote": "公开国家地理空间数据入口；访问日期 2026-08-24；用于核对地形、高程、水系、交通、土地覆盖和基础地理图层的多源组织与数据更新边界。",
+      "url": "https://www.usgs.gov/programs/national-geospatial-program/national-map",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "USGS 公共地理空间数据入口；具体图层、下载产品和第三方数据按元数据、署名与使用条件处理，本项目仅作多图层、数据更新和资源环境分析的 citation-only 参照，不复制数据、地图或页面内容。"
+    },
+    {
+      "id": "github-isr-field-app",
+      "title": "ISR Field：地理实地调查与空间数据管理应用",
+      "publisher": "isr-oeaw/isr-field-app（GitHub）",
+      "editionNote": "公开仓库提交 `95ffd7095883ba851ceb4c5a80390b171b1645ce`；访问日期 2026-08-24；README 说明应用支持地理实地调查、点几何、CSV 导入导出、交互地图、权限管理和审计记录。",
+      "url": "https://github.com/isr-oeaw/isr-field-app",
+      "commitSha": "95ffd7095883ba851ceb4c5a80390b171b1645ce",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 GPL-3.0；本项目仅作地理实地调查、空间点数据、坐标记录和审计边界的 citation-only 参照，不复制代码、数据库、用户数据或页面文字。"
+    },
+    {
+      "id": "github-family-history-migration-map",
+      "title": "Family History Migration Map：高中生家庭迁移与地方文化地图",
+      "publisher": "gamzeulu/family-history-migration-map（GitHub）",
+      "editionNote": "公开仓库提交 `1ac747b74af36c146d77111e28b9b2be7f6724e9`；访问日期 2026-08-24；README 说明项目基于高中生研究活动，将家庭迁移来源组织为地方文化迁移地图。",
+      "url": "https://github.com/gamzeulu/family-history-migration-map",
+      "commitSha": "1ac747b74af36c146d77111e28b9b2be7f6724e9",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 MIT；本项目仅作高中生迁移地图、地方认同和叙事地图的 citation-only 参照，不复制页面、数据、个人信息、图表或代码。"
+    },
+    {
+      "id": "github-wettstein-schulatlas-zurich",
+      "title": "Schul-Atlas von Wettstein：1887 年中学地理学校地图集",
+      "publisher": "d33pk3rn3l/1887-wettstein-schulatlas-zurich（GitHub）",
+      "editionNote": "公开仓库提交 `4b310545ad7eeb4de4fedd8e24b2dcd9b58a798c`；访问日期 2026-08-24；README 说明数字化保存 1887 年苏黎世中学地理学校地图集及其历史地图、景观和建筑图像。",
+      "url": "https://github.com/d33pk3rn3l/1887-wettstein-schulatlas-zurich",
+      "commitSha": "4b310545ad7eeb4de4fedd8e24b2dcd9b58a798c",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 MIT，并提示历史原作的公共领域状态需按司法辖区核验；本项目仅作历史地图、地图教育和时空比较的 citation-only 参照，不复制 PDF、图版、图片或原文。"
+    },
+    {
+      "id": "github-everest-maps",
+      "title": "Everest Maps：学校地理课人口密度地图实践",
+      "publisher": "amahjo/Everest-maps（GitHub）",
+      "editionNote": "公开仓库提交 `70f7ce0de7d5e41c14e5a4f45e157b222ec06a22`；访问日期 2026-08-24；README 说明以学校地理课为背景，使用 R、空间要素、人口和面积计算世界人口密度，并用对数色阶表达差异。",
+      "url": "https://github.com/amahjo/Everest-maps",
+      "commitSha": "70f7ce0de7d5e41c14e5a4f45e157b222ec06a22",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库未声明统一可复用许可证；README 标注数据和工具来源，本项目仅作学校地图、人口密度、面积归一化和对数表达的 citation-only 参照，不复制代码、数据、图片或图表。"
+    },
+    {
+      "id": "github-geospatial-school-mapping",
+      "title": "Geospatial School Mapping：学校空间分布与可达性地图",
+      "publisher": "alphacrypto246/Geospatial-School-Mapping（GitHub）",
+      "editionNote": "公开仓库提交 `fdb20ee2624487abe613c2b6beccaca19eac6f6c`；访问日期 2026-08-24；README 说明项目使用学校点位、区域边界和空间分析识别学校可达性与服务不足区域。",
+      "url": "https://github.com/alphacrypto246/Geospatial-School-Mapping",
+      "commitSha": "fdb20ee2624487abe613c2b6beccaca19eac6f6c",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "API 元数据未声明统一 SPDX 许可证，README 提及 MIT；本项目仅作学校空间分布、可达性和公共服务规划的 citation-only 参照，不复制代码、CSV、GeoJSON、地图或页面文字。"
+    },
+    {
+      "id": "web-national-archives-education",
+      "title": "The National Archives：Education and Outreach 教育与历史资料探究",
+      "publisher": "The National Archives, United Kingdom",
+      "editionNote": "公开教育与推广入口；访问日期 2026-08-24；用于核对历史档案、地图资料、来源批判和课堂探究的证据边界。",
+      "url": "https://www.nationalarchives.gov.uk/education/",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "英国国家档案馆公共教育入口；具体档案、图像和复制许可按 Open Government Licence 及页面说明处理，本项目仅作历史地图、来源批判和时空比较的 citation-only 参照，不复制档案图像、课程材料或页面正文。"
+    },
+    {
+      "id": "web-owid-population-density",
+      "title": "Our World in Data：Population Density 人口密度",
+      "publisher": "Our World in Data",
+      "editionNote": "公开人口密度数据图入口；访问日期 2026-08-24；用于核对人口与土地面积的归一化指标、跨区域比较、时间序列和数据定义边界。",
+      "url": "https://ourworldindata.org/grapher/population-density",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "Our World in Data 图表按 CC BY 4.0 与所引用数据集的许可分别处理；本项目仅作人口密度指标、时间序列和区域比较的 citation-only 参照，不复制图表、数据转储或页面文字。"
+    },
+    {
+      "id": "web-un-geospatial",
+      "title": "United Nations Geospatial：地理空间与位置数据入口",
+      "publisher": "United Nations Geospatial Network",
+      "editionNote": "公开地理空间入口；访问日期 2026-08-24；用于核对位置数据、地图服务、空间信息协调和可持续发展决策之间的资料治理边界。",
+      "url": "https://www.un.org/geospatial/",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "联合国公共地理空间入口；具体地图、服务和数据按联合国页面、数据集及署名条件处理，本项目仅作地理空间治理、位置数据和区域规划的 citation-only 参照，不复制地图、数据或页面内容。"
     }
   ],
   "items": [
@@ -13270,6 +13644,1065 @@
         {"sourceId": "github-omu-musubouar-disaster-education", "locator": "MUSUBOU-AR README：time-based disaster scenarios, map layers, AR warnings and disaster education", "note": "用于交叉核对灾害情景、地图警示和现场教育的边界；不复制代码、素材或示例数据。"},
         {"sourceId": "github-foss-geospatial-science-education", "locator": "FOSS geospatial science education README：open tools, data and reproducible teaching workflow", "note": "用于交叉核对多源数据、工具归因和复核流程；不复制演示文稿、代码或正文。"},
         {"sourceId": "pep-geography-selective-3", "locator": "自然灾害、资源环境安全和国家安全章节", "note": "回到教材核对灾害风险、综合治理和安全能力。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-geography-field-observation-and-scale",
+      "courseId": "compulsory-1",
+      "title": "地理实地观察与尺度",
+      "summary": "现场观察应先明确对象、时间、空间范围和记录尺度，再把地形、植被、水文与人类活动分层记录。结论要区分直接观察、地图判读和推测，不能把单点现象直接外推为区域规律，也不能忽略季节和天气条件。",
+      "keywords": ["实地观察", "空间尺度", "分层记录", "区域规律"],
+      "sourceIds": ["github-yvki-secondary-geography-quiz", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-yvki-secondary-geography-quiz", "locator": "README：secondary school quiz structure, MCQ answers and feedback", "note": "用于交叉核对概念练习应围绕观察、判读和反馈组织；不复制题目、答案或代码。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地理实践、地形与自然环境观察章节", "note": "回到教材核对观察对象、尺度和自然要素之间的联系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-weather-quiz-concept-and-evidence",
+      "courseId": "compulsory-1",
+      "title": "天气过程的概念辨析与证据",
+      "summary": "天气过程复习可按气压场、风向风速、云量降水和锋面演变建立时间链，再用天气图、观测记录和实况变化核对解释。答题时要区分天气现象、形成机制和影响结果，避免只凭一个符号或单一时刻下结论。",
+      "keywords": ["天气过程", "天气图", "锋面", "证据链"],
+      "sourceIds": ["github-romina-high-school-geography-quiz", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-romina-high-school-geography-quiz", "locator": "README / repository description：Android quiz for high-school geography exam study", "note": "用于交叉核对高中地理章节练习与即时反馈的范围；不复制题目、APK、答案或代码。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "大气运动、常见天气系统和天气图判读章节", "note": "回到教材核对气压、风、锋面和天气过程。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-climate-record-and-time-scale",
+      "courseId": "compulsory-1",
+      "title": "气候观测记录与时间尺度",
+      "summary": "阅读气候资料时先确认观测时段、基准期、变量定义和空间分辨率，再区分天气事件、年际波动与长期趋势。遥感和模型能够补充观测空缺，但仍要检查数据来源、异常值、代表性和验证方法，不能把短期变化直接写成气候趋势。",
+      "keywords": ["气候记录", "时间尺度", "基准期", "长期趋势"],
+      "sourceIds": ["web-esa-climate-change-initiative", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-esa-climate-change-initiative", "locator": "ESA Climate Change Initiative：climate variables, long-term records and Earth observation", "note": "用于交叉核对气候变量、长期记录和观测与模型结合的证据边界；不复制数据、图表或页面内容。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "天气与气候、自然环境整体性和地理信息技术章节", "note": "回到教材核对天气气候差异、时间尺度和资料判读。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-school-access-and-service-area",
+      "courseId": "compulsory-2",
+      "title": "学校可达性与公共服务区位",
+      "summary": "公共服务区位分析要把学校数量、人口分布、道路距离、通勤时间和服务容量放在同一框架中。地图上的最近距离不一定等于真实可达性，还要考虑河流、山地、交通方式、边界和不同群体的时间成本，才能判断服务公平。",
+      "keywords": ["公共服务", "学校区位", "可达性", "空间公平"],
+      "sourceIds": ["github-felipe-access-to-education-map", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-felipe-access-to-education-map", "locator": "README：interactive map measuring spatial access to public high schools using school and population data", "note": "用于交叉核对公共服务可达性、人口空间分布和地图表达；不复制代码、数据或地图。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "城镇内部空间结构、公共服务和交通联系章节", "note": "回到教材核对服务区位、交通条件和人地关系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-education-quality-and-spatial-disparity",
+      "courseId": "compulsory-2",
+      "title": "教育质量与空间差异",
+      "summary": "比较教育或其他公共服务质量时，不能只看一个分数或一张地图，应同时说明指标来源、统计对象、空间单元、时间范围和样本偏差。区域平均值可能掩盖城乡、社区和学校之间的差异，综合判断要把区位、人口和治理条件联系起来。",
+      "keywords": ["空间差异", "指标口径", "区域平均", "公共服务"],
+      "sourceIds": ["github-poc-unesco-education-planning", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-poc-unesco-education-planning", "locator": "README：geographical map and textual inspection reports for exploring education quality", "note": "用于交叉核对文本指标、地图空间差异和教育治理的资料边界；不复制报告文本、数据或地图。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口、城镇化、区域差异和公共服务章节", "note": "回到教材核对人口分布、城乡差异和区域联系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-and-place-evidence",
+      "courseId": "compulsory-2",
+      "title": "人口与区域线索的证据组合",
+      "summary": "识别一个区域时应组合位置、地形气候、人口语言、产业交通和历史联系等线索，并优先寻找能够相互验证的证据。地图游戏可以训练线索提取，但现实区域判断仍需说明尺度、数据年份和线索之间的因果或相关关系。",
+      "keywords": ["区域识别", "人口线索", "地图判读", "证据组合"],
+      "sourceIds": ["github-jeanextreme-geography-game", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-jeanextreme-geography-game", "locator": "README / repository description：school geography quiz game and travel/geography learning context", "note": "用于交叉核对区域线索提取和反馈式地图练习的边界；不复制题目、代码、素材或页面文字。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口分布、地域文化、产业和交通联系章节", "note": "回到教材核对人口与区域特征的综合判读。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-climate-observation-record-and-anomaly",
+      "courseId": "selective-1",
+      "title": "气候观测记录与异常判读",
+      "summary": "气候异常判读必须先说明相对于哪个基准期、哪个区域和哪种变量，再比较异常的持续时间、范围和可能机制。卫星观测与气候数据记录能够扩大空间覆盖，但不同传感器、算法和分辨率之间仍需做一致性与不确定性检查。",
+      "keywords": ["气候异常", "基准期", "卫星观测", "不确定性"],
+      "sourceIds": ["web-esa-climate-change-initiative", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "web-esa-climate-change-initiative", "locator": "ESA Climate Change Initiative：Earth observation, climate data records and climate variables", "note": "用于交叉核对卫星观测、气候变量和长期数据记录的使用边界；不复制数据、图表或页面内容。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "太阳辐射、大气环流、气候变化和自然环境整体性章节", "note": "回到教材核对气候系统、时间尺度和自然过程。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-region-clues-and-map-verification",
+      "courseId": "selective-1",
+      "title": "区域线索与地图复核",
+      "summary": "区域综合判读可以先用纬度、地形、气候和水系建立自然地理假设，再用人口、聚落、产业和交通图层复核。单一地标容易造成误判，可靠结论应说明比例尺、图例、空间关系和至少两类相互独立的证据。",
+      "keywords": ["区域判读", "自然线索", "地图复核", "比例尺"],
+      "sourceIds": ["github-jeanextreme-geography-game", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-jeanextreme-geography-game", "locator": "README / project description：geography quiz developed for school work", "note": "用于交叉核对地理线索、地图识别和学习反馈的任务边界；不复制游戏内容、代码或素材。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地球运动、气候、水文和自然地理环境整体性章节", "note": "回到教材核对自然地理线索、图表和区域综合判读。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-surface-model-and-scale-selection",
+      "courseId": "selective-1",
+      "title": "地表模型与尺度选择",
+      "summary": "使用地形或地表数据时先确定研究问题，再选择等高线、剖面、栅格或影像等表达方式，并说明垂直尺度与水平尺度是否一致。模型适合突出地形关系和过程线索，但夸大高程、分辨率差异和边界处理都可能改变读图结论。",
+      "keywords": ["地表模型", "等高线", "空间尺度", "地形判读"],
+      "sourceIds": ["github-yvki-secondary-geography-quiz", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-yvki-secondary-geography-quiz", "locator": "README：school quiz questions, answer submission and feedback workflow", "note": "用于交叉核对复杂概念应拆成可检验步骤与反馈；不复制题目、答案或代码。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地形、地貌过程和地理信息技术章节", "note": "回到教材核对地形表达、尺度和自然过程证据。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-public-service-access-and-regional-equity",
+      "courseId": "selective-2",
+      "title": "公共服务可达性与区域公平",
+      "summary": "区域公平分析应把服务点分布、人口需求、交通网络、距离或时间成本和服务容量共同纳入。比较不同地区时要统一空间单元与指标分母，并识别平均可达性背后的群体差异，才能把地图结果转化为有条件的规划建议。",
+      "keywords": ["区域公平", "服务可达性", "交通网络", "规划建议"],
+      "sourceIds": ["github-felipe-access-to-education-map", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-felipe-access-to-education-map", "locator": "README：spatial access to public high schools, school census and population data", "note": "用于交叉核对公共服务空间可达性、需求分布和区域比较；不复制代码、数据、地图或截图。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域发展、交通联系、城镇化和国土空间规划章节", "note": "回到教材核对区域差异、服务配置和空间规划。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-education-data-and-spatial-unit",
+      "courseId": "selective-2",
+      "title": "教育数据与空间单元",
+      "summary": "区域教育数据比较要先确认统计对象、行政边界、学校类型、时间范围和指标构成，再判断地图上的差异是否具有解释意义。文本报告与地理图层可以互相补充，但不能把相关性直接写成因果，更不能忽略数据缺失和空间单元变化。",
+      "keywords": ["教育数据", "空间单元", "区域比较", "因果边界"],
+      "sourceIds": ["github-poc-unesco-education-planning", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-poc-unesco-education-planning", "locator": "README：school inspection report text, geographic map and education-quality analysis", "note": "用于交叉核对文本指标、空间单元和教育质量分析的证据边界；不复制报告、数据、代码或地图。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域差异、区域联系和区域规划章节", "note": "回到教材核对区域比较、空间尺度和综合分析。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-map-game-and-regional-hierarchy",
+      "courseId": "selective-2",
+      "title": "地图游戏与区域层级",
+      "summary": "区域层级判读应先确定研究尺度，再区分国家、城市、流域、产业区或功能区等空间单元，并说明它们之间的联系。游戏化定位可以训练方向、邻接和距离感，但区域发展题仍需要产业、交通、人口与政策证据共同支撑。",
+      "keywords": ["区域层级", "空间单元", "邻接关系", "区域发展"],
+      "sourceIds": ["github-jeanextreme-geography-game", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-jeanextreme-geography-game", "locator": "README / project description：school geography game and travel-oriented spatial learning", "note": "用于交叉核对定位、邻接、距离和反馈式区域练习的边界；不复制游戏题目、代码或素材。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域空间结构、区域联系和区域发展章节", "note": "回到教材核对区域层级、空间联系和发展条件。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-forest-resource-carbon-and-security",
+      "courseId": "selective-3",
+      "title": "森林资源、碳循环与生态安全",
+      "summary": "森林资源题不能只看覆盖面积，还要联系森林变化、碳储量、生物多样性、木材供给、水土保持和社区生计。评价保护或利用方案时，应区分资源存量、年度变化和生态服务，并说明统计口径、空间尺度和长期治理目标。",
+      "keywords": ["森林资源", "碳储量", "生态服务", "生态安全"],
+      "sourceIds": ["web-fao-global-forest-resources-assessment", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-fao-global-forest-resources-assessment", "locator": "FAO Global Forest Resources Assessment 2020：forest area, change, carbon, biodiversity and sustainable management", "note": "用于交叉核对森林资源、碳储量和生态治理指标边界；不复制报告正文、图表或数据。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源安全、生态保护、生物多样性和国家安全章节", "note": "回到教材核对森林资源、生态系统服务和生态安全。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-education-resilience-and-governance",
+      "courseId": "selective-3",
+      "title": "教育基础设施韧性与区域治理",
+      "summary": "公共教育基础设施既是服务资源，也是区域韧性的一部分。分析学校或其他设施时，要同时考虑自然灾害暴露、交通可达性、人口变化、设施质量、应急连续性和财政能力，治理建议应说明受益对象、残余风险和长期维护责任。",
+      "keywords": ["基础设施韧性", "灾害暴露", "区域治理", "公共资源"],
+      "sourceIds": ["github-poc-unesco-education-planning", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-poc-unesco-education-planning", "locator": "README：education-system reports, geographical map and improvement planning", "note": "用于交叉核对教育基础设施、空间暴露和治理改进的资料边界；不复制报告、数据、代码或地图。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境安全、公共服务和国家安全相关章节", "note": "回到教材核对公共资源、灾害风险和治理能力。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geography-quiz-data-boundary-and-fairness",
+      "courseId": "selective-3",
+      "title": "地理练习的数据边界与公平",
+      "summary": "数字练习和题库可以帮助发现概念盲点，但评价学习效果时要说明题目来源、版本、覆盖范围、答案可靠性和反馈规则。不同地区、教材和考试制度不能直接混成同一标准，数据不足时应保留待核状态，而不是用伪精确分数替代地理判断。",
+      "keywords": ["地理练习", "数据边界", "学习公平", "证据等级"],
+      "sourceIds": ["github-romina-high-school-geography-quiz", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-romina-high-school-geography-quiz", "locator": "README / repository description：high-school geography exam quiz application", "note": "用于交叉核对数字练习、章节覆盖和即时反馈的边界；不复制题目、答案、APK、代码或页面文字。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境安全、地理信息技术和综合实践章节", "note": "回到教材核对证据等级、资源环境判断和信息使用边界。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-water-risk-map-and-scale",
+      "courseId": "compulsory-1",
+      "title": "水风险地图与空间尺度",
+      "summary": "水风险判读要先区分水量压力、洪涝、干旱、水质和供水脆弱性，再确认指标的空间单元、时间范围与情景假设。地图适合定位差异和比较趋势，但不能把一个综合指数直接当成所有地点的实际风险，仍需结合流域、人口和基础设施证据。",
+      "keywords": ["水风险", "空间尺度", "指标口径", "流域"],
+      "sourceIds": ["web-wri-aqueduct-water-risk", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-wri-aqueduct-water-risk", "locator": "Aqueduct tools：water scarcity, water-risk layers, mapping and future climate/growth scenarios", "note": "用于交叉核对水风险图层、情景比较和空间尺度边界；不复制地图、数据或页面内容。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "水循环、河流与自然灾害章节", "note": "回到教材核对水循环、流域过程和水资源空间差异。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-wildfire-weather-fuel-and-relief",
+      "courseId": "compulsory-1",
+      "title": "火灾风险：天气、燃料与地形",
+      "summary": "分析森林或草地火灾时，可把高温、低湿、大风等天气条件，与植被燃料、地形坡度、道路和居民点暴露联系起来。主动火点图能提示发生位置和时间，但不等同于火灾面积、强度或因果结论，必须结合地面与多源资料核验。",
+      "keywords": ["森林火灾", "天气条件", "地形坡度", "主动火点"],
+      "sourceIds": ["web-nasa-firms-active-fire", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-nasa-firms-active-fire", "locator": "NASA Science FIRMS：near-real-time MODIS/VIIRS active-fire map and data", "note": "用于交叉核对主动火点、传感器观测和火灾时空分布的证据边界；不复制数据、地图或页面资源。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "气象灾害、植被与地形影响章节", "note": "回到教材核对天气条件、自然灾害和自然要素相互作用。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-remote-sensing-soil-and-surface-evidence",
+      "courseId": "compulsory-1",
+      "title": "遥感、土壤与地表证据",
+      "summary": "用遥感识别地表时要把影像颜色或纹理当作线索，而不是直接当作地理事实。先说明传感器、波段、分辨率和观测时间，再用地形、土壤、植被或现场样本验证分类结果，才能把像元差异转成可靠的自然地理解释。",
+      "keywords": ["遥感", "土壤", "影像判读", "地表特征"],
+      "sourceIds": ["github-geomoer-remote-sensing", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-geomoer-remote-sensing", "locator": "MOER Remote Sensing course：physical geography, Remote Sensing and nature conservation teaching materials", "note": "用于交叉核对遥感课程组织、地表特征和自然保护的学习边界；不复制课程正文、图片或数据。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "土壤、植被、地理信息技术和自然环境整体性章节", "note": "回到教材核对土壤形成、植被特征和遥感判读。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-school-district-boundary-and-service-area",
+      "courseId": "compulsory-2",
+      "title": "学校行政区边界与服务范围",
+      "summary": "公共服务地图中的边界可能是行政区、学区、统计区或实际通勤范围，先区分空间单元，才能解释学校数量、人口和可达性。坐标查询适合回答‘某地点落在哪个边界’，但不自动说明服务质量、公平程度或居民真实选择。",
+      "keywords": ["学校行政区", "服务范围", "空间单元", "可达性"],
+      "sourceIds": ["github-wal33d-school-districts-api", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-wal33d-school-districts-api", "locator": "README：NCES school-district shapefiles, spatial indexing and coordinate lookup", "note": "用于交叉核对学校边界、空间查询和服务区匹配的证据边界；不复制代码、数据库或边界文件。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "城镇化、公共服务、人口分布和交通联系章节", "note": "回到教材核对服务范围、人口分布和城乡空间联系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-public-service-boundary-and-statistical-bias",
+      "courseId": "compulsory-2",
+      "title": "公共服务边界与统计偏差",
+      "summary": "比较学校、医院或其他公共服务时，要检查行政边界、人口统计区和服务半径是否一致。边界改变、人口流动、跨区使用和数据年份不一致都可能制造表面差异，因此地图结论需要说明统计口径与无法观察到的群体。",
+      "keywords": ["统计偏差", "边界变化", "公共服务", "人口流动"],
+      "sourceIds": ["github-wal33d-school-districts-api", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-wal33d-school-districts-api", "locator": "README：official boundary data, coordinate lookup and school-district spatial units", "note": "用于交叉核对边界数据、空间单元和坐标匹配的限制；不复制服务代码、数据库或原始边界。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口迁移、城市功能和区域差异章节", "note": "回到教材核对人口流动、区域差异和统计图表判读。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-climate-action-and-urban-adaptation",
+      "courseId": "compulsory-2",
+      "title": "气候行动与城市适应",
+      "summary": "城市气候行动应同时考虑减排、降温、防洪、交通、建筑、公共服务和弱势群体暴露。提出措施时先判断风险来源和时间尺度，再比较工程、生态和制度方案的覆盖范围、成本、协同收益与剩余风险，避免把单一项目写成完整治理。",
+      "keywords": ["气候行动", "城市适应", "风险治理", "公共服务"],
+      "sourceIds": ["web-un-sdg13-climate-action", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-un-sdg13-climate-action", "locator": "UN SDG 13：Climate change impacts and adaptation, disaster resilience, education and institutional capacity", "note": "用于交叉核对气候行动、适应和治理能力的目标边界；不复制指标、正文或图表。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "城镇化、产业、交通和人地协调章节", "note": "回到教材核对城市发展、人地关系和综合治理。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-remote-sensing-spectral-feature-and-ground-truth",
+      "courseId": "selective-1",
+      "title": "遥感光谱特征与地面验证",
+      "summary": "遥感判读可先依据不同地物对波段的反射差异提出分类假设，再检查空间分辨率、混合像元、季节和大气条件。地面样本、已有地图或其他传感器资料用于验证，而不是把算法输出当成无需复核的地表真值。",
+      "keywords": ["光谱特征", "混合像元", "地面验证", "空间分辨率"],
+      "sourceIds": ["github-geomoer-remote-sensing", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-geomoer-remote-sensing", "locator": "MOER Remote Sensing course repository：Remote Sensing, physical geography and conservation course structure", "note": "用于交叉核对光谱、地表分类和自然保护教学流程；不复制课程材料或数据。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地理信息技术、自然环境整体性和地理实践章节", "note": "回到教材核对遥感原理、图像判读和验证方法。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-soil-map-and-multispectral-inference",
+      "courseId": "selective-1",
+      "title": "土壤制图与多光谱推断",
+      "summary": "土壤制图要把成土因素、地形位置、植被覆盖、含水量和影像响应联系起来，并说明样本与模型适用范围。多光谱影像能够扩大观测范围，却不能完全替代剖面调查；分类精度还受尺度、季节和地表覆盖影响。",
+      "keywords": ["土壤制图", "多光谱", "成土因素", "分类精度"],
+      "sourceIds": ["github-geomoer-remote-sensing", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-geomoer-remote-sensing", "locator": "MOER Remote Sensing course：physical geography and environmental observation learning materials", "note": "用于交叉核对遥感、自然环境观测和保护应用的边界；不复制课程正文、代码或数据。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "土壤形成、自然地理环境整体性和地理信息技术章节", "note": "回到教材核对土壤形成因素、空间分异和资料判读。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-fire-detection-sensor-and-temporal-resolution",
+      "courseId": "selective-1",
+      "title": "火点监测、传感器与时间分辨率",
+      "summary": "火灾遥感题要先区分主动火点、燃烧面积、烧毁程度和烟羽范围，再判断传感器、过境时间与时间分辨率是否支持题目结论。近实时产品适合发现和跟踪事件，长期变化仍需多时相影像、地面记录和一致的判读标准。",
+      "keywords": ["主动火点", "传感器", "时间分辨率", "多时相"],
+      "sourceIds": ["web-nasa-firms-active-fire", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "web-nasa-firms-active-fire", "locator": "NASA Science FIRMS：MODIS/VIIRS active-fire observation, map and download products", "note": "用于交叉核对传感器、近实时观测和火灾时空判读边界；不复制产品数据或地图。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地理信息技术、自然灾害和地理实践章节", "note": "回到教材核对遥感、灾害监测和时间尺度。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-school-boundary-change-and-regional-comparison",
+      "courseId": "selective-2",
+      "title": "学校边界变化与区域比较",
+      "summary": "比较不同地区的学校服务时，应先确认边界版本、人口基数、学校类型和统计年份，再判断空间差异是否来自真实资源变化或行政区调整。区域规划建议要同时考察跨界通勤、设施等级、人口迁移和服务容量，不能只按边界面积比较。",
+      "keywords": ["边界变化", "区域比较", "服务容量", "跨界通勤"],
+      "sourceIds": ["github-wal33d-school-districts-api", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-wal33d-school-districts-api", "locator": "README：NCES official school-district boundaries and spatial lookup service", "note": "用于交叉核对边界版本、行政空间单元和学校服务分析；不复制数据库、代码或边界文件。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域发展、人口流动、交通联系和国土空间规划章节", "note": "回到教材核对区域比较、人口流动和规划尺度。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-water-risk-scenario-and-regional-planning",
+      "courseId": "selective-2",
+      "title": "水风险情景与区域规划",
+      "summary": "区域水资源规划可把当前水风险、未来气候和人口增长情景叠加，再比较节水、调度、产业调整、生态用水和基础设施方案。情景地图不是唯一预测，规划结论要写清假设、受益者、空间尺度和对其他地区的外溢影响。",
+      "keywords": ["水资源规划", "情景分析", "生态用水", "区域协调"],
+      "sourceIds": ["web-wri-aqueduct-water-risk", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-wri-aqueduct-water-risk", "locator": "Aqueduct：water scarcity, current/future water risk, climate and growth scenarios, policy planning", "note": "用于交叉核对水风险情景、指标叠加和政策规划边界；不复制工具图层、数据或页面内容。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域协调、资源配置、产业布局和区域规划章节", "note": "回到教材核对区域水资源、产业和综合规划。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-sea-level-viewer-and-coastal-exposure",
+      "courseId": "selective-2",
+      "title": "海平面情景与沿海暴露",
+      "summary": "沿海风险判读可把海平面上升情景与低洼地形、人口、港口、道路和生态缓冲图层叠加，先识别暴露对象，再比较防护、退让、适应和生态治理。不同情景的淹没范围不是现实边界的确定预言，需说明垂直基准、模型分辨率和潮汐等限制。",
+      "keywords": ["海平面上升", "沿海暴露", "低洼地形", "适应规划"],
+      "sourceIds": ["web-noaa-sea-level-rise-viewer", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-noaa-sea-level-rise-viewer", "locator": "NOAA Sea Level Rise Viewer：low-lying areas, coastal flooding and sea-level scenarios", "note": "用于交叉核对海平面情景、沿海暴露和模型限制；不复制地图、数据或页面版式。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "海岸带、区域发展、国土空间规划和人地协调章节", "note": "回到教材核对沿海区域、空间规划和人地关系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-climate-adaptation-and-disaster-risk",
+      "courseId": "selective-3",
+      "title": "气候适应与灾害风险治理",
+      "summary": "气候适应题可沿着危险性、暴露度、脆弱性和应对能力拆解，再比较预警、工程、生态、迁移和制度措施。适应并不等于消除风险，评价方案时还要关注公平、长期维护、跨区域影响和极端情景下的剩余风险。",
+      "keywords": ["气候适应", "灾害风险", "脆弱性", "治理能力"],
+      "sourceIds": ["web-un-sdg13-climate-action", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-un-sdg13-climate-action", "locator": "UN SDG 13：Climate change impacts and adaptation, resilience, education and institutional capacity", "note": "用于交叉核对气候适应、减灾和治理能力的目标边界；不复制正文、指标或图表。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "自然灾害、资源环境安全和国家安全章节", "note": "回到教材核对灾害风险、适应能力和综合治理。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-forest-loss-monitoring-and-ecosystem-security",
+      "courseId": "selective-3",
+      "title": "森林变化监测与生态安全",
+      "summary": "森林变化监测要区分植被覆盖变化、土地利用转换、采伐、火灾和恢复，并统一影像时间、分类阈值和空间分辨率。影像分割或绿色覆盖率只能提供一种证据，生态安全判断还应结合水土保持、生物多样性、碳循环和社区生计。",
+      "keywords": ["森林变化", "卫星影像", "生态安全", "多时相"],
+      "sourceIds": ["github-leosolar-deforestation-detection", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-leosolar-deforestation-detection", "locator": "README：vegetation segmentation, green coverage, histograms and multi-period comparison", "note": "用于交叉核对影像分割、多时相比较和森林变化监测边界；不复制代码、影像或输出图。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "森林资源、生态系统服务、生物多样性和国家安全章节", "note": "回到教材核对森林资源、生态服务和生态安全。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-sea-level-rise-and-coastal-security",
+      "courseId": "selective-3",
+      "title": "海平面上升与沿海安全",
+      "summary": "沿海安全需要把海平面变化、风暴潮、潮汐、低洼地形、关键基础设施和人口暴露放进风险链条。图层工具适合帮助比较情景和识别重点区域，但国家安全与生态安全判断还要纳入工程韧性、应急能力、生态缓冲和长期治理公平。",
+      "keywords": ["沿海安全", "海平面上升", "风暴潮", "基础设施韧性"],
+      "sourceIds": ["web-noaa-sea-level-rise-viewer", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-noaa-sea-level-rise-viewer", "locator": "NOAA Sea Level Rise Viewer：coastal flooding impacts and low-lying exposure layers", "note": "用于交叉核对沿海暴露、情景图层和风险沟通边界；不复制地图、数据或页面资源。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境安全、自然灾害和国家安全章节", "note": "回到教材核对沿海资源环境安全、灾害防护和治理能力。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-earth-science-learning-and-evidence",
+      "courseId": "compulsory-1",
+      "title": "地球科学学习与证据链",
+      "summary": "地球科学材料应先区分直接观测、模型推断和解释性假设，再把时间尺度、空间尺度、测量误差和证据来源写清楚。学习资源可以帮助建立问题链，但不能把动画、示意图或单次观测直接当成完整事实，仍要用教材概念和相互独立的资料进行交叉核验。",
+      "keywords": ["地球科学", "观测证据", "模型推断", "尺度"],
+      "sourceIds": ["web-nasa-learning-resources", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-nasa-learning-resources", "locator": "NASA Science Learning Resources：Earth system observation, science models and learning activities", "note": "用于交叉核对地球系统观测、模型和科学探究资源的证据边界；不复制正文、图片或活动材料。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地球圈层、自然环境整体性和地理信息技术章节", "note": "回到教材核对自然要素联系、综合分析和资料判读。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-geology-field-observation-and-process",
+      "courseId": "compulsory-1",
+      "title": "地质现场观察与过程解释",
+      "summary": "地质与地貌观察要把露头、岩性、构造、坡面和沉积物等现场线索，转换为可检验的形成过程。记录时应标明位置、方向、尺度和观察条件，先区分看到的事实与据此提出的解释，再用剖面、地图或时间序列检查因果链是否成立。",
+      "keywords": ["地质观察", "地貌过程", "现场证据", "尺度记录"],
+      "sourceIds": ["web-nps-geology-education", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-nps-geology-education", "locator": "NPS Geology subject page：landforms, geologic processes, protected areas and field observation", "note": "用于交叉核对地貌、地质过程和现场观察的资料边界；不复制正文、图片或案例。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "岩石圈、地貌和自然地理实践章节", "note": "回到教材核对岩石、地貌过程和地理观察方法。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-earth-system-resource-and-scale",
+      "courseId": "compulsory-1",
+      "title": "地球系统资源与空间尺度",
+      "summary": "分析地球系统资源时，不能只按资源名称罗列现象，而要说明资源所在圈层、形成过程、更新速度、空间分布和人类利用方式。不同尺度的图件可能呈现不同规律，区域结论必须说明数据分辨率、时间范围和从局部样本外推到整体的限制。",
+      "keywords": ["地球系统", "资源分布", "空间尺度", "外推限制"],
+      "sourceIds": ["github-cielo-geoscience-lesson-plans-k12", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-cielo-geoscience-lesson-plans-k12", "locator": "README：K-12 geoscience, Geologic Time, hydrology and satellite remote sensing lesson plans", "note": "用于交叉核对地球科学、生态水文、遥感和尺度教学的证据边界；不复制课例、代码、图像或活动正文。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "自然环境整体性、自然资源和地理信息技术章节", "note": "回到教材核对资源形成、自然要素联系和空间分异。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-human-geography-space-place-and-scale",
+      "courseId": "compulsory-2",
+      "title": "人文地理的空间、地方与尺度",
+      "summary": "人文地理材料要先区分空间位置、地方特征、区域边界和分析尺度，再解释人口、产业、文化或治理差异。一个地方的统计特征并不等于所有居民的体验，比较区域时应统一指标口径，并说明边界选择、时间变化和跨区域联系可能造成的影响。",
+      "keywords": ["人文地理", "地方", "区域尺度", "空间比较"],
+      "sourceIds": ["github-hocbigg-human-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-hocbigg-human-geography", "locator": "README：Foundations of Human Geography, Core Spatial Concepts, place, scale and region", "note": "用于交叉核对人文地理基础概念、地方、尺度和区域组织方式；不复制课程正文、书目或页面文字。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口分布、城镇化、区域联系和区域差异章节", "note": "回到教材核对人口、城市和区域空间联系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-public-service-map-and-spatial-equity",
+      "courseId": "compulsory-2",
+      "title": "公共服务地图与空间公平",
+      "summary": "公共服务地图不能只比较设施数量，还要同时观察人口基数、服务半径、交通时间、设施等级和不同群体的可达性。地图上的平均距离可能掩盖边缘地区、老年人或低收入群体的实际困难，因此结论要交代统计单元、网络条件和未被数据覆盖的人群。",
+      "keywords": ["公共服务", "空间公平", "可达性", "统计单元"],
+      "sourceIds": ["web-national-geographic-gis", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-national-geographic-gis", "locator": "National Geographic Education：GIS Programming / Geographic Information System, data layers, spatial questions and map representation", "note": "用于交叉核对 GIS 图层、空间问题和地图表达的证据边界；不复制页面正文或图件。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "公共服务、人口分布、交通联系和城乡发展章节", "note": "回到教材核对服务范围、人口差异和交通可达性。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-region-and-evidence-chain",
+      "courseId": "compulsory-2",
+      "title": "人口区域问题与证据链",
+      "summary": "人口区域问题应沿着人口数量、结构、流动、就业和公共服务需求建立证据链。先确认统计对象和年份，再区分相关关系与因果关系；人口地图、调查资料和区域案例各自只能回答部分问题，综合判断还要说明迁移选择、政策环境和空间联系。",
+      "keywords": ["人口区域", "人口结构", "迁移", "证据链"],
+      "sourceIds": ["github-hocbigg-human-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-hocbigg-human-geography", "locator": "README：Population Geography, Geographic Research Methods and Spatial Evidence", "note": "用于交叉核对人口地理、研究方法和空间证据的学习边界；不复制课程正文或资料清单。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口增长、人口迁移、人口合理容量和区域发展章节", "note": "回到教材核对人口变化、迁移影响和区域需求。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-geoai-data-pipeline-and-validation",
+      "courseId": "selective-1",
+      "title": "GeoAI 数据流程与结果验证",
+      "summary": "GeoAI 地理分析应把数据检索、预处理、训练样本、模型输出和结果验证分开记录。分类或检测结果不能因为图像看起来合理就直接成为地理结论，还要检查样本代表性、空间泄漏、时间差异、精度指标和地面核验，明确模型适用范围与不确定性。",
+      "keywords": ["GeoAI", "训练数据", "遥感分类", "结果验证"],
+      "sourceIds": ["github-giswqs-i-guide-geoai-education", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-giswqs-i-guide-geoai-education", "locator": "README：STAC APIs, Training Data, change detection, semantic segmentation and pixel-level regression", "note": "用于交叉核对 GeoAI 数据流程、影像任务和验证边界；不复制 notebook、代码、模型、数据或图像。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地理信息技术、自然环境整体性和地理实践章节", "note": "回到教材核对遥感判读、空间信息和实践验证。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-raster-vector-and-spatial-model",
+      "courseId": "selective-1",
+      "title": "栅格、矢量与空间模型",
+      "summary": "选择空间数据模型时，要先判断问题是连续场、离散对象还是网络关系。栅格适合表达温度、降水和高程等连续变化，矢量适合表达点、线、面及其属性；二者转换会引入分辨率、边界和拓扑误差，读图和分析都要保留原始尺度与处理步骤。",
+      "keywords": ["栅格数据", "矢量数据", "空间模型", "拓扑误差"],
+      "sourceIds": ["github-carpentries-geospatial-python", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-carpentries-geospatial-python", "locator": "README：Geospatial Raster Data and vector data with Python, workshop episodes and reproducible teaching", "note": "用于交叉核对栅格、矢量、地理数据教学和可复现流程的边界；不复制课程正文、代码或数据。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地理信息技术、地图判读和自然地理实践章节", "note": "回到教材核对空间数据表达、图层判读和尺度限制。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-geoscience-remote-sensing-and-field-check",
+      "courseId": "selective-1",
+      "title": "地球科学遥感与现场核验",
+      "summary": "遥感材料应先明确传感器、波段、空间分辨率和成像时间，再提出地表类型或地质过程的判读假设。现场样本、地形图和其他时间点影像用于检验，而不是简单给算法结果盖章；当云层、混合像元或样本偏向影响结论时，应保留不确定性。",
+      "keywords": ["遥感", "地质过程", "现场核验", "混合像元"],
+      "sourceIds": ["github-cielo-geoscience-lesson-plans-k12", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-cielo-geoscience-lesson-plans-k12", "locator": "README：K-12 geoscience, ecohydrology, geophysics and satellite remote sensing lesson plans", "note": "用于交叉核对地球科学、生态水文、地球物理和遥感课例的证据边界；不复制课件、图像或活动正文。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地理信息技术、地貌过程和地理实践章节", "note": "回到教材核对遥感原理、地质过程和资料验证。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-place-region-scale-and-comparison",
+      "courseId": "selective-2",
+      "title": "地方、区域、尺度与比较",
+      "summary": "区域比较不是把两个地方的指标并排罗列，而是先说明区域划分依据、比较尺度和共同指标，再解释自然条件、人口、产业、交通与制度联系。区域边界可以服务于不同问题，结论不能从一个行政区统计值直接推广到整个功能区域。",
+      "keywords": ["地方", "区域", "尺度转换", "区域比较"],
+      "sourceIds": ["github-hocbigg-human-geography", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-hocbigg-human-geography", "locator": "README：Regional and Systems Geography, spatial concepts, scale and region comparison", "note": "用于交叉核对区域与系统地理、尺度和区域比较的学习结构；不复制课程正文或书目。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域空间结构、区域联系、区域发展和国土空间规划章节", "note": "回到教材核对区域划分、区域联系和规划尺度。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-open-gis-education-and-spatial-inquiry",
+      "courseId": "selective-2",
+      "title": "开放 GIS 教育与空间探究",
+      "summary": "开放 GIS 探究可以从一个具体区域问题出发，依次完成数据来源核查、图层叠加、空间关系解释和结果复核。工具开放不等于数据天然可靠，学习者还要检查许可证、元数据、坐标系、尺度和是否把软件输出误写成区域发展因果结论。",
+      "keywords": ["开放 GIS", "空间探究", "图层叠加", "元数据"],
+      "sourceIds": ["web-osgeo-geo-for-all", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-osgeo-geo-for-all", "locator": "OSGeo Geo for All：open geospatial education, spatial thinking and inclusive GIS learning network", "note": "用于交叉核对开放 GIS、空间思维、教育公平和工具链的证据边界；不复制课程、代码或图件。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "地理信息技术、区域发展和区域规划章节", "note": "回到教材核对空间分析、区域问题和规划决策。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-geographic-data-reproducibility",
+      "courseId": "selective-2",
+      "title": "地理数据可复现与区域决策",
+      "summary": "区域决策使用地理数据时，应保存来源、版本、坐标系、处理步骤和关键参数，使他人能够复核地图如何生成。可复现并不保证结论正确，还要检查指标定义、缺失值、空间自相关和替代解释，避免把一张漂亮地图当作唯一决策依据。",
+      "keywords": ["地理数据", "可复现", "坐标系", "区域决策"],
+      "sourceIds": ["github-carpentries-geospatial-python", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-carpentries-geospatial-python", "locator": "README：open-source geospatial lesson, workshop feedback, contribution and data acknowledgements", "note": "用于交叉核对开放课程、教学反馈、数据致谢和可复现工作流边界；不复制课程正文、代码或数据。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域研究、地理信息技术和国土空间规划章节", "note": "回到教材核对区域证据、空间尺度和规划评价。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-human-environment-system-and-resilience",
+      "courseId": "selective-3",
+      "title": "人地系统与韧性治理",
+      "summary": "人地系统韧性分析要把环境压力、暴露对象、脆弱性、应对能力和恢复路径连起来。教育或社区课例可以帮助提出探究问题，但区域安全方案仍需判断资源约束、灾害频率、基础设施维护、社会公平和跨区域影响，不能把单一项目等同于整体韧性。",
+      "keywords": ["人地系统", "韧性治理", "脆弱性", "恢复能力"],
+      "sourceIds": ["github-cielo-geoscience-lesson-plans-k12", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-cielo-geoscience-lesson-plans-k12", "locator": "README：K-12 geoscience, community engagement, ecohydrology and remote sensing lesson plans", "note": "用于交叉核对人地系统、社区参与和环境探究的教学边界；不复制课例、活动正文或图像。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境安全、自然灾害、生态保护和国家安全章节", "note": "回到教材核对风险链、生态安全和综合治理。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geology-conservation-and-ecosystem-service",
+      "courseId": "selective-3",
+      "title": "地质保护与生态系统服务",
+      "summary": "地质遗产和自然保护地评价要同时看地质过程、景观价值、生态服务、游客压力、社区生计和保护管理。保护并不等于完全封闭，规划时应区分核心保护、科学教育、适度利用和风险监测区域，并说明不同目标之间的空间冲突与治理优先级。",
+      "keywords": ["地质保护", "生态系统服务", "保护地", "空间分区"],
+      "sourceIds": ["web-nps-geology-education", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-nps-geology-education", "locator": "NPS Geology subject page：geologic processes, landforms, protected areas and conservation education", "note": "用于交叉核对地质过程、保护地和地质教育的证据边界；不复制正文、图片或案例。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "生态系统服务、自然资源保护、区域分区和国家安全章节", "note": "回到教材核对生态服务、保护分区和资源环境安全。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geoai-land-change-and-decision-risk",
+      "courseId": "selective-3",
+      "title": "GeoAI 土地变化与决策风险",
+      "summary": "土地覆盖变化检测适合发现时空差异和提出调查线索，但模型误差、影像季节差异、分类体系变化和训练样本偏差都会影响结果。用于资源环境安全决策时，要把变化图、地面核验、利益相关者影响和替代方案放在一起评估，并保留不可确定的部分。",
+      "keywords": ["土地变化", "GeoAI", "资源安全", "决策风险"],
+      "sourceIds": ["github-giswqs-i-guide-geoai-education", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-giswqs-i-guide-geoai-education", "locator": "README：multi-temporal change detection, land cover mapping, training data and pixel-level analysis", "note": "用于交叉核对土地变化、训练数据、像元分析和模型不确定性边界；不复制 notebook、代码、模型或数据。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "土地利用、资源环境安全、生态保护和国家安全章节", "note": "回到教材核对土地变化、资源管理和安全决策。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-thematic-map-variable-and-symbol",
+      "courseId": "compulsory-1",
+      "title": "专题地图的变量与符号",
+      "summary": "专题地图先要明确变量属于数量、等级、类别还是变化方向，再选择点、线、面符号和合适的颜色、大小或线型。读图时不能只看颜色深浅，还要核对图例、单位、分级方法、时间和空间范围，判断图面差异是否真的支持自然过程或人地关系解释。",
+      "keywords": ["专题地图", "地图符号", "变量类型", "图例判读"],
+      "sourceIds": ["github-geovisualization-tutorial", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-geovisualization-tutorial", "locator": "README：geographic data, visualization methods, map projection and map practice", "note": "用于交叉核对专题地图变量、符号化、投影和案例实践的证据边界；不复制幻灯片、素材或案例地图。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地图、地理信息技术和自然地理图示章节", "note": "回到教材核对图例、地图表达和自然过程读图。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-spatial-unit-and-scale-effect",
+      "courseId": "compulsory-1",
+      "title": "空间单元与尺度效应",
+      "summary": "同一现象按网格、行政区、流域或样点统计，可能得到不同的空间分布和相关关系。地理分析应先说明空间单元如何划分、指标如何汇总、尺度是否与过程匹配，再比较区域差异；不能把统计单元的边界直接当成自然过程边界，也不能用局部结果无条件外推整体。",
+      "keywords": ["空间单元", "尺度效应", "统计边界", "区域比较"],
+      "sourceIds": ["web-us-census-geographic-areas", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-us-census-geographic-areas", "locator": "Geographic Areas：state, county, tract, block group and statistical geography definitions", "note": "用于交叉核对统计地理单元、层级和跨尺度比较边界；不复制边界文件或页面表格。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地理空间尺度、区域差异和地图判读章节", "note": "回到教材核对空间尺度、区域划分和自然过程外推。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-gis-rs-observation-workflow",
+      "courseId": "compulsory-1",
+      "title": "GIS 与遥感观测工作流",
+      "summary": "地理观测可按问题提出、数据获取、预处理、图层表达、变化识别和现场核验组织。遥感图像提供的是传感器记录，不是未经解释的地面事实；应同时检查空间与时间分辨率、云和阴影、分类误差、坐标一致性以及是否有独立观测支持过程判断。",
+      "keywords": ["GIS", "遥感", "观测流程", "现场核验"],
+      "sourceIds": ["github-deephydro-gisrs", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-deephydro-gisrs", "locator": "README：GIS and remote sensing applications course resources, spatial analysis and course code", "note": "用于交叉核对 GIS/遥感课程、空间分析和观测流程的证据边界；不复制代码、课件或数据。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地理信息技术、地球表层过程和自然灾害章节", "note": "回到教材核对观测证据、过程判读和灾害识别。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-industrial-transport-network-location",
+      "courseId": "compulsory-2",
+      "title": "产业与交通网络的区位联系",
+      "summary": "产业区位不能只看某一个成本因素，还要把原料、市场、能源、劳动力、技术、环境容量和交通网络放在同一空间关系中判断。交通改善会改变节点可达性和服务范围，却不会自动带来均衡发展；还要观察产业链分工、物流方向、区域等级和生态约束。",
+      "keywords": ["产业区位", "交通网络", "节点联系", "区域发展"],
+      "sourceIds": ["github-cumt-gis", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-cumt-gis", "locator": "README：GIS, database design, GNSS and GIS software development practice modules", "note": "用于交叉核对 GIS、定位数据和空间数据库对产业—交通空间关系的支持边界；不复制源码、报告或数据。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "产业区位、交通运输和区域联系章节", "note": "回到教材核对区位因素、交通网络和区域分工。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-spatial-database-query-and-service-area",
+      "courseId": "compulsory-2",
+      "title": "空间数据库查询与服务范围",
+      "summary": "公共服务区位分析可把设施点、道路网络、人口单元和行政边界放进空间数据库，通过属性筛选、空间相交、距离或服务区查询提出证据。查询结果仍取决于路网完整性、人口统计时点、阈值设定和边界口径，不能把几何上最近的设施直接等同于实际可达和公平。",
+      "keywords": ["空间数据库", "服务范围", "可达性", "公共服务"],
+      "sourceIds": ["github-spatialdb-nnu", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-spatialdb-nnu", "locator": "README：spatial data query, spatial data creation, database security and import/export experiments", "note": "用于交叉核对空间查询、数据创建和数据库安全的证据边界；不复制实验手册、SQL 或数据。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "城市公共服务、交通可达性和城乡联系章节", "note": "回到教材核对服务范围、可达性和空间公平。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-geographic-unit-definition-and-comparison",
+      "courseId": "compulsory-2",
+      "title": "地理单元定义与人口区域比较",
+      "summary": "人口、城市和区域比较前，必须先说明比较对象是行政单元、统计单元、功能区还是自然区域，并统一时间、人口口径、面积范围和缺失值处理。只有在定义相近的条件下，密度、增长率、年龄结构或公共服务指标才适合横向比较；否则应把差异解释为口径不一致的风险。",
+      "keywords": ["地理单元", "人口指标", "统计口径", "区域比较"],
+      "sourceIds": ["web-us-census-geographic-areas", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-us-census-geographic-areas", "locator": "Geographic Areas：statistical areas, geographic hierarchy and boundary guidance", "note": "用于交叉核对统计单元、层级和人口区域比较的定义边界；不复制数据或边界。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口、城镇化、区域差异和人口迁移章节", "note": "回到教材核对人口指标、空间单元和区域比较。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-map-projection-symbolization-and-purpose",
+      "courseId": "selective-1",
+      "title": "地图投影、符号化与用途匹配",
+      "summary": "地图投影会在面积、形状、距离和方向之间作取舍，专题表达还要让符号的视觉变量与数据性质匹配。自然过程判读时，应先明确地图服务的是全球分布、区域比较、路线测量还是局部定位，再检查投影失真、比例尺、图例和分级是否会放大或掩盖空间差异。",
+      "keywords": ["地图投影", "符号化", "比例尺", "用途匹配"],
+      "sourceIds": ["github-geovisualization-tutorial", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-geovisualization-tutorial", "locator": "README：map projection, visualization methods and map practice", "note": "用于交叉核对投影、符号化和地图用途匹配的证据边界；不复制教程素材或案例。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地球运动、地图投影和地理信息技术章节", "note": "回到教材核对投影失真、比例尺和自然地理空间表达。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-spatial-database-layer-and-attribute-evidence",
+      "courseId": "selective-1",
+      "title": "空间数据库的图层与属性证据",
+      "summary": "空间数据库把几何位置与属性字段连接起来，使河流、地形、土地覆盖、道路和设施等对象可以按位置、类别、时间或数值筛选。分析时要区分图层叠加产生的空间关联与因果关系，检查坐标系、字段定义、数据时点和一对多记录，避免重复计数或把属性缺失误读为地理现象。",
+      "keywords": ["空间数据库", "图层", "属性字段", "空间关联"],
+      "sourceIds": ["github-spatialdb-nnu", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-spatialdb-nnu", "locator": "README：SQL queries, spatial queries, spatial data creation and data import/export", "note": "用于交叉核对空间数据库、查询和图层—属性联合证据的边界；不复制 SQL、实验数据或手册。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地理信息技术、自然地理数据和空间分析章节", "note": "回到教材核对图层、空间关系和自然过程证据。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-gis-rs-preprocess-classify-and-verify",
+      "courseId": "selective-1",
+      "title": "GIS/遥感的预处理、分类与验证",
+      "summary": "遥感分类或 GIS 变化识别应把原始数据检查、投影和裁剪、特征选择、分类规则、样本独立性与精度验证分开记录。结果图只说明在给定传感器、时相、分辨率和分类体系下的识别结果；若要解释植被、水体、土壤或灾害过程，还需回到地面观测、气象记录和过程机制。",
+      "keywords": ["遥感分类", "数据预处理", "精度验证", "自然过程"],
+      "sourceIds": ["github-gis-rs-2024fall", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-gis-rs-2024fall", "locator": "README：GIS&RS tutorials, practice charts and reports", "note": "用于交叉核对 GIS/遥感任务链、结果图表和报告复核边界；不复制教程、作业、图表或数据。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "遥感、地表过程、土壤植被和自然灾害章节", "note": "回到教材核对遥感证据、分类限制和过程解释。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-visualization-choice-and-regional-narrative",
+      "courseId": "selective-2",
+      "title": "可视化选择与区域叙事",
+      "summary": "区域研究的图表和地图应服务于一个明确问题：比较总量可用比例或分组柱状图，观察变化可用时间序列，分析网络可用节点—连线，解释空间格局可用专题地图。多图联读时要统一时间和口径，并把图面观察、机制假设、反例和不确定性分层写出，避免用装饰性地图替代区域证据链。",
+      "keywords": ["地理可视化", "区域叙事", "图表选择", "证据链"],
+      "sourceIds": ["github-geovisualization-tutorial", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-geovisualization-tutorial", "locator": "README：geographic data visualization methods, projection, map considerations and case practice", "note": "用于交叉核对图表/地图选择、投影注意事项和区域叙事流程；不复制教程材料或案例。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域研究、区域联系、区域发展和规划评价章节", "note": "回到教材核对区域证据链、联系和发展路径。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-network-accessibility-and-spatial-query",
+      "courseId": "selective-2",
+      "title": "网络可达性与空间查询",
+      "summary": "区域可达性分析应先定义起点、目的地、阻抗和时间尺度，再选择直线距离、道路距离、时间成本或网络中心性指标。空间数据库查询可以找出服务范围、最近设施和网络瓶颈，但结果会受到路网拓扑、交通时段、边界截断和人口分布数据的影响，区域规划仍需现场和社会需求证据复核。",
+      "keywords": ["网络可达性", "空间查询", "交通成本", "区域规划"],
+      "sourceIds": ["github-spatialdb-nnu", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-spatialdb-nnu", "locator": "README：spatial queries, spatial data creation and database experiments", "note": "用于交叉核对空间查询、网络对象和数据结构的证据边界；不复制实验内容或数据。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域联系、交通网络、公共服务和国土空间规划章节", "note": "回到教材核对可达性、区域联系和规划评价。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-geographic-unit-scale-and-policy-comparison",
+      "courseId": "selective-2",
+      "title": "地理单元、尺度与政策比较",
+      "summary": "区域政策比较要把政策作用对象与统计单元对应起来：行政区适合看治理责任，功能区适合看联系和服务范围，自然区适合看生态过程，网格或样点适合看局地差异。若边界、时间和指标定义不一致，排名变化可能只是统计口径变化；应保留原始单元、转换方法和尺度敏感性说明。",
+      "keywords": ["区域政策", "统计单元", "尺度转换", "可比性"],
+      "sourceIds": ["web-us-census-geographic-areas", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-us-census-geographic-areas", "locator": "Geographic Areas：geographic hierarchy, statistical units and boundary guidance", "note": "用于交叉核对地理单元层级、边界和政策比较的尺度边界；不复制统计数据或地图。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域划分、区域联系、区域发展和规划评价章节", "note": "回到教材核对区域尺度、政策对象和空间治理。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geospatial-data-governance-and-resource-security",
+      "courseId": "selective-3",
+      "title": "地理空间数据治理与资源安全",
+      "summary": "资源环境安全判断不仅需要地图，还需要知道数据由谁生产、怎样更新、覆盖什么范围、采用什么坐标和许可，以及不同图层能否在时间上对应。对高程、水系、交通、土地覆盖和基础设施等数据，应保留元数据、版本和质量限制，区分公开数据可用性与资源安全结论的可信度。",
+      "keywords": ["地理空间数据", "数据治理", "元数据", "资源安全"],
+      "sourceIds": ["web-usgs-national-map", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-usgs-national-map", "locator": "The National Map：elevation, hydrography, transportation, land cover and data products", "note": "用于交叉核对多图层地理数据、更新和元数据边界；不复制数据、地图或下载产品。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "自然资源、生态环境、资源安全和国家安全章节", "note": "回到教材核对资源环境数据、风险判断和安全治理。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-industrial-network-resilience-and-regional-equity",
+      "courseId": "selective-3",
+      "title": "产业网络韧性与区域公平",
+      "summary": "产业和交通网络的韧性要看关键节点、替代路径、供应来源、能源与水资源约束以及灾害暴露。网络效率提高不一定意味着区域公平，核心节点获得投资时可能扩大边缘地区差距；评价方案应同时比较可靠性、生态代价、就业与公共服务分布，并说明受益者和承担风险者。",
+      "keywords": ["产业网络", "韧性", "区域公平", "灾害暴露"],
+      "sourceIds": ["github-cumt-gis", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-cumt-gis", "locator": "README：GIS, GNSS, database design and software development practice", "note": "用于交叉核对产业—交通网络、空间数据和定位信息的分析边界；不复制课程设计或源码。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源安全、灾害风险、区域协调和国家安全章节", "note": "回到教材核对网络韧性、风险分配和资源环境安全。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-map-evidence-uncertainty-and-decision-boundary",
+      "courseId": "selective-3",
+      "title": "地图证据不确定性与决策边界",
+      "summary": "地图适合显示空间格局和风险线索，但分类阈值、分辨率、边界、缺测和时间错配都会影响其稳定性。用于资源环境治理时，应把地图结论写成带条件的证据：哪些区域被识别、误差可能在哪里、还需要什么现场或统计核验、何时必须重新更新，而不是把一次制图结果直接当成永久分区。",
+      "keywords": ["地图证据", "不确定性", "风险分区", "决策边界"],
+      "sourceIds": ["web-usgs-national-map", "github-gis-rs-2024fall", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-usgs-national-map", "locator": "The National Map：multi-source geospatial layers, products and data limitations", "note": "用于交叉核对多源地图、更新和数据限制；不复制图层、地图或页面内容。"},
+        {"sourceId": "github-gis-rs-2024fall", "locator": "README：GIS&RS tutorials, practice charts and reports", "note": "用于交叉核对 GIS/遥感结果表达、任务复核和报告边界；不复制教程、图表或代码。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境安全、生态保护、灾害风险和规划评价章节", "note": "回到教材核对风险分区、证据不确定性和治理决策。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-fieldwork-sampling-coordinate-uncertainty",
+      "courseId": "compulsory-1",
+      "title": "地理实地调查的抽样与坐标不确定性",
+      "summary": "实地调查要先明确观察对象、样点或样线、时间窗口和记录字段，再说明样本如何覆盖不同地形、土地利用或风险位置。坐标点只是观测位置的表达，可能受定位精度、遮挡、移动和记录误差影响；自然过程判断还要结合照片、天气、水文或地质证据，避免把少量样点当成整个区域的事实。",
+      "keywords": ["实地调查", "抽样", "坐标误差", "自然过程"],
+      "sourceIds": ["github-isr-field-app", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-isr-field-app", "locator": "README：geographic fieldworks, spatial points, CSV import/export, interactive maps and audit logging", "note": "用于交叉核对实地调查、空间点记录和审计字段的证据边界；不复制代码、数据库或用户数据。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地理实地调查、自然地理过程和地理信息技术章节", "note": "回到教材核对观察对象、样点代表性和自然过程证据。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-historical-atlas-landscape-change",
+      "courseId": "compulsory-1",
+      "title": "历史地图集与地表景观变化",
+      "summary": "比较历史地图和现代地图时，应先核对成图年代、比例尺、投影、测绘目的、地名变化和边界含义，再比较河流、海岸、聚落、道路或土地利用线索。旧地图不是现代精确底图，图面空白也不等于当时没有地理对象；可靠的变化判断需要多期地图、遥感或现场资料互相印证。",
+      "keywords": ["历史地图", "地图比较", "景观变化", "时空证据"],
+      "sourceIds": ["github-wettstein-schulatlas-zurich", "web-national-archives-education", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-wettstein-schulatlas-zurich", "locator": "README：1887 school atlas, historical maps, landscapes and cartographic education", "note": "用于交叉核对历史学校地图集、景观表达和地图教育边界；不复制 PDF、图版或图片。"},
+        {"sourceId": "web-national-archives-education", "locator": "Education and Outreach：historical sources, maps and classroom inquiry", "note": "用于交叉核对档案来源、历史地图和课堂探究的证据边界；不复制档案图像或课程材料。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地图、地表形态、河流海岸和地理信息技术章节", "note": "回到教材核对地图尺度、地表过程和时空比较。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-geospatial-layer-and-natural-process-evidence",
+      "courseId": "compulsory-1",
+      "title": "地理空间图层与自然过程证据",
+      "summary": "自然地理问题可以把高程、水系、土地覆盖、灾害点和观测位置作为不同图层叠加，但每个图层的时间、分辨率、分类和误差都不同。图层重合适合提出过程线索，不能直接证明因果；要通过坡度、汇流、岩性、降水或现场观察等独立证据，逐步检验自然过程解释。",
+      "keywords": ["地理空间图层", "自然过程", "数据叠加", "证据核验"],
+      "sourceIds": ["web-un-geospatial", "github-isr-field-app", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-un-geospatial", "locator": "Geospatial, location data for a better world：maps, location data and spatial information coordination", "note": "用于交叉核对位置数据、地图服务和空间信息协调的资料边界；不复制地图、数据或页面内容。"},
+        {"sourceId": "github-isr-field-app", "locator": "README：spatial data, geometry points, interactive mapping and data audit", "note": "用于交叉核对点数据、图层记录和实地核验的流程边界；不复制应用代码或数据。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "圈层联系、地貌水文、灾害和地理信息技术章节", "note": "回到教材核对自然过程链、空间叠加和证据强度。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-student-migration-atlas-and-place-identity",
+      "courseId": "compulsory-2",
+      "title": "学生迁移地图与地方认同",
+      "summary": "家庭或社区迁移地图可以把人口流动、来源地、目的地、代际经历和地方文化联系起来，但地图中的个人叙事不能自动代表所有居民。分析时应区分个案、样本和总体，说明选择偏差、匿名化和同意边界，并把迁移的推拉因素、交通网络、就业教育机会和地方认同放在同一证据链中。",
+      "keywords": ["人口迁移", "地方认同", "叙事地图", "样本偏差"],
+      "sourceIds": ["github-family-history-migration-map", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-family-history-migration-map", "locator": "README：high-school student research, family migration roots and local cultural migration atlas", "note": "用于交叉核对学生迁移地图、地方文化和样本叙事边界；不复制页面、个人信息、数据或图表。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口迁移、地域文化、城乡联系和人地关系章节", "note": "回到教材核对迁移原因、人口流动和地方认同。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-density-denominator-and-comparison",
+      "courseId": "compulsory-2",
+      "title": "人口密度的分母与区域比较",
+      "summary": "人口密度是人口数量与土地面积的比值，读图时必须核对面积是否为陆地面积、统计单元是否一致、人口是年中估计还是普查时点，以及小岛、沙漠或无人区是否纳入分母。密度高低只能描述平均分布，不能直接说明拥挤、资源压力或生活质量，还要结合地形、产业、交通和公共服务判断。",
+      "keywords": ["人口密度", "分母", "指标口径", "区域比较"],
+      "sourceIds": ["github-everest-maps", "web-owid-population-density", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-everest-maps", "locator": "README：population density, people per km², area normalization and logarithmic color scale", "note": "用于交叉核对学校地图、面积归一化和人口密度可视化边界；不复制代码、图表或数据。"},
+        {"sourceId": "web-owid-population-density", "locator": "Population density：population, land area, time series and data definitions", "note": "用于交叉核对人口密度指标、时间序列和数据口径；不复制图表或数据转储。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口分布、人口密度、聚落和区域差异章节", "note": "回到教材核对人口分布、自然条件和人类活动影响。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-school-accessibility-and-public-service-gap",
+      "courseId": "compulsory-2",
+      "title": "学校可达性与公共服务缺口",
+      "summary": "学校分布地图可以发现设施集中、服务空白和城乡差异，但点位数量不等于教育机会。分析时要结合道路或时间成本、人口年龄结构、学校容量、行政边界、地形障碍和数据更新时间，并区分最近距离、实际通学路径与教育质量，才能把空间图面转化为公共服务问题。",
+      "keywords": ["学校可达性", "公共服务", "服务缺口", "城乡差异"],
+      "sourceIds": ["github-geospatial-school-mapping", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-geospatial-school-mapping", "locator": "README：school location mapping, accessibility insights, proximity and spatial planning", "note": "用于交叉核对学校点位、可达性和服务不足区域的证据边界；不复制代码、CSV、GeoJSON 或地图。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "城镇化、公共服务、城乡联系和区域差异章节", "note": "回到教材核对服务范围、城乡差异和公共资源配置。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-fieldwork-coordinate-system-and-error",
+      "courseId": "selective-1",
+      "title": "实地调查坐标系统与误差",
+      "summary": "同一实地对象在经纬度、投影坐标、道路地址或网格编号中会有不同表达。空间分析前应统一坐标参考、单位和精度，记录定位设备、采样时刻、遮挡和纠偏过程；距离、方向、面积或叠加结果都要说明误差来源，避免把坐标格式转换造成的偏移误判为自然地理变化。",
+      "keywords": ["坐标系统", "实地调查", "定位误差", "空间测量"],
+      "sourceIds": ["github-isr-field-app", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-isr-field-app", "locator": "README：CSV import, automatic coordinate system detection, geometry points and interactive maps", "note": "用于交叉核对坐标导入、点几何和空间记录的误差边界；不复制应用代码、数据库或用户数据。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地理信息技术、地图测量和自然地理观测章节", "note": "回到教材核对坐标、距离、方向和观测误差。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-historical-map-projection-and-generalization",
+      "courseId": "selective-1",
+      "title": "历史地图的投影与制图概化",
+      "summary": "历史地图比较不仅要看地理对象是否移动，还要检查投影、比例尺、制图技术和概化程度是否改变了形状、位置和细节。大比例尺地图能表达局部道路与建筑，小比例尺地图会合并或舍弃对象；因此跨时代比较应先匹配地图用途和空间尺度，再解释地表或人类活动变化。",
+      "keywords": ["历史地图", "投影", "制图概化", "比例尺"],
+      "sourceIds": ["github-wettstein-schulatlas-zurich", "web-national-archives-education", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-wettstein-schulatlas-zurich", "locator": "README：historical school atlas, maps, landscapes and cartographic representation", "note": "用于交叉核对历史地图教育、图面表达和地图比较边界；不复制 PDF 或图版。"},
+        {"sourceId": "web-national-archives-education", "locator": "Education and Outreach：historical sources, maps and source criticism", "note": "用于交叉核对历史资料、地图来源和制图语境；不复制档案图像或课程材料。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地图投影、比例尺、地理信息技术和地球观测章节", "note": "回到教材核对投影失真、比例尺和地图概化。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-density-log-scale-and-visualization",
+      "courseId": "selective-1",
+      "title": "人口密度的对数分级与视觉表达",
+      "summary": "人口密度往往跨越多个数量级，使用对数色阶可以同时看见高密度和低密度区域，但会改变读者对绝对差距的直觉。判读时要区分原始数值、分级规则和颜色含义，检查零值、缺失值、面积单位与统计边界，并用表格或线性指标复核地图是否夸大了某些区域差异。",
+      "keywords": ["人口密度", "对数色阶", "专题地图", "视觉偏差"],
+      "sourceIds": ["github-everest-maps", "web-owid-population-density", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-everest-maps", "locator": "README：logarithmic scale, viridis palette, population density and area units", "note": "用于交叉核对对数表达、色阶和人口密度地图的视觉边界；不复制代码、图片或图表。"},
+        {"sourceId": "web-owid-population-density", "locator": "Population density：indicator values, map visualization and time series", "note": "用于交叉核对指标数值、图表表达和时间序列；不复制图表或数据转储。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地图表达、统计图表、比例尺和地理信息技术章节", "note": "回到教材核对专题地图、数据分级和读图方法。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-community-migration-mapping-and-ethics",
+      "courseId": "selective-2",
+      "title": "社区迁移制图与地理伦理",
+      "summary": "社区迁移地图能把个体经历转成地方联系和区域流动的可视化证据，但精确地点、时间和身份可能造成隐私风险。区域研究应优先使用自愿、匿名、聚合后的数据，明确谁被看见、谁被遗漏、谁拥有解释权，并把地图叙事与人口统计、就业教育机会、交通网络和政策背景进行交叉核对。",
+      "keywords": ["迁移制图", "地理伦理", "隐私保护", "社区研究"],
+      "sourceIds": ["github-family-history-migration-map", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-family-history-migration-map", "locator": "README：student migration atlas, family history and local cultural geography", "note": "用于交叉核对迁移地图、地方叙事和隐私边界；不复制页面、个人数据或地图。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "人口迁移、区域联系、地域文化和区域发展章节", "note": "回到教材核对迁移网络、区域联系和地方文化。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-education-accessibility-network-and-service-area",
+      "courseId": "selective-2",
+      "title": "教育可达性网络与服务范围",
+      "summary": "教育服务范围分析应把学校点位、道路网络、人口分布、地形阻隔和学校容量放在同一空间模型中，区分直线邻近与实际通学成本。地图发现的服务空白只是规划线索，还需复核学龄人口变化、跨行政区就学、寄宿与线上教育等制度因素，避免把设施距离直接等同于教育公平。",
+      "keywords": ["教育可达性", "路网", "服务范围", "空间公平"],
+      "sourceIds": ["github-geospatial-school-mapping", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-geospatial-school-mapping", "locator": "README：school locations, proximity, accessibility insights and planning", "note": "用于交叉核对学校可达性、邻近分析和公共服务规划边界；不复制代码、数据或地图。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域联系、公共服务、交通网络和空间公平章节", "note": "回到教材核对可达性、区域联系和规划评价。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-national-geospatial-layer-and-regional-planning",
+      "courseId": "selective-2",
+      "title": "国家地理空间图层与区域规划",
+      "summary": "区域规划可以使用位置数据和多种地图服务，但必须明确图层的生产机构、更新时间、空间分辨率、覆盖范围和授权条件。高程、水系、交通、人口或土地利用图层叠加后，应先检查空间与时间匹配，再把结果转成区域功能、基础设施布局和生态约束的规划假设，并保留不能由地图回答的问题。",
+      "keywords": ["地理空间图层", "区域规划", "数据治理", "多源证据"],
+      "sourceIds": ["web-un-geospatial", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-un-geospatial", "locator": "Geospatial, location data for a better world：location data, mapping services and coordination", "note": "用于交叉核对多源位置数据、地图服务和规划治理的资料边界；不复制地图、数据或页面内容。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域发展、国土空间规划、区域联系和综合治理章节", "note": "回到教材核对图层叠加、区域功能和规划约束。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-aggregated-fieldwork-data-and-privacy",
+      "courseId": "selective-3",
+      "title": "聚合实地数据与地理隐私",
+      "summary": "资源环境或社区安全调查常需要位置数据，但公开地图不应暴露可识别个人、家庭或脆弱设施的精确坐标。可以通过网格聚合、最小样本阈值、模糊化时间和权限分层降低风险，同时保留数据质量审计；隐私保护会牺牲部分空间精度，因此决策者应知道哪些风险无法从公开图上判断。",
+      "keywords": ["地理隐私", "数据聚合", "实地调查", "安全治理"],
+      "sourceIds": ["github-isr-field-app", "github-family-history-migration-map", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-isr-field-app", "locator": "README：dataset access control, spatial points, file management and audit logging", "note": "用于交叉核对空间数据权限、点记录和审计机制的证据边界；不复制用户数据或应用代码。"},
+        {"sourceId": "github-family-history-migration-map", "locator": "README：high-school migration atlas and family history mapping", "note": "用于交叉核对个人迁移叙事、匿名化和公开地图风险；不复制个人信息或页面内容。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境安全、灾害风险、数据治理和国家安全章节", "note": "回到教材核对风险信息、保护对象和安全治理边界。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-historical-map-resource-environment-change",
+      "courseId": "selective-3",
+      "title": "历史地图与资源环境变化",
+      "summary": "历史地图可以帮助追踪河道、海岸、森林、聚落、交通和资源利用的长期变化，但地图年代、测绘目的和缺失信息会造成不确定性。资源环境评价应把历史地图作为变化线索，与现代遥感、统计、公报和现场记录交叉验证，并区分自然过程、工程改造、制度变化和数据表达差异。",
+      "keywords": ["历史地图", "资源环境", "长期变化", "交叉验证"],
+      "sourceIds": ["github-wettstein-schulatlas-zurich", "web-national-archives-education", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-wettstein-schulatlas-zurich", "locator": "README：historical atlas, landscapes, maps and educational history", "note": "用于交叉核对历史地图、景观记录和地图教育的资料边界；不复制 PDF 或图像。"},
+        {"sourceId": "web-national-archives-education", "locator": "Education and Outreach：historical records, maps and source criticism", "note": "用于交叉核对档案地图、来源批判和历史变化证据；不复制档案图像或课程材料。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境变化、生态保护、自然资源和国家安全章节", "note": "回到教材核对资源环境变化、保护治理和长期证据。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-population-density-and-urban-rural-equity",
+      "courseId": "selective-3",
+      "title": "人口密度与城乡资源环境公平",
+      "summary": "人口密度可以提示资源需求和基础设施压力，但高密度不一定意味着高风险，低密度也不一定意味着资源充足。资源环境安全分析应把人口密度与用水、能源、生态承载、交通、公共服务和灾害暴露结合，并说明城乡统计单元、时间口径和人口流动如何改变公平判断。",
+      "keywords": ["人口密度", "城乡公平", "资源环境", "承载压力"],
+      "sourceIds": ["web-owid-population-density", "github-everest-maps", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-owid-population-density", "locator": "Population density：population per area, regional comparison and time series", "note": "用于交叉核对人口密度、区域比较和时间序列边界；不复制图表或数据转储。"},
+        {"sourceId": "github-everest-maps", "locator": "README：school geography, population density, area units and map visualization", "note": "用于交叉核对学校地图、面积口径和视觉表达限制；不复制代码、图表或图片。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境承载力、资源安全、城乡发展和国家安全章节", "note": "回到教材核对资源需求、环境约束、公平和安全治理。"}
       ],
       "licenseStatus": "citation-only",
       "reviewStatus": "reviewed"

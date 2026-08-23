@@ -59,9 +59,9 @@ const expectedItems = {
   "geo-s3-earthquake-disaster-risk-and-resilience": "selective-3",
 };
 
-assert.equal(payload.version, "geo-2026.08.23.34");
-assert.equal(payload.sources.length, 232);
-assert.equal(payload.items.length, 530);
+assert.equal(payload.version, "geo-2026.08.24.38");
+assert.equal(payload.sources.length, 263);
+assert.equal(payload.items.length, 590);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);

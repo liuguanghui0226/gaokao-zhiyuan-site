@@ -44,9 +44,9 @@ const expectedItems = {
   "geo-s3-geography-quiz-coverage-and-validation": "selective-3",
 };
 
-assert.equal(payload.version, "geo-2026.08.23.34");
-assert.equal(payload.sources.length, 232);
-assert.equal(payload.items.length, 530);
+assert.equal(payload.version, "geo-2026.08.24.38");
+assert.equal(payload.sources.length, 263);
+assert.equal(payload.items.length, 590);
 
 const sources = new Map(payload.sources.map((source) => [source.id, source]));
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
