@@ -1,12 +1,26 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.30
+盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.31
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.30`：206 个来源、470 条卡片，其中 38 条 `authored-summary`、432 条 `citation-only`；五个课程族分别为 85、95、100、93、97 条。本轮新增 6 个官方公开网站与 15 条原创 `citation-only` 方法卡，覆盖宇宙环境、太阳活动、地质年代、洋流与海气联系、人口情景、地域文化和资源安全。
+当前发布版本 `geo-2026.08.23.31`：213 个来源、485 条卡片，其中 38 条 `authored-summary`、447 条 `citation-only`；五个课程族分别为 88、98、103、96、100 条。本轮新增 4 个官方公开网站、3 个 GitHub 地理教育/空间可视化项目与 15 条原创 `citation-only` 方法卡，覆盖水资源稀缺、可持续城市、气候影响证据、统计空间差异、环境—人口图层叠加和地图距离尺度。
 
-本轮累计新增 196 条 citation-only 方法卡：在上一轮 181 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收 NASA、USGS、NOAA、UNFPA、UNESCO 的公开学习入口，补齐宇宙环境—太阳活动—地质年代、人口情景—统计尺度、地域文化—区域治理和洋流—资源安全等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 211 条 citation-only 方法卡：在上一轮 196 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收 FAO、联合国 SDG、IPCC 以及 GitHub 空间可视化项目的公开入口，补齐水资源稀缺—需求管理、可持续城市—空间公平、气候影响—证据不确定性、机构分布—人口标准化和环境—人口 GIS 叠加等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.23.31 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `web-fao-water-scarcity` | [FAO Land and Water：Water Scarcity](https://www.fao.org/land-water/water/water-scarcity/en/) | FAO 官方专题页；访问日期 2026-08-23 | 参照水资源稀缺、供需压力、农业用水和管理响应；不复制正文、图表、数据表或页面版式。 |
+| `web-sdg6-water-security` | [United Nations SDG 6：Clean Water and Sanitation](https://sdgs.un.org/goals/goal6) | 联合国可持续发展目标 6；访问日期 2026-08-23 | 参照饮水、卫生、水质、用水效率、综合管理和公平配置指标链；不复制正文、图表或指标数据。 |
+| `web-sdg11-sustainable-cities` | [United Nations SDG 11：Sustainable Cities and Communities](https://sdgs.un.org/goals/goal11) | 联合国可持续发展目标 11；访问日期 2026-08-23 | 参照住房、交通、规划、灾害韧性、环境影响和空间公平的城市指标关系；不复制正文、图表或指标数据。 |
+| `web-ipcc-ar6-wg2-impacts-adaptation` | [IPCC AR6 WGII：Impacts, Adaptation and Vulnerability](https://www.ipcc.ch/report/ar6/wg2/) | IPCC 第六次评估报告第二工作组入口；访问日期 2026-08-23 | 参照气候影响、暴露、脆弱性、适应路径和证据不确定性；不复制报告正文、图表或数据。 |
+| `github-mapping-chinese-universities` | [Mapping Chinese Universities](https://github.com/lzz0722/mapping-chinese-universities) | commit `a4cdb1c01f9b964db7785125659666bab30943de`；MIT；访问日期 2026-08-23 | 参照高校时空扩张、人口标准化、区域不均衡、空间重心和样本限制；不复制代码、数据、图表或页面文字。 |
+| `github-gisnepal-environmental-demographic` | [GisNepal](https://github.com/a4aron/GisNepal) | commit `755fd7bdae2b9ce26efc436b648b29700c6026a2`；访问日期 2026-08-23 | 参照环境—人口图层叠加、城市规划、公共服务和灾害应用；仓库未声明统一许可证，不复制代码、数据库、地图或页面文字。 |
+| `github-plane-navigation-geography` | [Plane Navigation Game](https://github.com/olivercoltart/plane-game) | commit `2823b0c2496f4f283930208114a5079d1bd03e80`；项目标注 proprietary；访问日期 2026-08-23 | 参照地图定位、方位、距离、路线反馈和交互学习；不复制代码、地图、题目、图像或页面文字。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每个课程族 3 条。外部来源只用于水资源、城市指标、气候风险、空间统计和 GIS 方法的交叉核对；公开层继续保留人民教育出版社教材证据和原创表述，没有把第三方报告正文、指标数据、代码、地图或题目并入站点。
 
 ## geo-2026.08.23.30 新增公开来源
 

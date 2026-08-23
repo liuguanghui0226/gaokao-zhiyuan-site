@@ -9,30 +9,37 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-nasa-sun": "https://science.nasa.gov/sun/",
-  "web-nasa-solar-system": "https://science.nasa.gov/solar-system/",
-  "web-usgs-geologic-time": "https://pubs.usgs.gov/gip/geotime/",
-  "web-noaa-ocean-currents": "https://oceanservice.noaa.gov/education/tutorial_currents/01_intro.html",
-  "web-unfpa-state-world-population": "https://www.unfpa.org/swp2023",
-  "web-unesco-mab-programme": "https://www.unesco.org/en/mab",
+  "web-fao-water-scarcity": "https://www.fao.org/land-water/water/water-scarcity/en/",
+  "web-sdg6-water-security": "https://sdgs.un.org/goals/goal6",
+  "web-sdg11-sustainable-cities": "https://sdgs.un.org/goals/goal11",
+  "web-ipcc-ar6-wg2-impacts-adaptation": "https://www.ipcc.ch/report/ar6/wg2/",
+  "github-mapping-chinese-universities": "https://github.com/lzz0722/mapping-chinese-universities",
+  "github-gisnepal-environmental-demographic": "https://github.com/a4aron/GisNepal",
+  "github-plane-navigation-geography": "https://github.com/olivercoltart/plane-game",
+};
+
+const expectedCommits = {
+  "github-mapping-chinese-universities": "a4cdb1c01f9b964db7785125659666bab30943de",
+  "github-gisnepal-environmental-demographic": "755fd7bdae2b9ce26efc436b648b29700c6026a2",
+  "github-plane-navigation-geography": "2823b0c2496f4f283930208114a5079d1bd03e80",
 };
 
 const expectedItems = {
-  "geo-c1-cosmic-environment-and-earth-habitability": "compulsory-1",
-  "geo-c1-solar-activity-and-earth-systems": "compulsory-1",
-  "geo-c1-geological-time-and-stratigraphic-evidence": "compulsory-1",
-  "geo-c2-population-growth-capacity-and-scenario": "compulsory-2",
-  "geo-c2-population-data-definition-and-scale": "compulsory-2",
-  "geo-c2-cultural-landscape-and-human-environment": "compulsory-2",
-  "geo-s1-solar-system-motion-and-observation-model": "selective-1",
-  "geo-s1-ocean-current-density-and-climate": "selective-1",
-  "geo-s1-geologic-time-sequence-and-landform": "selective-1",
-  "geo-s2-cultural-landscape-and-regional-development": "selective-2",
-  "geo-s2-population-scenario-and-regional-planning": "selective-2",
-  "geo-s2-ocean-current-and-coastal-regional-evidence": "selective-2",
-  "geo-s3-solar-activity-and-technology-resource-security": "selective-3",
-  "geo-s3-geologic-time-and-resource-security": "selective-3",
-  "geo-s3-ocean-current-and-marine-resource-safety": "selective-3",
+  "geo-c1-water-scarcity-and-seasonal-balance": "compulsory-1",
+  "geo-c1-map-distance-and-route-scale": "compulsory-1",
+  "geo-c1-climate-impact-evidence-and-uncertainty": "compulsory-1",
+  "geo-c2-sustainable-city-indicator-chain": "compulsory-2",
+  "geo-c2-university-distribution-and-regional-inequality": "compulsory-2",
+  "geo-c2-environmental-demographic-overlay": "compulsory-2",
+  "geo-s1-water-scarcity-evapotranspiration-and-balance": "selective-1",
+  "geo-s1-climate-impact-chain-and-time-scale": "selective-1",
+  "geo-s1-route-distance-map-projection": "selective-1",
+  "geo-s2-sustainable-city-planning-and-spatial-equity": "selective-2",
+  "geo-s2-university-network-and-regional-development": "selective-2",
+  "geo-s2-gis-environmental-demographic-planning": "selective-2",
+  "geo-s3-water-security-demand-and-ecological-flow": "selective-3",
+  "geo-s3-climate-adaptation-confidence-and-security": "selective-3",
+  "geo-s3-spatial-inequality-data-and-resource-allocation": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.23.31");
@@ -42,16 +49,17 @@ assert.equal(payload.items.length, 485);
 const sources = new Map(payload.sources.map((source) => [source.id, source]));
 for (const [sourceId, url] of Object.entries(expectedSources)) {
   const source = sources.get(sourceId);
-  assert.ok(source, `missing v30 source ${sourceId}`);
+  assert.ok(source, `missing v31 source ${sourceId}`);
   assert.equal(source.url, url);
   assert.equal(source.accessedAt, "2026-08-23");
   assert.match(source.licenseNote, /citation|原创|不复制|仅作|许可/i);
+  if (expectedCommits[sourceId]) assert.equal(source.commitSha, expectedCommits[sourceId]);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v30 item ${itemId}`);
+  assert.ok(item, `missing v31 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

@@ -5444,6 +5444,13 @@ function syncNavigationState(nextView) {
   });
 }
 
+function focusActiveView(nextView) {
+  const view = $(`#view-${nextView}`);
+  if (!view || typeof view.focus !== "function") return false;
+  view.focus({ preventScroll: false });
+  return true;
+}
+
 function updateView(nextView) {
   state.view = nextView;
   syncClearFiltersControl();
@@ -5451,6 +5458,7 @@ function updateView(nextView) {
   syncNavigationState(nextView);
   $$(".view").forEach((view) => view.classList.remove("active-view"));
   $(`#view-${nextView}`).classList.add("active-view");
+  focusActiveView(nextView);
 }
 
 function bindEvents() {

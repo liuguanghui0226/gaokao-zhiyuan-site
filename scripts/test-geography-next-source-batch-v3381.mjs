@@ -64,9 +64,9 @@ const expectedItems = {
   "geo-s3-accessible-mapping-and-spatial-inclusion": "selective-3",
 };
 
-assert.equal(payload.version, "geo-2026.08.23.30");
-assert.equal(payload.sources.length, 206);
-assert.equal(payload.items.length, 470);
+assert.equal(payload.version, "geo-2026.08.23.31");
+assert.equal(payload.sources.length, 213);
+assert.equal(payload.items.length, 485);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);

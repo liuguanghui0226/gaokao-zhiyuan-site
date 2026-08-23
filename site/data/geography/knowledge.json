@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.30",
+  "version": "geo-2026.08.23.31",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1926,6 +1926,72 @@
       "url": "https://www.unesco.org/en/mab",
       "accessedAt": "2026-08-23",
       "licenseNote": "UNESCO 官方公开入口；本项目仅作人地关系、地域文化、保护地治理与区域发展协同的 citation-only 参照，不复制正文、图表或案例材料。"
+    },
+    {
+      "id": "web-fao-water-scarcity",
+      "title": "FAO Land and Water：Water Scarcity 水资源稀缺",
+      "publisher": "Food and Agriculture Organization of the United Nations",
+      "editionNote": "FAO 土地与水资源专题入口；访问日期 2026-08-23；用于核对水资源稀缺、供需压力、农业用水和管理响应的概念边界。",
+      "url": "https://www.fao.org/land-water/water/water-scarcity/en/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "FAO 官方公开专题页；本项目仅作水资源稀缺、用水需求和农业水资源管理的 citation-only 参照，不复制正文、图表、数据表或页面版式。"
+    },
+    {
+      "id": "web-sdg6-water-security",
+      "title": "United Nations SDG 6：Clean Water and Sanitation 清洁饮水与卫生",
+      "publisher": "United Nations Sustainable Development",
+      "editionNote": "联合国可持续发展目标 6 官方入口；访问日期 2026-08-23；用于核对饮水、卫生、水质、用水效率和水资源综合管理的指标链。",
+      "url": "https://sdgs.un.org/goals/goal6",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "联合国官方公开目标页；本项目仅作水安全、公共服务、生态流量和公平配置的 citation-only 参照，不复制正文、图表或指标数据。"
+    },
+    {
+      "id": "web-sdg11-sustainable-cities",
+      "title": "United Nations SDG 11：Sustainable Cities and Communities 可持续城市与社区",
+      "publisher": "United Nations Sustainable Development",
+      "editionNote": "联合国可持续发展目标 11 官方入口；访问日期 2026-08-23；用于核对住房、交通、规划、灾害韧性、环境影响和公共空间等城市指标的联系。",
+      "url": "https://sdgs.un.org/goals/goal11",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "联合国官方公开目标页；本项目仅作城市规划、公共服务、空间公平和韧性治理的 citation-only 参照，不复制正文、图表或指标数据。"
+    },
+    {
+      "id": "web-ipcc-ar6-wg2-impacts-adaptation",
+      "title": "IPCC AR6 WGII：Impacts, Adaptation and Vulnerability 气候影响、适应与脆弱性",
+      "publisher": "Intergovernmental Panel on Climate Change",
+      "editionNote": "IPCC 第六次评估报告第二工作组官方入口；访问日期 2026-08-23；用于核对气候影响、暴露、脆弱性、适应路径和证据不确定性的关系。",
+      "url": "https://www.ipcc.ch/report/ar6/wg2/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "IPCC 官方报告入口；本项目仅作气候风险链、适应能力和证据不确定性的 citation-only 参照，不复制报告正文、图表或数据。"
+    },
+    {
+      "id": "github-mapping-chinese-universities",
+      "title": "Mapping Chinese Universities：中国高校时空扩张与区域差异",
+      "publisher": "lzz0722/mapping-chinese-universities（GitHub）",
+      "editionNote": "公开仓库提交 `a4cdb1c01f9b964db7785125659666bab30943de`；访问日期 2026-08-23；MIT；README 以 Wikidata 的高校位置、建校年份和人口数据观察高校扩张、区域不均衡与空间重心变化，并说明样本偏向知名高校的限制。",
+      "url": "https://github.com/lzz0722/mapping-chinese-universities",
+      "commitSha": "a4cdb1c01f9b964db7785125659666bab30943de",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 MIT；本项目仅作时间序列、空间分布、人口标准化和样本限制的 citation-only 参照，不复制代码、数据、图表或页面文字。"
+    },
+    {
+      "id": "github-gisnepal-environmental-demographic",
+      "title": "GisNepal：环境与人口数据的空间地图",
+      "publisher": "a4aron/GisNepal（GitHub）",
+      "editionNote": "公开仓库提交 `755fd7bdae2b9ce26efc436b648b29700c6026a2`；访问日期 2026-08-23；README 介绍把环境与人口数据转为空间地图，并联系城市规划、教育、健康和自然灾害应用。",
+      "url": "https://github.com/a4aron/GisNepal",
+      "commitSha": "755fd7bdae2b9ce26efc436b648b29700c6026a2",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作环境—人口图层叠加、空间问题定位和 GIS 应用边界的 citation-only 参照，不复制代码、数据库、地图、账户信息或页面文字。"
+    },
+    {
+      "id": "github-plane-navigation-geography",
+      "title": "Plane Navigation Game：国家与首都地图导航游戏",
+      "publisher": "olivercoltart/plane-game（GitHub）",
+      "editionNote": "公开仓库提交 `2823b0c2496f4f283930208114a5079d1bd03e80`；访问日期 2026-08-23；README 介绍使用 Godot 制作欧洲国家与首都的任务式地图导航游戏，项目另标注为 proprietary。",
+      "url": "https://github.com/olivercoltart/plane-game",
+      "commitSha": "2823b0c2496f4f283930208114a5079d1bd03e80",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库标注 proprietary 且未提供可复用内容许可；本项目仅作地图定位、方位、距离和交互反馈的 citation-only 参照，不复制代码、地图、题目、图像或页面文字。"
     }
   ],
   "items": [
@@ -12165,6 +12231,218 @@
       "evidence": [
         {"sourceId": "web-noaa-ocean-currents", "locator": "NOAA Ocean Service / Ocean Currents: 海流、水体交换、热量输送与沿海环境入口", "note": "用于交叉核对海洋过程和资源环境风险边界；不复制正文、图示或数据。"},
         {"sourceId": "pep-geography-selective-3", "locator": "第二章海洋空间资源与第三章环境安全、生态保护", "note": "回到教材核对海洋资源开发、污染治理、生态保护和国家安全。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-water-scarcity-and-seasonal-balance",
+      "courseId": "compulsory-1",
+      "title": "水资源稀缺与季节性供需平衡",
+      "summary": "水资源题先区分降水总量、可利用水量、季节分配和人类需求，不能用年降水量直接代表全年供水能力。应沿水循环、蓄存调节、用水结构和生态需水建立供需链，再判断工程调水、节水或产业调整的适用条件。",
+      "keywords": ["水资源稀缺", "季节变化", "供需平衡", "用水结构"],
+      "sourceIds": ["web-fao-water-scarcity", "web-sdg6-water-security", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-fao-water-scarcity", "locator": "FAO Land and Water / Water Scarcity：水资源压力、需求与管理入口", "note": "用于交叉核对水资源稀缺和农业用水需求的判断边界；不复制正文、图表或数据。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "水循环与水资源、人类活动对水循环的影响章节", "note": "回到教材核对降水、径流、蓄存、用水和水资源时空分布。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-map-distance-and-route-scale",
+      "courseId": "compulsory-1",
+      "title": "地图距离、路线距离与尺度",
+      "summary": "地图上的两地距离要先说明测量对象：直线距离、沿道路或航线的路线距离、实际行程时间并不相同。读图时应结合比例尺、投影、地形阻隔和网络连接判断结果，不能把交互地图上的移动路径直接当作真实交通成本。",
+      "keywords": ["地图距离", "比例尺", "路线距离", "投影"],
+      "sourceIds": ["github-plane-navigation-geography", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-plane-navigation-geography", "locator": "README / interactive map missions for European countries and capital cities", "note": "用于交叉核对地图定位、路线反馈与游戏化交互之间的证据边界；不复制代码、地图或题目。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地图基础、比例尺、方向与地理信息技术相关章节", "note": "回到教材核对比例尺、方向、距离和地图表达。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-climate-impact-evidence-and-uncertainty",
+      "courseId": "compulsory-1",
+      "title": "气候影响证据与不确定性",
+      "summary": "气候变化材料应先区分气候危险、暴露对象、脆弱性和实际损失，再判断影响链条。不同地区的结果还会受到地形、基础设施、人口和适应能力影响；预测情景提供的是条件范围，不能被改写成确定发生的单一结果。",
+      "keywords": ["气候影响", "暴露度", "脆弱性", "不确定性"],
+      "sourceIds": ["web-ipcc-ar6-wg2-impacts-adaptation", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-ipcc-ar6-wg2-impacts-adaptation", "locator": "IPCC AR6 WGII：impacts, adaptation and vulnerability evidence framework", "note": "用于交叉核对危险、暴露、脆弱性、适应和证据不确定性之间的关系；不复制报告正文或图表。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "自然灾害、自然环境整体性与人类活动章节", "note": "回到教材核对自然过程、灾害成因、影响范围和防灾减灾。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-sustainable-city-indicator-chain",
+      "courseId": "compulsory-2",
+      "title": "可持续城市指标链",
+      "summary": "城市可持续性不能只看 GDP、人口或绿地中的单一指标，应把住房、交通、公共服务、灾害韧性、环境影响和空间公平放在同一指标链中。比较城市时先统一统计口径和空间单元，再解释指标之间的因果联系与权衡。",
+      "keywords": ["可持续城市", "指标链", "公共服务", "空间公平"],
+      "sourceIds": ["web-sdg11-sustainable-cities", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-sdg11-sustainable-cities", "locator": "UN SDG 11 目标页章节：housing, transport, planning, resilience and environmental impact indicators", "note": "用于交叉核对城市指标的多维结构；不复制目标页正文或指标数据。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "城镇化、城市内部空间结构与人地协调章节", "note": "回到教材核对城市功能、公共服务、土地利用和人地协调。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-university-distribution-and-regional-inequality",
+      "courseId": "compulsory-2",
+      "title": "高校分布与区域不均衡",
+      "summary": "观察教育设施分布时，应同时看机构数量、人口标准化密度、建成年份和空间重心，避免把“数量多”直接等同于“服务公平”。数据来自知识图谱或公开样本时，还要检查遗漏、知名度偏差、行政区口径和人口年份是否一致。",
+      "keywords": ["高校分布", "区域差异", "人口标准化", "样本偏差"],
+      "sourceIds": ["github-mapping-chinese-universities", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-mapping-chinese-universities", "locator": "README / 849 universities, province population normalization, temporal expansion and dataset limitations", "note": "用于交叉核对机构分布、人口标准化、时间序列和样本限制；不复制代码、数据或图表。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口分布、城镇化、公共服务与区域联系章节", "note": "回到教材核对人口、聚落、公共服务和区域差异。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-environmental-demographic-overlay",
+      "courseId": "compulsory-2",
+      "title": "环境与人口图层叠加",
+      "summary": "区域环境问题不能只看自然要素图，也要把人口、道路、聚落和公共服务图层叠加，判断谁暴露在风险中、谁承担治理成本以及哪些地方更需要优先投入。叠加结果仍需核对数据时间、空间分辨率和因果关系，不能把空间重合直接写成因果。",
+      "keywords": ["图层叠加", "人口暴露", "环境问题", "空间因果"],
+      "sourceIds": ["github-gisnepal-environmental-demographic", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-gisnepal-environmental-demographic", "locator": "README / environmental and demographic data mapped for urban planning, education, health and natural disaster applications", "note": "用于交叉核对环境—人口图层叠加和公共问题定位的应用边界；不复制代码、数据库或地图。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口、聚落、产业活动与人地协调章节", "note": "回到教材核对人口空间分布、聚落布局和人地关系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-water-scarcity-evapotranspiration-and-balance",
+      "courseId": "selective-1",
+      "title": "水资源稀缺、蒸散发与水量平衡",
+      "summary": "解释水资源稀缺时，应把降水输入、地表径流、地下水补给、蒸散发和人类取用放进同一水量平衡框架。高降水区也可能因季节错配、蒸散强、储存不足或需求集中出现阶段性短缺，判断需水时要避免只用一个气候指标。",
+      "keywords": ["蒸散发", "水量平衡", "季节错配", "水资源稀缺"],
+      "sourceIds": ["web-fao-water-scarcity", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "web-fao-water-scarcity", "locator": "FAO Water Scarcity：水资源供给、需求和管理压力的主题入口", "note": "用于交叉核对水量平衡和用水压力的解释边界；不复制正文、图表或数据。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "水体相互转化、水量平衡、陆地水体和自然环境整体性章节", "note": "回到教材核对水循环、水量平衡、蒸散发和自然环境联系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-climate-impact-chain-and-time-scale",
+      "courseId": "selective-1",
+      "title": "气候影响链与时间尺度",
+      "summary": "气候影响判读要先区分短时天气事件、年际气候变率和长期气候趋势，再沿危险—暴露—脆弱性—适应能力解释结果。不同时间尺度的资料不能直接拼接成同一趋势，情景比较还要注明基准期、空间范围和证据强度。",
+      "keywords": ["时间尺度", "气候变率", "影响链", "基准期"],
+      "sourceIds": ["web-ipcc-ar6-wg2-impacts-adaptation", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "web-ipcc-ar6-wg2-impacts-adaptation", "locator": "IPCC AR6 WGII：climate impacts, risks, adaptation and confidence framing", "note": "用于交叉核对气候影响链、适应和不确定性表达；不复制报告正文或图表。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "大气运动、气候系统、自然环境整体性与地域分异章节", "note": "回到教材核对天气与气候、时间尺度和自然过程证据。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-route-distance-map-projection",
+      "courseId": "selective-1",
+      "title": "路线距离、投影与空间测量",
+      "summary": "空间测量题要先明确距离是球面大圆距离、投影平面距离还是沿网络路线的距离，再检查投影和比例尺是否适合任务。交互地图适合建立位置关系和方向直觉，定量比较仍需回到坐标、投影、测距方法和误差说明。",
+      "keywords": ["大圆距离", "地图投影", "空间测量", "误差"],
+      "sourceIds": ["github-plane-navigation-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-plane-navigation-geography", "locator": "README / interactive European map navigation and country-capital missions", "note": "用于交叉核对交互导航、位置线索和路线反馈的学习边界；不复制代码、地图或游戏内容。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地理信息技术、地图投影、经纬网和空间尺度章节", "note": "回到教材核对坐标、投影、比例尺和空间测量。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-sustainable-city-planning-and-spatial-equity",
+      "courseId": "selective-2",
+      "title": "可持续城市规划与空间公平",
+      "summary": "城市规划评价应把住房、交通、基础设施、公共空间、灾害韧性和环境影响放到同一空间框架，比较不同群体和不同片区的受益与负担。规划方案不能只列目标，还要说明指标、尺度、权衡关系和后续监测机制。",
+      "keywords": ["城市规划", "空间公平", "公共空间", "韧性"],
+      "sourceIds": ["web-sdg11-sustainable-cities", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-sdg11-sustainable-cities", "locator": "UN SDG 11 目标页章节：城市住房、交通、规划、韧性与环境影响目标链", "note": "用于交叉核对城市可持续规划的多目标约束；不复制正文、图表或指标数据。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域发展、城市体系、国土空间与区域协调章节", "note": "回到教材核对区域规划、城市联系、土地利用和空间公平。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-university-network-and-regional-development",
+      "courseId": "selective-2",
+      "title": "高校网络与区域发展重心",
+      "summary": "把高校看作区域创新和公共服务网络时，应同时观察建校时间、空间集聚、人口基数、交通联系和功能层级。时间序列中的空间重心变化可以提示区域发展格局，但不能单独证明经济增长或创新扩散，还需加入产业和政策证据。",
+      "keywords": ["高校网络", "空间重心", "区域发展", "时间序列"],
+      "sourceIds": ["github-mapping-chinese-universities", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-mapping-chinese-universities", "locator": "README / university expansion, regional imbalance, population-normalized comparison and geographic drift", "note": "用于交叉核对空间重心、区域不均衡和时间序列分析的证据边界；不复制代码、数据或图表。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域发展条件、区域联系、产业与创新要素章节", "note": "回到教材核对区域要素、中心功能、联系网络和发展差异。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-gis-environmental-demographic-planning",
+      "courseId": "selective-2",
+      "title": "GIS 环境—人口叠加与区域规划",
+      "summary": "区域规划可用 GIS 将环境质量、人口分布、道路、公共设施和灾害暴露叠加，再按问题选择空间单元和优先级。分析必须说明数据来源、时间、分辨率和缺失值，不能因图层重叠就跳过机制解释或把相关关系写成因果。",
+      "keywords": ["GIS", "图层叠加", "区域规划", "数据质量"],
+      "sourceIds": ["github-gisnepal-environmental-demographic", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-gisnepal-environmental-demographic", "locator": "README / environmental, demographic and planning-oriented spatial mapping application", "note": "用于交叉核对环境—人口图层、城市规划和灾害应用的空间分析边界；不复制代码、数据库或地图。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域规划、资源环境治理和地理信息技术章节", "note": "回到教材核对区域问题、空间规划、数据证据和综合治理。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-water-security-demand-and-ecological-flow",
+      "courseId": "selective-3",
+      "title": "水安全、需求管理与生态流量",
+      "summary": "水安全不只是增加供水工程，还要同时看水质、需求管理、用水效率、生态流量和不同群体的获得机会。评价跨区域调水或产业布局时，应比较供水可靠性、生态代价、输配损失、应急能力和长期公平，避免把水量增加等同于安全提升。",
+      "keywords": ["水安全", "需求管理", "生态流量", "供水公平"],
+      "sourceIds": ["web-sdg6-water-security", "web-fao-water-scarcity", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-sdg6-water-security", "locator": "UN SDG 6 目标页章节：water quality, efficiency, integrated management and equitable access", "note": "用于交叉核对水安全的多维目标和公平配置边界；不复制目标页正文或指标数据。"},
+        {"sourceId": "web-fao-water-scarcity", "locator": "FAO Water Scarcity：农业用水、供需压力和管理响应入口", "note": "用于交叉核对需求管理、农业水资源压力和可利用水量。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源安全、生态保护和国家安全章节", "note": "回到教材核对水资源安全、生态流量、跨区域调配和治理权衡。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-climate-adaptation-confidence-and-security",
+      "courseId": "selective-3",
+      "title": "气候适应证据与安全能力",
+      "summary": "气候安全评价要把危险强度、暴露人口、脆弱性、适应能力和恢复能力分开，再判断措施是否降低实际风险。报告中的置信度和情景范围应被保留；防洪、农业调整、基础设施升级或保险等方案还要说明成本、覆盖范围、残余风险和公平影响。",
+      "keywords": ["气候适应", "安全能力", "置信度", "残余风险"],
+      "sourceIds": ["web-ipcc-ar6-wg2-impacts-adaptation", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-ipcc-ar6-wg2-impacts-adaptation", "locator": "IPCC AR6 WGII：risk, vulnerability, adaptation and confidence evidence", "note": "用于交叉核对气候适应、证据置信度和残余风险的判断边界；不复制报告正文或图表。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "环境安全、生态文明与国家安全章节", "note": "回到教材核对环境风险、适应能力、资源安全和治理措施。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-spatial-inequality-data-and-resource-allocation",
+      "courseId": "selective-3",
+      "title": "空间不均衡数据与资源配置",
+      "summary": "资源和公共服务配置题要先确认统计单位、人口分母、时间点和样本覆盖，再比较区域差异。机构数量、每万人指标和空间重心回答的是不同问题；只有把数据限制、需求规模、交通可达性和治理目标一起纳入，才能讨论资源安全和配置公平。",
+      "keywords": ["空间不均衡", "人口分母", "资源配置", "数据限制"],
+      "sourceIds": ["github-mapping-chinese-universities", "web-sdg6-water-security", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-mapping-chinese-universities", "locator": "README / count versus per-capita density, province grouping and Wikidata coverage limitations", "note": "用于交叉核对数量、人口标准化、区域差异和样本限制；不复制仓库数据、代码或图表。"},
+        {"sourceId": "web-sdg6-water-security", "locator": "UN SDG 6 目标页章节：safe water, service access and equity-oriented indicators", "note": "用于交叉核对公共服务可达性和资源配置公平的目标边界；不复制正文或指标数据。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源安全、资源配置和国家安全章节", "note": "回到教材核对资源供需、空间差异、保障能力和公平治理。"}
       ],
       "licenseStatus": "citation-only",
       "reviewStatus": "reviewed"
