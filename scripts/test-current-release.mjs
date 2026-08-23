@@ -185,6 +185,7 @@ const tests = [
   "test-geography-external-link-accessibility-v3396.mjs",
   "test-geography-next-source-batch-v3397.mjs",
   "test-external-link-accessibility-v3398.mjs",
+  "test-geography-next-source-batch-v3400.mjs",
   "test-toggle-control-accessibility.mjs",
   "test-filter-scope-status-v3355.mjs",
   "test-recommendation-draft-status-v3356.mjs",

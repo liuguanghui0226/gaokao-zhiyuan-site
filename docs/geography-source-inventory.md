@@ -1,12 +1,27 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.33
+盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.34
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.33`：224 个来源、515 条卡片，其中 38 条 `authored-summary`、477 条 `citation-only`；五个课程族分别为 94、104、109、102、106 条。本轮新增 5 个公开机构/科学数据入口、3 个 GitHub 教材/地理数据分析项目与 15 条原创 `citation-only` 方法卡，覆盖人口情景、城乡基础设施、遥感证据、地形数据、气象观测、灾害韧性和生态安全。
+当前发布版本 `geo-2026.08.23.34`：232 个来源、530 条卡片，其中 38 条 `authored-summary`、492 条 `citation-only`；五个课程族分别为 97、107、112、105、109 条。本轮新增 4 个 GitHub 地理教育/地球科学项目、4 个公开机构/教育/海岸数据入口与 15 条原创 `citation-only` 方法卡，覆盖海岸过程、防灾实地观察、地球系统模型、迁移统计、城市空间公平、开源地理教育、供应链、气候迁移和海岸生态韧性。
 
-本轮累计新增 241 条 citation-only 方法卡：在上一轮 226 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收联合国人口展望、Copernicus Data Space、应急管理与城乡建设公开入口，以及三个 GitHub 教材/地理数据分析项目，补齐人口情景—公共服务、区域比较—尺度、遥感—地形数据、气象观测—气候平均、灾害治理—生态安全等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 256 条 citation-only 方法卡：在上一轮 241 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收 IOM 世界移民报告、UN-Habitat 城市数据、美国人口普查局教育入口、NOAA 海岸带教育入口，以及四个 GitHub 地理教育/地球科学项目，补齐海岸过程—风险链、灾害实地核验—图层、迁移存量—流量、城市指标—空间公平、模型不确定性、商业地理—供应链和气候迁移—安全等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.23.34 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-omu-musubouar-disaster-education` | [MUSUBOU-AR：防灾教育扩展现实应用](https://github.com/omu-geolab/musubouAR) | commit `d4528c459bf03fcbf19e14e1c08eda788ecc9332`；MIT；访问日期 2026-08-23 | 参照灾害图层、路线、AR 警示和防灾实地教育；不复制代码、素材、数据或页面文字。 |
+| `github-earthai-earth-science-platform` | [EarthAi：地球科学与灾害韧性平台](https://github.com/Ethos2022/EarthAi) | commit `c312be45dd728aec0c6b77b2f461c19ba811fccd`；MIT；访问日期 2026-08-23 | 参照地球系统模型、地理智能、灾害韧性和教育边界；不复制代码、模型、数据或页面内容。 |
+| `github-foss-geospatial-science-education` | [FOSS geospatial science education：开源地理空间教育](https://github.com/wenzeslaus/foss-in-geospatial-science-education) | commit `5d5a0faaa2ab1e8b1f18885f46c701dfa2036989`；CC BY-SA 4.0；访问日期 2026-08-23 | 参照开源工具、开放数据、归因和可复核教学流程；不复制演示文稿、图片、代码或正文。 |
+| `github-gitenberg-commercial-geography-high-school` | [Commercial Geography：High Schools 历史教材](https://github.com/GITenberg/Commercial-GeographyA-Book-for-High-Schools-Commercial-Courses-and-Business-Colleges_24884) | commit `43bf9b196fbf5b81f646114b823293f0d24026ec`；Project Gutenberg 公共领域边界；访问日期 2026-08-23 | 参照历史商业地理、产业联系和供应链空间；不复制书稿、版式或原文。 |
+| `web-iom-world-migration-report` | [IOM：World Migration Report 世界移民报告](https://worldmigrationreport.iom.int/) | 报告入口；访问日期 2026-08-23 | 核对迁移类型、驱动因素、数据口径、网络和区域联系；不复制正文、图表或数据。 |
+| `web-unhabitat-urban-data` | [UN-Habitat Data：全球城市数据平台](https://data.unhabitat.org/) | 数据平台；访问日期 2026-08-23 | 核对城市指标、居住环境、基础设施、空间单元和空间公平；不复制数据表、图表或页面内容。 |
+| `web-census-statistics-in-schools` | [U.S. Census Bureau：Statistics in Schools](https://www.census.gov/programs-surveys/sis.html) | 教育入口；访问日期 2026-08-23 | 核对人口普查、人口结构、统计图表和数据素养的课堂边界；不复制活动材料、图表或数据。 |
+| `web-noaa-coastal-issues` | [NOAA Ocean Service：Coastal Issues](https://oceanservice.noaa.gov/education/tutorial_coastal_issues/welcome.html) | 海岸带教育入口；访问日期 2026-08-23 | 核对海岸过程、风暴潮、海平面变化、海岸风险、生态缓冲和治理选择；不复制正文、图片、活动或数据。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每门课程族 3 条。所有卡片均保留人民教育出版社教材证据；GitHub 项目和公共网站只用于概念、模型、统计、海岸过程与教学方法的交叉核对，不把第三方正文、题目、答案、代码、地图、模型、图表或数据并入站点。
 
 ## geo-2026.08.23.33 新增公开来源
 
