@@ -1,12 +1,24 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.28
+盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.29
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.28`：195 个来源、440 条卡片，其中 38 条 `authored-summary`、402 条 `citation-only`；五个课程族分别为 79、89、94、87、91 条。本轮新增 1 个公开网站、1 个 GitHub 来源、3 个 National Geographic 教育条目与 15 条原创 `citation-only` 方法卡，覆盖洪涝与滑坡过程、可再生能源区位、地球观测数据、教材版本映射、区域规划和证据不确定性。
+当前发布版本 `geo-2026.08.23.29`：200 个来源、455 条卡片，其中 38 条 `authored-summary`、417 条 `citation-only`；五个课程族分别为 82、92、97、90、94 条。本轮新增 1 个公开网站、4 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖中国地形可视化、地图投影失真、国家与城市层级、人口比较、交互学习证据边界和 NASA 地球观测图像判读。
 
-本轮累计新增 166 条 citation-only 方法卡：在上一轮 151 条的基础上，本轮继续吸收高中地理笔记的教材版本索引、洪涝与滑坡过程、可再生能源空间比较和 NASA 地球科学数据学习入口，补齐自然—人文联动、风险暴露、资源约束、尺度匹配、区域规划与数据不确定性等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 181 条 citation-only 方法卡：在上一轮 166 条的基础上，本轮继续吸收中国地形、地图投影、地理游戏、国家与人口比较和 NASA Earth Observatory 的图像叙事，补齐地形—聚落、投影—指标、交互—证据、灾害—暴露和土地资源安全等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.23.29 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-malu-china-terrain-map` | [中国3D地形地貌互动教学地图](https://github.com/malu322-jpg/china-terrain-map) | commit `1bde0972dc06ee7ec96534ac91beaecb7fda9beb`；访问日期 2026-08-23；README 介绍三级阶梯、DEM、地形剖面、山脉、高原、盆地、平原、河流和城市的教学级三维观察 | 参照中国地形可视化、剖面、垂直夸张和教学精度边界；仓库未声明统一许可证，不复制代码、数据、图片或页面文字。 |
+| `github-yusuf-zero2truesize` | [02truesize：地图真实面积与投影教学工具](https://github.com/YusufEminoglu/zero2truesize) | commit `2ebc95e7e6aae01c8efe1394e7cc33458f08cbc1`；访问日期 2026-08-23；GPL-3.0 | 参照真实面积、Mercator 失真、投影选择、Tissot 指示圈和空间比较；不复制插件代码、图标、数据或页面文字。 |
+| `github-google-aog-education` | [AOG Education：Google Nest Hub 地理教育游戏](https://github.com/googleinterns/AOG-Education) | commit `cda8c68d2bd339299b1a6bf7d95ee301dcfbcd0b`；访问日期 2026-08-23；README 说明 geography、language、reading 三学科和国家/首都/城市地图问答 | 参照地理层级、地图问答、位置反馈和交互学习流程；未声明统一许可证，不复制代码、地名数据、Google 地图输出或页面文字。 |
+| `github-geofun` | [GeoFun：基于国家与人口的地理学习应用](https://github.com/Emil-Lima/GeoFun) | commit `b64b1931f775ff285ec677c53d61e3674c6343b2`；访问日期 2026-08-23；README 介绍国家选择、欧洲国家资料、人口页面、保存国家和 quiz | 参照国家比较、人口指标、地图交互和复习闭环；未声明统一许可证，不复制代码、REST Countries 返回、图片、数据库或页面文字。 |
+| `web-nasa-earth-observatory` | [NASA Earth Observatory：地球观测图像与科学故事](https://earthobservatory.nasa.gov/) | NASA 官方入口；访问日期 2026-08-23 | 参照气候、土地、水体、生态、灾害和人类活动图像的多时相、多尺度证据判读；具体图像和第三方素材按各自署名/使用条件处理，不复制图片、图注或数据产品。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每个课程族 3 条。外部来源只用于地形、投影、交互学习、国家与人口比较、地球观测和资源环境安全的交叉核对，公开层继续保留人民教育出版社教材证据和原创表述；没有把第三方题目、答案、代码、地图、接口返回或图像并入站点。
 
 ## geo-2026.08.23.28 新增公开来源
 

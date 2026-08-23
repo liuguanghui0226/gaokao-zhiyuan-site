@@ -9,53 +9,48 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-globe-program-clouds-api": {
-    url: "https://www.globe.gov/globe-data/globe-api",
+  "github-malu-china-terrain-map": {
+    url: "https://github.com/malu322-jpg/china-terrain-map",
+    commitSha: "1bde0972dc06ee7ec96534ac91beaecb7fda9beb",
     accessedAt: "2026-08-23",
   },
-  "github-ruddro-globe-cloud-insights": {
-    url: "https://github.com/ruddro-roy/globe-cloud-insights",
-    commitSha: "b956e24ac5f41ece2e3e4b7d096c06d76df79cc5",
+  "github-yusuf-zero2truesize": {
+    url: "https://github.com/YusufEminoglu/zero2truesize",
+    commitSha: "2ebc95e7e6aae01c8efe1394e7cc33458f08cbc1",
     accessedAt: "2026-08-23",
   },
-  "github-ccosse-colormyworld": {
-    url: "https://github.com/ccosse/colormyworld",
-    commitSha: "6a17d2ccd12503e31344ab6050eef86f9985d3d6",
+  "github-google-aog-education": {
+    url: "https://github.com/googleinterns/AOG-Education",
+    commitSha: "cda8c68d2bd339299b1a6bf7d95ee301dcfbcd0b",
     accessedAt: "2026-08-23",
   },
-  "github-ayushishukla-geography": {
-    url: "https://github.com/ayushishukla-geo/Geography",
-    commitSha: "3769f9c88270450ae6a930d40dc761590fb8b6cc",
+  "github-geofun": {
+    url: "https://github.com/Emil-Lima/GeoFun",
+    commitSha: "b64b1931f775ff285ec677c53d61e3674c6343b2",
     accessedAt: "2026-08-23",
   },
-  "github-bhagyashree-geography-lesson-plans": {
-    url: "https://github.com/bhagyashree21289/Geography-ICSE-Lesson-Plans",
-    commitSha: "ff0c43a86f756574180acfc59f68a3e3ea9693a4",
-    accessedAt: "2026-08-23",
-  },
-  "github-osgeo-geospatial-education": {
-    url: "https://github.com/OSGeo/osgeo",
-    commitSha: "ba9b9f1228451dc717b95289e82c9d36ba67a954",
+  "web-nasa-earth-observatory": {
+    url: "https://earthobservatory.nasa.gov/",
     accessedAt: "2026-08-23",
   },
 };
 
 const expectedItems = {
-  "geo-c1-cloud-observation-and-weather-evidence": "compulsory-1",
-  "geo-c1-field-observation-sampling-and-bias": "compulsory-1",
-  "geo-c1-landform-climate-gis-learning-path": "compulsory-1",
-  "geo-c2-geography-scavenger-hunt-place-clues": "compulsory-2",
-  "geo-c2-map-color-and-data-meaning": "compulsory-2",
-  "geo-c2-lesson-plan-from-place-to-region": "compulsory-2",
-  "geo-s1-cloud-cover-and-radiation-observation": "selective-1",
-  "geo-s1-ground-observation-satellite-match": "selective-1",
-  "geo-s1-landform-climate-gis-concept-integration": "selective-1",
-  "geo-s2-citizen-science-spatial-sampling": "selective-2",
-  "geo-s2-open-source-geospatial-education-stack": "selective-2",
-  "geo-s2-map-color-classification-and-legend": "selective-2",
-  "geo-s3-cloud-data-and-climate-risk-boundary": "selective-3",
-  "geo-s3-citizen-observation-ethics-and-location-privacy": "selective-3",
-  "geo-s3-open-geospatial-governance-and-resource-security": "selective-3",
+  "geo-c1-china-terrain-three-staircases-and-profile": "compulsory-1",
+  "geo-c1-map-projection-apparent-and-true-area": "compulsory-1",
+  "geo-c1-earth-observatory-image-to-process": "compulsory-1",
+  "geo-c2-china-terrain-and-settlement-location": "compulsory-2",
+  "geo-c2-country-capital-and-city-hierarchy-game": "compulsory-2",
+  "geo-c2-country-comparison-and-population-context": "compulsory-2",
+  "geo-s1-terrain-exaggeration-and-relief-evidence": "selective-1",
+  "geo-s1-projection-distortion-and-geographic-scale": "selective-1",
+  "geo-s1-earth-observatory-multitemporal-natural-process": "selective-1",
+  "geo-s2-china-terrain-regional-development-crosswalk": "selective-2",
+  "geo-s2-map-projection-and-regional-comparison": "selective-2",
+  "geo-s2-interactive-geography-task-to-evidence": "selective-2",
+  "geo-s3-earth-observatory-hazard-exposure-evidence": "selective-3",
+  "geo-s3-terrain-data-and-land-resource-security": "selective-3",
+  "geo-s3-true-size-map-and-spatial-justice": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.23.29");
@@ -64,20 +59,20 @@ assert.equal(payload.items.length, 455);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v24 source ${sourceId}`);
+  assert.ok(source, `missing v29 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
   if (expected.commitSha) {
     assert.equal(source.commitSha, expected.commitSha);
     assert.ok(source.editionNote.includes(expected.commitSha), `${sourceId} edition note must repeat its commit SHA`);
   }
-  assert.match(source.licenseNote, /citation|原创|不复制|仅作/i);
+  assert.match(source.licenseNote, /citation|原创|不复制|仅作|license|许可/i);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v24 item ${itemId}`);
+  assert.ok(item, `missing v29 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");
