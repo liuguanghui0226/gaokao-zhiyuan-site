@@ -2545,6 +2545,45 @@ function recommendationValidationIssues(profile = {}) {
   return issues;
 }
 
+function recommendationDraftValidationSummary(profile = {}) {
+  const issues = recommendationValidationIssues(profile);
+  if (!issues.length) return "";
+  return `当前草稿有 ${issues.length} 项需要修正：${issues.map((issue) => issue.message).join("；")}`;
+}
+
+function syncRecommendationDraftValidation() {
+  const form = $("#recommendForm");
+  if (!form) return [];
+  const profile = profileFromForm();
+  const issues = recommendationValidationIssues(profile);
+  const invalidFieldIds = new Set(issues.map((issue) => issue.fieldId));
+  const validationFieldIds = [
+    "provinceInput",
+    "scoreInput",
+    "rankInput",
+    "guangxiLocalScoreInput",
+    "guangxiLocalRankInput",
+    "vocationalScoreInput",
+  ];
+  for (const fieldId of validationFieldIds) {
+    const field = $(`#${fieldId}`);
+    if (!field) continue;
+    if (invalidFieldIds.has(fieldId)) {
+      field.setAttribute("aria-invalid", "true");
+      field.setAttribute("aria-describedby", "recommendDraftValidation");
+    } else {
+      field.removeAttribute("aria-invalid");
+      field.removeAttribute("aria-describedby");
+    }
+  }
+  const summary = $("#recommendDraftValidation");
+  if (summary) {
+    summary.textContent = recommendationDraftValidationSummary(profile);
+    summary.hidden = !issues.length;
+  }
+  return issues;
+}
+
 function profileFromForm() {
   const rankUsageParts = ($("#rankUsageInput")?.value || "ordinary||").split("|");
   const profile = {
@@ -4440,7 +4479,12 @@ function renderRecommendForm(profile) {
   const showBeijingVocationalScore = normalizeProvince(getProfileValue(profile, "province")) === "北京";
   const showXizangCandidateCategory = normalizeProvince(getProfileValue(profile, "province")) === "西藏";
   const showXizangRankSource = showXizangCandidateCategory;
-  return `<form id="recommendForm" class="recommend-form" aria-describedby="recommendStatus">
+  const invalidFieldIds = new Set(recommendationValidationIssues(profile).map((issue) => issue.fieldId));
+  const draftValidationAttribute = (fieldId) => invalidFieldIds.has(fieldId)
+    ? ` aria-invalid="true" aria-describedby="recommendDraftValidation"`
+    : "";
+  const draftValidationSummary = recommendationDraftValidationSummary(profile);
+  return `<form id="recommendForm" class="recommend-form" aria-describedby="recommendStatus recommendDraftValidation">
     <label>
       <span>考生类型</span>
       <select id="childType">
@@ -4449,19 +4493,19 @@ function renderRecommendForm(profile) {
     </label>
     <label>
       <span id="scoreFieldLabel">${showGuangxiScopeFields ? "区外院校投档分" : "分数"}</span>
-      <input id="scoreInput" type="number" min="0" max="1000" value="${esc(getProfileValue(profile, "score"))}" />
+      <input id="scoreInput" type="number" min="0" max="1000" value="${esc(getProfileValue(profile, "score"))}"${draftValidationAttribute("scoreInput")} />
     </label>
     <label id="guangxiLocalScoreField" ${showGuangxiScopeFields ? "" : "hidden"}>
       <span>区内院校投档分</span>
-      <input id="guangxiLocalScoreInput" type="number" min="0" max="750" value="${esc(getProfileValue(profile, "guangxiLocalScore"))}" placeholder="未填则按区外分数" />
+      <input id="guangxiLocalScoreInput" type="number" min="0" max="750" value="${esc(getProfileValue(profile, "guangxiLocalScore"))}" placeholder="未填则按区外分数"${draftValidationAttribute("guangxiLocalScoreInput")} />
     </label>
     <label id="beijingVocationalScoreField" ${showBeijingVocationalScore ? "" : "hidden"}>
       <span>专科语数外三科总分</span>
-      <input id="vocationalScoreInput" type="number" min="0" max="450" value="${esc(getProfileValue(profile, "vocationalScore"))}" placeholder="北京专科线使用" />
+      <input id="vocationalScoreInput" type="number" min="0" max="450" value="${esc(getProfileValue(profile, "vocationalScore"))}" placeholder="北京专科线使用"${draftValidationAttribute("vocationalScoreInput")} />
     </label>
     <label>
       <span id="rankFieldLabel">${showGuangxiScopeFields ? "区外院校位次" : showXizangRankSource ? "官方个人查询位次" : "位次"}</span>
-      <input id="rankInput" type="number" min="1" value="${esc(rankFieldValue)}" />
+      <input id="rankInput" type="number" min="1" value="${esc(rankFieldValue)}"${draftValidationAttribute("rankInput")} />
     </label>
     <label id="xizangRankSourceField" ${showXizangRankSource ? "" : "hidden"}>
       <span>西藏位次来源</span>
@@ -4472,11 +4516,11 @@ function renderRecommendForm(profile) {
     </label>
     <label id="guangxiLocalRankField" ${showGuangxiScopeFields ? "" : "hidden"}>
       <span>区内院校位次</span>
-      <input id="guangxiLocalRankInput" type="number" min="1" value="${esc(guangxiLocalRankFieldValue)}" />
+      <input id="guangxiLocalRankInput" type="number" min="1" value="${esc(guangxiLocalRankFieldValue)}"${draftValidationAttribute("guangxiLocalRankInput")} />
     </label>
     <label>
       <span>省份</span>
-      <input id="provinceInput" type="text" list="provinceList" value="${esc(getProfileValue(profile, "province"))}" placeholder="例如：广东、山东、河南" />
+      <input id="provinceInput" type="text" list="provinceList" value="${esc(getProfileValue(profile, "province"))}" placeholder="例如：广东、山东、河南"${draftValidationAttribute("provinceInput")} />
       <datalist id="provinceList">
         ${ALL_PROVINCES.map((item) => `<option value="${esc(item)}"></option>`).join("")}
       </datalist>
@@ -4542,6 +4586,7 @@ function renderRecommendForm(profile) {
       <button class="ghost-action" id="resetRecommend" type="button">清除草稿并恢复示例</button>
     </div>
     <p id="recommendStatus" class="form-status" role="status" aria-live="polite"></p>
+    <p id="recommendDraftValidation" class="form-status validation-summary" role="alert" aria-live="assertive" ${draftValidationSummary ? "" : "hidden"}>${esc(draftValidationSummary)}</p>
     <p id="recommendDraftStatus" class="draft-status" role="status" aria-live="polite">${esc(recommendationDraftStatusText())}</p>
     <p class="form-hint">表单草稿仅保存在本机浏览器；清除后不会影响已发布数据。</p>
   </form>`;
@@ -5089,10 +5134,8 @@ function bindRecommendEvents() {
     event.preventDefault();
     const submit = form.querySelector('button[type="submit"]');
     const status = $("#recommendStatus");
-    form.querySelectorAll('[aria-invalid="true"]').forEach((field) => field.removeAttribute("aria-invalid"));
-    const validationIssues = recommendationValidationIssues(profileFromForm());
+    const validationIssues = syncRecommendationDraftValidation();
     if (validationIssues.length) {
-      validationIssues.forEach(({ fieldId }) => $(`#${fieldId}`)?.setAttribute("aria-invalid", "true"));
       if (status) status.textContent = validationIssues.map((issue) => issue.message).join("；");
       $(`#${validationIssues[0].fieldId}`)?.focus();
       return;
@@ -5175,11 +5218,13 @@ function bindRecommendEvents() {
       handleRecommendationInputChange.draftTimer = null;
       saveCurrentRecommendationDraft();
     }, 250);
+    syncRecommendationDraftValidation();
     invalidateRecommendationResults();
   };
   form.addEventListener("input", handleRecommendationInputChange);
   form.addEventListener("change", handleRecommendationInputChange);
   updateProvinceFields();
+  syncRecommendationDraftValidation();
   $("#resetRecommend").addEventListener("click", () => {
     clearRecommendationShortlist(recommendationDraftFromForm());
     clearSavedRecommendationProfile();

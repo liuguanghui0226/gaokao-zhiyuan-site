@@ -59,7 +59,7 @@ context.__gaokaoTest.renderSources();
 
 assert.match(view.innerHTML, /class="band geography-source-directory"/);
 assert.match(view.innerHTML, /高中地理来源目录/);
-assert.match(view.innerHTML, /173 个公开链接/);
+assert.match(view.innerHTML, /178 个公开链接/);
 assert.match(view.innerHTML, /22 个本地\/教材/);
 assert.match(view.innerHTML, /class="geography-directory-link" href="https:\/\/oceanservice\.noaa\.gov\/education\/tutorial_tides\/tides01_intro\.html"/);
 assert.match(view.innerHTML, /访问 2026-08-23/);
@@ -130,6 +130,11 @@ assert.match(view.innerHTML, /https:\/\/education\.nationalgeographic\.org\/reso
 assert.match(view.innerHTML, /https:\/\/education\.nationalgeographic\.org\/resource\/landslide\//);
 assert.match(view.innerHTML, /https:\/\/education\.nationalgeographic\.org\/resource\/renewable-energy\//);
 assert.match(view.innerHTML, /https:\/\/www\.earthdata\.nasa\.gov\/learn/);
+assert.match(view.innerHTML, /github\.com\/malu322-jpg\/china-terrain-map/);
+assert.match(view.innerHTML, /github\.com\/YusufEminoglu\/zero2truesize/);
+assert.match(view.innerHTML, /github\.com\/googleinterns\/AOG-Education/);
+assert.match(view.innerHTML, /github\.com\/Emil-Lima\/GeoFun/);
+assert.match(view.innerHTML, /https:\/\/earthobservatory\.nasa\.gov\//);
 assert.match(view.innerHTML, /class="geography-directory-local"/);
 assert.doesNotMatch(view.innerHTML, /class="geography-directory-link"[^>]*>普通高中教科书/);
 

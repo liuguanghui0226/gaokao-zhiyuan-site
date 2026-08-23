@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.28",
+  "version": "geo-2026.08.23.29",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1823,6 +1823,55 @@
       "url": "https://www.earthdata.nasa.gov/learn",
       "accessedAt": "2026-08-23",
       "licenseNote": "NASA Earthdata 官方学习入口；本项目仅作地球观测数据选择、数据处理链和教育使用边界的 citation-only 参照，不复制页面正文、图片、数据产品或接口返回。"
+    },
+    {
+      "id": "github-malu-china-terrain-map",
+      "title": "中国3D地形地貌互动教学地图",
+      "publisher": "malu322-jpg/china-terrain-map（GitHub）",
+      "editionNote": "公开仓库提交 `1bde0972dc06ee7ec96534ac91beaecb7fda9beb`；访问日期 2026-08-23；README 面向中小学生介绍可旋转缩放的中国三维地形，覆盖西高东低、三级阶梯、山脉、高原、盆地、平原、河流、城市、地形剖面和教学级概化边界。",
+      "url": "https://github.com/malu322-jpg/china-terrain-map",
+      "commitSha": "1bde0972dc06ee7ec96534ac91beaecb7fda9beb",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作中国地形可视化、DEM 证据、垂直夸张和教学尺度边界的 citation-only 参照，不复制代码、GeoJSON、图片、数据或页面文字。"
+    },
+    {
+      "id": "github-yusuf-zero2truesize",
+      "title": "02truesize：地图真实面积与投影教学工具",
+      "publisher": "YusufEminoglu/zero2truesize（GitHub/QGIS）",
+      "editionNote": "公开仓库提交 `2ebc95e7e6aae01c8efe1394e7cc33458f08cbc1`；访问日期 2026-08-23；README 说明 GPL-3.0 的 QGIS 插件通过真实面积拖拽、投影比较、Tissot 指示圈、大圆航线和失真报告卡训练地图投影与空间思维。",
+      "url": "https://github.com/YusufEminoglu/zero2truesize",
+      "commitSha": "2ebc95e7e6aae01c8efe1394e7cc33458f08cbc1",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 GPL-3.0；本项目仅作投影失真、真实面积、比例尺和空间比较的 citation-only 参照，不复制代码、图标、Natural Earth 数据、插件资产或页面文字。"
+    },
+    {
+      "id": "github-google-aog-education",
+      "title": "AOG Education：Google Nest Hub 地理教育游戏",
+      "publisher": "Google Interns/AOG-Education（GitHub）",
+      "editionNote": "公开仓库提交 `cda8c68d2bd339299b1a6bf7d95ee301dcfbcd0b`；访问日期 2026-08-23；README 说明 STEP 2020 教育游戏包含 geography、language 和 reading 三个学科，地理部分按美国州、美国首府、世界首都、国家和城市访问组织地图问答。",
+      "url": "https://github.com/googleinterns/AOG-Education",
+      "commitSha": "cda8c68d2bd339299b1a6bf7d95ee301dcfbcd0b",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作地理层级、地图问答、位置反馈和交互学习流程的 citation-only 参照，不复制代码、Google 地图输出、地名数据、图片或页面文字。"
+    },
+    {
+      "id": "github-geofun",
+      "title": "GeoFun：基于国家与人口的地理学习应用",
+      "publisher": "Emil-Lima/GeoFun（GitHub）",
+      "editionNote": "公开仓库提交 `b64b1931f775ff285ec677c53d61e3674c6343b2`；访问日期 2026-08-23；README 说明面向儿童的 geography educational app 使用国家选择、欧洲国家资料、人口页面、保存国家和 quiz 组织学习，技术栈包含 React、Leaflet、REST Countries 与本地用户资料。",
+      "url": "https://github.com/Emil-Lima/GeoFun",
+      "commitSha": "b64b1931f775ff285ec677c53d61e3674c6343b2",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作国家比较、人口信息、地图交互和复习闭环的 citation-only 参照，不复制代码、REST Countries 返回、图片、数据库或页面文字。"
+    },
+    {
+      "id": "web-nasa-earth-observatory",
+      "title": "NASA Earth Observatory：地球观测图像与科学故事",
+      "publisher": "NASA Earth Observatory",
+      "editionNote": "NASA 官方地球科学图像与科学故事入口；访问日期 2026-08-23；站点按气候、土地、水体、生态、灾害和人类活动等主题组织地球观测图像、地图和过程叙事，用于多时相与多尺度证据判读。",
+      "url": "https://earthobservatory.nasa.gov/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "NASA 官方公开门户；具体图像、数据和第三方素材可能具有单独署名或使用条件；本项目仅作图像—过程—尺度核验的 citation-only 参照，不复制图片、图注、数据产品或页面文字。"
     }
   ],
   "items": [
@@ -11516,6 +11565,341 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：资源环境数据评价、风险判断、生态治理与国家安全章节",
           "note": "回到教材核对指标口径、资料评价、证据强度、不确定性和安全判断。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-china-terrain-three-staircases-and-profile",
+      "courseId": "compulsory-1",
+      "title": "中国地形三级阶梯与剖面证据",
+      "summary": "阅读中国地形三维图时，先用整体高程、颜色分层、山体阴影和剖面确认西高东低及三级阶梯，再把局部山脉、盆地和平原放回全国尺度。若图层存在垂直夸张或教学级概化，应把它当作关系判断证据，不能把视觉高度直接当作精确测量值。",
+      "keywords": ["三级阶梯", "地形剖面", "DEM", "垂直夸张"],
+      "sourceIds": ["github-malu-china-terrain-map", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-malu-china-terrain-map",
+          "locator": "README / 三级地势阶梯模式、地形剖面、DEM 与教学级概化说明",
+          "note": "中国三维地形仓库用于交叉核对高程分层、剖面观察、三级阶梯和可视化精度边界；不复制代码、数据、图层或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：地表形态、地形剖面、地形对自然环境与人类活动影响章节",
+          "note": "回到教材核对地形起伏、地形剖面、阶梯关系及其对水文、气候和聚落的影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-map-projection-apparent-and-true-area",
+      "courseId": "compulsory-1",
+      "title": "地图投影中的表观面积与真实面积",
+      "summary": "比较地图上的大小时，先判断投影和纬度位置，再区分屏幕上的表观面积、地球表面的真实面积与比例尺变化。一个国家在地图上看起来更大，不等于实际面积更大；应结合投影目的、图例、经纬网和面积指标复核结论。",
+      "keywords": ["地图投影", "真实面积", "表观面积", "比例尺"],
+      "sourceIds": ["github-yusuf-zero2truesize", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "github-yusuf-zero2truesize",
+          "locator": "README / true-size drag、Mercator distortion、projection report card 与 Tissot indicatrix",
+          "note": "02truesize用于交叉核对投影失真、真实面积、形状和比例尺的区分；不复制插件代码、图标、数据或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：地图投影、比例尺、经纬网与地理信息技术章节",
+          "note": "回到教材核对地图表达、比例尺、投影选择和空间位置判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-earth-observatory-image-to-process",
+      "courseId": "compulsory-1",
+      "title": "从地球观测图像回到自然过程",
+      "summary": "判读地球观测图像时，先记录观测对象、日期、空间范围、颜色或纹理含义和处理方式，再把图像变化连接到水体、植被、云、火灾或地表覆盖过程。图像能提供空间证据，但不能单凭一帧画面证明唯一因果，应寻找时间序列、地面资料或教材过程链补证。",
+      "keywords": ["地球观测", "图像判读", "自然过程", "因果边界"],
+      "sourceIds": ["web-nasa-earth-observatory", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-earth-observatory",
+          "locator": "Earth Observatory / Earth system stories, images and maps / climate, land, water and hazards",
+          "note": "NASA Earth Observatory用于交叉核对图像、地图、时间和地球过程叙事的证据边界；不复制图片、图注、数据或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：地理信息技术、自然地理过程和圈层相互作用章节",
+          "note": "回到教材核对遥感资料、图像信息、空间尺度、时间尺度和过程解释。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-china-terrain-and-settlement-location",
+      "courseId": "compulsory-2",
+      "title": "中国地形与聚落区位的联合判读",
+      "summary": "解释城市或聚落为什么分布在某处时，不能只说“地势低平”。还要把水源、耕地、交通、市场、防灾空间和区域联系叠加到地形背景上；三维地形图适合发现高程和地貌关系，聚落结论仍需人口、产业和基础设施证据支持。",
+      "keywords": ["聚落区位", "地形背景", "交通联系", "区域证据"],
+      "sourceIds": ["github-malu-china-terrain-map", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-malu-china-terrain-map",
+          "locator": "README / 城市标注、地形类型、地貌关系与“城市为什么建在这里”教学目标",
+          "note": "中国地形仓库用于交叉核对地形与城市空间关系的观察入口；不复制城市数据、地图、代码或知识卡片。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：聚落区位、城镇化、交通运输与区域联系章节",
+          "note": "回到教材核对聚落形成条件、交通可达性、服务功能和人地协调。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-country-capital-and-city-hierarchy-game",
+      "courseId": "compulsory-2",
+      "title": "国家、首都与城市层级的地图问答",
+      "summary": "使用地图问答练习国家与城市时，先区分国家、行政区、首都和普通城市等空间层级，再检查地图中心、边界、方向和答案反馈。游戏中的一次答对只说明定位或记忆练习完成，不能替代对城市职能、等级体系和区域联系的真实资料分析。",
+      "keywords": ["国家层级", "首都", "城市体系", "地图问答"],
+      "sourceIds": ["github-google-aog-education", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-google-aog-education",
+          "locator": "README 与 public/js/geography / capitals, states, countries, visit-a-city categories",
+          "note": "AOG Education用于交叉核对国家—首都—城市层级和地图问答的交互组织；不复制代码、地名数据、Google 地图输出或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：城市地域结构、城市等级、区域联系与人口流动章节",
+          "note": "回到教材核对城市等级、功能联系、人口流动和区域空间结构。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-country-comparison-and-population-context",
+      "courseId": "compulsory-2",
+      "title": "国家比较中的人口指标与空间背景",
+      "summary": "比较不同国家或区域时，应先统一人口指标、统计年份、单位和空间范围，再把人口数量、密度、年龄结构或城市化率放回资源、交通和历史背景中解释。互动应用可以帮助建立比较顺序，但不能把接口返回或旧年份数据直接当作当前结论。",
+      "keywords": ["人口指标", "国家比较", "统计口径", "城市化"],
+      "sourceIds": ["github-geofun", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-geofun",
+          "locator": "README 与 client/src / Europe country selection, saved countries, populations route and quiz",
+          "note": "GeoFun用于交叉核对国家选择、人口页面和复习闭环的交互结构；不复制代码、REST Countries 返回、数据库或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：人口数量与结构、人口迁移、城镇化和区域发展章节",
+          "note": "回到教材核对人口指标、人口分布、城市化及其与资源环境的联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-terrain-exaggeration-and-relief-evidence",
+      "courseId": "selective-1",
+      "title": "地形垂直夸张与起伏证据",
+      "summary": "三维地形中的山体“更高”可能来自真实高程差，也可能受到垂直夸张、光照和视角影响。判断地貌过程时，应把阴影、等高线、剖面、坡向和高程数值互相核对，再区分视觉突出效果与可用于定量比较的证据。",
+      "keywords": ["垂直夸张", "地形起伏", "坡向", "剖面核验"],
+      "sourceIds": ["github-malu-china-terrain-map", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-malu-china-terrain-map",
+          "locator": "README / DEM terrain, 2 倍垂直夸张、hillshade、地形剖面与教学级概化说明",
+          "note": "中国三维地形仓库用于交叉核对垂直夸张、山体阴影、DEM 和教学图层的观察边界；不复制代码、数据或图件。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地貌过程、地形剖面、外力作用与自然环境整体性章节",
+          "note": "回到教材核对地形起伏、坡面过程、剖面证据和自然环境要素联系。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-projection-distortion-and-geographic-scale",
+      "courseId": "selective-1",
+      "title": "投影失真与自然地理尺度",
+      "summary": "自然地理地图比较要先明确任务是保面积、保形状、保方向还是保距离，再选择或评价投影。跨纬度比较面积、海岸线或大圆距离时，必须说明投影失真和尺度变化，否则会把制图结果误写成自然地理事实。",
+      "keywords": ["投影失真", "保面积", "空间尺度", "地图任务"],
+      "sourceIds": ["github-yusuf-zero2truesize", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "github-yusuf-zero2truesize",
+          "locator": "README / equal-area, conformal, compromise recommendations、Tissot circles and great-circle truth",
+          "note": "02truesize用于交叉核对投影任务、面积形状失真和地理尺度判断；不复制代码、插件资产或图层。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：地理信息技术、地图投影、自然地理分异与尺度章节",
+          "note": "回到教材核对投影选择、空间尺度、自然区域比较和图像资料判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-earth-observatory-multitemporal-natural-process",
+      "courseId": "selective-1",
+      "title": "地球观测图像的多时相自然过程",
+      "summary": "用地球观测图像研究自然过程时，应先固定研究区、时间间隔和观测变量，再比较云、积雪、植被、水体或火灾痕迹的变化。多时相图像能显示变化线索，但仍要检查传感器、季节、云遮挡和处理差异，避免把观测差异当作真实过程。",
+      "keywords": ["多时相", "遥感图像", "季节差异", "观测条件"],
+      "sourceIds": ["web-nasa-earth-observatory", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-earth-observatory",
+          "locator": "Earth Observatory / image and story archive / land, water, climate and natural hazards",
+          "note": "NASA Earth Observatory用于交叉核对图像时间、地表变化和地球系统过程的解释边界；不复制图像、图注或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：遥感判读、自然地理过程、季节变化与整体性章节",
+          "note": "回到教材核对遥感信息、空间时间尺度、季节变化和自然过程证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-china-terrain-regional-development-crosswalk",
+      "courseId": "selective-2",
+      "title": "中国地形图到区域发展条件",
+      "summary": "从中国地形图推导区域发展条件时，应沿“地形—水热—土地—交通—产业—人口”逐层展开，说明自然条件如何通过工程、技术和市场转化为发展机会或约束。三维地形适合定位空间关系，不能单独证明某地区的经济结果。",
+      "keywords": ["区域发展", "地形条件", "交通联系", "自然约束"],
+      "sourceIds": ["github-malu-china-terrain-map", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-malu-china-terrain-map",
+          "locator": "README / 山脉、高原、盆地、平原、河流、城市与“城市为什么建在这里”空间关系",
+          "note": "中国地形仓库用于交叉核对自然地形与区域定位的入口；不复制地理要素数据、知识卡或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域发展条件、区域联系、产业布局与区域协调章节",
+          "note": "回到教材核对区域条件、要素流动、产业区位和发展路径。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-map-projection-and-regional-comparison",
+      "courseId": "selective-2",
+      "title": "区域比较中的投影选择与指标口径",
+      "summary": "区域比较不是把两张地图并排即可。应先统一投影、空间范围、统计年份和指标单位，再判断面积、形状、距离或方向哪一种失真会影响问题；对于人口密度、土地覆盖或行政面积比较，图面视觉大小不能替代统一的统计口径。",
+      "keywords": ["区域比较", "投影选择", "指标口径", "统计地图"],
+      "sourceIds": ["github-yusuf-zero2truesize", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-yusuf-zero2truesize",
+          "locator": "README / true-size comparison、area ratio matrix、projection recommender and distortion report",
+          "note": "02truesize用于交叉核对真实面积、投影报告和区域比较的指标条件；不复制插件代码、图像或数据。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域比较、区域尺度、统计图表与规划评价章节",
+          "note": "回到教材核对区域尺度、比较指标、空间联系和区域规划证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-interactive-geography-task-to-evidence",
+      "courseId": "selective-2",
+      "title": "把交互地理任务转成区域证据链",
+      "summary": "交互游戏可以把“找国家、找首都、访问城市、比较人口”等任务变成练习入口，但区域研究仍要补上问题、尺度、数据年份、空间图层和解释反馈。答题反馈只证明一次操作结果，只有经过来源核验的地图和统计资料才能支撑区域发展判断。",
+      "keywords": ["交互学习", "区域研究", "证据链", "反馈边界"],
+      "sourceIds": ["github-google-aog-education", "github-geofun", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-google-aog-education",
+          "locator": "README 与 geography scenes / category selection、map question、answer and results flow",
+          "note": "AOG Education用于交叉核对交互任务、地图反馈和位置层级的学习入口；不复制代码、地名数据或页面资源。"
+        },
+        {
+          "sourceId": "github-geofun",
+          "locator": "README 与 client/src / country profile、population route、saved countries and quiz",
+          "note": "GeoFun用于交叉核对国家资料、人口比较和复习闭环的交互结构；不复制代码、接口返回或数据库。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域研究、区域比较、区域联系与问题探究章节",
+          "note": "回到教材核对区域问题、空间尺度、证据选择和解释反馈。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-earth-observatory-hazard-exposure-evidence",
+      "courseId": "selective-3",
+      "title": "地球观测中的灾害、暴露与证据强度",
+      "summary": "阅读灾害图像或科学故事时，应把致灾过程、暴露对象、脆弱性和应对能力分开记录。卫星图像可以帮助定位火灾、洪水、干旱、烟霾或土地变化，但风险结论还需要人口设施、预警能力、时间范围和地面资料，不能把醒目的图像直接等同于风险大小。",
+      "keywords": ["灾害证据", "暴露度", "脆弱性", "卫星图像"],
+      "sourceIds": ["web-nasa-earth-observatory", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-earth-observatory",
+          "locator": "Earth Observatory / natural hazards, climate, land and water stories",
+          "note": "NASA Earth Observatory用于交叉核对灾害图像、变化叙事和地球系统证据边界；不复制图片、图注、数据或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：自然灾害风险、暴露度、脆弱性、生态安全与防灾减灾章节",
+          "note": "回到教材核对危险性、暴露度、脆弱性、风险治理和证据强度。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-terrain-data-and-land-resource-security",
+      "courseId": "selective-3",
+      "title": "地形数据与土地资源安全",
+      "summary": "把地形数据用于土地资源和粮食安全评价时，要说明坡度、高程、地貌单元、耕地适宜性和灌溉条件分别代表什么，并把数据分辨率与实际管理尺度匹配。地形图能揭示约束和空间关系，却不能单独替代土壤、气候、水资源、制度和产业链证据。",
+      "keywords": ["土地资源", "地形数据", "粮食安全", "适宜性"],
+      "sourceIds": ["github-malu-china-terrain-map", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-malu-china-terrain-map",
+          "locator": "README / DEM、海拔图例、地形类型、地形剖面与教学精度说明",
+          "note": "中国三维地形仓库用于交叉核对高程、地貌和土地空间约束的观察入口；不复制数据、GeoJSON、代码或页面文字。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境承载力、土地资源、粮食安全与区域治理章节",
+          "note": "回到教材核对资源承载力、耕地保护、粮食安全和自然—人文约束。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-true-size-map-and-spatial-justice",
+      "courseId": "selective-3",
+      "title": "真实面积地图与空间公平判断",
+      "summary": "讨论资源、人口或环境风险的空间公平时，先检查地图投影是否放大了高纬地区或改变了面积视觉，再统一人口、行政区和暴露指标。地图的视觉冲击可以帮助提出问题，却不能单独证明某区域获得更多资源、承担更大风险或需要优先治理。",
+      "keywords": ["空间公平", "真实面积", "环境风险", "地图失真"],
+      "sourceIds": ["github-yusuf-zero2truesize", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "github-yusuf-zero2truesize",
+          "locator": "README / Mercator inflation、true-size comparison、area ratio and projection honesty report",
+          "note": "02truesize用于交叉核对地图视觉面积、真实面积和空间比较的失真边界；不复制插件代码、图标或地图资产。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境公平、风险暴露、区域治理与国家安全章节",
+          "note": "回到教材核对空间公平、暴露度、资源配置、风险治理和国家安全判断。"
         }
       ],
       "licenseStatus": "citation-only",

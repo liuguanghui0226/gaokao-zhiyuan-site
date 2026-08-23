@@ -1125,6 +1125,11 @@ select {
   font-size: 14px;
 }
 
+.validation-summary {
+  color: var(--rose);
+  font-weight: 700;
+}
+
 .form-hint {
   grid-column: 1 / -1;
   margin: 0;
