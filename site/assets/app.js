@@ -2510,7 +2510,7 @@ function admissionScoreStatus() {
 
 function recommendationValidationIssues(profile = {}) {
   const issues = [];
-  const provinceInput = String(profile.province || "").trim();
+  const provinceInput = String(profile.province ?? "").trim();
   const province = normalizeProvince(provinceInput);
   if (!provinceInput) {
     issues.push({ fieldId: "provinceInput", message: "请填写考生所在省份" });
@@ -2518,7 +2518,7 @@ function recommendationValidationIssues(profile = {}) {
     issues.push({ fieldId: "provinceInput", message: "请从省份列表中选择有效省份" });
   }
 
-  const scoreInput = String(profile.score || "").trim();
+  const scoreInput = String(profile.score ?? "").trim();
   const score = Number(scoreInput);
   if (!scoreInput) {
     issues.push({ fieldId: "scoreInput", message: "请填写高考总分" });
@@ -2527,7 +2527,7 @@ function recommendationValidationIssues(profile = {}) {
   }
 
   const validateOptionalNumber = (value, fieldId, message, { min = 0, max = Infinity, integer = false } = {}) => {
-    const input = String(value || "").trim();
+    const input = String(value ?? "").trim();
     if (!input) return;
     const number = Number(input);
     const valid = Number.isFinite(number) && number >= min && number <= max && (!integer || Number.isInteger(number));

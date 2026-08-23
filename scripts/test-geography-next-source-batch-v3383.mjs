@@ -54,9 +54,9 @@ const expectedItems = {
   "geo-s3-data-license-and-provenance-boundary": "selective-3",
 };
 
-assert.equal(payload.version, "geo-2026.08.23.29");
-assert.equal(payload.sources.length, 200);
-assert.equal(payload.items.length, 455);
+assert.equal(payload.version, "geo-2026.08.23.30");
+assert.equal(payload.sources.length, 206);
+assert.equal(payload.items.length, 470);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
