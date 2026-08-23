@@ -1,5 +1,5 @@
 {
-  "version": "geo-visuals-2026.08.24.01",
+  "version": "geo-visuals-2026.08.24.02",
   "description": "面向高中地理复习的原创视觉故事：用一张图、三步观察和一个权威入口，把空间关系讲清楚。",
   "cards": [
     {
@@ -22,6 +22,16 @@
           "detail": "云滴长大后形成降水，沿地形汇入河流、湖泊和海洋，水循环把不同圈层连接起来。"
         }
       ],
+      "quiz": {
+        "prompt": "图中水汽从海面进入云层后，下一步最关键的变化是什么？",
+        "options": [
+          { "label": "湿空气上升并冷却，水汽凝结成云", "detail": "把上升、降温与凝结按过程串联。" },
+          { "label": "海水直接变成降水落回海面", "detail": "跳过了云的形成和水汽相变。" },
+          { "label": "地形先把所有水汽拦截在山脚", "detail": "地形会影响抬升和降水，但不是所有水汽的必经步骤。" }
+        ],
+        "answerIndex": 0,
+        "explanation": "先抓住图中的上升箭头和云层：湿空气上升后膨胀降温，达到露点才更容易凝结成云。"
+      },
       "sourceIds": ["web-nasa-gpm-water-cycle", "web-cma-meteorological-data"],
       "mediaLinks": [
         {
@@ -56,6 +66,16 @@
           "detail": "高等级中心提供更稀缺、更专业的服务，服务范围更广，但到达成本也可能更高。"
         }
       ],
+      "quiz": {
+        "prompt": "如果一个中心地提供更稀缺、更专业的服务，图中的哪种变化最合理？",
+        "options": [
+          { "label": "服务等级更高，服务半径通常更大", "detail": "高等级服务往往需要更大市场范围支撑。" },
+          { "label": "服务越专业，服务半径一定越小", "detail": "没有考虑稀缺服务的吸引范围。" },
+          { "label": "交通联系与服务范围没有关系", "detail": "可达性会改变到达成本和实际服务范围。" }
+        ],
+        "answerIndex": 0,
+        "explanation": "中心地等级、服务种类和服务范围要一起看；稀缺专业服务通常需要更广的市场与更强的交通联系。"
+      },
       "sourceIds": ["web-unhabitat-urban-data", "web-sdg11-sustainable-cities"],
       "mediaLinks": [
         {
@@ -90,6 +110,16 @@
           "detail": "环流与地形、海陆分布相遇后，形成季风、锋面和降水带，成为区域气候差异的线索。"
         }
       ],
+      "quiz": {
+        "prompt": "图中高压与低压之间形成风，判断风向时还要补充考虑哪组因素？",
+        "options": [
+          { "label": "地转偏向力与摩擦力", "detail": "两者会使实际风向偏离单纯由高压指向低压的方向。" },
+          { "label": "人口密度与城市等级", "detail": "它们不是大气运动中决定风向的主要动力。" },
+          { "label": "森林覆盖率与耕地面积", "detail": "下垫面可影响局地过程，但不能替代基本受力分析。" }
+        ],
+        "answerIndex": 0,
+        "explanation": "读风场图要先找气压梯度，再根据纬度和近地面条件补充地转偏向力、摩擦力，最后联系地形和海陆分布。"
+      },
       "sourceIds": ["web-noaa-ocean-currents", "web-noaa-climate-enso", "web-esa-climate-change-initiative"],
       "mediaLinks": [
         {
@@ -124,6 +154,16 @@
           "detail": "保护地、灾害风险和资源承载力图层回答‘哪里不能随意开发’，让规划从扩张转向协调。"
         }
       ],
+      "quiz": {
+        "prompt": "区域规划叠加人口、交通和生态图层时，最后增加生态约束层的意义是什么？",
+        "options": [
+          { "label": "识别不宜随意开发的空间，比较发展与承载力", "detail": "规划要同时回答能不能开发以及怎样协调。" },
+          { "label": "让所有空地都优先建设成道路", "detail": "只追求扩张会忽略生态和灾害约束。" },
+          { "label": "只要有遥感底图就不需要实地核验", "detail": "遥感需要与其他资料和现场信息交叉验证。" }
+        ],
+        "answerIndex": 0,
+        "explanation": "GIS 的价值在于叠加证据：底图定位，需求图层说明发展压力，生态与风险图层帮助划出协调和保护边界。"
+      },
       "sourceIds": ["web-qgis-training-manual", "web-protected-planet-conservation-data", "web-nasa-worldview-earth-observation"],
       "mediaLinks": [
         {
@@ -158,6 +198,16 @@
           "detail": "保护地、可持续经营、监测预警和社区参与共同组成治理闭环，在利用与保护之间寻找可持续边界。"
         }
       ],
+      "quiz": {
+        "prompt": "判断森林资源治理是否可持续时，为什么不能只看森林面积？",
+        "options": [
+          { "label": "还要看质量、连通性、碳汇、生物多样性和治理方式", "detail": "面积增长不一定代表生态功能和系统韧性同步提升。" },
+          { "label": "面积越大就一定越安全，不需要监测", "detail": "火灾、破碎化和气候风险可能在面积增加时仍然存在。" },
+          { "label": "只要木材产量增加就说明保护成功", "detail": "单一产出不能代表生态安全和长期承载力。" }
+        ],
+        "answerIndex": 0,
+        "explanation": "图中绿色资源、风险和治理是一个系统：面积只是底盘，质量、连通性、碳汇与监测治理共同决定生态安全。"
+      },
       "sourceIds": ["web-fao-global-forest-resources-assessment", "web-fao-forestry", "web-protected-planet-conservation-data"],
       "mediaLinks": [
         {
