@@ -49,7 +49,7 @@ const api = context.__gaokaoTest;
 api.state.query = "计算机";
 api.state.discipline = "08";
 api.state.domain = "admission";
-api.state.renderedViews = new Set(["overview", "sources", "disciplines", "geography"]);
+api.state.renderedViews = new Set(["overview", "sources", "disciplines"]);
 
 assert.equal(api.hasActiveFilters(), true, "active query or select values must expose the clear action");
 api.syncClearFiltersControl();
@@ -67,7 +67,6 @@ assert.equal(elements.get("#clearFilters").hidden, true, "clear action must hide
 assert.equal(api.state.renderedViews.has("overview"), true, "unrelated views must remain cached");
 assert.equal(api.state.renderedViews.has("sources"), false, "sources must rerender after reset");
 assert.equal(api.state.renderedViews.has("disciplines"), false, "discipline view must rerender after reset");
-assert.equal(api.state.renderedViews.has("geography"), false, "geography view must rerender after reset");
 
 console.log(JSON.stringify({
   ok: true,

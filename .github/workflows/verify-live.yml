@@ -134,6 +134,22 @@ jobs:
           ! grep -q 'data-view="rounds"' "$work/index.html"
           ! grep -q 'data-view="audio"' "$work/index.html"
 
+          fetch "${base}geography/" "$work/geography-index.html"
+          grep -q '<title>高中地理知识库</title>' "$work/geography-index.html"
+          grep -q 'id="geographyApp"' "$work/geography-index.html"
+          geography_asset_version="$(node -e '
+            const html = require("node:fs").readFileSync(process.argv[1], "utf8");
+            const match = html.match(/assets\/app\.js\?v=([^"]+)/);
+            if (!match) process.exit(1);
+            process.stdout.write(match[1]);
+          ' "$work/geography-index.html")"
+          fetch "${base}geography/assets/app.js?v=${geography_asset_version}" "$work/geography-app.js"
+          grep -q 'knowledge.json' "$work/geography-app.js"
+          grep -q 'data-geography-course' "$work/geography-app.js"
+          ! grep -q 'state.geographyData' "$work/app.js"
+          fetch "${base}data/geography/knowledge.json" "$work/geography-knowledge.json"
+          jq -e '.version == "geo-2026.08.23.34" and (.courses | length) == 5 and (.sources | length) == 232 and (.items | length) == 530' "$work/geography-knowledge.json" >/dev/null
+
           fetch "${base}data/${release_path}/manifest.json.gz" "$work/manifest.json.gz"
           gzip -t "$work/manifest.json.gz"
           gzip -dc "$work/manifest.json.gz" > "$work/manifest.json"

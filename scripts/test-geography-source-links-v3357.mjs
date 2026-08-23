@@ -7,7 +7,7 @@ import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
-const appFile = path.join(projectRoot, "site/assets/app.js");
+const appFile = path.join(projectRoot, "site/geography/assets/app.js");
 const dataFile = path.join(projectRoot, "data/geography/knowledge.json");
 const source = fs.readFileSync(appFile, "utf8");
 const payload = JSON.parse(fs.readFileSync(dataFile, "utf8"));
@@ -20,12 +20,12 @@ assert.match(source, /accessedAt/);
 
 const view = { innerHTML: "" };
 const instrumented = `${source.slice(0, bootIndex)}
-globalThis.__gaokaoTest = { renderGeography, state };`;
+globalThis.__geographyTest = { renderGeography, state };`;
 const context = vm.createContext({
   console,
   document: {
     querySelector(selector) {
-      if (selector === "#view-geography") return view;
+      if (selector === "#geographyApp") return view;
       throw new Error(`Unexpected selector in geography source-link test: ${selector}`);
     },
     querySelectorAll() {
@@ -35,18 +35,19 @@ const context = vm.createContext({
 });
 vm.runInContext(instrumented, context, { filename: appFile });
 
-context.__gaokaoTest.state.geographyData = payload;
-context.__gaokaoTest.state.query = "自然资源公报";
-context.__gaokaoTest.state.geographyCourse = "";
-context.__gaokaoTest.renderGeography();
+context.__geographyTest.state.data = payload;
+context.__geographyTest.state.query = "自然资源公报";
+context.__geographyTest.state.course = "";
+context.__geographyTest.state.sourceFilter = "all";
+context.__geographyTest.renderGeography();
 
-assert.match(view.innerHTML, /class="geography-source-list"/);
+assert.match(view.innerHTML, /class="source-links"/);
 assert.match(view.innerHTML, /class="geography-source-link" href="https:\/\/www\.mnr\.gov\.cn\/sj\/tjgb\//);
 assert.match(view.innerHTML, /target="_blank" rel="noreferrer"/);
 assert.match(view.innerHTML, /访问 2026-08-23/);
 
-context.__gaokaoTest.state.query = "大气受热";
-context.__gaokaoTest.renderGeography();
+context.__geographyTest.state.query = "大气受热";
+context.__geographyTest.renderGeography();
 assert.match(view.innerHTML, /class="geography-source-local"/);
 assert.doesNotMatch(view.innerHTML, /class="geography-source-link"/);
 
