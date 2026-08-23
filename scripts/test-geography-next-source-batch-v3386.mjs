@@ -9,53 +9,52 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-globe-program-clouds-api": {
-    url: "https://www.globe.gov/globe-data/globe-api",
+  "github-lurea-geography-teaching-lecture": {
+    url: "https://github.com/lurea-git/geography-teaching-lecture",
+    commitSha: "3f23a8662cec3e55f8656bbeb2cb7f2e859d5d01",
     accessedAt: "2026-08-23",
   },
-  "github-ruddro-globe-cloud-insights": {
-    url: "https://github.com/ruddro-roy/globe-cloud-insights",
-    commitSha: "b956e24ac5f41ece2e3e4b7d096c06d76df79cc5",
+  "github-geography-study-react": {
+    url: "https://github.com/swingboat/geography-study-react",
+    commitSha: "ca94e23989de595560189c3d1463f249639260d5",
     accessedAt: "2026-08-23",
   },
-  "github-ccosse-colormyworld": {
-    url: "https://github.com/ccosse/colormyworld",
-    commitSha: "6a17d2ccd12503e31344ab6050eef86f9985d3d6",
+  "github-geographical-education-qa-hallucination": {
+    url: "https://github.com/7tigersniffstherose7/Geographical-Education-Multi-round-QA-Dataset",
+    commitSha: "5dc19bc3c429907868aad9cbbdb569f283ec5fb6",
     accessedAt: "2026-08-23",
   },
-  "github-ayushishukla-geography": {
-    url: "https://github.com/ayushishukla-geo/Geography",
-    commitSha: "3769f9c88270450ae6a930d40dc761590fb8b6cc",
+  "github-mizmay-web-map-quickstart": {
+    url: "https://github.com/mizmay/web-map-quickstart",
+    commitSha: "e71b11067fc820a9ef4df546b15b5b193ed4695b",
     accessedAt: "2026-08-23",
   },
-  "github-bhagyashree-geography-lesson-plans": {
-    url: "https://github.com/bhagyashree21289/Geography-ICSE-Lesson-Plans",
-    commitSha: "ff0c43a86f756574180acfc59f68a3e3ea9693a4",
+  "web-rgs-schools-geography-resources": {
+    url: "https://www.rgs.org/schools",
     accessedAt: "2026-08-23",
   },
-  "github-osgeo-geospatial-education": {
-    url: "https://github.com/OSGeo/osgeo",
-    commitSha: "ba9b9f1228451dc717b95289e82c9d36ba67a954",
+  "web-geographical-association-teaching-resources": {
+    url: "https://geography.org.uk/online-teaching-resources/",
     accessedAt: "2026-08-23",
   },
 };
 
 const expectedItems = {
-  "geo-c1-cloud-observation-and-weather-evidence": "compulsory-1",
-  "geo-c1-field-observation-sampling-and-bias": "compulsory-1",
-  "geo-c1-landform-climate-gis-learning-path": "compulsory-1",
-  "geo-c2-geography-scavenger-hunt-place-clues": "compulsory-2",
-  "geo-c2-map-color-and-data-meaning": "compulsory-2",
-  "geo-c2-lesson-plan-from-place-to-region": "compulsory-2",
-  "geo-s1-cloud-cover-and-radiation-observation": "selective-1",
-  "geo-s1-ground-observation-satellite-match": "selective-1",
-  "geo-s1-landform-climate-gis-concept-integration": "selective-1",
-  "geo-s2-citizen-science-spatial-sampling": "selective-2",
-  "geo-s2-open-source-geospatial-education-stack": "selective-2",
-  "geo-s2-map-color-classification-and-legend": "selective-2",
-  "geo-s3-cloud-data-and-climate-risk-boundary": "selective-3",
-  "geo-s3-citizen-observation-ethics-and-location-privacy": "selective-3",
-  "geo-s3-open-geospatial-governance-and-resource-security": "selective-3",
+  "geo-c1-problem-solving-evidence-and-transfer": "compulsory-1",
+  "geo-c1-fieldwork-question-observation-and-reflection": "compulsory-1",
+  "geo-c1-physical-process-animation-observation": "compulsory-1",
+  "geo-c2-geography-lesson-from-place-to-region": "compulsory-2",
+  "geo-c2-web-map-layer-to-story": "compulsory-2",
+  "geo-c2-rgs-locational-knowledge-and-people": "compulsory-2",
+  "geo-s1-sun-earth-moon-model-parameter-check": "selective-1",
+  "geo-s1-multi-view-evidence-before-conclusion": "selective-1",
+  "geo-s1-map-scale-and-projection-in-web-mapping": "selective-1",
+  "geo-s2-web-mapping-from-question-to-layer": "selective-2",
+  "geo-s2-teaching-system-as-problem-solving-structure": "selective-2",
+  "geo-s2-fieldwork-and-enquiry-design": "selective-2",
+  "geo-s3-geography-qa-source-evidence-and-hallucination": "selective-3",
+  "geo-s3-multi-round-qa-uncertainty-check": "selective-3",
+  "geo-s3-teaching-resource-license-and-access-boundary": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.23.26");
@@ -64,7 +63,7 @@ assert.equal(payload.items.length, 410);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v24 source ${sourceId}`);
+  assert.ok(source, `missing v26 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
   if (expected.commitSha) {
@@ -77,7 +76,7 @@ for (const [sourceId, expected] of Object.entries(expectedSources)) {
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v24 item ${itemId}`);
+  assert.ok(item, `missing v26 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

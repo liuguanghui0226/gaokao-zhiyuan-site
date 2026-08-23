@@ -4152,8 +4152,8 @@ function renderDisciplines() {
         <strong>${fmtNumber(selectedSources.length)} 条资料</strong>
       </header>
       <p>${esc(selected.guide)}</p>
-      <div class="major-family-grid">
-        ${families.map((family) => `<button class="major-family-btn ${family.key === selectedFamily?.key ? "active" : ""}" type="button" data-family-key="${esc(family.key)}">${esc(family.name)}</button>`).join("")}
+      <div class="major-family-grid" role="group" aria-label="专业方向">
+        ${families.map((family) => `<button class="major-family-btn ${family.key === selectedFamily?.key ? "active" : ""}" type="button" data-family-key="${esc(family.key)}" aria-pressed="${family.key === selectedFamily?.key}">${esc(family.name)}</button>`).join("")}
       </div>
       ${selectedFamily ? `<div class="major-list">${selectedFamily.majors.map((major) => `<span>${esc(major)}</span>`).join("")}</div>` : ""}
       <div class="discipline-actions">
@@ -4344,10 +4344,10 @@ function renderGeography() {
   const courseMap = new Map(data.courses.map((course) => [course.id, course]));
   const visibleItems = filteredGeographyItems(courseMap);
   const courseButtons = [
-    `<button class="geography-course-btn ${state.geographyCourse ? "" : "active"}" type="button" data-geography-course="">全部课程 · ${fmtNumber(metrics.items)}</button>`,
+    `<button class="geography-course-btn ${state.geographyCourse ? "" : "active"}" type="button" data-geography-course="" aria-pressed="${!state.geographyCourse}">全部课程 · ${fmtNumber(metrics.items)}</button>`,
     ...data.courses.map((course) => {
       const count = data.items.filter((item) => item.courseId === course.id).length;
-      return `<button class="geography-course-btn ${state.geographyCourse === course.id ? "active" : ""}" type="button" data-geography-course="${esc(course.id)}">${esc(course.name)} · ${fmtNumber(count)}</button>`;
+      return `<button class="geography-course-btn ${state.geographyCourse === course.id ? "active" : ""}" type="button" data-geography-course="${esc(course.id)}" aria-pressed="${state.geographyCourse === course.id}">${esc(course.name)} · ${fmtNumber(count)}</button>`;
     }),
   ].join("");
   const cards = visibleItems.map((item) => {
@@ -4388,7 +4388,7 @@ function renderGeography() {
     <section class="band geography-intro">
       <h3>按课程复习自然地理、人文地理与资源环境</h3>
       <p>${esc(data.description)}</p>
-      <div class="geography-course-grid">${courseButtons}</div>
+      <div class="geography-course-grid" role="group" aria-label="地理课程筛选">${courseButtons}</div>
     </section>
     <section class="band geography-provenance" data-geography-version="${esc(data.version)}">
       <div class="data-summary-head">

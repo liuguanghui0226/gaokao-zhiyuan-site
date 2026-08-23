@@ -59,7 +59,7 @@ context.__gaokaoTest.renderSources();
 
 assert.match(view.innerHTML, /class="band geography-source-directory"/);
 assert.match(view.innerHTML, /高中地理来源目录/);
-assert.match(view.innerHTML, /156 个公开链接/);
+assert.match(view.innerHTML, /162 个公开链接/);
 assert.match(view.innerHTML, /22 个本地\/教材/);
 assert.match(view.innerHTML, /class="geography-directory-link" href="https:\/\/oceanservice\.noaa\.gov\/education\/tutorial_tides\/tides01_intro\.html"/);
 assert.match(view.innerHTML, /访问 2026-08-23/);
@@ -113,6 +113,12 @@ assert.match(view.innerHTML, /github\.com\/yujinnee\/WorldHunter/);
 assert.match(view.innerHTML, /github\.com\/mukombradon\/GlobeGuesser/);
 assert.match(view.innerHTML, /github\.com\/GIS-Info\/GISphereKG-ChatBot/);
 assert.match(view.innerHTML, /https:\/\/www\.noaa\.gov\/education\/resource-collections/);
+assert.match(view.innerHTML, /github\.com\/lurea-git\/geography-teaching-lecture/);
+assert.match(view.innerHTML, /github\.com\/swingboat\/geography-study-react/);
+assert.match(view.innerHTML, /github\.com\/7tigersniffstherose7\/Geographical-Education-Multi-round-QA-Dataset/);
+assert.match(view.innerHTML, /github\.com\/mizmay\/web-map-quickstart/);
+assert.match(view.innerHTML, /https:\/\/www\.rgs\.org\/schools/);
+assert.match(view.innerHTML, /https:\/\/geography\.org\.uk\/online-teaching-resources\//);
 assert.match(view.innerHTML, /class="geography-directory-local"/);
 assert.doesNotMatch(view.innerHTML, /class="geography-directory-link"[^>]*>普通高中教科书/);
 

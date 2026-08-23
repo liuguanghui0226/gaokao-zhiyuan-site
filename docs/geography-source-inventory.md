@@ -1,12 +1,25 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026.08.23.25
+盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.26
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.25`：178 个来源、395 条卡片，其中 38 条 `authored-summary`、357 条 `citation-only`；五个课程族分别为 70、80、85、78、82 条。本轮新增 1 个公开网站、5 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖三维地形、地理资源目录、国家与邻国定位、地理游戏化学习、知识图谱、海洋气候资源检索和数据溯源。
+当前发布版本 `geo-2026.08.23.26`：184 个来源、410 条卡片，其中 38 条 `authored-summary`、372 条 `citation-only`；五个课程族分别为 73、83、88、81、85 条。本轮新增 2 个公开网站、4 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖高中地理问题解决、交互动画参数、网络制图、实地考察、地理问答幻觉核验、资源许可和教学资源访问边界。
 
-本轮累计新增 121 条 citation-only 方法卡：在上一轮 106 条的基础上，本轮继续吸收三维地形、地理空间教育目录、全球国家定位、知识图谱和 NOAA 教育资源，补齐视点与尺度、元数据、区域层级、资料范围、公平性和资源环境证据溯源等专题。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 136 条 citation-only 方法卡：在上一轮 121 条的基础上，本轮继续吸收高中地理教师课例、参数化动画、网络制图课程、学校实地考察入口、地理教育问答风险和教学资源目录，补齐问题迁移、模型核验、图层叙事、调查设计、幻觉识别与许可边界等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.23.26 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-lurea-geography-teaching-lecture` | [高中地理教学讲座：从教会答题到学会解决问题](https://github.com/lurea-git/geography-teaching-lecture) | commit `3f23a8662cec3e55f8656bbeb2cb7f2e859d5d01`；访问日期 2026-08-23 | 参照课例诊断、证据—关系—过程—迁移和问题解决结构；不复制讲稿、课件、文档或页面文字。 |
+| `github-geography-study-react` | [高中地理动画教学：日地运动交互模型](https://github.com/swingboat/geography-study-react) | commit `ca94e23989de595560189c3d1463f249639260d5`；访问日期 2026-08-23 | 参照黄赤交角动画、参数观察和课程标签核对；README 声明 MIT，不复制代码、图片、组件或页面文字。 |
+| `github-geographical-education-qa-hallucination` | [地理教育多轮问答与幻觉分析数据集](https://github.com/7tigersniffstherose7/Geographical-Education-Multi-round-QA-Dataset) | commit `5dc19bc3c429907868aad9cbbdb569f283ec5fb6`；访问日期 2026-08-23 | 参照多轮问答、知识点对齐、幻觉识别和证据核验；仓库未声明统一许可证，不复制 CSV、压缩包或论文正文。 |
+| `github-mizmay-web-map-quickstart` | [Web-Mapping Quickstart：三次课的网络制图教学](https://github.com/mizmay/web-map-quickstart) | gh-pages commit `e71b11067fc820a9ef4df546b15b5b193ed4695b`；访问日期 2026-08-23 | 参照 session 分段、图层表达和地图叙事；不复制幻灯片、图片、代码或页面文字。 |
+| `web-rgs-schools-geography-resources` | [Royal Geographical Society Schools](https://www.rgs.org/schools) | 页面访问日期 2026-08-23 | 参照学校资源、实地考察、学生/教师活动、项目和课程支持入口；不复制正文、图片、活动材料或会员资源。 |
+| `web-geographical-association-teaching-resources` | [Geographical Association：在线地理教学资源](https://geography.org.uk/online-teaching-resources/) | 页面访问日期 2026-08-23；页面标注更新 2026-08-06 | 参照按学段与主题筛选案例、视频、活动、野外调查、地图制图和资源环境材料的方式；部分内容需会员权限，不复制受限内容。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每个课程族 3 条。外部来源只用于问题解决、交互模型、网络地图、地理实践、问答核验和资源访问边界的交叉核对，公开层继续保留人民教育出版社教材证据和原创表述；没有把第三方题目、答案、讲稿、课件、数据记录、页面代码或图件并入站点。
 
 ## geo-2026.08.23.25 新增公开来源
 
