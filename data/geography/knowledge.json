@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.33",
+  "version": "geo-2026.08.23.34",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -2097,6 +2097,82 @@
       "url": "https://www.cma.gov.cn/kp/",
       "accessedAt": "2026-08-23",
       "licenseNote": "中国气象局公共科普信息入口；仅作气象观测、天气气候概念和时间尺度核对，公开层发布原创高中地理方法，不复制正文、图表或数据。"
+    },
+    {
+      "id": "github-omu-musubouar-disaster-education",
+      "title": "MUSUBOU-AR：面向防灾教育的地理扩展现实应用",
+      "publisher": "omu-geolab/musubouAR（GitHub）",
+      "editionNote": "公开仓库提交 `d4528c459bf03fcbf19e14e1c08eda788ecc9332`；访问日期 2026-08-23；README 介绍地图、AR、灾害图层、路线和防灾教育场景。",
+      "url": "https://github.com/omu-geolab/musubouAR",
+      "commitSha": "d4528c459bf03fcbf19e14e1c08eda788ecc9332",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库 LICENSE.md 声明 MIT，但地图、照片、视频和外部数据仍按各自来源处理；本项目仅作防灾教育与空间图层方法的 citation-only 参照，不复制代码、素材、数据或页面文字。"
+    },
+    {
+      "id": "github-earthai-earth-science-platform",
+      "title": "EarthAi：地球科学、灾害韧性与地理智能平台",
+      "publisher": "Ethos2022/EarthAi（GitHub）",
+      "editionNote": "公开仓库提交 `c312be45dd728aec0c6b77b2f461c19ba811fccd`；访问日期 2026-08-23；README 定位为地球科学、灾害韧性、地理智能、教育与科学发现平台。",
+      "url": "https://github.com/Ethos2022/EarthAi",
+      "commitSha": "c312be45dd728aec0c6b77b2f461c19ba811fccd",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 MIT；本项目仅作地球系统建模、灾害韧性和教育边界的 citation-only 参照，发布原创高中地理方法，不复制代码、模型、数据或页面内容。"
+    },
+    {
+      "id": "github-foss-geospatial-science-education",
+      "title": "Using Free and Open Source Solutions in Geospatial Science Education：开源地理空间教育",
+      "publisher": "wenzeslaus/foss-in-geospatial-science-education（GitHub）",
+      "editionNote": "公开仓库提交 `5d5a0faaa2ab1e8b1f18885f46c701dfa2036989`；访问日期 2026-08-23；README 介绍 FOSS4G 与开放地理教育演讲，强调开源软件、数据和教学流程。",
+      "url": "https://github.com/wenzeslaus/foss-in-geospatial-science-education",
+      "commitSha": "5d5a0faaa2ab1e8b1f18885f46c701dfa2036989",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "README 声明 Creative Commons Attribution-ShareAlike 4.0；本项目仅作开源地理教育、数据归因和流程复核的 citation-only 参照，不复制演示文稿、图片、代码或正文。"
+    },
+    {
+      "id": "github-gitenberg-commercial-geography-high-school",
+      "title": "Commercial Geography：High Schools 商业地理历史教材",
+      "publisher": "GITenberg/Commercial-GeographyA-Book-for-High-Schools-Commercial-Courses-and-Business-Colleges（GitHub）",
+      "editionNote": "公开仓库提交 `43bf9b196fbf5b81f646114b823293f0d24026ec`；访问日期 2026-08-23；README 说明为 Project Gutenberg 的高中商业地理历史书籍源文件。",
+      "url": "https://github.com/GITenberg/Commercial-GeographyA-Book-for-High-Schools-Commercial-Courses-and-Business-Colleges_24884",
+      "commitSha": "43bf9b196fbf5b81f646114b823293f0d24026ec",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库 README 标明该书为 Project Gutenberg 公共领域作品，但地域版权和 Project Gutenberg 商标条款仍需单独遵守；本项目只作历史商业地理与产业联系的 citation-only 参照，不复制书稿、版式或原文。"
+    },
+    {
+      "id": "web-iom-world-migration-report",
+      "title": "IOM：World Migration Report 世界移民报告",
+      "publisher": "International Organization for Migration",
+      "editionNote": "公开报告入口；访问日期 2026-08-23；用于核对迁移类型、迁移驱动、迁移数据和区域联系的概念与证据边界。",
+      "url": "https://worldmigrationreport.iom.int/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "国际移民组织公共报告入口；具体报告、图表和数据按其版权与使用条款处理，本项目仅作迁移概念、尺度和证据链的 citation-only 参照，不复制正文、图表或数据。"
+    },
+    {
+      "id": "web-unhabitat-urban-data",
+      "title": "UN-Habitat Data：全球城市数据平台",
+      "publisher": "United Nations Human Settlements Programme",
+      "editionNote": "公开城市数据平台；访问日期 2026-08-23；用于核对城市指标、空间单元、居住环境、基础设施和可持续城市比较的资料边界。",
+      "url": "https://data.unhabitat.org/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "联合国人居署公共数据入口；具体数据集按元数据、署名和许可使用，本项目仅作城市指标与空间公平方法的 citation-only 参照，不复制数据表、图表或页面内容。"
+    },
+    {
+      "id": "web-census-statistics-in-schools",
+      "title": "U.S. Census Bureau：Statistics in Schools 统计与地理教育",
+      "publisher": "United States Census Bureau",
+      "editionNote": "公开教育入口；访问日期 2026-08-23；用于核对人口普查、年龄结构、空间单元、统计图表和数据素养的课堂任务边界。",
+      "url": "https://www.census.gov/programs-surveys/sis.html",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "美国人口普查局公共教育入口；具体教材、图表和数据按页面标注使用，本项目仅作人口统计、空间单元和数据素养的 citation-only 参照，不复制活动材料、图表或数据。"
+    },
+    {
+      "id": "web-noaa-coastal-issues",
+      "title": "NOAA Ocean Service：Coastal Issues 海岸带问题教育入口",
+      "publisher": "National Oceanic and Atmospheric Administration Ocean Service",
+      "editionNote": "公开海岸带教育教程；访问日期 2026-08-23；用于核对海岸过程、风暴潮、海平面变化、海岸风险和治理选择的资料边界。",
+      "url": "https://oceanservice.noaa.gov/education/tutorial_coastal_issues/welcome.html",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "NOAA 公共教育入口；具体图示、活动和数据产品按页面说明处理，本项目仅作海岸过程、风险和治理方法的 citation-only 参照，不复制正文、图片、活动或数据。"
     }
   ],
   "items": [
@@ -12977,6 +13053,223 @@
         {"sourceId": "web-copernicus-data-space", "locator": "Copernicus Data Space：land, ocean, atmosphere monitoring and Sentinel data access", "note": "用于交叉核对卫星监测、地表变化和多源观测的任务边界；不复制影像、数据或页面资源。"},
         {"sourceId": "web-cma-public-science", "locator": "中国气象局科普入口：气象观测、气候背景和灾害服务", "note": "用于交叉核对气象背景、时间序列和生态变化解释中的观测条件；不复制正文、图表或数据。"},
         {"sourceId": "pep-geography-selective-3", "locator": "生态文明、资源环境安全和国家安全章节", "note": "回到教材核对生态保护、资源环境治理和安全能力。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-coastal-processes-and-risk-chain",
+      "courseId": "compulsory-1",
+      "title": "海岸过程与风险链条",
+      "summary": "海岸带题要把波浪、潮汐、风暴和海平面变化等自然过程，与海岸地形、聚落暴露、工程防护和生态缓冲联系起来。评价措施时同时说明风险来源、承灾体、时间尺度和剩余风险，避免把修筑工程写成唯一答案。",
+      "keywords": ["海岸过程", "风暴潮", "风险链条", "生态缓冲"],
+      "sourceIds": ["web-noaa-coastal-issues", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-noaa-coastal-issues", "locator": "NOAA Ocean Service Coastal Issues tutorial：coastal processes, hazards and management choices", "note": "用于交叉核对海岸过程、海岸风险和治理措施的证据边界；不复制正文、图片或活动。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "海水运动、地貌过程和自然灾害章节", "note": "回到教材核对波浪、海岸地貌、灾害和人地关系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-disaster-walk-and-layered-map",
+      "courseId": "compulsory-1",
+      "title": "防灾实地观察与分层地图",
+      "summary": "防灾实地观察可先绘制路线、避难点、危险源和可达性图层，再用照片、时间和位置记录验证地图线索。地图或增强现实只是信息呈现工具，结论仍需核对现场条件、数据来源、隐私边界和预警时效。",
+      "keywords": ["防灾教育", "实地观察", "地图图层", "可达性"],
+      "sourceIds": ["github-omu-musubouar-disaster-education", "web-noaa-coastal-issues", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-omu-musubouar-disaster-education", "locator": "MUSUBOU-AR README：灾害图层、路线、AR显示和防灾教育场景", "note": "用于交叉核对防灾地图、路线观察和分层信息的教学方法；不复制代码、素材或示例数据。"},
+        {"sourceId": "web-noaa-coastal-issues", "locator": "NOAA Ocean Service Coastal Issues tutorial：coastal hazard information and preparedness", "note": "用于交叉核对海岸风险信息与现场核验的关系；不复制正文或图示。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地理信息技术、自然灾害与防灾减灾章节", "note": "回到教材核对地图表达、灾害识别和防灾措施。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-earth-system-model-evidence",
+      "courseId": "compulsory-1",
+      "title": "地球系统模型与证据链",
+      "summary": "地球系统分析先提出可检验的过程假设，再明确输入、变量、空间尺度和观测证据。模型可以帮助比较情景，却不能替代实测资料；读图或使用算法结果时要检查分辨率、参数、验证样本和不确定性。",
+      "keywords": ["地球系统", "模型", "观测证据", "不确定性"],
+      "sourceIds": ["github-earthai-earth-science-platform", "github-foss-geospatial-science-education", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-earthai-earth-science-platform", "locator": "EarthAi README：Earth science, disaster resilience, geospatial intelligence and education", "note": "用于交叉核对地球科学模型、灾害韧性和教育应用的边界；不复制代码、模型或页面内容。"},
+        {"sourceId": "github-foss-geospatial-science-education", "locator": "FOSS geospatial science education README：open tools, data and teaching workflow", "note": "用于交叉核对开源工具、数据归因和可复核流程；不复制演示文稿或正文。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地球圈层、自然过程和地理信息技术章节", "note": "回到教材核对自然系统联系、过程解释和资料判读。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-migration-stock-flow-and-scale",
+      "courseId": "compulsory-2",
+      "title": "迁移存量、流量与尺度",
+      "summary": "分析人口迁移时先区分某一时点的迁移人口存量与某一时期的迁移流量，再说明迁移方向、驱动因素、网络联系和统计口径。跨区域比较要统一时间、年龄范围和空间单元，避免把一次流量当成人口总量。",
+      "keywords": ["人口迁移", "存量流量", "迁移尺度", "统计口径"],
+      "sourceIds": ["web-iom-world-migration-report", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-iom-world-migration-report", "locator": "IOM World Migration Report：migration types, drivers, data and regional connections", "note": "用于交叉核对迁移概念、数据口径和区域联系；不复制报告正文、图表或数据。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口迁移、人口容量和城镇化章节", "note": "回到教材核对迁移原因、影响和人口空间变化。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urban-indicator-and-spatial-equity",
+      "courseId": "compulsory-2",
+      "title": "城市指标与空间公平",
+      "summary": "城市比较不能只看总量，要为住房、交通、绿地、公共服务和就业等指标说明分母、空间单元和时间范围。平均值可能掩盖社区差异，评价城市发展时还应关注可达性、弱势群体和设施分布的公平性。",
+      "keywords": ["城市指标", "空间公平", "公共服务", "可达性"],
+      "sourceIds": ["web-unhabitat-urban-data", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-unhabitat-urban-data", "locator": "UN-Habitat Data：urban indicators, infrastructure, housing and sustainable cities", "note": "用于交叉核对城市指标、空间单元和空间公平的比较边界；不复制数据表、图表或页面内容。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "城镇化、城乡联系和城市功能章节", "note": "回到教材核对城市化影响、服务业和城乡空间联系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-census-data-and-population-structure",
+      "courseId": "compulsory-2",
+      "title": "人口普查、结构与图表识读",
+      "summary": "人口图表判读要先确认普查或抽样的对象、年份、空间单元和指标定义，再读取年龄、性别、家庭或就业结构。统计教育材料可帮助建立数据意识，但不同国家和地区的分类、隐私处理与发布范围不能直接混用。",
+      "keywords": ["人口普查", "人口结构", "统计图表", "空间单元"],
+      "sourceIds": ["web-census-statistics-in-schools", "web-iom-world-migration-report", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-census-statistics-in-schools", "locator": "U.S. Census Bureau Statistics in Schools：census, population structure and data literacy activities", "note": "用于交叉核对人口统计、图表阅读和数据素养边界；不复制活动材料或图表。"},
+        {"sourceId": "web-iom-world-migration-report", "locator": "IOM World Migration Report：migration data definitions and evidence limits", "note": "用于交叉核对人口流动数据的定义和跨区域比较限制；不复制报告正文或数据。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口数量、结构、迁移和城镇化章节", "note": "回到教材核对人口结构、人口变化和统计图表。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-coastal-observation-and-process-scale",
+      "courseId": "selective-1",
+      "title": "海岸观测与过程尺度",
+      "summary": "海岸过程判读要把波浪、潮汐、风暴和泥沙输运放在相应的时间与空间尺度上，并区分一次事件、季节变化和长期岸线移动。遥感或地图能提示变化位置，过程解释仍要结合现场、气象和海洋观测。",
+      "keywords": ["海岸观测", "泥沙输运", "时间尺度", "岸线变化"],
+      "sourceIds": ["web-noaa-coastal-issues", "github-foss-geospatial-science-education", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "web-noaa-coastal-issues", "locator": "NOAA Ocean Service Coastal Issues tutorial：coastal processes, observations and change", "note": "用于交叉核对海岸过程、风险和观测任务的尺度边界；不复制正文、图示或数据。"},
+        {"sourceId": "github-foss-geospatial-science-education", "locator": "FOSS geospatial science education README：open geospatial tools and teaching workflow", "note": "用于交叉核对地图、数据和过程观察的可复核流程；不复制演示文稿或图片。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "海水运动、海岸地貌和自然环境整体性章节", "note": "回到教材核对海岸过程、海水运动和自然地理尺度。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-open-geospatial-education-workflow",
+      "courseId": "selective-1",
+      "title": "开放地理教育的可复核工作流",
+      "summary": "地理实践任务可按问题、数据、坐标、图层、处理、验证和表达建立工作流。选择开源工具时仍要记录软件版本、数据许可、处理参数和误差来源，使地图结论能够被复查，而不是只展示一张看似精确的图。",
+      "keywords": ["地理实践", "开源工具", "数据许可", "可复核"],
+      "sourceIds": ["github-foss-geospatial-science-education", "github-earthai-earth-science-platform", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-foss-geospatial-science-education", "locator": "FOSS geospatial science education README：open tools, open data and attribution workflow", "note": "用于交叉核对开源工具、数据归因和地理教育流程；不复制演示文稿、代码或正文。"},
+        {"sourceId": "github-earthai-earth-science-platform", "locator": "EarthAi README：Earth science, geospatial intelligence and education platform", "note": "用于交叉核对地理智能、地球科学教育和模型使用边界；不复制代码、模型或数据。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地理信息技术、空间数据和地理实践章节", "note": "回到教材核对地理信息技术、地图表达和资料验证。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-earth-science-model-and-uncertainty",
+      "courseId": "selective-1",
+      "title": "地球科学模型与不确定性",
+      "summary": "使用地球科学模型时要区分观测事实、模型假设和情景输出，检查输入数据、参数范围、验证方法与适用尺度。模型结果适合比较过程和情景，不应被当作没有误差的现场事实或确定性预言。",
+      "keywords": ["地球科学模型", "情景", "参数", "不确定性"],
+      "sourceIds": ["github-earthai-earth-science-platform", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-earthai-earth-science-platform", "locator": "EarthAi README：Earth science, disaster resilience and scientific discovery platform", "note": "用于交叉核对地球科学模型和灾害情景的使用边界；不复制代码、模型或页面内容。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "自然环境整体性、地理信息技术和地理实践章节", "note": "回到教材核对自然过程、资料分析和综合判断。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-migration-network-and-regional-comparison",
+      "courseId": "selective-2",
+      "title": "迁移网络与区域比较",
+      "summary": "区域迁移分析应同时看迁出地、迁入地和中间网络，比较劳动力、家庭、政策、交通与信息联系如何共同塑造流动。不同区域的迁移率、绝对人数和空间尺度必须分开解释，不能用单一原因替代机制链。",
+      "keywords": ["迁移网络", "区域比较", "劳动力", "空间联系"],
+      "sourceIds": ["web-iom-world-migration-report", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-iom-world-migration-report", "locator": "IOM World Migration Report：migration drivers, routes, networks and regional patterns", "note": "用于交叉核对迁移网络、区域联系和多因素解释边界；不复制报告正文、图表或数据。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域联系、人口流动和区域发展章节", "note": "回到教材核对人口流动、区域差异和区域联系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-urban-data-comparison-and-governance",
+      "courseId": "selective-2",
+      "title": "城市数据比较与治理",
+      "summary": "城市治理比较要把指标定义、统计边界、设施覆盖和居民实际可达性放在一起，先判断数据是否可比，再讨论规划、更新、交通和公共服务措施。高总量或高平均值不必然意味着所有社区都获得同等的城市机会。",
+      "keywords": ["城市治理", "指标比较", "设施覆盖", "空间公平"],
+      "sourceIds": ["web-unhabitat-urban-data", "web-census-statistics-in-schools", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-unhabitat-urban-data", "locator": "UN-Habitat Data：urban indicators, housing, infrastructure and sustainable development", "note": "用于交叉核对城市指标、空间公平和治理比较的边界；不复制数据表、图表或页面内容。"},
+        {"sourceId": "web-census-statistics-in-schools", "locator": "U.S. Census Bureau Statistics in Schools：population and community data literacy", "note": "用于交叉核对统计单元、图表比较和社区数据素养；不复制活动材料或图表。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "城镇化、区域发展和国土空间规划章节", "note": "回到教材核对城市体系、区域发展和空间治理。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-commercial-geography-and-supply-chain",
+      "courseId": "selective-2",
+      "title": "商业地理与供应链空间",
+      "summary": "产业和商业空间分析可从资源、生产、市场、交通、劳动力和制度条件追踪产品流动，再判断全球供应链的节点、依赖和风险。历史商业地理材料适合观察长期空间格局，但不能直接代替当代数据和现实制度。",
+      "keywords": ["商业地理", "供应链", "产业区位", "历史比较"],
+      "sourceIds": ["github-gitenberg-commercial-geography-high-school", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-gitenberg-commercial-geography-high-school", "locator": "GITenberg Project Gutenberg high-school Commercial Geography：historical commercial and industrial geography book metadata", "note": "用于交叉核对商业地理、产业联系和历史尺度的研究边界；不复制书稿、版式或原文。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "产业区位、区域联系和经济全球化章节", "note": "回到教材核对产业布局、交通联系和区域发展。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-climate-migration-and-security",
+      "courseId": "selective-3",
+      "title": "气候变化、迁移与安全",
+      "summary": "气候变化与迁移的关系要经过暴露、脆弱性、生计、政策和适应能力等环节解释，不能把迁移简单归因于单一气候事件。资源安全评价还要比较原地适应、短期流动和长期安置的成本、公平与治理能力。",
+      "keywords": ["气候迁移", "脆弱性", "资源安全", "适应能力"],
+      "sourceIds": ["web-iom-world-migration-report", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-iom-world-migration-report", "locator": "IOM World Migration Report：migration drivers, vulnerability and regional evidence", "note": "用于交叉核对迁移驱动、脆弱性和区域安全证据边界；不复制报告正文、图表或数据。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境安全、生态文明和国家安全章节", "note": "回到教材核对资源安全、环境风险和治理选择。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-coastal-ecosystem-resilience",
+      "courseId": "selective-3",
+      "title": "海岸生态系统与韧性",
+      "summary": "海岸生态治理要同时考虑湿地、沙滩、红树林或其他生态缓冲的功能，以及港口、住房、旅游和渔业等人类需求。评价方案时比较生态服务、暴露人口、工程成本、恢复时间和长期适应，而不是只追求短期岸线利用率。",
+      "keywords": ["海岸生态", "生态服务", "韧性", "海岸治理"],
+      "sourceIds": ["web-noaa-coastal-issues", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-noaa-coastal-issues", "locator": "NOAA Ocean Service Coastal Issues tutorial：coastal hazards, ecosystems and management", "note": "用于交叉核对海岸生态、风险和适应治理的边界；不复制正文、图片或数据。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "生态系统服务、资源环境安全和区域治理章节", "note": "回到教材核对生态保护、人地协调和环境安全。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-disaster-scenario-and-field-verification",
+      "courseId": "selective-3",
+      "title": "灾害情景与现场复核",
+      "summary": "灾害情景分析可先设定时间、范围、暴露对象和预警条件，再用地图、现场观察、历史记录和多源数据复核假设。交互模型能够帮助比较响应顺序，但不能代替真实预警、专业评估、隐私保护和灾后责任边界。",
+      "keywords": ["灾害情景", "现场复核", "多源数据", "韧性治理"],
+      "sourceIds": ["github-omu-musubouar-disaster-education", "github-foss-geospatial-science-education", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-omu-musubouar-disaster-education", "locator": "MUSUBOU-AR README：time-based disaster scenarios, map layers, AR warnings and disaster education", "note": "用于交叉核对灾害情景、地图警示和现场教育的边界；不复制代码、素材或示例数据。"},
+        {"sourceId": "github-foss-geospatial-science-education", "locator": "FOSS geospatial science education README：open tools, data and reproducible teaching workflow", "note": "用于交叉核对多源数据、工具归因和复核流程；不复制演示文稿、代码或正文。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "自然灾害、资源环境安全和国家安全章节", "note": "回到教材核对灾害风险、综合治理和安全能力。"}
       ],
       "licenseStatus": "citation-only",
       "reviewStatus": "reviewed"

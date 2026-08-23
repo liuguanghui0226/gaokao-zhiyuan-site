@@ -9,59 +9,60 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "github-ap-human-geography-textbook": {
-    url: "https://github.com/dmccreary/ap-human-geography",
-    commitSha: "7652907ea71eeba431cb966082adaa3b4c91c33e",
+  "github-omu-musubouar-disaster-education": {
+    url: "https://github.com/omu-geolab/musubouAR",
+    commitSha: "d4528c459bf03fcbf19e14e1c08eda788ecc9332",
     accessedAt: "2026-08-23",
   },
-  "github-world-regional-geography-textbook": {
-    url: "https://github.com/sounny/worldregionalgeography",
-    commitSha: "67aefeb291ad8dacf40c223e02f674d771b101e0",
+  "github-earthai-earth-science-platform": {
+    url: "https://github.com/Ethos2022/EarthAi",
+    commitSha: "c312be45dd728aec0c6b77b2f461c19ba811fccd",
     accessedAt: "2026-08-23",
   },
-  "github-python-gis-book": {
-    url: "https://github.com/Python-GIS-book/site",
-    commitSha: "ed1b78f7d9172c7cc647e67e8f95737faf89539c",
+  "github-foss-geospatial-science-education": {
+    url: "https://github.com/wenzeslaus/foss-in-geospatial-science-education",
+    commitSha: "5d5a0faaa2ab1e8b1f18885f46c701dfa2036989",
     accessedAt: "2026-08-23",
   },
-  "web-un-world-population-prospects": {
-    url: "https://population.un.org/wpp/",
+  "github-gitenberg-commercial-geography-high-school": {
+    url: "https://github.com/GITenberg/Commercial-GeographyA-Book-for-High-Schools-Commercial-Courses-and-Business-Colleges_24884",
+    commitSha: "43bf9b196fbf5b81f646114b823293f0d24026ec",
     accessedAt: "2026-08-23",
   },
-  "web-copernicus-data-space": {
-    url: "https://dataspace.copernicus.eu/",
+  "web-iom-world-migration-report": {
+    url: "https://worldmigrationreport.iom.int/",
     accessedAt: "2026-08-23",
   },
-  "web-mem-emergency-science": {
-    url: "https://www.mem.gov.cn/kp/",
+  "web-unhabitat-urban-data": {
+    url: "https://data.unhabitat.org/",
     accessedAt: "2026-08-23",
   },
-  "web-mohurd-urban-rural-development": {
-    url: "https://www.mohurd.gov.cn/gongkai/",
+  "web-census-statistics-in-schools": {
+    url: "https://www.census.gov/programs-surveys/sis.html",
     accessedAt: "2026-08-23",
   },
-  "web-cma-public-science": {
-    url: "https://www.cma.gov.cn/kp/",
+  "web-noaa-coastal-issues": {
+    url: "https://oceanservice.noaa.gov/education/tutorial_coastal_issues/welcome.html",
     accessedAt: "2026-08-23",
   },
 };
 
 const expectedItems = {
-  "geo-c1-satellite-land-cover-change-evidence": "compulsory-1",
-  "geo-c1-hazard-chain-and-emergency-response": "compulsory-1",
-  "geo-c1-meteorological-observation-scale": "compulsory-1",
-  "geo-c2-population-prospects-and-service-pressure": "compulsory-2",
-  "geo-c2-world-regional-comparison-and-scale": "compulsory-2",
-  "geo-c2-urban-rural-function-and-infrastructure": "compulsory-2",
-  "geo-s1-remote-sensing-spectral-evidence-chain": "selective-1",
-  "geo-s1-topographic-data-and-relief-profile": "selective-1",
-  "geo-s1-atmospheric-observation-and-climate-normal": "selective-1",
-  "geo-s2-demographic-scenario-and-regional-planning": "selective-2",
-  "geo-s2-open-geospatial-data-reproducibility": "selective-2",
-  "geo-s2-world-regional-case-comparison": "selective-2",
-  "geo-s3-population-security-and-aging-response": "selective-3",
-  "geo-s3-disaster-risk-governance-and-resilience": "selective-3",
-  "geo-s3-satellite-monitoring-and-ecological-security": "selective-3",
+  "geo-c1-coastal-processes-and-risk-chain": "compulsory-1",
+  "geo-c1-disaster-walk-and-layered-map": "compulsory-1",
+  "geo-c1-earth-system-model-evidence": "compulsory-1",
+  "geo-c2-migration-stock-flow-and-scale": "compulsory-2",
+  "geo-c2-urban-indicator-and-spatial-equity": "compulsory-2",
+  "geo-c2-census-data-and-population-structure": "compulsory-2",
+  "geo-s1-coastal-observation-and-process-scale": "selective-1",
+  "geo-s1-open-geospatial-education-workflow": "selective-1",
+  "geo-s1-earth-science-model-and-uncertainty": "selective-1",
+  "geo-s2-migration-network-and-regional-comparison": "selective-2",
+  "geo-s2-urban-data-comparison-and-governance": "selective-2",
+  "geo-s2-commercial-geography-and-supply-chain": "selective-2",
+  "geo-s3-climate-migration-and-security": "selective-3",
+  "geo-s3-coastal-ecosystem-resilience": "selective-3",
+  "geo-s3-disaster-scenario-and-field-verification": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.23.34");
@@ -71,17 +72,17 @@ assert.equal(payload.items.length, 530);
 const sources = new Map(payload.sources.map((source) => [source.id, source]));
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = sources.get(sourceId);
-  assert.ok(source, `missing v33 source ${sourceId}`);
+  assert.ok(source, `missing v34 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
   if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
-  assert.match(source.licenseNote, /citation|原创|不复制|未声明|无统一|公开|许可/i);
+  assert.match(source.licenseNote, /citation|原创|不复制|未声明|无统一|公开|许可|public domain/i);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v33 item ${itemId}`);
+  assert.ok(item, `missing v34 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

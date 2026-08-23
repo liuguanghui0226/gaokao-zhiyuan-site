@@ -53,9 +53,9 @@ const expectedItems = {
   "geo-s3-true-size-map-and-spatial-justice": "selective-3",
 };
 
-assert.equal(payload.version, "geo-2026.08.23.33");
-assert.equal(payload.sources.length, 224);
-assert.equal(payload.items.length, 515);
+assert.equal(payload.version, "geo-2026.08.23.34");
+assert.equal(payload.sources.length, 232);
+assert.equal(payload.items.length, 530);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
