@@ -33,7 +33,7 @@ assert.match(appSource, /visual-learning/);
 assert.match(appSource, /target="_blank" rel="noreferrer"/);
 assert.match(indexSource, /视觉学习/);
 
-assert.equal(visuals.version, "geo-visuals-2026.08.24.02");
+assert.equal(visuals.version, "geo-visuals-2026.08.24.03");
 assert.equal(visuals.cards.length, 5, "one visual story is required for each course");
 const sourceIds = new Set(payload.sources.map((source) => source.id));
 const courseIds = new Set(payload.courses.map((course) => course.id));
