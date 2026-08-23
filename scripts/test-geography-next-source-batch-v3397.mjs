@@ -9,78 +9,79 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-cgs-geological-survey": {
-    url: "https://www.cgs.gov.cn/",
+  "github-ap-human-geography-textbook": {
+    url: "https://github.com/dmccreary/ap-human-geography",
+    commitSha: "7652907ea71eeba431cb966082adaa3b4c91c33e",
     accessedAt: "2026-08-23",
   },
-  "web-mot-transport-geography-data": {
-    url: "https://www.mot.gov.cn/",
+  "github-world-regional-geography-textbook": {
+    url: "https://github.com/sounny/worldregionalgeography",
+    commitSha: "67aefeb291ad8dacf40c223e02f674d771b101e0",
     accessedAt: "2026-08-23",
   },
-  "web-nea-energy-security-information": {
-    url: "https://www.nea.gov.cn/",
+  "github-python-gis-book": {
+    url: "https://github.com/Python-GIS-book/site",
+    commitSha: "ed1b78f7d9172c7cc647e67e8f95737faf89539c",
     accessedAt: "2026-08-23",
   },
-  "web-nmdis-marine-information": {
-    url: "https://www.nmdis.org.cn/",
+  "web-un-world-population-prospects": {
+    url: "https://population.un.org/wpp/",
     accessedAt: "2026-08-23",
   },
-  "web-geodata-earth-system-data": {
-    url: "https://www.geodata.cn/",
+  "web-copernicus-data-space": {
+    url: "https://dataspace.copernicus.eu/",
     accessedAt: "2026-08-23",
   },
-  "github-lmec-map-education-collections": {
-    url: "https://github.com/boston-library/lmec_collections",
-    commitSha: "1d2f104a2a5a8b186bfd06a45dde7fd1af25279f",
+  "web-mem-emergency-science": {
+    url: "https://www.mem.gov.cn/kp/",
     accessedAt: "2026-08-23",
   },
-  "github-qgis-lesson-geography": {
-    url: "https://github.com/sagesteppe/QGIS_Lesson",
-    commitSha: "baccacf5893cf02d545258c0d3ceacab35430a62",
+  "web-mohurd-urban-rural-development": {
+    url: "https://www.mohurd.gov.cn/gongkai/",
     accessedAt: "2026-08-23",
   },
-  "github-tactile-map-generator": {
-    url: "https://github.com/jesse-flores/Tactile-Map-Generator",
-    commitSha: "623966ce1963b41472ea667fbae62dc24b97f90a",
+  "web-cma-public-science": {
+    url: "https://www.cma.gov.cn/kp/",
     accessedAt: "2026-08-23",
   },
 };
 
 const expectedItems = {
-  "geo-c1-river-basin-water-resource-observation": "compulsory-1",
-  "geo-c1-geological-survey-map-and-landform-evidence": "compulsory-1",
-  "geo-c1-tactile-map-scale-and-spatial-orientation": "compulsory-1",
-  "geo-c2-transport-corridor-and-accessibility": "compulsory-2",
-  "geo-c2-energy-industry-location-and-transition": "compulsory-2",
-  "geo-c2-historical-map-and-regional-change": "compulsory-2",
-  "geo-s1-river-basin-process-and-runoff-seasonality": "selective-1",
-  "geo-s1-geological-map-and-plate-process-evidence": "selective-1",
-  "geo-s1-marine-observation-and-coastal-change": "selective-1",
-  "geo-s2-national-geospatial-data-and-regional-planning": "selective-2",
-  "geo-s2-qgis-layer-overlay-and-field-verification": "selective-2",
-  "geo-s2-map-education-collection-and-scale-comparison": "selective-2",
-  "geo-s3-energy-security-and-low-carbon-transition": "selective-3",
-  "geo-s3-marine-data-and-coastal-resource-governance": "selective-3",
-  "geo-s3-accessible-mapping-and-spatial-inclusion": "selective-3",
+  "geo-c1-satellite-land-cover-change-evidence": "compulsory-1",
+  "geo-c1-hazard-chain-and-emergency-response": "compulsory-1",
+  "geo-c1-meteorological-observation-scale": "compulsory-1",
+  "geo-c2-population-prospects-and-service-pressure": "compulsory-2",
+  "geo-c2-world-regional-comparison-and-scale": "compulsory-2",
+  "geo-c2-urban-rural-function-and-infrastructure": "compulsory-2",
+  "geo-s1-remote-sensing-spectral-evidence-chain": "selective-1",
+  "geo-s1-topographic-data-and-relief-profile": "selective-1",
+  "geo-s1-atmospheric-observation-and-climate-normal": "selective-1",
+  "geo-s2-demographic-scenario-and-regional-planning": "selective-2",
+  "geo-s2-open-geospatial-data-reproducibility": "selective-2",
+  "geo-s2-world-regional-case-comparison": "selective-2",
+  "geo-s3-population-security-and-aging-response": "selective-3",
+  "geo-s3-disaster-risk-governance-and-resilience": "selective-3",
+  "geo-s3-satellite-monitoring-and-ecological-security": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.23.33");
 assert.equal(payload.sources.length, 224);
 assert.equal(payload.items.length, 515);
 
+const sources = new Map(payload.sources.map((source) => [source.id, source]));
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
-  const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v21 source ${sourceId}`);
+  const source = sources.get(sourceId);
+  assert.ok(source, `missing v33 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
   if (expected.commitSha) assert.equal(source.commitSha, expected.commitSha);
-  assert.match(source.licenseNote, /citation|原创|不复制|仅作/i);
+  assert.match(source.licenseNote, /citation|原创|不复制|未声明|无统一|公开|许可/i);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v21 item ${itemId}`);
+  assert.ok(item, `missing v33 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");
@@ -89,6 +90,7 @@ for (const [itemId, courseId] of Object.entries(expectedItems)) {
   assert.ok(item.evidence.length >= 2);
   assert.ok(item.evidence.some((evidence) => Object.hasOwn(expectedSources, evidence.sourceId)));
   assert.ok(item.evidence.some((evidence) => evidence.sourceId.startsWith("pep-geography-")));
+  assert.ok(item.sourceIds.some((sourceId) => sourceId.startsWith("pep-geography-")));
 }
 
 const courseCounts = Object.groupBy(Object.values(expectedItems), (courseId) => courseId);

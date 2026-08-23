@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.32",
+  "version": "geo-2026.08.23.33",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -2022,6 +2022,81 @@
       "commitSha": "3dda4ffc44cc8c6fce4cefb0bf87213c429fd31e",
       "accessedAt": "2026-08-23",
       "licenseNote": "仓库未声明统一许可证，README 所称开放资源和各数据集许可需分别核验；本项目仅作教学数据范围、空间模式和来源溯源的 citation-only 参照，不复制数据、图表、代码或处理结果。"
+    },
+    {
+      "id": "github-ap-human-geography-textbook",
+      "title": "AP Human Geography：高中人文地理智能教材",
+      "publisher": "dmccreary/ap-human-geography（GitHub）",
+      "editionNote": "公开仓库提交 `7652907ea71eeba431cb966082adaa3b4c91c33e`；访问日期 2026-08-23；课程说明面向 9—12 年级，组织地图与数据分析、人口迁移、文化、政治、农业、城市和经济发展等单元。",
+      "url": "https://github.com/dmccreary/ap-human-geography",
+      "commitSha": "7652907ea71eeba431cb966082adaa3b4c91c33e",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作高中人文地理课程结构、空间分析和模型边界的 citation-only 参照，发布原创方法，不复制正文、题目、图表、代码或页面文字。"
+    },
+    {
+      "id": "github-world-regional-geography-textbook",
+      "title": "World Regional Geography：世界区域地理在线教材",
+      "publisher": "sounny/worldregionalgeography（GitHub）",
+      "editionNote": "公开仓库提交 `67aefeb291ad8dacf40c223e02f674d771b101e0`；访问日期 2026-08-23；项目定位为世界区域地理在线教材，按区域、联系和案例组织全球比较。",
+      "url": "https://github.com/sounny/worldregionalgeography",
+      "commitSha": "67aefeb291ad8dacf40c223e02f674d771b101e0",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证；本项目仅作世界区域比较、尺度转换和案例回查的 citation-only 参照，发布原创高中地理方法，不复制教材正文、图表、代码或页面文字。"
+    },
+    {
+      "id": "github-python-gis-book",
+      "title": "Introduction to Python for Geographic Data Analysis：地理数据分析教材",
+      "publisher": "Python-GIS-book/site（GitHub）",
+      "editionNote": "公开仓库提交 `ed1b78f7d9172c7cc647e67e8f95737faf89539c`；访问日期 2026-08-23；网站定位为地理数据分析 Python 入门教材，涉及空间数据、栅格/矢量和可复现分析流程。",
+      "url": "https://github.com/Python-GIS-book/site",
+      "commitSha": "ed1b78f7d9172c7cc647e67e8f95737faf89539c",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未在 API 中声明统一许可证；本项目仅作 GIS 数据结构、空间分析和可复现流程的 citation-only 参照，发布原创高中地理方法，不复制代码、数据、图表或章节正文。"
+    },
+    {
+      "id": "web-un-world-population-prospects",
+      "title": "United Nations：World Population Prospects 世界人口展望",
+      "publisher": "United Nations Department of Economic and Social Affairs",
+      "editionNote": "公开 World Population Prospects 入口；访问日期 2026-08-23；用于核对人口规模、年龄结构、出生率、死亡率和人口情景的时间序列边界。",
+      "url": "https://population.un.org/wpp/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "联合国公共人口统计与知识入口；仅作人口指标、情景和时间序列口径核对，公开层发布原创高中地理方法，不复制数据库、图表或报告正文。"
+    },
+    {
+      "id": "web-copernicus-data-space",
+      "title": "Copernicus Data Space Ecosystem：开放地球观测数据空间",
+      "publisher": "Copernicus Data Space Ecosystem",
+      "editionNote": "公开数据空间入口；访问日期 2026-08-23；页面说明可免费访问 Sentinel 及相关陆地、海洋和大气数据与服务，并支持浏览和处理。",
+      "url": "https://dataspace.copernicus.eu/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "Copernicus 公共数据服务入口；具体产品按各自数据政策和署名要求处理，本项目仅作遥感任务、尺度和证据链的 citation-only 参照，不复制影像、数据或页面资源。"
+    },
+    {
+      "id": "web-mem-emergency-science",
+      "title": "应急管理部：防灾减灾救灾科普入口",
+      "publisher": "中华人民共和国应急管理部",
+      "editionNote": "公开防灾减灾救灾科普栏目；访问日期 2026-08-23；用于核对灾害识别、风险沟通、预警响应和应急治理的公共信息边界。",
+      "url": "https://www.mem.gov.cn/kp/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "应急管理部公共科普信息入口；仅作灾害风险与应急链条的概念核对，公开层发布原创高中地理方法，不复制正文、图片、图表或案例材料。"
+    },
+    {
+      "id": "web-mohurd-urban-rural-development",
+      "title": "住房和城乡建设部：城乡建设公开信息入口",
+      "publisher": "中华人民共和国住房和城乡建设部",
+      "editionNote": "公开城乡建设信息入口；访问日期 2026-08-23；用于核对城市基础设施、城乡空间治理、公共服务和规划实施的行政信息边界。",
+      "url": "https://www.mohurd.gov.cn/gongkai/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "住房和城乡建设部公共信息入口；仅作城乡规划、基础设施和公共服务方法核对，公开层发布原创高中地理方法，不复制正文、图表或政策原文。"
+    },
+    {
+      "id": "web-cma-public-science",
+      "title": "中国气象局：气象科普与观测知识入口",
+      "publisher": "中华人民共和国中国气象局",
+      "editionNote": "公开气象科普入口；访问日期 2026-08-23；用于核对天气与气候、观测要素、时间尺度和气象服务证据的基本边界。",
+      "url": "https://www.cma.gov.cn/kp/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "中国气象局公共科普信息入口；仅作气象观测、天气气候概念和时间尺度核对，公开层发布原创高中地理方法，不复制正文、图表或数据。"
     }
   ],
   "items": [
@@ -12683,6 +12758,225 @@
         {"sourceId": "github-mapping-chinese-universities", "locator": "README / count versus per-capita density, province grouping and Wikidata coverage limitations", "note": "用于交叉核对数量、人口标准化、区域差异和样本限制；不复制仓库数据、代码或图表。"},
         {"sourceId": "web-sdg6-water-security", "locator": "UN SDG 6 目标页章节：safe water, service access and equity-oriented indicators", "note": "用于交叉核对公共服务可达性和资源配置公平的目标边界；不复制正文或指标数据。"},
         {"sourceId": "pep-geography-selective-3", "locator": "资源安全、资源配置和国家安全章节", "note": "回到教材核对资源供需、空间差异、保障能力和公平治理。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-satellite-land-cover-change-evidence",
+      "courseId": "compulsory-1",
+      "title": "卫星观测、土地覆盖变化与证据链",
+      "summary": "土地覆盖变化判读应先说明影像时间、空间范围和观测对象，再比较植被、水体、裸地或建设用地的变化。遥感结果需要与降水、地形、土地利用和现场资料互证，不能把颜色差异直接当成环境质量或变化原因。",
+      "keywords": ["卫星观测", "土地覆盖", "时间序列", "证据互证"],
+      "sourceIds": ["web-copernicus-data-space", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-copernicus-data-space", "locator": "Copernicus Data Space：Sentinel、陆地观测、时间序列和数据处理入口", "note": "用于交叉核对遥感观测、时间序列和数据处理边界；不复制影像、数据或页面资源。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地理信息技术、自然环境整体性与人类活动章节", "note": "回到教材核对遥感信息、地表覆盖、自然过程和人类活动证据。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-hazard-chain-and-emergency-response",
+      "courseId": "compulsory-1",
+      "title": "灾害链、暴露对象与应急响应",
+      "summary": "自然灾害题应把致灾因子、孕灾环境、承灾体、暴露度和脆弱性分开，再说明预警、避险、救援和恢复如何降低损失。单一灾种名称不能替代风险分析，人口分布、建筑条件、交通和信息可达性都可能改变实际影响。",
+      "keywords": ["灾害链", "暴露度", "脆弱性", "应急响应"],
+      "sourceIds": ["web-mem-emergency-science", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-mem-emergency-science", "locator": "应急管理部科普入口：灾害识别、预警响应和防灾减灾公共信息", "note": "用于交叉核对灾害风险、预警和应急治理的证据边界；不复制正文、图片或案例。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "自然灾害与防灾减灾章节", "note": "回到教材核对致灾因子、灾害影响、防灾工程和应急避险。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-meteorological-observation-scale",
+      "courseId": "compulsory-1",
+      "title": "气象观测要素与时间尺度",
+      "summary": "分析天气材料时要先确认观测要素、站点位置、时间间隔和统计方法，再区分瞬时天气、日变化、季节变化与多年气候平均。不同站点或不同基准期的数值不能直接拼成趋势，还要说明地形、下垫面和城市化的影响。",
+      "keywords": ["气象观测", "天气", "气候", "时间尺度"],
+      "sourceIds": ["web-cma-public-science", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-cma-public-science", "locator": "中国气象局科普入口：天气、气候、观测要素和气象服务", "note": "用于交叉核对天气与气候、观测要素和时间尺度的基本边界；不复制正文、图表或数据。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "大气受热、天气系统与气候章节", "note": "回到教材核对天气过程、气候特征、观测资料和大气运动。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-prospects-and-service-pressure",
+      "courseId": "compulsory-2",
+      "title": "人口展望与公共服务压力",
+      "summary": "人口预测材料要先区分总人口、年龄结构、出生率、死亡率和迁移假设，再判断教育、医疗、就业和养老等公共服务压力。预测是条件情景而不是确定结果，比较地区时还需说明人口基数、统计口径和时间范围。",
+      "keywords": ["人口预测", "年龄结构", "公共服务", "情景"],
+      "sourceIds": ["web-un-world-population-prospects", "github-ap-human-geography-textbook", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-un-world-population-prospects", "locator": "World Population Prospects：人口规模、年龄结构、出生率和情景入口", "note": "用于交叉核对人口预测、年龄结构和情景分析的指标边界；不复制数据库、图表或报告正文。"},
+        {"sourceId": "github-ap-human-geography-textbook", "locator": "course-description：population and migration patterns, demographic transition and population pyramids", "note": "用于交叉核对人口转变、人口金字塔和人文地理问题组织；不复制正文、题目或页面文字。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口变化、人口容量与人口问题章节", "note": "回到教材核对人口数量、结构、分布和公共服务需求。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-world-regional-comparison-and-scale",
+      "courseId": "compulsory-2",
+      "title": "世界区域比较与尺度转换",
+      "summary": "区域比较不能只列地名和结论，应先确定比较尺度、指标和区域边界，再解释自然条件、人口文化、产业联系和历史过程如何共同形成差异。一个区域内部可能差异很大，全球平均值也不能替代国家、城市或流域尺度的证据。",
+      "keywords": ["区域比较", "尺度", "区域边界", "综合分析"],
+      "sourceIds": ["github-world-regional-geography-textbook", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-world-regional-geography-textbook", "locator": "online world regional geography textbook：regional organization, comparison and case structure", "note": "用于交叉核对区域组织、尺度转换和案例比较的学习边界；不复制教材正文、图表或页面文字。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "区域联系、地域文化和区域发展章节", "note": "回到教材核对区域差异、空间联系和综合比较方法。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-urban-rural-function-and-infrastructure",
+      "courseId": "compulsory-2",
+      "title": "城乡功能联系与基础设施",
+      "summary": "城乡关系题应同时看人口流动、产业分工、公共服务、交通网络和生态约束，不能把城市扩张直接等同于乡村衰退或发展。评价基础设施时还要比较覆盖范围、可达性、使用成本、维护能力和对不同群体的影响。",
+      "keywords": ["城乡联系", "基础设施", "公共服务", "可达性"],
+      "sourceIds": ["web-mohurd-urban-rural-development", "github-ap-human-geography-textbook", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-mohurd-urban-rural-development", "locator": "住房和城乡建设部公开信息入口：城乡建设、基础设施、公共服务和规划实施", "note": "用于交叉核对城乡建设和公共服务的治理维度；不复制政策原文、图表或数据。"},
+        {"sourceId": "github-ap-human-geography-textbook", "locator": "course-description：cities, urbanization, infrastructure, transportation and urban planning", "note": "用于交叉核对城市体系、交通和规划的空间分析边界；不复制正文、模型或页面文字。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "乡村与城镇、交通运输和区域联系章节", "note": "回到教材核对城乡分工、聚落体系、交通和区域联系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-remote-sensing-spectral-evidence-chain",
+      "courseId": "selective-1",
+      "title": "遥感光谱证据与地理判读链",
+      "summary": "遥感判读要从波段或传感器能观测什么开始，再说明像元、空间分辨率、时间分辨率和分类方法。图像中的差异只是观测信号，必须结合地表过程、样本验证和时间序列解释，不能直接把分类结果当作无误的地理事实。",
+      "keywords": ["遥感", "光谱", "空间分辨率", "样本验证"],
+      "sourceIds": ["web-copernicus-data-space", "github-python-gis-book", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "web-copernicus-data-space", "locator": "Copernicus Data Space：Sentinel data, browsing and processing services", "note": "用于交叉核对传感器、观测任务和处理链的边界；不复制影像、数据或页面资源。"},
+        {"sourceId": "github-python-gis-book", "locator": "Introduction to Python for Geographic Data Analysis：spatial data, raster/vector and reproducible analysis", "note": "用于交叉核对栅格、矢量和可复现空间分析的流程边界；不复制代码、数据或章节正文。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地理信息技术、遥感与地理信息系统章节", "note": "回到教材核对遥感信息、图层、分辨率和空间分析。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-topographic-data-and-relief-profile",
+      "courseId": "selective-1",
+      "title": "地形数据与地形剖面",
+      "summary": "地形剖面题要先确认高程基准、等高距、剖面方向和垂直夸张，再判断山脊、谷地、鞍部、坡度和汇流路径。数字高程模型能够提供连续表面，但分辨率、插值和遮挡会影响结果，不能把计算图形当作现场测量的同等替代。",
+      "keywords": ["数字高程模型", "地形剖面", "等高距", "垂直夸张"],
+      "sourceIds": ["github-python-gis-book", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-python-gis-book", "locator": "Introduction to Python for Geographic Data Analysis：geographic data structures and raster analysis workflow", "note": "用于交叉核对栅格高程、空间分析和数据处理误差边界；不复制代码、数据或图表。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "等高线、地形剖面和地理信息技术章节", "note": "回到教材核对地形表达、坡度、地势和地貌过程。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-atmospheric-observation-and-climate-normal",
+      "courseId": "selective-1",
+      "title": "大气观测、基准期与气候平均",
+      "summary": "气候资料比较时要说明基准期、站点高度、观测要素和时间分辨率；气候平均值用于描述背景状态，异常值和趋势则回答不同问题。站点迁移、城市化、缺测处理和区域平均方法都可能改变结论，应在材料中保留数据限制。",
+      "keywords": ["气候平均", "基准期", "气候异常", "观测站"],
+      "sourceIds": ["web-cma-public-science", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "web-cma-public-science", "locator": "中国气象局科普入口：气象观测、天气气候和服务资料", "note": "用于交叉核对观测要素、天气与气候以及资料时间尺度；不复制正文、图表或数据。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "气候系统、气候类型和大气环流章节", "note": "回到教材核对气候特征、影响因素和资料判读。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-demographic-scenario-and-regional-planning",
+      "courseId": "selective-2",
+      "title": "人口情景与区域规划",
+      "summary": "区域规划可把人口总量、年龄结构和迁移情景转译为住房、教育、医疗、就业和交通需求，但规划结论必须说明预测假设、空间单元和实施阶段。人口增加不必然带来发展，人口减少也不等于区域失去功能，关键在于产业、服务和空间治理的匹配。",
+      "keywords": ["人口情景", "区域规划", "服务需求", "空间治理"],
+      "sourceIds": ["web-un-world-population-prospects", "web-mohurd-urban-rural-development", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-un-world-population-prospects", "locator": "World Population Prospects：人口情景、年龄结构和长期趋势入口", "note": "用于交叉核对人口情景和结构变化的证据边界；不复制数据库、图表或报告正文。"},
+        {"sourceId": "web-mohurd-urban-rural-development", "locator": "住房和城乡建设部公开信息入口：城乡规划、基础设施和公共服务", "note": "用于交叉核对人口变化向空间规划和服务供给转译的治理边界；不复制政策原文、图表或数据。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域发展、城镇化和国土空间规划章节", "note": "回到教材核对人口、城市体系、区域规划和发展条件。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-open-geospatial-data-reproducibility",
+      "courseId": "selective-2",
+      "title": "开放地理数据与区域分析可复现性",
+      "summary": "区域分析应记录数据来源、版本、坐标系、空间单元、时间范围和处理步骤，使他人能够复核结果。开放数据不等于无条件可比；边界变化、缺失值、分类方法和不同分辨率都可能让同一指标产生不同空间结论。",
+      "keywords": ["开放数据", "可复现性", "坐标系", "数据版本"],
+      "sourceIds": ["github-python-gis-book", "web-copernicus-data-space", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-python-gis-book", "locator": "Introduction to Python for Geographic Data Analysis：geographic data analysis workflow and reproducibility", "note": "用于交叉核对空间数据处理、版本记录和可复现分析边界；不复制代码、数据或章节正文。"},
+        {"sourceId": "web-copernicus-data-space", "locator": "Copernicus Data Space：data access, processing and Sentinel product discovery", "note": "用于交叉核对开放观测数据、产品版本和数据处理链；不复制影像、数据或页面资源。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域研究、地理信息技术和区域规划章节", "note": "回到教材核对区域数据、空间尺度和综合研究方法。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-world-regional-case-comparison",
+      "courseId": "selective-2",
+      "title": "世界区域案例的比较与迁移",
+      "summary": "区域案例迁移时不能只套用结论，应先找出案例的自然背景、人口规模、产业阶段、制度条件和空间联系，再判断哪些机制可比较、哪些只适用于原地区。综合题的比较对象要保持同一尺度，并明确相似性与差异性的证据。",
+      "keywords": ["区域案例", "机制迁移", "比较尺度", "条件约束"],
+      "sourceIds": ["github-world-regional-geography-textbook", "github-ap-human-geography-textbook", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-world-regional-geography-textbook", "locator": "world regional geography online textbook：regional cases and comparative organization", "note": "用于交叉核对区域案例、比较尺度和区域联系；不复制教材正文、图表或页面文字。"},
+        {"sourceId": "github-ap-human-geography-textbook", "locator": "course-description：spatial patterns, regional processes, urbanization and development models", "note": "用于交叉核对人文地理模型、空间过程和案例分析边界；不复制正文、模型图或页面文字。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域发展、区域联系和区域协调章节", "note": "回到教材核对区域差异、区域联系和综合比较。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-population-security-and-aging-response",
+      "courseId": "selective-3",
+      "title": "人口安全、老龄化与资源配置",
+      "summary": "人口安全评价要同时看年龄结构、劳动年龄人口、抚养比、迁移、医疗养老和财政承受能力，而不是只看总人口增减。不同地区面对的人口风险不同，资源配置应结合服务可达性、城乡差异、家庭支持和长期财政能力。",
+      "keywords": ["人口安全", "老龄化", "抚养比", "资源配置"],
+      "sourceIds": ["web-un-world-population-prospects", "github-ap-human-geography-textbook", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-un-world-population-prospects", "locator": "World Population Prospects：年龄结构、人口增长和长期人口情景", "note": "用于交叉核对年龄结构、人口趋势和情景不确定性；不复制数据库、图表或报告正文。"},
+        {"sourceId": "github-ap-human-geography-textbook", "locator": "course-description：population patterns, demographic transition, migration and public policy", "note": "用于交叉核对人口转变、迁移和公共政策的空间分析边界；不复制正文、题目或页面文字。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源安全、人口与国家安全相关章节", "note": "回到教材核对人口、资源供需、公共服务和国家安全。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-disaster-risk-governance-and-resilience",
+      "courseId": "selective-3",
+      "title": "灾害风险治理与韧性建设",
+      "summary": "灾害治理不只是修建防护工程，还要把危险识别、土地利用、预警传播、应急组织、基础设施冗余和灾后恢复放在同一链条中。方案评价要比较成本、覆盖范围、残余风险和不同群体的受益差异，并保留对极端情景的准备。",
+      "keywords": ["灾害治理", "韧性", "预警", "残余风险"],
+      "sourceIds": ["web-mem-emergency-science", "web-mohurd-urban-rural-development", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-mem-emergency-science", "locator": "应急管理部科普入口：风险防范、预警、应急响应和恢复治理", "note": "用于交叉核对灾害治理和韧性建设的公共安全边界；不复制正文、图片或案例。"},
+        {"sourceId": "web-mohurd-urban-rural-development", "locator": "住房和城乡建设部公开信息入口：城市基础设施、城乡规划和建设治理", "note": "用于交叉核对建设规划、基础设施和空间韧性的关系；不复制政策原文、图表或数据。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境安全、灾害防治与国家安全章节", "note": "回到教材核对灾害风险、环境安全和综合治理。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-satellite-monitoring-and-ecological-security",
+      "courseId": "selective-3",
+      "title": "卫星监测与生态安全",
+      "summary": "生态安全监测要把遥感变化信号与生态过程、气象条件、土地利用和治理措施联系起来，区分短期扰动、季节变化和长期退化。卫星影像可以发现空间线索，但生态状态、原因和治理成效仍需要地面调查、统计资料或多源数据验证。",
+      "keywords": ["生态安全", "卫星监测", "多源数据", "治理成效"],
+      "sourceIds": ["web-copernicus-data-space", "web-cma-public-science", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-copernicus-data-space", "locator": "Copernicus Data Space：land, ocean, atmosphere monitoring and Sentinel data access", "note": "用于交叉核对卫星监测、地表变化和多源观测的任务边界；不复制影像、数据或页面资源。"},
+        {"sourceId": "web-cma-public-science", "locator": "中国气象局科普入口：气象观测、气候背景和灾害服务", "note": "用于交叉核对气象背景、时间序列和生态变化解释中的观测条件；不复制正文、图表或数据。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "生态文明、资源环境安全和国家安全章节", "note": "回到教材核对生态保护、资源环境治理和安全能力。"}
       ],
       "licenseStatus": "citation-only",
       "reviewStatus": "reviewed"
