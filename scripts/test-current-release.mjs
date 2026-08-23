@@ -212,6 +212,8 @@ const tests = [
   "test-geography-next-source-batch-v3388.mjs",
   "test-geography-next-source-batch-v3390.mjs",
   "test-recommendation-draft-validation-v3391.mjs",
+  "test-geography-next-source-batch-v3392.mjs",
+  "test-recommendation-validation-zero-values-v3392.mjs",
   "test-recommendation-result-focus-accessibility.mjs",
   "test-recommendation-download-v3384.mjs",
   "test-recommendation-validation-v3362.mjs",

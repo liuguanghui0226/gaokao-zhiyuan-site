@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.29",
+  "version": "geo-2026.08.23.30",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1872,6 +1872,60 @@
       "url": "https://earthobservatory.nasa.gov/",
       "accessedAt": "2026-08-23",
       "licenseNote": "NASA 官方公开门户；具体图像、数据和第三方素材可能具有单独署名或使用条件；本项目仅作图像—过程—尺度核验的 citation-only 参照，不复制图片、图注、数据产品或页面文字。"
+    },
+    {
+      "id": "web-nasa-sun",
+      "title": "NASA Science：Sun 太阳主题入口",
+      "publisher": "NASA Science",
+      "editionNote": "NASA 官方太阳科学入口；访问日期 2026-08-23；按太阳结构、活动、辐射和太阳风组织学习与观测资料。",
+      "url": "https://science.nasa.gov/sun/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "NASA 官方公开学习入口；具体图像、数据和第三方素材可能具有单独署名或使用条件；本项目仅作太阳辐射、太阳活动与地球系统证据边界的 citation-only 参照，不复制正文、图像或数据产品。"
+    },
+    {
+      "id": "web-nasa-solar-system",
+      "title": "NASA Science：Solar System 太阳系主题入口",
+      "publisher": "NASA Science",
+      "editionNote": "NASA 官方太阳系科学入口；访问日期 2026-08-23；用于核对天体系统、行星环境、轨道运动与空间观测的概念边界。",
+      "url": "https://science.nasa.gov/solar-system/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "NASA 官方公开学习入口；本项目仅作天体系统、地球环境和空间观测方法的 citation-only 参照，不复制正文、图像、动画或数据。"
+    },
+    {
+      "id": "web-usgs-geologic-time",
+      "title": "USGS：Geologic Time 地质年代学习入口",
+      "publisher": "U.S. Geological Survey",
+      "editionNote": "USGS 地质年代公开学习资料；访问日期 2026-08-23；用于核对地质年代、地层、化石和地球历史证据的时间尺度。",
+      "url": "https://pubs.usgs.gov/gip/geotime/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "USGS 官方公开资料；本项目仅作地质年代、地层证据与资源形成时间尺度的 citation-only 参照，不复制正文、图表或页面版式。"
+    },
+    {
+      "id": "web-noaa-ocean-currents",
+      "title": "NOAA Ocean Service：Ocean Currents 海洋环流学习入口",
+      "publisher": "NOAA National Ocean Service",
+      "editionNote": "NOAA 官方海洋教育教程；访问日期 2026-08-23；用于核对海流成因、方向、热量输送、沿岸环境和观测证据。",
+      "url": "https://oceanservice.noaa.gov/education/tutorial_currents/01_intro.html",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "NOAA 官方公开教育入口；本项目仅作洋流、海气联系、沿海环境与海洋资源方法的 citation-only 参照，不复制正文、图示、活动或数据。"
+    },
+    {
+      "id": "web-unfpa-state-world-population",
+      "title": "UNFPA：State of World Population 世界人口报告",
+      "publisher": "United Nations Population Fund",
+      "editionNote": "UNFPA 世界人口报告入口；访问日期 2026-08-23；用于核对人口增长、人口结构、人口数据解释和情景判断的指标边界。",
+      "url": "https://www.unfpa.org/swp2023",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "UNFPA 官方报告入口；本项目仅作人口指标、人口情景与公共服务分析的 citation-only 参照，不复制报告正文、图表或数据表。"
+    },
+    {
+      "id": "web-unesco-mab-programme",
+      "title": "UNESCO：Man and the Biosphere Programme 人与生物圈计划",
+      "publisher": "UNESCO",
+      "editionNote": "UNESCO 官方人与生物圈计划入口；访问日期 2026-08-23；用于核对保护、发展、地方参与和人地关系协同的区域治理边界。",
+      "url": "https://www.unesco.org/en/mab",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "UNESCO 官方公开入口；本项目仅作人地关系、地域文化、保护地治理与区域发展协同的 citation-only 参照，不复制正文、图表或案例材料。"
     }
   ],
   "items": [
@@ -11901,6 +11955,216 @@
           "locator": "选择性必修3：资源环境公平、风险暴露、区域治理与国家安全章节",
           "note": "回到教材核对空间公平、暴露度、资源配置、风险治理和国家安全判断。"
         }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-cosmic-environment-and-earth-habitability",
+      "courseId": "compulsory-1",
+      "title": "宇宙环境与地球宜居条件",
+      "summary": "分析地球宜居性时，应把天体系统位置、恒星辐射、行星运动、大气和液态水条件分开，再说明这些条件如何共同影响地表环境。空间位置或一张行星图只能提出线索，不能替代对能量、水体和大气过程的解释。",
+      "keywords": ["宇宙环境", "天体系统", "太阳辐射", "地球宜居"],
+      "sourceIds": ["web-nasa-solar-system", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-nasa-solar-system", "locator": "NASA Science / Solar System: 天体系统、行星环境与空间观测主题", "note": "用于交叉核对天体系统和地球环境的概念边界；不复制正文、图像或动画。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "第一章第一节：地球的宇宙环境", "note": "回到教材核对天体、天体系统和地球特殊性的高中课程表述。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-solar-activity-and-earth-systems",
+      "courseId": "compulsory-1",
+      "title": "太阳活动与地球系统证据",
+      "summary": "太阳对地球的影响要沿“辐射输入—地表能量—大气与生物过程”分析；涉及太阳活动时，还要区分日常辐射条件与短时空间天气事件。题图中的耀斑、太阳风或极光是观测现象，必须结合时间尺度说明可能影响。",
+      "keywords": ["太阳活动", "太阳辐射", "空间天气", "能量过程"],
+      "sourceIds": ["web-nasa-sun", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-nasa-sun", "locator": "NASA Science / Sun: 太阳结构、活动、辐射与太阳风主题", "note": "用于交叉核对太阳活动和地球系统影响的证据边界；不复制图像、数据或页面文字。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "第一章第二节：太阳对地球的影响；第二章大气受热过程", "note": "回到教材核对太阳辐射、地球能量和地理环境影响的课程边界。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-geological-time-and-stratigraphic-evidence",
+      "courseId": "compulsory-1",
+      "title": "地质年代与地球历史证据",
+      "summary": "地球历史材料应先读时间尺度，再判断地层上下关系、化石或岩性所提供的相对年代证据，最后联系构造、气候和生物演化。地质年代图能帮助建立先后顺序，但不能仅凭颜色或层厚推断事件强度和发生概率。",
+      "keywords": ["地质年代", "地层", "化石", "地球历史"],
+      "sourceIds": ["web-usgs-geologic-time", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-usgs-geologic-time", "locator": "USGS Geologic Time: 地质年代、地层、化石与地球历史时间尺度", "note": "用于交叉核对时间尺度和地层证据边界；不复制正文、图表或页面版式。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "第一章第三节：地球的历史；第四章地貌形成相关内容", "note": "回到教材核对地球演化、地质过程与地貌证据。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-growth-capacity-and-scenario",
+      "courseId": "compulsory-2",
+      "title": "人口增长、容量与情景判断",
+      "summary": "人口容量题要把人口规模、资源环境承载力、技术水平、生活方式和公共服务条件分开。面对人口预测或情景图，先确认基准年、时间范围和指标定义，再判断趋势与不确定性，不能把预测值当成确定的人口上限。",
+      "keywords": ["人口增长", "人口容量", "承载力", "人口情景"],
+      "sourceIds": ["web-unfpa-state-world-population", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-unfpa-state-world-population", "locator": "UNFPA State of World Population: 人口趋势、人口结构与情景指标", "note": "用于交叉核对人口数据和情景判断边界；不复制报告正文、图表或数据表。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "第一章：人口分布、人口迁移与人口容量", "note": "回到教材核对人口容量不是精确人口上限、且受资源环境与社会经济条件共同影响。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-data-definition-and-scale",
+      "courseId": "compulsory-2",
+      "title": "人口数据定义与空间尺度",
+      "summary": "比较人口时必须先统一常住人口、总人口、人口密度、自然增长率和迁移率等口径，并说明统计单元和时间点。国家、城市、行政区或网格的结果不能直接互换；图表差异可能来自定义、尺度和边界，而不一定来自真实变化。",
+      "keywords": ["人口指标", "统计口径", "空间尺度", "人口密度"],
+      "sourceIds": ["web-unfpa-state-world-population", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-unfpa-state-world-population", "locator": "UNFPA State of World Population: 人口统计指标与人口结构资料入口", "note": "用于交叉核对人口指标解释、时间尺度和比较边界；不复制表格或报告文字。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "第一章人口与第二章乡村和城镇：人口分布、人口变化和城乡尺度", "note": "回到教材核对人口分布、迁移、城镇化和统计图表判读。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-cultural-landscape-and-human-environment",
+      "courseId": "compulsory-2",
+      "title": "地域文化、景观与人地关系",
+      "summary": "城乡景观题不能只描述建筑外形，应从自然环境、历史生产方式、社会组织、材料技术和地方认同解释景观差异。评价保护或更新方案时，要同时考虑居民使用、文化连续性、生态约束和发展收益，避免把地域文化当成静态装饰。",
+      "keywords": ["地域文化", "文化景观", "人地关系", "城乡景观"],
+      "sourceIds": ["web-unesco-mab-programme", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "web-unesco-mab-programme", "locator": "UNESCO MAB: 保护、发展与地方参与的人地关系治理入口", "note": "用于交叉核对人地关系、地方参与和保护发展协同边界；不复制案例材料或页面文字。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "第二章第三节：地域文化与城乡景观", "note": "回到教材核对地域文化、聚落景观和人地关系的课程表述。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-solar-system-motion-and-observation-model",
+      "courseId": "selective-1",
+      "title": "太阳系运动模型与观测证据",
+      "summary": "地球运动题应先明确观察者、参考面和时间尺度，再把自转、公转、黄赤交角与太阳高度、昼夜长短或季节变化对应起来。可视化模型适合核对方向和相对位置，但不能把模型中的视角、比例和运动速度当作真实尺度。",
+      "keywords": ["地球运动", "太阳系", "参考系", "季节变化"],
+      "sourceIds": ["web-nasa-solar-system", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "web-nasa-solar-system", "locator": "NASA Science / Solar System: 轨道运动、行星系统与空间观测入口", "note": "用于交叉核对太阳系运动和空间观测的模型边界；不复制动画、图像或页面文字。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "第一章：地球的自转和公转、地球运动的地理意义", "note": "回到教材核对参考系、太阳直射、昼夜长短和季节变化。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-ocean-current-density-and-climate",
+      "courseId": "selective-1",
+      "title": "洋流、密度差与气候影响",
+      "summary": "洋流判读先看流向和所处纬度，再区分风海流、密度差和补偿流等动力线索，最后联系热量输送、海气交换、渔场或沿岸气候。材料若只给箭头，最多证明流动方向，不能直接推出温度、盐度或生态结果。",
+      "keywords": ["洋流", "海水密度", "热量输送", "海气作用"],
+      "sourceIds": ["web-noaa-ocean-currents", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "web-noaa-ocean-currents", "locator": "NOAA Ocean Service / Ocean Currents: 海流成因、方向、热量输送与观测主题", "note": "用于交叉核对洋流过程和海气影响的证据边界；不复制教程正文、图示或数据。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "第四章：陆地水体及其相互关系、洋流、海—气相互作用", "note": "回到教材核对洋流、海水性质、热量输送和海气作用。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-geologic-time-sequence-and-landform",
+      "courseId": "selective-1",
+      "title": "地质年代顺序与地貌形成",
+      "summary": "地层、断层和地貌演化材料应按事件先后建立时间线：先识别沉积、侵入、褶皱、断裂或侵蚀等事件，再判断叠覆关系和相对年代。相对年代能说明先后，不等于给出了精确年数，也不能单独证明地貌未来的演变方向。",
+      "keywords": ["地质年代", "地层剖面", "相对年代", "地貌演化"],
+      "sourceIds": ["web-usgs-geologic-time", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "web-usgs-geologic-time", "locator": "USGS Geologic Time: 地质年代、地层关系与化石证据", "note": "用于交叉核对地质时间和相对年代证据边界；不复制图表或页面文字。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "第二章：塑造地表形态的力量、构造地貌和河流地貌发育", "note": "回到教材核对内外力、地质构造和地貌演化过程。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-cultural-landscape-and-regional-development",
+      "courseId": "selective-2",
+      "title": "文化景观与区域发展路径",
+      "summary": "区域发展中的文化景观既是地方认同，也是土地利用、产业选择和治理规则长期作用的结果。提出保护、旅游或产业更新方案时，应说明景观价值、居民收益、生态承载和基础设施之间的权衡，并区分可复制的机制与不可照搬的地方条件。",
+      "keywords": ["文化景观", "区域发展", "地方认同", "发展路径"],
+      "sourceIds": ["web-unesco-mab-programme", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-unesco-mab-programme", "locator": "UNESCO MAB: 保护与发展协同、地方参与和区域治理入口", "note": "用于交叉核对人地关系和区域发展协同的方法边界；不复制案例正文或图像。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "第一章区域发展与第二章资源环境与区域发展", "note": "回到教材核对区域整体性、自然环境基础、生态治理和发展模式比较。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-population-scenario-and-regional-planning",
+      "courseId": "selective-2",
+      "title": "人口情景与区域规划",
+      "summary": "区域规划面对人口变化时，应把人口总量、年龄结构、迁移方向和就业分布分别纳入空间需求判断，再评估住房、交通、教育、医疗和生态空间的配置。人口预测只能提供情景范围，规划仍要设置监测指标和调整机制。",
+      "keywords": ["人口情景", "区域规划", "公共服务", "空间需求"],
+      "sourceIds": ["web-unfpa-state-world-population", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-unfpa-state-world-population", "locator": "UNFPA State of World Population: 人口趋势、结构变化与政策情景入口", "note": "用于交叉核对人口情景和政策响应的不确定性；不复制报告图表或数据。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "第一章区域尺度、第三章城市与产业、第四章流域和资源配置", "note": "回到教材核对区域尺度、人口联系、公共服务和规划协同。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-ocean-current-and-coastal-regional-evidence",
+      "courseId": "selective-2",
+      "title": "洋流证据与沿海区域联系",
+      "summary": "沿海区域发展题可把洋流作为联系自然条件与人类活动的中间环节：先判断水温、营养盐和风浪等海洋过程，再讨论渔业、港口、旅游、灾害或污染扩散。洋流方向不能单独决定港口等级和产业规模，还需补充交通、市场与治理证据。",
+      "keywords": ["洋流", "沿海区域", "港口", "产业联系"],
+      "sourceIds": ["web-noaa-ocean-currents", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-noaa-ocean-currents", "locator": "NOAA Ocean Service / Ocean Currents: 海流、热量输送与沿海环境主题", "note": "用于交叉核对洋流与沿海环境联系的过程边界；不复制教程内容或数据。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "第四章：流域内协调、资源配置、产业转移与国际合作", "note": "回到教材核对区域联系、资源环境约束、产业布局和协调发展。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-solar-activity-and-technology-resource-security",
+      "courseId": "selective-3",
+      "title": "太阳活动与技术系统安全",
+      "summary": "把太阳活动放入国家安全或资源环境题时，应区分长期太阳能利用与短时空间天气风险：前者关注辐射资源、季节性、储能和电网，后者关注通信、导航、卫星和预警。评价方案要同时说明收益、脆弱环节和应急替代。",
+      "keywords": ["太阳活动", "能源安全", "空间天气", "技术系统"],
+      "sourceIds": ["web-nasa-sun", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-nasa-sun", "locator": "NASA Science / Sun: 太阳辐射、太阳活动与太阳风资料入口", "note": "用于交叉核对太阳活动和技术系统风险的科学证据边界；不复制图像、数据或正文。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "第二章能源安全与第三章环境安全、国家安全", "note": "回到教材核对能源安全、风险暴露、保障能力和国家安全判断。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geologic-time-and-resource-security",
+      "courseId": "selective-3",
+      "title": "地质时间尺度与资源安全",
+      "summary": "矿产和化石能源的安全评价必须加入地质时间尺度：形成速度很慢、空间分布不均且难以短期再生的资源，不能用一次性储量数字直接等同于长期可供量。答题还要补充开采成本、技术替代、运输通道、环境代价和循环利用。",
+      "keywords": ["地质时间", "矿产资源", "能源安全", "不可再生资源"],
+      "sourceIds": ["web-usgs-geologic-time", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-usgs-geologic-time", "locator": "USGS Geologic Time: 地球历史与地质过程的时间尺度", "note": "用于交叉核对资源形成时间和地质证据边界；不复制正文、图表或数据。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "第一章资源利用与第二章资源安全、能源安全", "note": "回到教材核对资源类型、供给能力、国家安全和可持续利用。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-ocean-current-and-marine-resource-safety",
+      "courseId": "selective-3",
+      "title": "洋流、海洋资源与安全边界",
+      "summary": "海洋资源开发题可沿“洋流与水体交换—生产力或污染扩散—开发收益—生态风险”建立链条。洋流信息能帮助解释渔场、热量输送和污染传播，但海洋空间规划还需加入海域用途、监测能力、生态红线、灾害风险和跨区域协作。",
+      "keywords": ["洋流", "海洋资源", "污染扩散", "海洋安全"],
+      "sourceIds": ["web-noaa-ocean-currents", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-noaa-ocean-currents", "locator": "NOAA Ocean Service / Ocean Currents: 海流、水体交换、热量输送与沿海环境入口", "note": "用于交叉核对海洋过程和资源环境风险边界；不复制正文、图示或数据。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "第二章海洋空间资源与第三章环境安全、生态保护", "note": "回到教材核对海洋资源开发、污染治理、生态保护和国家安全。"}
       ],
       "licenseStatus": "citation-only",
       "reviewStatus": "reviewed"

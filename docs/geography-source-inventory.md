@@ -1,12 +1,25 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.29
+盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.30
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.29`：200 个来源、455 条卡片，其中 38 条 `authored-summary`、417 条 `citation-only`；五个课程族分别为 82、92、97、90、94 条。本轮新增 1 个公开网站、4 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖中国地形可视化、地图投影失真、国家与城市层级、人口比较、交互学习证据边界和 NASA 地球观测图像判读。
+当前发布版本 `geo-2026.08.23.30`：206 个来源、470 条卡片，其中 38 条 `authored-summary`、432 条 `citation-only`；五个课程族分别为 85、95、100、93、97 条。本轮新增 6 个官方公开网站与 15 条原创 `citation-only` 方法卡，覆盖宇宙环境、太阳活动、地质年代、洋流与海气联系、人口情景、地域文化和资源安全。
 
-本轮累计新增 181 条 citation-only 方法卡：在上一轮 166 条的基础上，本轮继续吸收中国地形、地图投影、地理游戏、国家与人口比较和 NASA Earth Observatory 的图像叙事，补齐地形—聚落、投影—指标、交互—证据、灾害—暴露和土地资源安全等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 196 条 citation-only 方法卡：在上一轮 181 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收 NASA、USGS、NOAA、UNFPA、UNESCO 的公开学习入口，补齐宇宙环境—太阳活动—地质年代、人口情景—统计尺度、地域文化—区域治理和洋流—资源安全等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.23.30 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `web-nasa-sun` | [NASA Science：Sun](https://science.nasa.gov/sun/) | NASA 官方太阳科学入口；访问日期 2026-08-23 | 参照太阳结构、辐射、太阳活动、太阳风与地球系统影响；不复制正文、图像或数据产品。 |
+| `web-nasa-solar-system` | [NASA Science：Solar System](https://science.nasa.gov/solar-system/) | NASA 官方太阳系科学入口；访问日期 2026-08-23 | 参照天体系统、行星环境、轨道运动和空间观测；不复制正文、动画或页面资源。 |
+| `web-usgs-geologic-time` | [USGS：Geologic Time](https://pubs.usgs.gov/gip/geotime/) | USGS 官方公开资料；访问日期 2026-08-23 | 参照地质年代、地层、化石、地球历史和资源形成时间尺度；不复制正文、图表或版式。 |
+| `web-noaa-ocean-currents` | [NOAA Ocean Service：Ocean Currents](https://oceanservice.noaa.gov/education/tutorial_currents/01_intro.html) | NOAA 官方教育教程；访问日期 2026-08-23 | 参照洋流成因、方向、热量输送、沿海环境和观测证据；不复制正文、图示、活动或数据。 |
+| `web-unfpa-state-world-population` | [UNFPA：State of World Population](https://www.unfpa.org/swp2023) | UNFPA 官方报告入口；访问日期 2026-08-23 | 参照人口增长、人口结构、人口指标、情景判断和公共服务分析；不复制报告正文、图表或数据表。 |
+| `web-unesco-mab-programme` | [UNESCO：Man and the Biosphere Programme](https://www.unesco.org/en/mab) | UNESCO 官方计划入口；访问日期 2026-08-23 | 参照保护、发展、地方参与、人地关系和区域治理协同；不复制正文、图表或案例材料。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每个课程族 3 条。外部来源只用于教材概念、公开科学资料与方法边界的交叉核对，公开层继续保留人民教育出版社教材证据和原创表述；没有把第三方题目、答案、报告正文、图表、代码、地图或数据表并入站点。
 
 ## geo-2026.08.23.29 新增公开来源
 
