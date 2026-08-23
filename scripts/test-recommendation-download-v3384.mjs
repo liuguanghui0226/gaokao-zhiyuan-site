@@ -16,7 +16,7 @@ if (bootIndex < 0) throw new Error("Could not isolate app.js boot call");
 assert.ok(source.includes('id="downloadRecommendation"'), "recommendation download action missing");
 assert.ok(source.includes("recommendationExportFilename"), "recommendation download filename helper missing");
 assert.ok(source.includes("downloadRecommendationText"), "recommendation download helper missing");
-assert.match(indexSource, /styles\.css\?v=3\.346\.25/);
+assert.match(indexSource, /styles\.css\?v=3\.346\.26/);
 assert.match(indexSource, /app\.js\?v=3\.346\.25/);
 
 const blobCalls = [];

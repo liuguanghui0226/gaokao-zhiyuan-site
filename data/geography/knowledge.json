@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.27",
+  "version": "geo-2026.08.23.28",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1777,6 +1777,52 @@
       "url": "https://www.metoffice.gov.uk/weather/learn-about/weather",
       "accessedAt": "2026-08-23",
       "licenseNote": "Met Office 官方教育入口；本项目仅作天气主题导航、观测量选择和过程解释顺序的 citation-only 参照，不复制页面正文、图片、活动或预报产品。"
+    },
+    {
+      "id": "github-cicada-high-school-geography-notes",
+      "title": "高中地理笔记：湘教版教材与复习索引",
+      "publisher": "Cicada000/Geography-Notes（GitHub）",
+      "editionNote": "公开仓库提交 `d0e91a407ed3768907eb39e09aecfd8116703fcc`；访问日期 2026-08-23；README 说明资料适用于湘教版高中地理教材，索引包含简答题技巧和综合复习笔记，并标注仓库于 2023-11-06 归档。",
+      "url": "https://github.com/Cicada000/Geography-Notes",
+      "commitSha": "d0e91a407ed3768907eb39e09aecfd8116703fcc",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 CC-BY-SA 4.0；本项目仅作教材版本识别、章节索引和区域案例回查的 citation-only 参照，不复制 TeX、PDF、图片、题目或笔记正文。"
+    },
+    {
+      "id": "web-national-geographic-flood",
+      "title": "National Geographic Education：Flood 洪涝",
+      "publisher": "National Geographic Society",
+      "editionNote": "Grades 9–12+ 教育条目；访问日期 2026-08-23；页面将洪涝放在生态、地球科学、地质学、地理学、人文地理和自然地理交叉主题下，用于洪水过程、聚落暴露和土地利用比较。",
+      "url": "https://education.nationalgeographic.org/resource/flood/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "National Geographic Education 公开教育条目；本项目仅作洪涝概念、课程定位和风险空间比较的 citation-only 参照，不复制条目正文、图片、活动或页面版式。"
+    },
+    {
+      "id": "web-national-geographic-landslide",
+      "title": "National Geographic Education：Landslide 滑坡",
+      "publisher": "National Geographic Society",
+      "editionNote": "Grades 6–12+ 地理教育条目；访问日期 2026-08-23；页面将滑坡定义为岩石、土体或碎屑沿坡面运动，并置于地球科学、地质学、地理学、人文地理和自然地理主题中。",
+      "url": "https://education.nationalgeographic.org/resource/landslide/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "National Geographic Education 公开教育条目；本项目仅作滑坡过程、课程定位和风险证据的 citation-only 参照，不复制条目正文、图片、活动或页面版式。"
+    },
+    {
+      "id": "web-national-geographic-renewable-energy",
+      "title": "National Geographic Education：Renewable Energy 可再生能源",
+      "publisher": "National Geographic Society",
+      "editionNote": "Grades 2–12 教育条目；访问日期 2026-08-23；页面以太阳能、风能等不会在人的生命周期内耗尽的能源为入口，连接地球科学、工程、地理和能源转型学习。",
+      "url": "https://education.nationalgeographic.org/resource/renewable-energy/",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "National Geographic Education 公开教育条目；本项目仅作可再生能源概念、自然条件和空间规划的 citation-only 参照，不复制条目正文、图片、活动或页面版式。"
+    },
+    {
+      "id": "web-nasa-earthdata-learn",
+      "title": "NASA Earthdata：Learn 地球科学数据学习入口",
+      "publisher": "NASA Earthdata",
+      "editionNote": "公开学习入口；访问日期 2026-08-23；页面说明地球科学数据可帮助理解相互联系的地球过程，并面向科学家、教育者、学生和公众提供数据学习资源。",
+      "url": "https://www.earthdata.nasa.gov/learn",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "NASA Earthdata 官方学习入口；本项目仅作地球观测数据选择、数据处理链和教育使用边界的 citation-only 参照，不复制页面正文、图片、数据产品或接口返回。"
     }
   ],
   "items": [
@@ -11140,6 +11186,336 @@
           "sourceId": "pep-geography-selective-3",
           "locator": "选择性必修3：资源环境资料评价、灾害风险、国家安全与治理决策章节",
           "note": "回到教材核对资料可靠性、风险判断、证据强度和国家安全决策边界。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-flood-runoff-and-land-use-process",
+      "courseId": "compulsory-1",
+      "title": "洪涝形成中的降水—汇流—下垫面链",
+      "summary": "判读洪涝材料时，先把降水强度和持续时间与地形坡度、河网汇流、下渗能力、土壤含水量和地表覆盖联系起来，再区分自然洪水过程与人类活动放大的影响。城市不透水面、河道整治和湿地变化会改变汇流速度，但具体结论仍要回到流域尺度和时间过程核对。",
+      "keywords": ["洪涝", "汇流", "下垫面", "流域尺度"],
+      "sourceIds": ["web-national-geographic-flood", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-flood",
+          "locator": "Water Cycle / Flood article / grades 9–12+ geography, geology and physical geography",
+          "note": "National Geographic洪涝条目用于交叉核对洪水概念、地球过程和地理课程定位；不复制正文、图片、活动或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：水循环、地表径流、下渗、河流与自然灾害章节",
+          "note": "回到教材核对降水、下渗、径流、汇流、流域和洪涝成因。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-landslide-slope-water-and-geology",
+      "courseId": "compulsory-1",
+      "title": "滑坡的坡度—水分—地质证据",
+      "summary": "分析滑坡风险时，不能只看到“山地”就下结论，应依次核对坡度与坡形、岩性和断层、降水或融水、植被覆盖、切坡工程及坡脚堆积。把触发因素、易发生部位和可能影响范围分开，才能形成可验证的地质灾害过程链。",
+      "keywords": ["滑坡", "坡度", "岩性", "降水触发"],
+      "sourceIds": ["web-national-geographic-landslide", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-landslide",
+          "locator": "geological / Landslide article / slope movement, grades 6–12+ geography and physical geography",
+          "note": "National Geographic滑坡条目用于交叉核对坡面物质运动、地质过程和课程定位；不复制正文、图片、活动或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：地表形态、外力作用、地质灾害与防灾减灾章节",
+          "note": "回到教材核对坡面物质运动、岩性、降水、植被和工程活动对灾害的影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-earth-data-observation-and-process",
+      "courseId": "compulsory-1",
+      "title": "地球科学数据服务于过程判读",
+      "summary": "使用地球科学数据时，先问数据观测了什么、覆盖多大空间、持续多长时间以及经过哪些处理，再把它和降水、温度、植被、水体或地貌过程对应。数据平台是证据入口，不是结论本身；显示一幅图并不意味着已经证明了因果关系。",
+      "keywords": ["地球科学数据", "观测", "时间序列", "因果边界"],
+      "sourceIds": ["web-nasa-earthdata-learn", "pep-geography-compulsory-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-earthdata-learn",
+          "locator": "Remote Sensing / Earthdata Learn / Earth science data for educators and students",
+          "note": "NASA Earthdata学习入口用于交叉核对地球过程数据、教育使用者和数据解释边界；不复制正文、图片、数据产品或接口返回。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-1",
+          "locator": "必修第一册：地理信息技术、自然地理过程和圈层相互作用章节",
+          "note": "回到教材核对观测资料、空间尺度、时间尺度和自然地理过程解释。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-floodplain-settlement-and-land-use",
+      "courseId": "compulsory-2",
+      "title": "洪泛区聚落与土地利用权衡",
+      "summary": "评价洪泛区聚落和产业布局时，要同时看水源与交通等发展条件、洪水暴露、土地利用强度、排水和防护设施以及居民迁移成本。治理方案既要减少危险区新增暴露，也要说明既有社区的安置、公共服务和生计安排，不能只用“远离河流”概括所有区域。",
+      "keywords": ["洪泛区", "聚落", "土地利用", "迁移成本"],
+      "sourceIds": ["web-national-geographic-flood", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-flood",
+          "locator": "resources / Flood article / geography, human geography and settlement exposure",
+          "note": "National Geographic洪涝条目用于交叉核对洪水与人类聚落、土地利用的联系；不复制正文、图片、活动或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：聚落空间结构、城镇化、土地利用与人地协调章节",
+          "note": "回到教材核对聚落区位、土地利用、公共服务、人地关系和空间治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-renewable-energy-location-and-land-use",
+      "courseId": "compulsory-2",
+      "title": "可再生能源区位与土地利用",
+      "summary": "分析风能、太阳能等可再生能源项目区位时，应把资源条件、地形与气候、输电和交通、市场需求、土地竞争、生态影响与社区接受度放在同一框架中。资源丰富只是必要条件之一，最终布局还要比较成本、稳定性、环境代价和区域联系。",
+      "keywords": ["可再生能源", "区位", "土地利用", "区域联系"],
+      "sourceIds": ["web-national-geographic-renewable-energy", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-renewable-energy",
+          "locator": "energy / Renewable Energy article / solar, wind and geography education",
+          "note": "National Geographic可再生能源条目用于交叉核对能源类型、自然条件和地理课程定位；不复制正文、图片、活动或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：工业区位、能源利用、交通联系与人地协调章节",
+          "note": "回到教材核对能源区位、产业布局、市场联系、土地利用和环境影响。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-textbook-variant-and-concept-mapping",
+      "courseId": "compulsory-2",
+      "title": "不同教材版本的概念映射",
+      "summary": "吸收其他教材版本的高中地理笔记时，先记录教材版本、章节顺序和术语差异，再把内容映射回本项目使用的课程族。相同主题可能采用不同案例或表述，不能因为目录名称相似就直接合并；应保留来源版本，并以教材概念和区域证据重新核对。",
+      "keywords": ["教材版本", "概念映射", "术语差异", "区域证据"],
+      "sourceIds": ["github-cicada-high-school-geography-notes", "pep-geography-compulsory-2"],
+      "evidence": [
+        {
+          "sourceId": "github-cicada-high-school-geography-notes",
+          "locator": "README / 湘教版教材、索引、简答题答题技巧与综合复习笔记",
+          "note": "GitHub笔记仓库用于交叉核对教材版本、目录和复习材料的归属边界；不复制 TeX、PDF、图片、题目或笔记正文。"
+        },
+        {
+          "sourceId": "pep-geography-compulsory-2",
+          "locator": "必修第二册：人口、城镇、产业、交通与人地协调章节",
+          "note": "回到教材核对本项目课程族、核心概念、区位关系和区域案例。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-landslide-slope-geology-and-water-evidence",
+      "courseId": "selective-1",
+      "title": "滑坡过程的坡面、岩性与水分核验",
+      "summary": "选择性必修自然地理中解释滑坡，应把坡面稳定性拆成坡度、岩性结构、节理裂隙、地下水或降雨入渗、植被根系和人为切坡等证据。图中若只给出坡度或降水一个变量，应明确缺少的过程环节，不能把相关性直接写成唯一成因。",
+      "keywords": ["坡面稳定性", "岩性结构", "降雨入渗", "过程证据"],
+      "sourceIds": ["web-national-geographic-landslide", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-landslide",
+          "locator": "geological / Landslide article / movement of rock, earth and debris down a slope",
+          "note": "National Geographic滑坡条目用于交叉核对坡面物质运动、地质过程和自然地理课程边界；不复制正文、图片、活动或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：外力作用、地貌过程、地质灾害与自然环境整体性章节",
+          "note": "回到教材核对坡面过程、岩性、流水作用、地下水和灾害成因证据。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-earth-observation-scale-and-process",
+      "courseId": "selective-1",
+      "title": "地球观测的分辨率与过程尺度",
+      "summary": "使用卫星或地球科学数据解释自然过程时，要同时说明空间分辨率、时间分辨率、观测对象和处理方法。高分辨率图像可能只覆盖短时间或局部范围，长时间序列也可能牺牲细节；只有把数据尺度与洪水、植被、云、温度或地貌变化的尺度匹配起来，结论才有意义。",
+      "keywords": ["空间分辨率", "时间分辨率", "地球观测", "尺度匹配"],
+      "sourceIds": ["web-nasa-earthdata-learn", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-earthdata-learn",
+          "locator": "Remote Sensing / Earthdata Learn / data resources for Earth system processes",
+          "note": "NASA Earthdata学习入口用于交叉核对地球观测数据、教育资源和尺度解释边界；不复制正文、图片、数据产品或接口返回。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：遥感、地理信息技术、自然地理过程和尺度章节",
+          "note": "回到教材核对遥感信息、空间尺度、时间尺度、分辨率和自然过程判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-renewable-energy-natural-conditions",
+      "courseId": "selective-1",
+      "title": "可再生能源的自然条件与季节性",
+      "summary": "判断太阳能、风能等可再生能源潜力时，先分析太阳辐射、云量、风速风向、地形粗糙度和季节变化，再区别资源潜力、实际可开发量和稳定供能能力。自然条件图只能说明资源的一部分，不能直接替代电网、储能、土地和生态约束的评价。",
+      "keywords": ["太阳辐射", "风能", "季节性", "资源潜力"],
+      "sourceIds": ["web-national-geographic-renewable-energy", "pep-geography-selective-1"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-renewable-energy",
+          "locator": "energy / Renewable Energy article / sun, wind and Earth science geography entry",
+          "note": "National Geographic可再生能源条目用于交叉核对能源类型与自然地理条件的课程边界；不复制正文、图片、活动或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-1",
+          "locator": "选择性必修1：太阳辐射、大气运动、气候与自然资源条件章节",
+          "note": "回到教材核对太阳辐射、风、气候季节性、地形条件和资源潜力判读。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-flood-risk-and-regional-planning",
+      "courseId": "selective-2",
+      "title": "洪涝风险与区域规划",
+      "summary": "区域规划面对洪涝时，应把危险性、暴露度、脆弱性和应对能力分开评估，再比较上游土地利用、河道空间、蓄滞洪区、城市排水、预警和避难网络的跨区域联系。单个工程降低某处积水，不一定等于整个流域风险下降，必须检查风险是否转移。",
+      "keywords": ["洪涝风险", "流域规划", "暴露度", "风险转移"],
+      "sourceIds": ["web-national-geographic-flood", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-flood",
+          "locator": "resources / Flood article / geography, human geography and physical geography",
+          "note": "National Geographic洪涝条目用于交叉核对洪水的自然—人文联系和课程定位；不复制正文、图片、活动或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：流域治理、区域规划、基础设施与区域协调章节",
+          "note": "回到教材核对流域尺度、区域联系、综合治理、工程影响和风险转移。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-renewable-energy-spatial-comparison",
+      "courseId": "selective-2",
+      "title": "可再生能源空间比较与区域转型",
+      "summary": "比较不同区域的可再生能源发展时，先统一资源指标、时间范围、土地边界和装机或发电口径，再分析电网、产业链、储能、就业、生态保护和居民利益。区域转型不是简单替换能源类型，而是自然条件、技术基础、基础设施和治理能力共同作用的路径。",
+      "keywords": ["能源转型", "区域比较", "指标口径", "产业链"],
+      "sourceIds": ["web-national-geographic-renewable-energy", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-renewable-energy",
+          "locator": "energy / Renewable Energy article / geography, engineering and energy transition learning",
+          "note": "National Geographic可再生能源条目用于交叉核对能源转型的概念和地理课程定位；不复制正文、图片、活动或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域发展、产业升级、能源布局与区域联系章节",
+          "note": "回到教材核对区域条件、产业链、基础设施、发展路径和区域比较口径。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-multi-edition-regional-case-crosswalk",
+      "courseId": "selective-2",
+      "title": "多教材区域案例的交叉回查",
+      "summary": "吸收不同教材版本的区域案例时，建立“版本—章节—地点—核心问题—证据类型”的交叉表，先确认案例讲的是区位、区域联系、资源环境还是治理路径，再回到当前教材和权威资料核对。案例名称相同也可能对应不同年份、尺度和问题设定，不能无条件拼接。",
+      "keywords": ["区域案例", "教材版本", "交叉回查", "证据类型"],
+      "sourceIds": ["github-cicada-high-school-geography-notes", "pep-geography-selective-2"],
+      "evidence": [
+        {
+          "sourceId": "github-cicada-high-school-geography-notes",
+          "locator": "README / 湘教版教材与索引 / Liang's Notes、XDF Notes",
+          "note": "GitHub笔记仓库用于交叉核对教材版本、资料来源和案例索引边界；不复制 TeX、PDF、图片、题目或笔记正文。"
+        },
+        {
+          "sourceId": "pep-geography-selective-2",
+          "locator": "选择性必修2：区域研究、区域比较、区域联系与规划实践章节",
+          "note": "回到教材核对区域尺度、案例问题、证据类型和规划判断。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-landslide-risk-exposure-and-vulnerability",
+      "courseId": "selective-3",
+      "title": "滑坡风险的危险性、暴露与脆弱性",
+      "summary": "资源环境安全中的滑坡风险评价，应将坡面失稳这一危险性与道路、居民点、学校、管线等暴露，以及建筑质量、预警、撤离和恢复能力等脆弱性分开。降雨预警只能降低部分风险，治理还要考虑土地利用、工程维护、社区参与和灾后恢复。",
+      "keywords": ["滑坡风险", "危险性", "暴露度", "脆弱性"],
+      "sourceIds": ["web-national-geographic-landslide", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-landslide",
+          "locator": "geological / Landslide article / slope movement and geography risk context",
+          "note": "National Geographic滑坡条目用于交叉核对滑坡过程和地理风险情境；不复制正文、图片、活动或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：自然灾害风险、暴露度、脆弱性与防灾减灾章节",
+          "note": "回到教材核对危险性、暴露度、脆弱性、预警、应急和恢复治理。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-renewable-energy-security-and-tradeoffs",
+      "courseId": "selective-3",
+      "title": "可再生能源安全与环境权衡",
+      "summary": "评价可再生能源对资源环境安全的意义时，不能只写“清洁”和“可持续”。还要比较资源可得性、供能稳定性、储能与电网、关键材料、土地和生态影响、产业链依赖及区域公平，把减排收益与新的环境和安全约束同时纳入。",
+      "keywords": ["能源安全", "资源环境", "供能稳定", "环境权衡"],
+      "sourceIds": ["web-national-geographic-renewable-energy", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-national-geographic-renewable-energy",
+          "locator": "energy / Renewable Energy article / sun, wind and geography education",
+          "note": "National Geographic可再生能源条目用于交叉核对能源类型和地理课程边界；不复制正文、图片、活动或页面版式。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：能源安全、资源环境承载力、生态保护与国家安全章节",
+          "note": "回到教材核对能源安全、资源约束、环境代价、区域公平和国家安全。"
+        }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-earth-data-provenance-and-uncertainty",
+      "courseId": "selective-3",
+      "title": "地球数据来源、处理链与不确定性",
+      "summary": "资源环境评价使用地球科学数据时，应记录观测平台、变量定义、时间范围、空间分辨率、缺测处理、分类或模型步骤和最终图表。来源页面能打开不等于结果可复现；如果处理链、误差和适用边界没有说明，就应把结论标为线索或待核，而不是当作精确风险值。",
+      "keywords": ["数据溯源", "处理链", "不确定性", "可复现性"],
+      "sourceIds": ["web-nasa-earthdata-learn", "pep-geography-selective-3"],
+      "evidence": [
+        {
+          "sourceId": "web-nasa-earthdata-learn",
+          "locator": "Remote Sensing / Earthdata Learn / data users, educators and students",
+          "note": "NASA Earthdata学习入口用于交叉核对地球科学数据使用者、数据处理和证据边界；不复制正文、图片、数据产品或接口返回。"
+        },
+        {
+          "sourceId": "pep-geography-selective-3",
+          "locator": "选择性必修3：资源环境数据评价、风险判断、生态治理与国家安全章节",
+          "note": "回到教材核对指标口径、资料评价、证据强度、不确定性和安全判断。"
         }
       ],
       "licenseStatus": "citation-only",
