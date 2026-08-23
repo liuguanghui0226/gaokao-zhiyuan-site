@@ -59,7 +59,7 @@ context.__gaokaoTest.renderSources();
 
 assert.match(view.innerHTML, /class="band geography-source-directory"/);
 assert.match(view.innerHTML, /高中地理来源目录/);
-assert.match(view.innerHTML, /194 个公开链接/);
+assert.match(view.innerHTML, /202 个公开链接/);
 assert.match(view.innerHTML, /22 个本地\/教材/);
 assert.match(view.innerHTML, /class="geography-directory-link" href="https:\/\/oceanservice\.noaa\.gov\/education\/tutorial_tides\/tides01_intro\.html"/);
 assert.match(view.innerHTML, /访问 2026-08-23/);
@@ -145,6 +145,14 @@ assert.match(view.innerHTML, /github\.com\/olivercoltart\/plane-game/);
 assert.match(view.innerHTML, /commit a4cdb1c01f9b964db7785125659666bab30943de/);
 assert.match(view.innerHTML, /commit 755fd7bdae2b9ce26efc436b648b29700c6026a2/);
 assert.match(view.innerHTML, /commit 2823b0c2496f4f283930208114a5079d1bd03e80/);
+assert.match(view.innerHTML, /github\.com\/dmccreary\/ap-human-geography/);
+assert.match(view.innerHTML, /github\.com\/sounny\/worldregionalgeography/);
+assert.match(view.innerHTML, /github\.com\/Python-GIS-book\/site/);
+assert.match(view.innerHTML, /https:\/\/population\.un\.org\/wpp\//);
+assert.match(view.innerHTML, /https:\/\/dataspace\.copernicus\.eu\//);
+assert.match(view.innerHTML, /https:\/\/www\.mem\.gov\.cn\/kp\//);
+assert.match(view.innerHTML, /https:\/\/www\.mohurd\.gov\.cn\/gongkai\//);
+assert.match(view.innerHTML, /https:\/\/www\.cma\.gov\.cn\/kp\//);
 assert.match(view.innerHTML, /class="geography-directory-local"/);
 assert.doesNotMatch(view.innerHTML, /class="geography-directory-link"[^>]*>普通高中教科书/);
 

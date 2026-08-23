@@ -1,12 +1,27 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.32
+盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.33
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.32`：216 个来源、500 条卡片，其中 38 条 `authored-summary`、462 条 `citation-only`；五个课程族分别为 91、101、106、99、103 条。本轮新增 3 个 GitHub 地理教育/教学数据项目与 15 条原创 `citation-only` 方法卡，覆盖地图实践、坐标误差、火灾边界、温度序列、点模式、区域比较和资源环境数据溯源。
+当前发布版本 `geo-2026.08.23.33`：224 个来源、515 条卡片，其中 38 条 `authored-summary`、477 条 `citation-only`；五个课程族分别为 94、104、109、102、106 条。本轮新增 5 个公开机构/科学数据入口、3 个 GitHub 教材/地理数据分析项目与 15 条原创 `citation-only` 方法卡，覆盖人口情景、城乡基础设施、遥感证据、地形数据、气象观测、灾害韧性和生态安全。
 
-本轮累计新增 226 条 citation-only 方法卡：在上一轮 211 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收三个 GitHub 教育/教学数据项目的公开入口，补齐地图实践—坐标误差、灾害边界—土地覆盖、温度序列—气候尺度、点模式—人地关系、区域数据范围和资源环境来源溯源等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 241 条 citation-only 方法卡：在上一轮 226 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收联合国人口展望、Copernicus Data Space、应急管理与城乡建设公开入口，以及三个 GitHub 教材/地理数据分析项目，补齐人口情景—公共服务、区域比较—尺度、遥感—地形数据、气象观测—气候平均、灾害治理—生态安全等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.23.33 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-ap-human-geography-textbook` | [AP Human Geography：高中人文地理智能教材](https://github.com/dmccreary/ap-human-geography) | commit `7652907ea71eeba431cb966082adaa3b4c91c33e`；访问日期 2026-08-23；未声明统一许可证 | 参照人口迁移、文化、政治、农业、城市和经济发展等高中人文地理单元；不复制正文、题目、图表、代码或页面文字。 |
+| `github-world-regional-geography-textbook` | [World Regional Geography：世界区域地理在线教材](https://github.com/sounny/worldregionalgeography) | commit `67aefeb291ad8dacf40c223e02f674d771b101e0`；访问日期 2026-08-23；未声明统一许可证 | 参照世界区域组织、区域比较、尺度转换和案例回查；不复制教材正文、图表、代码或页面文字。 |
+| `github-python-gis-book` | [Introduction to Python for Geographic Data Analysis](https://github.com/Python-GIS-book/site) | commit `ed1b78f7d9172c7cc647e67e8f95737faf89539c`；访问日期 2026-08-23；未声明统一许可证 | 参照栅格/矢量、空间分析、版本记录和可复现地理数据流程；不复制代码、数据、图表或章节正文。 |
+| `web-un-world-population-prospects` | [United Nations：World Population Prospects](https://population.un.org/wpp/) | 页面访问日期 2026-08-23 | 核对人口规模、年龄结构、出生率、死亡率和人口情景的时间序列边界；不复制数据库、图表或报告正文。 |
+| `web-copernicus-data-space` | [Copernicus Data Space Ecosystem](https://dataspace.copernicus.eu/) | 数据空间入口；访问日期 2026-08-23 | 核对 Sentinel、陆地/海洋/大气观测、产品尺度和处理链；不复制影像、数据或页面资源。 |
+| `web-mem-emergency-science` | [应急管理部：防灾减灾救灾科普](https://www.mem.gov.cn/kp/) | 科普栏目；访问日期 2026-08-23 | 核对灾害识别、风险沟通、预警响应和应急治理；不复制正文、图片、图表或案例材料。 |
+| `web-mohurd-urban-rural-development` | [住房和城乡建设部：城乡建设公开信息](https://www.mohurd.gov.cn/gongkai/) | 公开信息入口；访问日期 2026-08-23 | 核对城乡规划、基础设施、公共服务和建设治理；不复制政策原文、图表或数据。 |
+| `web-cma-public-science` | [中国气象局：气象科普与观测知识](https://www.cma.gov.cn/kp/) | 科普入口；访问日期 2026-08-23 | 核对天气与气候、观测要素、时间尺度和气象服务证据；不复制正文、图表或数据。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每门课程族 3 条。联合国、Copernicus、中国应急管理、住房城乡建设和气象公开入口只用于指标、观测和治理方法边界核对；GitHub 项目只用于高中人文地理、世界区域比较和 GIS 数据流程参照。所有卡片仍保留人民教育出版社教材证据，不把第三方正文、题目、代码、地图、影像或数据表并入站点。
 
 ## geo-2026.08.23.32 新增公开 GitHub 来源
 

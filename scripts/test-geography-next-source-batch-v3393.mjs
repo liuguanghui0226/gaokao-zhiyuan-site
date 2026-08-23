@@ -42,9 +42,9 @@ const expectedItems = {
   "geo-s3-spatial-inequality-data-and-resource-allocation": "selective-3",
 };
 
-assert.equal(payload.version, "geo-2026.08.23.32");
-assert.equal(payload.sources.length, 216);
-assert.equal(payload.items.length, 500);
+assert.equal(payload.version, "geo-2026.08.23.33");
+assert.equal(payload.sources.length, 224);
+assert.equal(payload.items.length, 515);
 
 const sources = new Map(payload.sources.map((source) => [source.id, source]));
 for (const [sourceId, url] of Object.entries(expectedSources)) {
