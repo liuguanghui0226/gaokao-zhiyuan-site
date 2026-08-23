@@ -59,7 +59,7 @@ context.__gaokaoTest.renderSources();
 
 assert.match(view.innerHTML, /class="band geography-source-directory"/);
 assert.match(view.innerHTML, /高中地理来源目录/);
-assert.match(view.innerHTML, /168 个公开链接/);
+assert.match(view.innerHTML, /173 个公开链接/);
 assert.match(view.innerHTML, /22 个本地\/教材/);
 assert.match(view.innerHTML, /class="geography-directory-link" href="https:\/\/oceanservice\.noaa\.gov\/education\/tutorial_tides\/tides01_intro\.html"/);
 assert.match(view.innerHTML, /访问 2026-08-23/);
@@ -125,6 +125,11 @@ assert.match(view.innerHTML, /github\.com\/a15355447898\/Geography_Note/);
 assert.match(view.innerHTML, /https:\/\/www\.epa\.gov\/heatislands/);
 assert.match(view.innerHTML, /https:\/\/education\.nationalgeographic\.org\/resource\/urban-heat-island\//);
 assert.match(view.innerHTML, /https:\/\/www\.metoffice\.gov\.uk\/weather\/learn-about\/weather/);
+assert.match(view.innerHTML, /github\.com\/Cicada000\/Geography-Notes/);
+assert.match(view.innerHTML, /https:\/\/education\.nationalgeographic\.org\/resource\/flood\//);
+assert.match(view.innerHTML, /https:\/\/education\.nationalgeographic\.org\/resource\/landslide\//);
+assert.match(view.innerHTML, /https:\/\/education\.nationalgeographic\.org\/resource\/renewable-energy\//);
+assert.match(view.innerHTML, /https:\/\/www\.earthdata\.nasa\.gov\/learn/);
 assert.match(view.innerHTML, /class="geography-directory-local"/);
 assert.doesNotMatch(view.innerHTML, /class="geography-directory-link"[^>]*>普通高中教科书/);
 

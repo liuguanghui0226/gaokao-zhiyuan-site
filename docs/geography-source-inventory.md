@@ -1,12 +1,24 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.27
+盘点日期：2026-08-23；扩展轮次：geo-2026-08.23.28
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.23.27`：190 个来源、425 条卡片，其中 38 条 `authored-summary`、387 条 `citation-only`；五个课程族分别为 76、86、91、84、88 条。本轮新增 3 个公开网站、3 个 GitHub 来源与 15 条原创 `citation-only` 方法卡，覆盖城市热岛、天气观测尺度、地形—水文—生态耦合、区域案例比较、情景权衡、风险暴露和交互/AI 学习证据边界。
+当前发布版本 `geo-2026.08.23.28`：195 个来源、440 条卡片，其中 38 条 `authored-summary`、402 条 `citation-only`；五个课程族分别为 79、89、94、87、91 条。本轮新增 1 个公开网站、1 个 GitHub 来源、3 个 National Geographic 教育条目与 15 条原创 `citation-only` 方法卡，覆盖洪涝与滑坡过程、可再生能源区位、地球观测数据、教材版本映射、区域规划和证据不确定性。
 
-本轮累计新增 151 条 citation-only 方法卡：在上一轮 136 条的基础上，本轮继续吸收高中地理交互知识系统、耦合地理系统实验、区域复习索引、城市热岛专题和天气学习入口，补齐自然—人文联动、观测尺度、规划权衡、空间公平、韧性与 AI 证据核验等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 166 条 citation-only 方法卡：在上一轮 151 条的基础上，本轮继续吸收高中地理笔记的教材版本索引、洪涝与滑坡过程、可再生能源空间比较和 NASA 地球科学数据学习入口，补齐自然—人文联动、风险暴露、资源约束、尺度匹配、区域规划与数据不确定性等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+## geo-2026.08.23.28 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-cicada-high-school-geography-notes` | [高中地理笔记：湘教版教材与复习索引](https://github.com/Cicada000/Geography-Notes) | commit `d0e91a407ed3768907eb39e09aecfd8116703fcc`；访问日期 2026-08-23；CC-BY-SA 4.0；仓库已归档 | 参照教材版本识别、章节索引和区域案例回查；不复制 TeX、PDF、图片、题目或笔记正文。 |
+| `web-national-geographic-flood` | [National Geographic Education：Flood 洪涝](https://education.nationalgeographic.org/resource/flood/) | Grades 9–12+ 教育条目；访问日期 2026-08-23 | 核对洪涝概念、地球过程、聚落暴露和土地利用比较；不复制条目正文、图片、活动或页面版式。 |
+| `web-national-geographic-landslide` | [National Geographic Education：Landslide 滑坡](https://education.nationalgeographic.org/resource/landslide/) | Grades 6–12+ 教育条目；访问日期 2026-08-23 | 核对坡面物质运动、岩性—水分证据、地质灾害过程和风险判断；不复制条目正文、图片、活动或页面版式。 |
+| `web-national-geographic-renewable-energy` | [National Geographic Education：Renewable Energy 可再生能源](https://education.nationalgeographic.org/resource/renewable-energy/) | Grades 2–12 教育条目；访问日期 2026-08-23 | 核对可再生能源概念、自然条件、空间布局和能源转型边界；不复制条目正文、图片、活动或页面版式。 |
+| `web-nasa-earthdata-learn` | [NASA Earthdata：Learn 地球科学数据学习入口](https://www.earthdata.nasa.gov/learn) | 官方公开学习入口；访问日期 2026-08-23 | 核对地球观测数据、空间/时间尺度、数据处理链和教育使用边界；不复制页面正文、图片、数据产品或接口返回。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每个课程族 3 条。外部来源只用于教材版本、自然灾害、能源区位、地球观测和区域规划的交叉核对，公开层继续保留人民教育出版社教材证据和原创表述；没有把第三方题目、答案、笔记正文、图片、数据、代码或模型输出并入站点。
 
 ## geo-2026.08.23.27 新增公开来源
 
