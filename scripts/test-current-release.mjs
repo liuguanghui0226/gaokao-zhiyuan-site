@@ -174,6 +174,7 @@ const tests = [
   "test-boot-recovery-v3381.mjs",
   "test-site-freshness-label-v3350.mjs",
   "test-generated-freshness-accessibility.mjs",
+  "test-skip-navigation-accessibility.mjs",
   "test-geography-provenance-ui-v3351.mjs",
   "test-recommendation-shortlist-v3352.mjs",
   "test-clear-filters-v3353.mjs",
