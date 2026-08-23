@@ -9,30 +9,39 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "web-nasa-sun": "https://science.nasa.gov/sun/",
-  "web-nasa-solar-system": "https://science.nasa.gov/solar-system/",
-  "web-usgs-geologic-time": "https://pubs.usgs.gov/gip/geotime/",
-  "web-noaa-ocean-currents": "https://oceanservice.noaa.gov/education/tutorial_currents/01_intro.html",
-  "web-unfpa-state-world-population": "https://www.unfpa.org/swp2023",
-  "web-unesco-mab-programme": "https://www.unesco.org/en/mab",
+  "github-mapwork-board-geography": {
+    url: "https://github.com/pradumon14/Mapwork",
+    commitSha: "38e00e852118b6798c76ca881d45e386ffffb95e",
+    accessedAt: "2026-08-23",
+  },
+  "github-geojunior-interactive-geography": {
+    url: "https://github.com/aarong21/geo-junior",
+    commitSha: "867424338acb9cd387e8197fa83a8d050f0be4fd",
+    accessedAt: "2026-08-23",
+  },
+  "github-geo-data-teaching": {
+    url: "https://github.com/barguzin/geo_data",
+    commitSha: "3dda4ffc44cc8c6fce4cefb0bf87213c429fd31e",
+    accessedAt: "2026-08-23",
+  },
 };
 
 const expectedItems = {
-  "geo-c1-cosmic-environment-and-earth-habitability": "compulsory-1",
-  "geo-c1-solar-activity-and-earth-systems": "compulsory-1",
-  "geo-c1-geological-time-and-stratigraphic-evidence": "compulsory-1",
-  "geo-c2-population-growth-capacity-and-scenario": "compulsory-2",
-  "geo-c2-population-data-definition-and-scale": "compulsory-2",
-  "geo-c2-cultural-landscape-and-human-environment": "compulsory-2",
-  "geo-s1-solar-system-motion-and-observation-model": "selective-1",
-  "geo-s1-ocean-current-density-and-climate": "selective-1",
-  "geo-s1-geologic-time-sequence-and-landform": "selective-1",
-  "geo-s2-cultural-landscape-and-regional-development": "selective-2",
-  "geo-s2-population-scenario-and-regional-planning": "selective-2",
-  "geo-s2-ocean-current-and-coastal-regional-evidence": "selective-2",
-  "geo-s3-solar-activity-and-technology-resource-security": "selective-3",
-  "geo-s3-geologic-time-and-resource-security": "selective-3",
-  "geo-s3-ocean-current-and-marine-resource-safety": "selective-3",
+  "geo-c1-mapwork-scale-direction-and-feature-location": "compulsory-1",
+  "geo-c1-fire-perimeter-land-cover-and-risk": "compulsory-1",
+  "geo-c1-quiz-recall-to-process-evidence": "compulsory-1",
+  "geo-c2-resource-facility-location-and-network": "compulsory-2",
+  "geo-c2-cholera-point-pattern-and-environmental-clues": "compulsory-2",
+  "geo-c2-country-capital-hierarchy-and-political-space": "compulsory-2",
+  "geo-s1-coordinate-calibration-and-spatial-error": "selective-1",
+  "geo-s1-temperature-series-and-climate-scale": "selective-1",
+  "geo-s1-mapwork-relief-water-feature-and-process": "selective-1",
+  "geo-s2-data-extent-and-regional-comparison": "selective-2",
+  "geo-s2-mapwork-feature-clusters-and-regional-structure": "selective-2",
+  "geo-s2-interactive-quiz-to-geographic-inquiry": "selective-2",
+  "geo-s3-resource-facility-map-and-security-boundary": "selective-3",
+  "geo-s3-open-environment-data-and-provenance": "selective-3",
+  "geo-s3-geography-quiz-coverage-and-validation": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.23.32");
@@ -40,18 +49,19 @@ assert.equal(payload.sources.length, 216);
 assert.equal(payload.items.length, 500);
 
 const sources = new Map(payload.sources.map((source) => [source.id, source]));
-for (const [sourceId, url] of Object.entries(expectedSources)) {
+for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = sources.get(sourceId);
-  assert.ok(source, `missing v30 source ${sourceId}`);
-  assert.equal(source.url, url);
-  assert.equal(source.accessedAt, "2026-08-23");
+  assert.ok(source, `missing v32 source ${sourceId}`);
+  assert.equal(source.url, expected.url);
+  assert.equal(source.commitSha, expected.commitSha);
+  assert.equal(source.accessedAt, expected.accessedAt);
   assert.match(source.licenseNote, /citation|原创|不复制|仅作|许可/i);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v30 item ${itemId}`);
+  assert.ok(item, `missing v32 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

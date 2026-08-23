@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.23.31",
+  "version": "geo-2026.08.23.32",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -1992,6 +1992,36 @@
       "commitSha": "2823b0c2496f4f283930208114a5079d1bd03e80",
       "accessedAt": "2026-08-23",
       "licenseNote": "仓库标注 proprietary 且未提供可复用内容许可；本项目仅作地图定位、方位、距离和交互反馈的 citation-only 参照，不复制代码、地图、题目、图像或页面文字。"
+    },
+    {
+      "id": "github-mapwork-board-geography",
+      "title": "Project Naksha：交互式印度高中地图练习",
+      "publisher": "pradumon14/Mapwork（GitHub）",
+      "editionNote": "公开仓库提交 `38e00e852118b6798c76ca881d45e386ffffb95e`；访问日期 2026-08-23；Apache-2.0；README 将项目定位为面向考试地图练习的交互式 SVG 地图，强调缩放、平移、坐标校准、点位反馈和任务化练习。",
+      "url": "https://github.com/pradumon14/Mapwork",
+      "commitSha": "38e00e852118b6798c76ca881d45e386ffffb95e",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库声明 Apache-2.0；地图资产与外部素材仍按各自来源处理；本项目仅作地图实践、空间误差和点位证据的 citation-only 参照，不复制代码、地图、图标、题目或页面文字。"
+    },
+    {
+      "id": "github-geojunior-interactive-geography",
+      "title": "GeoJunior：互动地理问答学习应用",
+      "publisher": "aarong21/geo-junior（GitHub）",
+      "editionNote": "公开仓库提交 `867424338acb9cd387e8197fa83a8d050f0be4fd`；访问日期 2026-08-23；README 介绍以互动问答、动态内容、儿童友好界面和数据校验组织地理学习，后端使用 Flask、SQLite 与 SQLAlchemy。",
+      "url": "https://github.com/aarong21/geo-junior",
+      "commitSha": "867424338acb9cd387e8197fa83a8d050f0be4fd",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库 README 明确标注未提供许可证；本项目仅作互动问答、内容校验和学习反馈流程的 citation-only 参照，不复制题目、地名数据、代码、图片或页面文字。"
+    },
+    {
+      "id": "github-geo-data-teaching",
+      "title": "Geographic data：开放地理数据教学仓库",
+      "publisher": "barguzin/geo_data（GitHub）",
+      "editionNote": "公开仓库提交 `3dda4ffc44cc8c6fce4cefb0bf87213c429fd31e`；访问日期 2026-08-23；README 面向地理分析与 GIS 课程，列出火灾边界、选定国家温度和 Snow 霍乱点模式等带元数据的教学数据入口。",
+      "url": "https://github.com/barguzin/geo_data",
+      "commitSha": "3dda4ffc44cc8c6fce4cefb0bf87213c429fd31e",
+      "accessedAt": "2026-08-23",
+      "licenseNote": "仓库未声明统一许可证，README 所称开放资源和各数据集许可需分别核验；本项目仅作教学数据范围、空间模式和来源溯源的 citation-only 参照，不复制数据、图表、代码或处理结果。"
     }
   ],
   "items": [
@@ -2438,6 +2468,216 @@
           "locator": "第 21-27 页",
           "note": "回到教材核对地球内部物质循环和地质作用的基础概念。"
         }
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-mapwork-scale-direction-and-feature-location",
+      "courseId": "compulsory-1",
+      "title": "地图实践中的比例尺、方向与要素定位",
+      "summary": "地图实践题先固定图例、经纬网、方向和比例尺，再判断目标点是河流、地形、聚落还是工程设施。交互地图的放大、平移和点位反馈适合训练空间定位，但最终要把位置线索与地形、水文和过程证据对应，不能把点击成功当成地理解释。",
+      "keywords": ["地图实践", "比例尺", "方向", "空间定位"],
+      "sourceIds": ["github-mapwork-board-geography", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-mapwork-board-geography", "locator": "README / interactive mapwork, pan-zoom, coordinate calibration and quiz feedback", "note": "用于交叉核对地图实践中的交互定位和点位反馈边界；不复制代码、地图或题目。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地图基础、比例尺、方向与地理信息技术相关章节", "note": "回到教材核对图例、方向、比例尺和自然地理要素判读。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-fire-perimeter-land-cover-and-risk",
+      "courseId": "compulsory-1",
+      "title": "火灾边界、土地覆盖与灾害风险",
+      "summary": "阅读火灾范围或其他灾害边界时，先区分事件范围、受影响土地覆盖和暴露对象，再联系风向、地形、燃料连续性和人类活动解释扩散。教学数据的空间范围与时间版本必须写清，单幅边界图不能直接推出长期风险。",
+      "keywords": ["火灾边界", "土地覆盖", "灾害风险", "空间范围"],
+      "sourceIds": ["github-geo-data-teaching", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-geo-data-teaching", "locator": "README / fire perimeters dataset and metadata entry", "note": "用于交叉核对灾害边界数据、空间范围和元数据边界；不复制数据、图表或处理结果。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "自然灾害、地表覆盖与人类活动章节", "note": "回到教材核对灾害过程、下垫面、暴露对象和防灾减灾。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-quiz-recall-to-process-evidence",
+      "courseId": "compulsory-1",
+      "title": "从地图问答记忆回到自然过程证据",
+      "summary": "地图问答可用于提取地名和位置记忆，但复习下一步应补写形成机制：先指明位置和图例，再说明地形、气候、水文或人类活动如何造成差异。动态题库或即时反馈只说明一次练习结果，不能替代教材图表和过程链核对。",
+      "keywords": ["地图问答", "位置记忆", "过程链", "证据核对"],
+      "sourceIds": ["github-geojunior-interactive-geography", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-geojunior-interactive-geography", "locator": "README / interactive quizzes, dynamic content and validation testing", "note": "用于交叉核对问答、反馈和内容校验的学习流程；不复制题目、代码或页面文字。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "自然地理过程、地理图表与地理实践章节", "note": "回到教材核对位置线索、自然过程和图表证据。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-resource-facility-location-and-network",
+      "courseId": "compulsory-2",
+      "title": "资源设施区位与交通网络",
+      "summary": "把水坝、能源设施、工业点或交通节点放在地图上比较时，先分自然基础、原料与市场、能源水源、交通和政策条件，再判断点位是否形成网络或集聚。地图练习提供位置入口，区域结论仍需用区位因素和联系强度解释。",
+      "keywords": ["设施区位", "工业布局", "交通网络", "区位因素"],
+      "sourceIds": ["github-mapwork-board-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-mapwork-board-geography", "locator": "README / examination mapwork and precise location practice", "note": "用于交叉核对工程与设施点位练习的空间定位边界；不复制地图资产、代码或题目。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "农业、工业、交通与区域联系章节", "note": "回到教材核对自然和社会经济区位、交通联系与空间集聚。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-cholera-point-pattern-and-environmental-clues",
+      "courseId": "compulsory-2",
+      "title": "点模式、空间邻近与人地关系线索",
+      "summary": "点状健康资料适合先看聚集、离群和与水系、道路、居住地的邻近关系，再检查调查范围、时间和统计单位。空间共现只能提供线索，必须结合环境过程与人口活动解释，不能把地图上的热点直接当作单一因果。",
+      "keywords": ["点模式", "空间邻近", "人口活动", "因果边界"],
+      "sourceIds": ["github-geo-data-teaching", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-geo-data-teaching", "locator": "README / Snow cholera point-pattern dataset and metadata entry", "note": "用于交叉核对点模式、空间邻近和教学数据元数据的证据边界；不复制数据、图表或处理结果。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口、聚落、环境与人地关系章节", "note": "回到教材核对人口活动、聚落分布、环境条件和因果解释。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-country-capital-hierarchy-and-political-space",
+      "courseId": "compulsory-2",
+      "title": "国家、首都层级与政治空间",
+      "summary": "国家、首都和城市问答应先辨认政治空间层级，再追问城市职能、人口规模、交通联系和区域服务范围。游戏化检索适合形成位置记忆，但行政边界、首都职能和经济腹地不能由一次答题直接推出。",
+      "keywords": ["政治地理", "首都", "城市职能", "空间层级"],
+      "sourceIds": ["github-geojunior-interactive-geography", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-geojunior-interactive-geography", "locator": "README / geography quizzes, user-facing learning content and validation", "note": "用于交叉核对互动地理问答的检索与校验边界；不复制题目、地名数据或页面文字。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "聚落、城市等级与区域联系章节", "note": "回到教材核对城市职能、等级体系、服务范围和区域联系。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-coordinate-calibration-and-spatial-error",
+      "courseId": "selective-1",
+      "title": "坐标校准、投影与空间误差",
+      "summary": "把屏幕点击转换为地图坐标时，要区分显示像素、地图坐标和真实地理坐标，并检查投影、缩放和视口变换带来的误差。校准工具只能改善点位对应关系，不能自动修正底图来源、边界概化或投影失真；自然地理判读仍要回到经纬度、地形和过程尺度。",
+      "keywords": ["坐标校准", "投影", "缩放", "误差"],
+      "sourceIds": ["github-mapwork-board-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-mapwork-board-geography", "locator": "README / custom SVG coordinate calibration and pan-zoom transformation", "note": "用于交叉核对显示坐标、地图坐标、缩放和点位误差边界；不复制代码或地图。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "经纬网、地图投影、比例尺与地理信息技术章节", "note": "回到教材核对坐标、投影、尺度和空间定位。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-temperature-series-and-climate-scale",
+      "courseId": "selective-1",
+      "title": "温度序列与气候比较尺度",
+      "summary": "把不同地区温度序列放在一起比较时，先统一变量定义、时间步长、基准期和空间代表性，再判断年际波动、季节性与长期趋势。教学数据的国家或区域样本只能支持相应尺度的比较，不能把少数站点或选定年份当作全球气候结论。",
+      "keywords": ["温度序列", "时间尺度", "空间代表性", "气候比较"],
+      "sourceIds": ["github-geo-data-teaching", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-geo-data-teaching", "locator": "README / selected-country global temperature teaching dataset and metadata", "note": "用于交叉核对温度序列、样本范围和元数据边界；不复制数据、图表或处理结果。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "气候要素、气候系统、时间尺度与地域差异章节", "note": "回到教材核对气温变化、季节性、气候尺度和区域差异。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-mapwork-relief-water-feature-and-process",
+      "courseId": "selective-1",
+      "title": "地形、水体要素与自然过程判读",
+      "summary": "自然地理地图练习不应停在识别地名。对山地、河流、湖泊或工程点位，应先从等高线、坡向、汇水方向和海陆位置提取证据，再解释侵蚀、沉积、径流或水热条件。交互缩放帮助观察细节，但细节越多越要核对图例与比例尺。",
+      "keywords": ["地形判读", "河流", "等高线", "过程证据"],
+      "sourceIds": ["github-mapwork-board-geography", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-mapwork-board-geography", "locator": "README / visual mapwork and interactive feature-location practice", "note": "用于交叉核对地图细节、要素定位和交互观察的学习边界；不复制地图或页面内容。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地表形态、水体运动、地貌过程与自然环境整体性章节", "note": "回到教材核对等高线、地形、水体和侵蚀沉积过程。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-data-extent-and-regional-comparison",
+      "courseId": "selective-2",
+      "title": "数据范围、空间单元与区域比较",
+      "summary": "区域比较前先记录数据覆盖范围、空间单元、时间版本和缺失值处理，再决定哪些地区可以直接比较。教学数据目录能帮助追溯来源与范围，但不同来源的行政边界、分辨率和指标定义不一致时，应先做口径转换或明确不可比。",
+      "keywords": ["数据范围", "区域比较", "空间单元", "统计口径"],
+      "sourceIds": ["github-geo-data-teaching", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-geo-data-teaching", "locator": "README / teaching datasets, extent descriptions and metadata files", "note": "用于交叉核对数据覆盖、空间范围和元数据追溯；不复制数据、图表或代码。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域比较、区域联系、区域发展与地理信息技术章节", "note": "回到教材核对区域单元、指标口径、尺度和区域差异解释。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-mapwork-feature-clusters-and-regional-structure",
+      "courseId": "selective-2",
+      "title": "点位集聚与区域结构",
+      "summary": "把多个地图点位转成区域判断时，要识别集聚、廊道、边缘和空白区，并把它们与交通、资源、市场、人口或地形联系起来。点位本身只提供分布证据，不能跳过尺度、样本选择和功能联系的解释。",
+      "keywords": ["点位集聚", "区域结构", "空间格局", "功能联系"],
+      "sourceIds": ["github-mapwork-board-geography", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-mapwork-board-geography", "locator": "README / mapwork location tasks and interactive spatial feedback", "note": "用于交叉核对点位练习向区域格局推理的转换边界；不复制代码、地图或题目。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域整体性、区域联系、产业与交通网络章节", "note": "回到教材核对区域结构、空间联系、集聚和尺度解释。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-interactive-quiz-to-geographic-inquiry",
+      "courseId": "selective-2",
+      "title": "从互动问答到区域探究",
+      "summary": "交互问答可以把任务拆成定位、比较、反馈和再练习，但区域发展探究还要补上问题定义、数据来源、尺度选择和结论复核。学习界面越简洁，越需要显式保留图例、时间、边界和证据链，避免把答题速度误当成区域认识。",
+      "keywords": ["地理探究", "任务链", "区域发展", "证据复核"],
+      "sourceIds": ["github-geojunior-interactive-geography", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-geojunior-interactive-geography", "locator": "README / interactive quizzes, dynamic content and integration or validation testing", "note": "用于交叉核对互动任务、反馈和内容校验的学习流程；不复制题目、代码或页面文字。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域发展、区域规划、地理实践与案例研究章节", "note": "回到教材核对问题链、数据证据、区域尺度和发展结论。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-resource-facility-map-and-security-boundary",
+      "courseId": "selective-3",
+      "title": "资源设施地图与安全边界",
+      "summary": "资源或能源设施的地图点位只能说明已建设的空间分布，不能等同于资源储量、供给能力或安全水平。判断资源安全时还要补充资源禀赋、运输网络、替代来源、环境承载力和灾害暴露，并注明数据年份和统计口径。",
+      "keywords": ["资源设施", "能源安全", "供给能力", "环境承载力"],
+      "sourceIds": ["github-mapwork-board-geography", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-mapwork-board-geography", "locator": "README / examination mapwork and location practice for geographic facilities", "note": "用于交叉核对设施点位与地图证据边界；不复制地图资产、代码或题目。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源安全、能源安全、环境承载力与国家安全章节", "note": "回到教材核对资源禀赋、供给能力、环境代价和安全评价。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-open-environment-data-and-provenance",
+      "courseId": "selective-3",
+      "title": "开放环境数据与来源溯源",
+      "summary": "环境资料题要把原始数据、处理结果和解释结论分层记录，写清数据来源、许可、时间、空间范围与处理步骤。开放仓库只说明数据或教学案例的组织方式，不能把附带数据、地图或代码未经核验地当作本站事实。",
+      "keywords": ["环境数据", "来源溯源", "许可边界", "处理链"],
+      "sourceIds": ["github-geo-data-teaching", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-geo-data-teaching", "locator": "README / open-resource descriptions and dataset metadata boundaries", "note": "用于交叉核对环境数据、处理链和逐项许可审查；不复制数据、图表、代码或处理结果。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境问题、生态保护与国家安全章节", "note": "回到教材核对资源环境证据、治理过程和安全判断。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-geography-quiz-coverage-and-validation",
+      "courseId": "selective-3",
+      "title": "地理题库覆盖与内容校验",
+      "summary": "题库或互动学习系统上线前应检查地名、边界、答案口径、版本日期和异常输入，尤其注意国家、属地、首都和区域分类可能随资料口径变化。测验结果适合发现复习缺口，不应被当作资源环境风险或国家地理事实的唯一证据。",
+      "keywords": ["题库验证", "版本日期", "政治地理口径", "证据边界"],
+      "sourceIds": ["github-geojunior-interactive-geography", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-geojunior-interactive-geography", "locator": "README / validation testing, dynamic quiz content and data management", "note": "用于交叉核对题库内容、异常输入和验证流程的边界；不复制题目、数据库或代码。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境、国家地理空间与国家安全章节", "note": "回到教材核对资料时间、区域分类、资源环境事实和安全判断。"}
       ],
       "licenseStatus": "citation-only",
       "reviewStatus": "reviewed"
