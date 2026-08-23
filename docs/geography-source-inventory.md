@@ -1,12 +1,28 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-24；扩展轮次：geo-2026.08.24.38
+盘点日期：2026-08-24；扩展轮次：geo-2026.08.24.39
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.24.38`：263 个来源、590 条卡片，其中 38 条 `authored-summary`、552 条 `citation-only`；五个课程族分别为 109、119、124、117、121 条。本轮新增 5 个 GitHub GIS/遥感/空间数据库/地理可视化课程项目、3 个公开地理空间数据入口，以及 15 条原创 `citation-only` 方法卡，继续补齐专题地图符号化、空间单元与尺度效应、产业—交通网络、空间数据库查询、网络可达性、GIS/遥感验证、地理数据治理和资源安全决策边界。
+当前发布版本 `geo-2026.08.24.39`：271 个来源、605 条卡片，其中 38 条 `authored-summary`、567 条 `citation-only`；五个课程族分别为 112、122、127、120、124 条。本轮新增 5 个 GitHub 地理实地调查、历史地图、人口密度与学校可达性项目、3 个公开地理空间/人口数据入口，以及 15 条原创 `citation-only` 方法卡，继续补齐实地调查误差、历史地图比较、人口密度口径、学校公共服务可达性、迁移地图伦理、国家地理空间图层和资源环境公平等专题。
 
-本轮累计新增 256 条 citation-only 方法卡：在上一轮 241 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收 IOM 世界移民报告、UN-Habitat 城市数据、美国人口普查局教育入口、NOAA 海岸带教育入口，以及四个 GitHub 地理教育/地球科学项目，补齐海岸过程—风险链、灾害实地核验—图层、迁移存量—流量、城市指标—空间公平、模型不确定性、商业地理—供应链和气候迁移—安全等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 271 条 citation-only 方法卡：在上一轮 256 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收新的 GitHub 地理教育/地理空间项目与公开人口、地理空间数据入口。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+
+## geo-2026.08.24.39 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-isr-field-app` | [ISR Field：地理实地调查与空间数据管理应用](https://github.com/isr-oeaw/isr-field-app) | commit `95ffd7095883ba851ceb4c5a80390b171b1645ce`；访问日期 2026-08-24 | 参照实地调查、空间点记录、CSV、交互地图和审计字段；不复制代码、数据库或用户数据。 |
+| `github-family-history-migration-map` | [Family History Migration Map：高中生家庭迁移与地方文化地图](https://github.com/gamzeulu/family-history-migration-map) | commit `1ac747b74af36c146d77111e28b9b2be7f6724e9`；访问日期 2026-08-24 | 参照学生迁移地图、地方文化和个人叙事边界；不复制页面、个人信息、数据或图表。 |
+| `github-wettstein-schulatlas-zurich` | [Schul-Atlas von Wettstein：1887 年中学地理学校地图集](https://github.com/d33pk3rn3l/1887-wettstein-schulatlas-zurich) | commit `4b310545ad7eeb4de4fedd8e24b2dcd9b58a798c`；访问日期 2026-08-24 | 参照历史地图、景观记录和地图教育；不复制 PDF、图版或图片。 |
+| `github-everest-maps` | [Everest Maps：学校地理课人口密度地图实践](https://github.com/amahjo/Everest-maps) | commit `70f7ce0de7d5e41c14e5a4f45e157b222ec06a22`；访问日期 2026-08-24 | 参照人口密度面积归一化、对数色阶和跨区域比较；不复制代码、图表或数据。 |
+| `github-geospatial-school-mapping` | [Geospatial School Mapping：学校空间分布与可达性地图](https://github.com/alphacrypto246/Geospatial-School-Mapping) | commit `fdb20ee2624487abe613c2b6beccaca19eac6f6c`；访问日期 2026-08-24 | 参照学校点位、可达性、服务不足区域和空间规划；不复制代码、数据或地图。 |
+| `web-national-archives-education` | [The National Archives：Education and Outreach](https://www.nationalarchives.gov.uk/education/) | 公共教育入口；访问日期 2026-08-24 | 参照历史档案、地图资料、来源批判和课堂探究；不复制档案图像或课程材料。 |
+| `web-owid-population-density` | [Our World in Data：Population Density](https://ourworldindata.org/grapher/population-density) | 公共数据图入口；访问日期 2026-08-24 | 参照人口密度归一化指标、时间序列和数据定义；不复制图表或数据转储。 |
+| `web-un-geospatial` | [United Nations Geospatial：地理空间与位置数据入口](https://www.un.org/geospatial/) | 公共地理空间入口；访问日期 2026-08-24 | 参照位置数据、地图服务、空间信息协调和区域规划治理；不复制地图、数据或页面内容。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每门课程族 3 条。所有卡片均保留人民教育出版社教材证据；新来源只用于实地调查、历史地图、人口密度、学校可达性、迁移地图伦理、地理空间图层和资源环境公平的方法边界交叉核对，不把第三方题目、答案、代码、地图、数据或页面文字并入站点。
 
 ## geo-2026.08.24.38 新增公开来源
 

@@ -1,5 +1,5 @@
 {
-  "version": "geo-2026.08.24.38",
+  "version": "geo-2026.08.24.39",
   "title": "高中地理核心知识与读图方法",
   "description": "按普通高中地理课程组织的原创学习摘要、方法提示与可追溯教材证据。摘要用于学习导航，不替代教材、教师讲解或考试院发布的当年考试要求。",
   "courses": [
@@ -2470,6 +2470,83 @@
       "url": "https://www.usgs.gov/programs/national-geospatial-program/national-map",
       "accessedAt": "2026-08-24",
       "licenseNote": "USGS 公共地理空间数据入口；具体图层、下载产品和第三方数据按元数据、署名与使用条件处理，本项目仅作多图层、数据更新和资源环境分析的 citation-only 参照，不复制数据、地图或页面内容。"
+    },
+    {
+      "id": "github-isr-field-app",
+      "title": "ISR Field：地理实地调查与空间数据管理应用",
+      "publisher": "isr-oeaw/isr-field-app（GitHub）",
+      "editionNote": "公开仓库提交 `95ffd7095883ba851ceb4c5a80390b171b1645ce`；访问日期 2026-08-24；README 说明应用支持地理实地调查、点几何、CSV 导入导出、交互地图、权限管理和审计记录。",
+      "url": "https://github.com/isr-oeaw/isr-field-app",
+      "commitSha": "95ffd7095883ba851ceb4c5a80390b171b1645ce",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 GPL-3.0；本项目仅作地理实地调查、空间点数据、坐标记录和审计边界的 citation-only 参照，不复制代码、数据库、用户数据或页面文字。"
+    },
+    {
+      "id": "github-family-history-migration-map",
+      "title": "Family History Migration Map：高中生家庭迁移与地方文化地图",
+      "publisher": "gamzeulu/family-history-migration-map（GitHub）",
+      "editionNote": "公开仓库提交 `1ac747b74af36c146d77111e28b9b2be7f6724e9`；访问日期 2026-08-24；README 说明项目基于高中生研究活动，将家庭迁移来源组织为地方文化迁移地图。",
+      "url": "https://github.com/gamzeulu/family-history-migration-map",
+      "commitSha": "1ac747b74af36c146d77111e28b9b2be7f6724e9",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 MIT；本项目仅作高中生迁移地图、地方认同和叙事地图的 citation-only 参照，不复制页面、数据、个人信息、图表或代码。"
+    },
+    {
+      "id": "github-wettstein-schulatlas-zurich",
+      "title": "Schul-Atlas von Wettstein：1887 年中学地理学校地图集",
+      "publisher": "d33pk3rn3l/1887-wettstein-schulatlas-zurich（GitHub）",
+      "editionNote": "公开仓库提交 `4b310545ad7eeb4de4fedd8e24b2dcd9b58a798c`；访问日期 2026-08-24；README 说明数字化保存 1887 年苏黎世中学地理学校地图集及其历史地图、景观和建筑图像。",
+      "url": "https://github.com/d33pk3rn3l/1887-wettstein-schulatlas-zurich",
+      "commitSha": "4b310545ad7eeb4de4fedd8e24b2dcd9b58a798c",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库声明 MIT，并提示历史原作的公共领域状态需按司法辖区核验；本项目仅作历史地图、地图教育和时空比较的 citation-only 参照，不复制 PDF、图版、图片或原文。"
+    },
+    {
+      "id": "github-everest-maps",
+      "title": "Everest Maps：学校地理课人口密度地图实践",
+      "publisher": "amahjo/Everest-maps（GitHub）",
+      "editionNote": "公开仓库提交 `70f7ce0de7d5e41c14e5a4f45e157b222ec06a22`；访问日期 2026-08-24；README 说明以学校地理课为背景，使用 R、空间要素、人口和面积计算世界人口密度，并用对数色阶表达差异。",
+      "url": "https://github.com/amahjo/Everest-maps",
+      "commitSha": "70f7ce0de7d5e41c14e5a4f45e157b222ec06a22",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "仓库未声明统一可复用许可证；README 标注数据和工具来源，本项目仅作学校地图、人口密度、面积归一化和对数表达的 citation-only 参照，不复制代码、数据、图片或图表。"
+    },
+    {
+      "id": "github-geospatial-school-mapping",
+      "title": "Geospatial School Mapping：学校空间分布与可达性地图",
+      "publisher": "alphacrypto246/Geospatial-School-Mapping（GitHub）",
+      "editionNote": "公开仓库提交 `fdb20ee2624487abe613c2b6beccaca19eac6f6c`；访问日期 2026-08-24；README 说明项目使用学校点位、区域边界和空间分析识别学校可达性与服务不足区域。",
+      "url": "https://github.com/alphacrypto246/Geospatial-School-Mapping",
+      "commitSha": "fdb20ee2624487abe613c2b6beccaca19eac6f6c",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "API 元数据未声明统一 SPDX 许可证，README 提及 MIT；本项目仅作学校空间分布、可达性和公共服务规划的 citation-only 参照，不复制代码、CSV、GeoJSON、地图或页面文字。"
+    },
+    {
+      "id": "web-national-archives-education",
+      "title": "The National Archives：Education and Outreach 教育与历史资料探究",
+      "publisher": "The National Archives, United Kingdom",
+      "editionNote": "公开教育与推广入口；访问日期 2026-08-24；用于核对历史档案、地图资料、来源批判和课堂探究的证据边界。",
+      "url": "https://www.nationalarchives.gov.uk/education/",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "英国国家档案馆公共教育入口；具体档案、图像和复制许可按 Open Government Licence 及页面说明处理，本项目仅作历史地图、来源批判和时空比较的 citation-only 参照，不复制档案图像、课程材料或页面正文。"
+    },
+    {
+      "id": "web-owid-population-density",
+      "title": "Our World in Data：Population Density 人口密度",
+      "publisher": "Our World in Data",
+      "editionNote": "公开人口密度数据图入口；访问日期 2026-08-24；用于核对人口与土地面积的归一化指标、跨区域比较、时间序列和数据定义边界。",
+      "url": "https://ourworldindata.org/grapher/population-density",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "Our World in Data 图表按 CC BY 4.0 与所引用数据集的许可分别处理；本项目仅作人口密度指标、时间序列和区域比较的 citation-only 参照，不复制图表、数据转储或页面文字。"
+    },
+    {
+      "id": "web-un-geospatial",
+      "title": "United Nations Geospatial：地理空间与位置数据入口",
+      "publisher": "United Nations Geospatial Network",
+      "editionNote": "公开地理空间入口；访问日期 2026-08-24；用于核对位置数据、地图服务、空间信息协调和可持续发展决策之间的资料治理边界。",
+      "url": "https://www.un.org/geospatial/",
+      "accessedAt": "2026-08-24",
+      "licenseNote": "联合国公共地理空间入口；具体地图、服务和数据按联合国页面、数据集及署名条件处理，本项目仅作地理空间治理、位置数据和区域规划的 citation-only 参照，不复制地图、数据或页面内容。"
     }
   ],
   "items": [
@@ -14408,6 +14485,224 @@
         {"sourceId": "web-usgs-national-map", "locator": "The National Map：multi-source geospatial layers, products and data limitations", "note": "用于交叉核对多源地图、更新和数据限制；不复制图层、地图或页面内容。"},
         {"sourceId": "github-gis-rs-2024fall", "locator": "README：GIS&RS tutorials, practice charts and reports", "note": "用于交叉核对 GIS/遥感结果表达、任务复核和报告边界；不复制教程、图表或代码。"},
         {"sourceId": "pep-geography-selective-3", "locator": "资源环境安全、生态保护、灾害风险和规划评价章节", "note": "回到教材核对风险分区、证据不确定性和治理决策。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-fieldwork-sampling-coordinate-uncertainty",
+      "courseId": "compulsory-1",
+      "title": "地理实地调查的抽样与坐标不确定性",
+      "summary": "实地调查要先明确观察对象、样点或样线、时间窗口和记录字段，再说明样本如何覆盖不同地形、土地利用或风险位置。坐标点只是观测位置的表达，可能受定位精度、遮挡、移动和记录误差影响；自然过程判断还要结合照片、天气、水文或地质证据，避免把少量样点当成整个区域的事实。",
+      "keywords": ["实地调查", "抽样", "坐标误差", "自然过程"],
+      "sourceIds": ["github-isr-field-app", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-isr-field-app", "locator": "README：geographic fieldworks, spatial points, CSV import/export, interactive maps and audit logging", "note": "用于交叉核对实地调查、空间点记录和审计字段的证据边界；不复制代码、数据库或用户数据。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地理实地调查、自然地理过程和地理信息技术章节", "note": "回到教材核对观察对象、样点代表性和自然过程证据。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-historical-atlas-landscape-change",
+      "courseId": "compulsory-1",
+      "title": "历史地图集与地表景观变化",
+      "summary": "比较历史地图和现代地图时，应先核对成图年代、比例尺、投影、测绘目的、地名变化和边界含义，再比较河流、海岸、聚落、道路或土地利用线索。旧地图不是现代精确底图，图面空白也不等于当时没有地理对象；可靠的变化判断需要多期地图、遥感或现场资料互相印证。",
+      "keywords": ["历史地图", "地图比较", "景观变化", "时空证据"],
+      "sourceIds": ["github-wettstein-schulatlas-zurich", "web-national-archives-education", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "github-wettstein-schulatlas-zurich", "locator": "README：1887 school atlas, historical maps, landscapes and cartographic education", "note": "用于交叉核对历史学校地图集、景观表达和地图教育边界；不复制 PDF、图版或图片。"},
+        {"sourceId": "web-national-archives-education", "locator": "Education and Outreach：historical sources, maps and classroom inquiry", "note": "用于交叉核对档案来源、历史地图和课堂探究的证据边界；不复制档案图像或课程材料。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "地图、地表形态、河流海岸和地理信息技术章节", "note": "回到教材核对地图尺度、地表过程和时空比较。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c1-geospatial-layer-and-natural-process-evidence",
+      "courseId": "compulsory-1",
+      "title": "地理空间图层与自然过程证据",
+      "summary": "自然地理问题可以把高程、水系、土地覆盖、灾害点和观测位置作为不同图层叠加，但每个图层的时间、分辨率、分类和误差都不同。图层重合适合提出过程线索，不能直接证明因果；要通过坡度、汇流、岩性、降水或现场观察等独立证据，逐步检验自然过程解释。",
+      "keywords": ["地理空间图层", "自然过程", "数据叠加", "证据核验"],
+      "sourceIds": ["web-un-geospatial", "github-isr-field-app", "pep-geography-compulsory-1"],
+      "evidence": [
+        {"sourceId": "web-un-geospatial", "locator": "Geospatial, location data for a better world：maps, location data and spatial information coordination", "note": "用于交叉核对位置数据、地图服务和空间信息协调的资料边界；不复制地图、数据或页面内容。"},
+        {"sourceId": "github-isr-field-app", "locator": "README：spatial data, geometry points, interactive mapping and data audit", "note": "用于交叉核对点数据、图层记录和实地核验的流程边界；不复制应用代码或数据。"},
+        {"sourceId": "pep-geography-compulsory-1", "locator": "圈层联系、地貌水文、灾害和地理信息技术章节", "note": "回到教材核对自然过程链、空间叠加和证据强度。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-student-migration-atlas-and-place-identity",
+      "courseId": "compulsory-2",
+      "title": "学生迁移地图与地方认同",
+      "summary": "家庭或社区迁移地图可以把人口流动、来源地、目的地、代际经历和地方文化联系起来，但地图中的个人叙事不能自动代表所有居民。分析时应区分个案、样本和总体，说明选择偏差、匿名化和同意边界，并把迁移的推拉因素、交通网络、就业教育机会和地方认同放在同一证据链中。",
+      "keywords": ["人口迁移", "地方认同", "叙事地图", "样本偏差"],
+      "sourceIds": ["github-family-history-migration-map", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-family-history-migration-map", "locator": "README：high-school student research, family migration roots and local cultural migration atlas", "note": "用于交叉核对学生迁移地图、地方文化和样本叙事边界；不复制页面、个人信息、数据或图表。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口迁移、地域文化、城乡联系和人地关系章节", "note": "回到教材核对迁移原因、人口流动和地方认同。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-population-density-denominator-and-comparison",
+      "courseId": "compulsory-2",
+      "title": "人口密度的分母与区域比较",
+      "summary": "人口密度是人口数量与土地面积的比值，读图时必须核对面积是否为陆地面积、统计单元是否一致、人口是年中估计还是普查时点，以及小岛、沙漠或无人区是否纳入分母。密度高低只能描述平均分布，不能直接说明拥挤、资源压力或生活质量，还要结合地形、产业、交通和公共服务判断。",
+      "keywords": ["人口密度", "分母", "指标口径", "区域比较"],
+      "sourceIds": ["github-everest-maps", "web-owid-population-density", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-everest-maps", "locator": "README：population density, people per km², area normalization and logarithmic color scale", "note": "用于交叉核对学校地图、面积归一化和人口密度可视化边界；不复制代码、图表或数据。"},
+        {"sourceId": "web-owid-population-density", "locator": "Population density：population, land area, time series and data definitions", "note": "用于交叉核对人口密度指标、时间序列和数据口径；不复制图表或数据转储。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "人口分布、人口密度、聚落和区域差异章节", "note": "回到教材核对人口分布、自然条件和人类活动影响。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-c2-school-accessibility-and-public-service-gap",
+      "courseId": "compulsory-2",
+      "title": "学校可达性与公共服务缺口",
+      "summary": "学校分布地图可以发现设施集中、服务空白和城乡差异，但点位数量不等于教育机会。分析时要结合道路或时间成本、人口年龄结构、学校容量、行政边界、地形障碍和数据更新时间，并区分最近距离、实际通学路径与教育质量，才能把空间图面转化为公共服务问题。",
+      "keywords": ["学校可达性", "公共服务", "服务缺口", "城乡差异"],
+      "sourceIds": ["github-geospatial-school-mapping", "pep-geography-compulsory-2"],
+      "evidence": [
+        {"sourceId": "github-geospatial-school-mapping", "locator": "README：school location mapping, accessibility insights, proximity and spatial planning", "note": "用于交叉核对学校点位、可达性和服务不足区域的证据边界；不复制代码、CSV、GeoJSON 或地图。"},
+        {"sourceId": "pep-geography-compulsory-2", "locator": "城镇化、公共服务、城乡联系和区域差异章节", "note": "回到教材核对服务范围、城乡差异和公共资源配置。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-fieldwork-coordinate-system-and-error",
+      "courseId": "selective-1",
+      "title": "实地调查坐标系统与误差",
+      "summary": "同一实地对象在经纬度、投影坐标、道路地址或网格编号中会有不同表达。空间分析前应统一坐标参考、单位和精度，记录定位设备、采样时刻、遮挡和纠偏过程；距离、方向、面积或叠加结果都要说明误差来源，避免把坐标格式转换造成的偏移误判为自然地理变化。",
+      "keywords": ["坐标系统", "实地调查", "定位误差", "空间测量"],
+      "sourceIds": ["github-isr-field-app", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-isr-field-app", "locator": "README：CSV import, automatic coordinate system detection, geometry points and interactive maps", "note": "用于交叉核对坐标导入、点几何和空间记录的误差边界；不复制应用代码、数据库或用户数据。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地理信息技术、地图测量和自然地理观测章节", "note": "回到教材核对坐标、距离、方向和观测误差。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-historical-map-projection-and-generalization",
+      "courseId": "selective-1",
+      "title": "历史地图的投影与制图概化",
+      "summary": "历史地图比较不仅要看地理对象是否移动，还要检查投影、比例尺、制图技术和概化程度是否改变了形状、位置和细节。大比例尺地图能表达局部道路与建筑，小比例尺地图会合并或舍弃对象；因此跨时代比较应先匹配地图用途和空间尺度，再解释地表或人类活动变化。",
+      "keywords": ["历史地图", "投影", "制图概化", "比例尺"],
+      "sourceIds": ["github-wettstein-schulatlas-zurich", "web-national-archives-education", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-wettstein-schulatlas-zurich", "locator": "README：historical school atlas, maps, landscapes and cartographic representation", "note": "用于交叉核对历史地图教育、图面表达和地图比较边界；不复制 PDF 或图版。"},
+        {"sourceId": "web-national-archives-education", "locator": "Education and Outreach：historical sources, maps and source criticism", "note": "用于交叉核对历史资料、地图来源和制图语境；不复制档案图像或课程材料。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地图投影、比例尺、地理信息技术和地球观测章节", "note": "回到教材核对投影失真、比例尺和地图概化。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s1-density-log-scale-and-visualization",
+      "courseId": "selective-1",
+      "title": "人口密度的对数分级与视觉表达",
+      "summary": "人口密度往往跨越多个数量级，使用对数色阶可以同时看见高密度和低密度区域，但会改变读者对绝对差距的直觉。判读时要区分原始数值、分级规则和颜色含义，检查零值、缺失值、面积单位与统计边界，并用表格或线性指标复核地图是否夸大了某些区域差异。",
+      "keywords": ["人口密度", "对数色阶", "专题地图", "视觉偏差"],
+      "sourceIds": ["github-everest-maps", "web-owid-population-density", "pep-geography-selective-1"],
+      "evidence": [
+        {"sourceId": "github-everest-maps", "locator": "README：logarithmic scale, viridis palette, population density and area units", "note": "用于交叉核对对数表达、色阶和人口密度地图的视觉边界；不复制代码、图片或图表。"},
+        {"sourceId": "web-owid-population-density", "locator": "Population density：indicator values, map visualization and time series", "note": "用于交叉核对指标数值、图表表达和时间序列；不复制图表或数据转储。"},
+        {"sourceId": "pep-geography-selective-1", "locator": "地图表达、统计图表、比例尺和地理信息技术章节", "note": "回到教材核对专题地图、数据分级和读图方法。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-community-migration-mapping-and-ethics",
+      "courseId": "selective-2",
+      "title": "社区迁移制图与地理伦理",
+      "summary": "社区迁移地图能把个体经历转成地方联系和区域流动的可视化证据，但精确地点、时间和身份可能造成隐私风险。区域研究应优先使用自愿、匿名、聚合后的数据，明确谁被看见、谁被遗漏、谁拥有解释权，并把地图叙事与人口统计、就业教育机会、交通网络和政策背景进行交叉核对。",
+      "keywords": ["迁移制图", "地理伦理", "隐私保护", "社区研究"],
+      "sourceIds": ["github-family-history-migration-map", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-family-history-migration-map", "locator": "README：student migration atlas, family history and local cultural geography", "note": "用于交叉核对迁移地图、地方叙事和隐私边界；不复制页面、个人数据或地图。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "人口迁移、区域联系、地域文化和区域发展章节", "note": "回到教材核对迁移网络、区域联系和地方文化。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-education-accessibility-network-and-service-area",
+      "courseId": "selective-2",
+      "title": "教育可达性网络与服务范围",
+      "summary": "教育服务范围分析应把学校点位、道路网络、人口分布、地形阻隔和学校容量放在同一空间模型中，区分直线邻近与实际通学成本。地图发现的服务空白只是规划线索，还需复核学龄人口变化、跨行政区就学、寄宿与线上教育等制度因素，避免把设施距离直接等同于教育公平。",
+      "keywords": ["教育可达性", "路网", "服务范围", "空间公平"],
+      "sourceIds": ["github-geospatial-school-mapping", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "github-geospatial-school-mapping", "locator": "README：school locations, proximity, accessibility insights and planning", "note": "用于交叉核对学校可达性、邻近分析和公共服务规划边界；不复制代码、数据或地图。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域联系、公共服务、交通网络和空间公平章节", "note": "回到教材核对可达性、区域联系和规划评价。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s2-national-geospatial-layer-and-regional-planning",
+      "courseId": "selective-2",
+      "title": "国家地理空间图层与区域规划",
+      "summary": "区域规划可以使用位置数据和多种地图服务，但必须明确图层的生产机构、更新时间、空间分辨率、覆盖范围和授权条件。高程、水系、交通、人口或土地利用图层叠加后，应先检查空间与时间匹配，再把结果转成区域功能、基础设施布局和生态约束的规划假设，并保留不能由地图回答的问题。",
+      "keywords": ["地理空间图层", "区域规划", "数据治理", "多源证据"],
+      "sourceIds": ["web-un-geospatial", "pep-geography-selective-2"],
+      "evidence": [
+        {"sourceId": "web-un-geospatial", "locator": "Geospatial, location data for a better world：location data, mapping services and coordination", "note": "用于交叉核对多源位置数据、地图服务和规划治理的资料边界；不复制地图、数据或页面内容。"},
+        {"sourceId": "pep-geography-selective-2", "locator": "区域发展、国土空间规划、区域联系和综合治理章节", "note": "回到教材核对图层叠加、区域功能和规划约束。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-aggregated-fieldwork-data-and-privacy",
+      "courseId": "selective-3",
+      "title": "聚合实地数据与地理隐私",
+      "summary": "资源环境或社区安全调查常需要位置数据，但公开地图不应暴露可识别个人、家庭或脆弱设施的精确坐标。可以通过网格聚合、最小样本阈值、模糊化时间和权限分层降低风险，同时保留数据质量审计；隐私保护会牺牲部分空间精度，因此决策者应知道哪些风险无法从公开图上判断。",
+      "keywords": ["地理隐私", "数据聚合", "实地调查", "安全治理"],
+      "sourceIds": ["github-isr-field-app", "github-family-history-migration-map", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-isr-field-app", "locator": "README：dataset access control, spatial points, file management and audit logging", "note": "用于交叉核对空间数据权限、点记录和审计机制的证据边界；不复制用户数据或应用代码。"},
+        {"sourceId": "github-family-history-migration-map", "locator": "README：high-school migration atlas and family history mapping", "note": "用于交叉核对个人迁移叙事、匿名化和公开地图风险；不复制个人信息或页面内容。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境安全、灾害风险、数据治理和国家安全章节", "note": "回到教材核对风险信息、保护对象和安全治理边界。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-historical-map-resource-environment-change",
+      "courseId": "selective-3",
+      "title": "历史地图与资源环境变化",
+      "summary": "历史地图可以帮助追踪河道、海岸、森林、聚落、交通和资源利用的长期变化，但地图年代、测绘目的和缺失信息会造成不确定性。资源环境评价应把历史地图作为变化线索，与现代遥感、统计、公报和现场记录交叉验证，并区分自然过程、工程改造、制度变化和数据表达差异。",
+      "keywords": ["历史地图", "资源环境", "长期变化", "交叉验证"],
+      "sourceIds": ["github-wettstein-schulatlas-zurich", "web-national-archives-education", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "github-wettstein-schulatlas-zurich", "locator": "README：historical atlas, landscapes, maps and educational history", "note": "用于交叉核对历史地图、景观记录和地图教育的资料边界；不复制 PDF 或图像。"},
+        {"sourceId": "web-national-archives-education", "locator": "Education and Outreach：historical records, maps and source criticism", "note": "用于交叉核对档案地图、来源批判和历史变化证据；不复制档案图像或课程材料。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境变化、生态保护、自然资源和国家安全章节", "note": "回到教材核对资源环境变化、保护治理和长期证据。"}
+      ],
+      "licenseStatus": "citation-only",
+      "reviewStatus": "reviewed"
+    },
+    {
+      "id": "geo-s3-population-density-and-urban-rural-equity",
+      "courseId": "selective-3",
+      "title": "人口密度与城乡资源环境公平",
+      "summary": "人口密度可以提示资源需求和基础设施压力，但高密度不一定意味着高风险，低密度也不一定意味着资源充足。资源环境安全分析应把人口密度与用水、能源、生态承载、交通、公共服务和灾害暴露结合，并说明城乡统计单元、时间口径和人口流动如何改变公平判断。",
+      "keywords": ["人口密度", "城乡公平", "资源环境", "承载压力"],
+      "sourceIds": ["web-owid-population-density", "github-everest-maps", "pep-geography-selective-3"],
+      "evidence": [
+        {"sourceId": "web-owid-population-density", "locator": "Population density：population per area, regional comparison and time series", "note": "用于交叉核对人口密度、区域比较和时间序列边界；不复制图表或数据转储。"},
+        {"sourceId": "github-everest-maps", "locator": "README：school geography, population density, area units and map visualization", "note": "用于交叉核对学校地图、面积口径和视觉表达限制；不复制代码、图表或图片。"},
+        {"sourceId": "pep-geography-selective-3", "locator": "资源环境承载力、资源安全、城乡发展和国家安全章节", "note": "回到教材核对资源需求、环境约束、公平和安全治理。"}
       ],
       "licenseStatus": "citation-only",
       "reviewStatus": "reviewed"

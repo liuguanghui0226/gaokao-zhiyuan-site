@@ -9,57 +9,61 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const payload = JSON.parse(fs.readFileSync(path.join(projectRoot, "data/geography/knowledge.json"), "utf8"));
 
 const expectedSources = {
-  "github-yvki-secondary-geography-quiz": {
-    url: "https://github.com/yvki/quiz",
-    commitSha: "db8f3174b18cd984a7d1822e1c13b9a4bd71afed",
+  "github-isr-field-app": {
+    url: "https://github.com/isr-oeaw/isr-field-app",
+    commitSha: "95ffd7095883ba851ceb4c5a80390b171b1645ce",
     accessedAt: "2026-08-24",
   },
-  "github-jeanextreme-geography-game": {
-    url: "https://github.com/JeanExtreme002/Geography-Game",
-    commitSha: "e8a2f19fa24468a80263ef7e55497bfd5ae298b2",
+  "github-family-history-migration-map": {
+    url: "https://github.com/gamzeulu/family-history-migration-map",
+    commitSha: "1ac747b74af36c146d77111e28b9b2be7f6724e9",
     accessedAt: "2026-08-24",
   },
-  "github-felipe-access-to-education-map": {
-    url: "https://github.com/felipehlvo/access_to_education_map",
-    commitSha: "b509c7f7cfb9ef3d1088c07c893ad194f515fc34",
+  "github-wettstein-schulatlas-zurich": {
+    url: "https://github.com/d33pk3rn3l/1887-wettstein-schulatlas-zurich",
+    commitSha: "4b310545ad7eeb4de4fedd8e24b2dcd9b58a798c",
     accessedAt: "2026-08-24",
   },
-  "github-poc-unesco-education-planning": {
-    url: "https://github.com/PoCInnovation/UNESCO-Hacking-ED-Planning",
-    commitSha: "b52497e31ff77635be37338d00fe65a99004eb0c",
+  "github-everest-maps": {
+    url: "https://github.com/amahjo/Everest-maps",
+    commitSha: "70f7ce0de7d5e41c14e5a4f45e157b222ec06a22",
     accessedAt: "2026-08-24",
   },
-  "github-romina-high-school-geography-quiz": {
-    url: "https://github.com/rominacarabathampi/AndroidQuiz",
-    commitSha: "5d3440282e1cdf03cd3ae369828f22645bbe0ead",
+  "github-geospatial-school-mapping": {
+    url: "https://github.com/alphacrypto246/Geospatial-School-Mapping",
+    commitSha: "fdb20ee2624487abe613c2b6beccaca19eac6f6c",
     accessedAt: "2026-08-24",
   },
-  "web-fao-global-forest-resources-assessment": {
-    url: "https://www.fao.org/interactive/forest-resources-assessment/2020/en/",
+  "web-national-archives-education": {
+    url: "https://www.nationalarchives.gov.uk/education/",
     accessedAt: "2026-08-24",
   },
-  "web-esa-climate-change-initiative": {
-    url: "https://climate.esa.int/en/",
+  "web-owid-population-density": {
+    url: "https://ourworldindata.org/grapher/population-density",
+    accessedAt: "2026-08-24",
+  },
+  "web-un-geospatial": {
+    url: "https://www.un.org/geospatial/",
     accessedAt: "2026-08-24",
   },
 };
 
 const expectedItems = {
-  "geo-c1-geography-field-observation-and-scale": "compulsory-1",
-  "geo-c1-weather-quiz-concept-and-evidence": "compulsory-1",
-  "geo-c1-climate-record-and-time-scale": "compulsory-1",
-  "geo-c2-school-access-and-service-area": "compulsory-2",
-  "geo-c2-education-quality-and-spatial-disparity": "compulsory-2",
-  "geo-c2-population-and-place-evidence": "compulsory-2",
-  "geo-s1-climate-observation-record-and-anomaly": "selective-1",
-  "geo-s1-region-clues-and-map-verification": "selective-1",
-  "geo-s1-surface-model-and-scale-selection": "selective-1",
-  "geo-s2-public-service-access-and-regional-equity": "selective-2",
-  "geo-s2-education-data-and-spatial-unit": "selective-2",
-  "geo-s2-map-game-and-regional-hierarchy": "selective-2",
-  "geo-s3-forest-resource-carbon-and-security": "selective-3",
-  "geo-s3-education-resilience-and-governance": "selective-3",
-  "geo-s3-geography-quiz-data-boundary-and-fairness": "selective-3",
+  "geo-c1-fieldwork-sampling-coordinate-uncertainty": "compulsory-1",
+  "geo-c1-historical-atlas-landscape-change": "compulsory-1",
+  "geo-c1-geospatial-layer-and-natural-process-evidence": "compulsory-1",
+  "geo-c2-student-migration-atlas-and-place-identity": "compulsory-2",
+  "geo-c2-population-density-denominator-and-comparison": "compulsory-2",
+  "geo-c2-school-accessibility-and-public-service-gap": "compulsory-2",
+  "geo-s1-fieldwork-coordinate-system-and-error": "selective-1",
+  "geo-s1-historical-map-projection-and-generalization": "selective-1",
+  "geo-s1-density-log-scale-and-visualization": "selective-1",
+  "geo-s2-community-migration-mapping-and-ethics": "selective-2",
+  "geo-s2-education-accessibility-network-and-service-area": "selective-2",
+  "geo-s2-national-geospatial-layer-and-regional-planning": "selective-2",
+  "geo-s3-aggregated-fieldwork-data-and-privacy": "selective-3",
+  "geo-s3-historical-map-resource-environment-change": "selective-3",
+  "geo-s3-population-density-and-urban-rural-equity": "selective-3",
 };
 
 assert.equal(payload.version, "geo-2026.08.24.39");
@@ -68,20 +72,20 @@ assert.equal(payload.items.length, 605);
 
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
   const source = payload.sources.find((candidate) => candidate.id === sourceId);
-  assert.ok(source, `missing v35 source ${sourceId}`);
+  assert.ok(source, `missing v39 source ${sourceId}`);
   assert.equal(source.url, expected.url);
   assert.equal(source.accessedAt, expected.accessedAt);
+  assert.equal(source.commitSha, expected.commitSha ?? undefined);
   if (expected.commitSha) {
-    assert.equal(source.commitSha, expected.commitSha);
     assert.ok(source.editionNote.includes(expected.commitSha), `${sourceId} edition note must repeat its commit SHA`);
   }
-  assert.match(source.licenseNote, /citation|原创|不复制|仅作|license|许可/i);
+  assert.match(source.licenseNote, /citation|原创|不复制|仅作|未声明|公开|license|许可/i);
 }
 
 const items = new Map(payload.items.map((item) => [item.id, item]));
 for (const [itemId, courseId] of Object.entries(expectedItems)) {
   const item = items.get(itemId);
-  assert.ok(item, `missing v35 item ${itemId}`);
+  assert.ok(item, `missing v39 item ${itemId}`);
   assert.equal(item.courseId, courseId);
   assert.equal(item.licenseStatus, "citation-only");
   assert.equal(item.reviewStatus, "reviewed");

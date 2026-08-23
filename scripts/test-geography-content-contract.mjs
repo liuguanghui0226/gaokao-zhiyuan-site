@@ -740,6 +740,123 @@ const REQUIRED_V25_ITEMS = new Set([
   "geo-s3-geospatial-data-standardization-and-provenance",
   "geo-s3-geography-game-data-scope-and-fairness",
 ]);
+const REQUIRED_V26_SOURCES = new Set([
+  "github-hocbigg-human-geography",
+  "github-giswqs-i-guide-geoai-education",
+  "github-carpentries-geospatial-python",
+  "github-cielo-geoscience-lesson-plans-k12",
+  "web-nasa-learning-resources",
+  "web-national-geographic-gis",
+  "web-osgeo-geo-for-all",
+  "web-nps-geology-education",
+]);
+const REQUIRED_V26_EXTERNAL_SOURCES = new Set([
+  "github-hocbigg-human-geography",
+  "github-giswqs-i-guide-geoai-education",
+  "github-carpentries-geospatial-python",
+  "github-cielo-geoscience-lesson-plans-k12",
+]);
+const REQUIRED_V26_PUBLIC_WEB_SOURCES = new Set([
+  "web-nasa-learning-resources",
+  "web-national-geographic-gis",
+  "web-osgeo-geo-for-all",
+  "web-nps-geology-education",
+]);
+const REQUIRED_V26_ITEMS = new Set([
+  "geo-c1-earth-science-learning-and-evidence",
+  "geo-c1-geology-field-observation-and-process",
+  "geo-c1-earth-system-resource-and-scale",
+  "geo-c2-human-geography-space-place-and-scale",
+  "geo-c2-public-service-map-and-spatial-equity",
+  "geo-c2-population-region-and-evidence-chain",
+  "geo-s1-geoai-data-pipeline-and-validation",
+  "geo-s1-raster-vector-and-spatial-model",
+  "geo-s1-geoscience-remote-sensing-and-field-check",
+  "geo-s2-place-region-scale-and-comparison",
+  "geo-s2-open-gis-education-and-spatial-inquiry",
+  "geo-s2-geographic-data-reproducibility",
+  "geo-s3-human-environment-system-and-resilience",
+  "geo-s3-geology-conservation-and-ecosystem-service",
+  "geo-s3-geoai-land-change-and-decision-risk",
+]);
+const REQUIRED_V27_SOURCES = new Set([
+  "github-deephydro-gisrs",
+  "github-cumt-gis",
+  "github-geovisualization-tutorial",
+  "github-spatialdb-nnu",
+  "github-gis-rs-2024fall",
+  "web-openstreetmap-map-features",
+  "web-us-census-geographic-areas",
+  "web-usgs-national-map",
+]);
+const REQUIRED_V27_EXTERNAL_SOURCES = new Set([
+  "github-deephydro-gisrs",
+  "github-cumt-gis",
+  "github-geovisualization-tutorial",
+  "github-spatialdb-nnu",
+  "github-gis-rs-2024fall",
+]);
+const REQUIRED_V27_PUBLIC_WEB_SOURCES = new Set([
+  "web-openstreetmap-map-features",
+  "web-us-census-geographic-areas",
+  "web-usgs-national-map",
+]);
+const REQUIRED_V27_ITEMS = new Set([
+  "geo-c1-thematic-map-variable-and-symbol",
+  "geo-c1-spatial-unit-and-scale-effect",
+  "geo-c1-gis-rs-observation-workflow",
+  "geo-c2-industrial-transport-network-location",
+  "geo-c2-spatial-database-query-and-service-area",
+  "geo-c2-geographic-unit-definition-and-comparison",
+  "geo-s1-map-projection-symbolization-and-purpose",
+  "geo-s1-spatial-database-layer-and-attribute-evidence",
+  "geo-s1-gis-rs-preprocess-classify-and-verify",
+  "geo-s2-visualization-choice-and-regional-narrative",
+  "geo-s2-network-accessibility-and-spatial-query",
+  "geo-s2-geographic-unit-scale-and-policy-comparison",
+  "geo-s3-geospatial-data-governance-and-resource-security",
+  "geo-s3-industrial-network-resilience-and-regional-equity",
+  "geo-s3-map-evidence-uncertainty-and-decision-boundary",
+]);
+const REQUIRED_V28_SOURCES = new Set([
+  "github-isr-field-app",
+  "github-family-history-migration-map",
+  "github-wettstein-schulatlas-zurich",
+  "github-everest-maps",
+  "github-geospatial-school-mapping",
+  "web-national-archives-education",
+  "web-owid-population-density",
+  "web-un-geospatial",
+]);
+const REQUIRED_V28_EXTERNAL_SOURCES = new Set([
+  "github-isr-field-app",
+  "github-family-history-migration-map",
+  "github-wettstein-schulatlas-zurich",
+  "github-everest-maps",
+  "github-geospatial-school-mapping",
+]);
+const REQUIRED_V28_PUBLIC_WEB_SOURCES = new Set([
+  "web-national-archives-education",
+  "web-owid-population-density",
+  "web-un-geospatial",
+]);
+const REQUIRED_V28_ITEMS = new Set([
+  "geo-c1-fieldwork-sampling-coordinate-uncertainty",
+  "geo-c1-historical-atlas-landscape-change",
+  "geo-c1-geospatial-layer-and-natural-process-evidence",
+  "geo-c2-student-migration-atlas-and-place-identity",
+  "geo-c2-population-density-denominator-and-comparison",
+  "geo-c2-school-accessibility-and-public-service-gap",
+  "geo-s1-fieldwork-coordinate-system-and-error",
+  "geo-s1-historical-map-projection-and-generalization",
+  "geo-s1-density-log-scale-and-visualization",
+  "geo-s2-community-migration-mapping-and-ethics",
+  "geo-s2-education-accessibility-network-and-service-area",
+  "geo-s2-national-geospatial-layer-and-regional-planning",
+  "geo-s3-aggregated-fieldwork-data-and-privacy",
+  "geo-s3-historical-map-resource-environment-change",
+  "geo-s3-population-density-and-urban-rural-equity",
+]);
 const REQUIRED_EXTERNAL_ITEMS = new Set([
   "geo-s1-coriolis-force-direction",
   "geo-s1-time-zone-and-date-line",
@@ -825,6 +942,15 @@ for (const sourceId of REQUIRED_V24_SOURCES) {
 for (const sourceId of REQUIRED_V25_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing v25 geography source ${sourceId}`);
 }
+for (const sourceId of REQUIRED_V26_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing v26 geography source ${sourceId}`);
+}
+for (const sourceId of REQUIRED_V27_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing v27 geography source ${sourceId}`);
+}
+for (const sourceId of REQUIRED_V28_SOURCES) {
+  assert.equal(sourceIds.has(sourceId), true, `missing v28 geography source ${sourceId}`);
+}
 for (const sourceId of REQUIRED_EXTERNAL_SOURCES) {
   assert.equal(sourceIds.has(sourceId), true, `missing external geography source ${sourceId}`);
 }
@@ -905,6 +1031,33 @@ for (const source of payload.sources.filter((item) => REQUIRED_V25_PUBLIC_WEB_SO
   assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
   assert.match(String(source.accessedAt), /^2026-08-23$/, `${source.id} must retain an access date`);
 }
+for (const source of payload.sources.filter((item) => REQUIRED_V26_EXTERNAL_SOURCES.has(item.id))) {
+  assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.commitSha), /^[a-f0-9]{40}$/i, `${source.id} must retain an immutable commit SHA`);
+  assert.match(String(source.accessedAt), /^2026-08-24$/, `${source.id} must retain an access date`);
+}
+for (const source of payload.sources.filter((item) => REQUIRED_V26_PUBLIC_WEB_SOURCES.has(item.id))) {
+  assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.accessedAt), /^2026-08-24$/, `${source.id} must retain an access date`);
+}
+for (const source of payload.sources.filter((item) => REQUIRED_V27_EXTERNAL_SOURCES.has(item.id))) {
+  assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.commitSha), /^[a-f0-9]{40}$/i, `${source.id} must retain an immutable commit SHA`);
+  assert.match(String(source.accessedAt), /^2026-08-24$/, `${source.id} must retain an access date`);
+}
+for (const source of payload.sources.filter((item) => REQUIRED_V27_PUBLIC_WEB_SOURCES.has(item.id))) {
+  assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.accessedAt), /^2026-08-24$/, `${source.id} must retain an access date`);
+}
+for (const source of payload.sources.filter((item) => REQUIRED_V28_EXTERNAL_SOURCES.has(item.id))) {
+  assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.commitSha), /^[a-f0-9]{40}$/i, `${source.id} must retain an immutable commit SHA`);
+  assert.match(String(source.accessedAt), /^2026-08-24$/, `${source.id} must retain an access date`);
+}
+for (const source of payload.sources.filter((item) => REQUIRED_V28_PUBLIC_WEB_SOURCES.has(item.id))) {
+  assert.match(String(source.url), /^https:\/\//, `${source.id} must retain a public source URL`);
+  assert.match(String(source.accessedAt), /^2026-08-24$/, `${source.id} must retain an access date`);
+}
 const itemIds = new Set();
 for (const item of payload.items) {
   assert.equal(typeof item.id, "string");
@@ -927,7 +1080,7 @@ for (const item of payload.items) {
     assert.equal(sourceIds.has(evidence.sourceId), true, `${item.id} evidence references unknown source`);
     assert.match(
       String(evidence.locator),
-      /第?\s*\d+\s*页|章节|教材|第一章|第二章|第三章|第四章|第一节|第二节|第三节|第四节|项目描述|README|course-description|data\/|pages\/|docs\/|gallery|ontology|RDF|geography\.html|earthmotion|src\/curriculum|01高中世界地理|高中地理考点重点复习|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|ENSO|Water Cycle|World of Change|JetStream|Copernicus|Copernicus Data Space|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Python for Geographic Data Analysis|Raster Data|GIS Programming|sun-motion|SunMotion|Sun-Earth-Moon|index\.html|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Hurricanes|National Hurricane Center|Climate change impacts|Urbanization|Urban Planning|Population Density|Plate Tectonics|Migration|IPCC|Farming and Agribusiness|Water Use and Stress|WMO|Climate|Carbon Cycle|carbon|land-water|water scarcity|competing uses|weather|Weather|weather observations|agriculture|agricultural|rural development|城乡建设|应急管理|food production|environmental monitoring|natural resources data|spatial planning|resources|environment|geography curriculum|NOAA|EIA|FAO|UNESCO|Global Geoparks|BGS|World Bank|geological|geological survey|hazard|urbanization|infrastructure|inclusion|resilience|water services|governance|ocean system|stewardship|disaster risk|exposure|vulnerability|preparedness|recovery|EnergyBalance|energy|power-system|geospatial data|data center|High_School|Secondary Education|Statistics in Schools|World Population Prospects|Population Prospects|world regional geography|regional geography|niveles\.html|recursos\.html|Transport|USGS|UN-Habitat|UNEP|Biodiversity|Global Resources|GIS OER|APA Technology|ArcGIS|QGIS|Protected Planet|Worldview|Spatial Thoughts|Training Data|QGIS Documentation|Geography Teaching Tools|GLOBE|cloud|Clouds|Scavenger Hunt|landforms|lesson plans|OSGeo|citizen science|location privacy|terrain|raster-dem|起伏|视点|ISPRS|Firestore|metadata|WorldHunter|GlobeGuesser|flag|continent|neighboring|GISphere|knowledge graph|geographic locations|semantic similarity|resource collections|Ocean and coasts|Weather and atmosphere|Freshwater|公报|自然资源|气象|风云|卫星|地理信息技术|区域研究|meteorological|satellite|marine|island|coral|ecosystem|天地图|统计|地震|森林|环流|季风|太阳高度角|地方时|Tianditu|earthquake|forest|forestry|circulation|monsoon|time zone|solar altitude|SATV|Solar System|NASA Science|Sun:|Geologic Time|Ocean Currents|UNFPA|MAB|太阳科学|太阳系|地质年代|人口情景|人口指标|人与生物圈/,
+      /第?\s*\d+\s*页|章节|教材|第一章|第二章|第三章|第四章|第一节|第二节|第三节|第四节|项目描述|README|course-description|data\/|pages\/|docs\/|gallery|ontology|RDF|geography\.html|earthmotion|src\/curriculum|01高中世界地理|高中地理考点重点复习|Tides|Remote Sensing|Ocean Acidification|pH|pixels|vector vs raster|El Niño|ENSO|Water Cycle|World of Change|JetStream|Copernicus|Copernicus Data Space|Sentinel|Global Soil Partnership|soil|AtlasGPT|terrain-explorer|GeoPandas|Python for Geographic Data Analysis|Raster Data|GIS Programming|sun-motion|SunMotion|Sun-Earth-Moon|index\.html|GeoWiki|K-12|GeoFest|No_License|Tornadoes|Hurricanes|National Hurricane Center|Climate change impacts|Urbanization|Urban Planning|Population Density|Plate Tectonics|Migration|IPCC|Farming and Agribusiness|Water Use and Stress|WMO|Climate|Carbon Cycle|carbon|land-water|water scarcity|competing uses|weather|Weather|weather observations|agriculture|agricultural|rural development|城乡建设|应急管理|food production|environmental monitoring|natural resources data|spatial planning|resources|environment|geography curriculum|NOAA|EIA|FAO|UNESCO|Global Geoparks|BGS|World Bank|geological|geological survey|hazard|urbanization|infrastructure|inclusion|resilience|water services|governance|ocean system|stewardship|disaster risk|exposure|vulnerability|preparedness|recovery|EnergyBalance|energy|power-system|geospatial data|data center|High_School|Secondary Education|Statistics in Schools|World Population Prospects|Population Prospects|world regional geography|regional geography|niveles\.html|recursos\.html|Transport|USGS|UN-Habitat|UNEP|Biodiversity|Global Resources|GIS OER|APA Technology|ArcGIS|QGIS|Protected Planet|Worldview|Spatial Thoughts|Training Data|QGIS Documentation|Geography Teaching Tools|GLOBE|cloud|Clouds|Scavenger Hunt|landforms|lesson plans|OSGeo|citizen science|location privacy|terrain|raster-dem|起伏|视点|ISPRS|Firestore|metadata|WorldHunter|GlobeGuesser|flag|continent|neighboring|GISphere|knowledge graph|geographic locations|semantic similarity|resource collections|Ocean and coasts|Weather and atmosphere|Freshwater|公报|自然资源|气象|风云|卫星|地理信息技术|区域研究|meteorological|satellite|marine|island|coral|ecosystem|天地图|统计|地震|森林|环流|季风|太阳高度角|地方时|Tianditu|earthquake|forest|forestry|circulation|monsoon|time zone|solar altitude|SATV|Solar System|NASA Science|Sun:|Geologic Time|Ocean Currents|UNFPA|MAB|太阳科学|太阳系|地质年代|人口情景|人口指标|人与生物圈|GISRS|CUMT-GIS|Geovisualization|spatial queries|GIS&RS|Map features|Geographic Areas|The National Map|Education and Outreach|Population density|Geospatial, location data|geographic fieldworks|school atlas|logarithmic color scale|service area/,
       `${item.id} evidence locator must be a page or stable web/repository section`,
     );
     assert.equal(typeof evidence.note, "string");
@@ -1011,6 +1164,15 @@ for (const itemId of REQUIRED_V24_ITEMS) {
 }
 for (const itemId of REQUIRED_V25_ITEMS) {
   assert.equal(itemIds.has(itemId), true, `missing v25 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V26_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v26 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V27_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v27 geography item ${itemId}`);
+}
+for (const itemId of REQUIRED_V28_ITEMS) {
+  assert.equal(itemIds.has(itemId), true, `missing v28 geography item ${itemId}`);
 }
 assert.ok(
   payload.items.filter((item) => item.licenseStatus === "citation-only").length >= 25,

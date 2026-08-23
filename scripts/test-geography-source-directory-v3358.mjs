@@ -30,7 +30,7 @@ api.state.query = "";
 api.state.sourceFilter = "all";
 const directory = api.renderSourceDirectory();
 assert.match(directory, /geography-source-directory/);
-assert.match(directory, /210 个公开链接/);
+assert.match(directory, /249 个公开链接/);
 assert.match(directory, /22 个本地\/教材/);
 assert.match(directory, /class="geography-directory-link" href="https:\/\/oceanservice\.noaa\.gov\/education\/tutorial_tides\/tides01_intro\.html"/);
 assert.match(directory, /访问 2026-08-23/);

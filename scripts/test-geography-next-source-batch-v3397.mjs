@@ -64,9 +64,9 @@ const expectedItems = {
   "geo-s3-satellite-monitoring-and-ecological-security": "selective-3",
 };
 
-assert.equal(payload.version, "geo-2026.08.24.38");
-assert.equal(payload.sources.length, 263);
-assert.equal(payload.items.length, 590);
+assert.equal(payload.version, "geo-2026.08.24.39");
+assert.equal(payload.sources.length, 271);
+assert.equal(payload.items.length, 605);
 
 const sources = new Map(payload.sources.map((source) => [source.id, source]));
 for (const [sourceId, expected] of Object.entries(expectedSources)) {
