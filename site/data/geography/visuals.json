@@ -1,5 +1,5 @@
 {
-  "version": "geo-visuals-2026.08.24.02",
+  "version": "geo-visuals-2026.08.24.03",
   "description": "面向高中地理复习的原创视觉故事：用一张图、三步观察和一个权威入口，把空间关系讲清楚。",
   "cards": [
     {
@@ -32,6 +32,11 @@
         "answerIndex": 0,
         "explanation": "先抓住图中的上升箭头和云层：湿空气上升后膨胀降温，达到露点才更容易凝结成云。"
       },
+      "lenses": [
+        { "id": "whole", "label": "全景关系", "detail": "先沿着太阳、海面、云层和降水的箭头走一遍，确认水循环把大气圈、水圈和地表联系起来。" },
+        { "id": "mechanism", "label": "过程机制", "detail": "重点观察上升与降温：空气达到露点后，水汽凝结成云，气温和气压是解释过程的关键变量。" },
+        { "id": "exam-clue", "label": "题目线索", "detail": "遇到云雨、山地降水或天气变化题，优先寻找水汽来源、抬升条件、凝结位置和汇流方向。" }
+      ],
       "sourceIds": ["web-nasa-gpm-water-cycle", "web-cma-meteorological-data"],
       "mediaLinks": [
         {
@@ -76,6 +81,11 @@
         "answerIndex": 0,
         "explanation": "中心地等级、服务种类和服务范围要一起看；稀缺专业服务通常需要更广的市场与更强的交通联系。"
       },
+      "lenses": [
+        { "id": "whole", "label": "全景关系", "detail": "把人口节点、交通线路和服务半径放在同一张图上，先判断中心地之间的等级与联系。" },
+        { "id": "mechanism", "label": "过程机制", "detail": "重点观察交通如何降低时间成本，以及更专业的服务为什么需要更大的市场范围。" },
+        { "id": "exam-clue", "label": "题目线索", "detail": "遇到城市等级、服务范围或商业网点题，抓住人口规模、功能等级、交通可达性和服务半径的对应关系。" }
+      ],
       "sourceIds": ["web-unhabitat-urban-data", "web-sdg11-sustainable-cities"],
       "mediaLinks": [
         {
@@ -120,6 +130,11 @@
         "answerIndex": 0,
         "explanation": "读风场图要先找气压梯度，再根据纬度和近地面条件补充地转偏向力、摩擦力，最后联系地形和海陆分布。"
       },
+      "lenses": [
+        { "id": "whole", "label": "全景关系", "detail": "先看高压、低压和两条环流箭头，建立能量差—气压差—空气运动的整体链条。" },
+        { "id": "mechanism", "label": "过程机制", "detail": "重点观察水平气压梯度力、地转偏向力和摩擦力如何合成实际风向，并注意近地面与高空的差别。" },
+        { "id": "exam-clue", "label": "题目线索", "detail": "遇到风向、季风或降水带题，先定位气压中心，再结合半球、海陆分布、地形和摩擦条件判断。" }
+      ],
       "sourceIds": ["web-noaa-ocean-currents", "web-noaa-climate-enso", "web-esa-climate-change-initiative"],
       "mediaLinks": [
         {
@@ -164,6 +179,11 @@
         "answerIndex": 0,
         "explanation": "GIS 的价值在于叠加证据：底图定位，需求图层说明发展压力，生态与风险图层帮助划出协调和保护边界。"
       },
+      "lenses": [
+        { "id": "whole", "label": "全景关系", "detail": "先从底图定位，再看人口、交通和公共服务图层，最后叠加生态约束，形成区域决策链。" },
+        { "id": "mechanism", "label": "过程机制", "detail": "重点观察不同图层如何互相校验：可达性解释发展压力，保护地和灾害风险划出承载边界。" },
+        { "id": "exam-clue", "label": "题目线索", "detail": "遇到区域规划或选址题，按位置条件—需求图层—生态约束—综合决策的顺序组织证据。" }
+      ],
       "sourceIds": ["web-qgis-training-manual", "web-protected-planet-conservation-data", "web-nasa-worldview-earth-observation"],
       "mediaLinks": [
         {
@@ -208,6 +228,11 @@
         "answerIndex": 0,
         "explanation": "图中绿色资源、风险和治理是一个系统：面积只是底盘，质量、连通性、碳汇与监测治理共同决定生态安全。"
       },
+      "lenses": [
+        { "id": "whole", "label": "全景关系", "detail": "先把森林看成资源、生态屏障和社会治理共同组成的系统，而不是单一的木材储备。" },
+        { "id": "mechanism", "label": "过程机制", "detail": "重点观察碳汇、水土保持、生物多样性与火灾、破碎化等风险如何共同影响生态韧性。" },
+        { "id": "exam-clue", "label": "题目线索", "detail": "遇到森林保护或资源开发题，围绕资源利用、生态功能、风险监测和可持续治理四类证据作答。" }
+      ],
       "sourceIds": ["web-fao-global-forest-resources-assessment", "web-fao-forestry", "web-protected-planet-conservation-data"],
       "mediaLinks": [
         {

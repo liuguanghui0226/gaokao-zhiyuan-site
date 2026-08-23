@@ -64,6 +64,7 @@ function filteredVisuals() {
       card.caption,
       card.scene,
       ...(card.steps || []).flatMap((step) => [step.label, step.detail]),
+      ...(card.lenses || []).flatMap((lens) => [lens.label, lens.detail]),
     ].join(" "));
     return text.includes(query);
   });
@@ -163,6 +164,35 @@ function renderVisualQuiz(card) {
   return `<details class="visual-quiz" data-visual-quiz="${esc(card.id)}"><summary>先观察图示，再选择最合理的解释</summary><p class="visual-quiz-prompt">${esc(quiz.prompt)}</p><ol class="visual-quiz-options">${options}</ol><div class="visual-quiz-answer" role="note"><strong>正确思路：${esc(answer.label)}</strong><p>${esc(quiz.explanation || answer.detail)}</p></div></details>`;
 }
 
+function renderVisualLenses(card) {
+  const lenses = Array.isArray(card?.lenses) ? card.lenses : [];
+  if (lenses.length !== 3) return "";
+  const initial = lenses[0];
+  const controls = lenses.map((lens, index) => (
+    `<button type="button" class="visual-lens-button${index === 0 ? " active" : ""}" data-visual-lens="${esc(lens.id)}" data-visual-lens-card="${esc(card.id)}" aria-pressed="${index === 0}">${esc(lens.label)}</button>`
+  )).join("");
+  return `<section class="visual-lens" aria-label="${esc(card.title)}观察镜头"><div class="visual-lens-heading"><span>观察镜头</span><small>切换读图角度</small></div><div class="visual-lens-controls" role="group" aria-label="${esc(card.title)}观察镜头选项">${controls}</div><p class="visual-lens-current" data-visual-lens-current="${esc(card.id)}">${esc(initial.label)}</p><p class="visual-lens-detail" data-visual-lens-detail="${esc(card.id)}">${esc(initial.detail)}</p></section>`;
+}
+
+function bindVisualLensEvents() {
+  $$('[data-visual-lens]').forEach((button) => {
+    button.addEventListener("click", () => {
+      const cardId = button.dataset.visualLensCard;
+      const card = state.visuals?.cards?.find((candidate) => candidate.id === cardId);
+      const lens = card?.lenses?.find((candidate) => candidate.id === button.dataset.visualLens);
+      if (!lens) return;
+      $$(`[data-visual-lens-card="${cardId}"]`).forEach((candidate) => {
+        candidate.classList.toggle("active", candidate === button);
+        candidate.setAttribute("aria-pressed", String(candidate === button));
+      });
+      const detail = $(`[data-visual-lens-detail="${cardId}"]`);
+      const current = $(`[data-visual-lens-current="${cardId}"]`);
+      if (detail) detail.textContent = lens.detail;
+      if (current) current.textContent = lens.label;
+    });
+  });
+}
+
 function renderVisualLearning(data = state.data, visuals = state.visuals) {
   const cards = filteredVisuals();
   if (!data || !Array.isArray(visuals?.cards) || !visuals.cards.length) return "";
@@ -174,12 +204,13 @@ function renderVisualLearning(data = state.data, visuals = state.visuals) {
     const evidence = sources.map((source) => source.url
       ? `<a href="${esc(source.url)}" target="_blank" rel="noreferrer">${esc(source.title || source.id)}</a>`
       : `<span>${esc(source.title || source.id)}</span>`).join("");
-    return `<article class="visual-story-card" data-visual-course="${esc(card.courseId)}"><div class="visual-story-copy"><p class="visual-kicker">三步看懂 · ${esc(card.scene)}</p><h3>${esc(card.title)}</h3><p class="visual-caption">${esc(card.caption)}</p><ol class="visual-steps">${steps}</ol>${renderVisualQuiz(card)}<div class="visual-media" aria-label="${esc(card.title)}媒体与数据入口">${media}</div><div class="visual-evidence"><span>证据入口</span>${evidence}</div></div><figure class="visual-figure">${renderVisualScene(card)}<figcaption>原创示意图：${esc(card.caption)}</figcaption></figure></article>`;
+    return `<article class="visual-story-card" data-visual-course="${esc(card.courseId)}"><div class="visual-story-copy"><p class="visual-kicker">三步看懂 · ${esc(card.scene)}</p><h3>${esc(card.title)}</h3><p class="visual-caption">${esc(card.caption)}</p><ol class="visual-steps">${steps}</ol>${renderVisualLenses(card)}${renderVisualQuiz(card)}<div class="visual-media" aria-label="${esc(card.title)}媒体与数据入口">${media}</div><div class="visual-evidence"><span>证据入口</span>${evidence}</div></div><figure class="visual-figure">${renderVisualScene(card)}<figcaption>原创示意图：${esc(card.caption)}</figcaption></figure></article>`;
   }).join("");
   const empty = `<div class="empty-state visual-empty">当前课程或检索条件下没有匹配的视觉故事。</div>`;
   const markup = `<section class="visual-learning" aria-labelledby="visual-learning-title"><div class="section-heading"><div><p class="eyebrow">看图 · 读过程 · 点开数据</p><h2 id="visual-learning-title">视觉学习：把地理过程变成可观察的故事</h2><p>每张卡片用原创 SVG 拆成三步，再连接视频入口、互动地图或公开数据图层；外部资源负责展示原始证据，本站只保留学习路径。</p></div><span class="status">${fmtNumber(cards.length)} 张视觉故事</span></div><div class="visual-story-list">${cardMarkup || empty}</div></section>`;
   const app = $("#geographyApp");
   if (app) app.innerHTML = markup;
+  bindVisualLensEvents();
   return markup;
 }
 
