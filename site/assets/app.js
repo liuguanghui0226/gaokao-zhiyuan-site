@@ -567,6 +567,11 @@ function esc(value) {
     .replaceAll('"', "&quot;");
 }
 
+function newWindowAriaLabel(value) {
+  const label = String(value ?? "").trim() || "来源";
+  return esc(`${label}（在新窗口打开）`);
+}
+
 function statusLabel(status) {
   const map = {
     "text-extracted": "正文已抽取",
@@ -2200,7 +2205,7 @@ function renderPendingOrdinaryVocationalPanel(profile, source) {
     <p>${esc(profile?.province || "本省")}2026年普通高职专科通用控制线尚待官方发布。当前只展示升学路径和专业认知调研，不生成可执行院校专业清单，也不把往年专科投档结果解释为今年已具备填报资格。</p>
     <ul class="pending-review-list">${details.map((item) => `<li>${esc(item)}</li>`).join("")}</ul>
     <p class="pending-review-reason">截至${esc(formatOfficialScheduleDate(review.checkedAt))}：${esc(review.reason)}${review.noHistoricalSubstitution ? " 不使用往年控制线、高职分类招生线或录取日程反推今年分数。" : ""}</p>
-    ${review.sourceUrl ? `<a class="pending-review-link" href="${esc(review.sourceUrl)}" target="_blank" rel="noopener noreferrer">${esc(review.sourceTitle)}</a>` : ""}
+    ${review.sourceUrl ? `<a class="pending-review-link" href="${esc(review.sourceUrl)}" aria-label="${newWindowAriaLabel(review.sourceTitle)}" target="_blank" rel="noopener noreferrer">${esc(review.sourceTitle)}</a>` : ""}
   </section>`;
 }
 
@@ -3925,7 +3930,7 @@ function renderApplicationPlan(results) {
                 <strong>${esc(option.name)} · ${esc(detail.major)}</strong>
                 <p>${esc(detail.text)}</p>
                 ${renderTags(detail.tags)}
-                ${detail.sourceUrl ? `<a class="application-plan-source" href="${esc(detail.sourceUrl)}" target="_blank" rel="noreferrer">${esc(detail.sourceLabel)}</a>` : ""}
+                ${detail.sourceUrl ? `<a class="application-plan-source" href="${esc(detail.sourceUrl)}" aria-label="${newWindowAriaLabel(detail.sourceLabel)}" target="_blank" rel="noreferrer">${esc(detail.sourceLabel)}</a>` : ""}
               </div>
               <div class="application-plan-row-actions">
                 <span>${esc(option.role || tier.label)}</span>
@@ -4598,8 +4603,9 @@ function renderRecommendForm(profile) {
 
 function renderRankEstimateNotice(profile) {
   if (!profile?.rankEstimateText) return "";
+  const sourceLabel = profile.rankEstimateSource || "来源";
   const sourceLink = profile.rankEstimateUrl
-    ? `<a href="${esc(profile.rankEstimateUrl)}" target="_blank" rel="noreferrer">${esc(profile.rankEstimateSource || "来源")}</a>`
+    ? `<a href="${esc(profile.rankEstimateUrl)}" aria-label="${newWindowAriaLabel(sourceLabel)}" target="_blank" rel="noreferrer">${esc(sourceLabel)}</a>`
     : `<span>${esc(profile.rankEstimateSource || "一分一段来源")}</span>`;
   return `<div class="rank-estimate-note">
     <strong>位次估算</strong>
@@ -4616,7 +4622,7 @@ function renderDataFreshnessPanel(profile, today = currentChinaDate()) {
     freshness.latestVacancyYear ? `征集快照最新：${freshness.latestVacancyYear}` : "",
   ].filter(Boolean);
   const scheduleLink = freshness.scheduleSource?.url
-    ? `<a href="${esc(freshness.scheduleSource.url)}" target="_blank" rel="noreferrer">查看考试院转载日程</a>`
+    ? `<a href="${esc(freshness.scheduleSource.url)}" aria-label="${newWindowAriaLabel("查看考试院转载日程")}" target="_blank" rel="noreferrer">查看考试院转载日程</a>`
     : "";
   return `<section class="band data-freshness-panel">
     <h3>${esc(freshness.province || profile.province || "本省")}数据进度</h3>
@@ -4759,9 +4765,10 @@ function renderEvidenceLinks(evidence, css = "") {
   if (!sources.length) return "";
   const safeCss = css ? ` ${esc(css)}` : "";
   return `<div class="tag-row evidence-link-row">${sources.map((source) => {
-    const title = esc(source.title || "证据来源");
+    const rawTitle = source.title || "证据来源";
+    const title = esc(rawTitle);
     return source.url
-      ? `<a class="tag source-tag${safeCss}" href="${esc(source.url)}" target="_blank" rel="noreferrer">${title}</a>`
+      ? `<a class="tag source-tag${safeCss}" href="${esc(source.url)}" aria-label="${newWindowAriaLabel(rawTitle)}" target="_blank" rel="noreferrer">${title}</a>`
       : `<span class="tag source-tag local-source-tag${safeCss}" title="仅本机索引，无公开链接">本地资料：${title}</span>`;
   }).join("")}</div>`;
 }
@@ -4783,7 +4790,7 @@ function renderRecommendationShortlist() {
           <div>
             <strong>${esc(item.schoolName || "院校待核")} · ${esc(item.majorName || "专业待核")}</strong>
             ${renderTags([item.tierLabel, item.readinessLabel].filter(Boolean))}
-            ${item.sourceUrl ? `<a class="shortlist-panel-source" href="${esc(item.sourceUrl)}" target="_blank" rel="noreferrer">${esc(item.sourceLabel || "证据来源")}</a>` : ""}
+            ${item.sourceUrl ? `<a class="shortlist-panel-source" href="${esc(item.sourceUrl)}" aria-label="${newWindowAriaLabel(item.sourceLabel || "证据来源")}" target="_blank" rel="noreferrer">${esc(item.sourceLabel || "证据来源")}</a>` : ""}
           </div>
           <button class="ghost-action shortlist-panel-remove" type="button" data-shortlist-remove-key="${esc(item.key)}">移出清单</button>
         </article>
@@ -5027,7 +5034,10 @@ function renderAdmissionScoreLayer() {
     </div>
     <div class="grid-3">${tables}</div>
     ${sourceNotes.length ? `<div class="score-source-list">
-      ${sourceNotes.slice(0, 12).map((source) => `<a href="${esc(source.url)}" target="_blank" rel="noreferrer">${esc(source.title)} · ${esc(source.quality)}</a>`).join("")}
+      ${sourceNotes.slice(0, 12).map((source) => {
+        const rawLabel = `${source.title || "来源"} · ${source.quality || ""}`.replace(/ · $/, "");
+        return `<a href="${esc(source.url)}" aria-label="${newWindowAriaLabel(rawLabel)}" target="_blank" rel="noreferrer">${esc(rawLabel)}</a>`;
+      }).join("")}
       ${sourceNotes.length > 12 ? `<span>另有 ${fmtNumber(sourceNotes.length - 12)} 个来源已入库，详见 data/admissions/sources。</span>` : ""}
     </div>` : ""}
   </section>`;
@@ -5054,7 +5064,10 @@ function renderAdmissionScoreSummary() {
       <summary>数据口径</summary>
       <p>${esc(layer.currentFinding || "按考生省份加载录取、计划和位次数据。")}</p>
       ${layer.downgradeReason ? `<p>${esc(layer.downgradeReason)}</p>` : ""}
-      ${sourceNotes.length ? `<div class="score-source-list">${sourceNotes.slice(0, 6).map((source) => `<a href="${esc(source.url)}" target="_blank" rel="noreferrer">${esc(source.title)}</a>`).join("")}</div>` : ""}
+      ${sourceNotes.length ? `<div class="score-source-list">${sourceNotes.slice(0, 6).map((source) => {
+        const rawLabel = source.title || "来源";
+        return `<a href="${esc(source.url)}" aria-label="${newWindowAriaLabel(rawLabel)}" target="_blank" rel="noreferrer">${esc(rawLabel)}</a>`;
+      }).join("")}</div>` : ""}
     </details>
   </section>`;
 }
