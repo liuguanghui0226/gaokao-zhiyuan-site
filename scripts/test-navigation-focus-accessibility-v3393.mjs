@@ -15,12 +15,11 @@ if (bootIndex < 0) throw new Error("Could not isolate app.js boot call");
 
 const publicViews = [...indexSource.matchAll(/<section id="(view-[^"]+)" class="view(?: active-view)?" tabindex="-1"(?: aria-label="[^"]+")?><\/section>/g)]
   .map((match) => match[1]);
-assert.equal(publicViews.length, 6, "every public view must be keyboard-focusable");
+assert.equal(publicViews.length, 5, "every admissions view must be keyboard-focusable");
 assert.deepEqual(publicViews, [
   "view-overview",
   "view-recommend",
   "view-disciplines",
-  "view-geography",
   "view-rules",
   "view-sources",
 ]);

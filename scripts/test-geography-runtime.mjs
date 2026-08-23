@@ -8,8 +8,8 @@ import { fileURLToPath } from "node:url";
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const sourcePath = path.join(projectRoot, "data", "geography", "knowledge.json");
 const sitePath = path.join(projectRoot, "site", "data", "geography", "knowledge.json");
-const indexPath = path.join(projectRoot, "site", "index.html");
-const appPath = path.join(projectRoot, "site", "assets", "app.js");
+const indexPath = path.join(projectRoot, "site", "geography", "index.html");
+const appPath = path.join(projectRoot, "site", "geography", "assets", "app.js");
 
 assert.equal(fs.existsSync(sitePath), true, "the published site must contain geography data");
 const source = JSON.parse(fs.readFileSync(sourcePath, "utf8"));
@@ -418,11 +418,12 @@ for (const sourceId of [
 assert.ok(site.items.filter((item) => item.licenseStatus === "citation-only").length >= 25);
 
 const index = fs.readFileSync(indexPath, "utf8");
-assert.match(index, /data-view="geography"/);
-assert.match(index, /id="view-geography"/);
+assert.match(index, /<title>高中地理知识库<\/title>/);
+assert.match(index, /id="geographyApp"/);
+assert.doesNotMatch(index, /全国高考志愿填报|院校专业推荐/);
 
 const app = fs.readFileSync(appPath, "utf8");
-assert.match(app, /geography\/knowledge\.json/);
+assert.match(app, /\.\.\/data\/geography\/knowledge\.json/);
 assert.match(app, /renderGeography/);
 assert.match(app, /data-geography-course/);
 assert.match(app, /sourceIds/);

@@ -2,7 +2,6 @@
 const FILTER_RESULT_LABELS = {
   sources: "资料来源",
   disciplines: "相关资料",
-  geography: "地理摘要",
 };
 
 function formatFilterResultCount(view, count) {
@@ -17,9 +16,6 @@ function formatFilterResultCount(view, count) {
 const state = {
   data: null,
   provinceManifest: null,
-  geographyData: null,
-  geographyCourse: "",
-  geographySourceFilter: "all",
   loadedProvince: "",
   provinceShardCache: new Map(),
   view: "overview",
@@ -56,22 +52,8 @@ async function fetchRuntimeJson(relativePath, label) {
   return new Response(response.body.pipeThrough(new DecompressionStream("gzip"))).json();
 }
 
-async function fetchGeographyKnowledge() {
-  const response = await fetch("./data/geography/knowledge.json", { cache: "no-store" });
-  if (!response.ok) throw new Error(`高中地理资料载入失败（HTTP ${response.status}）`);
-  return response.json();
-}
-
-function formatGeographyVersionDate(version) {
-  const match = /^geo-(\d{4})\.(\d{1,2})\.(\d{1,2})(?:\.\d+)?$/.exec(String(version || ""));
-  if (!match) return "";
-  return `${Number(match[1])}/${Number(match[2])}/${Number(match[3])}`;
-}
-
-function renderFreshnessLabel(coreGeneratedAt, geographyVersion) {
-  const coreLabel = `更新于 ${new Date(coreGeneratedAt).toLocaleString("zh-CN")}`;
-  const geographyDate = formatGeographyVersionDate(geographyVersion);
-  return geographyDate ? `${coreLabel} · 高中地理 ${geographyDate}` : coreLabel;
+function renderFreshnessLabel(coreGeneratedAt) {
+  return `更新于 ${new Date(coreGeneratedAt).toLocaleString("zh-CN")}`;
 }
 
 const CHILD_TYPES = ["稳健型", "均衡探索型", "冲刺型", "专业兴趣强", "城市资源型", "家庭预算敏感", "学术深造型", "就业导向型"];
@@ -4004,28 +3986,9 @@ function filteredDisciplineSources() {
   });
 }
 
-function filteredGeographyItems(courseMap = new Map((state.geographyData?.courses || []).map((course) => [course.id, course]))) {
-  const data = state.geographyData;
-  if (!data || !Array.isArray(data.items)) return [];
-  const query = normalizeText(state.query);
-  return data.items.filter((item) => {
-    const courseOk = !state.geographyCourse || item.courseId === state.geographyCourse;
-    const searchText = normalizeText([
-      item.title,
-      item.summary,
-      ...(item.keywords || []),
-      courseMap.get(item.courseId)?.name || "",
-    ].join(" "));
-    return courseOk && (!query || searchText.includes(query));
-  });
-}
-
 function currentFilterResultCount() {
   if (state.view === "sources") return Array.isArray(state.data?.sourceFiles)
     ? filteredSources().length
-    : null;
-  if (state.view === "geography") return Array.isArray(state.geographyData?.items)
-    ? filteredGeographyItems().length
     : null;
   if (state.view === "disciplines") {
     if (!Array.isArray(state.data?.sourceFiles)) return null;
@@ -4036,9 +3999,7 @@ function currentFilterResultCount() {
 }
 
 function hasActiveFilters() {
-  const geographySourceFilterActive = state.view === "sources" && state.geographySourceFilter !== "all";
-  const geographyCourseFilterActive = state.view === "geography" && state.geographyCourse;
-  return Boolean(state.query.trim() || state.discipline || state.domain || geographySourceFilterActive || geographyCourseFilterActive);
+  return Boolean(state.query.trim() || state.discipline || state.domain);
 }
 
 function filterStatusText() {
@@ -4057,15 +4018,9 @@ function filterStatusText() {
   } else if (state.domain) {
     active.push(`主题“${state.domain}”`);
   }
-  if (state.view === "sources" && state.geographySourceFilter === "public") active.push("地理来源“公开链接”");
-  if (state.view === "sources" && state.geographySourceFilter === "local") active.push("地理来源“本地/教材”");
-  if (state.view === "geography" && state.geographyCourse) {
-    const course = state.geographyData?.courses?.find((item) => item.id === state.geographyCourse);
-    active.push(`高中地理课程“${course?.name || state.geographyCourse}”`);
-  }
   const base = active.length
-    ? `当前${active.join("、")}；结果作用于资料库、专业门类和高中地理。`
-    : "检索和筛选作用于资料库、专业门类和高中地理。";
+    ? `当前${active.join("、")}；结果作用于资料库和专业门类。`
+    : "检索和筛选作用于资料库和专业门类。";
   const resultCount = formatFilterResultCount(state.view, currentFilterResultCount());
   return resultCount ? `${base} ${resultCount}` : base;
 }
@@ -4082,14 +4037,12 @@ function clearSearchFilters() {
   state.query = "";
   state.discipline = "";
   state.domain = "";
-  state.geographySourceFilter = "all";
-  state.geographyCourse = "";
   state.disciplineBrowse = "08";
   state.disciplineFamily = "";
   $("#searchInput").value = "";
   $("#disciplineFilter").value = "";
   $("#domainFilter").value = "";
-  for (const view of ["sources", "disciplines", "geography"]) {
+  for (const view of ["sources", "disciplines"]) {
     state.renderedViews.delete(view);
   }
   syncClearFiltersControl();
@@ -4269,201 +4222,6 @@ function renderRules() {
       <div class="grid-2">${domains}</div>
     </section>
   `;
-}
-
-function geographySummaryMetrics(data) {
-  const items = data?.items || [];
-  return {
-    courses: data?.courses?.length || 0,
-    items: items.length,
-    sources: data?.sources?.length || 0,
-    authoredSummaries: items.filter((item) => item.licenseStatus === "authored-summary").length,
-    citationOnlyItems: items.filter((item) => item.licenseStatus === "citation-only").length,
-  };
-}
-
-function renderGeographySource(source) {
-  const rawTitle = source?.title || source?.id || "未命名来源";
-  const title = esc(rawTitle);
-  const externalLabel = esc(`${rawTitle}（在新窗口打开）`);
-  const revision = [
-    source?.commitSha ? `commit ${source.commitSha}` : "",
-    source?.accessedAt ? `访问 ${source.accessedAt}` : "",
-  ].filter(Boolean).join(" · ");
-  const label = revision ? `${title} · ${esc(revision)}` : title;
-  if (source?.url) {
-    return `<a class="geography-source-link" href="${esc(source.url)}" aria-label="${externalLabel}" target="_blank" rel="noreferrer">${label}</a>`;
-  }
-  return `<span class="geography-source-local" title="本地索引或教材来源，无公开链接">${label}</span>`;
-}
-
-function renderGeographySourceDirectory(data) {
-  const sourceRecords = data?.sources || [];
-  if (!sourceRecords.length) return "";
-  const query = normalizeText(state.query);
-  const queryLabel = state.query.trim();
-  const querySources = sourceRecords.filter((source) => {
-    if (!query) return true;
-    return normalizeText([
-      source.title,
-      source.publisher,
-      source.editionNote,
-      source.licenseNote,
-    ].join(" ")).includes(query);
-  });
-  const sourceFilter = ["all", "public", "local"].includes(state.geographySourceFilter)
-    ? state.geographySourceFilter
-    : "all";
-  const sourceCounts = {
-    all: querySources.length,
-    public: querySources.filter((source) => source?.url).length,
-    local: querySources.filter((source) => !source?.url).length,
-  };
-  const sources = querySources.filter((source) => (
-    sourceFilter === "all" || (sourceFilter === "public" ? source?.url : !source?.url)
-  ));
-  const publicSourceCount = sources.filter((source) => source?.url).length;
-  const localSourceCount = sources.length - publicSourceCount;
-  const sourceSummary = [
-    `${fmtNumber(sources.length)} 条来源`,
-    `${fmtNumber(publicSourceCount)} 个公开链接`,
-    `${fmtNumber(localSourceCount)} 个本地/教材`,
-  ].join(" · ");
-  const sourceFilterButtons = [
-    ["all", "全部来源"],
-    ["public", "公开链接"],
-    ["local", "本地/教材"],
-  ].map(([value, label]) => `<button class="geography-source-filter ${sourceFilter === value ? "active" : ""}" type="button" data-geography-source-filter="${value}" aria-pressed="${sourceFilter === value}">${label} · ${fmtNumber(sourceCounts[value])}</button>`).join("");
-  const rows = sources.map((source) => {
-    const rawTitle = source?.title || source?.id || "未命名来源";
-    const title = esc(rawTitle);
-    const externalLabel = esc(`${rawTitle}（在新窗口打开）`);
-    const titleMarkup = source?.url
-      ? `<a class="geography-directory-link" href="${esc(source.url)}" aria-label="${externalLabel}" target="_blank" rel="noreferrer">${title}</a>`
-      : `<span class="geography-directory-local" title="本地索引或教材来源，无公开链接">${title}</span>`;
-    const metadata = [
-      source?.publisher,
-      source?.commitSha ? `commit ${source.commitSha}` : "",
-      source?.accessedAt ? `访问 ${source.accessedAt}` : "",
-    ].filter(Boolean).join(" · ");
-    return `<article class="geography-directory-row">
-      <div>
-        <h4>${titleMarkup}</h4>
-        ${metadata ? `<p>${esc(metadata)}</p>` : ""}
-        ${source?.editionNote ? `<p>${esc(source.editionNote)}</p>` : ""}
-      </div>
-      <span class="status">${source?.url ? "公开链接" : "本地/教材"}</span>
-    </article>`;
-  }).join("");
-  const emptyState = queryLabel
-    ? `<div class="empty-state"><p>当前检索“${esc(queryLabel)}”没有匹配的地理来源，请清空检索或换一个关键词。</p></div>`
-    : `<div class="empty-state"><p>当前来源类型筛选没有匹配项。</p></div>`;
-  return `<section class="band geography-source-directory">
-    <div class="data-summary-head">
-      <div>
-        <h3>高中地理来源目录</h3>
-        <p>集中查看地理摘要使用的教材、本地资料与公开网页；公开来源保留访问日期或固定提交版本。</p>
-        <div class="geography-directory-controls" role="group" aria-label="地理来源类型">${sourceFilterButtons}</div>
-      </div>
-      <span class="status">${sourceSummary}</span>
-    </div>
-    <div class="geography-directory-list">${rows || emptyState}</div>
-  </section>`;
-}
-
-function bindGeographySourceFilterEvents() {
-  $$(".geography-source-filter").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.geographySourceFilter = button.dataset.geographySourceFilter || "all";
-      syncClearFiltersControl();
-      renderView("sources", { force: true });
-    });
-  });
-}
-
-function renderGeography() {
-  const data = state.geographyData;
-  if (!data) {
-    $("#view-geography").innerHTML = `<div class="empty-state"><h2>高中地理资料暂未载入</h2><p>请刷新页面后重试。</p></div>`;
-    return;
-  }
-
-  const metrics = geographySummaryMetrics(data);
-  const courseMap = new Map(data.courses.map((course) => [course.id, course]));
-  const visibleItems = filteredGeographyItems(courseMap);
-  const courseButtons = [
-    `<button class="geography-course-btn ${state.geographyCourse ? "" : "active"}" type="button" data-geography-course="" aria-pressed="${!state.geographyCourse}">全部课程 · ${fmtNumber(metrics.items)}</button>`,
-    ...data.courses.map((course) => {
-      const count = data.items.filter((item) => item.courseId === course.id).length;
-      return `<button class="geography-course-btn ${state.geographyCourse === course.id ? "active" : ""}" type="button" data-geography-course="${esc(course.id)}" aria-pressed="${state.geographyCourse === course.id}">${esc(course.name)} · ${fmtNumber(count)}</button>`;
-    }),
-  ].join("");
-  const cards = visibleItems.map((item) => {
-    const course = courseMap.get(item.courseId);
-    const sources = item.sourceIds.map((sourceId) => {
-      const source = data.sources.find((candidate) => candidate.id === sourceId);
-      return source || { id: sourceId };
-    });
-    const evidence = item.evidence.map((entry) => {
-      const source = data.sources.find((candidate) => candidate.id === entry.sourceId);
-      return `${source?.title || entry.sourceId} · ${entry.locator}`;
-    });
-    return `<article class="geography-card">
-      <header>
-        <div>
-          <span class="geography-course-label">${esc(course?.name || item.courseId)}</span>
-          <h3>${esc(item.title)}</h3>
-        </div>
-        <span class="status">${esc(item.reviewStatus === "reviewed" ? "已复核摘要" : "待复核")}</span>
-      </header>
-      <p>${esc(item.summary)}</p>
-      ${renderTags(item.keywords)}
-      <details class="detail-drawer compact">
-        <summary>教材证据与来源</summary>
-        <div class="geography-evidence">
-          ${evidence.map((entry) => `<span>${esc(entry)}</span>`).join("")}
-        </div>
-        <p class="geography-license">${esc(item.licenseStatus === "authored-summary" ? "本站为原创摘要；请回到教材原页核对完整定义、图表与案例。" : "本站仅提供来源索引，不复制原文。")}</p>
-        <div class="geography-source-list" aria-label="来源列表">
-          ${sources.map(renderGeographySource).join("")}
-        </div>
-      </details>
-    </article>`;
-  }).join("");
-
-  $("#view-geography").innerHTML = `
-    ${sectionHead("高中地理知识库", `${fmtNumber(visibleItems.length)} 条摘要`)}
-    <section class="band geography-intro">
-      <h3>按课程复习自然地理、人文地理与资源环境</h3>
-      <p>${esc(data.description)}</p>
-      <div class="geography-course-grid" role="group" aria-label="地理课程筛选">${courseButtons}</div>
-    </section>
-    <section class="band geography-provenance" data-geography-version="${esc(data.version)}">
-      <div class="data-summary-head">
-        <div>
-          <h3>资料边界与更新</h3>
-          <p>资料版本 ${esc(data.version)} · 来源索引与原创摘要分开标识。</p>
-        </div>
-        <span class="status">${fmtNumber(metrics.sources)} 条来源</span>
-      </div>
-      <div class="metric-grid geography-metric-grid">
-        ${renderMetric("课程", metrics.courses)}
-        ${renderMetric("知识摘要", metrics.items)}
-        ${renderMetric("原创摘要", metrics.authoredSummaries)}
-        ${renderMetric("引文型方法卡", metrics.citationOnlyItems)}
-      </div>
-      <p class="geography-boundary-note">引文型方法卡只用于概念与题型交叉核对，不复制题面、答案或竞赛知识点清单；原始许可未核验的本地资料不提供公开链接。</p>
-    </section>
-    ${cards ? `<div class="geography-card-list">${cards}</div>` : `<div class="empty-state"><h2>没有匹配的地理摘要</h2><p>换一个关键词，或切换课程范围。</p></div>`}
-  `;
-
-  $$('[data-geography-course]').forEach((button) => {
-    button.addEventListener("click", () => {
-      state.geographyCourse = button.dataset.geographyCourse || "";
-      syncClearFiltersControl();
-      renderGeography();
-    });
-  });
 }
 
 function renderScorePart(label, value) {
@@ -5402,8 +5160,7 @@ function renderAudioQueue() {
 
 function renderSources() {
   const sources = filteredSources();
-  const geographyDirectory = renderGeographySourceDirectory(state.geographyData);
-  if (!sources.length && !geographyDirectory) {
+  if (!sources.length) {
     $("#view-sources").innerHTML = document.querySelector("#emptyTemplate").innerHTML;
     return;
   }
@@ -5425,9 +5182,7 @@ function renderSources() {
 
   $("#view-sources").innerHTML = `
     ${sources.length ? `${sectionHead("资料库", `${fmtNumber(sources.length)} 条`)}<div class="source-list">${rows}</div>` : ""}
-    ${geographyDirectory}
   `;
-  bindGeographySourceFilterEvents();
 }
 
 function renderView(view, { force = false } = {}) {
@@ -5435,7 +5190,6 @@ function renderView(view, { force = false } = {}) {
     overview: renderOverview,
     recommend: renderRecommend,
     disciplines: renderDisciplines,
-    geography: renderGeography,
     rules: renderRules,
     sources: renderSources,
   };
@@ -5487,7 +5241,6 @@ function bindEvents() {
     syncClearFiltersControl();
     if (state.view === "sources") renderView("sources", { force: true });
     if (state.view === "disciplines") renderView("disciplines", { force: true });
-    if (state.view === "geography") renderView("geography", { force: true });
   });
   $("#disciplineFilter").addEventListener("change", (event) => {
     state.discipline = event.target.value;
@@ -5505,7 +5258,7 @@ function bindEvents() {
   });
   $("#clearFilters").addEventListener("click", () => {
     clearSearchFilters();
-    if (["sources", "disciplines", "geography"].includes(state.view)) {
+    if (["sources", "disciplines"].includes(state.view)) {
       renderView(state.view, { force: true });
     }
   });
@@ -5531,16 +5284,14 @@ function populateFilters() {
 }
 
 async function boot() {
-  const [core, manifest, geography] = await Promise.all([
+  const [core, manifest] = await Promise.all([
     fetchRuntimeJson("knowledge-core-lite.json", "核心知识"),
     fetchRuntimeJson("provinces/manifest.json", "省份索引"),
-    fetchGeographyKnowledge(),
   ]);
   state.data = core;
   state.provinceManifest = manifest;
-  state.geographyData = geography;
   state.prefillProfile = loadSavedRecommendationProfile();
-  $("#generatedAt").textContent = renderFreshnessLabel(state.data.generatedAt, state.geographyData?.version);
+  $("#generatedAt").textContent = renderFreshnessLabel(state.data.generatedAt);
   populateFilters();
   bindEvents();
   render();

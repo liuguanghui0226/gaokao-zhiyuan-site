@@ -26,7 +26,8 @@ const MIME_TYPES = {
 
 function safeSitePath(urlPath) {
   const decoded = decodeURIComponent(urlPath.split("?")[0]);
-  const relative = decoded === "/" ? "index.html" : decoded.replace(/^\/+/, "");
+  let relative = decoded === "/" ? "index.html" : decoded.replace(/^\/+/, "");
+  if (relative.endsWith("/")) relative += "index.html";
   const resolved = path.resolve(SITE_ROOT, relative);
   if (resolved !== SITE_ROOT && !resolved.startsWith(`${SITE_ROOT}${path.sep}`)) return null;
   return resolved;

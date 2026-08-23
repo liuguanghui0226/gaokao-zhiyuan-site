@@ -15,7 +15,7 @@ if (bootIndex < 0) throw new Error("Could not isolate app.js boot call");
 
 const navButtons = [...indexSource.matchAll(/<button class="nav-btn(?: active)?" data-view="([^"]+)" aria-controls="([^"]+)"(?: aria-current="page")?>/g)]
   .map((match) => ({ view: match[1], control: match[2], current: match[0].includes('aria-current="page"') }));
-assert.equal(navButtons.length, 6, "every public view must have one navigation button");
+assert.equal(navButtons.length, 5, "every admissions view must have one navigation button");
 assert.ok(navButtons.every((button) => button.control === `view-${button.view}`), "navigation targets must match view ids");
 assert.equal(navButtons.filter((button) => button.current).length, 1, "exactly one navigation button must be current initially");
 assert.equal(navButtons.find((button) => button.current)?.view, "overview");
@@ -52,7 +52,6 @@ const buttons = [
   makeButton("overview", true),
   makeButton("recommend"),
   makeButton("disciplines"),
-  makeButton("geography"),
   makeButton("rules"),
   makeButton("sources"),
 ];

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="面向高中课程的地理知识摘要、课程筛选与可追溯来源目录。" />
+    <title>高中地理知识库</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./assets/styles.css?v=geo-2026.08.23.34" />
+  </head>
+  <body>
+    <a class="skip-link" href="#geographyApp">跳到主要内容</a>
+    <div class="geography-shell">
+      <header class="site-header">
+        <div>
+          <p class="eyebrow">独立学习站</p>
+          <h1>高中地理知识库</h1>
+          <p id="freshness" class="freshness" role="status" aria-live="polite">正在载入资料</p>
+        </div>
+        <a class="back-link" href="../" aria-label="返回主站">返回主站</a>
+      </header>
+
+      <section class="toolbar" aria-label="高中地理检索">
+        <label class="search-box">
+          <span>检索知识摘要、关键词或课程</span>
+          <input id="searchInput" type="search" placeholder="例如：大气受热、人口、遥感" />
+        </label>
+        <button id="clearFilters" class="clear-button" type="button" aria-label="清空地理检索和课程筛选" hidden>清空筛选</button>
+        <p id="filterStatus" class="filter-status" role="status" aria-live="polite">检索作用于高中地理知识摘要。</p>
+      </section>
+
+      <main id="geographyApp" tabindex="-1" aria-label="高中地理知识库内容"></main>
+    </div>
+
+    <script src="./assets/app.js?v=geo-2026.08.23.34"></script>
+  </body>
+</html>

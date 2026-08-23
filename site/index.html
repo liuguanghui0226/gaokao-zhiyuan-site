@@ -22,7 +22,6 @@
           <button class="nav-btn active" data-view="overview" aria-controls="view-overview" aria-current="page">总览</button>
           <button class="nav-btn" data-view="recommend" aria-controls="view-recommend">院校专业推荐</button>
           <button class="nav-btn" data-view="disciplines" aria-controls="view-disciplines">专业门类</button>
-          <button class="nav-btn" data-view="geography" aria-controls="view-geography">高中地理</button>
           <button class="nav-btn" data-view="rules" aria-controls="view-rules">规则与风险</button>
           <button class="nav-btn" data-view="sources" aria-controls="view-sources">数据来源</button>
         </nav>
@@ -30,6 +29,7 @@
           <strong>31省数据</strong>
           <span>按省加载</span>
         </div>
+        <a class="sidebar-note" href="./geography/">独立学习站</a>
       </aside>
 
       <main id="mainContent" class="main" tabindex="-1">
@@ -51,13 +51,12 @@
             </select>
           </label>
           <button id="clearFilters" class="ghost-action toolbar-clear" type="button" aria-label="清空当前检索和筛选" hidden>清空筛选</button>
-          <p id="filterStatus" class="filter-status" role="status" aria-live="polite">检索和筛选作用于资料库、专业门类和高中地理。</p>
+          <p id="filterStatus" class="filter-status" role="status" aria-live="polite">检索和筛选作用于资料库和专业门类。</p>
         </section>
 
         <section id="view-overview" class="view active-view" tabindex="-1" aria-label="填报总览"></section>
         <section id="view-recommend" class="view" tabindex="-1" aria-label="院校专业推荐"></section>
         <section id="view-disciplines" class="view" tabindex="-1" aria-label="专业门类"></section>
-        <section id="view-geography" class="view" tabindex="-1" aria-label="高中地理"></section>
         <section id="view-rules" class="view" tabindex="-1" aria-label="规则与风险"></section>
         <section id="view-sources" class="view" tabindex="-1" aria-label="数据来源"></section>
       </main>

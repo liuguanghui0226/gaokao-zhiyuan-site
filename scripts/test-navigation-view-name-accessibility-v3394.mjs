@@ -14,7 +14,6 @@ assert.deepEqual(publicViews, [
   { id: "view-overview", label: "填报总览" },
   { id: "view-recommend", label: "院校专业推荐" },
   { id: "view-disciplines", label: "专业门类" },
-  { id: "view-geography", label: "高中地理" },
   { id: "view-rules", label: "规则与风险" },
   { id: "view-sources", label: "数据来源" },
 ], "every focusable public view must have a stable accessible name");

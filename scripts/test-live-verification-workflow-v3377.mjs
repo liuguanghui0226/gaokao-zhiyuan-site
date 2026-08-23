@@ -23,6 +23,12 @@ assert.equal(workflow.includes(unsafeAssetExtractor), false, "single-quoted shel
 assert.doesNotMatch(workflow, /data-view="sources">数据来源/, "the sources navigation check must match the actual markup structure");
 assert.match(workflow, /grep -q 'data-view="sources"/);
 assert.match(workflow, /grep -q '数据来源'/);
+assert.match(workflow, /fetch "\$\{base\}geography\//);
+assert.match(workflow, /<title>高中地理知识库<\/title>/);
+assert.match(workflow, /geography_asset_version=/);
+assert.match(workflow, /geography\/assets\/app\.js\?v=\$\{geography_asset_version\}/);
+assert.match(workflow, /\.version == "geo-2026\.08\.23\.34"/);
+assert.match(workflow, /! grep -q 'state\.geographyData' "\$work\/app\.js"/);
 assert.doesNotMatch(workflow, /app\.js\?v=3\.346\.4/);
 
 console.log(JSON.stringify({
