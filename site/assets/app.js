@@ -4278,14 +4278,16 @@ function geographySummaryMetrics(data) {
 }
 
 function renderGeographySource(source) {
-  const title = esc(source?.title || source?.id || "未命名来源");
+  const rawTitle = source?.title || source?.id || "未命名来源";
+  const title = esc(rawTitle);
+  const externalLabel = esc(`${rawTitle}（在新窗口打开）`);
   const revision = [
     source?.commitSha ? `commit ${source.commitSha}` : "",
     source?.accessedAt ? `访问 ${source.accessedAt}` : "",
   ].filter(Boolean).join(" · ");
   const label = revision ? `${title} · ${esc(revision)}` : title;
   if (source?.url) {
-    return `<a class="geography-source-link" href="${esc(source.url)}" target="_blank" rel="noreferrer">${label}</a>`;
+    return `<a class="geography-source-link" href="${esc(source.url)}" aria-label="${externalLabel}" target="_blank" rel="noreferrer">${label}</a>`;
   }
   return `<span class="geography-source-local" title="本地索引或教材来源，无公开链接">${label}</span>`;
 }
@@ -4328,9 +4330,11 @@ function renderGeographySourceDirectory(data) {
     ["local", "本地/教材"],
   ].map(([value, label]) => `<button class="geography-source-filter ${sourceFilter === value ? "active" : ""}" type="button" data-geography-source-filter="${value}" aria-pressed="${sourceFilter === value}">${label} · ${fmtNumber(sourceCounts[value])}</button>`).join("");
   const rows = sources.map((source) => {
-    const title = esc(source?.title || source?.id || "未命名来源");
+    const rawTitle = source?.title || source?.id || "未命名来源";
+    const title = esc(rawTitle);
+    const externalLabel = esc(`${rawTitle}（在新窗口打开）`);
     const titleMarkup = source?.url
-      ? `<a class="geography-directory-link" href="${esc(source.url)}" target="_blank" rel="noreferrer">${title}</a>`
+      ? `<a class="geography-directory-link" href="${esc(source.url)}" aria-label="${externalLabel}" target="_blank" rel="noreferrer">${title}</a>`
       : `<span class="geography-directory-local" title="本地索引或教材来源，无公开链接">${title}</span>`;
     const metadata = [
       source?.publisher,
