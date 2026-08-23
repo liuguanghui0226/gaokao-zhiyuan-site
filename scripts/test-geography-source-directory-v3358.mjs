@@ -59,7 +59,7 @@ context.__gaokaoTest.renderSources();
 
 assert.match(view.innerHTML, /class="band geography-source-directory"/);
 assert.match(view.innerHTML, /高中地理来源目录/);
-assert.match(view.innerHTML, /184 个公开链接/);
+assert.match(view.innerHTML, /191 个公开链接/);
 assert.match(view.innerHTML, /22 个本地\/教材/);
 assert.match(view.innerHTML, /class="geography-directory-link" href="https:\/\/oceanservice\.noaa\.gov\/education\/tutorial_tides\/tides01_intro\.html"/);
 assert.match(view.innerHTML, /访问 2026-08-23/);
@@ -135,6 +135,16 @@ assert.match(view.innerHTML, /github\.com\/YusufEminoglu\/zero2truesize/);
 assert.match(view.innerHTML, /github\.com\/googleinterns\/AOG-Education/);
 assert.match(view.innerHTML, /github\.com\/Emil-Lima\/GeoFun/);
 assert.match(view.innerHTML, /https:\/\/earthobservatory\.nasa\.gov\//);
+assert.match(view.innerHTML, /https:\/\/www\.fao\.org\/land-water\/water\/water-scarcity\/en\//);
+assert.match(view.innerHTML, /https:\/\/sdgs\.un\.org\/goals\/goal6/);
+assert.match(view.innerHTML, /https:\/\/sdgs\.un\.org\/goals\/goal11/);
+assert.match(view.innerHTML, /https:\/\/www\.ipcc\.ch\/report\/ar6\/wg2\//);
+assert.match(view.innerHTML, /github\.com\/lzz0722\/mapping-chinese-universities/);
+assert.match(view.innerHTML, /github\.com\/a4aron\/GisNepal/);
+assert.match(view.innerHTML, /github\.com\/olivercoltart\/plane-game/);
+assert.match(view.innerHTML, /commit a4cdb1c01f9b964db7785125659666bab30943de/);
+assert.match(view.innerHTML, /commit 755fd7bdae2b9ce26efc436b648b29700c6026a2/);
+assert.match(view.innerHTML, /commit 2823b0c2496f4f283930208114a5079d1bd03e80/);
 assert.match(view.innerHTML, /class="geography-directory-local"/);
 assert.doesNotMatch(view.innerHTML, /class="geography-directory-link"[^>]*>普通高中教科书/);
 
