@@ -59,7 +59,7 @@ context.__gaokaoTest.renderSources();
 
 assert.match(view.innerHTML, /class="band geography-source-directory"/);
 assert.match(view.innerHTML, /高中地理来源目录/);
-assert.match(view.innerHTML, /162 个公开链接/);
+assert.match(view.innerHTML, /168 个公开链接/);
 assert.match(view.innerHTML, /22 个本地\/教材/);
 assert.match(view.innerHTML, /class="geography-directory-link" href="https:\/\/oceanservice\.noaa\.gov\/education\/tutorial_tides\/tides01_intro\.html"/);
 assert.match(view.innerHTML, /访问 2026-08-23/);
@@ -119,6 +119,12 @@ assert.match(view.innerHTML, /github\.com\/7tigersniffstherose7\/Geographical-Ed
 assert.match(view.innerHTML, /github\.com\/mizmay\/web-map-quickstart/);
 assert.match(view.innerHTML, /https:\/\/www\.rgs\.org\/schools/);
 assert.match(view.innerHTML, /https:\/\/geography\.org\.uk\/online-teaching-resources\//);
+assert.match(view.innerHTML, /github\.com\/1195214305\/GeoLab/);
+assert.match(view.innerHTML, /github\.com\/laiyukai910-star\/geolab-128/);
+assert.match(view.innerHTML, /github\.com\/a15355447898\/Geography_Note/);
+assert.match(view.innerHTML, /https:\/\/www\.epa\.gov\/heatislands/);
+assert.match(view.innerHTML, /https:\/\/education\.nationalgeographic\.org\/resource\/urban-heat-island\//);
+assert.match(view.innerHTML, /https:\/\/www\.metoffice\.gov\.uk\/weather\/learn-about\/weather/);
 assert.match(view.innerHTML, /class="geography-directory-local"/);
 assert.doesNotMatch(view.innerHTML, /class="geography-directory-link"[^>]*>普通高中教科书/);
 
