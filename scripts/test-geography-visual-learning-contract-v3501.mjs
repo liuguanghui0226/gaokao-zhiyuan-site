@@ -25,7 +25,7 @@ const siteVisuals = JSON.parse(fs.readFileSync(siteVisualsPath, "utf8"));
 const appSource = fs.readFileSync(appPath, "utf8");
 const indexSource = fs.readFileSync(indexPath, "utf8");
 
-assert.deepEqual(sitePayload, payload, "site geography knowledge must mirror canonical v35 data");
+assert.deepEqual(sitePayload, payload, "site geography knowledge must mirror canonical v38 data");
 assert.deepEqual(siteVisuals, visuals, "site visual-learning manifest must mirror canonical visual data");
 assert.match(appSource, /\.\.\/data\/geography\/visuals\.json/);
 assert.match(appSource, /data-visual-course/);

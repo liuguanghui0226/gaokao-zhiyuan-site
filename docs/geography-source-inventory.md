@@ -1,12 +1,73 @@
 # 高中地理来源清单与发布边界
 
-盘点日期：2026-08-24；扩展轮次：geo-2026.08.24.35
+盘点日期：2026-08-24；扩展轮次：geo-2026.08.24.39
 
 本清单服务于 `data/geography/knowledge.json`。公开站点只发布原创学习摘要、关键词、课程归属和可回到教材核对的页码证据，不复制教材正文、插图、版式或整章内容。
 
-当前发布版本 `geo-2026.08.24.35`：239 个来源、545 条卡片，其中 38 条 `authored-summary`、507 条 `citation-only`；五个课程族分别为 100、110、115、108、112 条。本轮新增 5 个 GitHub 高中地理/教育地图项目、2 个公共科学数据与评估入口，以及 15 条原创 `citation-only` 方法卡，继续覆盖天气气候证据、地理实践尺度、公共服务可达性、教育空间差异、区域层级、森林资源与生态安全。
+当前发布版本 `geo-2026.08.24.39`：271 个来源、605 条卡片，其中 38 条 `authored-summary`、567 条 `citation-only`；五个课程族分别为 112、122、127、120、124 条。本轮新增 5 个 GitHub 地理实地调查、历史地图、人口密度与学校可达性项目、3 个公开地理空间/人口数据入口，以及 15 条原创 `citation-only` 方法卡，继续补齐实地调查误差、历史地图比较、人口密度口径、学校公共服务可达性、迁移地图伦理、国家地理空间图层和资源环境公平等专题。
 
-本轮累计新增 256 条 citation-only 方法卡：在上一轮 241 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收 IOM 世界移民报告、UN-Habitat 城市数据、美国人口普查局教育入口、NOAA 海岸带教育入口，以及四个 GitHub 地理教育/地球科学项目，补齐海岸过程—风险链、灾害实地核验—图层、迁移存量—流量、城市指标—空间公平、模型不确定性、商业地理—供应链和气候迁移—安全等专题。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+本轮累计新增 271 条 citation-only 方法卡：在上一轮 256 条的基础上，本轮继续从当前机器可读取的五册人民教育出版社教材 PDF 提取目录和章节锚点，并吸收新的 GitHub 地理教育/地理空间项目与公开人口、地理空间数据入口。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器材料；`Downloads/地理书` 的教材文件只用于本地课程结构核对，不复制教材正文。站点发布的是重新组织后的学习方法，不是原题、答案、解析或竞赛知识点清单。
+
+
+## geo-2026.08.24.39 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-isr-field-app` | [ISR Field：地理实地调查与空间数据管理应用](https://github.com/isr-oeaw/isr-field-app) | commit `95ffd7095883ba851ceb4c5a80390b171b1645ce`；访问日期 2026-08-24 | 参照实地调查、空间点记录、CSV、交互地图和审计字段；不复制代码、数据库或用户数据。 |
+| `github-family-history-migration-map` | [Family History Migration Map：高中生家庭迁移与地方文化地图](https://github.com/gamzeulu/family-history-migration-map) | commit `1ac747b74af36c146d77111e28b9b2be7f6724e9`；访问日期 2026-08-24 | 参照学生迁移地图、地方文化和个人叙事边界；不复制页面、个人信息、数据或图表。 |
+| `github-wettstein-schulatlas-zurich` | [Schul-Atlas von Wettstein：1887 年中学地理学校地图集](https://github.com/d33pk3rn3l/1887-wettstein-schulatlas-zurich) | commit `4b310545ad7eeb4de4fedd8e24b2dcd9b58a798c`；访问日期 2026-08-24 | 参照历史地图、景观记录和地图教育；不复制 PDF、图版或图片。 |
+| `github-everest-maps` | [Everest Maps：学校地理课人口密度地图实践](https://github.com/amahjo/Everest-maps) | commit `70f7ce0de7d5e41c14e5a4f45e157b222ec06a22`；访问日期 2026-08-24 | 参照人口密度面积归一化、对数色阶和跨区域比较；不复制代码、图表或数据。 |
+| `github-geospatial-school-mapping` | [Geospatial School Mapping：学校空间分布与可达性地图](https://github.com/alphacrypto246/Geospatial-School-Mapping) | commit `fdb20ee2624487abe613c2b6beccaca19eac6f6c`；访问日期 2026-08-24 | 参照学校点位、可达性、服务不足区域和空间规划；不复制代码、数据或地图。 |
+| `web-national-archives-education` | [The National Archives：Education and Outreach](https://www.nationalarchives.gov.uk/education/) | 公共教育入口；访问日期 2026-08-24 | 参照历史档案、地图资料、来源批判和课堂探究；不复制档案图像或课程材料。 |
+| `web-owid-population-density` | [Our World in Data：Population Density](https://ourworldindata.org/grapher/population-density) | 公共数据图入口；访问日期 2026-08-24 | 参照人口密度归一化指标、时间序列和数据定义；不复制图表或数据转储。 |
+| `web-un-geospatial` | [United Nations Geospatial：地理空间与位置数据入口](https://www.un.org/geospatial/) | 公共地理空间入口；访问日期 2026-08-24 | 参照位置数据、地图服务、空间信息协调和区域规划治理；不复制地图、数据或页面内容。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每门课程族 3 条。所有卡片均保留人民教育出版社教材证据；新来源只用于实地调查、历史地图、人口密度、学校可达性、迁移地图伦理、地理空间图层和资源环境公平的方法边界交叉核对，不把第三方题目、答案、代码、地图、数据或页面文字并入站点。
+
+## geo-2026.08.24.38 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-deephydro-gisrs` | [GISRS：地理信息系统与遥感应用课程资源](https://github.com/DeepHydro/GISRS) | commit `e5d6fa243a91c7d8e17dbf3b85615ed2d97ad88e`；GPL-3.0；访问日期 2026-08-24 | 参照 GIS/遥感课程结构、空间分析和观测流程；不复制代码、课件、数据、图像或页面文字。 |
+| `github-cumt-gis` | [CUMT-GIS：地理信息科学课程资料整理](https://github.com/lovelydayss/CUMT-GIS) | commit `76a57dd8c308a1d0668602074d22898a241361eb`；未声明统一许可证；访问日期 2026-08-24 | 参照 GIS、数据库设计、GNSS、测量平差和软件实践模块；不复制源码、报告、数据或页面文字。 |
+| `github-geovisualization-tutorial` | [Geovisualization Tutorial：地理数据可视化实践教程](https://github.com/sshuair/Geovisualization-Tutorial) | commit `576762f83f1edb26a786f315b41f8a0e31e7cc3e`；未声明统一许可证；访问日期 2026-08-24 | 参照专题地图、投影、符号化和地图叙事；不复制幻灯片、素材、案例地图或页面文字。 |
+| `github-spatialdb-nnu` | [SpatialDB_NNU：空间数据库实验手册](https://github.com/solidjerryc/SpatialDB_NNU) | commit `d5379cc4f8434a9528bb4ceafe2720845fbebf83`；未声明统一许可证；访问日期 2026-08-24 | 参照空间查询、属性—空间联合证据和数据安全；不复制实验手册、SQL、数据或页面文字。 |
+| `github-gis-rs-2024fall` | [2024Fall GIS&RS：GIS 与遥感课程资料包](https://github.com/es-palloc/GIS-RS-2024Fall) | commit `ce360267826bdf8e9037ac0a4db5a4df1eb91374`；MIT（第三方材料仍需分别核验）；访问日期 2026-08-24 | 参照 GIS/遥感任务分解、图表表达和报告复核；不复制教程、作业、图表、代码或数据。 |
+| `web-openstreetmap-map-features` | [OpenStreetMap Wiki：Map features](https://wiki.openstreetmap.org/wiki/Map_features) | 公共 Wiki 入口；访问日期 2026-08-24 | 参照点、线、面要素、属性标签和开放地图归因；不复制页面文字、地图数据或图件。 |
+| `web-us-census-geographic-areas` | [U.S. Census Bureau：Geographic Areas](https://www.census.gov/programs-surveys/geography/guidance/geo-areas.html) | 公共统计地理入口；访问日期 2026-08-24 | 参照统计单元定义、层级、边界和跨尺度人口比较；不复制数据、地图或页面正文。 |
+| `web-usgs-national-map` | [USGS The National Map](https://www.usgs.gov/programs/national-geospatial-program/national-map) | 公共地理空间数据入口；访问日期 2026-08-24 | 参照高程、水系、交通、土地覆盖和基础地理图层的数据治理与更新边界；不复制数据、地图或页面内容。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每门课程族 3 条。所有卡片均保留人民教育出版社教材证据；新来源只用于专题地图设计、空间单元、产业—交通网络、空间数据库、可达性、GIS/遥感验证和资源环境数据治理的方法边界交叉核对，不把第三方题目、答案、代码、课程正文、地图、数据或页面文字并入站点。`/Volumes/mac_2T` 当前不可读取，本轮没有声称已吸收其他机器目录内容。
+
+## geo-2026.08.24.37 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-hocbigg-human-geography` | [Human Geography：开放式人文地理课程路径](https://github.com/hocbigg/human-geography) | commit `889f15761b3333abf8d24c92bdc5b61a132f2cb5`；CC BY-SA 4.0；访问日期 2026-08-24 | 参照人文地理基础、空间概念、研究方法、人口和区域系统的课程组织；不复制课程正文、书目、链接清单或页面文字。 |
+| `github-giswqs-i-guide-geoai-education` | [I-GUIDE GeoAI Education：地理人工智能教学材料](https://github.com/giswqs/I-GUIDE-GeoAI-Education) | commit `114a5d687c5a4443cfa35926c40586a7c2c74d31`；MIT；访问日期 2026-08-24 | 参照 STAC 数据、训练数据、语义分割、变化检测、像元回归和结果验证；不复制 notebook、代码、数据、模型或图像。 |
+| `github-carpentries-geospatial-python` | [Geospatial Python：栅格与矢量数据开放教学](https://github.com/carpentries-incubator/geospatial-python) | commit `36832e58858b808a95f89a03e025807f1c3c7854`；API 未声明统一 SPDX 许可证；访问日期 2026-08-24 | 参照栅格/矢量概念、地理数据工作坊、可复现实践和数据致谢；不复制课程正文、代码、数据或图表。 |
+| `github-cielo-geoscience-lesson-plans-k12` | [CIELO-G：K–12 地球科学与遥感课例](https://github.com/CIELO-G/geoscience-lesson-plans-k12) | commit `a858f8bd212a588a624b9aaf2ce6202ae6a8250c`；未声明统一许可证；访问日期 2026-08-24 | 参照地球科学、地球物理、生态水文、遥感和社区参与课例；不复制课件、代码、图像、数据或活动正文。 |
+| `web-nasa-learning-resources` | [NASA Learning Resources：地球与空间科学学习入口](https://www.nasa.gov/learning-resources/) | 公共学习资源入口；访问日期 2026-08-24 | 核对地球系统观测、模型、科学探究和学习活动的来源边界；不复制正文、图片、视频或活动材料。 |
+| `web-national-geographic-gis` | [National Geographic Education：GIS 地理信息系统](https://education.nationalgeographic.org/resource/geographic-information-system-gis/) | 公共教育条目；访问日期 2026-08-24 | 核对 GIS 图层、空间问题、空间分析和地图表达；不复制页面正文或图件。 |
+| `web-osgeo-geo-for-all` | [OSGeo Geo for All：开放地理空间教育网络](https://www.osgeo.org/initiatives/geo-for-all/) | 公共社区与教育入口；访问日期 2026-08-24 | 核对开放 GIS、空间思维、教育公平和可复现工具链；不复制课程、代码、图件或页面文字。 |
+| `web-nps-geology-education` | [National Park Service：Geology 地质教育入口](https://www.nps.gov/subjects/geology/index.htm) | 公共地质教育入口；访问日期 2026-08-24 | 核对地质过程、地貌观察、保护地和现场证据；不复制正文、图片或案例。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每门课程族 3 条。所有卡片均保留人民教育出版社教材证据；新 GitHub 项目和公开教育入口只用于人文地理、地质观察、GeoAI/GIS、地球科学教育和资源环境决策的方法边界交叉核对，不把第三方题目、答案、代码、课程正文、地图、数据或页面文字并入站点。`/Volumes/mac_2T` 仍不可读取，本轮没有声称吸收其他机器目录内容。
+
+## geo-2026.08.24.36 新增公开来源
+
+| Source ID | 来源 | 稳定版本 | 用途与证据边界 |
+|---|---|---|---|
+| `github-junyilee7-geography-ai-teaching` | [Geography AI Teaching：地理与水文可复现教学笔记](https://github.com/junyilee7/geography-ai-teaching) | commit `48076c91943bf52d614a69ceae90a565595bb522`；MIT；访问日期 2026-08-24 | 参照真实数据、可复现 notebook、模型解释和地理水文教学边界；不复制 notebook、代码、数据或图表。 |
+| `github-wal33d-school-districts-api` | [US School Districts Service：学校行政区边界查询](https://github.com/Wal33D/us-school-districts-api) | commit `76e32482c58645aa86ac066b60b7996926a763c6`；MIT；访问日期 2026-08-24 | 参照学校行政区边界、空间索引、坐标查询和公共服务空间单元；不复制代码、数据库、边界文件或页面文字。 |
+| `github-geomoer-remote-sensing` | [MOER Remote Sensing：物理地理遥感开放课程](https://github.com/GeoMOER/moer-mpg-remote-sensing) | commit `08db1cccd531a487749cda4b87855f5783a8412d`；CC BY-SA 4.0；访问日期 2026-08-24 | 参照遥感、物理地理、地表特征、自然保护和开放课程组织；不复制课程正文、代码、图片或数据。 |
+| `github-leosolar-deforestation-detection` | [Satellite Deforestation Detection：卫星影像森林变化分析](https://github.com/LEOSOLAR8/Satellite-Deforestation-Detection) | commit `26689bf2983e8c250d6cebccfffd0daff6f220b4`；未声明统一许可证；访问日期 2026-08-24 | 参照植被分割、绿色覆盖率、多时相影像比较和生态监测边界；不复制代码、影像、输出图或页面文字。 |
+| `web-wri-aqueduct-water-risk` | [WRI Aqueduct：全球水风险地图与情景工具](https://www.wri.org/aqueduct) | 公共工具入口；访问日期 2026-08-24 | 核对水风险指标、水资源稀缺、气候/增长情景和区域规划边界；不复制数据、地图或页面内容。 |
+| `web-nasa-firms-active-fire` | [NASA FIRMS：全球主动火点与火灾监测](https://firms.modaps.eosdis.nasa.gov/) | 公共科学数据入口；访问日期 2026-08-24 | 核对 MODIS/VIIRS 主动火点、近实时观测、传感器和灾害监测边界；不复制数据、地图或页面资源。 |
+| `web-noaa-sea-level-rise-viewer` | [NOAA Sea Level Rise Viewer：海平面上升与沿海淹没影响](https://coast.noaa.gov/slr/) | 公共海岸风险工具；访问日期 2026-08-24 | 核对海平面情景、低洼区、沿海暴露和适应规划边界；不复制地图、模型或数据。 |
+| `web-un-sdg13-climate-action` | [United Nations SDG 13：气候行动与适应治理](https://sdgs.un.org/goals/goal13) | 联合国目标与指标入口；访问日期 2026-08-24 | 核对气候适应、减灾、教育、制度能力和治理指标链；不复制正文、数据或图表。 |
+
+本轮新增 15 条原创 `citation-only` 方法卡，每门课程族 3 条。所有卡片均保留人民教育出版社教材证据；GitHub 项目和公共网站只用于水风险、火灾遥感、土壤观测、公共服务空间单元、森林变化、海平面情景和气候治理的方法边界交叉核对，不把第三方题目、答案、代码、地图、数据或页面文字并入站点。`/Volumes/mac_2T` 仍不可读取，本轮没有声称吸收其他机器目录内容。
 
 ## geo-2026.08.24.35 新增公开来源
 
