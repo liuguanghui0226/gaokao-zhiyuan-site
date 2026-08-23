@@ -13,7 +13,7 @@ const indexSource = fs.readFileSync(path.join(projectRoot, "site/index.html"), "
 const bootIndex = appSource.lastIndexOf("\nboot().catch");
 if (bootIndex < 0) throw new Error("Could not isolate app.js boot call");
 
-const publicViews = [...indexSource.matchAll(/<section id="(view-[^"]+)" class="view(?: active-view)?" tabindex="-1"><\/section>/g)]
+const publicViews = [...indexSource.matchAll(/<section id="(view-[^"]+)" class="view(?: active-view)?" tabindex="-1"(?: aria-label="[^"]+")?><\/section>/g)]
   .map((match) => match[1]);
 assert.equal(publicViews.length, 6, "every public view must be keyboard-focusable");
 assert.deepEqual(publicViews, [
