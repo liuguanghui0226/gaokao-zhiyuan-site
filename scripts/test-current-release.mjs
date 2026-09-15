@@ -171,6 +171,8 @@ const tests = [
   "test-province-plan-readiness-dashboard-v347.mjs",
   "test-official-suda-plan-import-v348.mjs",
   "test-admission-plan-supplement-runtime-v348.mjs",
+  "test-official-jnu-plan-import-v349.mjs",
+  "test-admission-plan-supplement-v349.mjs",
   "test-interface-plain-language-v3316.mjs",
   "test-recommendation-profile-persistence-v3347.mjs",
   "test-recommendation-export-v3348.mjs",

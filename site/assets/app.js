@@ -4780,6 +4780,9 @@ function renderAdmissionScoreLayer() {
   const rankCoverage = layer.rankCoverage || {};
   const rankSourceCoverage = layer.rankSourceCoverage || {};
   const sourceNotes = layer.sourceNotes || [];
+  const planSupplementSources = state.planSupplementManifest?.sources?.length
+    ? state.planSupplementManifest.sources
+    : state.planSupplementManifest?.source ? [state.planSupplementManifest.source] : [];
   const dataTypes = coverage.dataTypes || {};
   const trendCoverage = coverage.majorTrendCoverage || {};
   const provinceReadiness = layer.provinceReadiness || coverage.provinceReadiness || {};
@@ -4902,16 +4905,15 @@ function renderAdmissionScoreLayer() {
       ${renderTags(evidenceTags)}
     </div>
     <div class="grid-3">${tables}</div>
-    ${sourceNotes.length || state.planSupplementManifest?.source?.url ? `<div class="score-source-list">
+    ${sourceNotes.length || planSupplementSources.length ? `<div class="score-source-list">
       ${sourceNotes.slice(0, 12).map((source) => {
         const rawLabel = `${source.title || "来源"} · ${source.quality || ""}`.replace(/ · $/, "");
         return `<a href="${esc(source.url)}" aria-label="${newWindowAriaLabel(rawLabel)}" target="_blank" rel="noreferrer">${esc(rawLabel)}</a>`;
       }).join("")}
-      ${state.planSupplementManifest?.source?.url ? (() => {
-        const source = state.planSupplementManifest.source;
+      ${planSupplementSources.map((source) => {
         const rawLabel = `${source.title || "官方计划补充"} · ${source.quality || ""}`.replace(/ · $/, "");
         return `<a href="${esc(source.url)}" aria-label="${newWindowAriaLabel(rawLabel)}" target="_blank" rel="noreferrer">${esc(rawLabel)}</a>`;
-      })() : ""}
+      }).join("")}
       ${sourceNotes.length > 12 ? `<span>另有 ${fmtNumber(sourceNotes.length - 12)} 个来源已入库，详见 data/admissions/sources。</span>` : ""}
     </div>` : ""}
   </section>`;
@@ -5404,7 +5406,7 @@ async function boot() {
     fetchRuntimeJson("knowledge-core-lite.json", "核心知识"),
     fetchRuntimeJson("provinces/manifest.json", "省份索引"),
     fetchRuntimeJson("province-plan-readiness.json", "逐省计划证据"),
-    fetchRuntimeJson("admission-plan-supplement-v348.json", "官方计划补充"),
+    fetchRuntimeJson("admission-plan-supplement-v349.json", "官方计划补充"),
   ]);
   state.data = core;
   state.provinceManifest = manifest;
