@@ -16,6 +16,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          trap 'status=$?; printf "::error::live verification failed at line %s: %s\n" "${BASH_LINENO[0]:-unknown}" "$BASH_COMMAND"; exit "$status"' ERR
 
           base="https://liuguanghui0226.github.io/gaokao-zhiyuan-site/"
           work="$(mktemp -d)"
@@ -1079,6 +1080,9 @@ jobs:
             | jq -e '[.rankConversions[] | select(.year == 2025 and .sourceId == "official-fujian-rank-2025-v3323")] | length == 932' >/dev/null
           gzip -dc "$work/fujian.json.gz" \
             | jq -e '[.rankConversions[] | select(.year == 2025 and .sourceId == "official-fujian-rank-2025-v3323" and .subjectType == "历史类" and .score == 600 and .rankStart == 1683 and .rankEnd == 1756)] | length == 1' >/dev/null
+          gzip -dc "$work/fujian.json.gz" \
+            | jq -c '[.rankConversions[] | select(.year == 2025 and .sourceId == "official-fujian-rank-2025-v3323" and .subjectType == "物理类" and .score == 600)]' \
+            | sed 's/^/fujian_physics_score_600=/'
           gzip -dc "$work/fujian.json.gz" \
             | jq -e '[.rankConversions[] | select(.year == 2025 and .sourceId == "official-fujian-rank-2025-v3323" and .subjectType == "物理类" and .score == 600 and .rankStart == 12437 and .rankEnd == 12735)] | length == 1' >/dev/null
           gzip -dc "$work/fujian.json.gz" \
