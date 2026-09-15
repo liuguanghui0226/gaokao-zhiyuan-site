@@ -158,7 +158,7 @@ jobs:
           grep -q 'data-geography-course' "$work/geography-app.js"
           ! grep -q 'state.geographyData' "$work/app.js"
           fetch "${base}data/geography/knowledge.json" "$work/geography-knowledge.json"
-          jq -e '.version == "geo-2026.08.23.34" and (.courses | length) == 5 and (.sources | length) == 232 and (.items | length) == 530' "$work/geography-knowledge.json" >/dev/null
+          jq -e '.version == "geo-2026.08.24.39" and (.courses | length) == 5 and (.sources | length) == 271 and (.items | length) == 605' "$work/geography-knowledge.json" >/dev/null
 
           fetch "${base}data/${release_path}/manifest.json.gz" "$work/manifest.json.gz"
           gzip -t "$work/manifest.json.gz"

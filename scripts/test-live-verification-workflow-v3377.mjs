@@ -8,8 +8,10 @@ import { fileURLToPath } from "node:url";
 const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const workflowPath = path.join(projectRoot, ".github/workflows/verify-live.yml");
 const indexPath = path.join(projectRoot, "site/index.html");
+const geographyPath = path.join(projectRoot, "data/geography/knowledge.json");
 const workflow = fs.readFileSync(workflowPath, "utf8");
 const index = fs.readFileSync(indexPath, "utf8");
+const geography = JSON.parse(fs.readFileSync(geographyPath, "utf8"));
 const assetVersion = index.match(/assets\/app\.js\?v=([^"']+)/)?.[1] || "";
 
 assert.ok(assetVersion, "site index must publish an app.js cache version");
@@ -29,7 +31,7 @@ assert.match(workflow, /fetch "\$\{base\}geography\//);
 assert.match(workflow, /<title>高中地理知识库<\/title>/);
 assert.match(workflow, /geography_asset_version=/);
 assert.match(workflow, /geography\/assets\/app\.js\?v=\$\{geography_asset_version\}/);
-assert.match(workflow, /\.version == "geo-2026\.08\.23\.34"/);
+assert.ok(workflow.includes(`.version == "${geography.version}" and (.courses | length) == ${geography.courses.length} and (.sources | length) == ${geography.sources.length} and (.items | length) == ${geography.items.length}`), "live geography assertion must match the current knowledge payload");
 assert.match(workflow, /! grep -q 'state\.geographyData' "\$work\/app\.js"/);
 assert.doesNotMatch(workflow, /app\.js\?v=3\.346\.4/);
 
