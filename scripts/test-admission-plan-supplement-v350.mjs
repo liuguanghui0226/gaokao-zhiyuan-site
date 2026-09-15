@@ -7,24 +7,33 @@ import zlib from "node:zlib";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
-const assetFile = path.join(root, "site/data/release-v3.275/admission-plan-supplement-v349.json.gz");
+const assetFile = path.join(root, "site/data/release-v3.275/admission-plan-supplement-v350.json.gz");
 assert.ok(fs.existsSync(assetFile), "combined official plan supplement runtime asset must exist");
 const supplement = JSON.parse(zlib.gunzipSync(fs.readFileSync(assetFile), { to: "string" }));
-assert.equal(supplement.version, "v3.349");
+assert.equal(supplement.version, "v3.350");
 assert.equal(supplement.type, "runtime-admission-plan-supplement");
-assert.equal(supplement.sources.length, 2);
+assert.equal(supplement.sources.length, 3);
 assert.deepEqual(supplement.sources.map((source) => source.id).sort(), [
   "official-jnu-national-plan-2026",
+  "official-maotai-national-plan-2026",
   "official-suda-national-plan-2026",
 ]);
-assert.equal(supplement.summary.records, 2386);
-assert.equal(supplement.summary.ordinaryRecords, 1922);
+assert.equal(supplement.summary.records, 2510);
+assert.equal(supplement.summary.ordinaryRecords, 2046);
 assert.equal(supplement.summary.specialPathRecords, 464);
 assert.equal(supplement.summary.provinces, 31);
-assert.equal(supplement.summary.schools, 2);
-assert.equal(supplement.records.length, 2386);
+assert.equal(supplement.summary.schools, 3);
+assert.equal(supplement.records.length, 2510);
 assert.equal(new Set(supplement.records.map((record) => record.province)).size, 31);
-assert.equal(new Set(supplement.records.map((record) => record.schoolCode)).size, 2);
+assert.equal(new Set(supplement.records.map((record) => record.schoolCode)).size, 3);
+const maotaiRecords = supplement.records.filter((record) => record.schoolCode === "14625");
+assert.equal(maotaiRecords.length, 124);
+assert.equal(new Set(maotaiRecords.map((record) => record.province)).size, 18);
+assert.equal(maotaiRecords.reduce((sum, record) => sum + Number(record.planCount || 0), 0), 1012);
+assert.equal(new Set(maotaiRecords.filter((record) => record.electiveRequirement === "物理，化学").map((record) => record.majorName.replace(/（茅台实验班）$/, ""))).size, 11);
+assert.ok(maotaiRecords.some((record) => record.majorName === "物流管理" && record.electiveRequirement === "物理"));
+assert.ok(maotaiRecords.some((record) => record.schoolCode === "14625" && record.province === "贵州" && record.electiveRequirement === "不提科目要求"));
+assert.ok(maotaiRecords.some((record) => record.schoolCode === "14625" && record.province === "河南" && record.majorName === "电子商务" && record.electiveRequirement === "物理"));
 assert.ok(supplement.records.some((record) => record.schoolCode === "10559" && record.electiveRequirement));
 assert.ok(supplement.records.some((record) => record.schoolCode === "10285" && record.formalScoreScope === "special-path-only"));
 assert.ok(supplement.sources.every((source) => source.url && source.quality));
