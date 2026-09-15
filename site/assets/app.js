@@ -17,6 +17,8 @@ const state = {
   data: null,
   provinceManifest: null,
   planReadinessManifest: null,
+  planSupplementManifest: null,
+  planSupplementRecords: [],
   loadedProvince: "",
   provinceShardCache: new Map(),
   view: "overview",
@@ -855,6 +857,20 @@ function hasStructuredAdmissionScores() {
 
 function admissionRecords() {
   return state.data?.admissionScoreLayer?.records || [];
+}
+
+function provinceRecordsWithPlanSupplement(provinceValue, shardRecords = [], supplementRecords = []) {
+  const province = normalizeProvince(provinceValue);
+  const records = [];
+  const seen = new Set();
+  for (const record of [...(Array.isArray(shardRecords) ? shardRecords : []), ...(Array.isArray(supplementRecords) ? supplementRecords : [])]) {
+    if (!record || normalizeProvince(record.province) !== province) continue;
+    const identity = record.id || [record.province, record.year, record.schoolCode || record.schoolName, record.majorCode || record.majorName, record.subjectType, record.batch, record.dataType].join("|");
+    if (seen.has(identity)) continue;
+    seen.add(identity);
+    records.push(record);
+  }
+  return records;
 }
 
 function rankConversionRecords() {
@@ -4025,7 +4041,11 @@ async function loadProvinceData(provinceValue) {
     payload = await fetchRuntimeJson(`provinces/${entry.file}`, `${province}数据`);
     state.provinceShardCache.set(province, payload);
   }
-  state.data.admissionScoreLayer.records = payload.records || [];
+  state.data.admissionScoreLayer.records = provinceRecordsWithPlanSupplement(
+    province,
+    payload.records || [],
+    state.planSupplementRecords,
+  );
   state.data.admissionScoreLayer.rankConversions = payload.rankConversions || [];
   state.loadedProvince = province;
   admissionTrendIndexCache = null;
@@ -4812,6 +4832,8 @@ function renderAdmissionScoreLayer() {
         ${layer.admissionPlanCount ? `<span>计划数 ${fmtNumber(layer.admissionPlanCount)}</span>` : ""}
         <span>位次来源页 ${fmtNumber(rankSourceCoverage.sources || 0)}</span>
         <span>来源页 ${fmtNumber(sourceCount)}</span>
+        ${state.planSupplementManifest?.summary?.records ? `<span>运行时官方计划补充 ${fmtNumber(state.planSupplementManifest.summary.records)} 条</span>` : ""}
+        ${state.planSupplementManifest?.summary?.provinces ? `<span>补充覆盖省份 ${fmtNumber(state.planSupplementManifest.summary.provinces)}</span>` : ""}
         ${scoreRange ? `<span>分数带 ${fmtNumber(scoreRange.min)}-${fmtNumber(scoreRange.max)}</span>` : ""}
         <span>城市 ${fmtNumber((coverage.cities || []).length)}</span>
       </div>
@@ -4880,11 +4902,16 @@ function renderAdmissionScoreLayer() {
       ${renderTags(evidenceTags)}
     </div>
     <div class="grid-3">${tables}</div>
-    ${sourceNotes.length ? `<div class="score-source-list">
+    ${sourceNotes.length || state.planSupplementManifest?.source?.url ? `<div class="score-source-list">
       ${sourceNotes.slice(0, 12).map((source) => {
         const rawLabel = `${source.title || "来源"} · ${source.quality || ""}`.replace(/ · $/, "");
         return `<a href="${esc(source.url)}" aria-label="${newWindowAriaLabel(rawLabel)}" target="_blank" rel="noreferrer">${esc(rawLabel)}</a>`;
       }).join("")}
+      ${state.planSupplementManifest?.source?.url ? (() => {
+        const source = state.planSupplementManifest.source;
+        const rawLabel = `${source.title || "官方计划补充"} · ${source.quality || ""}`.replace(/ · $/, "");
+        return `<a href="${esc(source.url)}" aria-label="${newWindowAriaLabel(rawLabel)}" target="_blank" rel="noreferrer">${esc(rawLabel)}</a>`;
+      })() : ""}
       ${sourceNotes.length > 12 ? `<span>另有 ${fmtNumber(sourceNotes.length - 12)} 个来源已入库，详见 data/admissions/sources。</span>` : ""}
     </div>` : ""}
   </section>`;
@@ -5373,14 +5400,17 @@ function populateFilters() {
 }
 
 async function boot() {
-  const [core, manifest, planReadiness] = await Promise.all([
+  const [core, manifest, planReadiness, planSupplement] = await Promise.all([
     fetchRuntimeJson("knowledge-core-lite.json", "核心知识"),
     fetchRuntimeJson("provinces/manifest.json", "省份索引"),
     fetchRuntimeJson("province-plan-readiness.json", "逐省计划证据"),
+    fetchRuntimeJson("admission-plan-supplement-v348.json", "官方计划补充"),
   ]);
   state.data = core;
   state.provinceManifest = manifest;
   state.planReadinessManifest = planReadiness;
+  state.planSupplementManifest = planSupplement;
+  state.planSupplementRecords = planSupplement.records || [];
   state.prefillProfile = loadSavedRecommendationProfile();
   $("#generatedAt").textContent = renderFreshnessLabel(state.data.generatedAt);
   populateFilters();
