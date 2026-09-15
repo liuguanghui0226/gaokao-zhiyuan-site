@@ -22,9 +22,16 @@ jobs:
           trap 'rm -rf "$work"' EXIT
 
           fetch() {
+            local url="$1"
+            local cache_buster="${GITHUB_RUN_ID:-manual}"
+            if [[ "$url" == *\?* ]]; then
+              url="${url}&live_verify=${cache_buster}"
+            else
+              url="${url}?live_verify=${cache_buster}"
+            fi
             curl --fail --silent --show-error --location \
               --retry 12 --retry-all-errors --retry-delay 5 \
-              "$1" -o "$2"
+              "$url" -o "$2"
           }
 
           fetch "$base" "$work/index.html"
