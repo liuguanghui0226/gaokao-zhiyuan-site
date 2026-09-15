@@ -9,6 +9,7 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const app = fs.readFileSync(path.join(projectRoot, "site/assets/app.js"), "utf8");
 const styles = fs.readFileSync(path.join(projectRoot, "site/assets/styles.css"), "utf8");
 const index = fs.readFileSync(path.join(projectRoot, "site/index.html"), "utf8");
+const assetVersion = index.match(/app\.js\?v=([^"']+)/)?.[1] || "";
 
 assert.ok(app.includes("基本情况：${profile.childType}；当前策略：${profile.strategy}"));
 assert.ok(app.includes("以下按成绩、位次、专业偏好与证据质量排序"));
@@ -35,7 +36,8 @@ assert.ok(styles.includes(".discipline-tile > strong"));
 assert.ok(!styles.includes(".discipline-tile > small"));
 assert.ok(styles.includes("grid-template-columns: repeat(6, minmax(0, 1fr))"));
 assert.ok(styles.includes(".nav-btn:nth-last-child(-n + 2)"));
-assert.ok(index.includes("./assets/app.js?v=3.346.29"));
+assert.ok(assetVersion);
+assert.ok(index.includes(`./assets/styles.css?v=${assetVersion}`));
 assert.ok(app.includes("位次口径含政策加分"));
 assert.ok(app.includes("Number((score - minScore).toFixed(3))"));
 assert.match(app, /aria-describedby="recommendStatus recommendDraftValidation"/);
@@ -45,4 +47,4 @@ assert.ok(app.includes('form.setAttribute("aria-busy", "true")'));
 assert.ok(app.includes('await new Promise((resolve) => setTimeout(resolve, 0))'));
 assert.ok(styles.includes(".form-status"));
 
-console.log(JSON.stringify({ ok: true, plainLanguage: true, clickableDisciplineTiles: true, minimumExplicitTextSizePx: 14, assetVersion: "3.346.29" }, null, 2));
+console.log(JSON.stringify({ ok: true, plainLanguage: true, clickableDisciplineTiles: true, minimumExplicitTextSizePx: 14, assetVersion }, null, 2));

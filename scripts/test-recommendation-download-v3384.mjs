@@ -10,14 +10,15 @@ const projectRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const appFile = path.join(projectRoot, "site/assets/app.js");
 const source = fs.readFileSync(appFile, "utf8");
 const indexSource = fs.readFileSync(path.join(projectRoot, "site/index.html"), "utf8");
+const assetVersion = indexSource.match(/app\.js\?v=([^"']+)/)?.[1] || "";
 const bootIndex = source.lastIndexOf("\nboot().catch");
 if (bootIndex < 0) throw new Error("Could not isolate app.js boot call");
 
 assert.ok(source.includes('id="downloadRecommendation"'), "recommendation download action missing");
 assert.ok(source.includes("recommendationExportFilename"), "recommendation download filename helper missing");
 assert.ok(source.includes("downloadRecommendationText"), "recommendation download helper missing");
-assert.match(indexSource, /styles\.css\?v=3\.346\.29/);
-assert.match(indexSource, /app\.js\?v=3\.346\.29/);
+assert.ok(assetVersion, "app asset version missing");
+assert.match(indexSource, new RegExp(`styles\\.css\\?v=${assetVersion.replace(/\\./g, "\\\\.")}`));
 
 const blobCalls = [];
 const revokedUrls = [];
