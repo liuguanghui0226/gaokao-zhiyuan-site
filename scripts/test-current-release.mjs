@@ -175,6 +175,8 @@ const tests = [
   "test-admission-plan-supplement-v349.mjs",
   "test-official-maotai-plan-import-v350.mjs",
   "test-admission-plan-supplement-v350.mjs",
+  "test-official-xmu-plan-import-v351.mjs",
+  "test-admission-plan-supplement-v351.mjs",
   "test-interface-plain-language-v3316.mjs",
   "test-recommendation-profile-persistence-v3347.mjs",
   "test-recommendation-export-v3348.mjs",
