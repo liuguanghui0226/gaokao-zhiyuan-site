@@ -1064,6 +1064,95 @@ select {
   padding-right: 4px;
 }
 
+.province-plan-readiness {
+  margin-top: 16px;
+  border: 1px solid #ead2a6;
+  border-radius: 10px;
+  padding: 14px;
+  background: #fffaf1;
+}
+
+.province-plan-readiness-title {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 16px;
+}
+
+.province-plan-readiness-title h4 {
+  margin: 0 0 5px;
+  color: #7b4400;
+}
+
+.province-plan-readiness-title p,
+.province-plan-readiness-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.province-plan-readiness-title > strong {
+  margin-top: 0;
+  color: #7b4400;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.province-plan-readiness-summary {
+  margin-top: 10px;
+}
+
+.province-plan-readiness-list {
+  display: grid;
+  gap: 6px;
+  max-height: 470px;
+  margin-top: 10px;
+  overflow: auto;
+  padding-right: 4px;
+}
+
+.province-plan-readiness-row {
+  display: grid;
+  gap: 4px;
+  border: 1px solid #eddcbd;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: #fff;
+}
+
+.province-plan-readiness-head,
+.province-plan-readiness-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+}
+
+.province-plan-readiness-head strong {
+  margin: 0;
+  color: var(--ink);
+}
+
+.province-plan-priority {
+  border-radius: 999px;
+  padding: 3px 8px;
+  background: #fff0d2;
+  color: #8a4f00;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.province-plan-readiness-metrics {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.province-plan-readiness-note {
+  margin-top: 10px;
+}
+
 .score-data-card {
   background: #fff;
   border: 1px solid #ead2a6;
@@ -1531,6 +1620,7 @@ select {
   .discipline-detail > header,
   .data-summary-head,
   .model-summary,
+  .province-plan-readiness-title,
   .recommend-card header,
   .application-plan-head,
   .application-plan-group header,

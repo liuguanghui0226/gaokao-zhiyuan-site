@@ -16,6 +16,7 @@ function formatFilterResultCount(view, count) {
 const state = {
   data: null,
   provinceManifest: null,
+  planReadinessManifest: null,
   loadedProvince: "",
   provinceShardCache: new Map(),
   view: "overview",
@@ -1335,6 +1336,93 @@ function provinceReadinessForProfile(profile) {
   const layer = state.data?.admissionScoreLayer || {};
   return ((layer.provinceReadiness || layer.coverage?.provinceReadiness)?.rows || [])
     .find((row) => normalizeProvince(row.province) === province) || null;
+}
+
+function provincePlanReadinessRows(manifest = state.planReadinessManifest) {
+  const rows = Array.isArray(manifest?.provinceRows) ? manifest.provinceRows : [];
+  return rows
+    .map((row) => {
+      const candidateGroups = Math.max(0, Number(row.candidateGroups) || 0);
+      const exactMatches = Math.max(0, Number(row.exactRouteMatchedCandidateGroups) || 0);
+      const transitionMatches = Math.max(0, Number(row.routeTransitionMatchedCandidateGroups) || 0);
+      const recentPlanMatchedCandidateGroups = Math.max(
+        0,
+        Number(row.recentPlanMatchedCandidateGroups) || exactMatches + transitionMatches,
+      );
+      const recentPlanCoverageRate = candidateGroups > 0
+        ? Math.min(1, recentPlanMatchedCandidateGroups / candidateGroups)
+        : 0;
+      const priorityLabel = recentPlanCoverageRate === 0
+        ? "优先补数"
+        : recentPlanCoverageRate < 0.001
+          ? "重点补数"
+          : recentPlanCoverageRate < 0.005
+            ? "持续扩充"
+            : "已有匹配";
+      return {
+        ...row,
+        province: String(row.province || "待命名"),
+        candidateGroups,
+        eligibleRecentPlans: Math.max(0, Number(row.eligibleRecentPlans) || 0),
+        exactRouteMatchedCandidateGroups: exactMatches,
+        routeTransitionMatchedCandidateGroups: transitionMatches,
+        recentPlanMatchedCandidateGroups,
+        currentYearTransitionMatchedCandidateGroups: Math.max(0, Number(row.currentYearTransitionMatchedCandidateGroups) || 0),
+        recentPlanCoverageRate,
+        priorityLabel,
+      };
+    })
+    .sort((left, right) =>
+      left.recentPlanCoverageRate - right.recentPlanCoverageRate ||
+      right.candidateGroups - left.candidateGroups ||
+      left.province.localeCompare(right.province, "zh-Hans-CN"));
+}
+
+function planCoveragePercent(rate) {
+  const numericRate = Math.max(0, Math.min(1, Number(rate) || 0));
+  const percent = numericRate * 100;
+  return `${percent >= 1 ? percent.toFixed(1) : percent.toFixed(2)}%`;
+}
+
+function renderProvincePlanReadiness(manifest = state.planReadinessManifest) {
+  const summary = manifest?.applicationPlanReadiness || {};
+  const rows = provincePlanReadinessRows(manifest);
+  if (!rows.length && !summary.candidateGroups) return "";
+  const currentYear = Number(summary.currentYear || manifest?.coverageScope?.currentYear || 2026);
+  const currentPlanConfirmedGroups = Math.max(0, Number(summary.currentPlanConfirmedGroups) || 0);
+  const candidateGroups = Math.max(0, Number(summary.candidateGroups) || 0);
+  const currentPlanPendingGroups = Math.max(0, Number(summary.currentPlanPendingGroups) || 0);
+  const recentYears = (manifest?.coverageScope?.recentPlanYears || [2025, currentYear]).join("、");
+  const rowsMarkup = rows.map((row) => `
+    <div class="province-plan-readiness-row" role="listitem" data-priority="${esc(row.priorityLabel)}">
+      <div class="province-plan-readiness-head">
+        <strong>${esc(row.province)}</strong>
+        <span class="province-plan-priority">${esc(row.priorityLabel)}</span>
+      </div>
+      <div class="province-plan-readiness-metrics">
+        <span>近两年计划匹配 ${fmtNumber(row.recentPlanMatchedCandidateGroups)}/${fmtNumber(row.candidateGroups)}（${planCoveragePercent(row.recentPlanCoverageRate)}）</span>
+        <span>${currentYear}衔接匹配 ${fmtNumber(row.currentYearTransitionMatchedCandidateGroups)}</span>
+        <span>可用计划 ${fmtNumber(row.eligibleRecentPlans)}</span>
+      </div>
+    </div>
+  `).join("");
+  return `<section class="province-plan-readiness" aria-labelledby="provincePlanReadinessHeading">
+    <div class="province-plan-readiness-title">
+      <div>
+        <h4 id="provincePlanReadinessHeading">逐省计划证据进度</h4>
+        <p>按${esc(recentYears)}计划路由审计排序；近两年匹配与${currentYear}衔接匹配分开展示。</p>
+      </div>
+      <strong>${currentYear}计划已佐证 ${fmtNumber(currentPlanConfirmedGroups)} / ${fmtNumber(candidateGroups)}（${planCoveragePercent(summary.currentPlanCoverageRate)}）</strong>
+    </div>
+    <div class="coverage-row compact province-plan-readiness-summary">
+      <span>当前计划待核 ${fmtNumber(currentPlanPendingGroups)}</span>
+      <span>已有${currentYear}匹配省份 ${fmtNumber(summary.provincesWithCurrentYearMatches || 0)}</span>
+      <span>已有计划省份 ${fmtNumber(summary.provincesWithPlans || rows.length)}</span>
+      <span>待补数省份 ${fmtNumber(rows.filter((row) => row.priorityLabel === "优先补数").length)}</span>
+    </div>
+    <div class="province-plan-readiness-list" role="list">${rowsMarkup}</div>
+    <p class="province-plan-readiness-note">计划未命中只表示待核，不表示停招；正式志愿单仍需核验当年官方计划、批次与选科要求。</p>
+  </section>`;
 }
 
 function latestRecordYear(records) {
@@ -4764,6 +4852,7 @@ function renderAdmissionScoreLayer() {
         <span>优先补数省份</span>
         ${weakestProvinces.map((row) => `<span>${esc(row.province)} ${fmtNumber(row.readinessScore)} ${esc(row.statusLabel)}</span>`).join("")}
       </div>` : ""}
+      ${state.planReadinessManifest ? renderProvincePlanReadiness() : ""}
       ${provinceReadinessRows.length ? `<div class="source-chip-list province-readiness-list">
         ${provinceReadinessRows.map((row) => `<span title="${esc((row.missing || []).join("；") || row.recommendationUse || "")}">${esc(row.province)} ${fmtNumber(row.readinessScore)} ${esc(row.statusLabel)} · 专业${fmtNumber(row.majorRecords || 0)} · 位次${fmtNumber(row.majorWithRank || 0)} · 计划${fmtNumber(row.planRecords || 0)} · 趋势${fmtNumber(row.trend3y || 0)}/${fmtNumber(row.trend4y || 0)}</span>`).join("")}
       </div>` : ""}
@@ -5284,12 +5373,14 @@ function populateFilters() {
 }
 
 async function boot() {
-  const [core, manifest] = await Promise.all([
+  const [core, manifest, planReadiness] = await Promise.all([
     fetchRuntimeJson("knowledge-core-lite.json", "核心知识"),
     fetchRuntimeJson("provinces/manifest.json", "省份索引"),
+    fetchRuntimeJson("province-plan-readiness.json", "逐省计划证据"),
   ]);
   state.data = core;
   state.provinceManifest = manifest;
+  state.planReadinessManifest = planReadiness;
   state.prefillProfile = loadSavedRecommendationProfile();
   $("#generatedAt").textContent = renderFreshnessLabel(state.data.generatedAt);
   populateFilters();
