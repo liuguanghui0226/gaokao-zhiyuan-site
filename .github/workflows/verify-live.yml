@@ -81,11 +81,13 @@ jobs:
           grep -q 'fetchRuntimeJson("admission-plan-supplement-v361.json", "官方计划补充")' "$work/app.js"
           grep -q 'fetchRuntimeJson("admission-plan-supplement-v363.json", "官方计划补充")' "$work/app.js"
           grep -q 'fetchRuntimeJson("admission-plan-supplement-v365.json", "官方计划补充")' "$work/app.js"
+          grep -q 'fetchRuntimeJson("admission-plan-supplement-v366.json", "官方计划补充")' "$work/app.js"
           grep -q 'fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充")' "$work/app.js"
           grep -q 'planSupplementV358' "$work/app.js"
           grep -q 'planSupplementV361' "$work/app.js"
           grep -q 'planSupplementV363' "$work/app.js"
           grep -q 'planSupplementV365' "$work/app.js"
+          grep -q 'planSupplementV366' "$work/app.js"
           grep -q 'scoreSupplementRecords' "$work/app.js"
           grep -q 'planSupplementManifest?.sources' "$work/app.js"
           grep -q 'renderView(state.view, { force: true })' "$work/app.js"
@@ -293,11 +295,18 @@ jobs:
           jq -e '[.records[] | select(.schoolCode == "10186" and .province == "河南")] | length == 60' "$work/admission-plan-supplement-v365.json" >/dev/null
           jq -e '[.records[] | select(.schoolCode == "10186" and .formalScoreScope == "special-path-only")] | length == 248' "$work/admission-plan-supplement-v365.json" >/dev/null
           jq -e 'all(.records[] | select(.province == "西藏" or .province == "新疆"); .sourcePlanSchemaColumns == 3 and .sourceElectiveRaw == "")' "$work/admission-plan-supplement-v365.json" >/dev/null
+          fetch "${base}data/${release_path}/admission-plan-supplement-v366.json.gz" "$work/admission-plan-supplement-v366.json.gz"
+          gzip -t "$work/admission-plan-supplement-v366.json.gz"
+          gzip -dc "$work/admission-plan-supplement-v366.json.gz" > "$work/admission-plan-supplement-v366.json"
+          jq -e '.version == "v3.366" and .type == "runtime-admission-plan-supplement" and .source.id == "official-ecnu-national-plan-2026-html" and .summary.records == 1244 and .summary.ordinaryRecords == 519 and .summary.specialPathRecords == 725 and .summary.planCount == 3661 and .summary.rawPlanCount == 3661 and .summary.rawRecords == 1244 and .summary.invalidRows == 0 and .summary.duplicateRows == 0 and .summary.provinces == 31 and .summary.schools == 1' "$work/admission-plan-supplement-v366.json" >/dev/null
+          jq -e '.sources[] | select(.id == "official-ecnu-national-plan-2026-html") | .records == 1244 and .rawRecords == 1244 and .duplicateRows == 0 and .invalidRows == 0 and .rawPlanCount == 3661 and .planCount == 3661 and .ordinaryRecords == 519 and .specialPathRecords == 725 and .rawCorpusSha256 == "7768cfe9e6e958e753ed31b63e1cac56f1ca35ffba8925db367aca82429dc81b"' "$work/admission-plan-supplement-v366.json" >/dev/null
+          jq -e '[.records[] | select(.schoolCode == "10269" and .formalScoreScope == "school-official-only")] | length == 519' "$work/admission-plan-supplement-v366.json" >/dev/null
+          jq -e '[.records[] | select(.schoolCode == "10269" and .formalScoreScope == "special-path-only")] | length == 725' "$work/admission-plan-supplement-v366.json" >/dev/null
           fetch "${base}data/${release_path}/province-plan-readiness.json.gz" "$work/province-plan-readiness.json.gz"
           gzip -t "$work/province-plan-readiness.json.gz"
           gzip -dc "$work/province-plan-readiness.json.gz" > "$work/province-plan-readiness.json"
-          jq -e '.version == "v3.364" and .applicationPlanReadiness.candidateGroups == 389435 and .applicationPlanReadiness.currentPlanConfirmedGroups == 3768 and .applicationPlanReadiness.currentPlanPendingGroups == 385667 and .applicationPlanReadiness.currentPlanCoverageRate == 0.009676 and .applicationPlanReadiness.recentPlanMatchedGroups == 4081 and .applicationPlanReadiness.noRecentPlanMatchGroups == 385354 and .applicationPlanReadiness.exactCurrentPlanMatchedGroups == 3231 and .applicationPlanReadiness.transitionCurrentPlanMatchedGroups == 537 and .applicationPlanReadiness.ambiguousPlanRequirementGroups == 14 and .applicationPlanReadiness.provincesWithCurrentYearMatches == 31 and .applicationPlanReadiness.provincesWithPlans == 31' "$work/province-plan-readiness.json" >/dev/null
-          jq -e '.supplementOverlay.records == 11810 and .supplementOverlay.assignedProvinceRecords == 11808 and .supplementOverlay.unallocatedRecords == 2 and .supplementOverlay.specialPathRecords == 2943 and .supplementOverlay.duplicateIds == 0 and (.provinceRows | length) == 31 and ([.provinceRows[].currentYearMatchedCandidateGroups] | add) == 3768 and all(.provinceRows[]; .province != "不分省" and .currentYearMatchedCandidateGroups > 0)' "$work/province-plan-readiness.json" >/dev/null
+          jq -e '.version == "v3.366" and .applicationPlanReadiness.candidateGroups == 389435 and .applicationPlanReadiness.currentPlanConfirmedGroups == 4223 and .applicationPlanReadiness.currentPlanPendingGroups == 385212 and .applicationPlanReadiness.currentPlanCoverageRate == 0.010844 and .applicationPlanReadiness.recentPlanMatchedGroups == 4536 and .applicationPlanReadiness.noRecentPlanMatchGroups == 384899 and .applicationPlanReadiness.exactCurrentPlanMatchedGroups == 3686 and .applicationPlanReadiness.transitionCurrentPlanMatchedGroups == 537 and .applicationPlanReadiness.ambiguousPlanRequirementGroups == 14 and .applicationPlanReadiness.provincesWithCurrentYearMatches == 31 and .applicationPlanReadiness.provincesWithPlans == 31' "$work/province-plan-readiness.json" >/dev/null
+          jq -e '.supplementOverlay.records == 14337 and .supplementOverlay.assignedProvinceRecords == 14335 and .supplementOverlay.unallocatedRecords == 2 and .supplementOverlay.ordinaryRecords == 10421 and .supplementOverlay.specialPathRecords == 3916 and .supplementOverlay.duplicateIds == 0 and (.provinceRows | length) == 31 and ([.provinceRows[].currentYearMatchedCandidateGroups] | add) == 4223 and all(.provinceRows[]; .province != "不分省" and .currentYearMatchedCandidateGroups > 0)' "$work/province-plan-readiness.json" >/dev/null
           fetch "${base}data/${release_path}/admission-score-supplement-v357.json.gz" "$work/admission-score-supplement-v357.json.gz"
           gzip -t "$work/admission-score-supplement-v357.json.gz"
           gzip -dc "$work/admission-score-supplement-v357.json.gz" > "$work/admission-score-supplement-v357.json"

@@ -127,6 +127,18 @@ function isPlanRecord(record) {
   return record?.dataType === "admission-plan" || record?.planOnly === true;
 }
 
+export function normalizeOfficialOrdinaryPlanRoute(record) {
+  if (
+    !isPlanRecord(record) ||
+    canonicalTypography(record?.batch) ||
+    record?.admissionType !== "普通录取" ||
+    record?.formalScoreScope !== "school-official-only"
+  ) {
+    return record;
+  }
+  return { ...record, batch: "普通本科批" };
+}
+
 function vacancyPlanText(record) {
   return canonicalTypography([
     record?.planStage,
@@ -333,6 +345,7 @@ export function runAdmissionPlanRouteTransitionAudit({
   supplementFiles = [],
   expectedCounts = null,
   includeCurrentYearProvinceMetrics = false,
+  normalizeOrdinaryPlanRoutes = false,
   write = true,
   log = true,
 } = {}) {
@@ -359,6 +372,7 @@ const shardFiles = fs.readdirSync(releaseDir)
     "admission-plan-supplement-v361.json.gz",
     "admission-plan-supplement-v363.json.gz",
     "admission-plan-supplement-v365.json.gz",
+    "admission-plan-supplement-v366.json.gz",
     "admission-score-supplement-v357.json.gz",
   ].includes(file))
   .sort();
@@ -463,7 +477,7 @@ for (const shardFile of shardFiles) {
       counts.oldPlanRecordsExcluded += 1;
       continue;
     }
-    plans.push(record);
+    plans.push(normalizeOrdinaryPlanRoutes ? normalizeOfficialOrdinaryPlanRoute(record) : record);
   }
 
   counts.admissionRecords += records.filter((record) =>

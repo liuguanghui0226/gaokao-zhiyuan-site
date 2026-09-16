@@ -205,7 +205,11 @@ const tests = [
   "test-plan-supplement-merge-summary-v363.mjs",
   "test-official-national-school-plan-2026-v365-cust.mjs",
   "test-admission-plan-supplement-v365.mjs",
+  "test-official-national-school-plan-2026-v366-ecnu.mjs",
+  "test-admission-plan-supplement-v366.mjs",
+  "test-plan-supplement-merge-summary-v366.mjs",
   "test-province-plan-readiness-overlay-v364.mjs",
+  "test-province-plan-readiness-overlay-v366.mjs",
   "test-recommendation-run-snapshot-v364.mjs",
   "test-interface-plain-language-v3316.mjs",
   "test-recommendation-profile-persistence-v3347.mjs",
@@ -265,6 +269,9 @@ const tests = [
   "test-recommendation-result-focus-accessibility.mjs",
   "test-recommendation-download-v3384.mjs",
   "test-recommendation-validation-v3362.mjs",
+  "test-recommendation-provincial-score-limit-v366.mjs",
+  "test-admission-plan-batch-normalization-v366.mjs",
+  "test-recommendation-plan-batch-normalization-v366.mjs",
 ];
 
 const results = tests.map((test) => {

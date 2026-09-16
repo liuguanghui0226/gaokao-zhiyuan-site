@@ -23,7 +23,7 @@ assert.equal(manifest.provinceCount, 31);
 
 const appFile = path.join(projectRoot, "site/assets/app.js");
 const source = fs.readFileSync(appFile, "utf8");
-assert.match(source, /id="scoreInput"[^>]+max="1000"/, "score input must accept Hainan's 900-point scale");
+assert.match(source, /scoreFieldMax/, "score input must use the selected province's score scale");
 const bootIndex = source.lastIndexOf("\nboot().catch");
 assert.ok(bootIndex > 0, "could not isolate app.js boot call");
 const instrumented = `${source.slice(0, bootIndex)}

@@ -11,10 +11,10 @@ const root = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const assetFile = path.join(root, "site/data/release-v3.275/province-plan-readiness.json.gz");
 assert.ok(fs.existsSync(assetFile), "province plan readiness runtime asset must exist");
 const manifest = JSON.parse(zlib.gunzipSync(fs.readFileSync(assetFile), { to: "string" }));
-assert.equal(manifest.version, "v3.364");
+assert.equal(manifest.version, "v3.366");
 assert.equal(manifest.applicationPlanReadiness.currentYear, 2026);
-assert.equal(manifest.applicationPlanReadiness.currentPlanConfirmedGroups, 3768);
-assert.equal(manifest.applicationPlanReadiness.currentPlanCoverageRate, 0.009676);
+assert.equal(manifest.applicationPlanReadiness.currentPlanConfirmedGroups, 4223);
+assert.equal(manifest.applicationPlanReadiness.currentPlanCoverageRate, 0.010844);
 assert.equal(manifest.applicationPlanReadiness.provincesWithCurrentYearMatches, 31);
 assert.equal(manifest.applicationPlanReadiness.provincesWithPlans, 31);
 assert.equal(manifest.provinceRows.length, 31);
@@ -48,8 +48,8 @@ assert.ok(rows.every((row) => row.recentPlanCoverageRate >= 0 && row.recentPlanC
 
 const html = api.renderProvincePlanReadiness();
 assert.match(html, /逐省计划证据进度/);
-assert.match(html, /2026计划已佐证 3,768 \/ 389,435/);
-assert.match(html, /0\.97%/);
+assert.match(html, /2026计划已佐证 4,223 \/ 389,435/);
+assert.match(html, /1\.08%/);
 assert.match(html, /计划未命中只表示待核，不表示停招/);
 assert.match(html, /吉林/);
 assert.match(html, /西藏/);

@@ -24,6 +24,7 @@ const state = {
   planSupplementV361Manifest: null,
   planSupplementV363Manifest: null,
   planSupplementV365Manifest: null,
+  planSupplementV366Manifest: null,
   recommendationDataPromise: null,
   planSupplementRecords: [],
   scoreSupplementManifest: null,
@@ -928,6 +929,7 @@ const RECOMMENDATION_RUNTIME_ASSETS = [
   ["admission-plan-supplement-v361.json", "官方计划补充"],
   ["admission-plan-supplement-v363.json", "官方计划补充"],
   ["admission-plan-supplement-v365.json", "官方计划补充"],
+  ["admission-plan-supplement-v366.json", "官方计划补充"],
   ["admission-score-supplement-v357.json", "官方投档补充"],
 ];
 
@@ -942,19 +944,21 @@ function ensureRecommendationData(loader = fetchRuntimeJson) {
       fetchRuntimeJson("admission-plan-supplement-v361.json", "官方计划补充"),
       fetchRuntimeJson("admission-plan-supplement-v363.json", "官方计划补充"),
       fetchRuntimeJson("admission-plan-supplement-v365.json", "官方计划补充"),
+      fetchRuntimeJson("admission-plan-supplement-v366.json", "官方计划补充"),
       fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充"),
     ]
     : RECOMMENDATION_RUNTIME_ASSETS.map(([relativePath, label]) => loader(relativePath, label));
   state.recommendationDataPromise = Promise.all(
     requests,
-  ).then(([planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, planSupplementV365, scoreSupplement]) => {
+  ).then(([planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, planSupplementV365, planSupplementV366, scoreSupplement]) => {
     state.planSupplementV358Manifest = planSupplementV358;
     state.planSupplementV359Manifest = planSupplementV359;
     state.planSupplementV360Manifest = planSupplementV360;
     state.planSupplementV361Manifest = planSupplementV361;
     state.planSupplementV363Manifest = planSupplementV363;
     state.planSupplementV365Manifest = planSupplementV365;
-    state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, planSupplementV365);
+    state.planSupplementV366Manifest = planSupplementV366;
+    state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, planSupplementV365, planSupplementV366);
     state.planSupplementRecords = [
       ...(planSupplement.records || []),
       ...(planSupplementV358.records || []),
@@ -963,6 +967,7 @@ function ensureRecommendationData(loader = fetchRuntimeJson) {
       ...(planSupplementV361.records || []),
       ...(planSupplementV363.records || []),
       ...(planSupplementV365.records || []),
+      ...(planSupplementV366.records || []),
     ];
     state.scoreSupplementManifest = scoreSupplement;
     state.scoreSupplementRecords = scoreSupplement.records || [];
@@ -1037,6 +1042,18 @@ function planRestrictedEligibilityReason(record) {
 
 function isSchoolOfficialOnlyRecord(record) {
   return record?.formalScoreScope === "school-official-only";
+}
+
+function normalizeOfficialOrdinaryPlanRoute(record) {
+  if (
+    !isPlanRecord(record) ||
+    normalizeText(record?.batch) ||
+    record?.admissionType !== "普通录取" ||
+    !isSchoolOfficialOnlyRecord(record)
+  ) {
+    return record;
+  }
+  return { ...record, batch: "普通本科批" };
 }
 
 function isThirdPartyAdmissionRecord(record) {
@@ -1170,13 +1187,14 @@ function currentAdmissionPlanEvidenceIndex() {
       planRestrictedEligibilityReason(record) ||
       isThirdPartyAdmissionRecord(record)
     ) continue;
-    for (const key of admissionPlanEvidenceKeys(record)) {
+    const routedRecord = normalizeOfficialOrdinaryPlanRoute(record);
+    for (const key of admissionPlanEvidenceKeys(routedRecord)) {
       if (!strictIndex.has(key)) strictIndex.set(key, []);
-      strictIndex.get(key).push(record);
+      strictIndex.get(key).push(routedRecord);
     }
-    for (const key of admissionPlanIdentityKeys(record)) {
+    for (const key of admissionPlanIdentityKeys(routedRecord)) {
       if (!identityIndex.has(key)) identityIndex.set(key, []);
-      identityIndex.get(key).push(record);
+      identityIndex.get(key).push(routedRecord);
     }
   }
   admissionPlanEvidenceIndexCache = { records, strictIndex, identityIndex };
@@ -1517,7 +1535,7 @@ function provincePlanReadinessRows(manifest = state.planReadinessManifest) {
 function planCoveragePercent(rate) {
   const numericRate = Math.max(0, Math.min(1, Number(rate) || 0));
   const percent = numericRate * 100;
-  return `${percent >= 1 ? percent.toFixed(1) : percent.toFixed(2)}%`;
+  return `${percent.toFixed(2)}%`;
 }
 
 function renderProvincePlanReadiness(manifest = state.planReadinessManifest) {
@@ -2736,6 +2754,11 @@ function recommendationValidationIssues(profile = {}) {
     issues.push({ fieldId: "scoreInput", message: "请填写高考总分" });
   } else if (!Number.isFinite(score) || score < 0 || score > 1000) {
     issues.push({ fieldId: "scoreInput", message: "高考总分应在0至1000之间" });
+  } else if (ALL_PROVINCES.includes(province) && score > scoreScaleForProvince(province)) {
+    issues.push({
+      fieldId: "scoreInput",
+      message: `${province}高考总分应在0至${scoreScaleForProvince(province)}之间`,
+    });
   }
 
   const validateOptionalNumber = (value, fieldId, message, { min = 0, max = Infinity, integer = false } = {}) => {
@@ -4542,9 +4565,11 @@ function renderRecommendForm(profile) {
   const guangxiLocalRankFieldValue = profile && Object.prototype.hasOwnProperty.call(profile, "guangxiLocalRankInput")
     ? profile.guangxiLocalRankInput
     : getProfileValue(profile, "guangxiLocalRank");
-  const showGuangxiScopeFields = normalizeProvince(getProfileValue(profile, "province")) === "广西";
-  const showBeijingVocationalScore = normalizeProvince(getProfileValue(profile, "province")) === "北京";
-  const showXizangCandidateCategory = normalizeProvince(getProfileValue(profile, "province")) === "西藏";
+  const profileProvince = normalizeProvince(getProfileValue(profile, "province"));
+  const scoreFieldMax = ALL_PROVINCES.includes(profileProvince) ? scoreScaleForProvince(profileProvince) : 1000;
+  const showGuangxiScopeFields = profileProvince === "广西";
+  const showBeijingVocationalScore = profileProvince === "北京";
+  const showXizangCandidateCategory = profileProvince === "西藏";
   const showXizangRankSource = showXizangCandidateCategory;
   const invalidFieldIds = new Set(recommendationValidationIssues(profile).map((issue) => issue.fieldId));
   const draftValidationAttribute = (fieldId) => invalidFieldIds.has(fieldId)
@@ -4560,7 +4585,7 @@ function renderRecommendForm(profile) {
     </label>
     <label>
       <span id="scoreFieldLabel">${showGuangxiScopeFields ? "区外院校投档分" : "分数"}</span>
-      <input id="scoreInput" type="number" min="0" max="1000" value="${esc(getProfileValue(profile, "score"))}"${draftValidationAttribute("scoreInput")} />
+      <input id="scoreInput" type="number" min="0" max="${esc(String(scoreFieldMax))}" value="${esc(getProfileValue(profile, "score"))}"${draftValidationAttribute("scoreInput")} />
     </label>
     <label id="guangxiLocalScoreField" ${showGuangxiScopeFields ? "" : "hidden"}>
       <span>区内院校投档分</span>
@@ -5251,6 +5276,7 @@ function bindRecommendEvents() {
     }
   });
   const provinceInput = $("#provinceInput");
+  const scoreInput = $("#scoreInput");
   const beijingVocationalScoreField = $("#beijingVocationalScoreField");
   const xizangCandidateCategoryField = $("#xizangCandidateCategoryField");
   const xizangRankSourceField = $("#xizangRankSourceField");
@@ -5261,6 +5287,10 @@ function bindRecommendEvents() {
   const rankFieldLabel = $("#rankFieldLabel");
   const updateProvinceFields = () => {
     const province = normalizeProvince(provinceInput?.value || "");
+    if (scoreInput) {
+      if (ALL_PROVINCES.includes(province)) scoreInput.max = String(scoreScaleForProvince(province));
+      else scoreInput.max = "1000";
+    }
     if (beijingVocationalScoreField) {
       beijingVocationalScoreField.hidden = province !== "北京";
     }
