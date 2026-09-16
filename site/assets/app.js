@@ -19,6 +19,8 @@ const state = {
   planReadinessManifest: null,
   planSupplementManifest: null,
   planSupplementRecords: [],
+  scoreSupplementManifest: null,
+  scoreSupplementRecords: [],
   loadedProvince: "",
   provinceShardCache: new Map(),
   view: "overview",
@@ -859,11 +861,15 @@ function admissionRecords() {
   return state.data?.admissionScoreLayer?.records || [];
 }
 
-function provinceRecordsWithPlanSupplement(provinceValue, shardRecords = [], supplementRecords = []) {
+function provinceRecordsWithPlanSupplement(provinceValue, shardRecords = [], supplementRecords = [], scoreSupplementRecords = []) {
   const province = normalizeProvince(provinceValue);
   const records = [];
   const seen = new Set();
-  for (const record of [...(Array.isArray(shardRecords) ? shardRecords : []), ...(Array.isArray(supplementRecords) ? supplementRecords : [])]) {
+  for (const record of [
+    ...(Array.isArray(shardRecords) ? shardRecords : []),
+    ...(Array.isArray(supplementRecords) ? supplementRecords : []),
+    ...(Array.isArray(scoreSupplementRecords) ? scoreSupplementRecords : []),
+  ]) {
     if (!record || normalizeProvince(record.province) !== province) continue;
     const identity = record.id || [record.province, record.year, record.schoolCode || record.schoolName, record.majorCode || record.majorName, record.subjectType, record.batch, record.dataType].join("|");
     if (seen.has(identity)) continue;
@@ -4045,6 +4051,7 @@ async function loadProvinceData(provinceValue) {
     province,
     payload.records || [],
     state.planSupplementRecords,
+    state.scoreSupplementRecords,
   );
   state.data.admissionScoreLayer.rankConversions = payload.rankConversions || [];
   state.loadedProvince = province;
@@ -5402,17 +5409,25 @@ function populateFilters() {
 }
 
 async function boot() {
-  const [core, manifest, planReadiness, planSupplement] = await Promise.all([
+  const [core, manifest, planReadiness, planSupplement, scoreSupplement] = await Promise.all([
     fetchRuntimeJson("knowledge-core-lite.json", "核心知识"),
     fetchRuntimeJson("provinces/manifest.json", "省份索引"),
     fetchRuntimeJson("province-plan-readiness.json", "逐省计划证据"),
     fetchRuntimeJson("admission-plan-supplement-v356.json", "官方计划补充"),
+    fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充"),
   ]);
   state.data = core;
   state.provinceManifest = manifest;
   state.planReadinessManifest = planReadiness;
   state.planSupplementManifest = planSupplement;
   state.planSupplementRecords = planSupplement.records || [];
+  state.scoreSupplementManifest = scoreSupplement;
+  state.scoreSupplementRecords = scoreSupplement.records || [];
+  state.data.admissionScoreLayer.sourceNotes = [
+    ...(state.data.admissionScoreLayer.sourceNotes || []),
+    ...(scoreSupplement.sources || []),
+  ];
+  state.data.admissionScoreLayer.structuredRecords = Number(state.data.admissionScoreLayer.structuredRecords || 0) + Number(scoreSupplement.summary?.records || 0);
   state.prefillProfile = loadSavedRecommendationProfile();
   $("#generatedAt").textContent = renderFreshnessLabel(state.data.generatedAt);
   populateFilters();

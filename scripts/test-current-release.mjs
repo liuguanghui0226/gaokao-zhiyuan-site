@@ -187,6 +187,8 @@ const tests = [
   "test-admission-plan-supplement-v355.mjs",
   "test-official-national-school-plan-2026-v356-sdnu.mjs",
   "test-admission-plan-supplement-v356.mjs",
+  "test-official-xinjiang-2026-filing-v357.mjs",
+  "test-admission-score-supplement-v357.mjs",
   "test-interface-plain-language-v3316.mjs",
   "test-recommendation-profile-persistence-v3347.mjs",
   "test-recommendation-export-v3348.mjs",
