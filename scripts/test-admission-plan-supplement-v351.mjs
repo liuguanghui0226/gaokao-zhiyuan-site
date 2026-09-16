@@ -41,7 +41,7 @@ assert.ok(xmuRecords.some((record) => record.electiveRequirement === "物理+化
 assert.ok(supplement.sources.every((source) => source.url && source.quality));
 
 const app = fs.readFileSync(path.join(root, "site/assets/app.js"), "utf8");
-assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v355\.json", "官方计划补充"\)/);
+assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v356\.json", "官方计划补充"\)/);
 assert.match(app, /planSupplementManifest\?\.sources/);
 assert.match(app, /state\.planSupplementRecords/);
 

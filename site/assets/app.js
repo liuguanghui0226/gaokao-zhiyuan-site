@@ -5406,7 +5406,7 @@ async function boot() {
     fetchRuntimeJson("knowledge-core-lite.json", "核心知识"),
     fetchRuntimeJson("provinces/manifest.json", "省份索引"),
     fetchRuntimeJson("province-plan-readiness.json", "逐省计划证据"),
-    fetchRuntimeJson("admission-plan-supplement-v355.json", "官方计划补充"),
+    fetchRuntimeJson("admission-plan-supplement-v356.json", "官方计划补充"),
   ]);
   state.data = core;
   state.provinceManifest = manifest;

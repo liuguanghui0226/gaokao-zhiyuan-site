@@ -185,6 +185,8 @@ const tests = [
   "test-admission-plan-supplement-v354.mjs",
   "test-official-national-school-plan-2026-v355-qlu.mjs",
   "test-admission-plan-supplement-v355.mjs",
+  "test-official-national-school-plan-2026-v356-sdnu.mjs",
+  "test-admission-plan-supplement-v356.mjs",
   "test-interface-plain-language-v3316.mjs",
   "test-recommendation-profile-persistence-v3347.mjs",
   "test-recommendation-export-v3348.mjs",
