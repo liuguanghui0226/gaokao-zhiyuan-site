@@ -344,6 +344,7 @@ const shardFiles = fs.readdirSync(releaseDir)
     "admission-plan-supplement-v358.json.gz",
     "admission-plan-supplement-v359.json.gz",
     "admission-plan-supplement-v360.json.gz",
+    "admission-plan-supplement-v361.json.gz",
     "admission-score-supplement-v357.json.gz",
   ].includes(file))
   .sort();

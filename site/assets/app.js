@@ -21,6 +21,8 @@ const state = {
   planSupplementV358Manifest: null,
   planSupplementV359Manifest: null,
   planSupplementV360Manifest: null,
+  planSupplementV361Manifest: null,
+  recommendationDataPromise: null,
   planSupplementRecords: [],
   scoreSupplementManifest: null,
   scoreSupplementRecords: [],
@@ -903,6 +905,59 @@ function mergePlanSupplementManifests(...manifests) {
     summary: { ...active[0].summary, ...summary, provinces: provinces.length, schools: schools.length },
     records,
   };
+}
+
+const RECOMMENDATION_RUNTIME_ASSETS = [
+  ["admission-plan-supplement-v356.json", "官方计划补充"],
+  ["admission-plan-supplement-v358.json", "官方计划补充"],
+  ["admission-plan-supplement-v359.json", "官方计划补充"],
+  ["admission-plan-supplement-v360.json", "官方计划补充"],
+  ["admission-plan-supplement-v361.json", "官方计划补充"],
+  ["admission-score-supplement-v357.json", "官方投档补充"],
+];
+
+function ensureRecommendationData(loader = fetchRuntimeJson) {
+  if (state.recommendationDataPromise) return state.recommendationDataPromise;
+  const requests = loader === fetchRuntimeJson
+    ? [
+      fetchRuntimeJson("admission-plan-supplement-v356.json", "官方计划补充"),
+      fetchRuntimeJson("admission-plan-supplement-v358.json", "官方计划补充"),
+      fetchRuntimeJson("admission-plan-supplement-v359.json", "官方计划补充"),
+      fetchRuntimeJson("admission-plan-supplement-v360.json", "官方计划补充"),
+      fetchRuntimeJson("admission-plan-supplement-v361.json", "官方计划补充"),
+      fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充"),
+    ]
+    : RECOMMENDATION_RUNTIME_ASSETS.map(([relativePath, label]) => loader(relativePath, label));
+  state.recommendationDataPromise = Promise.all(
+    requests,
+  ).then(([planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, scoreSupplement]) => {
+    state.planSupplementV358Manifest = planSupplementV358;
+    state.planSupplementV359Manifest = planSupplementV359;
+    state.planSupplementV360Manifest = planSupplementV360;
+    state.planSupplementV361Manifest = planSupplementV361;
+    state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361);
+    state.planSupplementRecords = [
+      ...(planSupplement.records || []),
+      ...(planSupplementV358.records || []),
+      ...(planSupplementV359.records || []),
+      ...(planSupplementV360.records || []),
+      ...(planSupplementV361.records || []),
+    ];
+    state.scoreSupplementManifest = scoreSupplement;
+    state.scoreSupplementRecords = scoreSupplement.records || [];
+    if (state.data?.admissionScoreLayer) {
+      state.data.admissionScoreLayer.sourceNotes = [
+        ...(state.data.admissionScoreLayer.sourceNotes || []),
+        ...(scoreSupplement.sources || []),
+      ];
+      state.data.admissionScoreLayer.structuredRecords = Number(state.data.admissionScoreLayer.structuredRecords || 0) + Number(scoreSupplement.summary?.records || 0);
+    }
+    return state.planSupplementManifest;
+  }).catch((error) => {
+    state.recommendationDataPromise = null;
+    throw error;
+  });
+  return state.recommendationDataPromise;
 }
 
 function rankConversionRecords() {
@@ -4085,6 +4140,7 @@ async function loadProvinceData(provinceValue) {
 }
 
 async function runRecommendation() {
+  await ensureRecommendationData();
   await loadProvinceData($("#provinceInput").value.trim());
   const profile = profileFromForm();
   const band = classifyProfileBand(profile);
@@ -5074,7 +5130,7 @@ function bindRecommendEvents() {
       submit.textContent = "载入数据…";
       submit.setAttribute("aria-busy", "true");
     }
-    if (status) status.textContent = "正在载入本省数据，请稍候…";
+    if (status) status.textContent = "正在载入推荐数据和本省数据，请稍候…";
     try {
       await new Promise((resolve) => setTimeout(resolve, 0));
       await runRecommendation();
@@ -5435,36 +5491,14 @@ function populateFilters() {
 }
 
 async function boot() {
-  const [core, manifest, planReadiness, planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, scoreSupplement] = await Promise.all([
+  const [core, manifest, planReadiness] = await Promise.all([
     fetchRuntimeJson("knowledge-core-lite.json", "核心知识"),
     fetchRuntimeJson("provinces/manifest.json", "省份索引"),
     fetchRuntimeJson("province-plan-readiness.json", "逐省计划证据"),
-    fetchRuntimeJson("admission-plan-supplement-v356.json", "官方计划补充"),
-    fetchRuntimeJson("admission-plan-supplement-v358.json", "官方计划补充"),
-    fetchRuntimeJson("admission-plan-supplement-v359.json", "官方计划补充"),
-    fetchRuntimeJson("admission-plan-supplement-v360.json", "官方计划补充"),
-    fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充"),
   ]);
   state.data = core;
   state.provinceManifest = manifest;
   state.planReadinessManifest = planReadiness;
-  state.planSupplementV358Manifest = planSupplementV358;
-  state.planSupplementV359Manifest = planSupplementV359;
-  state.planSupplementV360Manifest = planSupplementV360;
-  state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358, planSupplementV359, planSupplementV360);
-  state.planSupplementRecords = [
-    ...(planSupplement.records || []),
-    ...(planSupplementV358.records || []),
-    ...(planSupplementV359.records || []),
-    ...(planSupplementV360.records || []),
-  ];
-  state.scoreSupplementManifest = scoreSupplement;
-  state.scoreSupplementRecords = scoreSupplement.records || [];
-  state.data.admissionScoreLayer.sourceNotes = [
-    ...(state.data.admissionScoreLayer.sourceNotes || []),
-    ...(scoreSupplement.sources || []),
-  ];
-  state.data.admissionScoreLayer.structuredRecords = Number(state.data.admissionScoreLayer.structuredRecords || 0) + Number(scoreSupplement.summary?.records || 0);
   state.prefillProfile = loadSavedRecommendationProfile();
   $("#generatedAt").textContent = renderFreshnessLabel(state.data.generatedAt);
   populateFilters();
