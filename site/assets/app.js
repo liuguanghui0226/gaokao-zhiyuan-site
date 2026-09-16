@@ -25,6 +25,7 @@ const state = {
   planSupplementV363Manifest: null,
   planSupplementV365Manifest: null,
   planSupplementV366Manifest: null,
+  planSupplementV367Manifest: null,
   recommendationDataPromise: null,
   planSupplementRecords: [],
   scoreSupplementManifest: null,
@@ -930,6 +931,7 @@ const RECOMMENDATION_RUNTIME_ASSETS = [
   ["admission-plan-supplement-v363.json", "官方计划补充"],
   ["admission-plan-supplement-v365.json", "官方计划补充"],
   ["admission-plan-supplement-v366.json", "官方计划补充"],
+  ["admission-plan-supplement-v367.json", "官方计划补充"],
   ["admission-score-supplement-v357.json", "官方投档补充"],
 ];
 
@@ -945,12 +947,13 @@ function ensureRecommendationData(loader = fetchRuntimeJson) {
       fetchRuntimeJson("admission-plan-supplement-v363.json", "官方计划补充"),
       fetchRuntimeJson("admission-plan-supplement-v365.json", "官方计划补充"),
       fetchRuntimeJson("admission-plan-supplement-v366.json", "官方计划补充"),
+      fetchRuntimeJson("admission-plan-supplement-v367.json", "官方计划补充"),
       fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充"),
     ]
     : RECOMMENDATION_RUNTIME_ASSETS.map(([relativePath, label]) => loader(relativePath, label));
   state.recommendationDataPromise = Promise.all(
     requests,
-  ).then(([planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, planSupplementV365, planSupplementV366, scoreSupplement]) => {
+  ).then(([planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, planSupplementV365, planSupplementV366, planSupplementV367, scoreSupplement]) => {
     state.planSupplementV358Manifest = planSupplementV358;
     state.planSupplementV359Manifest = planSupplementV359;
     state.planSupplementV360Manifest = planSupplementV360;
@@ -958,7 +961,8 @@ function ensureRecommendationData(loader = fetchRuntimeJson) {
     state.planSupplementV363Manifest = planSupplementV363;
     state.planSupplementV365Manifest = planSupplementV365;
     state.planSupplementV366Manifest = planSupplementV366;
-    state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, planSupplementV365, planSupplementV366);
+    state.planSupplementV367Manifest = planSupplementV367;
+    state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, planSupplementV365, planSupplementV366, planSupplementV367);
     state.planSupplementRecords = [
       ...(planSupplement.records || []),
       ...(planSupplementV358.records || []),
@@ -968,6 +972,7 @@ function ensureRecommendationData(loader = fetchRuntimeJson) {
       ...(planSupplementV363.records || []),
       ...(planSupplementV365.records || []),
       ...(planSupplementV366.records || []),
+      ...(planSupplementV367.records || []),
     ];
     state.scoreSupplementManifest = scoreSupplement;
     state.scoreSupplementRecords = scoreSupplement.records || [];
@@ -4715,6 +4720,45 @@ function renderDataFreshnessPanel(profile, today = currentChinaDate()) {
   </section>`;
 }
 
+function recommendationPlanReadinessForProfile(profile = {}, manifest = state.planReadinessManifest) {
+  const province = normalizeProvince(profile.province);
+  if (!province) return null;
+  const row = provincePlanReadinessRows(manifest)
+    .find((item) => normalizeProvince(item.province) === province);
+  if (!row) return null;
+  const currentYear = Number(manifest?.coverageScope?.currentYear || manifest?.applicationPlanReadiness?.currentYear || 2026);
+  const currentYearCoverageRate = row.candidateGroups > 0
+    ? Math.min(1, row.currentYearMatchedCandidateGroups / row.candidateGroups)
+    : 0;
+  return {
+    ...row,
+    currentYear,
+    currentYearCoverageRate,
+  };
+}
+
+function renderRecommendationPlanReadinessNotice(profile, manifest = state.planReadinessManifest) {
+  const readiness = recommendationPlanReadinessForProfile(profile, manifest);
+  if (!readiness) return "";
+  return `<section class="band province-plan-readiness recommendation-plan-readiness" data-priority="${esc(readiness.priorityLabel)}" aria-labelledby="recommendationPlanReadinessHeading">
+    <div class="province-plan-readiness-title">
+      <div>
+        <h3 id="recommendationPlanReadinessHeading">${esc(readiness.province)}${esc(String(readiness.currentYear))}计划证据匹配</h3>
+        <p>展示本地历史候选组与当前官方计划的严格匹配和普通本科批次衔接匹配。</p>
+      </div>
+      <strong>${fmtNumber(readiness.currentYearMatchedCandidateGroups)} / ${fmtNumber(readiness.candidateGroups)}（${planCoveragePercent(readiness.currentYearCoverageRate)}）</strong>
+    </div>
+    <div class="coverage-row compact province-plan-readiness-summary">
+      <span>近两年${esc(readiness.priorityLabel)}</span>
+      <span>严格匹配 ${fmtNumber(readiness.exactCurrentYearMatchedCandidateGroups)}</span>
+      <span>批次衔接匹配 ${fmtNumber(readiness.currentYearTransitionMatchedCandidateGroups)}</span>
+      <span>近两年匹配 ${fmtNumber(readiness.recentPlanMatchedCandidateGroups)}</span>
+      <span>可用计划 ${fmtNumber(readiness.eligibleRecentPlans)}</span>
+    </div>
+    <p class="province-plan-readiness-note">该比例是本地计划证据覆盖率，不是录取率。未匹配只表示本地证据待核，不表示停招；正式填报仍须回考试院和高校官网核验当年计划、批次与选科。</p>
+  </section>`;
+}
+
 function recommendationExportText(recommendation) {
   const profile = recommendation?.profile || {};
   const results = Array.isArray(recommendation?.results) ? recommendation.results : [];
@@ -4979,6 +5023,7 @@ function renderRecommendationResults() {
       <span id="copyRecommendationStatus" class="copy-status" role="status" aria-live="polite"></span>
     </div>
     ${renderDataFreshnessPanel(rec.profile)}
+    ${renderRecommendationPlanReadinessNotice(rec.profile)}
     ${renderRecommendationShortlist()}
     ${belowVocationalLine ? belowLinePanel : limitedOnly ? limitedQualificationPanel : vocationalQualificationUnknown ? unknownQualificationPanel : vocationalLinePending ? pendingQualificationPanel : renderAdmissionHitPanel(rec.profile)}
     ${belowVocationalLine || vocationalQualificationUnknown || vocationalLinePending ? "" : renderApplicationPlan(rec.results)}
