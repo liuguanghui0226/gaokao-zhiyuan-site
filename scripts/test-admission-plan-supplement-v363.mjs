@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import zlib from "node:zlib";
+import { fileURLToPath } from "node:url";
+
+const root = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
+const assetFile = path.join(root, "site/data/release-v3.275/admission-plan-supplement-v363.json.gz");
+assert.ok(fs.existsSync(assetFile), "v3.363 runtime asset must exist");
+const supplement = JSON.parse(zlib.gunzipSync(fs.readFileSync(assetFile), { to: "string" }));
+assert.equal(supplement.version, "v3.363");
+assert.equal(supplement.type, "runtime-admission-plan-supplement");
+assert.equal(supplement.source.id, "official-utibet-national-plan-2026-api");
+assert.equal(supplement.source.url, "https://zjc.utibet.edu.cn/bkzsxxw/zsjh.htm");
+assert.equal(supplement.source.apiEndpoint, "https://www.xzu.edu.cn/api/zjc/zsxx/category/list");
+assert.equal(supplement.source.infoEndpoint, "https://www.xzu.edu.cn/api/zjc/zsxx/info/list");
+assert.equal(supplement.source.charterUrl, "https://zjc.utibet.edu.cn/info/1014/2132.htm");
+assert.deepEqual(supplement.sources.map((source) => source.id), ["official-utibet-national-plan-2026-api"]);
+assert.equal(supplement.summary.records, 659);
+assert.equal(supplement.summary.ordinaryRecords, 621);
+assert.equal(supplement.summary.specialPathRecords, 38);
+assert.equal(supplement.summary.planCount, 2706);
+assert.equal(supplement.summary.rawPlanCount, 2706);
+assert.equal(supplement.summary.rawRecords, 659);
+assert.equal(supplement.summary.invalidRows, 0);
+assert.equal(supplement.summary.duplicateRows, 0);
+assert.equal(supplement.summary.provinces, 26);
+assert.equal(supplement.summary.schools, 1);
+assert.equal(supplement.summary.categoryRootCount, 26);
+assert.equal(supplement.summary.yearNodeCount, 31);
+assert.equal(supplement.summary.subjectNodeCount, 59);
+assert.equal(supplement.summary.emptySubjectNodeCount, 4);
+assert.equal(supplement.summary.headlinePlanCount, 2770);
+assert.equal(supplement.summary.apiPlanCount, 2706);
+assert.equal(supplement.summary.unattributedDelta, 64);
+assert.equal(supplement.records.length, 659);
+assert.equal(new Set(supplement.records.map((record) => record.id)).size, supplement.records.length);
+assert.ok(supplement.records.every((record) => record.schoolCode === "10694" && record.schoolIdentifierCode === "4154010694" && record.year === 2026 && record.dataType === "admission-plan" && Number.isInteger(record.planCount) && record.planCount > 0));
+assert.equal(supplement.records.filter((record) => record.formalScoreScope === "school-official-only").length, 621);
+assert.equal(supplement.records.filter((record) => record.formalScoreScope === "special-path-only").length, 38);
+assert.equal(supplement.records.filter((record) => record.province === "西藏").length, 115);
+assert.equal(supplement.records.filter((record) => record.province === "西藏" && record.formalScoreScope === "school-official-only").length, 77);
+assert.equal(supplement.records.filter((record) => record.province === "西藏" && record.formalScoreScope === "special-path-only").length, 38);
+assert.equal(supplement.records.filter((record) => record.province === "青海" && record.formalScoreScope === "school-official-only").length, 15);
+assert.equal(supplement.records.filter((record) => record.province === "上海" && record.formalScoreScope === "school-official-only").length, 10);
+assert.ok(supplement.records.every((record) => record.sourceId === "official-utibet-national-plan-2026-api" && record.sourcePageUrl && record.sourceApiEndpoint && record.sourceCategoryId && record.officialEvidencePath && record.officialCharterEvidencePath));
+assert.ok(supplement.records.every((record) => record.score === undefined && record.batch === undefined));
+const ordinary = supplement.records.find((record) => record.id.endsWith("-3773"));
+assert.equal(ordinary.province, "西藏");
+assert.equal(ordinary.sourceSubjectRaw, "");
+assert.equal(ordinary.electiveRequirement, undefined);
+assert.equal(ordinary.subjectType, "历史类");
+assert.equal(ordinary.admissionType, "普通录取");
+assert.equal(ordinary.formalScoreScope, "school-official-only");
+assert.ok(supplement.records.some((record) => record.id.endsWith("-3748") && record.admissionType === "国家专项" && record.sourceSubjectRaw === "历史、地理" && record.planCount === 20));
+assert.ok(supplement.records.some((record) => record.id.endsWith("-3736") && record.admissionType === "部队专项" && record.planCount === 30));
+
+const app = fs.readFileSync(path.join(root, "site/assets/app.js"), "utf8");
+assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v363\.json", "官方计划补充"\)/);
+assert.match(app, /state\.planSupplementV363Manifest/);
+
+console.log(JSON.stringify({ status: "ok", version: supplement.version, records: supplement.records.length, provinces: supplement.summary.provinces, planCount: supplement.summary.planCount, ordinaryRecords: supplement.summary.ordinaryRecords, specialPathRecords: supplement.summary.specialPathRecords }, null, 2));

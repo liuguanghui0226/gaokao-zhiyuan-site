@@ -22,6 +22,7 @@ const state = {
   planSupplementV359Manifest: null,
   planSupplementV360Manifest: null,
   planSupplementV361Manifest: null,
+  planSupplementV363Manifest: null,
   recommendationDataPromise: null,
   planSupplementRecords: [],
   scoreSupplementManifest: null,
@@ -923,6 +924,7 @@ const RECOMMENDATION_RUNTIME_ASSETS = [
   ["admission-plan-supplement-v359.json", "官方计划补充"],
   ["admission-plan-supplement-v360.json", "官方计划补充"],
   ["admission-plan-supplement-v361.json", "官方计划补充"],
+  ["admission-plan-supplement-v363.json", "官方计划补充"],
   ["admission-score-supplement-v357.json", "官方投档补充"],
 ];
 
@@ -935,23 +937,26 @@ function ensureRecommendationData(loader = fetchRuntimeJson) {
       fetchRuntimeJson("admission-plan-supplement-v359.json", "官方计划补充"),
       fetchRuntimeJson("admission-plan-supplement-v360.json", "官方计划补充"),
       fetchRuntimeJson("admission-plan-supplement-v361.json", "官方计划补充"),
+      fetchRuntimeJson("admission-plan-supplement-v363.json", "官方计划补充"),
       fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充"),
     ]
     : RECOMMENDATION_RUNTIME_ASSETS.map(([relativePath, label]) => loader(relativePath, label));
   state.recommendationDataPromise = Promise.all(
     requests,
-  ).then(([planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, scoreSupplement]) => {
+  ).then(([planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, scoreSupplement]) => {
     state.planSupplementV358Manifest = planSupplementV358;
     state.planSupplementV359Manifest = planSupplementV359;
     state.planSupplementV360Manifest = planSupplementV360;
     state.planSupplementV361Manifest = planSupplementV361;
-    state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361);
+    state.planSupplementV363Manifest = planSupplementV363;
+    state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363);
     state.planSupplementRecords = [
       ...(planSupplement.records || []),
       ...(planSupplementV358.records || []),
       ...(planSupplementV359.records || []),
       ...(planSupplementV360.records || []),
       ...(planSupplementV361.records || []),
+      ...(planSupplementV363.records || []),
     ];
     state.scoreSupplementManifest = scoreSupplement;
     state.scoreSupplementRecords = scoreSupplement.records || [];

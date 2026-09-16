@@ -232,7 +232,7 @@ function latestMatchingPlan(record, planIndex) {
 
 const shardFiles = fs.readdirSync(releaseDir)
   .filter((file) => file.endsWith(".json.gz"))
-  .filter((file) => !["knowledge-core.json.gz", "knowledge-core-lite.json.gz", "manifest.json.gz", "province-plan-readiness.json.gz", "admission-plan-supplement-v348.json.gz", "admission-plan-supplement-v349.json.gz", "admission-plan-supplement-v350.json.gz", "admission-plan-supplement-v351.json.gz", "admission-plan-supplement-v352.json.gz", "admission-plan-supplement-v353.json.gz", "admission-plan-supplement-v354.json.gz", "admission-plan-supplement-v355.json.gz", "admission-plan-supplement-v356.json.gz", "admission-plan-supplement-v358.json.gz", "admission-plan-supplement-v359.json.gz", "admission-plan-supplement-v360.json.gz", "admission-plan-supplement-v361.json.gz", "admission-score-supplement-v357.json.gz"].includes(file))
+  .filter((file) => !["knowledge-core.json.gz", "knowledge-core-lite.json.gz", "manifest.json.gz", "province-plan-readiness.json.gz", "admission-plan-supplement-v348.json.gz", "admission-plan-supplement-v349.json.gz", "admission-plan-supplement-v350.json.gz", "admission-plan-supplement-v351.json.gz", "admission-plan-supplement-v352.json.gz", "admission-plan-supplement-v353.json.gz", "admission-plan-supplement-v354.json.gz", "admission-plan-supplement-v355.json.gz", "admission-plan-supplement-v356.json.gz", "admission-plan-supplement-v358.json.gz", "admission-plan-supplement-v359.json.gz", "admission-plan-supplement-v360.json.gz", "admission-plan-supplement-v361.json.gz", "admission-plan-supplement-v363.json.gz", "admission-score-supplement-v357.json.gz"].includes(file))
   .sort();
 
 let admissionRecords = 0;
