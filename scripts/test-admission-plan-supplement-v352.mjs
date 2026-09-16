@@ -44,7 +44,7 @@ assert.equal(lnpuSource.otherPlanCountExcluded, 271);
 assert.ok(supplement.sources.every((source) => source.url && source.quality));
 
 const app = fs.readFileSync(path.join(root, "site/assets/app.js"), "utf8");
-assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v352\.json", "官方计划补充"\)/);
+assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v353\.json", "官方计划补充"\)/);
 assert.match(app, /planSupplementManifest\?\.sources/);
 assert.match(app, /state\.planSupplementRecords/);
 

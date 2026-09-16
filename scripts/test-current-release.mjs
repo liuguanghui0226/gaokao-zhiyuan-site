@@ -179,6 +179,8 @@ const tests = [
   "test-admission-plan-supplement-v351.mjs",
   "test-official-lnpu-plan-import-v352.mjs",
   "test-admission-plan-supplement-v352.mjs",
+  "test-official-dlmu-plan-import-v353.mjs",
+  "test-admission-plan-supplement-v353.mjs",
   "test-interface-plain-language-v3316.mjs",
   "test-recommendation-profile-persistence-v3347.mjs",
   "test-recommendation-export-v3348.mjs",
