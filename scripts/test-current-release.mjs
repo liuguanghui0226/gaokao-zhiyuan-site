@@ -193,6 +193,8 @@ const tests = [
   "test-admission-plan-supplement-v358.mjs",
   "test-official-national-school-plan-2026-v359-ncbcjxau.mjs",
   "test-admission-plan-supplement-v359.mjs",
+  "test-official-national-school-plan-2026-v360-xzmu.mjs",
+  "test-admission-plan-supplement-v360.mjs",
   "test-interface-plain-language-v3316.mjs",
   "test-recommendation-profile-persistence-v3347.mjs",
   "test-recommendation-export-v3348.mjs",
