@@ -439,7 +439,6 @@ async function main() {
     canonicalPayloadSha256: canonicalHash,
     evidencePath: relativeProjectPath(indexFile),
     charterEvidencePath: charterPath,
-    rawPaths,
     rawPaths: [indexFile, ...links.map((link) => path.join(rawDir, `${link.slug}.html`)), charterFile].map(relativeProjectPath),
     finalPlanCaveat: true,
     transcriptionMethod: "official-server-rendered-html-table-descendant-text-concatenation",
