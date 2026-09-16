@@ -76,6 +76,7 @@ jobs:
           grep -q 'fetchRuntimeJson("knowledge-core-lite.json", "核心知识")' "$work/app.js"
           grep -q 'fetchRuntimeJson("admission-plan-supplement-v356.json", "官方计划补充")' "$work/app.js"
           grep -q 'fetchRuntimeJson("admission-plan-supplement-v358.json", "官方计划补充")' "$work/app.js"
+          grep -q 'fetchRuntimeJson("admission-plan-supplement-v359.json", "官方计划补充")' "$work/app.js"
           grep -q 'fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充")' "$work/app.js"
           grep -q 'planSupplementV358' "$work/app.js"
           grep -q 'scoreSupplementRecords' "$work/app.js"
@@ -246,6 +247,13 @@ jobs:
           jq -e '[.records[] | select(.province == "新疆" and .admissionType == "南疆单列" and .formalScoreScope == "special-path-only")] | length > 0' "$work/admission-plan-supplement-v358.json" >/dev/null
           jq -e '[.records[] | select(.province == "西藏" and .formalScoreScope == "school-official-only")] | length > 0' "$work/admission-plan-supplement-v358.json" >/dev/null
           jq -e '[.records[] | select(.province == "湖南" and .admissionType == "公费师范生" and .tuition == 0)] | length > 0' "$work/admission-plan-supplement-v358.json" >/dev/null
+          fetch "${base}data/${release_path}/admission-plan-supplement-v359.json.gz" "$work/admission-plan-supplement-v359.json.gz"
+          gzip -t "$work/admission-plan-supplement-v359.json.gz"
+          gzip -dc "$work/admission-plan-supplement-v359.json.gz" > "$work/admission-plan-supplement-v359.json"
+          jq -e '.version == "v3.359" and .type == "runtime-admission-plan-supplement" and .source.id == "official-ncbcjxau-national-plan-2026" and .summary.records == 443 and .summary.ordinaryRecords == 432 and .summary.specialPathRecords == 11 and .summary.planCount == 3400 and .summary.provinces == 28 and .summary.schools == 1' "$work/admission-plan-supplement-v359.json" >/dev/null
+          jq -e '.sources[] | select(.id == "official-ncbcjxau-national-plan-2026") | .records == 443 and .rawRows == 443 and .duplicateRows == 0 and .rawPlanCount == 3400 and .planCount == 3400 and .ordinaryRecords == 432 and .specialPathRecords == 11' "$work/admission-plan-supplement-v359.json" >/dev/null
+          jq -e '[.records[] | select(.schoolCode == "13436" and .province == "不分省" and .formalScoreScope == "school-official-only")] | length > 0' "$work/admission-plan-supplement-v359.json" >/dev/null
+          jq -e '[.records[] | select(.schoolCode == "13436" and .subjectType == "艺术类" and .formalScoreScope == "special-path-only")] | length == 11' "$work/admission-plan-supplement-v359.json" >/dev/null
           fetch "${base}data/${release_path}/admission-score-supplement-v357.json.gz" "$work/admission-score-supplement-v357.json.gz"
           gzip -t "$work/admission-score-supplement-v357.json.gz"
           gzip -dc "$work/admission-score-supplement-v357.json.gz" > "$work/admission-score-supplement-v357.json"

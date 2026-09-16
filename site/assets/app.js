@@ -19,6 +19,7 @@ const state = {
   planReadinessManifest: null,
   planSupplementManifest: null,
   planSupplementV358Manifest: null,
+  planSupplementV359Manifest: null,
   planSupplementRecords: [],
   scoreSupplementManifest: null,
   scoreSupplementRecords: [],
@@ -5433,22 +5434,25 @@ function populateFilters() {
 }
 
 async function boot() {
-  const [core, manifest, planReadiness, planSupplement, planSupplementV358, scoreSupplement] = await Promise.all([
+  const [core, manifest, planReadiness, planSupplement, planSupplementV358, planSupplementV359, scoreSupplement] = await Promise.all([
     fetchRuntimeJson("knowledge-core-lite.json", "核心知识"),
     fetchRuntimeJson("provinces/manifest.json", "省份索引"),
     fetchRuntimeJson("province-plan-readiness.json", "逐省计划证据"),
     fetchRuntimeJson("admission-plan-supplement-v356.json", "官方计划补充"),
     fetchRuntimeJson("admission-plan-supplement-v358.json", "官方计划补充"),
+    fetchRuntimeJson("admission-plan-supplement-v359.json", "官方计划补充"),
     fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充"),
   ]);
   state.data = core;
   state.provinceManifest = manifest;
   state.planReadinessManifest = planReadiness;
   state.planSupplementV358Manifest = planSupplementV358;
-  state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358);
+  state.planSupplementV359Manifest = planSupplementV359;
+  state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358, planSupplementV359);
   state.planSupplementRecords = [
     ...(planSupplement.records || []),
     ...(planSupplementV358.records || []),
+    ...(planSupplementV359.records || []),
   ];
   state.scoreSupplementManifest = scoreSupplement;
   state.scoreSupplementRecords = scoreSupplement.records || [];

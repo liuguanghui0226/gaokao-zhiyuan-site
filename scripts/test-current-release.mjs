@@ -191,6 +191,8 @@ const tests = [
   "test-admission-score-supplement-v357.mjs",
   "test-official-national-school-plan-2026-v358-hnust.mjs",
   "test-admission-plan-supplement-v358.mjs",
+  "test-official-national-school-plan-2026-v359-ncbcjxau.mjs",
+  "test-admission-plan-supplement-v359.mjs",
   "test-interface-plain-language-v3316.mjs",
   "test-recommendation-profile-persistence-v3347.mjs",
   "test-recommendation-export-v3348.mjs",
