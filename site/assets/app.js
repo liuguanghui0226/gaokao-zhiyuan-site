@@ -18,6 +18,7 @@ const state = {
   provinceManifest: null,
   planReadinessManifest: null,
   planSupplementManifest: null,
+  planSupplementV358Manifest: null,
   planSupplementRecords: [],
   scoreSupplementManifest: null,
   scoreSupplementRecords: [],
@@ -877,6 +878,29 @@ function provinceRecordsWithPlanSupplement(provinceValue, shardRecords = [], sup
     records.push(record);
   }
   return records;
+}
+
+function mergePlanSupplementManifests(...manifests) {
+  const active = manifests.filter((manifest) => manifest && typeof manifest === "object");
+  if (active.length === 0) return null;
+  if (active.length === 1) return active[0];
+  const records = active.flatMap((manifest) => Array.isArray(manifest.records) ? manifest.records : []);
+  const provinces = [...new Set(records.map((record) => normalizeProvince(record?.province)).filter(Boolean))];
+  const schools = [...new Set(records.map((record) => record?.schoolCode || record?.schoolName).filter(Boolean))];
+  const summary = active.reduce((merged, manifest) => {
+    const sourceSummary = manifest.summary || {};
+    for (const key of ["records", "ordinaryRecords", "specialPathRecords", "planCount", "rawPlanCount"]) {
+      if (Number.isFinite(Number(sourceSummary[key]))) merged[key] = Number(merged[key] || 0) + Number(sourceSummary[key]);
+    }
+    return merged;
+  }, {});
+  return {
+    ...active[0],
+    version: active.map((manifest) => manifest.version).filter(Boolean).join("+") || active[0].version,
+    sources: active.flatMap((manifest) => Array.isArray(manifest.sources) ? manifest.sources : manifest.source ? [manifest.source] : []),
+    summary: { ...active[0].summary, ...summary, provinces: provinces.length, schools: schools.length },
+    records,
+  };
 }
 
 function rankConversionRecords() {
@@ -5409,18 +5433,23 @@ function populateFilters() {
 }
 
 async function boot() {
-  const [core, manifest, planReadiness, planSupplement, scoreSupplement] = await Promise.all([
+  const [core, manifest, planReadiness, planSupplement, planSupplementV358, scoreSupplement] = await Promise.all([
     fetchRuntimeJson("knowledge-core-lite.json", "核心知识"),
     fetchRuntimeJson("provinces/manifest.json", "省份索引"),
     fetchRuntimeJson("province-plan-readiness.json", "逐省计划证据"),
     fetchRuntimeJson("admission-plan-supplement-v356.json", "官方计划补充"),
+    fetchRuntimeJson("admission-plan-supplement-v358.json", "官方计划补充"),
     fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充"),
   ]);
   state.data = core;
   state.provinceManifest = manifest;
   state.planReadinessManifest = planReadiness;
-  state.planSupplementManifest = planSupplement;
-  state.planSupplementRecords = planSupplement.records || [];
+  state.planSupplementV358Manifest = planSupplementV358;
+  state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358);
+  state.planSupplementRecords = [
+    ...(planSupplement.records || []),
+    ...(planSupplementV358.records || []),
+  ];
   state.scoreSupplementManifest = scoreSupplement;
   state.scoreSupplementRecords = scoreSupplement.records || [];
   state.data.admissionScoreLayer.sourceNotes = [

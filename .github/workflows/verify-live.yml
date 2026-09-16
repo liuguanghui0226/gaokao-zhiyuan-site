@@ -75,7 +75,9 @@ jobs:
           grep -q 'sectionHead("院校专业推荐")' "$work/app.js"
           grep -q 'fetchRuntimeJson("knowledge-core-lite.json", "核心知识")' "$work/app.js"
           grep -q 'fetchRuntimeJson("admission-plan-supplement-v356.json", "官方计划补充")' "$work/app.js"
+          grep -q 'fetchRuntimeJson("admission-plan-supplement-v358.json", "官方计划补充")' "$work/app.js"
           grep -q 'fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充")' "$work/app.js"
+          grep -q 'planSupplementV358' "$work/app.js"
           grep -q 'scoreSupplementRecords' "$work/app.js"
           grep -q 'planSupplementManifest?.sources' "$work/app.js"
           grep -q 'renderView(state.view, { force: true })' "$work/app.js"
@@ -236,6 +238,14 @@ jobs:
           jq -e '[.records[] | select(.schoolCode == "10445" and .admissionType == "定向西藏" and .formalScoreScope == "special-path-only")] | length > 0' "$work/admission-plan-supplement-v356.json" >/dev/null
           jq -e '.sources[] | select(.id == "official-sdnu-national-plan-2026") | .records == 1032 and .planCount == 6119 and .provinces == 29 and .pathCount == 103 and .queryCount == 103 and .headlinePlanCount == null and .apiPlanCount == 6119 and .unattributedDelta == null' "$work/admission-plan-supplement-v356.json" >/dev/null
           jq -e '.sources[] | select(.id == "official-sdnu-national-plan-2026") | .byTypePlanCount == {"普通类":3833,"中外合作办学":200,"艺考类专业":510,"国家专项计划":159,"艺考类专业（中外合作办学）":240,"体育类":231,"普通类提前批":30,"山东省属地方公费师范生":309,"综合评价招生":380,"非西藏生源定向西藏就业":7,"地方专项计划":220}' "$work/admission-plan-supplement-v356.json" >/dev/null
+          fetch "${base}data/${release_path}/admission-plan-supplement-v358.json.gz" "$work/admission-plan-supplement-v358.json.gz"
+          gzip -t "$work/admission-plan-supplement-v358.json.gz"
+          gzip -dc "$work/admission-plan-supplement-v358.json.gz" > "$work/admission-plan-supplement-v358.json"
+          jq -e '.version == "v3.358" and .type == "runtime-admission-plan-supplement" and .source.id == "official-hnust-national-plan-2026" and .summary.records == 1961 and .summary.ordinaryRecords == 1687 and .summary.specialPathRecords == 274 and .summary.planCount == 10579 and .summary.provinces == 31 and .summary.schools == 1' "$work/admission-plan-supplement-v358.json" >/dev/null
+          jq -e '.sources[] | select(.id == "official-hnust-national-plan-2026") | .records == 1961 and .rawRows == 1963 and .duplicateRows == 2 and .rawPlanCount == 10582 and .planCount == 10579 and .headlinePlanCount == 10860 and .apiPlanCount == 10582 and .unattributedDelta == 278' "$work/admission-plan-supplement-v358.json" >/dev/null
+          jq -e '[.records[] | select(.province == "新疆" and .admissionType == "南疆单列" and .formalScoreScope == "special-path-only")] | length > 0' "$work/admission-plan-supplement-v358.json" >/dev/null
+          jq -e '[.records[] | select(.province == "西藏" and .formalScoreScope == "school-official-only")] | length > 0' "$work/admission-plan-supplement-v358.json" >/dev/null
+          jq -e '[.records[] | select(.province == "湖南" and .admissionType == "公费师范生" and .tuition == 0)] | length > 0' "$work/admission-plan-supplement-v358.json" >/dev/null
           fetch "${base}data/${release_path}/admission-score-supplement-v357.json.gz" "$work/admission-score-supplement-v357.json.gz"
           gzip -t "$work/admission-score-supplement-v357.json.gz"
           gzip -dc "$work/admission-score-supplement-v357.json.gz" > "$work/admission-score-supplement-v357.json"
