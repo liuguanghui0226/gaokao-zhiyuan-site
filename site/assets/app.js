@@ -889,8 +889,10 @@ function mergePlanSupplementManifests(...manifests) {
   if (active.length === 0) return null;
   if (active.length === 1) return active[0];
   const records = active.flatMap((manifest) => Array.isArray(manifest.records) ? manifest.records : []);
-  const provinces = [...new Set(records.map((record) => normalizeProvince(record?.province)).filter(Boolean))];
+  const provinceCategories = [...new Set(records.map((record) => normalizeProvince(record?.province)).filter(Boolean))];
+  const provinces = provinceCategories.filter((province) => ALL_PROVINCES.includes(province));
   const schools = [...new Set(records.map((record) => record?.schoolCode || record?.schoolName).filter(Boolean))];
+  const missingPlanCountSummary = active.some((manifest) => !Number.isFinite(Number(manifest.summary?.planCount)));
   const summary = active.reduce((merged, manifest) => {
     const sourceSummary = manifest.summary || {};
     for (const key of ["records", "ordinaryRecords", "specialPathRecords", "planCount", "rawPlanCount"]) {
@@ -902,7 +904,15 @@ function mergePlanSupplementManifests(...manifests) {
     ...active[0],
     version: active.map((manifest) => manifest.version).filter(Boolean).join("+") || active[0].version,
     sources: active.flatMap((manifest) => Array.isArray(manifest.sources) ? manifest.sources : manifest.source ? [manifest.source] : []),
-    summary: { ...active[0].summary, ...summary, provinces: provinces.length, schools: schools.length },
+    summary: {
+      ...active[0].summary,
+      ...summary,
+      ...(missingPlanCountSummary ? { planCount: records.reduce((total, record) => total + (Number(record?.planCount) || 0), 0) } : {}),
+      provinces: provinces.length,
+      provinceCategories: provinceCategories.length,
+      unallocatedRecords: records.filter((record) => !ALL_PROVINCES.includes(normalizeProvince(record?.province))).length,
+      schools: schools.length,
+    },
     records,
   };
 }
@@ -4943,6 +4953,8 @@ function renderAdmissionScoreLayer() {
         <span>来源页 ${fmtNumber(sourceCount)}</span>
         ${state.planSupplementManifest?.summary?.records ? `<span>运行时官方计划补充 ${fmtNumber(state.planSupplementManifest.summary.records)} 条</span>` : ""}
         ${state.planSupplementManifest?.summary?.provinces ? `<span>补充覆盖省份 ${fmtNumber(state.planSupplementManifest.summary.provinces)}</span>` : ""}
+        ${state.planSupplementManifest?.summary?.provinceCategories > state.planSupplementManifest?.summary?.provinces ? `<span>补充省份类别 ${fmtNumber(state.planSupplementManifest.summary.provinceCategories)}</span>` : ""}
+        ${state.planSupplementManifest?.summary?.unallocatedRecords ? `<span>未分省记录 ${fmtNumber(state.planSupplementManifest.summary.unallocatedRecords)}</span>` : ""}
         ${scoreRange ? `<span>分数带 ${fmtNumber(scoreRange.min)}-${fmtNumber(scoreRange.max)}</span>` : ""}
         <span>城市 ${fmtNumber((coverage.cities || []).length)}</span>
       </div>

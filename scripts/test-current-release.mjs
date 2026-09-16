@@ -199,6 +199,7 @@ const tests = [
   "test-admission-plan-supplement-v361.mjs",
   "test-recommendation-data-lazy-load-v361.mjs",
   "test-recommendation-input-concurrency-v362.mjs",
+  "test-plan-supplement-merge-summary-v362.mjs",
   "test-interface-plain-language-v3316.mjs",
   "test-recommendation-profile-persistence-v3347.mjs",
   "test-recommendation-export-v3348.mjs",
