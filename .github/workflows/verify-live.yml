@@ -74,7 +74,7 @@ jobs:
           grep -q 'id="disciplineRecommend"' "$work/app.js"
           grep -q 'sectionHead("院校专业推荐")' "$work/app.js"
           grep -q 'fetchRuntimeJson("knowledge-core-lite.json", "核心知识")' "$work/app.js"
-          grep -q 'fetchRuntimeJson("admission-plan-supplement-v351.json", "官方计划补充")' "$work/app.js"
+          grep -q 'fetchRuntimeJson("admission-plan-supplement-v352.json", "官方计划补充")' "$work/app.js"
           grep -q 'planSupplementManifest?.sources' "$work/app.js"
           grep -q 'renderView(state.view, { force: true })' "$work/app.js"
           grep -q '基本情况：${profile.childType}；当前策略：${profile.strategy}' "$work/app.js"
@@ -183,6 +183,13 @@ jobs:
           jq -e '(.sources | map(.id) | sort) == ["official-jnu-national-plan-2026", "official-maotai-national-plan-2026", "official-suda-national-plan-2026", "official-xmu-national-plan-2026"]' "$work/admission-plan-supplement-v351.json" >/dev/null
           jq -e '[.records[] | select(.schoolCode == "10384" and .province == "西藏" and .formalScoreScope == "school-official-only")] | length > 0' "$work/admission-plan-supplement-v351.json" >/dev/null
           jq -e '[.records[] | select(.schoolCode == "10384" and .admissionType == "马来西亚分校" and .formalScoreScope == "special-path-only")] | length > 0' "$work/admission-plan-supplement-v351.json" >/dev/null
+          fetch "${base}data/${release_path}/admission-plan-supplement-v352.json.gz" "$work/admission-plan-supplement-v352.json.gz"
+          gzip -t "$work/admission-plan-supplement-v352.json.gz"
+          gzip -dc "$work/admission-plan-supplement-v352.json.gz" > "$work/admission-plan-supplement-v352.json"
+          jq -e '.version == "v3.352" and .type == "runtime-admission-plan-supplement" and .summary.records == 4663 and .summary.provinces == 31 and .summary.schools == 5' "$work/admission-plan-supplement-v352.json" >/dev/null
+          jq -e '(.sources | map(.id) | sort) == ["official-jnu-national-plan-2026", "official-lnpu-national-plan-2026", "official-maotai-national-plan-2026", "official-suda-national-plan-2026", "official-xmu-national-plan-2026"]' "$work/admission-plan-supplement-v352.json" >/dev/null
+          jq -e '[.records[] | select(.schoolCode == "10148" and .province == "北京" and .subjectType == "综合改革")] | length == 2' "$work/admission-plan-supplement-v352.json" >/dev/null
+          jq -e '[.records[] | select(.schoolCode == "10148" and .province == "辽宁" and .subjectType == "体育类" and .formalScoreScope == "special-path-only")] | length > 0' "$work/admission-plan-supplement-v352.json" >/dev/null
           jq -e '.shards."海南".records == 11076 and .shards."海南".rankConversions == 1102' "$work/manifest.json" >/dev/null
           jq -e '.shards."新疆".records == 11518 and .shards."新疆".rankConversions == 2823' "$work/manifest.json" >/dev/null
           jq -e '.shards."天津".records == 10037 and .shards."天津".rankConversions == 762' "$work/manifest.json" >/dev/null
