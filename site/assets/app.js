@@ -4117,10 +4117,9 @@ function renderApplicationPlan(results) {
   </section>`;
 }
 
-async function loadProvinceData(provinceValue) {
+async function fetchProvinceShard(provinceValue) {
   const province = normalizeProvince(provinceValue);
   if (!province) throw new Error("请先选择考生所在省份");
-  if (state.loadedProvince === province) return;
   const entry = state.provinceManifest?.shards?.[province];
   if (!entry) throw new Error(`暂未找到${province}运行分片，请重新构建全国数据索引`);
   let payload = state.provinceShardCache.get(province);
@@ -4128,6 +4127,12 @@ async function loadProvinceData(provinceValue) {
     payload = await fetchRuntimeJson(`provinces/${entry.file}`, `${province}数据`);
     state.provinceShardCache.set(province, payload);
   }
+  return { province, payload, shouldApply: state.loadedProvince !== province };
+}
+
+function applyProvinceShard(shard) {
+  if (!shard?.shouldApply || !shard.payload) return;
+  const { province, payload } = shard;
   state.data.admissionScoreLayer.records = provinceRecordsWithPlanSupplement(
     province,
     payload.records || [],
@@ -4139,9 +4144,21 @@ async function loadProvinceData(provinceValue) {
   admissionTrendIndexCache = null;
 }
 
+async function loadProvinceData(provinceValue) {
+  applyProvinceShard(await fetchProvinceShard(provinceValue));
+}
+
+async function prepareRecommendationData(provinceValue, recommendationLoader = ensureRecommendationData, provinceFetcher = fetchProvinceShard, provinceApplier = applyProvinceShard) {
+  const [shard] = await Promise.all([
+    provinceFetcher(provinceValue),
+    recommendationLoader(),
+  ]);
+  provinceApplier(shard);
+  return shard;
+}
+
 async function runRecommendation() {
-  await ensureRecommendationData();
-  await loadProvinceData($("#provinceInput").value.trim());
+  await prepareRecommendationData($("#provinceInput").value.trim());
   const profile = profileFromForm();
   const band = classifyProfileBand(profile);
   const results = candidatePoolsForProfile(profile)

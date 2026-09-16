@@ -25,7 +25,7 @@ assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v360\.json", "�
 assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v361\.json", "官方计划补充"\)/);
 assert.match(app, /fetchRuntimeJson\("admission-score-supplement-v357\.json", "官方投档补充"\)/);
 assert.match(app, /state\.recommendationDataPromise/);
-assert.match(app, /await ensureRecommendationData\(\);\s*\n\s*await loadProvinceData/);
+assert.match(app, /await prepareRecommendationData\(\$\("#provinceInput"\)\.value\.trim\(\)\)/);
 assert.match(app, /正在载入推荐数据和本省数据，请稍候/);
 
 const instrumented = `${app.slice(0, app.lastIndexOf("\nboot().catch"))}\nglobalThis.__gaokaoTest = { state, ensureRecommendationData };`;
