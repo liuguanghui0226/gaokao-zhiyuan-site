@@ -20,6 +20,8 @@ assert.match(workflow, /schedule:\s*\n\s*-\s*cron:\s*"0 2 \* \* \*"/);
 assert.match(workflow, /app_asset_version=/);
 assert.match(workflow, /assets\/app\.js\?v=\$\{app_asset_version\}/);
 assert.match(workflow, /fetch "\$\{base\}assets\/app\.js\?v=\$\{app_asset_version\}"/);
+assert.match(workflow, /admission-plan-supplement-v365\.json\.gz/);
+assert.match(workflow, /official-cust-national-plan-2026-html/);
 assert.match(workflow, /cache_buster="\$\{GITHUB_RUN_ID(?::-[^}]*)?\}"/, "live verification must derive a unique CDN cache buster");
 assert.match(workflow, /live_verify=\$\{cache_buster\}/, "live verification fetches must use the CDN cache buster");
 const unsafeAssetExtractor = String.raw`html.match(/assets\/app\.js\?v=([^"']+)/)`;

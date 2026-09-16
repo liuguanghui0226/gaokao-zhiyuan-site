@@ -23,6 +23,7 @@ const state = {
   planSupplementV360Manifest: null,
   planSupplementV361Manifest: null,
   planSupplementV363Manifest: null,
+  planSupplementV365Manifest: null,
   recommendationDataPromise: null,
   planSupplementRecords: [],
   scoreSupplementManifest: null,
@@ -38,6 +39,7 @@ const state = {
   recommendation: null,
   recommendationShortlist: { profileKey: "", items: [] },
   recommendationInvalidated: false,
+  recommendationInputRevision: 0,
   prefillProfile: null,
   renderedViews: new Set(),
 };
@@ -925,6 +927,7 @@ const RECOMMENDATION_RUNTIME_ASSETS = [
   ["admission-plan-supplement-v360.json", "官方计划补充"],
   ["admission-plan-supplement-v361.json", "官方计划补充"],
   ["admission-plan-supplement-v363.json", "官方计划补充"],
+  ["admission-plan-supplement-v365.json", "官方计划补充"],
   ["admission-score-supplement-v357.json", "官方投档补充"],
 ];
 
@@ -938,18 +941,20 @@ function ensureRecommendationData(loader = fetchRuntimeJson) {
       fetchRuntimeJson("admission-plan-supplement-v360.json", "官方计划补充"),
       fetchRuntimeJson("admission-plan-supplement-v361.json", "官方计划补充"),
       fetchRuntimeJson("admission-plan-supplement-v363.json", "官方计划补充"),
+      fetchRuntimeJson("admission-plan-supplement-v365.json", "官方计划补充"),
       fetchRuntimeJson("admission-score-supplement-v357.json", "官方投档补充"),
     ]
     : RECOMMENDATION_RUNTIME_ASSETS.map(([relativePath, label]) => loader(relativePath, label));
   state.recommendationDataPromise = Promise.all(
     requests,
-  ).then(([planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, scoreSupplement]) => {
+  ).then(([planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, planSupplementV365, scoreSupplement]) => {
     state.planSupplementV358Manifest = planSupplementV358;
     state.planSupplementV359Manifest = planSupplementV359;
     state.planSupplementV360Manifest = planSupplementV360;
     state.planSupplementV361Manifest = planSupplementV361;
     state.planSupplementV363Manifest = planSupplementV363;
-    state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363);
+    state.planSupplementV365Manifest = planSupplementV365;
+    state.planSupplementManifest = mergePlanSupplementManifests(planSupplement, planSupplementV358, planSupplementV359, planSupplementV360, planSupplementV361, planSupplementV363, planSupplementV365);
     state.planSupplementRecords = [
       ...(planSupplement.records || []),
       ...(planSupplementV358.records || []),
@@ -957,6 +962,7 @@ function ensureRecommendationData(loader = fetchRuntimeJson) {
       ...(planSupplementV360.records || []),
       ...(planSupplementV361.records || []),
       ...(planSupplementV363.records || []),
+      ...(planSupplementV365.records || []),
     ];
     state.scoreSupplementManifest = scoreSupplement;
     state.scoreSupplementRecords = scoreSupplement.records || [];
@@ -1470,6 +1476,15 @@ function provincePlanReadinessRows(manifest = state.planReadinessManifest) {
       const recentPlanCoverageRate = candidateGroups > 0
         ? Math.min(1, recentPlanMatchedCandidateGroups / candidateGroups)
         : 0;
+      const exactCurrentYearMatchedCandidateGroups = Math.max(0, Number(row.exactCurrentYearMatchedCandidateGroups) || 0);
+      const transitionCurrentYearMatchedCandidateGroups = Math.max(
+        0,
+        Number(row.currentYearTransitionMatchedCandidateGroups ?? row.transitionCurrentYearMatchedCandidateGroups) || 0,
+      );
+      const currentYearMatchedCandidateGroups = Math.max(
+        0,
+        Number(row.currentYearMatchedCandidateGroups) || exactCurrentYearMatchedCandidateGroups + transitionCurrentYearMatchedCandidateGroups,
+      );
       const priorityLabel = recentPlanCoverageRate === 0
         ? "优先补数"
         : recentPlanCoverageRate < 0.001
@@ -1485,7 +1500,10 @@ function provincePlanReadinessRows(manifest = state.planReadinessManifest) {
         exactRouteMatchedCandidateGroups: exactMatches,
         routeTransitionMatchedCandidateGroups: transitionMatches,
         recentPlanMatchedCandidateGroups,
-        currentYearTransitionMatchedCandidateGroups: Math.max(0, Number(row.currentYearTransitionMatchedCandidateGroups) || 0),
+        exactCurrentYearMatchedCandidateGroups,
+        transitionCurrentYearMatchedCandidateGroups,
+        currentYearTransitionMatchedCandidateGroups: transitionCurrentYearMatchedCandidateGroups,
+        currentYearMatchedCandidateGroups,
         recentPlanCoverageRate,
         priorityLabel,
       };
@@ -1519,6 +1537,7 @@ function renderProvincePlanReadiness(manifest = state.planReadinessManifest) {
       </div>
       <div class="province-plan-readiness-metrics">
         <span>近两年计划匹配 ${fmtNumber(row.recentPlanMatchedCandidateGroups)}/${fmtNumber(row.candidateGroups)}（${planCoveragePercent(row.recentPlanCoverageRate)}）</span>
+        <span>${currentYear}计划匹配 ${fmtNumber(row.currentYearMatchedCandidateGroups)}</span>
         <span>${currentYear}衔接匹配 ${fmtNumber(row.currentYearTransitionMatchedCandidateGroups)}</span>
         <span>可用计划 ${fmtNumber(row.eligibleRecentPlans)}</span>
       </div>
@@ -2869,6 +2888,49 @@ function recommendationDraftFromForm() {
   return draft;
 }
 
+const RECOMMENDATION_INPUT_KEYS = [
+  "childType",
+  "score",
+  "guangxiLocalScore",
+  "vocationalScore",
+  "rank",
+  "rankInput",
+  "xizangRankSource",
+  "guangxiLocalRank",
+  "guangxiLocalRankInput",
+  "province",
+  "subject",
+  "candidateCategory",
+  "rankUsage",
+  "rankCategory",
+  "rankLevelUsage",
+  "electives",
+  "disciplineFocus",
+  "interest",
+  "cities",
+  "abilityProfile",
+  "redLines",
+  "budget",
+  "strategy",
+];
+
+function recommendationInputSignature(profile) {
+  return JSON.stringify(RECOMMENDATION_INPUT_KEYS.map((key) => String(profile?.[key] ?? "")));
+}
+
+function recommendationInputSnapshot(draft = recommendationDraftFromForm()) {
+  return {
+    revision: state.recommendationInputRevision,
+    province: String(draft?.province || "").trim(),
+    signature: recommendationInputSignature(draft),
+  };
+}
+
+function recommendationInputSnapshotIsStale(snapshot, currentDraft = recommendationDraftFromForm()) {
+  if (!snapshot || snapshot.revision !== state.recommendationInputRevision) return true;
+  return recommendationInputSignature(currentDraft) !== snapshot.signature;
+}
+
 function saveCurrentRecommendationDraft() {
   const draft = recommendationDraftFromForm();
   saveRecommendationProfile(draft);
@@ -4173,7 +4235,16 @@ async function prepareRecommendationData(provinceValue, recommendationLoader = e
 }
 
 async function runRecommendation() {
-  await prepareRecommendationData($("#provinceInput").value.trim());
+  const snapshot = recommendationInputSnapshot();
+  await prepareRecommendationData(snapshot.province);
+  if (recommendationInputSnapshotIsStale(snapshot)) {
+    state.recommendation = null;
+    state.recommendationInvalidated = true;
+    refreshRecommendationResults();
+    const status = $("#recommendStatus");
+    if (status) status.textContent = "输入已变化，请重新生成推荐。";
+    return false;
+  }
   const profile = profileFromForm();
   const band = classifyProfileBand(profile);
   const results = candidatePoolsForProfile(profile)
@@ -5222,6 +5293,7 @@ function bindRecommendEvents() {
   const handleRecommendationInputChange = (event) => {
     const target = event.target;
     if (!(target instanceof HTMLInputElement || target instanceof HTMLSelectElement || target instanceof HTMLTextAreaElement)) return;
+    state.recommendationInputRevision += 1;
     if (
       attestationBoundInputIds.has(target.id)
       && normalizeProvince(provinceInput?.value || "") === "西藏"

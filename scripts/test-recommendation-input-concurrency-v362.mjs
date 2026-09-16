@@ -10,7 +10,7 @@ const root = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const appFile = path.join(root, "site/assets/app.js");
 const app = fs.readFileSync(appFile, "utf8");
 assert.match(app, /async function prepareRecommendationData\(/);
-assert.match(app, /await prepareRecommendationData\(\$\("#provinceInput"\)\.value\.trim\(\)\)/);
+assert.match(app, /const snapshot = recommendationInputSnapshot\(\);\s*await prepareRecommendationData\(snapshot\.province\)/);
 assert.match(app, /const \[shard\] = await Promise\.all\(/);
 assert.match(app, /provinceFetcher\(provinceValue\)/);
 assert.match(app, /recommendationLoader\(\)/);

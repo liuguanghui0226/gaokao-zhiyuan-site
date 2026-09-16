@@ -1,0 +1,1076 @@
+{
+  "version": "v3.364",
+  "generatedAt": "2026-09-16T21:50:00+08:00",
+  "audit": "admission-plan-overlay-readiness",
+  "previousVersion": "v3.345",
+  "policy": {
+    "evidenceDirection": "positive-corroboration-only",
+    "currentYear": 2026,
+    "planYearsAccepted": [
+      2025,
+      2026
+    ],
+    "strictRoutePriority": true,
+    "allowedFallback": "ordinary-undergraduate-batch-label-transition-only",
+    "fallbackIdentityRequirements": [
+      "same province",
+      "same school code or canonical full school name",
+      "same major code or canonical full major name",
+      "compatible subject",
+      "compatible admission type, subtype, campus, and candidate category",
+      "both routes are unrestricted ordinary undergraduate routes",
+      "explicit batch qualifiers do not conflict"
+    ],
+    "fallbackCurrentYearMaximumRankingBonus": 5,
+    "fallbackElectiveConflictAction": "review-only-never-auto-exclude",
+    "ambiguousPlanRequirementAction": "review-only-zero-plan-count-and-maximum-one-point",
+    "supplementAndVacancyAction": "excluded-from-ordinary-plan-evidence",
+    "missingMatchMeaning": "unknown-not-discontinued"
+  },
+  "counts": {
+    "provinces": 31,
+    "allPlanRecords": 83702,
+    "admissionRecords": 746748,
+    "namedAdmissionRecords": 596431,
+    "candidateGroups": 389435,
+    "ordinaryPlanRecords": 71223,
+    "eligibleRecentPlanRecords": 63540,
+    "currentYearPlanRecords": 37287,
+    "exactRouteMatchedCandidateGroups": 3460,
+    "routeTransitionMatchedCandidateGroups": 621,
+    "matchedCandidateGroups": 4081,
+    "exactCurrentYearMatchedCandidateGroups": 3231,
+    "transitionCurrentYearMatchedCandidateGroups": 537,
+    "currentYearMatchedCandidateGroups": 3768,
+    "exactNearYearMatchedCandidateGroups": 229,
+    "transitionNearYearMatchedCandidateGroups": 84,
+    "nearYearMatchedCandidateGroups": 313,
+    "ambiguousPlanRequirementGroups": 14,
+    "transitionAmbiguousPlanRequirementGroups": 0,
+    "matchedWithPlanCount": 4067,
+    "matchedWithElectiveRequirement": 2886,
+    "admissionMissingElectiveButPlanSupplies": 2786,
+    "plansExcludedAsVacancy": 6534,
+    "supplementPlansExcluded": 1902,
+    "plansExcludedAsRestricted": 2793,
+    "plansExcludedAsSpecialPath": 3152,
+    "oldPlanRecordsExcluded": 7683,
+    "provincesWithPlans": 31,
+    "provincesWithMatches": 31,
+    "provincesWithRouteTransitions": 7,
+    "provincesWithCurrentYearMatches": 31
+  },
+  "provinceRows": [
+    {
+      "province": "安徽",
+      "candidateGroups": 5496,
+      "eligibleRecentPlans": 394,
+      "exactRouteMatchedCandidateGroups": 31,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 31,
+      "currentYearMatchedCandidateGroups": 31
+    },
+    {
+      "province": "北京",
+      "candidateGroups": 2007,
+      "eligibleRecentPlans": 110,
+      "exactRouteMatchedCandidateGroups": 8,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 8,
+      "currentYearMatchedCandidateGroups": 8
+    },
+    {
+      "province": "重庆",
+      "candidateGroups": 45549,
+      "eligibleRecentPlans": 299,
+      "exactRouteMatchedCandidateGroups": 183,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 183,
+      "currentYearMatchedCandidateGroups": 183
+    },
+    {
+      "province": "福建",
+      "candidateGroups": 12926,
+      "eligibleRecentPlans": 354,
+      "exactRouteMatchedCandidateGroups": 40,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 40,
+      "currentYearMatchedCandidateGroups": 40
+    },
+    {
+      "province": "甘肃",
+      "candidateGroups": 4448,
+      "eligibleRecentPlans": 279,
+      "exactRouteMatchedCandidateGroups": 22,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 22,
+      "currentYearMatchedCandidateGroups": 22
+    },
+    {
+      "province": "广东",
+      "candidateGroups": 4046,
+      "eligibleRecentPlans": 451,
+      "exactRouteMatchedCandidateGroups": 110,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 110,
+      "currentYearMatchedCandidateGroups": 110
+    },
+    {
+      "province": "广西",
+      "candidateGroups": 4995,
+      "eligibleRecentPlans": 358,
+      "exactRouteMatchedCandidateGroups": 17,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 17,
+      "currentYearMatchedCandidateGroups": 17
+    },
+    {
+      "province": "贵州",
+      "candidateGroups": 49783,
+      "eligibleRecentPlans": 417,
+      "exactRouteMatchedCandidateGroups": 21,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 21,
+      "currentYearMatchedCandidateGroups": 21
+    },
+    {
+      "province": "海南",
+      "candidateGroups": 1897,
+      "eligibleRecentPlans": 210,
+      "exactRouteMatchedCandidateGroups": 12,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 12,
+      "currentYearMatchedCandidateGroups": 12
+    },
+    {
+      "province": "河北",
+      "candidateGroups": 51751,
+      "eligibleRecentPlans": 460,
+      "exactRouteMatchedCandidateGroups": 37,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 37,
+      "currentYearMatchedCandidateGroups": 37
+    },
+    {
+      "province": "黑龙江",
+      "candidateGroups": 4228,
+      "eligibleRecentPlans": 297,
+      "exactRouteMatchedCandidateGroups": 26,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 26,
+      "currentYearMatchedCandidateGroups": 26
+    },
+    {
+      "province": "河南",
+      "candidateGroups": 7829,
+      "eligibleRecentPlans": 519,
+      "exactRouteMatchedCandidateGroups": 40,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 40,
+      "currentYearMatchedCandidateGroups": 40
+    },
+    {
+      "province": "湖北",
+      "candidateGroups": 3873,
+      "eligibleRecentPlans": 325,
+      "exactRouteMatchedCandidateGroups": 35,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 35,
+      "currentYearMatchedCandidateGroups": 35
+    },
+    {
+      "province": "湖南",
+      "candidateGroups": 7539,
+      "eligibleRecentPlans": 367,
+      "exactRouteMatchedCandidateGroups": 83,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 83,
+      "currentYearMatchedCandidateGroups": 83
+    },
+    {
+      "province": "内蒙古",
+      "candidateGroups": 12095,
+      "eligibleRecentPlans": 247,
+      "exactRouteMatchedCandidateGroups": 18,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 18,
+      "currentYearMatchedCandidateGroups": 18
+    },
+    {
+      "province": "江苏",
+      "candidateGroups": 5851,
+      "eligibleRecentPlans": 371,
+      "exactRouteMatchedCandidateGroups": 29,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 29,
+      "currentYearMatchedCandidateGroups": 29
+    },
+    {
+      "province": "江西",
+      "candidateGroups": 5945,
+      "eligibleRecentPlans": 399,
+      "exactRouteMatchedCandidateGroups": 35,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 35,
+      "currentYearMatchedCandidateGroups": 35
+    },
+    {
+      "province": "吉林",
+      "candidateGroups": 4332,
+      "eligibleRecentPlans": 40340,
+      "exactRouteMatchedCandidateGroups": 1541,
+      "routeTransitionMatchedCandidateGroups": 300,
+      "transitionCurrentYearMatchedCandidateGroups": 270,
+      "exactCurrentYearMatchedCandidateGroups": 1357,
+      "currentYearMatchedCandidateGroups": 1627
+    },
+    {
+      "province": "辽宁",
+      "candidateGroups": 26188,
+      "eligibleRecentPlans": 277,
+      "exactRouteMatchedCandidateGroups": 207,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 207,
+      "currentYearMatchedCandidateGroups": 207
+    },
+    {
+      "province": "宁夏",
+      "candidateGroups": 2133,
+      "eligibleRecentPlans": 174,
+      "exactRouteMatchedCandidateGroups": 0,
+      "routeTransitionMatchedCandidateGroups": 5,
+      "transitionCurrentYearMatchedCandidateGroups": 5,
+      "exactCurrentYearMatchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 5
+    },
+    {
+      "province": "青海",
+      "candidateGroups": 1602,
+      "eligibleRecentPlans": 147,
+      "exactRouteMatchedCandidateGroups": 5,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 5,
+      "currentYearMatchedCandidateGroups": 5
+    },
+    {
+      "province": "陕西",
+      "candidateGroups": 4445,
+      "eligibleRecentPlans": 389,
+      "exactRouteMatchedCandidateGroups": 31,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 31,
+      "currentYearMatchedCandidateGroups": 31
+    },
+    {
+      "province": "山东",
+      "candidateGroups": 56372,
+      "eligibleRecentPlans": 434,
+      "exactRouteMatchedCandidateGroups": 362,
+      "routeTransitionMatchedCandidateGroups": 4,
+      "transitionCurrentYearMatchedCandidateGroups": 4,
+      "exactCurrentYearMatchedCandidateGroups": 362,
+      "currentYearMatchedCandidateGroups": 366
+    },
+    {
+      "province": "上海",
+      "candidateGroups": 1398,
+      "eligibleRecentPlans": 151,
+      "exactRouteMatchedCandidateGroups": 5,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 5,
+      "currentYearMatchedCandidateGroups": 5
+    },
+    {
+      "province": "山西",
+      "candidateGroups": 6981,
+      "eligibleRecentPlans": 338,
+      "exactRouteMatchedCandidateGroups": 30,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 30,
+      "currentYearMatchedCandidateGroups": 30
+    },
+    {
+      "province": "四川",
+      "candidateGroups": 8237,
+      "eligibleRecentPlans": 438,
+      "exactRouteMatchedCandidateGroups": 6,
+      "routeTransitionMatchedCandidateGroups": 26,
+      "transitionCurrentYearMatchedCandidateGroups": 26,
+      "exactCurrentYearMatchedCandidateGroups": 6,
+      "currentYearMatchedCandidateGroups": 32
+    },
+    {
+      "province": "天津",
+      "candidateGroups": 2639,
+      "eligibleRecentPlans": 210,
+      "exactRouteMatchedCandidateGroups": 16,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 16,
+      "currentYearMatchedCandidateGroups": 16
+    },
+    {
+      "province": "新疆",
+      "candidateGroups": 3862,
+      "eligibleRecentPlans": 231,
+      "exactRouteMatchedCandidateGroups": 0,
+      "routeTransitionMatchedCandidateGroups": 4,
+      "transitionCurrentYearMatchedCandidateGroups": 4,
+      "exactCurrentYearMatchedCandidateGroups": 0,
+      "currentYearMatchedCandidateGroups": 4
+    },
+    {
+      "province": "西藏",
+      "candidateGroups": 897,
+      "eligibleRecentPlans": 13944,
+      "exactRouteMatchedCandidateGroups": 288,
+      "routeTransitionMatchedCandidateGroups": 279,
+      "transitionCurrentYearMatchedCandidateGroups": 225,
+      "exactCurrentYearMatchedCandidateGroups": 243,
+      "currentYearMatchedCandidateGroups": 468
+    },
+    {
+      "province": "云南",
+      "candidateGroups": 5557,
+      "eligibleRecentPlans": 340,
+      "exactRouteMatchedCandidateGroups": 23,
+      "routeTransitionMatchedCandidateGroups": 0,
+      "transitionCurrentYearMatchedCandidateGroups": 0,
+      "exactCurrentYearMatchedCandidateGroups": 23,
+      "currentYearMatchedCandidateGroups": 23
+    },
+    {
+      "province": "浙江",
+      "candidateGroups": 34534,
+      "eligibleRecentPlans": 270,
+      "exactRouteMatchedCandidateGroups": 199,
+      "routeTransitionMatchedCandidateGroups": 3,
+      "transitionCurrentYearMatchedCandidateGroups": 3,
+      "exactCurrentYearMatchedCandidateGroups": 199,
+      "currentYearMatchedCandidateGroups": 202
+    }
+  ],
+  "supplementOverlay": {
+    "files": [
+      "site/data/release-v3.275/admission-plan-supplement-v356.json.gz",
+      "site/data/release-v3.275/admission-plan-supplement-v358.json.gz",
+      "site/data/release-v3.275/admission-plan-supplement-v359.json.gz",
+      "site/data/release-v3.275/admission-plan-supplement-v360.json.gz",
+      "site/data/release-v3.275/admission-plan-supplement-v361.json.gz",
+      "site/data/release-v3.275/admission-plan-supplement-v363.json.gz"
+    ],
+    "versions": [
+      "v3.356",
+      "v3.358",
+      "v3.359",
+      "v3.360",
+      "v3.361",
+      "v3.363"
+    ],
+    "records": 11810,
+    "assignedProvinceRecords": 11808,
+    "unallocatedRecords": 2,
+    "ordinaryRecords": 8867,
+    "specialPathRecords": 2943,
+    "duplicateIds": 0
+  },
+  "topSources": [
+    {
+      "sourceId": "official-jilin-admission-guide-2026-volume2-plan",
+      "matchedCandidateGroups": 1617
+    },
+    {
+      "sourceId": "official-qlu-national-plan-2026",
+      "matchedCandidateGroups": 547
+    },
+    {
+      "sourceId": "official-xizang-admission-plan-2026",
+      "matchedCandidateGroups": 466
+    },
+    {
+      "sourceId": "official-hnust-national-plan-2026",
+      "matchedCandidateGroups": 292
+    },
+    {
+      "sourceId": "official-xmu-national-plan-2026",
+      "matchedCandidateGroups": 225
+    },
+    {
+      "sourceId": "official-chsi-jilin-admission-guide-2025-volume2-plan",
+      "matchedCandidateGroups": 214
+    },
+    {
+      "sourceId": "official-jnu-national-plan-2026",
+      "matchedCandidateGroups": 181
+    },
+    {
+      "sourceId": "official-suda-national-plan-2026",
+      "matchedCandidateGroups": 106
+    },
+    {
+      "sourceId": "official-xizang-admission-plan-2025",
+      "matchedCandidateGroups": 99
+    },
+    {
+      "sourceId": "official-dlmu-national-plan-2026",
+      "matchedCandidateGroups": 88
+    },
+    {
+      "sourceId": "official-lnpu-national-plan-2026",
+      "matchedCandidateGroups": 70
+    },
+    {
+      "sourceId": "official-sdnu-national-plan-2026",
+      "matchedCandidateGroups": 58
+    },
+    {
+      "sourceId": "official-njust-national-2023-2026-school-plan-score",
+      "matchedCandidateGroups": 49
+    },
+    {
+      "sourceId": "official-ncbcjxau-national-plan-2026",
+      "matchedCandidateGroups": 46
+    },
+    {
+      "sourceId": "official-maotai-national-plan-2026",
+      "matchedCandidateGroups": 23
+    }
+  ],
+  "topTransitionPairs": [
+    {
+      "transition": "本科批 -> 本科一批",
+      "matchedCandidateGroups": 192
+    },
+    {
+      "transition": "本科一批 -> 普通本科批",
+      "matchedCandidateGroups": 145
+    },
+    {
+      "transition": "本科二批 -> 普通本科批",
+      "matchedCandidateGroups": 103
+    },
+    {
+      "transition": "本科批 -> 本科二批",
+      "matchedCandidateGroups": 51
+    },
+    {
+      "transition": "第一批本科 -> 普通本科批",
+      "matchedCandidateGroups": 42
+    },
+    {
+      "transition": "本科普通类 -> 本科批次B段",
+      "matchedCandidateGroups": 19
+    },
+    {
+      "transition": "普通计划(本科二批) -> 本科一批",
+      "matchedCandidateGroups": 13
+    },
+    {
+      "transition": "本科普通类 -> 本科一批",
+      "matchedCandidateGroups": 11
+    },
+    {
+      "transition": "本科二批A -> 普通本科批",
+      "matchedCandidateGroups": 9
+    },
+    {
+      "transition": "本科批 -> 本科批次B段",
+      "matchedCandidateGroups": 7
+    },
+    {
+      "transition": "本科批 -> 本科批B段",
+      "matchedCandidateGroups": 5
+    },
+    {
+      "transition": "普通类常规批第1次志愿 -> 本科一批",
+      "matchedCandidateGroups": 4
+    },
+    {
+      "transition": "本科批 -> 本科一批次",
+      "matchedCandidateGroups": 4
+    },
+    {
+      "transition": "本科第一批 -> 本科一批",
+      "matchedCandidateGroups": 4
+    },
+    {
+      "transition": "本科一批 -> 本科二批",
+      "matchedCandidateGroups": 3
+    },
+    {
+      "transition": "普通类第一段平行投档 -> 本科一批",
+      "matchedCandidateGroups": 3
+    },
+    {
+      "transition": "本科第二批 -> 本科二批",
+      "matchedCandidateGroups": 2
+    },
+    {
+      "transition": "普通类本科二批A段 -> 普通本科批",
+      "matchedCandidateGroups": 1
+    },
+    {
+      "transition": "一批本科 -> 本科一批",
+      "matchedCandidateGroups": 1
+    },
+    {
+      "transition": "普通类 -> 本科一批",
+      "matchedCandidateGroups": 1
+    },
+    {
+      "transition": "普通计划(本科一批) -> 本科二批",
+      "matchedCandidateGroups": 1
+    }
+  ],
+  "examples": [
+    {
+      "province": "吉林",
+      "schoolName": "韩山师范学院",
+      "majorName": "财务管理",
+      "admissionYear": 2025,
+      "admissionBatch": "普通类本科二批A段",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 1,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "编辑出版学",
+      "admissionYear": 2023,
+      "admissionBatch": "本科二批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 26,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "财务管理",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 10,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "汉语言文学",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 33,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "教育学",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 28,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "旅游管理",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 7,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "人力资源管理",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 10,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "网络与新媒体",
+      "admissionYear": 2023,
+      "admissionBatch": "本科二批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 20,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "物流管理",
+      "admissionYear": 2023,
+      "admissionBatch": "本科二批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 7,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "学前教育",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 26,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "应用心理学",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 10,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "英语",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 25,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "编辑出版学",
+      "admissionYear": 2023,
+      "admissionBatch": "本科二批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 10,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "材料成型及控制工程",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 40,
+      "planElectiveRequirement": "化学",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "财务管理",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 5,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "车辆工程",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 28,
+      "planElectiveRequirement": "化学",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "电气工程及其自动化",
+      "admissionYear": 2023,
+      "admissionBatch": "本科二批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 40,
+      "planElectiveRequirement": "化学",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "电气工程及其自动化(中外合作办学)",
+      "admissionYear": 2023,
+      "admissionBatch": "本科二批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 46,
+      "planElectiveRequirement": "化学",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "电子信息工程",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 38,
+      "planElectiveRequirement": "化学",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "光电信息科学与工程",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 45,
+      "planElectiveRequirement": "化学",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "汉语言文学",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 10,
+      "planElectiveRequirement": "不限",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "化学工程与工业生物工程",
+      "admissionYear": 2023,
+      "admissionBatch": "本科二批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 18,
+      "planElectiveRequirement": "化学",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "机器人工程",
+      "admissionYear": 2023,
+      "admissionBatch": "本科二批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 30,
+      "planElectiveRequirement": "化学",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    },
+    {
+      "province": "吉林",
+      "schoolName": "吉林工程技术师范学院",
+      "majorName": "机械设计制造及其自动化",
+      "admissionYear": 2023,
+      "admissionBatch": "本科一批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "planCount": 30,
+      "planElectiveRequirement": "化学",
+      "ambiguousRequirements": false,
+      "planSourceId": "official-jilin-admission-guide-2026-volume2-plan"
+    }
+  ],
+  "ambiguousExamples": [
+    {
+      "province": "广东",
+      "schoolName": "暨南大学",
+      "majorName": "法学",
+      "admissionYear": 2025,
+      "admissionBatch": "本科",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "历史|历史+不限|普通录取|普通本科批|广州番禺校区|",
+        "历史|历史+不限|普通录取|普通本科批|珠海校区|"
+      ],
+      "planIds": [
+        "2026-jnu-national-plan-0e4952ec2672b49c9c",
+        "2026-jnu-national-plan-32ec87dd9f71e6737f"
+      ]
+    },
+    {
+      "province": "广东",
+      "schoolName": "暨南大学",
+      "majorName": "工商管理",
+      "admissionYear": 2025,
+      "admissionBatch": "本科",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "历史|历史+不限|普通录取|普通本科批|广州番禺校区|",
+        "历史|历史+不限|普通录取|普通本科批|珠海校区|"
+      ],
+      "planIds": [
+        "2026-jnu-national-plan-2318d386790822a170",
+        "2026-jnu-national-plan-e40635b572d744cfd9"
+      ]
+    },
+    {
+      "province": "广东",
+      "schoolName": "暨南大学",
+      "majorName": "汉语言文学",
+      "admissionYear": 2025,
+      "admissionBatch": "本科",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "历史|历史+不限|普通录取|普通本科批|广州石牌校区|",
+        "历史|历史+不限|普通录取|普通本科批|珠海校区|"
+      ],
+      "planIds": [
+        "2026-jnu-national-plan-3a04b2f5ce6fdebe1d",
+        "2026-jnu-national-plan-614cb155f9345694ee"
+      ]
+    },
+    {
+      "province": "广东",
+      "schoolName": "暨南大学",
+      "majorName": "法学",
+      "admissionYear": 2025,
+      "admissionBatch": "本科",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "物理|物理+不限|普通录取|普通本科批|广州番禺校区|",
+        "物理|物理+不限|普通录取|普通本科批|珠海校区|"
+      ],
+      "planIds": [
+        "2026-jnu-national-plan-6b0a2aceeefee3044a",
+        "2026-jnu-national-plan-fea5285e2738542849"
+      ]
+    },
+    {
+      "province": "广东",
+      "schoolName": "暨南大学",
+      "majorName": "工商管理",
+      "admissionYear": 2025,
+      "admissionBatch": "本科",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "物理|物理+不限|普通录取|普通本科批|广州番禺校区|",
+        "物理|物理+不限|普通录取|普通本科批|珠海校区|"
+      ],
+      "planIds": [
+        "2026-jnu-national-plan-1e3523c2bec776152f",
+        "2026-jnu-national-plan-94c44eb45fee261f53"
+      ]
+    },
+    {
+      "province": "吉林",
+      "schoolName": "厦门大学",
+      "majorName": "数学类",
+      "admissionYear": 2025,
+      "admissionBatch": "本科批",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "物理|物理+化学|普通录取|普通类||",
+        "物理|化学||||"
+      ],
+      "planIds": [
+        "2026-xmu-national-plan-9c71c8796344e6dc32",
+        "2026-jilin-guide-plan-bfb73648a064dd77eaee"
+      ]
+    },
+    {
+      "province": "吉林",
+      "schoolName": "齐鲁工业大学",
+      "majorName": "材料类",
+      "admissionYear": 2025,
+      "admissionBatch": "本科普通类",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "物理|物理,化学|普通录取|普通类||",
+        "物理|化学||||"
+      ],
+      "planIds": [
+        "2026-qlu-national-plan-6449cefa855b065165",
+        "2026-jilin-guide-plan-1bec7aa1285c629a4cc7"
+      ]
+    },
+    {
+      "province": "吉林",
+      "schoolName": "齐鲁工业大学",
+      "majorName": "机械设计制造及其自动化",
+      "admissionYear": 2025,
+      "admissionBatch": "本科普通类",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "物理|物理,化学|普通录取|普通类||",
+        "物理|化学||||"
+      ],
+      "planIds": [
+        "2026-qlu-national-plan-82e6397dc1a78433b0",
+        "2026-jilin-guide-plan-4dfd7e14a9e6cdc1dc48"
+      ]
+    },
+    {
+      "province": "吉林",
+      "schoolName": "齐鲁工业大学",
+      "majorName": "轻化工程",
+      "admissionYear": 2025,
+      "admissionBatch": "本科普通类",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "物理|物理,化学|普通录取|普通类||",
+        "物理|化学||||"
+      ],
+      "planIds": [
+        "2026-qlu-national-plan-2f544d668eed22d7d7",
+        "2026-jilin-guide-plan-438e4f27f3e75bfe3baf"
+      ]
+    },
+    {
+      "province": "吉林",
+      "schoolName": "齐鲁工业大学",
+      "majorName": "生物工程",
+      "admissionYear": 2025,
+      "admissionBatch": "本科普通类",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "物理|物理,化学|普通录取|普通类||",
+        "物理|化学||||"
+      ],
+      "planIds": [
+        "2026-qlu-national-plan-6d8433955ace0a8a0d",
+        "2026-jilin-guide-plan-0c50940408ddba89482b"
+      ]
+    },
+    {
+      "province": "吉林",
+      "schoolName": "齐鲁工业大学",
+      "majorName": "食品科学与工程类",
+      "admissionYear": 2025,
+      "admissionBatch": "本科普通类",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "物理|物理,化学|普通录取|普通类||",
+        "物理|化学||||"
+      ],
+      "planIds": [
+        "2026-qlu-national-plan-ba0f9f924df9b6c3e3",
+        "2026-jilin-guide-plan-3cd6c136e650eff0fcac"
+      ]
+    },
+    {
+      "province": "吉林",
+      "schoolName": "齐鲁工业大学",
+      "majorName": "材料类",
+      "admissionYear": 2024,
+      "admissionBatch": "本科普通类",
+      "planYear": 2026,
+      "planBatch": "普通本科批",
+      "requirementSignatures": [
+        "物理|物理,化学|普通录取|普通类||",
+        "物理|化学||||"
+      ],
+      "planIds": [
+        "2026-qlu-national-plan-6449cefa855b065165",
+        "2026-jilin-guide-plan-1bec7aa1285c629a4cc7"
+      ]
+    }
+  ],
+  "boundaries": [
+    "Exact batch-route matches always take priority over batch-label transitions.",
+    "A transition match never crosses undergraduate, vocational, advance, special, preparatory, vacancy, or restricted route families.",
+    "Supplement, vacancy, and remaining-plan records never corroborate an ordinary admission option.",
+    "A transition match can add at most five ranking-evidence points and never changes the historical admission-fit zone.",
+    "A transition elective conflict is review-only and never automatically removes the historical candidate.",
+    "Conflicting current plan requirements are marked ambiguous; no individual plan count is displayed and no candidate is removed.",
+    "A missing plan match remains unknown and is never treated as evidence that a major stopped recruiting."
+  ]
+}

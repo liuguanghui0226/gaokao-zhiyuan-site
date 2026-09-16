@@ -24,9 +24,10 @@ assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v359\.json", "�
 assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v360\.json", "官方计划补充"\)/);
 assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v361\.json", "官方计划补充"\)/);
 assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v363\.json", "官方计划补充"\)/);
+assert.match(app, /fetchRuntimeJson\("admission-plan-supplement-v365\.json", "官方计划补充"\)/);
 assert.match(app, /fetchRuntimeJson\("admission-score-supplement-v357\.json", "官方投档补充"\)/);
 assert.match(app, /state\.recommendationDataPromise/);
-assert.match(app, /await prepareRecommendationData\(\$\("#provinceInput"\)\.value\.trim\(\)\)/);
+assert.match(app, /const snapshot = recommendationInputSnapshot\(\);\s*await prepareRecommendationData\(snapshot\.province\)/);
 assert.match(app, /正在载入推荐数据和本省数据，请稍候/);
 
 const instrumented = `${app.slice(0, app.lastIndexOf("\nboot().catch"))}\nglobalThis.__gaokaoTest = { state, ensureRecommendationData };`;
@@ -41,6 +42,7 @@ const names = [
   "admission-plan-supplement-v360.json",
   "admission-plan-supplement-v361.json",
   "admission-plan-supplement-v363.json",
+  "admission-plan-supplement-v365.json",
   "admission-score-supplement-v357.json",
 ];
 const calls = [];
@@ -54,8 +56,8 @@ const [first, second] = await Promise.all([ensureRecommendationData(loader), ens
 assert.equal(first, second);
 assert.deepEqual([...calls].sort(), [...names].sort());
 assert.equal(calls.length, names.length);
-assert.equal(state.planSupplementManifest.version, "v3.356+v3.358+v3.359+v3.360+v3.361+v3.363");
-assert.equal(state.planSupplementRecords.length, 6);
+assert.equal(state.planSupplementManifest.version, "v3.356+v3.358+v3.359+v3.360+v3.361+v3.363+v3.365");
+assert.equal(state.planSupplementRecords.length, 7);
 assert.equal(state.scoreSupplementRecords.length, 1);
 assert.equal(state.data.admissionScoreLayer.structuredRecords, 12);
 assert.equal(Array.from(state.data.admissionScoreLayer.sourceNotes, (source) => source.id).join(","), "core,score");
@@ -76,4 +78,4 @@ assert.equal(state.recommendationDataPromise, null);
 await ensureRecommendationData(retryLoader);
 assert.ok(failedCalls.length > names.length);
 
-console.log(JSON.stringify({ status: "ok", bootCriticalFetches: 3, deferredFetches: 7, concurrentFetches: calls.length, retryableFailure: true }, null, 2));
+console.log(JSON.stringify({ status: "ok", bootCriticalFetches: 3, deferredFetches: 8, concurrentFetches: calls.length, retryableFailure: true }, null, 2));

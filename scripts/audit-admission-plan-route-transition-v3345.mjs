@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 if (root.startsWith("/Volumes/")) throw new Error("Refusing external-volume audit execution.");
 const releaseDir = path.join(root, "site/data/release-v3.275");
-const outputFile = path.join(
+const defaultOutputFile = path.join(
   root,
   "data/admissions/evidence-v3345-admission-plan-route-transition-manifest.json",
 );
@@ -16,7 +16,7 @@ const previousAuditFile = path.join(
   root,
   "data/admissions/evidence-v3344-admission-current-plan-corroboration-manifest.json",
 );
-const generatedAt = "2026-07-30T10:30:00+08:00";
+const defaultGeneratedAt = "2026-07-30T10:30:00+08:00";
 const genericMajorPattern = /^(院校投档线|院校专业组投档线|学校录取分数线|院校最低分|专业组投档线|投档线)$/;
 
 function assert(condition, message) {
@@ -324,6 +324,18 @@ function latestMatch(matches) {
   return { ...selected, latestMatches, ambiguousRequirements };
 }
 
+export function runAdmissionPlanRouteTransitionAudit({
+  outputFile = defaultOutputFile,
+  version = "v3.345",
+  audit = "admission-plan-route-transition",
+  previousVersion = "v3.344",
+  generatedAt = defaultGeneratedAt,
+  supplementFiles = [],
+  expectedCounts = null,
+  includeCurrentYearProvinceMetrics = false,
+  write = true,
+  log = true,
+} = {}) {
 const previousAudit = JSON.parse(fs.readFileSync(previousAuditFile, "utf8"));
 const shardFiles = fs.readdirSync(releaseDir)
   .filter((file) => file.endsWith(".json.gz"))
@@ -346,9 +358,43 @@ const shardFiles = fs.readdirSync(releaseDir)
     "admission-plan-supplement-v360.json.gz",
     "admission-plan-supplement-v361.json.gz",
     "admission-plan-supplement-v363.json.gz",
+    "admission-plan-supplement-v365.json.gz",
     "admission-score-supplement-v357.json.gz",
   ].includes(file))
   .sort();
+
+const runtimeManifest = readGzipJson(path.join(releaseDir, "manifest.json.gz"));
+const validProvinces = new Set(Object.keys(runtimeManifest.shards || {}));
+const resolvedSupplementFiles = supplementFiles.map((file) => path.resolve(root, file));
+const supplementManifests = resolvedSupplementFiles.map((file) => {
+  assert(fs.existsSync(file), `Supplement asset is missing: ${path.relative(root, file)}`);
+  const manifest = readGzipJson(file);
+  assert(Array.isArray(manifest.records), `Supplement records are missing: ${path.relative(root, file)}`);
+  assert(
+    manifest.records.every((record) => isPlanRecord(record)),
+    `Supplement contains a non-plan record: ${path.relative(root, file)}`,
+  );
+  return manifest;
+});
+const supplementRecords = supplementManifests.flatMap((manifest) => manifest.records);
+const supplementIds = supplementRecords.map((record) => record.id).filter(Boolean);
+const supplementRecordsByProvince = new Map();
+for (const record of supplementRecords) {
+  if (!validProvinces.has(record.province)) continue;
+  if (!supplementRecordsByProvince.has(record.province)) supplementRecordsByProvince.set(record.province, []);
+  supplementRecordsByProvince.get(record.province).push(record);
+}
+const supplementOverlay = {
+  files: resolvedSupplementFiles.map((file) => path.relative(root, file)),
+  versions: supplementManifests.map((manifest) => manifest.version),
+  records: supplementRecords.length,
+  assignedProvinceRecords: [...supplementRecordsByProvince.values()].reduce((total, records) => total + records.length, 0),
+  unallocatedRecords: supplementRecords.filter((record) => !validProvinces.has(record.province)).length,
+  ordinaryRecords: supplementRecords.filter((record) => !isSpecialPathRecord(record)).length,
+  specialPathRecords: supplementRecords.filter(isSpecialPathRecord).length,
+  duplicateIds: supplementIds.length - new Set(supplementIds).size,
+};
+assert(supplementOverlay.duplicateIds === 0, "Supplement overlay contains duplicate record ids");
 
 const counts = {
   provinces: shardFiles.length,
@@ -387,7 +433,10 @@ const ambiguousExamples = [];
 
 for (const shardFile of shardFiles) {
   const shard = readGzipJson(path.join(releaseDir, shardFile));
-  const records = shard.records || [];
+  const records = [
+    ...(shard.records || []),
+    ...(supplementRecordsByProvince.get(shard.province) || []),
+  ];
   const admissions = records.filter((record) =>
     isNamedMajorAdmissionRecord(record) && !isSpecialPathRecord(record)
   );
@@ -443,6 +492,7 @@ for (const shardFile of shardFiles) {
   const provinceCount = {
     exactRoute: 0,
     transition: 0,
+    currentExact: 0,
     currentTransition: 0,
   };
   for (const candidate of candidates) {
@@ -477,6 +527,7 @@ for (const shardFile of shardFiles) {
         provinceCount.currentTransition += 1;
       } else {
         counts.exactCurrentYearMatchedCandidateGroups += 1;
+        provinceCount.currentExact += 1;
       }
     } else if (planYear === 2025) {
       counts.nearYearMatchedCandidateGroups += 1;
@@ -534,14 +585,19 @@ for (const shardFile of shardFiles) {
     }
   }
 
-  provinceRows.push({
+  const provinceRow = {
     province: shard.province,
     candidateGroups: candidates.length,
     eligibleRecentPlans: plans.length,
     exactRouteMatchedCandidateGroups: provinceCount.exactRoute,
     routeTransitionMatchedCandidateGroups: provinceCount.transition,
     transitionCurrentYearMatchedCandidateGroups: provinceCount.currentTransition,
-  });
+  };
+  if (includeCurrentYearProvinceMetrics) {
+    provinceRow.exactCurrentYearMatchedCandidateGroups = provinceCount.currentExact;
+    provinceRow.currentYearMatchedCandidateGroups = provinceCount.currentExact + provinceCount.currentTransition;
+  }
+  provinceRows.push(provinceRow);
 }
 
 counts.provincesWithPlans = provinceRows.filter((row) => row.eligibleRecentPlans > 0).length;
@@ -552,23 +608,30 @@ counts.provincesWithRouteTransitions = provinceRows.filter((row) =>
   row.routeTransitionMatchedCandidateGroups > 0
 ).length;
 counts.provincesWithCurrentYearMatches = provinceRows.filter((row) =>
-  row.exactRouteMatchedCandidateGroups > 0 ||
+  (includeCurrentYearProvinceMetrics
+    ? row.exactCurrentYearMatchedCandidateGroups > 0
+    : row.exactRouteMatchedCandidateGroups > 0) ||
   row.transitionCurrentYearMatchedCandidateGroups > 0
 ).length;
 
 assert(counts.provinces === 31, `Expected 31 province shards, got ${counts.provinces}`);
-assert(counts.allPlanRecords === 71894, `All plan count drifted: ${counts.allPlanRecords}`);
 assert(counts.admissionRecords === previousAudit.counts.admissionRecords, "Admission count drifted");
 assert(counts.namedAdmissionRecords === previousAudit.counts.namedAdmissionRecords, "Named admission count drifted");
 assert(counts.candidateGroups === previousAudit.counts.candidateGroups, "Candidate group count drifted");
-assert(
-  counts.exactRouteMatchedCandidateGroups === previousAudit.counts.matchedCandidateGroups,
-  `Exact matches changed after supplement isolation: ${counts.exactRouteMatchedCandidateGroups}`,
-);
 assert(counts.supplementPlansExcluded === 1902, `Supplement isolation drifted: ${counts.supplementPlansExcluded}`);
 assert(counts.routeTransitionMatchedCandidateGroups > 500, "Route-transition coverage unexpectedly low");
 assert(counts.transitionCurrentYearMatchedCandidateGroups > 400, "Current transition coverage unexpectedly low");
 assert(counts.provincesWithPlans === 31, `Plan province coverage drifted: ${counts.provincesWithPlans}`);
+if (resolvedSupplementFiles.length === 0) {
+  assert(counts.allPlanRecords === 71894, `All plan count drifted: ${counts.allPlanRecords}`);
+  assert(
+    counts.exactRouteMatchedCandidateGroups === previousAudit.counts.matchedCandidateGroups,
+    `Exact matches changed after supplement isolation: ${counts.exactRouteMatchedCandidateGroups}`,
+  );
+}
+for (const [key, expected] of Object.entries(expectedCounts || {})) {
+  assert(counts[key] === expected, `${key} drifted: expected ${expected}, got ${counts[key]}`);
+}
 
 const topSources = [...sourceCounts.entries()]
   .map(([sourceId, matchedCandidateGroups]) => ({ sourceId, matchedCandidateGroups }))
@@ -578,10 +641,10 @@ const topTransitionPairs = [...transitionPairs.entries()]
   .sort((left, right) => right.matchedCandidateGroups - left.matchedCandidateGroups);
 
 const manifest = {
-  version: "v3.345",
+  version,
   generatedAt,
-  audit: "admission-plan-route-transition",
-  previousVersion: "v3.344",
+  audit,
+  previousVersion,
   policy: {
     evidenceDirection: "positive-corroboration-only",
     currentYear: 2026,
@@ -605,6 +668,7 @@ const manifest = {
   },
   counts,
   provinceRows,
+  ...(resolvedSupplementFiles.length ? { supplementOverlay } : {}),
   topSources,
   topTransitionPairs,
   examples,
@@ -620,11 +684,23 @@ const manifest = {
   ],
 };
 
-fs.writeFileSync(outputFile, `${JSON.stringify(manifest, null, 2)}\n`);
-console.log(JSON.stringify({
-  outputFile: path.relative(root, outputFile),
-  counts,
-  topTransitionPairs: topTransitionPairs.slice(0, 10),
-  examples: examples.slice(0, 6),
-  ambiguousExamples,
-}, null, 2));
+if (write) {
+  fs.mkdirSync(path.dirname(outputFile), { recursive: true });
+  fs.writeFileSync(outputFile, `${JSON.stringify(manifest, null, 2)}\n`);
+}
+if (log) {
+  console.log(JSON.stringify({
+    outputFile: write ? path.relative(root, outputFile) : null,
+    counts,
+    supplementOverlay: resolvedSupplementFiles.length ? supplementOverlay : null,
+    topTransitionPairs: topTransitionPairs.slice(0, 10),
+    examples: examples.slice(0, 6),
+    ambiguousExamples,
+  }, null, 2));
+}
+return manifest;
+}
+
+const isDirectExecution = process.argv[1] &&
+  path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
+if (isDirectExecution) runAdmissionPlanRouteTransitionAudit();
