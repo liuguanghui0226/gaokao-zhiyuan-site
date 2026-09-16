@@ -26,7 +26,7 @@ assert.ok(supplement.records.some((record) => record.province === "江苏" && re
 
 const appFile = path.join(root, "site/assets/app.js");
 const source = fs.readFileSync(appFile, "utf8");
-assert.match(source, /fetchRuntimeJson\("admission-plan-supplement-v354\.json", "官方计划补充"\)/);
+assert.match(source, /fetchRuntimeJson\("admission-plan-supplement-v355\.json", "官方计划补充"\)/);
 assert.match(source, /运行时官方计划补充/);
 assert.match(source, /state\.planSupplementRecords/);
 const bootIndex = source.lastIndexOf("\nboot().catch");
